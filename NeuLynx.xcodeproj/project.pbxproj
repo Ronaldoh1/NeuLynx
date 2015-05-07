@@ -10,11 +10,43 @@
 		F28518E11AFABFAD007A45FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E01AFABFAD007A45FA /* main.m */; };
 		F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E31AFABFAD007A45FA /* AppDelegate.m */; };
 		F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */; };
-		F28518EA1AFABFAD007A45FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E91AFABFAD007A45FA /* ViewController.m */; };
 		F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28518EB1AFABFAD007A45FA /* Main.storyboard */; };
 		F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F28518EE1AFABFAD007A45FA /* Images.xcassets */; };
 		F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28518F01AFABFAD007A45FA /* LaunchScreen.xib */; };
 		F28518FE1AFABFAE007A45FA /* NeuLynxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518FD1AFABFAE007A45FA /* NeuLynxTests.m */; };
+		F28519101AFACE75007A45FA /* launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F285190F1AFACE75007A45FA /* launchScreen.png */; };
+		F28519141AFACEE7007A45FA /* NeuLynx58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519131AFACEE7007A45FA /* NeuLynx58x58.png */; };
+		F28519161AFACF02007A45FA /* NeuLynx87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519151AFACF02007A45FA /* NeuLynx87x87.png */; };
+		F28519181AFACF21007A45FA /* NeuLynx80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519171AFACF21007A45FA /* NeuLynx80x80.png */; };
+		F285191A1AFACF3F007A45FA /* NeuLynx120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519191AFACF3F007A45FA /* NeuLynx120x120.png */; };
+		F285191C1AFACF5B007A45FA /* NeuLynx180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */; };
+		F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F285191E1AFAD67C007A45FA /* MainTabBarController.m */; };
+		F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519201AFAD7AD007A45FA /* SignIn.storyboard */; };
+		F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519221AFAD7BD007A45FA /* SignUp.storyboard */; };
+		F28519251AFADADA007A45FA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519241AFADADA007A45FA /* Profile.storyboard */; };
+		F28519271AFADAED007A45FA /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519261AFADAED007A45FA /* Map.storyboard */; };
+		F28519291AFADB09007A45FA /* PostEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519281AFADB09007A45FA /* PostEvent.storyboard */; };
+		F285192B1AFADB20007A45FA /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F285192A1AFADB20007A45FA /* History.storyboard */; };
+		F285192F1AFAE291007A45FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285192E1AFAE291007A45FA /* Parse.framework */; };
+		F28519311AFAE29E007A45FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519301AFAE29E007A45FA /* Bolts.framework */; };
+		F28519331AFAE2CE007A45FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519321AFAE2CE007A45FA /* AudioToolbox.framework */; };
+		F28519351AFAE2DA007A45FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519341AFAE2DA007A45FA /* CFNetwork.framework */; };
+		F28519371AFAE2E4007A45FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519361AFAE2E4007A45FA /* CoreGraphics.framework */; };
+		F28519391AFAE2EE007A45FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519381AFAE2EE007A45FA /* CoreLocation.framework */; };
+		F285193B1AFAE2F9007A45FA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */; };
+		F285193D1AFAE304007A45FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193C1AFAE304007A45FA /* QuartzCore.framework */; };
+		F285193F1AFAE30D007A45FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193E1AFAE30D007A45FA /* Security.framework */; };
+		F28519411AFAE317007A45FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519401AFAE317007A45FA /* StoreKit.framework */; };
+		F28519431AFAE321007A45FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519421AFAE321007A45FA /* SystemConfiguration.framework */; };
+		F28519451AFAE332007A45FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519441AFAE332007A45FA /* libz.dylib */; };
+		F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519461AFAE347007A45FA /* libsqlite3.dylib */; };
+		F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519481AFAE358007A45FA /* Accounts.framework */; };
+		F285194B1AFAE360007A45FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285194A1AFAE360007A45FA /* Social.framework */; };
+		F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = F285194C1AFAE98D007A45FA /* cityBackGround.png */; };
+		F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F285194E1AFAEA33007A45FA /* NeulynxLogo.png */; };
+		F28519511AFAEBB2007A45FA /* FacebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519501AFAEBB2007A45FA /* FacebookButton.png */; };
+		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
+		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +66,47 @@
 		F28518E21AFABFAD007A45FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F28518E31AFABFAD007A45FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F28518E61AFABFAD007A45FA /* NeuLynx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeuLynx.xcdatamodel; sourceTree = "<group>"; };
-		F28518E81AFABFAD007A45FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F28518E91AFABFAD007A45FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F28518EC1AFABFAD007A45FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F28518EE1AFABFAD007A45FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F28518F11AFABFAD007A45FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F28518F71AFABFAE007A45FA /* NeuLynxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuLynxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28518FC1AFABFAE007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518FD1AFABFAE007A45FA /* NeuLynxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeuLynxTests.m; sourceTree = "<group>"; };
+		F285190F1AFACE75007A45FA /* launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen.png; sourceTree = "<group>"; };
+		F28519131AFACEE7007A45FA /* NeuLynx58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx58x58.png; sourceTree = "<group>"; };
+		F28519151AFACF02007A45FA /* NeuLynx87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx87x87.png; sourceTree = "<group>"; };
+		F28519171AFACF21007A45FA /* NeuLynx80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx80x80.png; sourceTree = "<group>"; };
+		F28519191AFACF3F007A45FA /* NeuLynx120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx120x120.png; sourceTree = "<group>"; };
+		F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx180x180.png; sourceTree = "<group>"; };
+		F285191D1AFAD67C007A45FA /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		F285191E1AFAD67C007A45FA /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		F28519201AFAD7AD007A45FA /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		F28519221AFAD7BD007A45FA /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		F28519241AFADADA007A45FA /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F28519261AFADAED007A45FA /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		F28519281AFADB09007A45FA /* PostEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostEvent.storyboard; sourceTree = "<group>"; };
+		F285192A1AFADB20007A45FA /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		F285192E1AFAE291007A45FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F28519301AFAE29E007A45FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F28519321AFAE2CE007A45FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F28519341AFAE2DA007A45FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F28519361AFAE2E4007A45FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F28519381AFAE2EE007A45FA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F285193C1AFAE304007A45FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F285193E1AFAE30D007A45FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F28519401AFAE317007A45FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F28519421AFAE321007A45FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F28519441AFAE332007A45FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F28519461AFAE347007A45FA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F28519481AFAE358007A45FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		F285194A1AFAE360007A45FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		F285194C1AFAE98D007A45FA /* cityBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cityBackGround.png; sourceTree = "<group>"; };
+		F285194E1AFAEA33007A45FA /* NeulynxLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeulynxLogo.png; sourceTree = "<group>"; };
+		F28519501AFAEBB2007A45FA /* FacebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookButton.png; sourceTree = "<group>"; };
+		F28519521AFAED9F007A45FA /* or.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = or.png; sourceTree = "<group>"; };
+		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
+		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +114,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
+				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
+				F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */,
+				F28519451AFAE332007A45FA /* libz.dylib in Frameworks */,
+				F28519431AFAE321007A45FA /* SystemConfiguration.framework in Frameworks */,
+				F28519411AFAE317007A45FA /* StoreKit.framework in Frameworks */,
+				F285193F1AFAE30D007A45FA /* Security.framework in Frameworks */,
+				F285193D1AFAE304007A45FA /* QuartzCore.framework in Frameworks */,
+				F285193B1AFAE2F9007A45FA /* MobileCoreServices.framework in Frameworks */,
+				F28519391AFAE2EE007A45FA /* CoreLocation.framework in Frameworks */,
+				F28519371AFAE2E4007A45FA /* CoreGraphics.framework in Frameworks */,
+				F28519351AFAE2DA007A45FA /* CFNetwork.framework in Frameworks */,
+				F28519331AFAE2CE007A45FA /* AudioToolbox.framework in Frameworks */,
+				F285192F1AFAE291007A45FA /* Parse.framework in Frameworks */,
+				F28519311AFAE29E007A45FA /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +145,8 @@
 		F28518D21AFABFAD007A45FA = {
 			isa = PBXGroup;
 			children = (
+				F285192D1AFADB47007A45FA /* Data Model */,
+				F285192C1AFADB3E007A45FA /* Frameworks */,
 				F28518DD1AFABFAD007A45FA /* NeuLynx */,
 				F28518FA1AFABFAE007A45FA /* NeuLynxTests */,
 				F28518DC1AFABFAD007A45FA /* Products */,
@@ -83,11 +165,18 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F285190D1AFAC172007A45FA /* History */,
+				F285190B1AFAC126007A45FA /* PostEvent */,
+				F285190A1AFAC110007A45FA /* Map */,
+				F285190C1AFAC132007A45FA /* Profile */,
+				F28519091AFAC0D7007A45FA /* Sign Up */,
+				F28519071AFAC0A2007A45FA /* Sign In */,
+				F285190E1AFACE5C007A45FA /* Images */,
 				F28518E21AFABFAD007A45FA /* AppDelegate.h */,
 				F28518E31AFABFAD007A45FA /* AppDelegate.m */,
-				F28518E81AFABFAD007A45FA /* ViewController.h */,
-				F28518E91AFABFAD007A45FA /* ViewController.m */,
 				F28518EB1AFABFAD007A45FA /* Main.storyboard */,
+				F285191D1AFAD67C007A45FA /* MainTabBarController.h */,
+				F285191E1AFAD67C007A45FA /* MainTabBarController.m */,
 				F28518EE1AFABFAD007A45FA /* Images.xcassets */,
 				F28518F01AFABFAD007A45FA /* LaunchScreen.xib */,
 				F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */,
@@ -120,6 +209,103 @@
 				F28518FC1AFABFAE007A45FA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F28519071AFAC0A2007A45FA /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				F28519201AFAD7AD007A45FA /* SignIn.storyboard */,
+			);
+			name = "Sign In";
+			sourceTree = "<group>";
+		};
+		F28519091AFAC0D7007A45FA /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				F28519221AFAD7BD007A45FA /* SignUp.storyboard */,
+				F285195A1AFB0294007A45FA /* SignUpVC.h */,
+				F285195B1AFB0294007A45FA /* SignUpVC.m */,
+			);
+			name = "Sign Up";
+			sourceTree = "<group>";
+		};
+		F285190A1AFAC110007A45FA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F28519261AFADAED007A45FA /* Map.storyboard */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		F285190B1AFAC126007A45FA /* PostEvent */ = {
+			isa = PBXGroup;
+			children = (
+				F28519281AFADB09007A45FA /* PostEvent.storyboard */,
+			);
+			name = PostEvent;
+			sourceTree = "<group>";
+		};
+		F285190C1AFAC132007A45FA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F28519241AFADADA007A45FA /* Profile.storyboard */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		F285190D1AFAC172007A45FA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				F285192A1AFADB20007A45FA /* History.storyboard */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		F285190E1AFACE5C007A45FA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F28519521AFAED9F007A45FA /* or.png */,
+				F28519501AFAEBB2007A45FA /* FacebookButton.png */,
+				F285194E1AFAEA33007A45FA /* NeulynxLogo.png */,
+				F285194C1AFAE98D007A45FA /* cityBackGround.png */,
+				F285190F1AFACE75007A45FA /* launchScreen.png */,
+				F28519171AFACF21007A45FA /* NeuLynx80x80.png */,
+				F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */,
+				F28519191AFACF3F007A45FA /* NeuLynx120x120.png */,
+				F28519151AFACF02007A45FA /* NeuLynx87x87.png */,
+				F28519131AFACEE7007A45FA /* NeuLynx58x58.png */,
+			);
+			name = Images;
+			path = ../NeuLynx.xcodeproj;
+			sourceTree = "<group>";
+		};
+		F285192C1AFADB3E007A45FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F285194A1AFAE360007A45FA /* Social.framework */,
+				F28519481AFAE358007A45FA /* Accounts.framework */,
+				F28519461AFAE347007A45FA /* libsqlite3.dylib */,
+				F28519441AFAE332007A45FA /* libz.dylib */,
+				F28519421AFAE321007A45FA /* SystemConfiguration.framework */,
+				F28519401AFAE317007A45FA /* StoreKit.framework */,
+				F285193E1AFAE30D007A45FA /* Security.framework */,
+				F285193C1AFAE304007A45FA /* QuartzCore.framework */,
+				F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */,
+				F28519381AFAE2EE007A45FA /* CoreLocation.framework */,
+				F28519361AFAE2E4007A45FA /* CoreGraphics.framework */,
+				F28519341AFAE2DA007A45FA /* CFNetwork.framework */,
+				F28519321AFAE2CE007A45FA /* AudioToolbox.framework */,
+				F28519301AFAE29E007A45FA /* Bolts.framework */,
+				F285192E1AFAE291007A45FA /* Parse.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F285192D1AFADB47007A45FA /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +357,7 @@
 				TargetAttributes = {
 					F28518DA1AFABFAD007A45FA = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = A37GTC4NZF;
 					};
 					F28518F61AFABFAE007A45FA = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -202,9 +389,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28519141AFACEE7007A45FA /* NeuLynx58x58.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
+				F28519161AFACF02007A45FA /* NeuLynx87x87.png in Resources */,
+				F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
+				F28519101AFACE75007A45FA /* launchScreen.png in Resources */,
+				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
 				F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */,
+				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
+				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
+				F285191A1AFACF3F007A45FA /* NeuLynx120x120.png in Resources */,
+				F28519511AFAEBB2007A45FA /* FacebookButton.png in Resources */,
+				F285191C1AFACF5B007A45FA /* NeuLynx180x180.png in Resources */,
+				F28519181AFACF21007A45FA /* NeuLynx80x80.png in Resources */,
+				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
+				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
+				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
+				F28519291AFADB09007A45FA /* PostEvent.storyboard in Resources */,
+				F28519531AFAED9F007A45FA /* or.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +426,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
+				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
+				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
-				F28518EA1AFABFAD007A45FA /* ViewController.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,9 +555,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -361,9 +573,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -420,6 +640,7 @@
 				F28519031AFABFAE007A45FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F28519041AFABFAE007A45FA /* Build configuration list for PBXNativeTarget "NeuLynxTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +649,7 @@
 				F28519061AFABFAE007A45FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
