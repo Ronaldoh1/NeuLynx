@@ -18,13 +18,25 @@
     [super viewDidLoad];
 
 
+     [self setUpTabBars];
+
+
+
+}
+-(void)setUpTabBars{
     //create the first tab - get the storybody, then use the storyboard to present the first view controller
-    //also set an image for the first tab. 
+    //also set an image for the first tab.
     UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Map" bundle:nil];
     UITabBarController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MapNavVC"];
     [self addChildViewController:mapNavVC];
-    mapNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"mapicon"] scaledToSize:CGSizeMake(35, 35)];
+    mapNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"mapIcon"] scaledToSize:CGSizeMake(35, 35)];
 
+    //create the first tab - get the storybody, then use the storyboard to present the first view controller
+    //also set an image for the first tab.
+    UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+    UITabBarController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+    [self addChildViewController:profileNavVC];
+    profileNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"profileIcon"] scaledToSize:CGSizeMake(35, 35)];
 }
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);

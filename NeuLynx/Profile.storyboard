@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="3jt-Cy-X1i">
             <objects>
                 <viewController id="gd3-fy-wHG" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZMi-Kk-ebl"/>
+                    <navigationItem key="navigationItem" title="Profile" id="ZMi-Kk-ebl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-9n-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,7 +27,7 @@
         <!--Navigation Controller-->
         <scene sceneID="R6Q-HJ-g4P">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="67r-qB-eXi" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profileNavVC" automaticallyAdjustsScrollViewInsets="NO" id="67r-qB-eXi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hwI-p0-yqR">
