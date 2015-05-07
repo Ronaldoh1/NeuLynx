@@ -36,6 +36,12 @@
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC4E1AFB3F2600B2C5BA /* mailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4D1AFB3F2600B2C5BA /* mailIcon.png */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
+		F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */; };
+		F25BFC571AFB9E6F00B2C5BA /* PostEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */; };
+		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
+		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
+		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
+		F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */; };
 		F28518E11AFABFAD007A45FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E01AFABFAD007A45FA /* main.m */; };
 		F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E31AFABFAD007A45FA /* AppDelegate.m */; };
 		F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */; };
@@ -116,6 +122,16 @@
 		F25BFC4D1AFB3F2600B2C5BA /* mailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mailIcon.png; sourceTree = "<group>"; };
 		F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
+		F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
+		F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		F25BFC551AFB9E6F00B2C5BA /* PostEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostEventVC.h; sourceTree = "<group>"; };
+		F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostEventVC.m; sourceTree = "<group>"; };
+		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
+		F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
+		F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailVC.h; sourceTree = "<group>"; };
+		F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailVC.m; sourceTree = "<group>"; };
+		F25BFC5E1AFB9F4100B2C5BA /* postButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postButton.png; sourceTree = "<group>"; };
+		F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
 		F28518DB1AFABFAD007A45FA /* NeuLynx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuLynx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28518DF1AFABFAD007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518E01AFABFAD007A45FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */,
+				F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */,
+				F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */,
 			);
 			name = Mail;
 			sourceTree = "<group>";
@@ -306,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519281AFADB09007A45FA /* PostEvent.storyboard */,
+				F25BFC551AFB9E6F00B2C5BA /* PostEventVC.h */,
+				F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */,
 			);
 			name = PostEvent;
 			sourceTree = "<group>";
@@ -314,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519241AFADADA007A45FA /* Profile.storyboard */,
+				F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */,
+				F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -322,6 +344,8 @@
 			isa = PBXGroup;
 			children = (
 				F285192A1AFADB20007A45FA /* History.storyboard */,
+				F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */,
+				F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -329,6 +353,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F25BFC5E1AFB9F4100B2C5BA /* postButton.png */,
 				F25BFC4D1AFB3F2600B2C5BA /* mailIcon.png */,
 				F25BFC481AFB392900B2C5BA /* profileicon.png */,
 				F25BFC1B1AFB26C000B2C5BA /* AppIcon29x29.png */,
@@ -358,6 +383,7 @@
 				F285194E1AFAEA33007A45FA /* NeulynxLogo.png */,
 				F285194C1AFAE98D007A45FA /* cityBackGround.png */,
 				F285190F1AFACE75007A45FA /* launchScreen.png */,
+				F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */,
 			);
 			name = Images;
 			path = ../NeuLynx.xcodeproj;
@@ -495,7 +521,9 @@
 				F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */,
 				F25BFC401AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png in Resources */,
 				F25BFC3C1AFB26C000B2C5BA /* AppIcon60x60@2x.png in Resources */,
+				F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */,
 				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
+				F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */,
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
 				F25BFC361AFB26C000B2C5BA /* AppIcon40x40@3x.png in Resources */,
@@ -533,13 +561,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
+				F25BFC571AFB9E6F00B2C5BA /* PostEventVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
+				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
+				F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,
+				F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

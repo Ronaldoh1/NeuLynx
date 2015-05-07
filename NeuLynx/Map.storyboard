@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-sS-Qbh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="Dhs-Ky-Aot" id="MDg-Sq-cUO"/>
                                 </connections>
@@ -27,12 +27,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="top" secondItem="nCP-oT-zPp" secondAttribute="topMargin" id="c7e-NI-fiH"/>
-                            <constraint firstItem="buX-nv-5uW" firstAttribute="top" secondItem="oKg-sS-Qbh" secondAttribute="bottom" constant="8" id="f3t-0J-f54"/>
+                            <constraint firstItem="buX-nv-5uW" firstAttribute="top" secondItem="oKg-sS-Qbh" secondAttribute="bottom" id="f3t-0J-f54"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="hiI-zt-3mc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oKg-sS-Qbh" secondAttribute="trailing" constant="-16" id="sid-ZN-im6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZYh-ie-qtU"/>
+                    <navigationItem key="navigationItem" id="ZYh-ie-qtU">
+                        <barButtonItem key="rightBarButtonItem" image="postButton.png" id="9yn-OU-Uul">
+                            <inset key="imageInsets" minX="0.0" minY="1" maxX="3" maxY="0.0"/>
+                            <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onPostEventButtonTapped:" destination="Dhs-Ky-Aot" id="rYu-ZC-vlB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vT8-on-VQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -59,4 +67,7 @@
             <point key="canvasLocation" x="204" y="78"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="postButton.png" width="35" height="35"/>
+    </resources>
 </document>

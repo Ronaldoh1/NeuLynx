@@ -7,7 +7,7 @@
         <!--Profile-->
         <scene sceneID="3jt-Cy-X1i">
             <objects>
-                <viewController id="gd3-fy-wHG" sceneMemberID="viewController">
+                <viewController id="gd3-fy-wHG" customClass="ProfileVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1tm-w0-hAg"/>
                         <viewControllerLayoutGuide type="bottom" id="hQc-Q5-CKi"/>
