@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="okC-MS-DvJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="DTM-TV-L7u">
             <objects>
-                <viewController id="Dhs-Ky-Aot" sceneMemberID="viewController">
+                <viewController id="Dhs-Ky-Aot" customClass="MapVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GQj-2a-Y8K"/>
                         <viewControllerLayoutGuide type="bottom" id="buX-nv-5uW"/>
@@ -15,7 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="nCP-oT-zPp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oKg-sS-Qbh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Dhs-Ky-Aot" id="MDg-Sq-cUO"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oKg-sS-Qbh" firstAttribute="top" secondItem="nCP-oT-zPp" secondAttribute="topMargin" id="c7e-NI-fiH"/>
+                            <constraint firstItem="buX-nv-5uW" firstAttribute="top" secondItem="oKg-sS-Qbh" secondAttribute="bottom" constant="8" id="f3t-0J-f54"/>
+                            <constraint firstItem="oKg-sS-Qbh" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="hiI-zt-3mc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oKg-sS-Qbh" secondAttribute="trailing" constant="-16" id="sid-ZN-im6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZYh-ie-qtU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -27,7 +42,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7tW-cs-Nim">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="okC-MS-DvJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapNavVC" automaticallyAdjustsScrollViewInsets="NO" id="okC-MS-DvJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="emO-ca-RjW">

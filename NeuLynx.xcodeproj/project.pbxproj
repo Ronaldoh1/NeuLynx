@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFBF51AFB10B000B2C5BA /* MapVC.m */; };
+		F25BFBF81AFB185E00B2C5BA /* mapicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFBF71AFB185E00B2C5BA /* mapicon.png */; };
+		F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */; };
+		F25BFC2F1AFB26C000B2C5BA /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC1B1AFB26C000B2C5BA /* AppIcon29x29.png */; };
+		F25BFC301AFB26C000B2C5BA /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC1C1AFB26C000B2C5BA /* AppIcon29x29@2x.png */; };
+		F25BFC311AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC1D1AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png */; };
+		F25BFC321AFB26C000B2C5BA /* AppIcon29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC1E1AFB26C000B2C5BA /* AppIcon29x29@3x.png */; };
+		F25BFC331AFB26C000B2C5BA /* AppIcon29x29~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC1F1AFB26C000B2C5BA /* AppIcon29x29~ipad.png */; };
+		F25BFC341AFB26C000B2C5BA /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC201AFB26C000B2C5BA /* AppIcon40x40@2x.png */; };
+		F25BFC351AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC211AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png */; };
+		F25BFC361AFB26C000B2C5BA /* AppIcon40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC221AFB26C000B2C5BA /* AppIcon40x40@3x.png */; };
+		F25BFC371AFB26C000B2C5BA /* AppIcon40x40~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC231AFB26C000B2C5BA /* AppIcon40x40~ipad.png */; };
+		F25BFC381AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC241AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png */; };
+		F25BFC391AFB26C000B2C5BA /* AppIcon50x50~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC251AFB26C000B2C5BA /* AppIcon50x50~ipad.png */; };
+		F25BFC3A1AFB26C000B2C5BA /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC261AFB26C000B2C5BA /* AppIcon57x57.png */; };
+		F25BFC3B1AFB26C000B2C5BA /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC271AFB26C000B2C5BA /* AppIcon57x57@2x.png */; };
+		F25BFC3C1AFB26C000B2C5BA /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC281AFB26C000B2C5BA /* AppIcon60x60@2x.png */; };
+		F25BFC3D1AFB26C000B2C5BA /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC291AFB26C000B2C5BA /* AppIcon60x60@3x.png */; };
+		F25BFC3E1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC2A1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png */; };
+		F25BFC3F1AFB26C000B2C5BA /* AppIcon72x72~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC2B1AFB26C000B2C5BA /* AppIcon72x72~ipad.png */; };
+		F25BFC401AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC2C1AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png */; };
+		F25BFC411AFB26C000B2C5BA /* AppIcon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC2D1AFB26C000B2C5BA /* AppIcon76x76~ipad.png */; };
+		F25BFC421AFB26C000B2C5BA /* AppIcon120x120_carplay.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC2E1AFB26C000B2C5BA /* AppIcon120x120_carplay.png */; };
+		F25BFC441AFB277400B2C5BA /* NeuLynx58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC431AFB277400B2C5BA /* NeuLynx58x58.png */; };
 		F28518E11AFABFAD007A45FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E01AFABFAD007A45FA /* main.m */; };
 		F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E31AFABFAD007A45FA /* AppDelegate.m */; };
 		F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */; };
@@ -15,11 +39,6 @@
 		F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F28518F01AFABFAD007A45FA /* LaunchScreen.xib */; };
 		F28518FE1AFABFAE007A45FA /* NeuLynxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518FD1AFABFAE007A45FA /* NeuLynxTests.m */; };
 		F28519101AFACE75007A45FA /* launchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F285190F1AFACE75007A45FA /* launchScreen.png */; };
-		F28519141AFACEE7007A45FA /* NeuLynx58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519131AFACEE7007A45FA /* NeuLynx58x58.png */; };
-		F28519161AFACF02007A45FA /* NeuLynx87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519151AFACF02007A45FA /* NeuLynx87x87.png */; };
-		F28519181AFACF21007A45FA /* NeuLynx80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519171AFACF21007A45FA /* NeuLynx80x80.png */; };
-		F285191A1AFACF3F007A45FA /* NeuLynx120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519191AFACF3F007A45FA /* NeuLynx120x120.png */; };
-		F285191C1AFACF5B007A45FA /* NeuLynx180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */; };
 		F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F285191E1AFAD67C007A45FA /* MainTabBarController.m */; };
 		F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519201AFAD7AD007A45FA /* SignIn.storyboard */; };
 		F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519221AFAD7BD007A45FA /* SignUp.storyboard */; };
@@ -60,6 +79,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F25BFBF41AFB10B000B2C5BA /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
+		F25BFBF51AFB10B000B2C5BA /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
+		F25BFBF71AFB185E00B2C5BA /* mapicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapicon.png; sourceTree = "<group>"; };
+		F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F25BFC1B1AFB26C000B2C5BA /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		F25BFC1C1AFB26C000B2C5BA /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		F25BFC1D1AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x~ipad.png"; sourceTree = "<group>"; };
+		F25BFC1E1AFB26C000B2C5BA /* AppIcon29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@3x.png"; sourceTree = "<group>"; };
+		F25BFC1F1AFB26C000B2C5BA /* AppIcon29x29~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29~ipad.png"; sourceTree = "<group>"; };
+		F25BFC201AFB26C000B2C5BA /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		F25BFC211AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x~ipad.png"; sourceTree = "<group>"; };
+		F25BFC221AFB26C000B2C5BA /* AppIcon40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@3x.png"; sourceTree = "<group>"; };
+		F25BFC231AFB26C000B2C5BA /* AppIcon40x40~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40~ipad.png"; sourceTree = "<group>"; };
+		F25BFC241AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon50x50@2x~ipad.png"; sourceTree = "<group>"; };
+		F25BFC251AFB26C000B2C5BA /* AppIcon50x50~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon50x50~ipad.png"; sourceTree = "<group>"; };
+		F25BFC261AFB26C000B2C5BA /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
+		F25BFC271AFB26C000B2C5BA /* AppIcon57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon57x57@2x.png"; sourceTree = "<group>"; };
+		F25BFC281AFB26C000B2C5BA /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		F25BFC291AFB26C000B2C5BA /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@3x.png"; sourceTree = "<group>"; };
+		F25BFC2A1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72@2x~ipad.png"; sourceTree = "<group>"; };
+		F25BFC2B1AFB26C000B2C5BA /* AppIcon72x72~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72~ipad.png"; sourceTree = "<group>"; };
+		F25BFC2C1AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x~ipad.png"; sourceTree = "<group>"; };
+		F25BFC2D1AFB26C000B2C5BA /* AppIcon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76~ipad.png"; sourceTree = "<group>"; };
+		F25BFC2E1AFB26C000B2C5BA /* AppIcon120x120_carplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120x120_carplay.png; sourceTree = "<group>"; };
+		F25BFC431AFB277400B2C5BA /* NeuLynx58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx58x58.png; sourceTree = "<group>"; };
 		F28518DB1AFABFAD007A45FA /* NeuLynx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuLynx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28518DF1AFABFAD007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518E01AFABFAD007A45FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,11 +117,6 @@
 		F28518FC1AFABFAE007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518FD1AFABFAE007A45FA /* NeuLynxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeuLynxTests.m; sourceTree = "<group>"; };
 		F285190F1AFACE75007A45FA /* launchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen.png; sourceTree = "<group>"; };
-		F28519131AFACEE7007A45FA /* NeuLynx58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx58x58.png; sourceTree = "<group>"; };
-		F28519151AFACF02007A45FA /* NeuLynx87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx87x87.png; sourceTree = "<group>"; };
-		F28519171AFACF21007A45FA /* NeuLynx80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx80x80.png; sourceTree = "<group>"; };
-		F28519191AFACF3F007A45FA /* NeuLynx120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx120x120.png; sourceTree = "<group>"; };
-		F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynx180x180.png; sourceTree = "<group>"; };
 		F285191D1AFAD67C007A45FA /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		F285191E1AFAD67C007A45FA /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		F28519201AFAD7AD007A45FA /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
@@ -114,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */,
 				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
 				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
 				F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */,
@@ -233,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519261AFADAED007A45FA /* Map.storyboard */,
+				F25BFBF41AFB10B000B2C5BA /* MapVC.h */,
+				F25BFBF51AFB10B000B2C5BA /* MapVC.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -264,16 +306,33 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F25BFC1B1AFB26C000B2C5BA /* AppIcon29x29.png */,
+				F25BFC1C1AFB26C000B2C5BA /* AppIcon29x29@2x.png */,
+				F25BFC1D1AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png */,
+				F25BFC1E1AFB26C000B2C5BA /* AppIcon29x29@3x.png */,
+				F25BFC1F1AFB26C000B2C5BA /* AppIcon29x29~ipad.png */,
+				F25BFC201AFB26C000B2C5BA /* AppIcon40x40@2x.png */,
+				F25BFC211AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png */,
+				F25BFC221AFB26C000B2C5BA /* AppIcon40x40@3x.png */,
+				F25BFC231AFB26C000B2C5BA /* AppIcon40x40~ipad.png */,
+				F25BFC241AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png */,
+				F25BFC251AFB26C000B2C5BA /* AppIcon50x50~ipad.png */,
+				F25BFC261AFB26C000B2C5BA /* AppIcon57x57.png */,
+				F25BFC271AFB26C000B2C5BA /* AppIcon57x57@2x.png */,
+				F25BFC431AFB277400B2C5BA /* NeuLynx58x58.png */,
+				F25BFC281AFB26C000B2C5BA /* AppIcon60x60@2x.png */,
+				F25BFC291AFB26C000B2C5BA /* AppIcon60x60@3x.png */,
+				F25BFC2A1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png */,
+				F25BFC2B1AFB26C000B2C5BA /* AppIcon72x72~ipad.png */,
+				F25BFC2C1AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png */,
+				F25BFC2D1AFB26C000B2C5BA /* AppIcon76x76~ipad.png */,
+				F25BFC2E1AFB26C000B2C5BA /* AppIcon120x120_carplay.png */,
+				F25BFBF71AFB185E00B2C5BA /* mapicon.png */,
 				F28519521AFAED9F007A45FA /* or.png */,
 				F28519501AFAEBB2007A45FA /* FacebookButton.png */,
 				F285194E1AFAEA33007A45FA /* NeulynxLogo.png */,
 				F285194C1AFAE98D007A45FA /* cityBackGround.png */,
 				F285190F1AFACE75007A45FA /* launchScreen.png */,
-				F28519171AFACF21007A45FA /* NeuLynx80x80.png */,
-				F285191B1AFACF5B007A45FA /* NeuLynx180x180.png */,
-				F28519191AFACF3F007A45FA /* NeuLynx120x120.png */,
-				F28519151AFACF02007A45FA /* NeuLynx87x87.png */,
-				F28519131AFACEE7007A45FA /* NeuLynx58x58.png */,
 			);
 			name = Images;
 			path = ../NeuLynx.xcodeproj;
@@ -282,6 +341,7 @@
 		F285192C1AFADB3E007A45FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */,
 				F285194A1AFAE360007A45FA /* Social.framework */,
 				F28519481AFAE358007A45FA /* Accounts.framework */,
 				F28519461AFAE347007A45FA /* libsqlite3.dylib */,
@@ -389,24 +449,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F28519141AFACEE7007A45FA /* NeuLynx58x58.png in Resources */,
+				F25BFC391AFB26C000B2C5BA /* AppIcon50x50~ipad.png in Resources */,
+				F25BFBF81AFB185E00B2C5BA /* mapicon.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
-				F28519161AFACF02007A45FA /* NeuLynx87x87.png in Resources */,
+				F25BFC301AFB26C000B2C5BA /* AppIcon29x29@2x.png in Resources */,
+				F25BFC351AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png in Resources */,
+				F25BFC321AFB26C000B2C5BA /* AppIcon29x29@3x.png in Resources */,
 				F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
 				F28519101AFACE75007A45FA /* launchScreen.png in Resources */,
 				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
+				F25BFC411AFB26C000B2C5BA /* AppIcon76x76~ipad.png in Resources */,
+				F25BFC3B1AFB26C000B2C5BA /* AppIcon57x57@2x.png in Resources */,
+				F25BFC331AFB26C000B2C5BA /* AppIcon29x29~ipad.png in Resources */,
+				F25BFC341AFB26C000B2C5BA /* AppIcon40x40@2x.png in Resources */,
+				F25BFC3D1AFB26C000B2C5BA /* AppIcon60x60@3x.png in Resources */,
 				F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */,
+				F25BFC401AFB26C000B2C5BA /* AppIcon76x76@2x~ipad.png in Resources */,
+				F25BFC3C1AFB26C000B2C5BA /* AppIcon60x60@2x.png in Resources */,
 				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
-				F285191A1AFACF3F007A45FA /* NeuLynx120x120.png in Resources */,
+				F25BFC361AFB26C000B2C5BA /* AppIcon40x40@3x.png in Resources */,
 				F28519511AFAEBB2007A45FA /* FacebookButton.png in Resources */,
-				F285191C1AFACF5B007A45FA /* NeuLynx180x180.png in Resources */,
-				F28519181AFACF21007A45FA /* NeuLynx80x80.png in Resources */,
 				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
+				F25BFC2F1AFB26C000B2C5BA /* AppIcon29x29.png in Resources */,
+				F25BFC3E1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png in Resources */,
+				F25BFC3A1AFB26C000B2C5BA /* AppIcon57x57.png in Resources */,
+				F25BFC3F1AFB26C000B2C5BA /* AppIcon72x72~ipad.png in Resources */,
+				F25BFC311AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png in Resources */,
 				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
 				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
 				F28519291AFADB09007A45FA /* PostEvent.storyboard in Resources */,
+				F25BFC381AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png in Resources */,
+				F25BFC441AFB277400B2C5BA /* NeuLynx58x58.png in Resources */,
+				F25BFC371AFB26C000B2C5BA /* AppIcon40x40~ipad.png in Resources */,
+				F25BFC421AFB26C000B2C5BA /* AppIcon120x120_carplay.png in Resources */,
 				F28519531AFAED9F007A45FA /* or.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +505,7 @@
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
+				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,
 			);

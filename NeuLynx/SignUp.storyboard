@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-GX-AqK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-GX-AqK">
                                 <rect key="frame" x="100" y="64" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="obD-9I-zLV"/>
@@ -34,7 +34,21 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-Hm-D4H">
                                 <rect key="frame" x="35" y="260" width="250" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JDG-Ym-rYy"/>
                                     <constraint firstAttribute="width" constant="250" id="VQX-6v-KCC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VQX-6v-KCC"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-PI-k4u">
+                                <rect key="frame" x="35" y="297" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZVL-gO-fyC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -62,29 +76,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or.png" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-DQ-sYn">
-                                <rect key="frame" x="35" y="237" width="250" height="10"/>
+                                <rect key="frame" x="35" y="237" width="250" height="9"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="Aa0-O5-ox5"/>
+                                    <constraint firstAttribute="height" constant="9" id="Aa0-O5-ox5"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-W8-ktP">
-                                <rect key="frame" x="35" y="417" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="K5q-MR-gqj"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCancelButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="IYy-xi-Oz2"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbn-15-fJL">
                                 <rect key="frame" x="230" y="417" width="55" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Hm-Al-Ezn"/>
                                     <constraint firstAttribute="width" constant="55" id="vJd-nd-5Bw"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up">
@@ -105,14 +106,21 @@
                                     <segue destination="g4o-hY-MEC" kind="show" identifier="termAndConditions" id="KiP-CS-Mju"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-PI-k4u">
-                                <rect key="frame" x="35" y="297" width="250" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-W8-ktP">
+                                <rect key="frame" x="35" y="417" width="55" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZVL-gO-fyC"/>
+                                    <constraint firstAttribute="width" constant="55" id="K5q-MR-gqj"/>
+                                    <constraint firstAttribute="height" constant="30" id="da0-oj-drU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCancelButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="IYy-xi-Oz2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -131,7 +139,7 @@
                             <constraint firstItem="spU-PI-k4u" firstAttribute="top" secondItem="nZg-Hm-D4H" secondAttribute="bottom" constant="7" id="Qft-ad-MKI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nZg-Hm-D4H" secondAttribute="trailing" constant="19" id="Ybx-Ev-Axs"/>
                             <constraint firstItem="7nc-iV-kcg" firstAttribute="top" secondItem="spU-PI-k4u" secondAttribute="bottom" constant="8" id="Yin-1R-VzV"/>
-                            <constraint firstItem="nZg-Hm-D4H" firstAttribute="top" secondItem="KfW-DQ-sYn" secondAttribute="bottom" constant="13" id="aJj-tR-bHJ"/>
+                            <constraint firstItem="nZg-Hm-D4H" firstAttribute="top" secondItem="KfW-DQ-sYn" secondAttribute="bottom" constant="14" id="aJj-tR-bHJ"/>
                             <constraint firstItem="5yO-NF-pQA" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="avc-n4-ple"/>
                             <constraint firstItem="spU-PI-k4u" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="bZz-05-re2"/>
                             <constraint firstItem="ovt-YF-Fda" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="ba9-pa-Y2N"/>
