@@ -23,9 +23,18 @@
                                     <outlet property="delegate" destination="Dhs-Ky-Aot" id="MDg-Sq-cUO"/>
                                 </connections>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DSL-s4-Shd">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Ofr-QE-oAU"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DSL-s4-Shd" firstAttribute="top" secondItem="GQj-2a-Y8K" secondAttribute="bottom" id="C8M-ef-29v"/>
+                            <constraint firstItem="DSL-s4-Shd" firstAttribute="leading" secondItem="oKg-sS-Qbh" secondAttribute="leading" id="EGl-5b-EsO"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="top" secondItem="nCP-oT-zPp" secondAttribute="topMargin" id="c7e-NI-fiH"/>
                             <constraint firstItem="buX-nv-5uW" firstAttribute="top" secondItem="oKg-sS-Qbh" secondAttribute="bottom" id="f3t-0J-f54"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="hiI-zt-3mc"/>
@@ -37,11 +46,14 @@
                             <inset key="imageInsets" minX="0.0" minY="1" maxX="3" maxY="0.0"/>
                             <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="onPostEventButtonTapped:" destination="Dhs-Ky-Aot" id="rYu-ZC-vlB"/>
+                                <action selector="onPostButtonPressed:" destination="Dhs-Ky-Aot" id="hud-mC-9Wb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="searchBar" destination="DSL-s4-Shd" id="210-fi-ATK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vT8-on-VQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

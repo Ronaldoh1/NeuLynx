@@ -17,7 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="ZMi-Kk-ebl"/>
+                    <navigationItem key="navigationItem" title="Profile" id="ZMi-Kk-ebl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="b44-Mw-JoB">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="gd3-fy-wHG" id="ksq-sR-UgC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-9n-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>

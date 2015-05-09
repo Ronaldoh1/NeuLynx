@@ -19,6 +19,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 @end
