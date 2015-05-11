@@ -17,6 +17,8 @@
 @property UIButton *mainButton2;
 @property UIButton *mainButton3;
 @property UIButton *mainButton4;
+@property UIButton *mainButton5;
+@property UIButton *mainButton6;
 
 @property UIDynamicAnimator *dynamicAnimator;
 @property BOOL isFannedOut;
@@ -31,7 +33,7 @@
     [self setUpProfileImage];
     [self setUpFanOutButton];
     [self performInitialSetup];
-    [User logOut];
+
 
 
 
@@ -54,20 +56,36 @@
 -(void)setUpFanOutButton{
     //create dynamic animator
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-    self.mainButton1 = [self createButtonTitle:@"1"];
-    self.mainButton2 = [self createButtonTitle:@"2"];
-    self.mainButton3 = [self createButtonTitle:@"3"];
-      self.mainButton4 = [self createButtonTitle:@"4"];
-    self.mainButton = [self createButtonTitle:@"A"];
+
+    self.mainButton1 = [self createButton];
+    self.mainButton2 = [self createButton];
+    self.mainButton3 = [self createButton];
+    self.mainButton4 = [self createButton];
+    self.mainButton5 = [self createButton];
+    self.mainButton6 = [self createButton];
+
+    self.mainButton = [self createButton];
+
+
+
+    //set the images for each button
+    [self.mainButton setBackgroundImage:[UIImage imageNamed:@"discover"] forState:UIControlStateNormal];
+    [self.mainButton1 setBackgroundImage:[UIImage imageNamed:@"festival"] forState:UIControlStateNormal];
+    [self.mainButton2 setBackgroundImage:[UIImage imageNamed:@"gastronomy"] forState:UIControlStateNormal];
+    [self.mainButton3 setBackgroundImage:[UIImage imageNamed:@"nightout"] forState:UIControlStateNormal];
+    [self.mainButton4 setBackgroundImage:[UIImage imageNamed:@"cultural"] forState:UIControlStateNormal];
+    [self.mainButton5 setBackgroundImage:[UIImage imageNamed:@"fitness"] forState:UIControlStateNormal];
+    [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"outdoors"] forState:UIControlStateNormal];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 }
--(UIButton *)createButtonTitle:(NSString *)title{
+-(UIButton *)createButton{
 
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 50.0, self.view.frame.size.height - 100.0, 50.0, 50.0)];
     button.backgroundColor = [UIColor whiteColor];
     [button setTitleColor:[UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0] forState: UIControlStateNormal];
-    [button setTitle:title forState:UIControlStateNormal];
-    button.layer.borderColor = button.titleLabel.textColor.CGColor;
+
+    //button setTitle:title forState:UIControlStateNormal];
+     button.layer.borderColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0].CGColor;
 
     button.layer.borderWidth = 1.0;
     button.layer.cornerRadius = button.frame.size.width/2;
@@ -88,16 +106,20 @@
         [self snapButton:self.mainButton2 toPoint:self.mainButton.center];
         [self snapButton:self.mainButton3 toPoint:self.mainButton.center];
         [self snapButton:self.mainButton4 toPoint:self.mainButton.center];
+        [self snapButton:self.mainButton5 toPoint:self.mainButton.center];
+        [self snapButton:self.mainButton6 toPoint:self.mainButton.center];
     }
     self.isFannedOut = !self.isFannedOut;
     
     
 }
 -(void)fanButtonOut{
-    [self snapButton:self.mainButton1 toPoint:CGPointMake(self.mainButton.frame.origin.x - 50.0, self.mainButton.frame.origin.y + 20.0)];
-    [self snapButton:self.mainButton2 toPoint:CGPointMake(self.mainButton.frame.origin.x - 45.0, self.mainButton.frame.origin.y - 45.0)];
-    [self snapButton:self.mainButton3 toPoint:CGPointMake(self.mainButton.frame.origin.x - 15, self.mainButton.frame.origin.y - 100.0)];
-    [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x + 15, self.mainButton.frame.origin.y - 150.0)];
+    [self snapButton:self.mainButton1 toPoint:CGPointMake(self.mainButton.frame.origin.x - 60.0, self.mainButton.frame.origin.y + 20.0)];
+    [self snapButton:self.mainButton2 toPoint:CGPointMake(self.mainButton.frame.origin.x - 55.0, self.mainButton.frame.origin.y - 35.0)];
+    [self snapButton:self.mainButton3 toPoint:CGPointMake(self.mainButton.frame.origin.x - 40.0, self.mainButton.frame.origin.y - 90.0)];
+    [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x - 30.0, self.mainButton.frame.origin.y - 150.0)];
+    [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x + 5.0, self.mainButton.frame.origin.y - 195.0)];
+    [self snapButton:self.mainButton6 toPoint:CGPointMake(self.mainButton.frame.origin.x + 20.0, self.mainButton.frame.origin.y - 245.0)];
 }
 -(void)snapButton:(UIButton *)button toPoint:(CGPoint)point{
     UISnapBehavior *snapBehavior =[[UISnapBehavior alloc] initWithItem:button snapToPoint:point];

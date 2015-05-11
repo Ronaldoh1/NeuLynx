@@ -42,6 +42,13 @@
 		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
 		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
 		F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */; };
+		F25BFC631B00636200B2C5BA /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC621B00636200B2C5BA /* discover.png */; };
+		F25BFC651B00657E00B2C5BA /* gastronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC641B00657E00B2C5BA /* gastronomy.png */; };
+		F25BFC671B00658700B2C5BA /* nightout.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC661B00658700B2C5BA /* nightout.png */; };
+		F25BFC691B00658D00B2C5BA /* festival.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC681B00658D00B2C5BA /* festival.png */; };
+		F25BFC6B1B00659400B2C5BA /* cultural.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6A1B00659400B2C5BA /* cultural.png */; };
+		F25BFC6D1B006CBC00B2C5BA /* fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6C1B006CBC00B2C5BA /* fitness.png */; };
+		F25BFC6F1B006DE400B2C5BA /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6E1B006DE400B2C5BA /* outdoors.png */; };
 		F28518E11AFABFAD007A45FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E01AFABFAD007A45FA /* main.m */; };
 		F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E31AFABFAD007A45FA /* AppDelegate.m */; };
 		F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */; };
@@ -132,6 +139,13 @@
 		F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailVC.m; sourceTree = "<group>"; };
 		F25BFC5E1AFB9F4100B2C5BA /* postButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postButton.png; sourceTree = "<group>"; };
 		F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
+		F25BFC621B00636200B2C5BA /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		F25BFC641B00657E00B2C5BA /* gastronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomy.png; sourceTree = "<group>"; };
+		F25BFC661B00658700B2C5BA /* nightout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightout.png; sourceTree = "<group>"; };
+		F25BFC681B00658D00B2C5BA /* festival.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festival.png; sourceTree = "<group>"; };
+		F25BFC6A1B00659400B2C5BA /* cultural.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cultural.png; sourceTree = "<group>"; };
+		F25BFC6C1B006CBC00B2C5BA /* fitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitness.png; sourceTree = "<group>"; };
+		F25BFC6E1B006DE400B2C5BA /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
 		F28518DB1AFABFAD007A45FA /* NeuLynx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuLynx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28518DF1AFABFAD007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518E01AFABFAD007A45FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -353,6 +367,13 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F25BFC6E1B006DE400B2C5BA /* outdoors.png */,
+				F25BFC6C1B006CBC00B2C5BA /* fitness.png */,
+				F25BFC681B00658D00B2C5BA /* festival.png */,
+				F25BFC641B00657E00B2C5BA /* gastronomy.png */,
+				F25BFC6A1B00659400B2C5BA /* cultural.png */,
+				F25BFC661B00658700B2C5BA /* nightout.png */,
+				F25BFC621B00636200B2C5BA /* discover.png */,
 				F25BFC5E1AFB9F4100B2C5BA /* postButton.png */,
 				F25BFC4D1AFB3F2600B2C5BA /* mailIcon.png */,
 				F25BFC481AFB392900B2C5BA /* profileicon.png */,
@@ -503,8 +524,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F25BFC391AFB26C000B2C5BA /* AppIcon50x50~ipad.png in Resources */,
+				F25BFC671B00658700B2C5BA /* nightout.png in Resources */,
 				F25BFBF81AFB185E00B2C5BA /* mapicon.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
+				F25BFC651B00657E00B2C5BA /* gastronomy.png in Resources */,
 				F25BFC301AFB26C000B2C5BA /* AppIcon29x29@2x.png in Resources */,
 				F25BFC351AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png in Resources */,
 				F25BFC321AFB26C000B2C5BA /* AppIcon29x29@3x.png in Resources */,
@@ -514,6 +537,7 @@
 				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
 				F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */,
 				F25BFC411AFB26C000B2C5BA /* AppIcon76x76~ipad.png in Resources */,
+				F25BFC691B00658D00B2C5BA /* festival.png in Resources */,
 				F25BFC3B1AFB26C000B2C5BA /* AppIcon57x57@2x.png in Resources */,
 				F25BFC331AFB26C000B2C5BA /* AppIcon29x29~ipad.png in Resources */,
 				F25BFC341AFB26C000B2C5BA /* AppIcon40x40@2x.png in Resources */,
@@ -523,6 +547,7 @@
 				F25BFC3C1AFB26C000B2C5BA /* AppIcon60x60@2x.png in Resources */,
 				F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */,
 				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
+				F25BFC6D1B006CBC00B2C5BA /* fitness.png in Resources */,
 				F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */,
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
@@ -532,6 +557,7 @@
 				F25BFC2F1AFB26C000B2C5BA /* AppIcon29x29.png in Resources */,
 				F25BFC4E1AFB3F2600B2C5BA /* mailIcon.png in Resources */,
 				F25BFC3E1AFB26C000B2C5BA /* AppIcon72x72@2x~ipad.png in Resources */,
+				F25BFC631B00636200B2C5BA /* discover.png in Resources */,
 				F25BFC3A1AFB26C000B2C5BA /* AppIcon57x57.png in Resources */,
 				F25BFC3F1AFB26C000B2C5BA /* AppIcon72x72~ipad.png in Resources */,
 				F25BFC311AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png in Resources */,
@@ -541,7 +567,9 @@
 				F25BFC381AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png in Resources */,
 				F25BFC441AFB277400B2C5BA /* NeuLynx58x58.png in Resources */,
 				F25BFC371AFB26C000B2C5BA /* AppIcon40x40~ipad.png in Resources */,
+				F25BFC6B1B00659400B2C5BA /* cultural.png in Resources */,
 				F25BFC421AFB26C000B2C5BA /* AppIcon120x120_carplay.png in Resources */,
+				F25BFC6F1B006DE400B2C5BA /* outdoors.png in Resources */,
 				F28519531AFAED9F007A45FA /* or.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
