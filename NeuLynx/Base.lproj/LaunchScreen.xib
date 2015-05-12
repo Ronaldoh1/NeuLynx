@@ -22,16 +22,23 @@
                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
+                    <rect key="frame" x="8" y="451" width="398" height="249"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="rcl-M2-9Hy" secondAttribute="bottom" id="1cj-Cd-nc9"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Xc-7V-1iV"/>
+                <constraint firstAttribute="bottom" secondItem="8h0-gc-eKc" secondAttribute="bottom" constant="36" id="8Fj-uj-zKf"/>
                 <constraint firstItem="oN2-YE-ayD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="IXX-3N-zcY"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFf-Lv-ETJ"/>
                 <constraint firstAttribute="trailing" secondItem="oN2-YE-ayD" secondAttribute="trailing" constant="8" id="a94-od-UAv"/>
                 <constraint firstAttribute="trailing" secondItem="rcl-M2-9Hy" secondAttribute="trailing" id="bcv-DL-Trb"/>
+                <constraint firstItem="8h0-gc-eKc" firstAttribute="top" secondItem="oN2-YE-ayD" secondAttribute="bottom" constant="255" id="drW-c8-QNr"/>
+                <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="h40-pz-3Nt"/>
                 <constraint firstItem="oN2-YE-ayD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="108" id="lrj-Gn-h89"/>
+                <constraint firstAttribute="trailing" secondItem="8h0-gc-eKc" secondAttribute="trailing" constant="8" id="xzM-Jf-Tk8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -39,6 +46,7 @@
         </view>
     </objects>
     <resources>
+        <image name="NeuLynxSlogan" width="1080" height="400"/>
         <image name="launchScreen" width="1242" height="2208"/>
     </resources>
 </document>

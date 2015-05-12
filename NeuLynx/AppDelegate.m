@@ -38,6 +38,10 @@
     //Parse subclasses Set up
     [User registerSubclass];
 
+    //Twitter set up
+    [PFTwitterUtils initializeWithConsumerKey:@"HLAx4EQ5YSiLmVYl2xo9GZ22Q"
+                               consumerSecret:@"EW1rJSjYPwEgwpvXynZS9ofvq69TIfS1wfDPeKmUAdbrJISNiW"];
+
 
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

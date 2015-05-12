@@ -132,9 +132,9 @@
 -(void)fanButtonOut{
     [self snapButton:self.mainButton1 toPoint:CGPointMake(self.mainButton.frame.origin.x - 60.0, self.mainButton.frame.origin.y + 20.0)];
     [self snapButton:self.mainButton2 toPoint:CGPointMake(self.mainButton.frame.origin.x - 55.0, self.mainButton.frame.origin.y - 35.0)];
-    [self snapButton:self.mainButton3 toPoint:CGPointMake(self.mainButton.frame.origin.x - 40.0, self.mainButton.frame.origin.y - 90.0)];
-    [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x - 30.0, self.mainButton.frame.origin.y - 150.0)];
-    [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x + 5.0, self.mainButton.frame.origin.y - 195.0)];
+    [self snapButton:self.mainButton3 toPoint:CGPointMake(self.mainButton.frame.origin.x - 45.0, self.mainButton.frame.origin.y - 90.0)];
+    [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x - 35.0, self.mainButton.frame.origin.y - 145.0)];
+    [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x - 15.0, self.mainButton.frame.origin.y - 200.0)];
     [self snapButton:self.mainButton6 toPoint:CGPointMake(self.mainButton.frame.origin.x + 20.0, self.mainButton.frame.origin.y - 245.0)];
 }
 -(void)snapButton:(UIButton *)button toPoint:(CGPoint)point{
@@ -271,6 +271,19 @@
 
 
     }else if(buttonIndex == 3){
+
+        [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+            if (!user) {
+                NSLog(@"Uh oh. The user cancelled the Twitter login.");
+                return;
+            } else if (user.isNew) {
+                NSLog(@"User signed up and logged in with Twitter!");
+                 self.navigationItem.leftBarButtonItem.enabled = YES;
+            } else {
+                NSLog(@"User logged in with Twitter!");
+                 self.navigationItem.leftBarButtonItem.enabled = YES;
+            }
+        }];
 
     }
 }

@@ -45,6 +45,7 @@
         } else {
             NSLog(@"User logged in through Facebook!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 
