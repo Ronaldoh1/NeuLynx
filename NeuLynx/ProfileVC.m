@@ -7,6 +7,7 @@
 //
 
 #import "ProfileVC.h"
+#import "User.h"
 
 @interface ProfileVC ()
 
@@ -19,11 +20,16 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+- (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
+
+    [User logOut];
 
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
+- (IBAction)onBackButtonTapped:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

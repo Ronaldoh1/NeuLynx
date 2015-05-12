@@ -69,7 +69,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onFbSignUpButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="COj-BR-syH"/>
-                                    <action selector="onSignUpWithFbButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="47q-Vj-SNh"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or.png" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-DQ-sYn">

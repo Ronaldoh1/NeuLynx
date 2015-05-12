@@ -49,6 +49,10 @@
 		F25BFC6B1B00659400B2C5BA /* cultural.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6A1B00659400B2C5BA /* cultural.png */; };
 		F25BFC6D1B006CBC00B2C5BA /* fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6C1B006CBC00B2C5BA /* fitness.png */; };
 		F25BFC6F1B006DE400B2C5BA /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC6E1B006DE400B2C5BA /* outdoors.png */; };
+		F25BFC731B017CAE00B2C5BA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */; };
+		F25BFC741B017CAE00B2C5BA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */; };
+		F25BFC751B017CAE00B2C5BA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC721B017CAE00B2C5BA /* FBSDKShareKit.framework */; };
+		F25BFC771B0187B100B2C5BA /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC761B0187B100B2C5BA /* ParseFacebookUtilsV4.framework */; };
 		F28518E11AFABFAD007A45FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E01AFABFAD007A45FA /* main.m */; };
 		F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F28518E31AFABFAD007A45FA /* AppDelegate.m */; };
 		F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F28518E51AFABFAD007A45FA /* NeuLynx.xcdatamodeld */; };
@@ -146,6 +150,10 @@
 		F25BFC6A1B00659400B2C5BA /* cultural.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cultural.png; sourceTree = "<group>"; };
 		F25BFC6C1B006CBC00B2C5BA /* fitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitness.png; sourceTree = "<group>"; };
 		F25BFC6E1B006DE400B2C5BA /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
+		F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F25BFC721B017CAE00B2C5BA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F25BFC761B0187B100B2C5BA /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		F28518DB1AFABFAD007A45FA /* NeuLynx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuLynx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28518DF1AFABFAD007A45FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28518E01AFABFAD007A45FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -197,6 +205,8 @@
 			files = (
 				F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */,
 				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
+				F25BFC741B017CAE00B2C5BA /* FBSDKLoginKit.framework in Frameworks */,
+				F25BFC731B017CAE00B2C5BA /* FBSDKCoreKit.framework in Frameworks */,
 				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
 				F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */,
 				F28519451AFAE332007A45FA /* libz.dylib in Frameworks */,
@@ -205,7 +215,9 @@
 				F285193F1AFAE30D007A45FA /* Security.framework in Frameworks */,
 				F285193D1AFAE304007A45FA /* QuartzCore.framework in Frameworks */,
 				F285193B1AFAE2F9007A45FA /* MobileCoreServices.framework in Frameworks */,
+				F25BFC751B017CAE00B2C5BA /* FBSDKShareKit.framework in Frameworks */,
 				F28519391AFAE2EE007A45FA /* CoreLocation.framework in Frameworks */,
+				F25BFC771B0187B100B2C5BA /* ParseFacebookUtilsV4.framework in Frameworks */,
 				F28519371AFAE2E4007A45FA /* CoreGraphics.framework in Frameworks */,
 				F28519351AFAE2DA007A45FA /* CFNetwork.framework in Frameworks */,
 				F28519331AFAE2CE007A45FA /* AudioToolbox.framework in Frameworks */,
@@ -413,6 +425,10 @@
 		F285192C1AFADB3E007A45FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F25BFC761B0187B100B2C5BA /* ParseFacebookUtilsV4.framework */,
+				F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */,
+				F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */,
+				F25BFC721B017CAE00B2C5BA /* FBSDKShareKit.framework */,
 				F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */,
 				F285194A1AFAE360007A45FA /* Social.framework */,
 				F28519481AFAE358007A45FA /* Accounts.framework */,

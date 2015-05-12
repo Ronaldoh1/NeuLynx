@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 #import "User.h"
 
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface SignUpVC ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -39,6 +43,23 @@
 
 }
 - (IBAction)onFbSignUpButtonTapped:(UIButton *)sender {
+    //Setting up loginwith facebook
+
+    //1. need to get user's permissions.
+    NSArray *permissionsArray = @[ @"email", @"public_profile"];
+
+    [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+        }
+    }];
+
 
 }
 
@@ -78,6 +99,7 @@
     User *user = [User new];
     user.username = self.email.text;
     user.password = self.password.text;
+    user.email = self.email.text;
 
 
 

@@ -18,9 +18,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="ZMi-Kk-ebl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="b44-Mw-JoB">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="V2Z-qJ-vX1">
                             <connections>
-                                <action selector="onDoneButtonTapped:" destination="gd3-fy-wHG" id="ksq-sR-UgC"/>
+                                <action selector="onBackButtonTapped:" destination="gd3-fy-wHG" id="Ksy-dQ-bEw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="b44-Mw-JoB">
+                            <connections>
+                                <action selector="onLogOutButtonTapped:" destination="gd3-fy-wHG" id="HDm-Bz-qmM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

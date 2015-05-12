@@ -8,7 +8,13 @@
 
 #import "MapVC.h"
 #import <MapKit/MapKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "User.h"
+
 
 
 @interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate>
@@ -32,12 +38,14 @@
 
     [self setUpProfileImage];
     [self setUpFanOutButton];
-    [self performInitialSetup];
-
-
 
 
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [self performInitialSetup];
+}
+
+
  //helper method for initial set up
 
 -(void)performInitialSetup{
@@ -47,6 +55,14 @@
 
     //add the tap gesture to the current view.
     [self.view addGestureRecognizer:tap];
+
+    //check if the user is logged in. If he is, then allow the profile image to be tapable
+
+    if ([User currentUser] == nil) {
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+    }else{
+        self.navigationItem.leftBarButtonItem.enabled = YES;
+    }
 
 }
 -(void)dismissKeyboard{
@@ -235,6 +251,24 @@
         [self presentViewController:signUpVC animated:YES completion:nil];
 
     }else if(buttonIndex == 2){
+
+        //Setting up loginwith facebook
+
+        //1. need to get user's permissions.
+        NSArray *permissionsArray = @[ @"email", @"public_profile"];
+
+        [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+            if (!user) {
+                NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            } else if (user.isNew) {
+                NSLog(@"User signed up and logged in through Facebook!");
+                self.navigationItem.leftBarButtonItem.enabled = YES;
+            } else {
+                NSLog(@"User logged in through Facebook!");
+                self.navigationItem.leftBarButtonItem.enabled = YES;
+            }
+        }];
+
 
     }else if(buttonIndex == 3){
 
