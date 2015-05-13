@@ -42,8 +42,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZYh-ie-qtU">
-                        <barButtonItem key="rightBarButtonItem" image="postButton.png" id="9yn-OU-Uul">
-                            <inset key="imageInsets" minX="0.0" minY="1" maxX="3" maxY="0.0"/>
+                        <barButtonItem key="rightBarButtonItem" image="post.png" id="9yn-OU-Uul">
+                            <inset key="imageInsets" minX="40" minY="29" maxX="18" maxY="29"/>
                             <color key="tintColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onPostButtonPressed:" destination="Dhs-Ky-Aot" id="hud-mC-9Wb"/>
@@ -80,6 +80,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="postButton.png" width="35" height="35"/>
+        <image name="post.png" width="100" height="100"/>
     </resources>
 </document>

@@ -40,6 +40,10 @@
     [self setUpFanOutButton];
 
 
+    //Getting the usre's location
+    
+
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self performInitialSetup];
@@ -148,7 +152,7 @@
     //create button frame
     CGRect buttonFrame = CGRectMake(0, 0, 40, 40);
 
-    //Create Button
+    //Create left Button
     UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
 
     //make the button rounded
@@ -177,6 +181,8 @@
 
     self.navigationItem.leftBarButtonItem = profileButtonItem;
 
+    //CREATE RIGHT BUTTON FOR POST
+
 
 }
 //helper method to show user's profile.
@@ -190,16 +196,7 @@
     [self presentViewController:profileNavVC animated:YES completion:nil];
 }
 
-- (IBAction)onPostEventButtonTapped:(UIBarButtonItem *)sender {
-    //create the third tab - get the storybody, then use the storyboard to present the first view controller
-    //also set an image for the first tab.
-    UIStoryboard *postEventStoryboard = [UIStoryboard storyboardWithName:@"PostEvent" bundle:nil];
-    UIViewController *postEventNavVC = [postEventStoryboard instantiateViewControllerWithIdentifier:@"postEventNavVC"];
 
-    [self presentViewController:postEventNavVC animated:YES completion:nil];
-
-
-}
 //on post event button pressed
 - (IBAction)onPostButtonPressed:(UIBarButtonItem *)sender {
 
@@ -210,6 +207,12 @@
     }else{
 
         NSLog(@"user is logged in");
+        UIStoryboard *postEventStoryboard = [UIStoryboard storyboardWithName:@"PostEvent" bundle:nil];
+        UIViewController *postEventNavVC = [postEventStoryboard instantiateViewControllerWithIdentifier:@"postEventNavVC"];
+
+        [self presentViewController:postEventNavVC animated:YES completion:nil];
+        
+
 
     }
 }

@@ -16,9 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
 }
 
+- (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil]; 
+
+}
+- (IBAction)onNextButtonTapped:(UIBarButtonItem *)sender {
+
+}
 
 
 @end

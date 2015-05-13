@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Mail-->
+        <!--Requests & Messages-->
         <scene sceneID="qWy-Nr-YYb">
             <objects>
                 <viewController id="oxB-yv-yI1" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mail" id="Vhx-TA-ybm"/>
+                    <navigationItem key="navigationItem" title="Requests &amp; Messages" id="Vhx-TA-ybm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcb-fQ-uiz" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -28,6 +28,21 @@
     [self setUpTextFields];
 
 }
+- (IBAction)onSignInWithTwitterButtonTapped:(UIButton *)sender {
+
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+        } else {
+            NSLog(@"User logged in with Twitter!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+        }
+    }];
+}
 
 
 - (IBAction)onsignInWithFacebook:(UIButton *)sender {

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Post Event-->
+        <!--Post Activity-->
         <scene sceneID="dgK-vq-bUd">
             <objects>
-                <viewController id="sq3-el-Syy" sceneMemberID="viewController">
+                <viewController id="sq3-el-Syy" customClass="PostEventVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mVe-Fl-Usv"/>
                         <viewControllerLayoutGuide type="bottom" id="esR-C1-piH"/>
@@ -17,7 +17,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post Event" id="Wsf-Zz-Txa"/>
+                    <navigationItem key="navigationItem" title="Post Activity" id="Wsf-Zz-Txa">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="gsG-hu-kJe">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="sq3-el-Syy" id="Ox9-SM-ha0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="MKU-OA-2af">
+                            <connections>
+                                <action selector="onNextButtonTapped:" destination="sq3-el-Syy" id="M50-ut-3a0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iP-2o-sgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
