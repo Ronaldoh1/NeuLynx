@@ -52,6 +52,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="mapView" destination="oKg-sS-Qbh" id="1xY-ty-mdI"/>
                         <outlet property="searchBar" destination="DSL-s4-Shd" id="210-fi-ATK"/>
                     </connections>
                 </viewController>

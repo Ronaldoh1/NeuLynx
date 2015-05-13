@@ -17,7 +17,7 @@
 
 
 
-@interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate>
+@interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate>
 @property UIButton *mainButton;
 @property UIButton *mainButton1;
 @property UIButton *mainButton2;
@@ -29,6 +29,11 @@
 @property UIDynamicAnimator *dynamicAnimator;
 @property BOOL isFannedOut;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+@property CLLocationManager *locationManager;
 @end
 
 @implementation MapVC
@@ -40,7 +45,18 @@
     [self setUpFanOutButton];
 
 
-    //Getting the usre's location
+    //GETING THE USER'S LOCATION
+    //set up settings for location managers.
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+
+    self.mapView.showsUserLocation = true;
+
+    [self.mapView setShowsUserLocation:true];  
+
     
 
 
@@ -297,6 +313,23 @@
 }
 
 
+#pragma Mark - CLLocationManager Delegate Methods
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    NSLog(@"%@",locations);
+
+    CLLocation *userLocation = locations[0];
+
+
+}
+
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+
+    //Get the user's current location, zoom to user's location on the map.
+
+    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+}
 
 
 
