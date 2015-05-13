@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property CLLocationManager *locationManager;
+@property CLLocation *initialLocation;
+@property BOOL didGetUserLocation;
 @end
 
 @implementation MapVC
@@ -55,7 +57,8 @@
 
     self.mapView.showsUserLocation = true;
 
-    [self.mapView setShowsUserLocation:true];  
+    //initially we should set the didGetUserLocation to false;
+    self.didGetUserLocation = false;
 
     
 
@@ -63,6 +66,14 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self performInitialSetup];
+
+//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:true];
+//
+//    double latitude = self.locationManager.location.coordinate.latitude;
+//    double longitude = self.locationManager.location.coordinate.longitude;
+//
+//
+//    [self zoom:&latitude :&longitude];
 }
 
 
@@ -315,20 +326,55 @@
 
 #pragma Mark - CLLocationManager Delegate Methods
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    NSLog(@"%@",locations);
-
-    CLLocation *userLocation = locations[0];
-
-
-}
-
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
 
     //Get the user's current location, zoom to user's location on the map.
 
-    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+//    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    //zooming map to current location at startup
+//    if(!self.didGetUserLocation){
+//
+//        //zooming map to current location at startup
+//        double latitude = self.locationManager.location.coordinate.latitude;
+//        double longitude = self.locationManager.location.coordinate.longitude;
+//        [self.locationManager stopUpdatingLocation];
+//
+//        [self zoom:&latitude :&longitude];
+//
+//        self.didGetUserLocation = true;
+//
+//        
+//    }
+
+    if (!self.initialLocation) {
+        self.initialLocation = userLocation.location;
+        MKCoordinateRegion mapRegion;
+        mapRegion.center = mapView.userLocation.coordinate;
+        mapRegion.span.latitudeDelta = 0.01;
+        mapRegion.span.longitudeDelta = 0.01;
+
+        [mapView setRegion:mapRegion animated: YES];
+    }
+
+
+
+}
+//helper method to zoom in
+-(void)zoom:(double *)latitude :(double *)logitude
+{
+    //    double delayInSeconds = 0.5;
+    //    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    //    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
+    //        {
+    MKCoordinateRegion region;
+    region.center.latitude = *latitude;
+    region.center.longitude = *logitude;
+    region.span.latitudeDelta = 0.04;
+    region.span.longitudeDelta = 0.04;
+    region = [self.mapView regionThatFits:region];
+    [self.mapView setRegion:region animated:YES];
+    //        });
 }
 
 
