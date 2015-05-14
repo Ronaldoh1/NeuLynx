@@ -7,7 +7,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="Pkc-Xj-hBe">
             <objects>
-                <tabBarController id="Ti0-I3-5dH" customClass="MainTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarVC" id="Ti0-I3-5dH" customClass="MainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="n0z-gB-XOw">

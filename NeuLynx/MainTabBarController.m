@@ -23,6 +23,8 @@
 
 
 }
+
+
 -(void)setUpTabBars{
     //set up the tint for the tabbar
 
@@ -46,6 +48,7 @@
     [self addChildViewController:mailNavVC];
     mailNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"mailIcon"] scaledToSize:CGSizeMake(35, 35)];
     mailNavVC.tabBarItem.title = @"Messages";
+    mailNavVC.tabBarItem.enabled = NO;
 
 }
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {

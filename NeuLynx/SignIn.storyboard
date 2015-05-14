@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cityBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="3Cd-c0-olh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3Cd-c0-olh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4z-4l-HiT">
@@ -170,9 +170,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9tT-4N-9O7">
-                                <rect key="frame" x="73" y="72" width="175" height="175"/>
+                                <rect key="frame" x="58" y="72" width="205" height="205"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="175" id="kwT-9s-J6I"/>
+                                    <constraint firstAttribute="height" constant="205" id="kwT-9s-J6I"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -184,15 +184,15 @@
                             <constraint firstItem="a2g-G0-srD" firstAttribute="top" secondItem="3Cd-c0-olh" secondAttribute="bottom" id="4Cc-WI-0fp"/>
                             <constraint firstItem="Tb9-l5-Xr8" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="19" id="88h-ap-TYf"/>
                             <constraint firstItem="JSm-Dn-T8f" firstAttribute="top" secondItem="T0b-qz-XFS" secondAttribute="bottom" constant="5" id="95r-Jk-70F"/>
-                            <constraint firstItem="Tb9-l5-Xr8" firstAttribute="top" secondItem="9tT-4N-9O7" secondAttribute="bottom" constant="7" id="A0o-la-zix"/>
-                            <constraint firstItem="9tT-4N-9O7" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="57" id="Jvi-T7-cFU"/>
+                            <constraint firstItem="Tb9-l5-Xr8" firstAttribute="top" secondItem="9tT-4N-9O7" secondAttribute="bottom" constant="-23" id="A0o-la-zix"/>
+                            <constraint firstItem="9tT-4N-9O7" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="42" id="Jvi-T7-cFU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T0b-qz-XFS" secondAttribute="trailing" constant="19" id="Ovt-j8-4TY"/>
                             <constraint firstItem="3Cd-c0-olh" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="-16" id="Q6v-CB-efS"/>
                             <constraint firstItem="EJ2-hy-lII" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="19" id="Q9M-qz-yZs"/>
                             <constraint firstItem="9tT-4N-9O7" firstAttribute="top" secondItem="5Qp-6p-KHu" secondAttribute="bottom" constant="8" id="Rn0-jm-lfC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VoY-q9-T4D" secondAttribute="trailing" constant="19" id="Sr0-Gs-Sda"/>
                             <constraint firstItem="JSm-Dn-T8f" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="19" id="T17-Jj-z3Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9tT-4N-9O7" secondAttribute="trailing" constant="56" id="TS3-Mq-E2i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9tT-4N-9O7" secondAttribute="trailing" constant="41" id="TS3-Mq-E2i"/>
                             <constraint firstItem="VoY-q9-T4D" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="19" id="Ts8-2J-DyX"/>
                             <constraint firstItem="K4z-4l-HiT" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="19" id="X5B-vg-ysx"/>
                             <constraint firstItem="DPP-lc-P77" firstAttribute="top" secondItem="JSm-Dn-T8f" secondAttribute="bottom" constant="14" id="ZuM-Zk-oFL"/>
@@ -240,7 +240,7 @@
     <resources>
         <image name="FacebookButton.png" width="1162" height="125"/>
         <image name="Logo" width="2083" height="2083"/>
-        <image name="cityBackGround" width="640" height="1136"/>
+        <image name="backBackground" width="750" height="1334"/>
         <image name="or.png" width="1122" height="22"/>
         <image name="signInWithTwitterButton.png" width="600" height="64"/>
     </resources>

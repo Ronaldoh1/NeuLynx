@@ -64,9 +64,18 @@
 
 
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [self performInitialSetup];
 
+    //If the user is logged in, then we want to allow him to tab on history
+    if ([User currentUser] != nil) {
+
+        [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+
+    }else{
+        [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
+    }
 //    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:true];
 //
 //    double latitude = self.locationManager.location.coordinate.latitude;
@@ -80,6 +89,19 @@
  //helper method for initial set up
 
 -(void)performInitialSetup{
+
+    //Check if the user has previously used the app.
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasBeenRun"]) {
+
+        UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
+        UITabBarController *tutorialNavVC = [tutorialStoryboard instantiateViewControllerWithIdentifier:@"tutorialNavVC"];
+        [self presentViewController:tutorialNavVC animated:true completion:nil];
+
+    }
+
+    //if it has displayed the map then we say it has been run...therefore we do not show the Tutorial again
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasBeenRun"];
     //Dismiss Keyboard when user touches outside of the search bar.
     //first - create a tap gesture.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -292,10 +314,14 @@
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in through Facebook!");
+                //enable the inbox and profile
                 self.navigationItem.leftBarButtonItem.enabled = YES;
+                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
             } else {
                 NSLog(@"User logged in through Facebook!");
+                //enable inbox and profile
                 self.navigationItem.leftBarButtonItem.enabled = YES;
+                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
             }
         }];
 
