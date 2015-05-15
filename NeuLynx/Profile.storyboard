@@ -99,15 +99,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-Hv-WfH">
-                                <rect key="frame" x="120" y="189" width="80" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-HZ-dvl">
+                                <rect key="frame" x="88" y="392" width="143" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="vBr-rH-Xie"/>
+                                    <constraint firstAttribute="height" constant="25" id="kQ4-0H-LC7"/>
                                 </constraints>
-                                <state key="normal" title="Edit Picture">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Preferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgp-as-73J">
                                 <rect key="frame" x="85" y="425" width="141" height="21"/>
                                 <constraints>
@@ -144,15 +144,18 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-HZ-dvl">
-                                <rect key="frame" x="88" y="392" width="143" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-Hv-WfH">
+                                <rect key="frame" x="106" y="189" width="106" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="kQ4-0H-LC7"/>
+                                    <constraint firstAttribute="height" constant="30" id="vBr-rH-Xie"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <color key="textColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Choose Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChooseProfilePictureTapped:" destination="gd3-fy-wHG" eventType="touchUpInside" id="Fv9-Oe-L3n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -162,7 +165,7 @@
                             <constraint firstItem="ful-Uv-K9O" firstAttribute="top" secondItem="5Hx-iX-waS" secondAttribute="bottom" constant="15" id="DFu-JO-LEj"/>
                             <constraint firstItem="0FJ-Og-hq0" firstAttribute="leading" secondItem="fhA-AT-DBX" secondAttribute="leadingMargin" constant="-16" id="EJo-bX-RoM"/>
                             <constraint firstAttribute="centerX" secondItem="Q4u-IO-paV" secondAttribute="centerX" constant="-43.5" id="Fq7-WH-cUx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nnf-Hv-WfH" secondAttribute="trailing" constant="104" id="K73-4P-wru"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nnf-Hv-WfH" secondAttribute="trailing" constant="92" id="K73-4P-wru"/>
                             <constraint firstItem="g35-fH-bSl" firstAttribute="top" secondItem="5Hx-iX-waS" secondAttribute="bottom" constant="82" id="Mwo-v5-q0r"/>
                             <constraint firstItem="5Hx-iX-waS" firstAttribute="top" secondItem="sTB-OW-Ymv" secondAttribute="bottom" constant="35" id="Ops-gc-1MM"/>
                             <constraint firstItem="TUy-oV-AbX" firstAttribute="leading" secondItem="fhA-AT-DBX" secondAttribute="leadingMargin" constant="87" id="P2b-1Y-VVz"/>
@@ -175,7 +178,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="FoJ-ac-qsC" secondAttribute="trailing" constant="19" id="Uqr-me-PhE"/>
                             <constraint firstItem="LF3-Dr-n7d" firstAttribute="leading" secondItem="fhA-AT-DBX" secondAttribute="leadingMargin" constant="72" id="V1s-s4-0S3"/>
                             <constraint firstItem="Q4u-IO-paV" firstAttribute="top" secondItem="5Hx-iX-waS" secondAttribute="bottom" constant="13" id="VRT-U6-eof"/>
-                            <constraint firstItem="nnf-Hv-WfH" firstAttribute="leading" secondItem="fhA-AT-DBX" secondAttribute="leadingMargin" constant="104" id="VZt-Sa-FgW"/>
+                            <constraint firstItem="nnf-Hv-WfH" firstAttribute="leading" secondItem="fhA-AT-DBX" secondAttribute="leadingMargin" constant="90" id="VZt-Sa-FgW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g35-fH-bSl" secondAttribute="trailing" constant="50" id="Vj7-bj-0Fl"/>
                             <constraint firstItem="g35-fH-bSl" firstAttribute="leading" secondItem="mgp-as-73J" secondAttribute="trailing" constant="8" id="WIY-9P-nyz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LF3-Dr-n7d" secondAttribute="trailing" constant="71" id="WKs-XZ-j5H"/>
@@ -222,6 +225,7 @@
                         <outlet property="orientation" destination="FoJ-ac-qsC" id="NIc-oR-MS4"/>
                         <outlet property="phoneNumber" destination="5Hx-iX-waS" id="TZW-0j-rIU"/>
                         <outlet property="preferenceLabel" destination="2M4-HZ-dvl" id="tCf-Y1-jDc"/>
+                        <outlet property="profileImage" destination="TUy-oV-AbX" id="rUq-RO-ElG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-9n-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>

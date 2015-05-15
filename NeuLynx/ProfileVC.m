@@ -10,12 +10,13 @@
 #import "User.h"
 #import <CoreText/CoreText.h>
 
-@interface ProfileVC ()<UITextFieldDelegate>
+@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *orientation;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *preferenceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end
 
@@ -26,6 +27,9 @@
 
     [self setUpTextFieldDelegates];
     [self initialSetUp];
+
+}
+-(void)viewWillAppear:(BOOL)animated{
 
 }
 
@@ -54,6 +58,14 @@
 
     [self dismissViewControllerAnimated:YES completion:nil];
 
+}
+- (IBAction)onChooseProfilePictureTapped:(id)sender {
+    UIImagePickerController *picker = [UIImagePickerController new];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [self presentViewController:picker animated:YES completion:nil];
+    
 }
 
 - (IBAction)onBackButtonTapped:(UIBarButtonItem *)sender {
@@ -92,4 +104,28 @@
     self.phoneNumber.delegate = self;
 }
 
+
+#pragma Mark - Image Picker Delegate
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+
+            //get the image from image picker
+            UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+
+            //add the image to the array.
+    self.profileImage.image = image;
+    //dismiss the picker viewcontroller when user chooses
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+//dismiss the view controller when user cancels.
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self cancelPicker];
+    
+}
+
+//Helper Method to dismiss picker when user cancels.
+
+-(void)cancelPicker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

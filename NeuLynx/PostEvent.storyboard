@@ -76,12 +76,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-h4-loo">
-                                <rect key="frame" x="70" y="304" width="45" height="45"/>
+                                <rect key="frame" x="51" y="304" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="4iA-un-nqq"/>
-                                    <constraint firstAttribute="width" constant="45" id="ckX-ZG-khv"/>
+                                    <constraint firstAttribute="height" constant="55" id="4iA-un-nqq"/>
+                                    <constraint firstAttribute="width" constant="60" id="ckX-ZG-khv"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="gastronomy2.png">
+                                <state key="normal" backgroundImage="gastronomy2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -89,12 +89,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QT-Qi-Avz">
-                                <rect key="frame" x="117" y="304" width="45" height="45"/>
+                                <rect key="frame" x="99" y="304" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="QDc-ob-MdI"/>
-                                    <constraint firstAttribute="height" constant="45" id="jnE-oy-S99"/>
+                                    <constraint firstAttribute="width" constant="60" id="QDc-ob-MdI"/>
+                                    <constraint firstAttribute="height" constant="55" id="jnE-oy-S99"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="festival2.png">
+                                <state key="normal" backgroundImage="festivals2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -102,38 +102,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="px2-oy-wG2">
-                                <rect key="frame" x="164" y="304" width="45" height="45"/>
+                                <rect key="frame" x="152" y="304" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="1Kx-zE-xhc"/>
-                                    <constraint firstAttribute="height" constant="45" id="qBU-DX-F6J"/>
+                                    <constraint firstAttribute="width" constant="60" id="1Kx-zE-xhc"/>
+                                    <constraint firstAttribute="height" constant="55" id="qBU-DX-F6J"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="nightout2.png">
+                                <state key="normal" backgroundImage="nightout2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onNightOutButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="eJx-Aw-VtO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-zS-njF">
-                                <rect key="frame" x="211" y="304" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="qsN-rS-O33"/>
-                                    <constraint firstAttribute="height" constant="45" id="sii-HC-8wO"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="cultural2.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCulturalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="roS-S5-5eH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-OG-U0p">
-                                <rect key="frame" x="257" y="304" width="33" height="34"/>
+                                <rect key="frame" x="252" y="304" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="33" id="OQc-iv-nhD"/>
-                                    <constraint firstAttribute="height" constant="34" id="vH2-0S-DTc"/>
+                                    <constraint firstAttribute="width" constant="60" id="OQc-iv-nhD"/>
+                                    <constraint firstAttribute="height" constant="55" id="vH2-0S-DTc"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="fitness.png">
+                                <state key="normal" backgroundImage="fitness2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -149,13 +136,13 @@
                                 <color key="textColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-gx-aDJ">
-                                <rect key="frame" x="24" y="304" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ri8-gx-aDJ">
+                                <rect key="frame" x="0.0" y="304" width="60" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="1bu-Bu-lvf"/>
-                                    <constraint firstAttribute="height" constant="45" id="rMf-NU-Xgx"/>
+                                    <constraint firstAttribute="width" constant="60" id="1bu-Bu-lvf"/>
+                                    <constraint firstAttribute="height" constant="55" id="rMf-NU-Xgx"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="outdoors2.png">
+                                <state key="normal" backgroundImage="outdoors2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -204,14 +191,27 @@
                                     <action selector="onPickSecondImageButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="qnU-ZX-EE4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-zS-njF">
+                                <rect key="frame" x="203" y="304" width="60" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="qsN-rS-O33"/>
+                                    <constraint firstAttribute="height" constant="55" id="sii-HC-8wO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cultural2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCulturalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="roS-S5-5eH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ri8-gx-aDJ" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="8" id="0wa-S8-eDm"/>
+                            <constraint firstItem="ri8-gx-aDJ" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="-16" id="0wa-S8-eDm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EA7-a7-7yN" secondAttribute="trailing" constant="83" id="4Iz-nS-K9R"/>
                             <constraint firstItem="Vvm-Xr-pfC" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="19" id="4rd-HP-f9I"/>
-                            <constraint firstItem="gi9-OG-U0p" firstAttribute="leading" secondItem="H0T-zS-njF" secondAttribute="trailing" constant="1" id="5iE-hm-Gbe"/>
-                            <constraint firstItem="px2-oy-wG2" firstAttribute="leading" secondItem="8QT-Qi-Avz" secondAttribute="trailing" constant="2" id="BBK-4N-4BC"/>
+                            <constraint firstItem="gi9-OG-U0p" firstAttribute="leading" secondItem="H0T-zS-njF" secondAttribute="trailing" constant="-11" id="5iE-hm-Gbe"/>
+                            <constraint firstItem="px2-oy-wG2" firstAttribute="leading" secondItem="8QT-Qi-Avz" secondAttribute="trailing" constant="-7" id="BBK-4N-4BC"/>
                             <constraint firstItem="H0T-zS-njF" firstAttribute="top" secondItem="EA7-a7-7yN" secondAttribute="bottom" constant="13" id="Bc7-j5-QYF"/>
                             <constraint firstItem="Y2d-uQ-slX" firstAttribute="top" secondItem="Vvm-Xr-pfC" secondAttribute="bottom" constant="2" id="FUy-u1-jBd"/>
                             <constraint firstItem="EA7-a7-7yN" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="83" id="Fy7-eS-jIW"/>
@@ -221,7 +221,7 @@
                             <constraint firstAttribute="centerX" secondItem="o3k-hi-eDF" secondAttribute="centerX" constant="62" id="KnW-MA-Htm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lhC-9o-qD2" secondAttribute="trailing" constant="19" id="MYS-m7-yKL"/>
                             <constraint firstItem="Edd-h4-loo" firstAttribute="top" secondItem="EA7-a7-7yN" secondAttribute="bottom" constant="13" id="PE0-ca-DY6"/>
-                            <constraint firstItem="8QT-Qi-Avz" firstAttribute="leading" secondItem="Edd-h4-loo" secondAttribute="trailing" constant="2" id="PNe-5I-cin"/>
+                            <constraint firstItem="8QT-Qi-Avz" firstAttribute="leading" secondItem="Edd-h4-loo" secondAttribute="trailing" constant="-12" id="PNe-5I-cin"/>
                             <constraint firstItem="OlT-C1-bbn" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="19" id="Q4Q-a7-EY8"/>
                             <constraint firstAttribute="centerX" secondItem="PAn-Pj-3ku" secondAttribute="centerX" constant="-56" id="QMh-NQ-Fu9"/>
                             <constraint firstItem="7FH-BW-z1D" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="-16" id="Qr1-EW-6L5"/>
@@ -234,7 +234,7 @@
                             <constraint firstItem="e2A-mc-6Xb" firstAttribute="top" secondItem="mVe-Fl-Usv" secondAttribute="bottom" constant="8" id="ZkY-Ax-VNY"/>
                             <constraint firstItem="7FH-BW-z1D" firstAttribute="top" secondItem="Qfx-if-9lP" secondAttribute="topMargin" constant="-5" id="Zr3-pg-iBx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e2A-mc-6Xb" secondAttribute="trailing" constant="19" id="bDv-F2-apK"/>
-                            <constraint firstItem="Edd-h4-loo" firstAttribute="leading" secondItem="ri8-gx-aDJ" secondAttribute="trailing" constant="1" id="fBk-Re-UXF"/>
+                            <constraint firstItem="Edd-h4-loo" firstAttribute="leading" secondItem="ri8-gx-aDJ" secondAttribute="trailing" constant="-9" id="fBk-Re-UXF"/>
                             <constraint firstItem="ri8-gx-aDJ" firstAttribute="top" secondItem="Y2d-uQ-slX" secondAttribute="bottom" constant="42" id="g9I-Rf-lFc"/>
                             <constraint firstItem="oeX-RF-dJh" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="74" id="hMV-0b-HPN"/>
                             <constraint firstItem="lhC-9o-qD2" firstAttribute="top" secondItem="n4V-AS-oix" secondAttribute="bottom" constant="2" id="hNS-O4-c4Q"/>
@@ -245,13 +245,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Y2d-uQ-slX" secondAttribute="trailing" constant="19" id="mgC-Zg-qu0"/>
                             <constraint firstItem="EA7-a7-7yN" firstAttribute="top" secondItem="Y2d-uQ-slX" secondAttribute="bottom" constant="8" id="ncn-AX-2LO"/>
                             <constraint firstItem="gi9-OG-U0p" firstAttribute="top" secondItem="Y2d-uQ-slX" secondAttribute="bottom" constant="42" id="npe-fW-M5D"/>
-                            <constraint firstItem="oeX-RF-dJh" firstAttribute="top" secondItem="H0T-zS-njF" secondAttribute="bottom" constant="8" id="p5w-GN-rj2"/>
+                            <constraint firstItem="oeX-RF-dJh" firstAttribute="top" secondItem="H0T-zS-njF" secondAttribute="bottom" constant="-2" id="p5w-GN-rj2"/>
                             <constraint firstAttribute="centerX" secondItem="vvb-AI-djW" secondAttribute="centerX" constant="-56" id="pW8-HR-El3"/>
                             <constraint firstItem="Vvm-Xr-pfC" firstAttribute="top" secondItem="OlT-C1-bbn" secondAttribute="bottom" constant="2" id="qDA-HF-Gfk"/>
                             <constraint firstItem="n4V-AS-oix" firstAttribute="top" secondItem="e2A-mc-6Xb" secondAttribute="bottom" constant="2" id="qq2-Eq-ZKI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OlT-C1-bbn" secondAttribute="trailing" constant="19" id="rnd-ZD-PXu"/>
                             <constraint firstItem="px2-oy-wG2" firstAttribute="top" secondItem="EA7-a7-7yN" secondAttribute="bottom" constant="13" id="s5b-VX-RtI"/>
-                            <constraint firstItem="H0T-zS-njF" firstAttribute="leading" secondItem="px2-oy-wG2" secondAttribute="trailing" constant="2" id="teI-GT-uEo"/>
+                            <constraint firstItem="H0T-zS-njF" firstAttribute="leading" secondItem="px2-oy-wG2" secondAttribute="trailing" constant="-9" id="teI-GT-uEo"/>
                             <constraint firstAttribute="centerX" secondItem="51W-87-vm8" secondAttribute="centerX" constant="62" id="xtN-tu-6sM"/>
                             <constraint firstItem="o3k-hi-eDF" firstAttribute="top" secondItem="oeX-RF-dJh" secondAttribute="bottom" constant="8" id="zU3-nY-Ekk"/>
                             <constraint firstItem="Y2d-uQ-slX" firstAttribute="leading" secondItem="Qfx-if-9lP" secondAttribute="leadingMargin" constant="19" id="zyL-Zx-jht"/>
@@ -278,6 +278,7 @@
                         <outlet property="activityStartTime" destination="Vvm-Xr-pfC" id="CpK-jY-uuQ"/>
                         <outlet property="activityTitle" destination="e2A-mc-6Xb" id="ISK-kA-sKZ"/>
                         <outlet property="image1" destination="51W-87-vm8" id="aOB-Jp-g8o"/>
+                        <outlet property="image2" destination="vvb-AI-djW" id="Yoz-N0-XCS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9iP-2o-sgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -306,12 +307,12 @@
     </scenes>
     <resources>
         <image name="backBackground" width="750" height="1334"/>
-        <image name="cultural2.png" width="60" height="60"/>
-        <image name="festival2.png" width="60" height="60"/>
-        <image name="fitness.png" width="1250" height="1250"/>
-        <image name="gastronomy2.png" width="60" height="60"/>
+        <image name="cultural2" width="417" height="417"/>
+        <image name="festivals2" width="417" height="417"/>
+        <image name="fitness2" width="417" height="417"/>
+        <image name="gastronomy2" width="417" height="417"/>
         <image name="imagePlaceholder.png" width="300" height="252"/>
-        <image name="nightout2.png" width="60" height="60"/>
-        <image name="outdoors2.png" width="60" height="60"/>
+        <image name="nightout2" width="417" height="417"/>
+        <image name="outdoors2" width="417" height="417"/>
     </resources>
 </document>

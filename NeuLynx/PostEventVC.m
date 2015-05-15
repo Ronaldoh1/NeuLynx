@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *activityEndTime;
 @property NSMutableArray *imageArray;
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
+@property (weak, nonatomic) IBOutlet UIImageView *image2;
+@property BOOL isFirstImagePicked;
+@property BOOL isSecondImagePicked;
 
 
 @end
@@ -32,6 +35,8 @@
 -(void)viewWillAppear:(BOOL)animated{
     if (self.imageArray.count == 1){
         self.image1.image = self.imageArray[0];
+    }else if(self.imageArray.count == 2){
+        self.image2.image = self.imageArray[1];
     }
 }
 -(void)initialSetUp{
@@ -64,6 +69,7 @@
 - (IBAction)onFitnessButtonTapped:(UIButton *)sender {
 }
 - (IBAction)onPickFirstImageButtonTapped:(UIButton *)sender {
+    self.isFirstImagePicked = YES;
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -73,6 +79,7 @@
 }
 
 - (IBAction)onPickSecondImageButtonTapped:(UIButton *)sender {
+    self.isSecondImagePicked = YES;
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self;
     picker.allowsEditing = YES;
@@ -146,15 +153,53 @@
 #pragma Mark - Image Picker Delegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
-    //get the image from image picker
-    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    if(self.isFirstImagePicked == YES){
+        self.isFirstImagePicked = NO;
 
-    //add the image to the array.
-    [self.imageArray addObject:image];
 
+    if (self.imageArray.count == 0) {
+        //get the image from image picker
+        UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+
+        //add the image to the array.
+        [self.imageArray addObject:image];
+
+
+
+    }else if(self.imageArray[0] != nil){
+        [self.imageArray removeObjectAtIndex:0];
+
+        //get the image from image picker
+        UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+
+        //add the image to the array.
+        [self.imageArray insertObject:image atIndex:0];
+
+    }
+
+    }else if(self.isSecondImagePicked == YES){
+        self.isSecondImagePicked = NO;
+        if (self.imageArray.count == 1) {
+
+            //get the image from image picker
+            UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+
+            //add the image to the array.
+            [self.imageArray insertObject:image atIndex:1];
+
+
+
+        }else if(self.imageArray[1] != nil){
+            [self.imageArray removeObjectAtIndex:1];
+
+            //get the image from image picker
+            UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+            [self.imageArray insertObject:image atIndex:1];
+        }
+
+    }
     //dismiss the picker viewcontroller when user chooses
-    [self dismissViewControllerAnimated:picker completion:nil];
-
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 //dismiss the view controller when user cancels.
