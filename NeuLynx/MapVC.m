@@ -90,6 +90,16 @@
 
 -(void)performInitialSetup{
 
+    //Set the Title and Color
+
+    //setting image to Navigation Bar's title
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
+    titleView.text = @"NeuLynx";
+    titleView.textColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0];
+    [self.navigationItem setTitleView:titleView];
+
     //Check if the user has previously used the app.
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasBeenRun"]) {

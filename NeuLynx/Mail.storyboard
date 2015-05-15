@@ -7,7 +7,7 @@
         <!--Requests & Messages-->
         <scene sceneID="qWy-Nr-YYb">
             <objects>
-                <viewController id="oxB-yv-yI1" sceneMemberID="viewController">
+                <viewController id="oxB-yv-yI1" customClass="MailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c3o-zD-ClE"/>
                         <viewControllerLayoutGuide type="bottom" id="zlD-5k-x8i"/>

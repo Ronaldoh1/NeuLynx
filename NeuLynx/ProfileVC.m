@@ -8,12 +8,14 @@
 
 #import "ProfileVC.h"
 #import "User.h"
+#import <CoreText/CoreText.h>
 
 @interface ProfileVC ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *orientation;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UILabel *preferenceLabel;
 
 @end
 
@@ -23,9 +25,27 @@
     [super viewDidLoad];
 
     [self setUpTextFieldDelegates];
+    [self initialSetUp];
 
 }
 
+-(void)initialSetUp{
+
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
+    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
+                      value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
+                      range:(NSRange){0,[attString length]}];
+    self.preferenceLabel.attributedText = attString;
+    self.preferenceLabel.textColor = [UIColor yellowColor];
+
+    //setting image to Navigation Bar's title
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
+    titleView.text = @"Profile";
+    titleView.textColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0];
+    [self.navigationItem setTitleView:titleView];
+}
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
 
     [User logOut];

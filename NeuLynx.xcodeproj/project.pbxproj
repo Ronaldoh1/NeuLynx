@@ -101,6 +101,12 @@
 		F2FE7E701B05144500CDD057 /* fr.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E6F1B05144500CDD057 /* fr.png */; };
 		F2FE7E721B05146100CDD057 /* br.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E711B05146100CDD057 /* br.png */; };
 		F2FE7E741B0519EB00CDD057 /* editbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E731B0519EB00CDD057 /* editbutton.png */; };
+		F2FE7E781B055D1E00CDD057 /* nightout2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E771B055D1E00CDD057 /* nightout2.png */; };
+		F2FE7E7A1B055D3300CDD057 /* festival2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E791B055D3200CDD057 /* festival2.png */; };
+		F2FE7E7C1B055D4200CDD057 /* cultural2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E7B1B055D4200CDD057 /* cultural2.png */; };
+		F2FE7E7E1B055D6200CDD057 /* outdoors2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E7D1B055D6200CDD057 /* outdoors2.png */; };
+		F2FE7E801B055DE500CDD057 /* gastronomy2.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E7F1B055DE500CDD057 /* gastronomy2.png */; };
+		F2FE7E821B0583F700CDD057 /* imagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +230,12 @@
 		F2FE7E6F1B05144500CDD057 /* fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fr.png; sourceTree = "<group>"; };
 		F2FE7E711B05146100CDD057 /* br.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = br.png; sourceTree = "<group>"; };
 		F2FE7E731B0519EB00CDD057 /* editbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton.png; sourceTree = "<group>"; };
+		F2FE7E771B055D1E00CDD057 /* nightout2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightout2.png; sourceTree = "<group>"; };
+		F2FE7E791B055D3200CDD057 /* festival2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festival2.png; sourceTree = "<group>"; };
+		F2FE7E7B1B055D4200CDD057 /* cultural2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cultural2.png; sourceTree = "<group>"; };
+		F2FE7E7D1B055D6200CDD057 /* outdoors2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors2.png; sourceTree = "<group>"; };
+		F2FE7E7F1B055DE500CDD057 /* gastronomy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomy2.png; sourceTree = "<group>"; };
+		F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagePlaceholder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +420,12 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */,
+				F2FE7E7D1B055D6200CDD057 /* outdoors2.png */,
+				F2FE7E7B1B055D4200CDD057 /* cultural2.png */,
+				F2FE7E7F1B055DE500CDD057 /* gastronomy2.png */,
+				F2FE7E791B055D3200CDD057 /* festival2.png */,
+				F2FE7E771B055D1E00CDD057 /* nightout2.png */,
 				F2FE7E731B0519EB00CDD057 /* editbutton.png */,
 				F2FE7E6D1B05143800CDD057 /* us.png */,
 				F2FE7E6B1B05142600CDD057 /* spa.png */,
@@ -590,17 +608,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FE7E781B055D1E00CDD057 /* nightout2.png in Resources */,
 				F2FE7E741B0519EB00CDD057 /* editbutton.png in Resources */,
+				F2FE7E821B0583F700CDD057 /* imagePlaceholder.png in Resources */,
+				F2FE7E7C1B055D4200CDD057 /* cultural2.png in Resources */,
 				F25BFC391AFB26C000B2C5BA /* AppIcon50x50~ipad.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
 				F25BFC301AFB26C000B2C5BA /* AppIcon29x29@2x.png in Resources */,
 				F25BFC351AFB26C000B2C5BA /* AppIcon40x40@2x~ipad.png in Resources */,
+				F2FE7E801B055DE500CDD057 /* gastronomy2.png in Resources */,
 				F25BFC321AFB26C000B2C5BA /* AppIcon29x29@3x.png in Resources */,
 				F2576E161B01C0200006C8E1 /* mailIcon.png in Resources */,
 				F2576E181B023EE60006C8E1 /* signInWithTwitterButton.png in Resources */,
 				F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
 				F28519101AFACE75007A45FA /* launchScreen.png in Resources */,
+				F2FE7E7E1B055D6200CDD057 /* outdoors2.png in Resources */,
 				F2576E101B01BA8E0006C8E1 /* fitness.png in Resources */,
 				F2576E0F1B01BA8E0006C8E1 /* outdoors.png in Resources */,
 				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
@@ -649,6 +672,7 @@
 				F25BFC421AFB26C000B2C5BA /* AppIcon120x120_carplay.png in Resources */,
 				F28519531AFAED9F007A45FA /* or.png in Resources */,
 				F2576E221B02D5A80006C8E1 /* post.png in Resources */,
+				F2FE7E7A1B055D3300CDD057 /* festival2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
