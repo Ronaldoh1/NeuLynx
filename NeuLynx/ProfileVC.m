@@ -35,6 +35,14 @@
 
 -(void)initialSetUp{
 
+    //Make profile image round
+
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
+    self.profileImage.layer.masksToBounds = YES;
+    self.profileImage.layer.borderWidth = 4.0;
+    self.profileImage.layer.borderColor = [UIColor yellowColor].CGColor;
+    
+
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
     [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
                       value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
