@@ -120,6 +120,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ees-Dz-nTx" id="dMm-FH-e5f">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FN7-4F-Bhy" kind="show" id="qke-cB-opi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -192,7 +195,6 @@
                         <outlet property="phoneNumber" destination="5Hx-iX-waS" id="TZW-0j-rIU"/>
                         <outlet property="profileImage" destination="TUy-oV-AbX" id="rUq-RO-ElG"/>
                         <outlet property="tableView" destination="lDr-fu-sem" id="qm6-uv-BF6"/>
-                        <segue destination="FN7-4F-Bhy" kind="show" id="gCO-QP-TRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-9n-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +217,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pTg-ic-5ha">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="pTg-ic-5ha">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTg-ic-5ha" id="RcT-tI-TYD">
                                             <autoresizingMask key="autoresizingMask"/>
