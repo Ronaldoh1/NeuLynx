@@ -121,11 +121,11 @@
 
     //check if the user is logged in. If he is, then allow the profile image to be tapable
 
-    if ([User currentUser] == nil) {
-        self.navigationItem.leftBarButtonItem.enabled = NO;
-    }else{
-        self.navigationItem.leftBarButtonItem.enabled = YES;
-    }
+//    if ([User currentUser] == nil) {
+//        self.navigationItem.leftBarButtonItem.enabled = NO;
+//    }else{
+//        self.navigationItem.leftBarButtonItem.enabled = YES;
+//    }
 
 }
 -(void)dismissKeyboard{
@@ -248,11 +248,18 @@
 
 -(void)profileImageTapped:(UIBarButtonItem* )sender{
     NSLog(@"Image tapped");
-    //    //create the second tab - get the storybody, then use the storyboard to present the first view controller
-    //    //also set an image for the first tab.
-        UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-        UITabBarController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
-    [self presentViewController:profileNavVC animated:YES completion:nil];
+
+    //present the account view controller to display menus for user
+    //if the current user does not exist, then make him/her sign up.
+    if ([User currentUser] == nil) {
+        [self presentActionSheetToLogInUser];
+
+    }else{
+        UIStoryboard *accountStoryboard = [UIStoryboard storyboardWithName:@"Account" bundle:nil];
+        UITabBarController *AccountAndSettingsNavVC = [accountStoryboard instantiateViewControllerWithIdentifier:@"accountAndSettingsNavVC"];
+    [self presentViewController:AccountAndSettingsNavVC animated:YES completion:nil];
+
+    }
 }
 
 

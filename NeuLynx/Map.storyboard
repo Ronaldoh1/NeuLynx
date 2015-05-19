@@ -29,10 +29,17 @@
                                     <constraint firstAttribute="width" constant="320" id="Ofr-QE-oAU"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ofr-QE-oAU"/>
+                                    </mask>
+                                </variation>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DSL-s4-Shd" secondAttribute="trailing" constant="-16" id="0hw-Gl-1KP"/>
+                            <constraint firstItem="DSL-s4-Shd" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="2Lm-M8-gx0"/>
                             <constraint firstItem="DSL-s4-Shd" firstAttribute="top" secondItem="GQj-2a-Y8K" secondAttribute="bottom" id="C8M-ef-29v"/>
                             <constraint firstItem="DSL-s4-Shd" firstAttribute="leading" secondItem="oKg-sS-Qbh" secondAttribute="leading" id="EGl-5b-EsO"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="top" secondItem="nCP-oT-zPp" secondAttribute="topMargin" id="c7e-NI-fiH"/>

@@ -49,7 +49,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"Post Activity";
-    titleView.textColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0];
+    titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 }
 

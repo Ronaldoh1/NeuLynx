@@ -28,15 +28,15 @@
 -(void)setUpTabBars{
     //set up the tint for the tabbar
 
-    [[UITabBar appearance] setTintColor:[UIColor yellowColor]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]];
 
     //create the first tab - get the storybody, then use the storyboard to present the first view controller
     //also set an image for the first tab.
     UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Map" bundle:nil];
     UITabBarController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MapNavVC"];
     [self addChildViewController:mapNavVC];
-    mapNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"mapIcon"] scaledToSize:CGSizeMake(35, 35)];
+    mapNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"mapTabButton"] scaledToSize:CGSizeMake(35, 35)];
     mapNavVC.tabBarItem.title = @"Map";
 
 

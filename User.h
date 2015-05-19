@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface User : PFUser<PFSubclassing>
-@property NSString *name;
+@property NSString *name; 
 
 
 @end

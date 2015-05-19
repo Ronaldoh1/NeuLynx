@@ -10,13 +10,16 @@
 #import "User.h"
 #import <CoreText/CoreText.h>
 
-@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *orientation;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
 @property (weak, nonatomic) IBOutlet UILabel *preferenceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property NSArray *preferencesSelectionArray;
 
 @end
 
@@ -35,12 +38,16 @@
 
 -(void)initialSetUp{
 
+    //Set the preferences
+
+    self.preferencesSelectionArray = @[@"Travel Preferences", @"Personality"];
+
     //Make profile image round
 
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
-    self.profileImage.layer.borderColor = [UIColor yellowColor].CGColor;
+    self.profileImage.layer.borderColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1].CGColor;
     
 
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
@@ -55,7 +62,7 @@
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"Profile";
-    titleView.textColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0];
+    titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 }
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
@@ -136,4 +143,42 @@
 -(void)cancelPicker{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - UITableView Delegate Methods
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    //set the cell's row to preferences array.
+    cell.textLabel.text = self.preferencesSelectionArray[indexPath.row];
+
+    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+
+    //center the text
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+
+    //change the background color
+    cell.backgroundColor = [UIColor clearColor];
+
+    //Add background image to table view
+    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+
+    //change the selection color
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    [cell setSelectedBackgroundView:bgColorView];
+
+    //change the color of scrollbar
+    tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+
+    return cell;
+
+
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.preferencesSelectionArray.count;
+}
+
 @end
