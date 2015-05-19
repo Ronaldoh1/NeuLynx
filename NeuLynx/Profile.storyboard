@@ -192,11 +192,52 @@
                         <outlet property="phoneNumber" destination="5Hx-iX-waS" id="TZW-0j-rIU"/>
                         <outlet property="profileImage" destination="TUy-oV-AbX" id="rUq-RO-ElG"/>
                         <outlet property="tableView" destination="lDr-fu-sem" id="qm6-uv-BF6"/>
+                        <segue destination="FN7-4F-Bhy" kind="show" id="gCO-QP-TRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb7-9n-ci3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="975" y="474"/>
+        </scene>
+        <!--Travel Preferences-->
+        <scene sceneID="dfb-ZK-XRz">
+            <objects>
+                <viewController id="FN7-4F-Bhy" customClass="TravelPreferencesVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yan-9n-2cJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Xo-hS-0lo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i1S-MQ-Xnm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PPi-hs-c4i">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pTg-ic-5ha">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTg-ic-5ha" id="RcT-tI-TYD">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PPi-hs-c4i" firstAttribute="top" secondItem="i1S-MQ-Xnm" secondAttribute="topMargin" id="FOK-CO-f1e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PPi-hs-c4i" secondAttribute="trailing" constant="-16" id="ouz-2K-WCx"/>
+                            <constraint firstItem="PPi-hs-c4i" firstAttribute="leading" secondItem="i1S-MQ-Xnm" secondAttribute="leadingMargin" constant="-16" id="tNA-cE-SOb"/>
+                            <constraint firstItem="6Xo-hS-0lo" firstAttribute="top" secondItem="PPi-hs-c4i" secondAttribute="bottom" id="wh0-CW-myV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Travel Preferences" id="bit-qz-PXu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmx-69-z7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="247"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R6Q-HJ-g4P">

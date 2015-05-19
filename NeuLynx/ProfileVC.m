@@ -160,6 +160,11 @@
     //change the background color
     cell.backgroundColor = [UIColor clearColor];
 
+    //add accessory to each cell
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+
     //Add background image to table view
     tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
 
@@ -179,6 +184,12 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return self.preferencesSelectionArray.count;
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
 }
 
 @end

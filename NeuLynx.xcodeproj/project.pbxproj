@@ -110,6 +110,7 @@
 		F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E941B0A31AC00CDD057 /* Account.storyboard */; };
 		F2FE7E981B0A343200CDD057 /* AccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E971B0A343200CDD057 /* AccountVC.m */; };
 		F2FE7E9A1B0AF0C900CDD057 /* spa.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E991B0AF0C900CDD057 /* spa.png */; };
+		F2FE7E9D1B0B03CB00CDD057 /* TravelPreferencesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E9C1B0B03CB00CDD057 /* TravelPreferencesVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,8 @@
 		F2FE7E961B0A343200CDD057 /* AccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountVC.h; sourceTree = "<group>"; };
 		F2FE7E971B0A343200CDD057 /* AccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountVC.m; sourceTree = "<group>"; };
 		F2FE7E991B0AF0C900CDD057 /* spa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spa.png; sourceTree = "<group>"; };
+		F2FE7E9B1B0B03CB00CDD057 /* TravelPreferencesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelPreferencesVC.h; sourceTree = "<group>"; };
+		F2FE7E9C1B0B03CB00CDD057 /* TravelPreferencesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelPreferencesVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +412,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519241AFADADA007A45FA /* Profile.storyboard */,
+				F2FE7E9B1B0B03CB00CDD057 /* TravelPreferencesVC.h */,
+				F2FE7E9C1B0B03CB00CDD057 /* TravelPreferencesVC.m */,
 				F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */,
 				F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */,
 			);
@@ -720,6 +725,7 @@
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */,
+				F2FE7E9D1B0B03CB00CDD057 /* TravelPreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentViewController.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
