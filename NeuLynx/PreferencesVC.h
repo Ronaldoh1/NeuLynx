@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TravelPreferencesVC : UIViewController
+@interface PreferencesVC : UIViewController
+@property int vCtoPresent;
+@property NSString *navBarTitle;
 
 @end

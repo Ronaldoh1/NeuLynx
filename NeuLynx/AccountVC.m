@@ -9,6 +9,7 @@
 #import "AccountVC.h"
 #import "User.h"
 
+
 @interface AccountVC ()<UITableViewDelegate, UITableViewDataSource>
 @property NSArray *menuArray;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -102,6 +103,12 @@
     return self.menuArray.count;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+
+
+
+}
 
 
 @end

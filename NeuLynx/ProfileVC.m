@@ -8,6 +8,7 @@
 
 #import "ProfileVC.h"
 #import "User.h"
+#import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
 
 @interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -148,6 +149,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
 
     //set the cell's row to preferences array.
     cell.textLabel.text = self.preferencesSelectionArray[indexPath.row];
@@ -189,6 +191,13 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([[segue identifier]isEqualToString:@"toPreferenceSelection"]){
+        PreferencesVC *destinationVC = [segue destinationViewController];
+
+        destinationVC.navBarTitle = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text;
+        
+    }
 
 }
 
