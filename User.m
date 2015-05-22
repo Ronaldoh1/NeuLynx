@@ -10,6 +10,10 @@
 
 @implementation User
 @dynamic name;
+@dynamic profileImage;
+@dynamic userHomeLocation;
+@dynamic gender;
+@dynamic orientation;
 
 +(void)load {
     [self registerSubclass];

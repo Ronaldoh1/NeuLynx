@@ -11,16 +11,30 @@
 #import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
 
-@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource >
 @property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *gender;
-@property (weak, nonatomic) IBOutlet UITextField *orientation;
+
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
-@property (weak, nonatomic) IBOutlet UILabel *preferenceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
+@property NSString *selectedEntry;
+
+@property BOOL genderArraySelected;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *genderPicker;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *orientationPicker;
+@property NSMutableArray *languageArray;
+
+
 @property NSArray *preferencesSelectionArray;
+
+//****Language Buttons******
+@property (weak, nonatomic) IBOutlet UIButton *portugueseButton;
+@property (weak, nonatomic) IBOutlet UIButton *spanishButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *EnglishButton;
+@property (weak, nonatomic) IBOutlet UIButton *frenchButton;
 
 @end
 
@@ -39,6 +53,14 @@
 
 -(void)initialSetUp{
 
+
+    //Change the Tint For segmented controls.
+    [self.genderPicker setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
+    [self.orientationPicker setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
+    self.genderArraySelected = NO;
+    //Hide the secondary view initially
+
+
     //Set the preferences
 
     self.preferencesSelectionArray = @[@"Travel Preferences", @"Personality"];
@@ -51,12 +73,12 @@
     self.profileImage.layer.borderColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1].CGColor;
     
 
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
-    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
-                      value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
-                      range:(NSRange){0,[attString length]}];
-    self.preferenceLabel.attributedText = attString;
-    self.preferenceLabel.textColor = [UIColor yellowColor];
+//    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
+//    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
+//                      value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
+//                      range:(NSRange){0,[attString length]}];
+//    self.preferenceLabel.attributedText = attString;
+//    self.preferenceLabel.textColor = [UIColor yellowColor];
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -66,6 +88,28 @@
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 }
+
+
+//**************Adding and Removing languages**********
+
+- (IBAction)onPortugueseButtonTapped:(UIButton *)sender {
+
+    if ([self.languageArray containsObject:@"Portuguese"] == YES) {
+        [self.languageArray removeObject:@"Portuguese"];
+    }else{
+        [self.languageArray addObject:@"Portuguese"];
+
+    }
+}
+- (IBAction)onSpanishButtonTapped:(UIButton *)sender {
+
+}
+- (IBAction)onEnglishbuttonTapped:(UIButton *)sender {
+}
+
+- (IBAction)onFrenchButtonTapped:(UIButton *)sender {
+}
+
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
 
     [User logOut];
@@ -88,7 +132,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 #pragma Marks - hiding keyboard
+//hide keyboard when the user clicks return
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
 
@@ -100,6 +147,26 @@
 {
     [self.view endEditing:YES];
 }
+
+//move the view when the user clicks on a textfield
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+
+    return YES;
+}
+//move the view when the keyboard hides.
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
+    [self.view endEditing:YES];
+    return YES;
+}
+
+
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     // Assign new frame to your view
@@ -115,8 +182,6 @@
 //Helper method to set up the textfield delegates
 -(void)setUpTextFieldDelegates{
     self.name.delegate = self;
-    self.gender.delegate = self;
-    self.orientation.delegate = self;
     self.phoneNumber.delegate = self;
 }
 
@@ -196,9 +261,52 @@
         PreferencesVC *destinationVC = [segue destinationViewController];
 
         destinationVC.navBarTitle = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]].textLabel.text;
-        
+        destinationVC.vCtoPresent = ((int)[self.tableView indexPathForSelectedRow].row);
     }
 
 }
+
+//#pragma mark - UIPickerView Delegate methods
+////THen number of columns of data.
+//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+//
+//    return 1;
+//}
+////the number of rows  of data
+//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+//    if (pickerView == self.genderPicker) {
+//        return self.genderArray.count;
+//    }else {
+//        return self.orientationArray.count;
+//    }
+//
+//}
+//
+////return the data for the row and component column that's being passed in .
+//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//
+//    if (pickerView == self.genderPicker) {
+//          return self.genderArray[row];
+//    }else{
+//        return self.orientationArray[row];
+//    }
+//
+//
+//}
+//
+////get the selected value of picker.
+//
+//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+//
+//    if (pickerView == self.genderPicker) {
+//         self.selectedEntry = [self.genderArray objectAtIndex:row];
+//    }else{
+//         self.selectedEntry = [self.orientationArray objectAtIndex:row];
+//    }
+//
+//}
+//
+
+
 
 @end

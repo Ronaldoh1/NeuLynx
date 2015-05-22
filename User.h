@@ -10,7 +10,12 @@
 #import <Parse/Parse.h>
 
 @interface User : PFUser<PFSubclassing>
-@property NSString *name; 
+@property NSString *name;
+@property PFFile *profileImage;
+@property PFGeoPoint *userHomeLocation;
+@property NSString *gender;
+@property NSString *orientation;
+@property NSMutableArray *languageArray;
 
 
 @end

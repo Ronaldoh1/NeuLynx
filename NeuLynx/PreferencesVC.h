@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PreferencesVC : UIViewController
+// 0 = Travel Preferences VC,  1 = Personality VC
 @property int vCtoPresent;
 @property NSString *navBarTitle;
 
