@@ -47,6 +47,10 @@
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in with Twitter!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
+            UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+            UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+            [self presentViewController:profileNavVC animated:YES completion:nil];
+
         } else {
             NSLog(@"User logged in with Twitter!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
@@ -67,15 +71,18 @@
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
+            UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+            UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+            [self presentViewController:profileNavVC animated:YES completion:nil];
+            
         } else {
             NSLog(@"User logged in through Facebook!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
-
-
 }
+
 - (IBAction)onCancelButtonTapped:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 

@@ -223,7 +223,6 @@
 //move the view when the user clicks on a textfield
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 

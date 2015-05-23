@@ -63,6 +63,11 @@
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
+            
+            UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+            UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+            [self presentViewController:profileNavVC animated:YES completion:nil];
+
         } else {
             NSLog(@"User logged in through Facebook!");
             self.navigationItem.leftBarButtonItem.enabled = YES;
@@ -70,6 +75,24 @@
     }];
 
 
+}
+- (IBAction)onSignUpWithTwitter:(UIButton *)sender {
+    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Twitter login.");
+            return;
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in with Twitter!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+            UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+            UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+            [self presentViewController:profileNavVC animated:YES completion:nil];
+
+        } else {
+            NSLog(@"User logged in with Twitter!");
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+        }
+    }];
 }
 
 - (IBAction)onSignUpButtonTapped:(UIButton *)sender {

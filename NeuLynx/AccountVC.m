@@ -57,11 +57,13 @@
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//display the profile view to allow the user to edit.
 - (IBAction)onViewProfileButtonTapped:(UIButton *)sender {
 
-    //    //also set an image for the first tab.
+
         UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-        UITabBarController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+        UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
         [self presentViewController:profileNavVC animated:YES completion:nil];
 
 }

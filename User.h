@@ -16,6 +16,9 @@
 @property NSString *gender;
 @property NSString *orientation;
 @property NSMutableArray *languageArray;
+@property NSString *age;
+@property NSMutableArray *travelPreferencesArray;
+@property NSMutableArray *personalityArray;
 
 
 @end

@@ -15,6 +15,9 @@
 @dynamic gender;
 @dynamic orientation;
 @dynamic languageArray;
+@dynamic personalityArray;
+@dynamic travelPreferencesArray;
+@dynamic age;
 
 
 +(void)load {

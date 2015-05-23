@@ -332,8 +332,15 @@
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in through Facebook!");
                 //enable the inbox and profile
-                self.navigationItem.leftBarButtonItem.enabled = YES;
-                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+//                self.navigationItem.leftBarButtonItem.enabled = YES;
+//                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+
+                //If the user is new then present the profile
+
+                UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+                UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+                [self presentViewController:profileNavVC animated:YES completion:nil];
+
             } else {
                 NSLog(@"User logged in through Facebook!");
                 //enable inbox and profile
