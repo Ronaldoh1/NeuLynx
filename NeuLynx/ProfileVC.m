@@ -33,7 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *portugueseButton;
 @property (weak, nonatomic) IBOutlet UIButton *spanishButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *EnglishButton;
+@property (weak, nonatomic) IBOutlet UIButton *englishButton;
 @property (weak, nonatomic) IBOutlet UIButton *frenchButton;
 
 @end
@@ -53,6 +53,15 @@
 
 -(void)initialSetUp{
 
+    // Initializing languageArray
+
+    self.languageArray = [NSMutableArray new];
+
+    //Dim the colors of language buttons
+    self.portugueseButton.alpha = 0.5;
+    self.spanishButton.alpha = 0.5;
+    self.englishButton.alpha = 0.5;
+    self.frenchButton.alpha = 0.5;
 
     //Change the Tint For segmented controls.
     [self.genderPicker setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
@@ -96,18 +105,40 @@
 
     if ([self.languageArray containsObject:@"Portuguese"] == YES) {
         [self.languageArray removeObject:@"Portuguese"];
+        self.portugueseButton.alpha = 0.5;
     }else{
         [self.languageArray addObject:@"Portuguese"];
-
+        self.portugueseButton.alpha =  1.0;
     }
 }
 - (IBAction)onSpanishButtonTapped:(UIButton *)sender {
-
+    if ([self.languageArray containsObject:@"Spanish"] == YES) {
+        [self.languageArray removeObject:@"Spanish"];
+        self.spanishButton.alpha = 0.5;
+    }else{
+        [self.languageArray addObject:@"Spanish"];
+        self.spanishButton.alpha =  1.0;
+    }
 }
 - (IBAction)onEnglishbuttonTapped:(UIButton *)sender {
+
+    if ([self.languageArray containsObject:@"English"] == YES) {
+        [self.languageArray removeObject:@"English"];
+        self.englishButton.alpha = 0.5;
+    }else{
+        [self.languageArray addObject:@"English"];
+        self.englishButton.alpha =  1.0;
+    }
 }
 
 - (IBAction)onFrenchButtonTapped:(UIButton *)sender {
+    if ([self.languageArray containsObject:@"French"] == YES) {
+        [self.languageArray removeObject:@"French"];
+        self.frenchButton.alpha = 0.5;
+    }else{
+        [self.languageArray addObject:@"French"];
+        self.frenchButton.alpha =  1.0;
+    }
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {

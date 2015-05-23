@@ -14,6 +14,8 @@
 @dynamic userHomeLocation;
 @dynamic gender;
 @dynamic orientation;
+@dynamic languageArray;
+
 
 +(void)load {
     [self registerSubclass];

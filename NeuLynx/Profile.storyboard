@@ -191,7 +191,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="EnglishButton" destination="waK-0Q-xij" id="E0c-Bi-22G"/>
+                        <outlet property="englishButton" destination="waK-0Q-xij" id="rFL-TJ-gCM"/>
                         <outlet property="frenchButton" destination="Q4u-IO-paV" id="E5n-FU-VaD"/>
                         <outlet property="genderPicker" destination="VFb-rN-9cW" id="C7g-hz-OfS"/>
                         <outlet property="name" destination="f5m-LV-El3" id="8cX-UR-bWJ"/>
