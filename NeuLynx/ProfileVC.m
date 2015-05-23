@@ -11,10 +11,10 @@
 #import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
 
-@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource >
-@property (weak, nonatomic) IBOutlet UITextField *name;
+@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -36,6 +36,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *englishButton;
 @property (weak, nonatomic) IBOutlet UIButton *frenchButton;
 
+//*********Age Picker*********
+@property (weak, nonatomic) IBOutlet UIView *secondaryView;
+@property (weak, nonatomic) IBOutlet UIPickerView *agePicker;
+@property NSMutableArray *ageArray;
+@property (weak, nonatomic) IBOutlet UIButton *doneButtonForPicker;
+
+
 @end
 
 @implementation ProfileVC
@@ -52,7 +59,31 @@
 }
 
 -(void)initialSetUp{
+    //need to change the button color for done picking age
+    self.doneButtonForPicker.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
+    //Set up the age array to display in picker.
+    self.ageArray = [NSMutableArray new];
+
+    for (int i = 18; i<100; i++){
+        [self.ageArray addObject:[[NSNumber numberWithInt:i] stringValue]];
+    }
+
+    NSLog(@"%@", self.ageArray);
+    //Hide the View and Disable the picker
+    self.secondaryView.hidden = YES;
+    self.secondaryView.userInteractionEnabled = NO;
+    self.agePicker.hidden = YES;
+    self.agePicker.userInteractionEnabled = NO;
+    //Change the color of the secondary view to yellow.
+
+    self.secondaryView.backgroundColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    //change the color of the tin for age picker.
+    [self.agePicker setTintColor:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]];
+
+    //disable age textfield
+    self.ageTextField.enabled = NO;
+    self.ageTextField.userInteractionEnabled = NO;
     // Initializing languageArray
 
     self.languageArray = [NSMutableArray new];
@@ -80,14 +111,7 @@
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
     self.profileImage.layer.borderColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1].CGColor;
-    
 
-//    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"Preferences"];
-//    [attString addAttribute:(NSString*)kCTUnderlineStyleAttributeName
-//                      value:[NSNumber numberWithInt:kCTUnderlineStyleSingle]
-//                      range:(NSRange){0,[attString length]}];
-//    self.preferenceLabel.attributedText = attString;
-//    self.preferenceLabel.textColor = [UIColor yellowColor];
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -162,8 +186,25 @@
 - (IBAction)onBackButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+        //Show the View and enable the picker
+- (IBAction)onSetAgeButtonTapped:(UIButton *)sender {
 
+    self.secondaryView.hidden = NO;
+    self.secondaryView.userInteractionEnabled = YES;
+    self.agePicker.hidden = NO;
+    self.agePicker.userInteractionEnabled = YES;
 
+}
+
+- (IBAction)onDoneButtonHideAgePicker:(UIButton *)sender {
+    //Hide the View and Disable the picker
+    self.secondaryView.hidden = YES;
+    self.secondaryView.userInteractionEnabled = NO;
+    self.agePicker.hidden = YES;
+    self.agePicker.userInteractionEnabled = NO;
+    self.ageTextField.text = self.selectedEntry;
+
+}
 
 #pragma Marks - hiding keyboard
 //hide keyboard when the user clicks return
@@ -212,8 +253,8 @@
 
 //Helper method to set up the textfield delegates
 -(void)setUpTextFieldDelegates{
-    self.name.delegate = self;
-    self.phoneNumber.delegate = self;
+    self.nameTextField.delegate = self;
+    self.ageTextField.delegate = self;
 }
 
 
@@ -297,46 +338,42 @@
 
 }
 
-//#pragma mark - UIPickerView Delegate methods
-////THen number of columns of data.
-//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-//
-//    return 1;
-//}
-////the number of rows  of data
-//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-//    if (pickerView == self.genderPicker) {
-//        return self.genderArray.count;
-//    }else {
-//        return self.orientationArray.count;
-//    }
-//
-//}
-//
-////return the data for the row and component column that's being passed in .
-//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//
-//    if (pickerView == self.genderPicker) {
-//          return self.genderArray[row];
-//    }else{
-//        return self.orientationArray[row];
-//    }
-//
-//
-//}
-//
-////get the selected value of picker.
-//
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-//
-//    if (pickerView == self.genderPicker) {
-//         self.selectedEntry = [self.genderArray objectAtIndex:row];
-//    }else{
-//         self.selectedEntry = [self.orientationArray objectAtIndex:row];
-//    }
-//
-//}
-//
+#pragma mark - UIPickerView Delegate methods
+//THen number of columns of data.
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+
+    return 1;
+}
+//the number of rows  of data
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+
+    return self.ageArray.count;
+
+}
+
+//return the data for the row and component column that's being passed in .
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+
+
+    return self.ageArray[row];
+
+}
+
+//get the selected value of picker.
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+
+
+         self.selectedEntry = [self.ageArray objectAtIndex:row];
+
+
+}
+-(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
+
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:self.ageArray[row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]}];
+
+    return attString;
+}
+
 
 
 
