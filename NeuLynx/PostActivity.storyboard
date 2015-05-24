@@ -265,7 +265,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="MKU-OA-2af">
                             <connections>
-                                <action selector="onNextButtonTapped:" destination="sq3-el-Syy" id="M50-ut-3a0"/>
+                                <action selector="onPostButtonTapped:" destination="sq3-el-Syy" id="T75-jf-PV2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

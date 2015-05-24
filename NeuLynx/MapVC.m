@@ -42,9 +42,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+       [self setUpProfileImage];
+       [self setUpFanOutButton];
 
-    [self setUpProfileImage];
-    [self setUpFanOutButton];
+  
+
+
 
 
     //GETING THE USER'S LOCATION
@@ -72,6 +75,7 @@
     if ([User currentUser] != nil) {
 
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+
 
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];

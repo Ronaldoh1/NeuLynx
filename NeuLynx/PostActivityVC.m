@@ -7,6 +7,7 @@
 //
 
 #import "PostActivityVC.h"
+#import "Activity.h"
 
 @interface PostActivityVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *activityTitle;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
 @property BOOL isFirstImagePicked;
 @property BOOL isSecondImagePicked;
+@property Activity *activity;
 
 
 @end
@@ -41,6 +43,9 @@
 }
 -(void)initialSetUp{
 
+    //Initialize the Activity
+    self.activity = [Activity new];
+
     //Initialize the image array
     self.imageArray = [NSMutableArray new];
 
@@ -57,9 +62,28 @@
     [self dismissViewControllerAnimated:YES completion:nil]; 
 
 }
-- (IBAction)onNextButtonTapped:(UIBarButtonItem *)sender {
+//- (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
+//
+//
+//
+//}
+- (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
 
+    self.activity.activityTitle =  self.activityTitle.text;
+
+
+    [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            [self displaySuccessMessage];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            // There was a problem, check error.description
+            [self displayErrorMessage:error.description];
+        }
+    }];
 }
+
 - (IBAction)onFestivalButtonTapped:(UIButton *)sender {
 }
 - (IBAction)onNightOutButtonTapped:(UIButton *)sender {
@@ -202,6 +226,30 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+
+
+//***********HELPER METHODS **************//
+
+
+//helper method to display a success message when information has been posted.
+-(void)displaySuccessMessage{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your information has been saved!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+
+
+}
+
+//helper method to display error message
+-(void)displayErrorMessage:(NSString *)error{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+}
+
 //dismiss the view controller when user cancels.
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self cancelPicker];
