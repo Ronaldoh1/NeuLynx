@@ -11,7 +11,7 @@
 #import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
 
-@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate>
+@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
@@ -42,6 +42,9 @@
 @property NSMutableArray *ageArray;
 @property (weak, nonatomic) IBOutlet UIButton *doneButtonForPicker;
 
+//*********Define Current User*******
+
+@property User *currentUser;
 
 @end
 
@@ -59,6 +62,9 @@
 }
 
 -(void)initialSetUp{
+    //*******Setup Current User*********//
+    self.currentUser = [User currentUser];
+
     //need to change the button color for done picking age
     self.doneButtonForPicker.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
@@ -165,15 +171,7 @@
     }
 }
 
-- (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-
-    [User logOut];
-    self.navigationItem.leftBarButtonItem.enabled = NO;
-    [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-}
+//********Choose Profile Image ***********
 - (IBAction)onChooseProfilePictureTapped:(id)sender {
     UIImagePickerController *picker = [UIImagePickerController new];
     picker.delegate = self;
@@ -181,6 +179,52 @@
     [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:picker animated:YES completion:nil];
     
+}
+//**********Save the user's information************
+- (IBAction)onDoneButtonTappedSaveUserInformation:(UIBarButtonItem *)sender {
+
+    self.currentUser.name = self.nameTextField.text;
+    self.currentUser.age = self.ageTextField.text;
+
+    if (self.genderPicker.selectedSegmentIndex == 0) {
+         self.currentUser.gender = @"Male";
+
+    } else if(self.genderPicker.selectedSegmentIndex == 1){
+        self.currentUser.gender = @"Female";
+    }
+    if (self.orientationPicker.selectedSegmentIndex == 0) {
+        self.currentUser.orientation = @"Straight";
+
+    } else if(self.orientationPicker.selectedSegmentIndex == 1){
+        self.currentUser.orientation = @"Bisexual";
+
+    }else if(self.orientationPicker.selectedSegmentIndex == 2){
+        self.currentUser.orientation = @"Gay";
+
+    }else if(self.orientationPicker.selectedSegmentIndex == 3){
+        self.currentUser.orientation = @"Lesbian";
+
+    }else if(self.orientationPicker.selectedSegmentIndex == 4){
+        self.currentUser.orientation = @"Transgender";
+
+    }
+
+    self.currentUser.languageArray = self.languageArray;
+
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self displaySuccessMessage];
+        } else {
+            [self displayErrorMessage:error.localizedDescription];
+
+        }
+    }];
+
+
+
+
+
+
 }
 
 - (IBAction)onBackButtonTapped:(UIBarButtonItem *)sender {
@@ -325,7 +369,7 @@
 }
 
 
-
+//***************Prepared for Segue ******************
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
     if ([[segue identifier]isEqualToString:@"toPreferenceSelection"]){
@@ -374,6 +418,27 @@
 }
 
 
+
+//***********HELPER METHODS **************//
+
+
+//helper method to display a success message when information has been posted.
+-(void)displaySuccessMessage{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your information has been saved!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+
+
+}
+
+//helper method to display error message
+-(void)displayErrorMessage:(NSString *)error{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+}
 
 
 @end

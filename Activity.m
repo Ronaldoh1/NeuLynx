@@ -9,5 +9,21 @@
 #import "Activity.h"
 
 @implementation Activity
+@dynamic activityTitle;
+@dynamic activityDescription;
+@dynamic activityLocation;
+@dynamic startTimeAndDate;
+@dynamic endTimeAndDate;
+@dynamic activityImage1;
+@dynamic activityimage2;
+@dynamic host;
+
++(void)load {
+    [self registerSubclass];
+}
++ (NSString *)parseClassName{
+    return @"Activity";
+}
+
 
 @end

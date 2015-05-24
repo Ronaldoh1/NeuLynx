@@ -273,10 +273,10 @@
     }else{
 
         NSLog(@"user is logged in");
-        UIStoryboard *postEventStoryboard = [UIStoryboard storyboardWithName:@"PostEvent" bundle:nil];
-        UIViewController *postEventNavVC = [postEventStoryboard instantiateViewControllerWithIdentifier:@"postEventNavVC"];
+        UIStoryboard *postActivityStoryboard = [UIStoryboard storyboardWithName:@"PostActivity" bundle:nil];
+        UIViewController *postActivityNavVC = [postActivityStoryboard instantiateViewControllerWithIdentifier:@"postActivityNavVC"];
 
-        [self presentViewController:postEventNavVC animated:YES completion:nil];
+        [self presentViewController:postActivityNavVC animated:YES completion:nil];
         
 
 
@@ -334,6 +334,8 @@
                 //enable the inbox and profile
 //                self.navigationItem.leftBarButtonItem.enabled = YES;
 //                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+
+//                [User currentUser].travelPreferences = @{@YES :@"1"};
 
                 //If the user is new then present the profile
 

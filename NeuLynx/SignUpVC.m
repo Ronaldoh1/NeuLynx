@@ -55,7 +55,7 @@
     //Setting up loginwith facebook
 
     //1. need to get user's permissions.
-    NSArray *permissionsArray = @[ @"email", @"public_profile"];
+    NSArray *permissionsArray = @[@"email", @"public_profile"];
 
     [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         if (!user) {
@@ -137,6 +137,11 @@
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {   // Hooray! Let them use the app now.
+            //If the user is new then present the profile
+
+            UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+            UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+            [self presentViewController:profileNavVC animated:YES completion:nil];
 
         } else { //show the error
             NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.

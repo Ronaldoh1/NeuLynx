@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostEventVC : UIViewController
+@interface PostActivityVC : UIViewController
 
 @end

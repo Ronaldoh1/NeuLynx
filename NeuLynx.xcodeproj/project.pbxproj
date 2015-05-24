@@ -50,7 +50,7 @@
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
 		F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */; };
-		F25BFC571AFB9E6F00B2C5BA /* PostEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */; };
+		F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
 		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
 		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
@@ -72,7 +72,7 @@
 		F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519221AFAD7BD007A45FA /* SignUp.storyboard */; };
 		F28519251AFADADA007A45FA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519241AFADADA007A45FA /* Profile.storyboard */; };
 		F28519271AFADAED007A45FA /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519261AFADAED007A45FA /* Map.storyboard */; };
-		F28519291AFADB09007A45FA /* PostEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519281AFADB09007A45FA /* PostEvent.storyboard */; };
+		F28519291AFADB09007A45FA /* PostActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28519281AFADB09007A45FA /* PostActivity.storyboard */; };
 		F285192B1AFADB20007A45FA /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F285192A1AFADB20007A45FA /* History.storyboard */; };
 		F285192F1AFAE291007A45FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285192E1AFAE291007A45FA /* Parse.framework */; };
 		F28519311AFAE29E007A45FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519301AFAE29E007A45FA /* Bolts.framework */; };
@@ -174,8 +174,8 @@
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
-		F25BFC551AFB9E6F00B2C5BA /* PostEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostEventVC.h; sourceTree = "<group>"; };
-		F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostEventVC.m; sourceTree = "<group>"; };
+		F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityVC.h; sourceTree = "<group>"; };
+		F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
 		F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
 		F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailVC.h; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		F28519221AFAD7BD007A45FA /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		F28519241AFADADA007A45FA /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F28519261AFADAED007A45FA /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
-		F28519281AFADB09007A45FA /* PostEvent.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostEvent.storyboard; sourceTree = "<group>"; };
+		F28519281AFADB09007A45FA /* PostActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostActivity.storyboard; sourceTree = "<group>"; };
 		F285192A1AFADB20007A45FA /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		F285192E1AFAE291007A45FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		F28519301AFAE29E007A45FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
 				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
 				F285190D1AFAC172007A45FA /* History */,
-				F285190B1AFAC126007A45FA /* PostEvent */,
+				F285190B1AFAC126007A45FA /* PostActivity */,
 				F285190A1AFAC110007A45FA /* Map */,
 				F285190C1AFAC132007A45FA /* Profile */,
 				F28519091AFAC0D7007A45FA /* Sign Up */,
@@ -403,14 +403,14 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
-		F285190B1AFAC126007A45FA /* PostEvent */ = {
+		F285190B1AFAC126007A45FA /* PostActivity */ = {
 			isa = PBXGroup;
 			children = (
-				F28519281AFADB09007A45FA /* PostEvent.storyboard */,
-				F25BFC551AFB9E6F00B2C5BA /* PostEventVC.h */,
-				F25BFC561AFB9E6F00B2C5BA /* PostEventVC.m */,
+				F28519281AFADB09007A45FA /* PostActivity.storyboard */,
+				F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */,
+				F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */,
 			);
-			name = PostEvent;
+			name = PostActivity;
 			sourceTree = "<group>";
 		};
 		F285190C1AFAC132007A45FA /* Profile */ = {
@@ -697,7 +697,7 @@
 				F2576E1C1B02CDED0006C8E1 /* FacebookButton.png in Resources */,
 				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
 				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
-				F28519291AFADB09007A45FA /* PostEvent.storyboard in Resources */,
+				F28519291AFADB09007A45FA /* PostActivity.storyboard in Resources */,
 				F25BFC381AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png in Resources */,
 				F2FE7E701B05144500CDD057 /* fr.png in Resources */,
 				F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */,
@@ -728,7 +728,7 @@
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialViewController.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
-				F25BFC571AFB9E6F00B2C5BA /* PostEventVC.m in Sources */,
+				F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
 				F2FE7E981B0A343200CDD057 /* AccountVC.m in Sources */,
 				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,

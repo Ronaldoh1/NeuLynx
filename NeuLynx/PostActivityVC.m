@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "PostEventVC.h"
+#import "PostActivityVC.h"
 
-@interface PostEventVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PostActivityVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *activityTitle;
 @property (weak, nonatomic) IBOutlet UITextField *activityDescription;
 @property (weak, nonatomic) IBOutlet UITextField *activityLocation;
-@property (weak, nonatomic) IBOutlet UITextField *activityDate;
+@property (weak, nonatomic) IBOutlet UITextField *activityMaxHeadCount;
 @property (weak, nonatomic) IBOutlet UITextField *activityStartTime;
 @property (weak, nonatomic) IBOutlet UITextField *activityEndTime;
 @property NSMutableArray *imageArray;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation PostEventVC
+@implementation PostActivityVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

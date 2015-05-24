@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yyI-Jf-vj5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yyI-Jf-vj5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Post Activity-->
         <scene sceneID="dgK-vq-bUd">
             <objects>
-                <viewController id="sq3-el-Syy" customClass="PostEventVC" sceneMemberID="viewController">
+                <viewController id="sq3-el-Syy" customClass="PostActivityVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mVe-Fl-Usv"/>
                         <viewControllerLayoutGuide type="bottom" id="esR-C1-piH"/>
@@ -51,13 +51,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-C1-bbn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Head Count" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-C1-bbn">
                                 <rect key="frame" x="35" y="168" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9m8-F5-vR2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vvm-Xr-pfC">
                                 <rect key="frame" x="35" y="200" width="250" height="30"/>
@@ -271,10 +271,10 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="activityDate" destination="OlT-C1-bbn" id="yWs-I1-lJP"/>
                         <outlet property="activityDescription" destination="n4V-AS-oix" id="9yb-12-nTy"/>
                         <outlet property="activityEndTime" destination="Y2d-uQ-slX" id="DMw-pp-0dm"/>
                         <outlet property="activityLocation" destination="lhC-9o-qD2" id="aeg-KE-ggb"/>
+                        <outlet property="activityMaxHeadCount" destination="OlT-C1-bbn" id="r7q-9M-I8X"/>
                         <outlet property="activityStartTime" destination="Vvm-Xr-pfC" id="CpK-jY-uuQ"/>
                         <outlet property="activityTitle" destination="e2A-mc-6Xb" id="ISK-kA-sKZ"/>
                         <outlet property="image1" destination="51W-87-vm8" id="aOB-Jp-g8o"/>
@@ -288,7 +288,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Nlx-oL-9hC">
             <objects>
-                <navigationController storyboardIdentifier="postEventNavVC" automaticallyAdjustsScrollViewInsets="NO" id="yyI-Jf-vj5" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="postActivityNavVC" automaticallyAdjustsScrollViewInsets="NO" id="yyI-Jf-vj5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9fw-tn-To3">

@@ -18,6 +18,8 @@
 @dynamic personalityArray;
 @dynamic travelPreferencesArray;
 @dynamic age;
+@dynamic personalities;
+@dynamic travelPreferences;
 
 
 +(void)load {

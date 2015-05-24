@@ -7,6 +7,7 @@
 //
 
 #import "PreferencesVC.h"
+#import "User.h"
 
 @interface PreferencesVC ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -15,6 +16,10 @@
 @property NSArray *travelPreferenceArray;
 @property NSIndexPath *lastIndexPath;
 @property NSMutableArray *stateArrayForCheckmark;
+@property NSMutableArray *selectedTravelPreferenceArray;
+@property NSMutableArray *selectedPersonalityArray;
+@property User *currentUser;
+
 @end
 
 @implementation PreferencesVC
@@ -26,14 +31,33 @@
 
 -(void)initialSetUp{
 
+    //set up preference array;
+    self.travelPreferenceArray = @[@"Business Traveler", @"Adventurer Traveler", @"Solo Traveler", @"Gay Traveler", @"Group Traveler", @"The Techie", @"The Planner", @"The Chiller", @"No Budget", @"The Budgeter", @"The helpless", @"Guidebook Memorizer", @"The Minimalist", @"The Repeater", @"The Fit Traveler"];
+    self.personalityArray = @[@"Social", @"Party Animal", @"Introverted", @"Extroverted", @"The Artist", @"The Idealist", @"The Scientist/Engineer", @"The Visionary", @"The Executive"];
+
+    //get reference to current user
+    self.currentUser = [User currentUser];
+
     //Create a new state array for the checkmarks
     self.stateArrayForCheckmark = [NSMutableArray new];
 
-    //to add the boolean values to the NSMutable Array you need to add it as an NS Number. Ex. [mutableArray addObject[NSNumber numberWithBool:YES]]; or in a for loop like the one below. 
+    //to add the boolean values to the NSMutable Array you need to add it as an NS Number. Ex. [mutableArray addObject[NSNumber numberWithBool:YES]]; or in a for loop like the one below.
 
-    for(int i = 0; i<15; i++){
-    [self.stateArrayForCheckmark addObject:@NO];
+    //if VC to present is equal to 0, then we use the travel preference array.
+    //else we need to present the personality array.
+    if (self.vCtoPresent == 0) {
+
+        for(int i = 0; i<15; i++){
+
+
+            [self.stateArrayForCheckmark addObject:@YES];
+        }
+
+    } else {
+
     }
+
+
 
 
 
@@ -41,9 +65,6 @@
 
     [self.tableView setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
     
-    //set up personality array;
-    self.travelPreferenceArray = @[@"Business Traveler", @"Adventurer Traveler", @"Solo Traveler", @"Gay Traveler", @"Group Traveler", @"The Techie", @"The Planner", @"The Chiller", @"No Budget", @"The Budgeter", @"The helpless", @"Guidebook Memorizer", @"The Minimalist", @"The Repeater", @"The Fit Traveler"];
-    self.personalityArray = @[@"Social", @"Party Animal", @"Introverted", @"Extroverted", @"The Artist", @"The Idealist", @"The Scientist/Engineer", @"The Visionary", @"The Executive"];
 
 
     //setting image to Navigation Bar's title
@@ -55,6 +76,18 @@
     [self.navigationItem setTitleView:titleView];
 
 }
+
+- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
+
+
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+
 #pragma mark - UITableView Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
