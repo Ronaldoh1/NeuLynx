@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property User *currentUser;
+@property (weak, nonatomic) IBOutlet UILabel *usersNameLabel;
 
 @end
 
@@ -30,6 +31,9 @@
 -(void)initialSetUp{
     //get Current User
     self.currentUser = [User currentUser];
+
+    //get user's name
+    self.usersNameLabel.text = self.currentUser.name;
 
     //Set up Menu Array
 
@@ -124,6 +128,10 @@
     }else if(indexPath.row == 2){
 
     }else if(indexPath.row == 3){
+        UIStoryboard *historyStoryBoard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
+        UINavigationController *historyNavVC = [historyStoryBoard instantiateViewControllerWithIdentifier:@"HistoryNavVC"];
+        [self presentViewController:historyNavVC animated:YES completion:nil];
+
 
     }else if(indexPath.row == 4){
 

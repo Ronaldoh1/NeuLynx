@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Need Help?-->
+        <scene sceneID="3mn-Df-GcT">
+            <objects>
+                <viewController id="mir-6C-mYB" customClass="HelpVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AcN-vb-1kp"/>
+                        <viewControllerLayoutGuide type="bottom" id="LTO-pJ-z25"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vq4-WH-Rvv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Need Help?" id="0ce-qj-MpM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Hvh-kV-4rz">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="mir-6C-mYB" id="fnX-ca-XSJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3na-4S-yAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113" y="333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1WA-fi-GT1">
+            <objects>
+                <navigationController storyboardIdentifier="helpNavVC" automaticallyAdjustsScrollViewInsets="NO" id="uqj-aV-waV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hOa-Mc-35w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mir-6C-mYB" kind="relationship" relationship="rootViewController" id="T7U-Rg-axR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Yu-Ms-xSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301" y="333"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hf6-mB-erC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hf6-mB-erC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--History-->
         <scene sceneID="0kl-4Z-zW4">
             <objects>
-                <viewController id="r7E-AO-cHj" sceneMemberID="viewController">
+                <viewController id="r7E-AO-cHj" customClass="HistoryVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fzH-h4-BYd"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLc-0H-k6g"/>
@@ -17,7 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="F5t-lF-hNe"/>
+                    <navigationItem key="navigationItem" title="History" id="F5t-lF-hNe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="x6J-0P-kHj">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="r7E-AO-cHj" id="KIG-hP-yiQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGQ-ue-MVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,7 +33,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PPm-eD-Rbz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hf6-mB-erC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HistoryNavVC" automaticallyAdjustsScrollViewInsets="NO" id="Hf6-mB-erC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XaH-Rz-G4x">
