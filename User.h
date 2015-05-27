@@ -20,7 +20,7 @@
 @property NSMutableArray *travelPreferencesArray;
 @property NSMutableArray *personalityArray;
 @property NSDictionary *travelPreferences;
-@property NSDictionary *personalities;
+@property NSDictionary *personalities; 
 
 
 @end

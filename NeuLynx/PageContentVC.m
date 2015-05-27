@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "PageContentViewController.h"
+#import "PageContentVC.h"
 
-@interface PageContentViewController ()
+@interface PageContentVC ()
 
 @end
 
-@implementation PageContentViewController
+@implementation PageContentVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

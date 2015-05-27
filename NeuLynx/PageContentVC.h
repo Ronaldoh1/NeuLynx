@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageContentViewController : UIViewController
+@interface PageContentVC : UIViewController
 
 
 @property NSString *textForLabel1;

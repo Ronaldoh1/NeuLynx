@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "MainTutorialViewController.h"
-#import "PageContentViewController.h"
+#import "MainTutorialVC.h"
+#import "PageContentVC.h"
 
-@interface MainTutorialViewController () <UIPageViewControllerDataSource>
+@interface MainTutorialVC () <UIPageViewControllerDataSource>
 
 @property (nonatomic,strong) UIPageViewController *PageViewController;
 @property (nonatomic,strong) NSArray *arrayPageFirstLabel;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation MainTutorialViewController
+@implementation MainTutorialVC
 
 @synthesize PageViewController,arrayPageFirstLabel;
 
@@ -55,7 +55,7 @@
     self.PageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.PageViewController.dataSource = self;
 
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+    PageContentVC *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
     [self.PageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 
@@ -77,7 +77,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((PageContentVC*) viewController).pageIndex;
     if ((index == 0) || (index == NSNotFound))
     {
         return nil;
@@ -88,7 +88,7 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
+    NSUInteger index = ((PageContentVC*) viewController).pageIndex;
     if (index == NSNotFound)
     {
         return nil;
@@ -100,13 +100,13 @@
     }
     return [self viewControllerAtIndex:index];
 }
-- (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
+- (PageContentVC *)viewControllerAtIndex:(NSUInteger)index
 {
     if (([self.arrayPageFirstLabel count] == 0) || (index >= [self.arrayPageFirstLabel count])) {
         return nil;
     }
     // Create a new view controller and pass suitable data.
-    PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    PageContentVC *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
 
     pageContentViewController.textForLabel1 = self.arrayPageFirstLabel[index];
     pageContentViewController.textForLabel2 = self.arrayPageSecondLabel[index];

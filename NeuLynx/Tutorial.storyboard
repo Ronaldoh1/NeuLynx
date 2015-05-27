@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sLO-HM-W5C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sLO-HM-W5C">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Welcome-->
         <scene sceneID="x1H-Ck-Mwe">
             <objects>
-                <viewController id="tQs-sq-nWQ" customClass="MainTutorialViewController" sceneMemberID="viewController">
+                <viewController id="tQs-sq-nWQ" customClass="MainTutorialVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ml7-G4-Qus"/>
                         <viewControllerLayoutGuide type="bottom" id="3bv-oR-kdq"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1520" y="216"/>
         </scene>
-        <!--Page Content View Controller-->
+        <!--Page ContentVC-->
         <scene sceneID="8Fl-h8-BWV">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="YcT-P6-BEs" customClass="PageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="YcT-P6-BEs" customClass="PageContentVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hkv-P1-aj2"/>
                         <viewControllerLayoutGuide type="bottom" id="IGB-Ol-rJH"/>

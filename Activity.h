@@ -15,11 +15,14 @@
 @property NSString *activityTitle;
 @property NSString *activityDescription;
 @property PFGeoPoint *activityLocation;
+@property NSString *activityAddress;
 @property NSDate *startTimeAndDate;
+@property NSNumber *maxHeadCount;
 @property NSDate *endTimeAndDate;
 @property PFFile *activityImage1;
 @property PFFile *activityimage2;
 @property User *host;
+@property NSString *selectedCategory;
 
 +(NSString *)parseClassName;
 

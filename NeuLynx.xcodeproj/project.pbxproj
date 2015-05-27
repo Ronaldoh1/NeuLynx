@@ -93,9 +93,10 @@
 		F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F285194E1AFAEA33007A45FA /* NeulynxLogo.png */; };
 		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
+		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
-		F2FE7E631B04EF3C00CDD057 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentViewController.m */; };
-		F2FE7E661B04EF5A00CDD057 /* MainTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialViewController.m */; };
+		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
+		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
 		F2FE7E681B04F60A00CDD057 /* backBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E671B04F60A00CDD057 /* backBackground.png */; };
 		F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E691B050F6F00CDD057 /* person_default_page.jpg */; };
 		F2FE7E6E1B05143800CDD057 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E6D1B05143800CDD057 /* us.png */; };
@@ -227,11 +228,13 @@
 		F28519521AFAED9F007A45FA /* or.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = or.png; sourceTree = "<group>"; };
 		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
+		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
+		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
-		F2FE7E611B04EF3C00CDD057 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
-		F2FE7E621B04EF3C00CDD057 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
-		F2FE7E641B04EF5900CDD057 /* MainTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTutorialViewController.h; sourceTree = "<group>"; };
-		F2FE7E651B04EF5900CDD057 /* MainTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTutorialViewController.m; sourceTree = "<group>"; };
+		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
+		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
+		F2FE7E641B04EF5900CDD057 /* MainTutorialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTutorialVC.h; sourceTree = "<group>"; };
+		F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTutorialVC.m; sourceTree = "<group>"; };
 		F2FE7E671B04F60A00CDD057 /* backBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backBackground.png; sourceTree = "<group>"; };
 		F2FE7E691B050F6F00CDD057 /* person_default_page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person_default_page.jpg; sourceTree = "<group>"; };
 		F2FE7E6D1B05143800CDD057 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = us.png; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519281AFADB09007A45FA /* PostActivity.storyboard */,
+				F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */,
+				F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */,
 				F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */,
 				F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */,
 			);
@@ -541,10 +546,10 @@
 			isa = PBXGroup;
 			children = (
 				F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */,
-				F2FE7E641B04EF5900CDD057 /* MainTutorialViewController.h */,
-				F2FE7E651B04EF5900CDD057 /* MainTutorialViewController.m */,
-				F2FE7E611B04EF3C00CDD057 /* PageContentViewController.h */,
-				F2FE7E621B04EF3C00CDD057 /* PageContentViewController.m */,
+				F2FE7E641B04EF5900CDD057 /* MainTutorialVC.h */,
+				F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */,
+				F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */,
+				F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -726,7 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
-				F2FE7E661B04EF5A00CDD057 /* MainTutorialViewController.m in Sources */,
+				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
 				F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
@@ -737,7 +742,8 @@
 				F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
-				F2FE7E631B04EF3C00CDD057 /* PageContentViewController.m in Sources */,
+				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
+				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,

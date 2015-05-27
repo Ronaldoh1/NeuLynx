@@ -81,6 +81,7 @@
     self.secondaryView.userInteractionEnabled = NO;
     self.agePicker.hidden = YES;
     self.agePicker.userInteractionEnabled = NO;
+
     //Change the color of the secondary view to yellow.
 
     self.secondaryView.backgroundColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];

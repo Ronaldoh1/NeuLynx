@@ -12,7 +12,7 @@
 @interface PostActivityVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *activityTitle;
 @property (weak, nonatomic) IBOutlet UITextField *activityDescription;
-@property (weak, nonatomic) IBOutlet UITextField *activityLocation;
+@property (weak, nonatomic) IBOutlet UITextField *activityAddress;
 @property (weak, nonatomic) IBOutlet UITextField *activityMaxHeadCount;
 @property (weak, nonatomic) IBOutlet UITextField *activityStartTime;
 @property (weak, nonatomic) IBOutlet UITextField *activityEndTime;
@@ -22,7 +22,19 @@
 @property BOOL isFirstImagePicked;
 @property BOOL isSecondImagePicked;
 @property Activity *activity;
+@property NSString *selectedCategory;
+//*********Buttons***********//
+@property (weak, nonatomic) IBOutlet UIButton *outdoorsButton;
+@property (weak, nonatomic) IBOutlet UIButton *gastronomyButton;
+@property (weak, nonatomic) IBOutlet UIButton *festivalButton;
+@property (weak, nonatomic) IBOutlet UIButton *nightOutButton;
+@property (weak, nonatomic) IBOutlet UIButton *culturalButton;
+@property (weak, nonatomic) IBOutlet UIButton *fitnessButton;
 
+//*********Secondary View ********//
+@property (weak, nonatomic) IBOutlet UIView *secondaryView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property BOOL startDateSelected;
 
 @end
 
@@ -42,6 +54,25 @@
     }
 }
 -(void)initialSetUp{
+    //Disable and Hide the Secondary View - initially
+    self.secondaryView.hidden = YES;
+    self.datePicker.hidden = YES;
+    self.datePicker.enabled = NO;
+
+
+    //Disable start and end time fields.
+    self.activityStartTime.enabled = NO;
+    self.activityStartTime.userInteractionEnabled = NO;
+
+    self.activityEndTime.enabled = NO;
+    self.activityEndTime.userInteractionEnabled = NO;
+
+    //Change the color of the secondary view to yellow.
+    self.secondaryView.backgroundColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+
+    //change the color of the date picker
+    [self.datePicker setValue:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1] forKeyPath:@"textColor"];
+
 
     //Initialize the Activity
     self.activity = [Activity new];
@@ -70,6 +101,22 @@
 - (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
 
     self.activity.activityTitle =  self.activityTitle.text;
+    self.activity.activityDescription = self.activityDescription.text;
+    self.activity.activityAddress = self.activityAddress.text;
+    self.activity.maxHeadCount = @([self.activityMaxHeadCount.text integerValue]);
+//    self.activity.startTimeAndDate = self.activityStartTime.text;
+//    self.activity.endTimeAndDate = self.endTimeAndDate.text;
+    self.activity.selectedCategory = self.selectedCategory;
+
+    NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
+    self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+
+    NSData *imageTwoData = UIImagePNGRepresentation(self.image2.image);
+    self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
+
+   // self.activity.activityImage2 = self.image2.image;
+
+
 
 
     [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -84,14 +131,120 @@
     }];
 }
 
+//*******Enable and show the secondary view with date picker.******//
+- (IBAction)onStartDateAndTimeButtonTapped:(UIButton *)sender {
+
+    self.secondaryView.hidden = NO;
+    self.datePicker.hidden = NO;
+    self.datePicker.enabled = YES;
+    //set the boolean for start date
+    self.startDateSelected = YES;
+
+    //set the activity start date
+
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+//    NSString *dateString = [dateFormatter stringFromDate:self.datePicker.date];
+//
+//    NSDateFormatter *timeFormatter = [NSDateFormatter new];
+//    [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+
+}
+- (IBAction)onEndDateAndTimeButtonTapped:(UIButton *)sender {
+    self.secondaryView.hidden = NO;
+    self.datePicker.hidden = NO;
+    self.datePicker.enabled = YES;
+}
+- (IBAction)onDoneButtonTappedHideDatePicker:(UIButton *)sender {
+    //Disable and Hide the Secondary View - initially
+    self.secondaryView.hidden = YES;
+    self.datePicker.hidden = YES;
+    self.datePicker.enabled = NO;
+
+
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"MM-dd-yyyy"];
+
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"hh:mm a"];
+
+
+    NSString *theDate = [dateFormat stringFromDate:self.datePicker.date];
+    NSString *theTime = [timeFormat stringFromDate:self.datePicker.date];
+
+    if (self.startDateSelected == YES) {
+        self.startDateSelected = NO;
+        self.activityStartTime.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
+        self.activity.startTimeAndDate = self.datePicker.date;
+
+
+    } else {
+        self.activityEndTime.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
+        self.activity.endTimeAndDate = self.datePicker.date;
+    }
+
+
+
+}
+
+///************Select Category***************//
+- (IBAction)outDoorsButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Outdoors";
+    self.outdoorsButton.alpha = 1.0;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
+}
+- (IBAction)gastronomyButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Gastronomy";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 1.0;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
+}
+
 - (IBAction)onFestivalButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Festival";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 1.0;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
+
 }
 - (IBAction)onNightOutButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Night Out";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 1.0;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
 }
 - (IBAction)onCulturalButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Cultural";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 1.0;
+    self.fitnessButton.alpha = 0.5;
 }
 - (IBAction)onFitnessButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Fitness";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 1.0;
 }
+
 - (IBAction)onPickFirstImageButtonTapped:(UIButton *)sender {
     self.isFirstImagePicked = YES;
     UIImagePickerController *picker = [UIImagePickerController new];
@@ -112,6 +265,8 @@
 
 }
 
+
+
 //Helper Method to dismiss picker when user cancels.
 
 -(void)cancelPicker{
@@ -120,14 +275,10 @@
 -(void)setTextFieldsDelegates{
     self.activityTitle.delegate = self;
     self.activityDescription.delegate = self;
-    self.activityLocation.delegate = self;
+    self.activityAddress.delegate = self;
     self.activityStartTime.delegate = self;
     self.activityEndTime.delegate = self;
 
-}
-- (IBAction)outDoorsButtonTapped:(UIButton *)sender {
-}
-- (IBAction)coffeeButtonTapped:(UIButton *)sender {
 }
 
 #pragma Marks - hiding keyboard

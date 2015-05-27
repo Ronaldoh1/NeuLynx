@@ -12,11 +12,14 @@
 @dynamic activityTitle;
 @dynamic activityDescription;
 @dynamic activityLocation;
+@dynamic activityAddress;
 @dynamic startTimeAndDate;
 @dynamic endTimeAndDate;
 @dynamic activityImage1;
 @dynamic activityimage2;
+@dynamic maxHeadCount;
 @dynamic host;
+@dynamic selectedCategory;
 
 +(void)load {
     [self registerSubclass];
