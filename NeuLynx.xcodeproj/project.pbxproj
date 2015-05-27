@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F226C80E1B0F5A2D007A1C03 /* discover1.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C80D1B0F5A2D007A1C03 /* discover1.png */; };
-		F226C8101B0F5A70007A1C03 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C80F1B0F5A70007A1C03 /* discover.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
 		F226C8141B0F5B28007A1C03 /* gastronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8131B0F5B28007A1C03 /* gastronomy.png */; };
 		F226C8161B0F5B57007A1C03 /* cultural.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8151B0F5B57007A1C03 /* cultural.png */; };
@@ -94,6 +93,9 @@
 		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
+		F2E6E8491B15F3400083BA7F /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8481B15F3400083BA7F /* discover.png */; };
+		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
+		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
@@ -128,7 +130,6 @@
 
 /* Begin PBXFileReference section */
 		F226C80D1B0F5A2D007A1C03 /* discover1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover1.png; sourceTree = "<group>"; };
-		F226C80F1B0F5A70007A1C03 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
 		F226C8131B0F5B28007A1C03 /* gastronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomy.png; sourceTree = "<group>"; };
 		F226C8151B0F5B57007A1C03 /* cultural.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cultural.png; sourceTree = "<group>"; };
@@ -230,6 +231,10 @@
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
+		F2E6E8481B15F3400083BA7F /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
+		F2E6E84D1B15FC6A0083BA7F /* TermsAndConditionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsAndConditionsVC.h; sourceTree = "<group>"; };
+		F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsAndConditionsVC.m; sourceTree = "<group>"; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
@@ -327,6 +332,7 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F2E6E84A1B15FB540083BA7F /* Terms */,
 				F2FE7E931B0A319100CDD057 /* Account */,
 				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
 				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
@@ -444,7 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				F226C80D1B0F5A2D007A1C03 /* discover1.png */,
-				F226C80F1B0F5A70007A1C03 /* discover.png */,
+				F2E6E8481B15F3400083BA7F /* discover.png */,
 				F2FE7E831B06493800CDD057 /* cultural2.png */,
 				F2FE7E841B06493800CDD057 /* festivals2.png */,
 				F2FE7E851B06493800CDD057 /* fitness2.png */,
@@ -540,6 +546,16 @@
 				F226C81E1B0F5D7B007A1C03 /* Activity.m */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		F2E6E84A1B15FB540083BA7F /* Terms */ = {
+			isa = PBXGroup;
+			children = (
+				F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */,
+				F2E6E84D1B15FC6A0083BA7F /* TermsAndConditionsVC.h */,
+				F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */,
+			);
+			name = Terms;
 			sourceTree = "<group>";
 		};
 		F2FE7E5E1B04EDDD00CDD057 /* Tutorial */ = {
@@ -687,7 +703,6 @@
 				F25BFC361AFB26C000B2C5BA /* AppIcon40x40@3x.png in Resources */,
 				F2FE7E6E1B05143800CDD057 /* us.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
-				F226C8101B0F5A70007A1C03 /* discover.png in Resources */,
 				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
 				F25BFC2F1AFB26C000B2C5BA /* AppIcon29x29.png in Resources */,
 				F2FE7E8E1B06493800CDD057 /* outdoors2.png in Resources */,
@@ -699,11 +714,13 @@
 				F25BFC311AFB26C000B2C5BA /* AppIcon29x29@2x~ipad.png in Resources */,
 				F2FE7E8B1B06493800CDD057 /* fitness2.png in Resources */,
 				F2FE7E721B05146100CDD057 /* br.png in Resources */,
+				F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */,
 				F2576E1C1B02CDED0006C8E1 /* FacebookButton.png in Resources */,
 				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
 				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
 				F28519291AFADB09007A45FA /* PostActivity.storyboard in Resources */,
 				F25BFC381AFB26C000B2C5BA /* AppIcon50x50@2x~ipad.png in Resources */,
+				F2E6E8491B15F3400083BA7F /* discover.png in Resources */,
 				F2FE7E701B05144500CDD057 /* fr.png in Resources */,
 				F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */,
 				F226C8181B0F5B64007A1C03 /* festival.png in Resources */,
@@ -744,6 +761,7 @@
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
+				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,

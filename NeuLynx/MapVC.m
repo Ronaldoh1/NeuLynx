@@ -36,16 +36,19 @@
 @property CLLocationManager *locationManager;
 @property CLLocation *initialLocation;
 @property BOOL didGetUserLocation;
+@property User *currentUser;
+@property UIImage *tempImage;
+
 @end
 
 @implementation MapVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-       [self setUpProfileImage];
+
        [self setUpFanOutButton];
 
-  
+         [self performInitialSetup];
 
 
 
@@ -88,15 +91,23 @@
 //
 //    [self zoom:&latitude :&longitude];
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [self performInitialSetup];
+}
 
 
  //helper method for initial set up
 
 -(void)performInitialSetup{
 
-    //Set the Title and Color
+    //Get Current User
+    self.currentUser = [User currentUser];
+    
+    //Set the Searchbar Tint color.
 
-    //setting image to Navigation Bar's title
+    self.searchBar.barTintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+
+    //Set the Title and Color
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
@@ -130,6 +141,9 @@
 //    }else{
 //        self.navigationItem.leftBarButtonItem.enabled = YES;
 //    }
+
+    //Get user's profile image
+       [self setUpProfileImage];
 
 }
 -(void)dismissKeyboard{
@@ -211,7 +225,18 @@
 -(void)setUpProfileImage{
 
     //create an image and assign it to defualt image
-    UIImage *profileImage = [UIImage imageNamed:@"defaultImage"];
+
+    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.tempImage = image;
+            //self.profileImage.image = image;
+        }
+
+    }];
+
+    UIImage *profileImage = self.tempImage;
+
     //create button frame
     CGRect buttonFrame = CGRectMake(0, 0, 40, 40);
 
@@ -434,7 +459,18 @@
 }
 
 
-
-
+//******************HELPER METHODS****************************************//
+//Helper method to download user's profile image
+//-(void)getUsersProfileImage{
+//
+//    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//        if (!error) {
+//            UIImage *image = [UIImage imageWithData:data];
+//            self.profileImage.image = image;
+//        }
+//
+//    }];
+//}
+//
 
 @end

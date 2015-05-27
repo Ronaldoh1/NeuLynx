@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property User *currentUser;
 
 @end
 
@@ -27,11 +28,13 @@
 }
 
 -(void)initialSetUp{
+    //get Current User
+    self.currentUser = [User currentUser];
 
     //Set up Menu Array
 
     self.menuArray = [NSArray new];
-    self.menuArray = @[@"Home Location",@"Indox", @"Requests", @"History", @"Search Activity", @"Payments", @"Help", @"About"];
+    self.menuArray = @[@"Home Location",@"Indox", @"Requests", @"History", @"Search Activity", @"Payments", @"Help", @"About", @"Terms & Conditions"];
 
     //Make Profile Image round
 
@@ -52,6 +55,10 @@
     titleView.text = @"Account & Settings";
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
+
+    //get user profile Image
+    [self getUsersProfileImage];
+    
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 
@@ -99,10 +106,41 @@
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
+    //chnage the cell accessory
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.menuArray.count;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+
+    }else if(indexPath.row == 1){
+
+    }else if(indexPath.row == 2){
+
+    }else if(indexPath.row == 3){
+
+    }else if(indexPath.row == 4){
+
+    }else if(indexPath.row == 5){
+
+    }else if(indexPath.row == 6){
+
+    }else if(indexPath.row == 8){ //Present terms and Conditions
+
+        UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
+        UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
+        [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+
+
+
+    }
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -112,5 +150,18 @@
 
 }
 
+
+//*******************Helper Method***************************//
+//Helper method to download user's profile image
+-(void)getUsersProfileImage{
+
+    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.profileImage.image = image;
+        }
+
+    }];
+}
 
 @end

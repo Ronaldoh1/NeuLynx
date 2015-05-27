@@ -75,7 +75,7 @@
         [self.ageArray addObject:[[NSNumber numberWithInt:i] stringValue]];
     }
 
-    NSLog(@"%@", self.ageArray);
+
     //Hide the View and Disable the picker
     self.secondaryView.hidden = YES;
     self.secondaryView.userInteractionEnabled = NO;
@@ -127,6 +127,61 @@
     titleView.text = @"Profile";
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
+
+    //******Get the information of the current user********//
+    self.nameTextField.text = self.currentUser.name;
+    self.ageTextField.text = self.currentUser.age;
+    //get user's gender
+    if ([self.currentUser.gender isEqualToString:@"Male"]) {
+        self.genderPicker.selectedSegmentIndex = 0;
+
+    } else {
+        self.genderPicker.selectedSegmentIndex = 1;
+    }
+
+    //get user's orientation
+    if ([self.currentUser.orientation isEqualToString:@"Straight"]) {
+        self.orientationPicker.selectedSegmentIndex = 0;
+
+    }else if([self.currentUser.orientation isEqualToString:@"Bisexual"]){
+        self.orientationPicker.selectedSegmentIndex = 1;
+
+    }else if([self.currentUser.orientation isEqualToString:@"Gay"]){
+        self.orientationPicker.selectedSegmentIndex = 2;
+
+    }else if ([self.currentUser.orientation isEqualToString:@"Lesbian"]){
+        self.orientationPicker.selectedSegmentIndex = 3;
+
+    }else {
+        self.orientationPicker.selectedSegmentIndex = 4;
+
+    }
+
+    //get user's languages
+    self.languageArray = self.currentUser.languageArray.mutableCopy;
+
+    for (int i = 0; i<self.languageArray.count; i++) {
+        if ([self.languageArray[i] isEqualToString:@"Portuguese"]) {
+            self.portugueseButton.alpha = 1.0;
+
+        }else if([self.languageArray[i] isEqualToString:@"Spanish"]){
+            self.spanishButton.alpha = 1.0;
+
+
+        }else if([self.languageArray[i] isEqualToString:@"English"]){
+            self.englishButton.alpha = 1.0;
+
+        }else if([self.languageArray[i] isEqualToString:@"French"]){
+            self.frenchButton.alpha = 1.0;
+
+        }
+
+    }
+    //get user's profile Image
+    [self getUsersProfileImage];
+
+
+
 }
 
 
@@ -211,6 +266,11 @@
     }
 
     self.currentUser.languageArray = self.languageArray;
+
+    NSData *imageData = UIImagePNGRepresentation(self.profileImage.image);
+    PFFile *imageFile = [PFFile fileWithData:imageData];
+
+    self.currentUser.profileImage = imageFile;
 
     [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -441,5 +501,16 @@
     [alertView show];
 }
 
+//Helper method to download user's profile image
+-(void)getUsersProfileImage{
+
+    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.profileImage.image = image;
+        }
+
+    }];
+}
 
 @end

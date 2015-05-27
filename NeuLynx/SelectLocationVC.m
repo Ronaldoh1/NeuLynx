@@ -8,39 +8,42 @@
 
 #import "SelectLocationVC.h"
 #import <MapKit/MapKit.h>
+#import "User.h"
 
 @interface SelectLocationVC ()<MKMapViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
 
 @implementation SelectLocationVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    MKLocalSearchRequest *localSearchRequest = [[MKLocalSearchRequest alloc] init];
-    MKCoordinateRegion localSearchRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake([theLocationChange.latitude floatValue], [theLocationChange.longitude floatValue]), 500.0f, 500.0f);
-    localSearchRequest.naturalLanguageQuery = @"restaurants";
-    localSearchRequest.region = localSearchRegion;
-    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:localSearchRequest];
-
-    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
-    {
-        if (error)
-        {
-            NSLog([error localizedDescription]);
-        }
-        for (MKMapItem* mapItem in response.mapItems)
-        {
-            NSLog(@"mapitem name is: %@",mapItem.name);
-        }
-        
-    }];
+    [self initialSetUp];
+    
 
 
 }
+-(void)initialSetUp{
 
+
+
+
+
+    //set color for search bar
+    self.searchBar.barTintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    
+    //setting image to Navigation Bar's title
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
+    titleView.text = @"Set Location!";
+    titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    [self.navigationItem setTitleView:titleView];
+
+    [self.searchBar setTintColor:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]];
+}
 
 #pragma mark - UISearchBar Delegate Methods
 

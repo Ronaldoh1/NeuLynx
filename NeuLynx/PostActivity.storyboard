@@ -387,11 +387,12 @@
                                     <outlet property="delegate" destination="s70-45-yXo" id="yHp-AB-5wp"/>
                                 </connections>
                             </mapView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-mw-hfs">
+                            <searchBar contentMode="redraw" placeholder="Enter Full Address" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-mw-hfs">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="kzx-30-Gzo"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="s70-45-yXo" id="u15-Bt-QoS"/>

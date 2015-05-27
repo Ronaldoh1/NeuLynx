@@ -125,8 +125,18 @@
         [self displaySignUpErrorAlert:signUpError];
     }
 
+}
+
+- (IBAction)onTermsAndConditionsButtonTapped:(UIButton *)sender {
+
+    UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
+    UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
+    [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+
 
 }
+
+
 -(void)signUp{
     User *user = [User new];
     user.username = self.email.text;
