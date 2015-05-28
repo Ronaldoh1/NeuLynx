@@ -38,7 +38,7 @@
     //Set up Menu Array
 
     self.menuArray = [NSArray new];
-    self.menuArray = @[@"Home Location",@"Indox", @"Requests", @"History", @"Search Activity", @"Payments", @"Help", @"About", @"Terms & Conditions"];
+    self.menuArray = @[@"Home Location",@"Inbox", @"Requests", @"History", @"Search Activity", @"Payments", @"Help", @"About", @"Terms & Conditions"];
 
     //Make Profile Image round
 
@@ -138,6 +138,14 @@
     }else if(indexPath.row == 5){
 
     }else if(indexPath.row == 6){
+        UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
+        UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
+        [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 7){
+        UIStoryboard *aboutStoryBoard = [UIStoryboard storyboardWithName:@"About" bundle:nil];
+        UINavigationController *aboutNavVC = [aboutStoryBoard instantiateViewControllerWithIdentifier:@"aboutNavVC"];
+        [self presentViewController:aboutNavVC animated:YES completion:nil];
 
     }else if(indexPath.row == 8){ //Present terms and Conditions
 

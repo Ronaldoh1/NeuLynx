@@ -33,7 +33,7 @@
         <!--Navigation Controller-->
         <scene sceneID="coV-xg-Ccq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iOC-Vf-atd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="aboutNavVC" automaticallyAdjustsScrollViewInsets="NO" id="iOC-Vf-atd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wUw-9u-gmC">

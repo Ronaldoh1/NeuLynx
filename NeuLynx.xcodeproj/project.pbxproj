@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445B82E50B90A6814FC0D132 /* libPods-NeuLynx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */; };
 		F226C80E1B0F5A2D007A1C03 /* discover1.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C80D1B0F5A2D007A1C03 /* discover1.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
 		F226C8141B0F5B28007A1C03 /* gastronomy.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8131B0F5B28007A1C03 /* gastronomy.png */; };
@@ -100,6 +101,7 @@
 		F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8541B16027C0083BA7F /* HelpVC.m */; };
 		F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8581B1603220083BA7F /* AboutVC.m */; };
 		F2E6E85B1B16032E0083BA7F /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E85A1B16032E0083BA7F /* About.storyboard */; };
+		F2E6E85D1B16B9360083BA7F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E6E85C1B16B9360083BA7F /* Accelerate.framework */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
@@ -133,6 +135,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeuLynx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.debug.xcconfig"; sourceTree = "<group>"; };
+		C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.release.xcconfig"; sourceTree = "<group>"; };
 		F226C80D1B0F5A2D007A1C03 /* discover1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover1.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
 		F226C8131B0F5B28007A1C03 /* gastronomy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomy.png; sourceTree = "<group>"; };
@@ -245,6 +250,7 @@
 		F2E6E8571B1603220083BA7F /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		F2E6E8581B1603220083BA7F /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		F2E6E85A1B16032E0083BA7F /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		F2E6E85C1B16B9360083BA7F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E6E85D1B16B9360083BA7F /* Accelerate.framework in Frameworks */,
 				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
 				F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */,
 				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
@@ -296,6 +303,7 @@
 				F28519331AFAE2CE007A45FA /* AudioToolbox.framework in Frameworks */,
 				F285192F1AFAE291007A45FA /* Parse.framework in Frameworks */,
 				F28519311AFAE29E007A45FA /* Bolts.framework in Frameworks */,
+				445B82E50B90A6814FC0D132 /* libPods-NeuLynx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +317,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B33B813521A0825383239C5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */,
+				C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F25BFC4A1AFB3C8500B2C5BA /* Mail */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +344,7 @@
 				F28518DD1AFABFAD007A45FA /* NeuLynx */,
 				F28518FA1AFABFAE007A45FA /* NeuLynxTests */,
 				F28518DC1AFABFAD007A45FA /* Products */,
+				B33B813521A0825383239C5A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -525,6 +543,7 @@
 		F285192C1AFADB3E007A45FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2E6E85C1B16B9360083BA7F /* Accelerate.framework */,
 				F25BFC761B0187B100B2C5BA /* ParseFacebookUtilsV4.framework */,
 				F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */,
 				F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */,
@@ -545,6 +564,7 @@
 				F28519321AFAE2CE007A45FA /* AudioToolbox.framework */,
 				F28519301AFAE29E007A45FA /* Bolts.framework */,
 				F285192E1AFAE291007A45FA /* Parse.framework */,
+				6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -619,9 +639,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F28519011AFABFAE007A45FA /* Build configuration list for PBXNativeTarget "NeuLynx" */;
 			buildPhases = (
+				FE7BF41E086C072C9EA54751 /* Check Pods Manifest.lock */,
 				F28518D71AFABFAD007A45FA /* Sources */,
 				F28518D81AFABFAD007A45FA /* Frameworks */,
 				F28518D91AFABFAD007A45FA /* Resources */,
+				1C211C0110968ED7F7A6424E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -776,6 +798,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C211C0110968ED7F7A6424E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE7BF41E086C072C9EA54751 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F28518D71AFABFAD007A45FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -925,6 +980,7 @@
 		};
 		F28519021AFABFAE007A45FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -943,6 +999,7 @@
 		};
 		F28519031AFABFAE007A45FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

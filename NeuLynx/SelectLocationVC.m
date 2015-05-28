@@ -9,10 +9,19 @@
 #import "SelectLocationVC.h"
 #import <MapKit/MapKit.h>
 #import "User.h"
+#import "MRProgressOverlayView.h"
+#import "MRProgress.h"
 
-@interface SelectLocationVC ()<MKMapViewDelegate, UISearchBarDelegate>
+
+@interface SelectLocationVC ()<MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property UIWindow *window;
+
+//*********Core Location Properties***********//
+@property CLLocationManager *locationManager;
+@property CLLocation *initialLocation;
+@property BOOL didGetUserLocation;
 
 @end
 
@@ -29,6 +38,13 @@
 
 
 
+    //Get reference to entire window
+    self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+
+
+    //did get user's location should initially be set to false.
+    self.didGetUserLocation = NO;
+
 
 
     //set color for search bar
@@ -43,8 +59,32 @@
     [self.navigationItem setTitleView:titleView];
 
     [self.searchBar setTintColor:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]];
-}
 
+    //Get user's information and display current location and profile picture.
+    [MRProgressOverlayView showOverlayAddedTo:self.window title:@"Loading" mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+    [self displayUserLocation:^{
+        [self getUserCurrentLocation];
+
+        [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
+    } afterDelay:2.0];
+}
+//Get user's current location
+-(void)getUserCurrentLocation{
+
+    //GETING THE USER'S LOCATION
+    //set up settings for location managers.
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+
+    self.mapView.showsUserLocation = true;
+
+    //initially we should set the didGetUserLocation to false;
+    self.didGetUserLocation = false;
+    
+}
 #pragma mark - UISearchBar Delegate Methods
 
 //**in this delegate method, we can hide keyboard, when search button is clicked. Also in this method we perform the search of the string entered by the user and drop a pin annotation on our map.
@@ -84,6 +124,62 @@
 
     }];
 
+}
+
+#pragma mark - Map Delegate Methods
+
+//get user's location and zoom to that location - zoom not animated.
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+
+    if (!self.initialLocation) {
+        self.initialLocation = userLocation.location;
+        MKCoordinateRegion mapRegion;
+        mapRegion.center = mapView.userLocation.coordinate;
+        mapRegion.span.latitudeDelta = 0.01;
+        mapRegion.span.longitudeDelta = 0.01;
+
+        [mapView setRegion:mapRegion animated: NO];
+    }
+
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
+    MKPinAnnotationView *pinAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
+
+    pinAnnotation.canShowCallout = YES;
+
+    UIButton *selectLocationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    selectLocationButton.frame = CGRectMake(0, 0, 70, 20);
+    [selectLocationButton setTitle:@"Select" forState:UIControlStateNormal];
+    [selectLocationButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    selectLocationButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    [selectLocationButton.layer setBorderWidth:1];
+    [selectLocationButton.layer setBorderColor:[UIColor blueColor].CGColor];
+    pinAnnotation.rightCalloutAccessoryView = selectLocationButton;
+
+
+
+//    NSLog(@"%f", [annotation coordinate].latitude);
+//    NSLog(@"%f", [annotation coordinate].longitude);
+    return pinAnnotation;
+}
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+
+{
+
+}
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    NSLog(@"Latitude: %f", view.annotation.coordinate.latitude);
+    NSLog(@"Longitude: %f", view.annotation.coordinate.longitude);
+}
+
+//**********************BLOCKS***********************************************//
+-(void)displayUserLocation:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
 

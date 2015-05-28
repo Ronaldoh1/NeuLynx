@@ -14,6 +14,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "User.h"
+#import "MRProgressOverlayView.h"
+#import "MRProgress.h"
 
 
 
@@ -38,6 +40,7 @@
 @property BOOL didGetUserLocation;
 @property User *currentUser;
 @property UIImage *tempImage;
+@property UIWindow *window;
 
 @end
 
@@ -46,33 +49,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-       [self setUpFanOutButton];
 
-         [self performInitialSetup];
+    [self setUpFanOutButton]; // set up fan out buttons
 
+    [self performInitialSetup]; //do initial set up for MapVC
 
-
-
-    //GETING THE USER'S LOCATION
-    //set up settings for location managers.
-    self.locationManager = [CLLocationManager new];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
-
-    self.mapView.showsUserLocation = true;
-
-    //initially we should set the didGetUserLocation to false;
-    self.didGetUserLocation = false;
-
-    
-
-
+    [self setUpProfileImage];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated{
-    [self performInitialSetup];
+
+     [self setUpProfileImage];
 
     //If the user is logged in, then we want to allow him to tab on history
     if ([User currentUser] != nil) {
@@ -83,26 +71,18 @@
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
     }
-//    [self.mapView setCenterCoordinate:self.mapView.userLocation.location.coordinate animated:true];
-//
-//    double latitude = self.locationManager.location.coordinate.latitude;
-//    double longitude = self.locationManager.location.coordinate.longitude;
-//
-//
-//    [self zoom:&latitude :&longitude];
-}
--(void)viewDidAppear:(BOOL)animated{
-    [self performInitialSetup];
+
 }
 
-
- //helper method for initial set up
+//helper method for initial set up
 
 -(void)performInitialSetup{
 
+    //Get reference to entire window
+    self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     //Get Current User
     self.currentUser = [User currentUser];
-    
+
     //Set the Searchbar Tint color.
 
     self.searchBar.barTintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
@@ -116,7 +96,7 @@
     [self.navigationItem setTitleView:titleView];
 
     //Check if the user has previously used the app.
-    
+
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasBeenRun"]) {
 
         UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
@@ -134,22 +114,43 @@
     //add the tap gesture to the current view.
     [self.view addGestureRecognizer:tap];
 
-    //check if the user is logged in. If he is, then allow the profile image to be tapable
 
-//    if ([User currentUser] == nil) {
-//        self.navigationItem.leftBarButtonItem.enabled = NO;
-//    }else{
-//        self.navigationItem.leftBarButtonItem.enabled = YES;
-//    }
+    //Get user's information and display current location and profile picture.
+    [MRProgressOverlayView showOverlayAddedTo:self.window title:@"Loading..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+    [self getUserInformationFromParse:^{
+        [self getUserCurrentLocation];
+        [self setUpProfileImage];
 
-    //Get user's profile image
-       [self setUpProfileImage];
+        [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
+    } afterDelay:2.0];
+
+
+
 
 }
+
+//Get user's current location
+-(void)getUserCurrentLocation{
+
+    //GETING THE USER'S LOCATION
+    //set up settings for location managers.
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
+
+    self.mapView.showsUserLocation = true;
+
+    //initially we should set the didGetUserLocation to false;
+    self.didGetUserLocation = false;
+    
+}
+//Helper method to dismiss keyboard
 -(void)dismissKeyboard{
     [self.searchBar resignFirstResponder];
 }
-
+//set up FanOut Buttons
 -(void)setUpFanOutButton{
     //create dynamic animator
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
@@ -175,6 +176,9 @@
     [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"outdoors"] forState:UIControlStateNormal];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+//Helper method to create button
+
 -(UIButton *)createButton{
 
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 50.0, self.view.frame.size.height - 100.0, 50.0, 50.0)];
@@ -182,7 +186,7 @@
     [button setTitleColor:[UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0] forState: UIControlStateNormal];
 
     //button setTitle:title forState:UIControlStateNormal];
-     button.layer.borderColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0].CGColor;
+    button.layer.borderColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0].CGColor;
 
     button.layer.borderWidth = 1.0;
     button.layer.cornerRadius = button.frame.size.width/2;
@@ -191,6 +195,8 @@
 
     return button;
 }
+
+//Helper method to do the fan out annimation
 -(void) fanButtons:(id)sender{
 
     [self.dynamicAnimator removeAllBehaviors];
@@ -207,9 +213,11 @@
         [self snapButton:self.mainButton6 toPoint:self.mainButton.center];
     }
     self.isFannedOut = !self.isFannedOut;
-    
-    
+
+
 }
+
+//helper method to show buttons
 -(void)fanButtonOut{
     [self snapButton:self.mainButton1 toPoint:CGPointMake(self.mainButton.frame.origin.x - 60.0, self.mainButton.frame.origin.y + 20.0)];
     [self snapButton:self.mainButton2 toPoint:CGPointMake(self.mainButton.frame.origin.x - 55.0, self.mainButton.frame.origin.y - 35.0)];
@@ -218,23 +226,30 @@
     [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x - 15.0, self.mainButton.frame.origin.y - 200.0)];
     [self snapButton:self.mainButton6 toPoint:CGPointMake(self.mainButton.frame.origin.x + 20.0, self.mainButton.frame.origin.y - 245.0)];
 }
+
+//helper method to fan in buttons back to centers
 -(void)snapButton:(UIButton *)button toPoint:(CGPoint)point{
     UISnapBehavior *snapBehavior =[[UISnapBehavior alloc] initWithItem:button snapToPoint:point];
     [self.dynamicAnimator addBehavior:snapBehavior];
 }
+
+//helper method to set up profile image button
 -(void)setUpProfileImage{
 
     //create an image and assign it to defualt image
 
+
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
+
             self.tempImage = image;
             //self.profileImage.image = image;
         }
 
     }];
 
+    NSLog(@"%@", self.tempImage);
     UIImage *profileImage = self.tempImage;
 
     //create button frame
@@ -286,7 +301,7 @@
     }else{
         UIStoryboard *accountStoryboard = [UIStoryboard storyboardWithName:@"Account" bundle:nil];
         UITabBarController *AccountAndSettingsNavVC = [accountStoryboard instantiateViewControllerWithIdentifier:@"accountAndSettingsNavVC"];
-    [self presentViewController:AccountAndSettingsNavVC animated:YES completion:nil];
+        [self presentViewController:AccountAndSettingsNavVC animated:YES completion:nil];
 
     }
 }
@@ -306,7 +321,7 @@
         UIViewController *postActivityNavVC = [postActivityStoryboard instantiateViewControllerWithIdentifier:@"postActivityNavVC"];
 
         [self presentViewController:postActivityNavVC animated:YES completion:nil];
-        
+
 
 
     }
@@ -361,10 +376,10 @@
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in through Facebook!");
                 //enable the inbox and profile
-//                self.navigationItem.leftBarButtonItem.enabled = YES;
-//                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+                //                self.navigationItem.leftBarButtonItem.enabled = YES;
+                //                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
 
-//                [User currentUser].travelPreferences = @{@YES :@"1"};
+                //                [User currentUser].travelPreferences = @{@YES :@"1"};
 
                 //If the user is new then present the profile
 
@@ -389,10 +404,10 @@
                 return;
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in with Twitter!");
-                 self.navigationItem.leftBarButtonItem.enabled = YES;
+                self.navigationItem.leftBarButtonItem.enabled = YES;
             } else {
                 NSLog(@"User logged in with Twitter!");
-                 self.navigationItem.leftBarButtonItem.enabled = YES;
+                self.navigationItem.leftBarButtonItem.enabled = YES;
             }
         }];
 
@@ -412,21 +427,21 @@
 
     //Get the user's current location, zoom to user's location on the map.
 
-//    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
+    //    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
     //zooming map to current location at startup
-//    if(!self.didGetUserLocation){
-//
-//        //zooming map to current location at startup
-//        double latitude = self.locationManager.location.coordinate.latitude;
-//        double longitude = self.locationManager.location.coordinate.longitude;
-//        [self.locationManager stopUpdatingLocation];
-//
-//        [self zoom:&latitude :&longitude];
-//
-//        self.didGetUserLocation = true;
-//
-//        
-//    }
+    //    if(!self.didGetUserLocation){
+    //
+    //        //zooming map to current location at startup
+    //        double latitude = self.locationManager.location.coordinate.latitude;
+    //        double longitude = self.locationManager.location.coordinate.longitude;
+    //        [self.locationManager stopUpdatingLocation];
+    //
+    //        [self zoom:&latitude :&longitude];
+    //
+    //        self.didGetUserLocation = true;
+    //
+    //
+    //    }
 
     if (!self.initialLocation) {
         self.initialLocation = userLocation.location;
@@ -472,5 +487,11 @@
 //    }];
 //}
 //
+
+//**********************BLOCKS***********************************************//
+-(void)getUserInformationFromParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
 
 @end
