@@ -20,6 +20,8 @@
 @dynamic age;
 @dynamic personalities;
 @dynamic travelPreferences;
+@dynamic userCurrentCity;
+@dynamic userAdministrativeArea;
 
 
 +(void)load {

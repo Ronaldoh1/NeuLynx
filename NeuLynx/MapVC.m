@@ -41,6 +41,7 @@
 @property User *currentUser;
 @property UIImage *tempImage;
 @property UIWindow *window;
+@property CLLocation *currentLocation;
 
 @end
 
@@ -55,6 +56,33 @@
     [self performInitialSetup]; //do initial set up for MapVC
 
     [self setUpProfileImage];
+
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+
+}
+#pragma mark CLLocationManager Delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [locations objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+    NSLog(@"Detected Location : %f, %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:self.currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.administrativeArea
+                              );
+                       [User currentUser].userCurrentCity = placemark.locality;
+                       [User currentUser].userAdministrativeArea = placemark.administrativeArea;
+
+                   }];
 }
 
 

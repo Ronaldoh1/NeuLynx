@@ -8,15 +8,20 @@
 
 #import "AccountVC.h"
 #import "User.h"
+#import "MailVC.h"
 
 
-@interface AccountVC ()<UITableViewDelegate, UITableViewDataSource>
-@property NSArray *menuArray;
+@interface AccountVC ()<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@property NSMutableArray *menuArray;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property User *currentUser;
 @property (weak, nonatomic) IBOutlet UILabel *usersNameLabel;
+@property CLLocationManager *locationManager;
+@property CLLocation *currentLocation;
+@property NSString *userCity;
+
 
 @end
 
@@ -26,9 +31,39 @@
     [super viewDidLoad];
 
     [self initialSetUp];
+
+
+}
+
+
+#pragma mark CLLocationManager Delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [locations objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+    NSLog(@"Detected Location : %f, %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:self.currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.locality
+                             );
+                       self.userCity = placemark.locality;
+
+                   }];
 }
 
 -(void)initialSetUp{
+
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+
     //get Current User
     self.currentUser = [User currentUser];
 
@@ -37,8 +72,19 @@
 
     //Set up Menu Array
 
-    self.menuArray = [NSArray new];
-    self.menuArray = @[@"Home Location",@"Inbox", @"Requests", @"History", @"Search Activity", @"Payments", @"Help", @"About", @"Terms & Conditions"];
+    self.menuArray = [NSMutableArray new];
+
+    NSString *tempString = [NSString stringWithFormat:@"%@ - %@", self.currentUser.userAdministrativeArea, self.currentUser.userCurrentCity];
+
+    [self.menuArray addObject:tempString];
+    [self.menuArray addObject:@"Inbox"];
+    [self.menuArray addObject:@"Requests"];
+     [self.menuArray addObject:@"History"];
+     [self.menuArray addObject:@"Search Activity"];
+     [self.menuArray addObject:@"Help"];
+     [self.menuArray addObject:@"About"];
+    [self.menuArray addObject:@"Terms & Conditions"];
+    
 
     //Make Profile Image round
 
@@ -123,7 +169,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
 
+        UIStoryboard *mailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+        UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
+        [self addChildViewController:mailNavVC];
+
+
     }else if(indexPath.row == 1){
+        UIStoryboard *mailStoryBoard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+        MailVC *mailVc = [mailStoryBoard instantiateViewControllerWithIdentifier:@"mailNavVC"];
+        [self presentViewController:mailVc animated:YES completion:nil];
+
 
     }else if(indexPath.row == 2){
 
