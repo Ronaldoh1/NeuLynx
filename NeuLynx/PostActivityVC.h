@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface PostActivityVC : UIViewController
+
+@property PFGeoPoint *activityGeoPoint;
 
 @end

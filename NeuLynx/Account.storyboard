@@ -83,6 +83,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTQ-Ec-4T6">
+                                <rect key="frame" x="16" y="69" width="75" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Gib-sG-IIq"/>
+                                    <constraint firstAttribute="width" constant="75" id="SF8-cr-OAP"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onProfilePictureTapped:" destination="AY1-nh-oNH" eventType="touchUpInside" id="WwS-f4-dZ6"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="kxI-xj-lRJ">
                                 <rect key="frame" x="6" y="170" width="30" height="30"/>
                                 <constraints>
@@ -104,6 +117,7 @@
                             <constraint firstItem="VpD-dc-n3a" firstAttribute="top" secondItem="yv6-WN-6tn" secondAttribute="topMargin" constant="69" id="JRP-DF-98a"/>
                             <constraint firstItem="oPr-3I-hJC" firstAttribute="top" secondItem="0oO-tw-9A2" secondAttribute="bottom" constant="-4" id="Jb9-ca-Qr7"/>
                             <constraint firstItem="Pvh-20-Zid" firstAttribute="top" secondItem="VpD-dc-n3a" secondAttribute="bottom" constant="29" id="KhJ-6Z-DDL"/>
+                            <constraint firstItem="hTQ-Ec-4T6" firstAttribute="top" secondItem="Pih-Fb-KVL" secondAttribute="bottom" constant="5" id="LuE-ZL-CMu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0oO-tw-9A2" secondAttribute="trailing" constant="-16" id="Rwd-NH-Okq"/>
                             <constraint firstItem="kd3-f0-cmb" firstAttribute="leading" secondItem="VpD-dc-n3a" secondAttribute="trailing" constant="29" id="S0V-Pa-qhl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="cUJ-Ey-Ybl" secondAttribute="bottom" constant="-31" id="U1E-MI-wY8"/>
@@ -113,6 +127,7 @@
                             <constraint firstItem="cUJ-Ey-Ybl" firstAttribute="leading" secondItem="yv6-WN-6tn" secondAttribute="leadingMargin" constant="-16" id="lr7-1e-hXr"/>
                             <constraint firstItem="oPr-3I-hJC" firstAttribute="leading" secondItem="yv6-WN-6tn" secondAttribute="leadingMargin" constant="-16" id="pGU-fo-tq7"/>
                             <constraint firstItem="VpD-dc-n3a" firstAttribute="leading" secondItem="yv6-WN-6tn" secondAttribute="leadingMargin" id="pc9-L5-Au5"/>
+                            <constraint firstItem="hTQ-Ec-4T6" firstAttribute="leading" secondItem="yv6-WN-6tn" secondAttribute="leadingMargin" id="pyd-RK-EWx"/>
                             <constraint firstItem="sXA-Rf-wnT" firstAttribute="leading" secondItem="VpD-dc-n3a" secondAttribute="trailing" constant="8" id="s14-VA-wyp"/>
                             <constraint firstItem="kd3-f0-cmb" firstAttribute="top" secondItem="sXA-Rf-wnT" secondAttribute="bottom" constant="-8" id="tGQ-Cb-FdD"/>
                             <constraint firstItem="Pvh-20-Zid" firstAttribute="trailing" secondItem="yv6-WN-6tn" secondAttribute="trailingMargin" id="vhy-04-gPV"/>

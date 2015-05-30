@@ -29,8 +29,8 @@
 
     //set up the tint for the tabbar
 
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:33.0/255.0 green:75.0/255.0 blue:255.0/255.0 alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:33.0/255.0 green:75.0/255.0 blue:255.0/255.0 alpha:1]];
+
 
     //create the first tab - get the storybody, then use the storyboard to present the first view controller
     //also set an image for the first tab.

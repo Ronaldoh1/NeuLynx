@@ -114,7 +114,7 @@
 
     //Set the Searchbar Tint color.
 
-    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
+//    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -219,7 +219,7 @@
     //button setTitle:title forState:UIControlStateNormal];
     button.layer.borderColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
 
-    button.layer.borderWidth = 2.0;
+    button.layer.borderWidth = 0.0;
     button.layer.cornerRadius = button.frame.size.width/2;
 
     [self.view addSubview:button];
@@ -280,7 +280,7 @@
 
     }];
 
-    NSLog(@"%@", self.tempImage);
+   // NSLog(@"%@", self.tempImage);
     UIImage *profileImage = self.tempImage;
 
     //create button frame

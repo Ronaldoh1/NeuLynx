@@ -8,6 +8,7 @@
 
 #import "PostActivityVC.h"
 #import "Activity.h"
+#import "SelectLocationVC.h"
 
 @interface PostActivityVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *activityTitle;
@@ -103,16 +104,21 @@
     self.activity.activityTitle =  self.activityTitle.text;
     self.activity.activityDescription = self.activityDescription.text;
     self.activity.activityAddress = self.activityAddress.text;
+    self.activity.activityLocation = self.activityGeoPoint;
     self.activity.maxHeadCount = @([self.activityMaxHeadCount.text integerValue]);
-//    self.activity.startTimeAndDate = self.activityStartTime.text;
-//    self.activity.endTimeAndDate = self.endTimeAndDate.text;
+
+    //saving images if the first is picked only save the first image. 
     self.activity.selectedCategory = self.selectedCategory;
+    if (self.isFirstImagePicked == YES) {
+        NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
+        self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+    }else if(self.isSecondImagePicked == YES){
+        NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
+        self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+        NSData *imageTwoData = UIImagePNGRepresentation(self.image2.image);
+        self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
+    }
 
-    NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
-    self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
-
-    NSData *imageTwoData = UIImagePNGRepresentation(self.image2.image);
-    self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
 
    // self.activity.activityImage2 = self.image2.image;
 
@@ -410,8 +416,35 @@
 
 //***********************Segues********************************************//
 
--(IBAction)unwindSegueFromSetLocationOnMapViewController:(UIStoryboard *)segue{
+-(IBAction)unwindSegueFromSetLocationOnMapViewController:(UIStoryboardSegue *)segue{
 
+//    if ([segue.sourceViewController isKindOfClass:[SelectLocationFromMapViewController class]]) {
+//        SelectLocationFromMapViewController *selectLocationVC = [segue sourceViewController];
+//        // if the user clicked Cancel, we don't want to change the color
+//        self.serviceGeoPoint = [PFGeoPoint new];
+//
+//        self.serviceGeoPoint.latitude = selectLocationVC.serviceGeoPointFromMap.latitude;
+//        self.serviceGeoPoint.longitude = selectLocationVC.serviceGeoPointFromMap.longitude;
+//        self.location.text = selectLocationVC.userLocation;
+//
+//        NSLog(@"%f %f", self.serviceGeoPoint.longitude, self.serviceGeoPoint.latitude);
+
+    //First we need to check if the sourceViewController is of the class SelectLocaitonVC class. This step is an extra safety step.
+    //If it is, the we need to create the SelectLocationVC and make it equal to the sourceViewController.
+    //
+    if ([segue.sourceViewController isKindOfClass:[SelectLocationVC class]]) {
+
+        SelectLocationVC *selectLocationVC = [segue sourceViewController];
+
+        self.activityGeoPoint = [PFGeoPoint new];
+
+       self.activityGeoPoint.latitude= selectLocationVC.activityGeoPoint.latitude;
+        self.activityGeoPoint.longitude = selectLocationVC.activityGeoPoint.longitude;
+
+        NSLog(@"the activity's geo point is %f %f", selectLocationVC.activityGeoPoint.latitude
+              , selectLocationVC.activityGeoPoint.longitude);
+
+    }
 }
 
 @end

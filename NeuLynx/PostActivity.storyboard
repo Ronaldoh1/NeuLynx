@@ -416,9 +416,11 @@
                         <outlet property="mapView" destination="lfJ-6t-ksk" id="EEv-kS-Wed"/>
                         <outlet property="searchBar" destination="QW2-mw-hfs" id="KEg-Aa-t9H"/>
                         <outlet property="searchDisplayController" destination="jgf-Lj-iKK" id="gU0-7W-m3t"/>
+                        <segue destination="LH2-n0-bv7" kind="unwind" identifier="backToPostActivity" unwindAction="unwindSegueFromSetLocationOnMapViewController:" id="kXc-yH-Kq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oV6-nC-rTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LH2-n0-bv7" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="jgf-Lj-iKK">
                     <connections>
                         <outlet property="delegate" destination="s70-45-yXo" id="mTw-el-Gdr"/>

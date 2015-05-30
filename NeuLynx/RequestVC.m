@@ -20,6 +20,8 @@
 }
 
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

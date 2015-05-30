@@ -17,7 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Inbox" id="Vhx-TA-ybm"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="Vhx-TA-ybm">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="iTv-f9-pRU">
+                            <connections>
+                                <action selector="onDoneButtonTapped:" destination="oxB-yv-yI1" id="O57-Xl-h21"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcb-fQ-uiz" userLabel="First Responder" sceneMemberID="firstResponder"/>

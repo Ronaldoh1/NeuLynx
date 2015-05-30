@@ -68,6 +68,7 @@
         [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
     } afterDelay:2.0];
 }
+
 //Get user's current location
 -(void)getUserCurrentLocation{
 
@@ -85,6 +86,7 @@
     self.didGetUserLocation = false;
     
 }
+
 #pragma mark - UISearchBar Delegate Methods
 
 //**in this delegate method, we can hide keyboard, when search button is clicked. Also in this method we perform the search of the string entered by the user and drop a pin annotation on our map.
@@ -178,7 +180,16 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
 
-    NSLog(@"tapped");
+    //ask the view to give you the coordinate lat and long
+
+    NSLog(@"lat is: %f and long is: %f", [[view annotation] coordinate].latitude, [[view annotation] coordinate].longitude);
+
+    self.activityGeoPoint = [PFGeoPoint new];
+
+    self.activityGeoPoint.latitude = [[view annotation] coordinate].latitude;
+    self.activityGeoPoint.longitude = [[view annotation] coordinate].longitude;
+
+    [self performSegueWithIdentifier:@"backToPostActivity" sender:self];
 }
 
 //**********************BLOCKS***********************************************//

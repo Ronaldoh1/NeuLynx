@@ -121,6 +121,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Display profile image for current user if he/she taps on his/her picture
+- (IBAction)onProfilePictureTapped:(UIButton *)sender {
+
+    UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+    UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+    [self presentViewController:profileNavVC animated:YES completion:nil];
+}
+
 //display the profile view to allow the user to edit.
 - (IBAction)onViewProfileButtonTapped:(UIButton *)sender {
 
@@ -171,51 +179,46 @@
     return self.menuArray.count;
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
 
         UIStoryboard *mailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
         UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
-        [self addChildViewController:mailNavVC];
+        [self presentViewController:mailNavVC animated:YES completion:nil];
 
 
     }else if(indexPath.row == 1){
-        UIStoryboard *mailStoryBoard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
-        MailVC *mailVc = [mailStoryBoard instantiateViewControllerWithIdentifier:@"mailNavVC"];
-        [self presentViewController:mailVc animated:YES completion:nil];
+        UIStoryboard *requestStoryBoard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
+        UITabBarController *requestVC = [requestStoryBoard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
+        [self presentViewController:requestVC animated:YES completion:nil];
 
 
     }else if(indexPath.row == 2){
-
-    }else if(indexPath.row == 3){
         UIStoryboard *historyStoryBoard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
         UINavigationController *historyNavVC = [historyStoryBoard instantiateViewControllerWithIdentifier:@"HistoryNavVC"];
         [self presentViewController:historyNavVC animated:YES completion:nil];
 
+    }else if(indexPath.row == 3){
+        UIStoryboard *searchActivity = [UIStoryboard storyboardWithName:@"Search" bundle:nil];
+        UINavigationController *searchNavVC = [searchActivity instantiateViewControllerWithIdentifier:@"SearchNavVC"];
+        [self presentViewController:searchNavVC animated:YES completion:nil];
+
 
     }else if(indexPath.row == 4){
+        UIStoryboard *helpStoryboard = [UIStoryboard storyboardWithName:@"Help" bundle:nil];
+        UINavigationController *helpNavVC = [helpStoryboard instantiateViewControllerWithIdentifier:@"helpNavVC"];
+        [self presentViewController:helpNavVC animated:YES completion:nil];
 
     }else if(indexPath.row == 5){
-
-    }else if(indexPath.row == 6){
-        UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
-        UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
-        [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
-
-    }else if(indexPath.row == 7){
         UIStoryboard *aboutStoryBoard = [UIStoryboard storyboardWithName:@"About" bundle:nil];
         UINavigationController *aboutNavVC = [aboutStoryBoard instantiateViewControllerWithIdentifier:@"aboutNavVC"];
         [self presentViewController:aboutNavVC animated:YES completion:nil];
 
-    }else if(indexPath.row == 8){ //Present terms and Conditions
+    }else if(indexPath.row == 6){
 
         UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
         UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
         [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
-
-
-
     }
 
 }
