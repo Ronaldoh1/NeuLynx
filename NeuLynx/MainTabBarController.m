@@ -26,10 +26,11 @@
 
 
 -(void)setUpTabBars{
+
     //set up the tint for the tabbar
 
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:33.0/255.0 green:75.0/255.0 blue:255.0/255.0 alpha:1]];
 
     //create the first tab - get the storybody, then use the storyboard to present the first view controller
     //also set an image for the first tab.
@@ -50,6 +51,19 @@
     mailNavVC.tabBarItem.title = @"Messages";
     mailNavVC.tabBarItem.enabled = NO;
 
+
+
+
+
+
+    //create the third tab - get the storybody, then use the storyboard to present the first view controller
+    //also set an image for the first tab.
+    UIStoryboard *requestStoryboard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
+    UITabBarController *requestNavVC = [requestStoryboard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
+    [self addChildViewController:requestNavVC];
+    requestNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"requestIcon"] scaledToSize:CGSizeMake(35, 35)];
+    requestNavVC.tabBarItem.title = @"Request";
+    requestNavVC.tabBarItem.enabled = YES;
 }
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);

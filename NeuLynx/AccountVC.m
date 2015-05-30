@@ -22,6 +22,7 @@
 @property CLLocation *currentLocation;
 @property NSString *userCity;
 
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -58,6 +59,7 @@
 
 -(void)initialSetUp{
 
+
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -74,9 +76,7 @@
 
     self.menuArray = [NSMutableArray new];
 
-    NSString *tempString = [NSString stringWithFormat:@"%@ - %@", self.currentUser.userAdministrativeArea, self.currentUser.userCurrentCity];
 
-    [self.menuArray addObject:tempString];
     [self.menuArray addObject:@"Inbox"];
     [self.menuArray addObject:@"Requests"];
      [self.menuArray addObject:@"History"];
@@ -108,6 +108,11 @@
 
     //get user profile Image
     [self getUsersProfileImage];
+
+
+    //get user's location and display it.
+    self.locationLabel.text = [NSString stringWithFormat:@"%@ - %@, %@", self.currentUser.userCurrentCity, self.currentUser.userAdministrativeArea, self.currentUser.userCountryCode];
+    self.locationLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
     
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {

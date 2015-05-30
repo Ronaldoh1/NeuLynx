@@ -81,6 +81,7 @@
                               );
                        [User currentUser].userCurrentCity = placemark.locality;
                        [User currentUser].userAdministrativeArea = placemark.administrativeArea;
+                       [User currentUser].userCountryCode = placemark.country;
 
                    }];
 }
@@ -113,14 +114,14 @@
 
     //Set the Searchbar Tint color.
 
-    self.searchBar.barTintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"NeuLynx";
-    titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    titleView.textColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
     //Check if the user has previously used the app.
@@ -196,12 +197,12 @@
 
     //set the images for each button
     [self.mainButton setBackgroundImage:[UIImage imageNamed:@"discover"] forState:UIControlStateNormal];
-    [self.mainButton1 setBackgroundImage:[UIImage imageNamed:@"festival"] forState:UIControlStateNormal];
-    [self.mainButton2 setBackgroundImage:[UIImage imageNamed:@"gastronomy"] forState:UIControlStateNormal];
-    [self.mainButton3 setBackgroundImage:[UIImage imageNamed:@"nightout"] forState:UIControlStateNormal];
-    [self.mainButton4 setBackgroundImage:[UIImage imageNamed:@"cultural"] forState:UIControlStateNormal];
-    [self.mainButton5 setBackgroundImage:[UIImage imageNamed:@"fitness"] forState:UIControlStateNormal];
-    [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"outdoors"] forState:UIControlStateNormal];
+    [self.mainButton1 setBackgroundImage:[UIImage imageNamed:@"mainFestival"] forState:UIControlStateNormal];
+    [self.mainButton2 setBackgroundImage:[UIImage imageNamed:@"mainCultural"] forState:UIControlStateNormal];
+    [self.mainButton3 setBackgroundImage:[UIImage imageNamed:@"mainGastronomy"] forState:UIControlStateNormal];
+    [self.mainButton4 setBackgroundImage:[UIImage imageNamed:@"mainNightout"] forState:UIControlStateNormal];
+    [self.mainButton5 setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
+    [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -209,14 +210,16 @@
 
 -(UIButton *)createButton{
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 50.0, self.view.frame.size.height - 100.0, 50.0, 50.0)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
+
     button.backgroundColor = [UIColor whiteColor];
+
     [button setTitleColor:[UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0] forState: UIControlStateNormal];
 
     //button setTitle:title forState:UIControlStateNormal];
-    button.layer.borderColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0].CGColor;
+    button.layer.borderColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
 
-    button.layer.borderWidth = 1.0;
+    button.layer.borderWidth = 2.0;
     button.layer.cornerRadius = button.frame.size.width/2;
 
     [self.view addSubview:button];
@@ -290,7 +293,7 @@
     button.layer.cornerRadius = button.frame.size.height / 2;
     button.layer.masksToBounds = YES;
     button.layer.borderWidth = 2.0;
-    button.layer.borderColor = [UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0].CGColor;
+    button.layer.borderColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
 
     [button setImage:profileImage forState:UIControlStateNormal];
 

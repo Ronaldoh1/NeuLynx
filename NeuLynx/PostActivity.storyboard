@@ -81,7 +81,7 @@
                                     <constraint firstAttribute="height" constant="55" id="4iA-un-nqq"/>
                                     <constraint firstAttribute="width" constant="60" id="ckX-ZG-khv"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="gastronomy2">
+                                <state key="normal" backgroundImage="wCultural.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -94,7 +94,7 @@
                                     <constraint firstAttribute="width" constant="60" id="QDc-ob-MdI"/>
                                     <constraint firstAttribute="height" constant="55" id="jnE-oy-S99"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="festivals2">
+                                <state key="normal" backgroundImage="wGastronomy.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -107,7 +107,7 @@
                                     <constraint firstAttribute="width" constant="60" id="1Kx-zE-xhc"/>
                                     <constraint firstAttribute="height" constant="55" id="qBU-DX-F6J"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="nightout2">
+                                <state key="normal" backgroundImage="wNightOut.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -120,7 +120,7 @@
                                     <constraint firstAttribute="width" constant="60" id="OQc-iv-nhD"/>
                                     <constraint firstAttribute="height" constant="55" id="vH2-0S-DTc"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="fitness2">
+                                <state key="normal" backgroundImage="wOutdoors.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -142,7 +142,7 @@
                                     <constraint firstAttribute="width" constant="60" id="1bu-Bu-lvf"/>
                                     <constraint firstAttribute="height" constant="55" id="rMf-NU-Xgx"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="outdoors2">
+                                <state key="normal" backgroundImage="wFestival.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -197,7 +197,7 @@
                                     <constraint firstAttribute="width" constant="60" id="qsN-rS-O33"/>
                                     <constraint firstAttribute="height" constant="55" id="sii-HC-8wO"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="cultural2">
+                                <state key="normal" backgroundImage="wFitness.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -452,12 +452,12 @@
     </scenes>
     <resources>
         <image name="backBackground" width="750" height="1334"/>
-        <image name="cultural2" width="417" height="417"/>
-        <image name="festivals2" width="417" height="417"/>
-        <image name="fitness2" width="417" height="417"/>
-        <image name="gastronomy2" width="417" height="417"/>
         <image name="imagePlaceholder.png" width="300" height="252"/>
-        <image name="nightout2" width="417" height="417"/>
-        <image name="outdoors2" width="417" height="417"/>
+        <image name="wCultural.png" width="417" height="417"/>
+        <image name="wFestival.png" width="417" height="417"/>
+        <image name="wFitness.png" width="417" height="417"/>
+        <image name="wGastronomy.png" width="417" height="417"/>
+        <image name="wNightOut.png" width="417" height="417"/>
+        <image name="wOutdoors.png" width="417" height="417"/>
     </resources>
 </document>

@@ -23,6 +23,7 @@
 @property NSDictionary *personalities;
 @property NSString *userCurrentCity;
 @property NSString *userAdministrativeArea;
+@property NSString *userCountryCode;
 
 
 @end

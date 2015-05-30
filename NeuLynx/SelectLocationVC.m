@@ -126,7 +126,7 @@
 
 }
 
-#pragma mark - Map Delegate Methods
+#pragma mark - MapKit Delegate Methods
 
 //get user's location and zoom to that location - zoom not animated.
 
@@ -165,15 +165,20 @@
 //    NSLog(@"%f", [annotation coordinate].longitude);
     return pinAnnotation;
 }
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 
-{
 
-}
+
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     NSLog(@"Latitude: %f", view.annotation.coordinate.latitude);
     NSLog(@"Longitude: %f", view.annotation.coordinate.longitude);
+}
+
+//Allow user to select their location.
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+
+    NSLog(@"tapped");
 }
 
 //**********************BLOCKS***********************************************//

@@ -22,6 +22,7 @@
 @dynamic travelPreferences;
 @dynamic userCurrentCity;
 @dynamic userAdministrativeArea;
+@dynamic userCountryCode;
 
 
 +(void)load {
