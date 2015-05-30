@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="width" constant="94" id="rgR-jz-ssx"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2A-mc-6Xb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activity Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2A-mc-6Xb">
                                 <rect key="frame" x="35" y="72" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vmO-ia-fuB"/>
@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4V-AS-oix">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activity Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4V-AS-oix">
                                 <rect key="frame" x="35" y="104" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hPu-eb-wYw"/>
@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhC-9o-qD2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activity Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhC-9o-qD2">
                                 <rect key="frame" x="35" y="136" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eRA-qW-XD3"/>
@@ -51,7 +51,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Head Count" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-C1-bbn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of People" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-C1-bbn">
                                 <rect key="frame" x="35" y="168" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9m8-F5-vR2"/>
