@@ -110,6 +110,7 @@
                                     <constraint firstAttribute="height" constant="30" id="G7m-8K-vzy"/>
                                     <constraint firstAttribute="height" constant="30" id="mMQ-Pw-KEh"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="   Sign In with Facebook" backgroundImage="FacebookButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -169,7 +170,7 @@
                                     <action selector="onSignInWithTwitterButtonTapped:" destination="LqY-EI-rwc" eventType="touchUpInside" id="yka-vJ-nI6"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9tT-4N-9O7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="9tT-4N-9O7">
                                 <rect key="frame" x="58" y="72" width="205" height="205"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="205" id="kwT-9s-J6I"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,8 +22,8 @@
                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
-                    <rect key="frame" x="8" y="355" width="398" height="345"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
+                    <rect key="frame" x="8" y="413" width="398" height="287"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hW9-1u-Bti">
                     <rect key="frame" x="70" y="150" width="275" height="275"/>
@@ -43,7 +43,7 @@
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFf-Lv-ETJ"/>
                 <constraint firstAttribute="trailing" secondItem="oN2-YE-ayD" secondAttribute="trailing" constant="8" id="a94-od-UAv"/>
                 <constraint firstAttribute="trailing" secondItem="rcl-M2-9Hy" secondAttribute="trailing" id="bcv-DL-Trb"/>
-                <constraint firstItem="8h0-gc-eKc" firstAttribute="top" secondItem="oN2-YE-ayD" secondAttribute="bottom" constant="159" id="drW-c8-QNr"/>
+                <constraint firstItem="8h0-gc-eKc" firstAttribute="top" secondItem="oN2-YE-ayD" secondAttribute="bottom" constant="217" id="drW-c8-QNr"/>
                 <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="h40-pz-3Nt"/>
                 <constraint firstItem="oN2-YE-ayD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="108" id="lrj-Gn-h89"/>
                 <constraint firstAttribute="trailing" secondItem="hW9-1u-Bti" secondAttribute="trailing" constant="69" id="u4O-Mv-n2w"/>
