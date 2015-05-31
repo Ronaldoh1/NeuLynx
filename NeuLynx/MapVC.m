@@ -95,10 +95,11 @@
     if ([User currentUser] != nil) {
 
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-
+         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
 
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
+         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     }
 
 }
