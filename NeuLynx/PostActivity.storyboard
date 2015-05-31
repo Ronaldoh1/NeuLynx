@@ -231,8 +231,8 @@
                                     <segue destination="s70-45-yXo" kind="show" id="lpN-lF-wee"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-ej-3y9">
-                                <rect key="frame" x="-8" y="46" width="320" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-ej-3y9">
+                                <rect key="frame" x="0.0" y="264" width="320" height="216"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-Lt-0We">
                                         <rect key="frame" x="275" y="178" width="37" height="30"/>
