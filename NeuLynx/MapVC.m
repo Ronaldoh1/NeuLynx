@@ -104,6 +104,7 @@
 
 }
 
+
 //helper method for initial set up
 
 -(void)performInitialSetup{
@@ -415,6 +416,9 @@
 
                 //If the user is new then present the profile
 
+                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+                [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+
                 UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                 UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
                 [self presentViewController:profileNavVC animated:YES completion:nil];
@@ -424,6 +428,7 @@
                 //enable inbox and profile
                 self.navigationItem.leftBarButtonItem.enabled = YES;
                 [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+                [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
             }
         }];
 
