@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SearchVC : UIViewController
+@property NSString *selectedCategory;
 
 @end

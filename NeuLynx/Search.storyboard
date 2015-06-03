@@ -17,63 +17,106 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wCultural.png" translatesAutoresizingMaskIntoConstraints="NO" id="px8-kb-Pto">
-                                <rect key="frame" x="105" y="78" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="piK-W8-eyE"/>
-                                    <constraint firstAttribute="width" constant="110" id="ub2-dN-P6P"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rHm-9p-bLp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wGastronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-j4-flY">
-                                <rect key="frame" x="194" y="164" width="110" height="110"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-J3-axH">
+                                <rect key="frame" x="100" y="64" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="ptY-a0-YRI"/>
-                                    <constraint firstAttribute="width" constant="110" id="ys3-dv-OgV"/>
+                                    <constraint firstAttribute="width" constant="120" id="0k2-w6-gKy"/>
+                                    <constraint firstAttribute="height" constant="120" id="Hqo-rU-LfU"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wNightOut.png" translatesAutoresizingMaskIntoConstraints="NO" id="48V-Ay-aqD">
-                                <rect key="frame" x="16" y="282" width="110" height="110"/>
+                                <state key="normal" title="Button" image="wCultural.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCulturalButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="JX9-Kc-3FJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-Oy-ljZ">
+                                <rect key="frame" x="200" y="154" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="NX1-aU-daE"/>
-                                    <constraint firstAttribute="width" constant="110" id="gpy-zl-g8R"/>
+                                    <constraint firstAttribute="width" constant="120" id="aXU-Uf-Qch"/>
+                                    <constraint firstAttribute="height" constant="120" id="h4O-E7-TNL"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wFitness.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGL-VG-bRf">
-                                <rect key="frame" x="105" y="362" width="110" height="110"/>
+                                <state key="normal" title="Button" image="wGastronomy.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGastronomyButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="oyO-vf-qGg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gM-Jr-uvB">
+                                <rect key="frame" x="0.0" y="282" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="f6P-M5-QLN"/>
-                                    <constraint firstAttribute="width" constant="110" id="hFL-gK-mD2"/>
+                                    <constraint firstAttribute="width" constant="120" id="Bkb-2G-ueF"/>
+                                    <constraint firstAttribute="height" constant="120" id="Zh8-sU-THs"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wOutdoors.png" translatesAutoresizingMaskIntoConstraints="NO" id="eGx-8z-stB">
-                                <rect key="frame" x="194" y="282" width="110" height="110"/>
+                                <state key="normal" title="Button" image="wNightOut.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNightOutButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="ihy-bg-GTW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJM-i7-eGb">
+                                <rect key="frame" x="194" y="282" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="dGl-CS-M33"/>
-                                    <constraint firstAttribute="height" constant="110" id="saT-uR-bWU"/>
+                                    <constraint firstAttribute="width" constant="120" id="59l-9E-tH9"/>
+                                    <constraint firstAttribute="height" constant="120" id="AdH-jE-ame"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wFestival.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVS-FW-beG">
-                                <rect key="frame" x="16" y="164" width="110" height="110"/>
+                                <state key="normal" title="Button" image="wOutdoors.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="OnOutdoorsButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="QLD-Qc-BGJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-Ho-npY">
+                                <rect key="frame" x="100" y="360" width="120" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="Bed-IR-ozv"/>
-                                    <constraint firstAttribute="width" constant="110" id="QBN-qB-AOk"/>
+                                    <constraint firstAttribute="width" constant="120" id="4FR-LT-pIo"/>
+                                    <constraint firstAttribute="height" constant="120" id="q88-YP-tgr"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" title="Button" image="wFitness.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFitnessButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="EXg-rf-YyT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtN-j2-lwL">
+                                <rect key="frame" x="0.0" y="154" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Vfw-tP-oUF"/>
+                                    <constraint firstAttribute="width" constant="120" id="rge-Zq-Qr0"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="wFestival.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFestivalButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="VvC-QU-v15"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r4V-j4-flY" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="100" id="7W7-nQ-i3l"/>
-                            <constraint firstAttribute="centerX" secondItem="BGL-VG-bRf" secondAttribute="centerX" id="Bnv-0K-1bW"/>
-                            <constraint firstItem="oVS-FW-beG" firstAttribute="leading" secondItem="Rjt-T1-A8b" secondAttribute="leadingMargin" id="C8a-au-c2g"/>
-                            <constraint firstItem="eGx-8z-stB" firstAttribute="top" secondItem="r4V-j4-flY" secondAttribute="bottom" constant="8" id="CTN-Rs-1tr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eGx-8z-stB" secondAttribute="trailing" id="G6h-96-mzQ"/>
-                            <constraint firstItem="oVS-FW-beG" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="100" id="LHJ-u7-ngV"/>
-                            <constraint firstItem="48V-Ay-aqD" firstAttribute="top" secondItem="oVS-FW-beG" secondAttribute="bottom" constant="8" id="MNY-HF-ZJB"/>
-                            <constraint firstAttribute="centerX" secondItem="px8-kb-Pto" secondAttribute="centerX" id="ONc-ik-pjl"/>
-                            <constraint firstItem="px8-kb-Pto" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="14" id="ZLG-O7-ael"/>
-                            <constraint firstItem="r4V-j4-flY" firstAttribute="trailing" secondItem="Rjt-T1-A8b" secondAttribute="trailingMargin" id="ZyS-si-zGE"/>
-                            <constraint firstItem="48V-Ay-aqD" firstAttribute="leading" secondItem="Rjt-T1-A8b" secondAttribute="leadingMargin" id="gLk-7t-huZ"/>
-                            <constraint firstItem="BGL-VG-bRf" firstAttribute="top" secondItem="px8-kb-Pto" secondAttribute="bottom" constant="174" id="hsa-J9-NCw"/>
+                            <constraint firstItem="d7e-Oy-ljZ" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="90" id="2i1-j9-dLO"/>
+                            <constraint firstItem="wtN-j2-lwL" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="90" id="4X0-Sx-vyv"/>
+                            <constraint firstItem="ybL-9K-eVt" firstAttribute="top" secondItem="rHm-9p-bLp" secondAttribute="bottom" id="Bwa-hW-IVh"/>
+                            <constraint firstAttribute="centerX" secondItem="f4o-Ho-npY" secondAttribute="centerX" id="Cc4-qc-sNK"/>
+                            <constraint firstItem="lJM-i7-eGb" firstAttribute="top" secondItem="d7e-Oy-ljZ" secondAttribute="bottom" constant="8" id="GFH-KT-aRe"/>
+                            <constraint firstAttribute="centerX" secondItem="lJM-i7-eGb" secondAttribute="centerX" constant="-94" id="PLD-tv-LWI"/>
+                            <constraint firstItem="rnH-J3-axH" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" id="Pin-5W-ZeO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rHm-9p-bLp" secondAttribute="trailing" constant="-16" id="XzV-mJ-XCW"/>
+                            <constraint firstAttribute="centerX" secondItem="rnH-J3-axH" secondAttribute="centerX" id="Y1W-es-LB2"/>
+                            <constraint firstItem="4gM-Jr-uvB" firstAttribute="top" secondItem="wtN-j2-lwL" secondAttribute="bottom" constant="8" id="ctW-t0-hhW"/>
+                            <constraint firstAttribute="centerX" secondItem="4gM-Jr-uvB" secondAttribute="centerX" constant="100" id="dwv-cS-wnA"/>
+                            <constraint firstItem="rHm-9p-bLp" firstAttribute="leading" secondItem="Rjt-T1-A8b" secondAttribute="leadingMargin" constant="-16" id="hnW-Sm-9Ct"/>
+                            <constraint firstAttribute="centerX" secondItem="d7e-Oy-ljZ" secondAttribute="centerX" constant="-100" id="jdX-4y-9ct"/>
+                            <constraint firstItem="rHm-9p-bLp" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" id="rES-nQ-Z3j"/>
+                            <constraint firstAttribute="centerX" secondItem="wtN-j2-lwL" secondAttribute="centerX" constant="100" id="rMg-fA-lti"/>
+                            <constraint firstItem="f4o-Ho-npY" firstAttribute="top" secondItem="d7e-Oy-ljZ" secondAttribute="bottom" constant="86" id="yx6-Nc-824"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Category" id="BWk-II-K93">
@@ -95,7 +138,7 @@
         <!--Search for Activities-->
         <scene sceneID="Gat-Rl-Twy">
             <objects>
-                <viewController id="ZbX-rB-Hu2" sceneMemberID="viewController">
+                <viewController id="ZbX-rB-Hu2" customClass="SearchVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f8g-x8-4Ab"/>
                         <viewControllerLayoutGuide type="bottom" id="rwO-Gk-AWv"/>
@@ -144,6 +187,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search for Activities" id="xBR-sy-6cZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="HkL-gC-qX0" id="Xst-ka-rr0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLA-4g-xU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

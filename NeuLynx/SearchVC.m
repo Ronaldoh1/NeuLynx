@@ -9,6 +9,7 @@
 #import "SearchVC.h"
 
 @interface SearchVC ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -28,17 +29,17 @@
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
-    titleView.text = @"Search for an Activity";
+    titleView.text = [NSString stringWithFormat:@"Search for %@", self.selectedCategory];
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 1;
 }
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    return cell;
 }
 
 

@@ -7,8 +7,10 @@
 //
 
 #import "SelectCategoryVC.h"
+#import "SearchVC.h"
 
 @interface SelectCategoryVC ()
+@property NSString *selectedCategory;
 
 @end
 
@@ -18,6 +20,7 @@
     [super viewDidLoad];
 
     [self performInitialSetUp];
+
 
 
 }
@@ -34,6 +37,55 @@
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//Selection of Category
+
+- (IBAction)onCulturalButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Cultural";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+
+}
+
+- (IBAction)onFestivalButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Festival";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+}
+
+- (IBAction)onGastronomyButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Gastronomy";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+}
+
+- (IBAction)onNightOutButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Night Out";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+}
+- (IBAction)OnOutdoorsButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Outdoors";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+
+}
+- (IBAction)onFitnessButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Fitness";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+}
+
+//SEGUE
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if([[segue identifier] isEqualToString:@"presentSearchVC"]){
+
+
+        SearchVC *destVC = [segue destinationViewController];
+
+        [destVC setSelectedCategory:self.selectedCategory];
+        
+    }
+
+    
+
+
 }
 
 
