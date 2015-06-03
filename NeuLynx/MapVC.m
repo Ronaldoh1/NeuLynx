@@ -12,7 +12,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-
+#import <QuartzCore/QuartzCore.h>
 #import "User.h"
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
@@ -43,6 +43,10 @@
 @property UIWindow *window;
 @property CLLocation *currentLocation;
 
+//ring variables
+@property UIImageView *ring1ImageView;
+@property UIImageView *ring2ImageView;
+
 @end
 
 @implementation MapVC
@@ -56,12 +60,17 @@
     [self performInitialSetup]; //do initial set up for MapVC
 
     [self setUpProfileImage];
+    [self createAndDisplayBlinkingRings];
 
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
+
+    //add animation to the rings
+    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
+
 
 }
 #pragma mark CLLocationManager Delegate
@@ -91,6 +100,8 @@
 
      [self setUpProfileImage];
 
+    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
+
     //If the user is logged in, then we want to allow him to tab on history
     if ([User currentUser] != nil) {
 
@@ -101,6 +112,7 @@
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
          [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     }
+
 
 }
 
@@ -186,14 +198,13 @@
     //create dynamic animator
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 
-    self.mainButton1 = [self createButton];
-    self.mainButton2 = [self createButton];
-    self.mainButton3 = [self createButton];
-    self.mainButton4 = [self createButton];
-    self.mainButton5 = [self createButton];
-    self.mainButton6 = [self createButton];
-
-    self.mainButton = [self createButton];
+    self.mainButton1 = [self createButton:@"Festival" willShow:YES];
+    self.mainButton2 = [self createButton:@"Cultural" willShow:YES];
+    self.mainButton3 = [self createButton:@"Gastronomy" willShow:YES];
+    self.mainButton4 = [self createButton:@"Night Out" willShow:YES];
+    self.mainButton5 = [self createButton:@"Fitness" willShow:YES];
+    self.mainButton6 = [self createButton:@"Outdoors" willShow:YES];
+    self.mainButton = [self createButton:@"" willShow:NO];
 
 
 
@@ -206,15 +217,39 @@
     [self.mainButton5 setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
     [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
     [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
+
+    //Initially hide the buttons
+
+    for(UIView *view in self.mainButton1.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.mainButton2.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.mainButton3.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.mainButton4.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.mainButton5.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.mainButton6.subviews){
+        view.hidden = YES;
+    }
+
+
 }
 
 //Helper method to create button
 
--(UIButton *)createButton{
+-(UIButton *)createButton:(NSString *)buttonTitle willShow:(BOOL)show{
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 66.0, self.view.frame.size.height - 116.0, 53.0, 53.0)];
 
     button.backgroundColor = [UIColor whiteColor];
+
 
     [button setTitleColor:[UIColor colorWithRed:0/255.0  green:134/255.0 blue:179/255.0 alpha:1.0] forState: UIControlStateNormal];
 
@@ -224,7 +259,47 @@
     button.layer.borderWidth = 0.0;
     button.layer.cornerRadius = button.frame.size.width/2;
 
+
+    //create the label for the button
+
+    UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(-73, 5, 70, 20)];
+    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
+    label.layer.shadowOpacity = .75;
+
+    label.layer.masksToBounds = NO;
+    label.text= buttonTitle;
+    label.font = [UIFont systemFontOfSize:12];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:1];
+
+
+
+
+    if(show == YES){
+        label.alpha = 1.0;
+    }else if(show == NO){
+        label.alpha = 0.0;
+
+
+        [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
+
+
+
+    }
+
+
+
+
+    [button addSubview:label];
+
     [self.view addSubview:button];
+
+//    UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
+//    label.text = @"text";
+//    [self.view addSubview:label];
+
+
+
 
     return button;
 }
@@ -237,6 +312,40 @@
     if (!self.isFannedOut) {
         [self fanButtonOut];
 
+        for(UIView *view in self.mainButton1.subviews){
+            view.hidden = NO;
+
+        }
+        for(UIView *view in self.mainButton2.subviews){
+            view.hidden = NO;
+
+        }
+        for(UIView *view in self.mainButton3.subviews){
+            view.hidden = NO;
+
+        }
+        for(UIView *view in self.mainButton4.subviews){
+            view.hidden = NO;
+
+        }
+        for(UIView *view in self.mainButton5.subviews){
+            view.hidden = NO;
+
+        }
+        for(UIView *view in self.mainButton6.subviews){
+            view.hidden = NO;
+
+
+        }
+
+        //remove animations of the rings and hide them.
+        [self.ring1ImageView.layer removeAllAnimations];
+        [self.ring2ImageView.layer removeAllAnimations];
+        self.ring1ImageView.hidden = YES;
+        self.ring2ImageView.hidden = YES;
+
+
+
     }else {
         [self snapButton:self.mainButton1 toPoint:self.mainButton.center];
         [self snapButton:self.mainButton2 toPoint:self.mainButton.center];
@@ -244,6 +353,33 @@
         [self snapButton:self.mainButton4 toPoint:self.mainButton.center];
         [self snapButton:self.mainButton5 toPoint:self.mainButton.center];
         [self snapButton:self.mainButton6 toPoint:self.mainButton.center];
+
+        for(UIView *view in self.mainButton1.subviews){
+            view.hidden = YES;
+        }
+        for(UIView *view in self.mainButton2.subviews){
+            view.hidden = YES;
+        }
+        for(UIView *view in self.mainButton3.subviews){
+            view.hidden = YES;
+        }
+        for(UIView *view in self.mainButton4.subviews){
+            view.hidden = YES;
+        }
+        for(UIView *view in self.mainButton5.subviews){
+            view.hidden = YES;
+        }
+        for(UIView *view in self.mainButton6.subviews){
+            view.hidden = YES;
+        }
+
+        //add animation to the rings and show them
+        [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
+        self.ring1ImageView.hidden = NO;
+        self.ring2ImageView.hidden = NO;
+
+
+
     }
     self.isFannedOut = !self.isFannedOut;
 
@@ -258,6 +394,31 @@
     [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x - 35.0, self.mainButton.frame.origin.y - 145.0)];
     [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x - 15.0, self.mainButton.frame.origin.y - 200.0)];
     [self snapButton:self.mainButton6 toPoint:CGPointMake(self.mainButton.frame.origin.x + 20.0, self.mainButton.frame.origin.y - 245.0)];
+
+}
+
+//helper method to create blinking ring images.
+-(void)createAndDisplayBlinkingRings{
+    UIImage *ring1 = [UIImage imageNamed:@"bluering.png"];
+    //UIImage *image2 = [UIImage imageNamed:@"image2.png"];
+
+    self.ring1ImageView = [[UIImageView alloc] initWithImage:ring1];
+    [self.ring1ImageView setFrame:CGRectMake(self.view.frame.size.width - 72.0, self.view.frame.size.height - 122.0, 65.0, 65.0)];
+
+    [self.view addSubview:self.ring1ImageView];
+    UIImage *ring2 = [UIImage imageNamed:@"bluering.png"];
+    //UIImage *image2 = [UIImage imageNamed:@"image2.png"];
+
+    self.ring2ImageView = [[UIImageView alloc] initWithImage:ring2];
+    [self.ring2ImageView setFrame:CGRectMake(self.view.frame.size.width - 77.0, self.view.frame.size.height - 127.0, 75.0, 75.0)];
+
+    [self.view addSubview:self.ring2ImageView];
+
+
+
+
+
+
 }
 
 //helper method to fan in buttons back to centers
@@ -531,4 +692,29 @@
     dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
+//Add blinking/pulse annimation
+//Need to handle the show options for label.
+-(void)addAnimation:(UIImageView *)imageView1 andTo:(UIImageView *)imageView2{
+    CABasicAnimation *theAnimation1;
+
+    theAnimation1=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation1.duration=1.0;
+    theAnimation1.repeatCount=HUGE_VALF;
+    theAnimation1.autoreverses=YES;
+    theAnimation1.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation1.toValue=[NSNumber numberWithFloat:0.5];
+    [imageView1.layer addAnimation:theAnimation1 forKey:@"animateOpacity"];
+
+    CABasicAnimation *theAnimation2;
+    theAnimation2=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation2.duration=1.0;
+    theAnimation2.repeatCount=HUGE_VALF;
+    theAnimation2.autoreverses=YES;
+    theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation2.toValue=[NSNumber numberWithFloat:0.0];
+    [imageView2.layer addAnimation:theAnimation2 forKey:@"animateOpacity"];
+
+
+    
+}
 @end

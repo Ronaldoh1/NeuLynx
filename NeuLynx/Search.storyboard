@@ -17,63 +17,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wFestival.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVS-FW-beG">
-                                <rect key="frame" x="16" y="183" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Bed-IR-ozv"/>
-                                    <constraint firstAttribute="width" constant="80" id="QBN-qB-AOk"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wCultural.png" translatesAutoresizingMaskIntoConstraints="NO" id="px8-kb-Pto">
-                                <rect key="frame" x="120" y="183" width="80" height="80"/>
+                                <rect key="frame" x="105" y="78" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="piK-W8-eyE"/>
-                                    <constraint firstAttribute="width" constant="80" id="ub2-dN-P6P"/>
+                                    <constraint firstAttribute="height" constant="110" id="piK-W8-eyE"/>
+                                    <constraint firstAttribute="width" constant="110" id="ub2-dN-P6P"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wGastronomy.png" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-j4-flY">
-                                <rect key="frame" x="220" y="183" width="84" height="80"/>
+                                <rect key="frame" x="194" y="164" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="ptY-a0-YRI"/>
-                                    <constraint firstAttribute="width" constant="84" id="ys3-dv-OgV"/>
+                                    <constraint firstAttribute="height" constant="110" id="ptY-a0-YRI"/>
+                                    <constraint firstAttribute="width" constant="110" id="ys3-dv-OgV"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wNightOut.png" translatesAutoresizingMaskIntoConstraints="NO" id="48V-Ay-aqD">
-                                <rect key="frame" x="16" y="303" width="80" height="80"/>
+                                <rect key="frame" x="16" y="282" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="NX1-aU-daE"/>
-                                    <constraint firstAttribute="width" constant="80" id="gpy-zl-g8R"/>
+                                    <constraint firstAttribute="height" constant="110" id="NX1-aU-daE"/>
+                                    <constraint firstAttribute="width" constant="110" id="gpy-zl-g8R"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wFitness.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGL-VG-bRf">
-                                <rect key="frame" x="120" y="303" width="80" height="80"/>
+                                <rect key="frame" x="105" y="362" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="f6P-M5-QLN"/>
-                                    <constraint firstAttribute="width" constant="80" id="hFL-gK-mD2"/>
+                                    <constraint firstAttribute="height" constant="110" id="f6P-M5-QLN"/>
+                                    <constraint firstAttribute="width" constant="110" id="hFL-gK-mD2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wOutdoors.png" translatesAutoresizingMaskIntoConstraints="NO" id="eGx-8z-stB">
-                                <rect key="frame" x="224" y="303" width="80" height="80"/>
+                                <rect key="frame" x="194" y="282" width="110" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="dGl-CS-M33"/>
-                                    <constraint firstAttribute="height" constant="80" id="saT-uR-bWU"/>
+                                    <constraint firstAttribute="width" constant="110" id="dGl-CS-M33"/>
+                                    <constraint firstAttribute="height" constant="110" id="saT-uR-bWU"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wFestival.png" translatesAutoresizingMaskIntoConstraints="NO" id="oVS-FW-beG">
+                                <rect key="frame" x="16" y="164" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Bed-IR-ozv"/>
+                                    <constraint firstAttribute="width" constant="110" id="QBN-qB-AOk"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="r4V-j4-flY" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="119" id="7W7-nQ-i3l"/>
+                            <constraint firstItem="r4V-j4-flY" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="100" id="7W7-nQ-i3l"/>
                             <constraint firstAttribute="centerX" secondItem="BGL-VG-bRf" secondAttribute="centerX" id="Bnv-0K-1bW"/>
                             <constraint firstItem="oVS-FW-beG" firstAttribute="leading" secondItem="Rjt-T1-A8b" secondAttribute="leadingMargin" id="C8a-au-c2g"/>
-                            <constraint firstItem="eGx-8z-stB" firstAttribute="top" secondItem="r4V-j4-flY" secondAttribute="bottom" constant="40" id="CTN-Rs-1tr"/>
+                            <constraint firstItem="eGx-8z-stB" firstAttribute="top" secondItem="r4V-j4-flY" secondAttribute="bottom" constant="8" id="CTN-Rs-1tr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eGx-8z-stB" secondAttribute="trailing" id="G6h-96-mzQ"/>
-                            <constraint firstItem="oVS-FW-beG" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="119" id="LHJ-u7-ngV"/>
-                            <constraint firstItem="48V-Ay-aqD" firstAttribute="top" secondItem="oVS-FW-beG" secondAttribute="bottom" constant="40" id="MNY-HF-ZJB"/>
+                            <constraint firstItem="oVS-FW-beG" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="100" id="LHJ-u7-ngV"/>
+                            <constraint firstItem="48V-Ay-aqD" firstAttribute="top" secondItem="oVS-FW-beG" secondAttribute="bottom" constant="8" id="MNY-HF-ZJB"/>
                             <constraint firstAttribute="centerX" secondItem="px8-kb-Pto" secondAttribute="centerX" id="ONc-ik-pjl"/>
-                            <constraint firstItem="px8-kb-Pto" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="119" id="ZLG-O7-ael"/>
+                            <constraint firstItem="px8-kb-Pto" firstAttribute="top" secondItem="X0U-Uw-5bg" secondAttribute="bottom" constant="14" id="ZLG-O7-ael"/>
                             <constraint firstItem="r4V-j4-flY" firstAttribute="trailing" secondItem="Rjt-T1-A8b" secondAttribute="trailingMargin" id="ZyS-si-zGE"/>
                             <constraint firstItem="48V-Ay-aqD" firstAttribute="leading" secondItem="Rjt-T1-A8b" secondAttribute="leadingMargin" id="gLk-7t-huZ"/>
-                            <constraint firstItem="BGL-VG-bRf" firstAttribute="top" secondItem="px8-kb-Pto" secondAttribute="bottom" constant="40" id="hsa-J9-NCw"/>
+                            <constraint firstItem="BGL-VG-bRf" firstAttribute="top" secondItem="px8-kb-Pto" secondAttribute="bottom" constant="174" id="hsa-J9-NCw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Category" id="BWk-II-K93">
