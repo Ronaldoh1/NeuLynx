@@ -14,8 +14,10 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "User.h"
+#import "Activity.h"
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
+#import "ActivitiesDownloader.h"
 
 
 
@@ -47,6 +49,8 @@
 @property UIImageView *ring1ImageView;
 @property UIImageView *ring2ImageView;
 
+//Activities
+@property NSMutableArray *activitiesArray;
 @end
 
 @implementation MapVC
@@ -77,7 +81,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = [locations objectAtIndex:0];
     [self.locationManager stopUpdatingLocation];
-    NSLog(@"Detected Location : %f, %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
     [geocoder reverseGeocodeLocation:self.currentLocation
                    completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -86,8 +90,7 @@
                            return;
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                       NSLog(@"placemark.ISOcountryCode %@",placemark.administrativeArea
-                              );
+
                        [User currentUser].userCurrentCity = placemark.locality;
                        [User currentUser].userAdministrativeArea = placemark.administrativeArea;
                        [User currentUser].userCountryCode = placemark.country;
@@ -113,6 +116,8 @@
          [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     }
 
+    [self downloadActivities];
+
 
 }
 
@@ -120,6 +125,7 @@
 //helper method for initial set up
 
 -(void)performInitialSetup{
+
 
     //Get reference to entire window
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
@@ -263,8 +269,8 @@
     //create the label for the button
 
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(-73, 5, 70, 20)];
-    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
-    label.layer.shadowOpacity = .75;
+//    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
+//    label.layer.shadowOpacity = .75;
 
     label.layer.masksToBounds = NO;
     label.text= buttonTitle;
@@ -539,6 +545,23 @@
 
 }
 
+//helper method to download the activities
+
+-(void)downloadActivities{
+
+    [ActivitiesDownloader downloadActivitiesForLocation:self.currentLocation withCompletion:^(NSArray *array) {
+
+        self.activitiesArray = [NSMutableArray arrayWithArray:array];
+
+        NSLog(@"actities are %@", self.activitiesArray);
+    }];
+
+
+}
+
+
+
+
 #pragma Mark - ActionSheet Delegate
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -698,16 +721,16 @@
     CABasicAnimation *theAnimation1;
 
     theAnimation1=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation1.duration=1.0;
+    theAnimation1.duration=4.0;
     theAnimation1.repeatCount=HUGE_VALF;
     theAnimation1.autoreverses=YES;
     theAnimation1.fromValue=[NSNumber numberWithFloat:1.0];
-    theAnimation1.toValue=[NSNumber numberWithFloat:0.5];
+    theAnimation1.toValue=[NSNumber numberWithFloat:0.0];
     [imageView1.layer addAnimation:theAnimation1 forKey:@"animateOpacity"];
 
     CABasicAnimation *theAnimation2;
     theAnimation2=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation2.duration=1.0;
+    theAnimation2.duration=3.0;
     theAnimation2.repeatCount=HUGE_VALF;
     theAnimation2.autoreverses=YES;
     theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
