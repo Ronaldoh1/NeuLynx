@@ -50,6 +50,10 @@
 
 //Activities
 @property NSMutableArray *activitiesArray;
+
+
+//MAP
+@property MKPointAnnotation *pinAnnotation;
 @end
 
 @implementation MapVC
@@ -540,13 +544,22 @@
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
-        NSArray *activitiesArray = activities;
+       // NSArray *activitiesArray = activities;
 
         if (!error) {
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
-                NSLog(@"activities are %@",activitiesArray);
+               // NSLog(@"activities are %@",activitiesArray);
+
+                for (Activity *activity in activities){
+                    self.pinAnnotation = [MKPointAnnotation new];
+                    self.pinAnnotation.coordinate = CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude);
+                    self.pinAnnotation.title = activity.activityTitle;
+                    [self.mapView addAnnotation:self.pinAnnotation];
+
+                }
+
 
 
             });
