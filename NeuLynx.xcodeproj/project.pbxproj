@@ -131,7 +131,7 @@
 		F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8C31B1A60820083BA7F /* SearchVC.m */; };
 		F2E6E8C61B1B93700083BA7F /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8C51B1B93700083BA7F /* discover.png */; };
 		F2E6E8C81B1EB9470083BA7F /* bluering.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8C71B1EB9470083BA7F /* bluering.png */; };
-		F2E6E8CB1B1FEEFF0083BA7F /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8CA1B1FEEFF0083BA7F /* ActivitiesDownloader.m */; };
+		F2E6E8CE1B2152500083BA7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E6E8CD1B2152500083BA7F /* MessageUI.framework */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
@@ -307,8 +307,7 @@
 		F2E6E8C31B1A60820083BA7F /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		F2E6E8C51B1B93700083BA7F /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		F2E6E8C71B1EB9470083BA7F /* bluering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluering.png; sourceTree = "<group>"; };
-		F2E6E8C91B1FEEFF0083BA7F /* ActivitiesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesDownloader.h; sourceTree = "<group>"; };
-		F2E6E8CA1B1FEEFF0083BA7F /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
+		F2E6E8CD1B2152500083BA7F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
@@ -334,6 +333,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E6E8CE1B2152500083BA7F /* MessageUI.framework in Frameworks */,
 				F2E6E85D1B16B9360083BA7F /* Accelerate.framework in Frameworks */,
 				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
 				F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */,
@@ -492,8 +492,6 @@
 				F28519261AFADAED007A45FA /* Map.storyboard */,
 				F25BFBF41AFB10B000B2C5BA /* MapVC.h */,
 				F25BFBF51AFB10B000B2C5BA /* MapVC.m */,
-				F2E6E8C91B1FEEFF0083BA7F /* ActivitiesDownloader.h */,
-				F2E6E8CA1B1FEEFF0083BA7F /* ActivitiesDownloader.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -617,6 +615,7 @@
 		F285192C1AFADB3E007A45FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2E6E8CD1B2152500083BA7F /* MessageUI.framework */,
 				F2E6E85C1B16B9360083BA7F /* Accelerate.framework */,
 				F25BFC761B0187B100B2C5BA /* ParseFacebookUtilsV4.framework */,
 				F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */,
@@ -967,7 +966,6 @@
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */,
-				F2E6E8CB1B1FEEFF0083BA7F /* ActivitiesDownloader.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
 				F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,

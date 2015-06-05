@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Need Help?-->
@@ -15,16 +16,72 @@
                     <view key="view" contentMode="scaleToFill" id="Vq4-WH-Rvv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-Jo-rf7">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please send us an email and we will get to your shortly. Thank you! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuV-tI-zFY">
+                                <rect key="frame" x="16" y="83" width="288" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3NF-wx-zYj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaT-6T-tIi">
+                                <rect key="frame" x="16" y="143" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="I4T-f4-Z40"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How can we help?" translatesAutoresizingMaskIntoConstraints="NO" id="Hmb-82-bZt">
+                                <rect key="frame" x="16" y="199" width="288" height="226"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="tea-gB-BQp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IuV-tI-zFY" firstAttribute="trailing" secondItem="Vq4-WH-Rvv" secondAttribute="trailingMargin" id="6rf-Xg-5JV"/>
+                            <constraint firstItem="VaT-6T-tIi" firstAttribute="trailing" secondItem="Vq4-WH-Rvv" secondAttribute="trailingMargin" id="IQG-2q-N5l"/>
+                            <constraint firstItem="IuV-tI-zFY" firstAttribute="top" secondItem="AcN-vb-1kp" secondAttribute="bottom" constant="19" id="MQW-kt-KzU"/>
+                            <constraint firstItem="VaT-6T-tIi" firstAttribute="leading" secondItem="Vq4-WH-Rvv" secondAttribute="leadingMargin" id="Mqz-0D-7f2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8M1-Jo-rf7" secondAttribute="trailing" constant="-16" id="Qtf-0m-Bkq"/>
+                            <constraint firstItem="IuV-tI-zFY" firstAttribute="leading" secondItem="Vq4-WH-Rvv" secondAttribute="leadingMargin" id="Xjv-Ol-Y0U"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8M1-Jo-rf7" secondAttribute="bottom" id="XlM-AK-6cH"/>
+                            <constraint firstItem="8M1-Jo-rf7" firstAttribute="top" secondItem="AcN-vb-1kp" secondAttribute="bottom" id="aNA-ZW-hHS"/>
+                            <constraint firstItem="Hmb-82-bZt" firstAttribute="leading" secondItem="Vq4-WH-Rvv" secondAttribute="leadingMargin" id="cee-Iz-Ms2"/>
+                            <constraint firstItem="Hmb-82-bZt" firstAttribute="top" secondItem="VaT-6T-tIi" secondAttribute="bottom" constant="26" id="edJ-DL-hKR"/>
+                            <constraint firstItem="Hmb-82-bZt" firstAttribute="trailing" secondItem="Vq4-WH-Rvv" secondAttribute="trailingMargin" id="gmi-Bg-r3R"/>
+                            <constraint firstItem="VaT-6T-tIi" firstAttribute="top" secondItem="IuV-tI-zFY" secondAttribute="bottom" constant="16" id="mYA-HU-CZa"/>
+                            <constraint firstItem="8M1-Jo-rf7" firstAttribute="leading" secondItem="Vq4-WH-Rvv" secondAttribute="leadingMargin" constant="-16" id="pSd-tf-WKe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Need Help?" id="0ce-qj-MpM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Hvh-kV-4rz">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="KEA-5E-de6">
                             <connections>
-                                <action selector="onDoneButtonTapped:" destination="mir-6C-mYB" id="fnX-ca-XSJ"/>
+                                <action selector="onCancelButtonTapped:" destination="mir-6C-mYB" id="ziv-iA-uw1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="Hvh-kV-4rz">
+                            <connections>
+                                <action selector="onSendEmailButtonTapped:" destination="mir-6C-mYB" id="w8S-Xa-oaa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="messageBody" destination="Hmb-82-bZt" id="OEc-LT-SJj"/>
+                        <outlet property="subjectTitle" destination="VaT-6T-tIi" id="GYq-9a-0CL"/>
+                        <outlet property="titleLabel" destination="IuV-tI-zFY" id="Teb-r5-Eeo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3na-4S-yAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,4 +107,7 @@
             <point key="canvasLocation" x="301" y="333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backBackground" width="750" height="1334"/>
+    </resources>
 </document>

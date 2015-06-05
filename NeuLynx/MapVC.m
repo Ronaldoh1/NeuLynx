@@ -17,7 +17,6 @@
 #import "Activity.h"
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
-#import "ActivitiesDownloader.h"
 
 
 
@@ -98,10 +97,12 @@
                    }];
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    [self setUpProfileImage];
+}
 -(void)viewWillAppear:(BOOL)animated{
 
-     [self setUpProfileImage];
+
 
     [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
 
@@ -116,7 +117,7 @@
          [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     }
 
-    [self downloadActivities];
+
 
 
 }
@@ -527,6 +528,46 @@
     }
 }
 
+
+
+//helper method to download the activities
+
+-(void)downloadActivitiesAndDisplayOnMap{
+
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
+    PFQuery *query = [Activity query];
+
+    [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
+
+        NSArray *activitiesArray = activities;
+
+        if (!error) {
+            // Add activities to the map.
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                NSLog(@"activities are %@",activitiesArray);
+
+
+            });
+
+        } else {
+            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
+
+
+        }
+        
+    }
+     
+     ];
+    
+    
+
+
+}
+
+////////////////////ALERT HELPER METHODS/////////////////////////////////
+
 //helper method to create actionsheet
 -(void)presentActionSheetToLogInUser{
     NSString *actionSheetTitle = @"You must be logged in to post events";
@@ -542,25 +583,42 @@
 
     //present the actionsheet in the current view.
     [actionSheet showInView:self.view];
+    
+}
+
+-(void)displayAlertWithTitle:(NSString *)title andWithError:(NSString *)error{
+
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alert show];
 
 }
 
-//helper method to download the activities
+//Add blinking/pulse annimation
+//Need to handle the show options for label.
+-(void)addAnimation:(UIImageView *)imageView1 andTo:(UIImageView *)imageView2{
+    CABasicAnimation *theAnimation1;
 
--(void)downloadActivities{
+    theAnimation1=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation1.duration=4.0;
+    theAnimation1.repeatCount=HUGE_VALF;
+    theAnimation1.autoreverses=YES;
+    theAnimation1.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation1.toValue=[NSNumber numberWithFloat:0.0];
+    [imageView1.layer addAnimation:theAnimation1 forKey:@"animateOpacity"];
 
-    [ActivitiesDownloader downloadActivitiesForLocation:self.currentLocation withCompletion:^(NSArray *array) {
-
-        self.activitiesArray = [NSMutableArray arrayWithArray:array];
-
-        NSLog(@"actities are %@", self.activitiesArray);
-    }];
-
-
+    CABasicAnimation *theAnimation2;
+    theAnimation2=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation2.duration=3.0;
+    theAnimation2.repeatCount=HUGE_VALF;
+    theAnimation2.autoreverses=YES;
+    theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation2.toValue=[NSNumber numberWithFloat:0.0];
+    [imageView2.layer addAnimation:theAnimation2 forKey:@"animateOpacity"];
+    
+    
+    
 }
-
-
-
 
 #pragma Mark - ActionSheet Delegate
 
@@ -646,23 +704,7 @@
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
 
-    //Get the user's current location, zoom to user's location on the map.
 
-    //    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.1f, 0.1f)) animated:YES];
-    //zooming map to current location at startup
-    //    if(!self.didGetUserLocation){
-    //
-    //        //zooming map to current location at startup
-    //        double latitude = self.locationManager.location.coordinate.latitude;
-    //        double longitude = self.locationManager.location.coordinate.longitude;
-    //        [self.locationManager stopUpdatingLocation];
-    //
-    //        [self zoom:&latitude :&longitude];
-    //
-    //        self.didGetUserLocation = true;
-    //
-    //
-    //    }
 
     if (!self.initialLocation) {
         self.initialLocation = userLocation.location;
@@ -674,7 +716,7 @@
         [mapView setRegion:mapRegion animated: YES];
     }
 
-
+    [self downloadActivitiesAndDisplayOnMap];
 
 }
 //helper method to zoom in
@@ -715,29 +757,5 @@
     dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
-//Add blinking/pulse annimation
-//Need to handle the show options for label.
--(void)addAnimation:(UIImageView *)imageView1 andTo:(UIImageView *)imageView2{
-    CABasicAnimation *theAnimation1;
 
-    theAnimation1=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation1.duration=4.0;
-    theAnimation1.repeatCount=HUGE_VALF;
-    theAnimation1.autoreverses=YES;
-    theAnimation1.fromValue=[NSNumber numberWithFloat:1.0];
-    theAnimation1.toValue=[NSNumber numberWithFloat:0.0];
-    [imageView1.layer addAnimation:theAnimation1 forKey:@"animateOpacity"];
-
-    CABasicAnimation *theAnimation2;
-    theAnimation2=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation2.duration=3.0;
-    theAnimation2.repeatCount=HUGE_VALF;
-    theAnimation2.autoreverses=YES;
-    theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
-    theAnimation2.toValue=[NSNumber numberWithFloat:0.0];
-    [imageView2.layer addAnimation:theAnimation2 forKey:@"animateOpacity"];
-
-
-    
-}
 @end
