@@ -123,10 +123,12 @@
    // self.activity.activityImage2 = self.image2.image;
 
 
-
+    //disable right nav bar item so that user does not double post.
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 
     [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+
             // The object has been saved.
             [self displaySuccessMessage];
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -140,6 +142,7 @@
 //*******Enable and show the secondary view with date picker.******//
 - (IBAction)onStartDateAndTimeButtonTapped:(UIButton *)sender {
 
+    [self.activityMaxHeadCount resignFirstResponder];
     self.secondaryView.hidden = NO;
     self.datePicker.hidden = NO;
     self.datePicker.enabled = YES;

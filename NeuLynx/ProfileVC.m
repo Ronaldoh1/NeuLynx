@@ -10,6 +10,8 @@
 #import "User.h"
 #import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
+#import "MRProgressOverlayView.h"
+#import "MRProgress.h"
 
 @interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -26,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *orientationPicker;
 @property NSMutableArray *languageArray;
 
+
+
+@property UIWindow *window;
 
 @property NSArray *preferencesSelectionArray;
 
@@ -276,14 +281,40 @@
 
     self.currentUser.profileImage = imageFile;
 
-    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            [self displaySuccessMessage];
-        } else {
-            [self displayErrorMessage:error.localizedDescription];
+        //disable the save button
 
-        }
-    }];
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+
+        //Get user's information and display current location and profile picture.
+        [MRProgressOverlayView showOverlayAddedTo:self.window title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+        [self saveUserInformationToParse:^{
+
+            [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    self.navigationItem.rightBarButtonItem.enabled = YES;
+                    [self displaySuccessMessage];
+
+
+                } else {
+                        self.navigationItem.rightBarButtonItem.enabled = YES;
+                    [self displayErrorMessage:error.localizedDescription];
+
+                    
+                }
+            }];
+
+
+     [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
+
+        } afterDelay:1.5];
+
+
+
+
+
+
+
+
     }
 
 
@@ -524,6 +555,12 @@
         }
 
     }];
+}
+
+//**********************BLOCKS***********************************************//
+-(void)saveUserInformationToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
 @end
