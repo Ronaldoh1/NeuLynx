@@ -758,6 +758,12 @@
 
     MKPinAnnotationView *pinAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
 
+    if ([annotation isEqual:self.pinAnnotation]) {
+
+
+    }else if ([annotation isEqual:mapView.userLocation]){
+        return  nil;
+    }
     //allow the pin to show the callout.
     pinAnnotation.canShowCallout = YES;
     UIButton *selectActivityButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -770,12 +776,35 @@
     pinAnnotation.rightCalloutAccessoryView = selectActivityButton;
 
 
+
+
+    //
+
     return pinAnnotation;
 
 }
 
 
+//Allow user to select their location.
 
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+
+//    //ask the view to give you the coordinate lat and long
+//
+//    NSLog(@"lat is: %f and long is: %f", [[view annotation] coordinate].latitude, [[view annotation] coordinate].longitude);
+//
+//    self.activityGeoPoint = [PFGeoPoint new];
+//
+//    self.activityGeoPoint.latitude = [[view annotation] coordinate].latitude;
+//    self.activityGeoPoint.longitude = [[view annotation] coordinate].longitude;o
+
+
+    UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+    UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+    [self presentViewController:detailVC animated:YES completion:nil];
+
+
+}
 
 
 
@@ -799,5 +828,17 @@
     dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
+
+
+
+
+
+
+
+///////////******************SEGUE***************************/////////////////
+
+-(void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+}
 
 @end

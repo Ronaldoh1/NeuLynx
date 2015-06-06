@@ -141,6 +141,8 @@
 		F2E6E8E61B2359990083BA7F /* faqIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8E51B2359990083BA7F /* faqIcon.png */; };
 		F2E6E8E81B2359B30083BA7F /* aboutIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8E71B2359B30083BA7F /* aboutIcon.png */; };
 		F2E6E8EA1B2359C70083BA7F /* termsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8E91B2359C70083BA7F /* termsIcon.png */; };
+		F2E6E8ED1B2383C10083BA7F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */; };
+		F2E6E8F01B2385730083BA7F /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8EF1B2385730083BA7F /* DetailVC.m */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
@@ -327,6 +329,9 @@
 		F2E6E8E51B2359990083BA7F /* faqIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faqIcon.png; sourceTree = "<group>"; };
 		F2E6E8E71B2359B30083BA7F /* aboutIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutIcon.png; sourceTree = "<group>"; };
 		F2E6E8E91B2359C70083BA7F /* termsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = termsIcon.png; sourceTree = "<group>"; };
+		F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		F2E6E8EE1B2385730083BA7F /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		F2E6E8EF1B2385730083BA7F /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
@@ -431,6 +436,7 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F2E6E8EB1B2382B80083BA7F /* Detail */,
 				F2E6E8D71B22C5EC0083BA7F /* Faq */,
 				F2E6E8BC1B1A432D0083BA7F /* Search */,
 				F2E6E8B41B1A13930083BA7F /* Request */,
@@ -742,6 +748,16 @@
 			name = Faq;
 			sourceTree = "<group>";
 		};
+		F2E6E8EB1B2382B80083BA7F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */,
+				F2E6E8EE1B2385730083BA7F /* DetailVC.h */,
+				F2E6E8EF1B2385730083BA7F /* DetailVC.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		F2FE7E5E1B04EDDD00CDD057 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,6 +906,7 @@
 				F2E6E8AE1B19AF490083BA7F /* mainFitness.png in Resources */,
 				F2E6E8B01B19AF490083BA7F /* mainNightout.png in Resources */,
 				F2E6E88A1B19A7660083BA7F /* AppIcon50x50~ipad.png in Resources */,
+				F2E6E8ED1B2383C10083BA7F /* Detail.storyboard in Resources */,
 				F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */,
 				F226C8161B0F5B57007A1C03 /* cultural.png in Resources */,
 				F2E6E8991B19A7660083BA7F /* AppIcon512x512@2x.png in Resources */,
@@ -1001,6 +1018,7 @@
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
+				F2E6E8F01B2385730083BA7F /* DetailVC.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
