@@ -750,6 +750,35 @@
 }
 
 
+#pragma Mark - MKMapView Delegate Methods.
+
+//returns the view for the selected annotation method.
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
+    MKPinAnnotationView *pinAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
+
+    //allow the pin to show the callout.
+    pinAnnotation.canShowCallout = YES;
+    UIButton *selectActivityButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    selectActivityButton.frame = CGRectMake(0, 0, 70, 20);
+    [selectActivityButton setTitle:@"Details" forState:UIControlStateNormal];
+    [selectActivityButton setTitleColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1] forState:UIControlStateNormal];
+    selectActivityButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    [selectActivityButton.layer setBorderWidth:1];
+    [selectActivityButton.layer setBorderColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor];
+    pinAnnotation.rightCalloutAccessoryView = selectActivityButton;
+
+
+    return pinAnnotation;
+
+}
+
+
+
+
+
+
 //******************HELPER METHODS****************************************//
 //Helper method to download user's profile image
 //-(void)getUsersProfileImage{

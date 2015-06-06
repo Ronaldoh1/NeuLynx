@@ -155,7 +155,7 @@
     UIButton *selectLocationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     selectLocationButton.frame = CGRectMake(0, 0, 70, 20);
     [selectLocationButton setTitle:@"Select" forState:UIControlStateNormal];
-    [selectLocationButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [selectLocationButton setTitleColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1] forState:UIControlStateNormal];
     selectLocationButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
     [selectLocationButton.layer setBorderWidth:1];
     [selectLocationButton.layer setBorderColor:[UIColor blueColor].CGColor];

@@ -23,6 +23,7 @@
 @property NSString *userCity;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property NSArray *cellIconNames;
 
 @end
 
@@ -37,29 +38,11 @@
 }
 
 
-#pragma mark CLLocationManager Delegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    self.currentLocation = [locations objectAtIndex:0];
-    [self.locationManager stopUpdatingLocation];
-    NSLog(@"Detected Location : %f, %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    [geocoder reverseGeocodeLocation:self.currentLocation
-                   completionHandler:^(NSArray *placemarks, NSError *error) {
-                       if (error){
-                           NSLog(@"Geocode failed with error: %@", error);
-                           return;
-                       }
-                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                       NSLog(@"placemark.ISOcountryCode %@",placemark.locality
-                             );
-                       self.userCity = placemark.locality;
-
-                   }];
-}
 
 -(void)initialSetUp{
 
-
+    //initialize menu icons array.
+    [self setCellIconNames:[NSArray arrayWithObjects:@"inboxIcon.png", @"requestIcon", @"historyIcon", @"searchIcon", @"helpIcon", @"faqIcon", @"aboutIcon", @"termsIcon",nil]];
 
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
@@ -83,6 +66,7 @@
      [self.menuArray addObject:@"History"];
      [self.menuArray addObject:@"Search Activity"];
      [self.menuArray addObject:@"Help"];
+    [self.menuArray addObject:@"FAQs"];
      [self.menuArray addObject:@"About"];
     [self.menuArray addObject:@"Terms & Conditions"];
     
@@ -147,6 +131,8 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
 #pragma Mark - UITableView Delegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -172,6 +158,27 @@
 
     //chnage the cell accessory
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+ NSString *cellIconName = [[self cellIconNames] objectAtIndex:indexPath.row];
+    UIImage *cellIcon = [UIImage imageNamed:cellIconName];
+    //[cell.imageView setImage:cellIcon];
+
+    cell.imageView.transform =  CGAffineTransformMakeScale(0.5, 0.5);
+    cell.imageView.image = cellIcon;
+
+
+//
+//    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    cell.imageView.frame = CGRectMake(0, 0, 20, 20);
+    //cell.imageView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+
+
+//    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 5, 30, 30)];
+//    imageView.backgroundColor = [UIColor clearColor];
+//    [imageView.layer setCornerRadius:5];
+//    [imageView.layer setMasksToBounds:YES];
+//    [imageView setImage:[UIImage imageNamed:cellIconName]];
+//    [cell.contentView addSubview:imageView];
 
     return cell;
 }
@@ -210,15 +217,20 @@
         [self presentViewController:helpNavVC animated:YES completion:nil];
 
     }else if(indexPath.row == 5){
+        UIStoryboard *faqStoryBoard = [UIStoryboard storyboardWithName:@"Faq" bundle:nil];
+        UINavigationController *faqNavVC = [faqStoryBoard instantiateViewControllerWithIdentifier:@"faqNavVC"];
+        [self presentViewController:faqNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 6){
         UIStoryboard *aboutStoryBoard = [UIStoryboard storyboardWithName:@"About" bundle:nil];
         UINavigationController *aboutNavVC = [aboutStoryBoard instantiateViewControllerWithIdentifier:@"aboutNavVC"];
         [self presentViewController:aboutNavVC animated:YES completion:nil];
 
-    }else if(indexPath.row == 6){
-
+    }else if(indexPath.row == 7){
         UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
         UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
         [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+
     }
 
 }
@@ -242,6 +254,28 @@
         }
 
     }];
+}
+
+
+
+#pragma mark CLLocationManager Delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [locations objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+    NSLog(@"Detected Location : %f, %f", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude);
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:self.currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       NSLog(@"placemark.ISOcountryCode %@",placemark.locality
+                             );
+                       self.userCity = placemark.locality;
+
+                   }];
 }
 
 @end

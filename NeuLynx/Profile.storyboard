@@ -150,8 +150,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rs2-Yq-TVn">
                                 <rect key="frame" x="0.0" y="266" width="320" height="214"/>
                                 <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hww-sd-NFs">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gd3-fy-wHG" id="Txe-SU-BJx"/>
+                                            <outlet property="delegate" destination="gd3-fy-wHG" id="NDk-le-BSB"/>
+                                        </connections>
+                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbb-VY-3Gx">
-                                        <rect key="frame" x="275" y="166" width="37" height="30"/>
+                                        <rect key="frame" x="275" y="184" width="37" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="CZl-9N-aBR"/>
                                             <constraint firstAttribute="width" constant="37" id="W1P-YV-2hv"/>
@@ -163,13 +170,6 @@
                                             <action selector="onDoneButtonHideAgePicker:" destination="gd3-fy-wHG" eventType="touchUpInside" id="Rcf-p4-KIR"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hww-sd-NFs">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="gd3-fy-wHG" id="Txe-SU-BJx"/>
-                                            <outlet property="delegate" destination="gd3-fy-wHG" id="NDk-le-BSB"/>
-                                        </connections>
-                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="trailing" secondItem="cbb-VY-3Gx" secondAttribute="trailing" constant="8" id="DgX-Ih-dn3"/>
                                     <constraint firstItem="hww-sd-NFs" firstAttribute="top" secondItem="Rs2-Yq-TVn" secondAttribute="top" id="M8E-yl-BeC"/>
                                     <constraint firstAttribute="trailing" secondItem="hww-sd-NFs" secondAttribute="trailing" id="UW9-Z8-xNP"/>
-                                    <constraint firstAttribute="bottom" secondItem="cbb-VY-3Gx" secondAttribute="bottom" constant="18" id="dIX-ZF-a6c"/>
+                                    <constraint firstAttribute="bottom" secondItem="cbb-VY-3Gx" secondAttribute="bottom" id="dIX-ZF-a6c"/>
                                     <constraint firstAttribute="width" constant="320" id="myz-Df-ltw"/>
                                     <constraint firstAttribute="height" constant="214" id="pfD-f6-YL5"/>
                                 </constraints>
@@ -242,14 +242,14 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="ZMi-Kk-ebl">
-                        <barButtonItem key="leftBarButtonItem" title="Skip" id="V2Z-qJ-vX1">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="V2Z-qJ-vX1">
                             <connections>
                                 <action selector="onBackButtonTapped:" destination="gd3-fy-wHG" id="Ksy-dQ-bEw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="b44-Mw-JoB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="b44-Mw-JoB">
                             <connections>
-                                <action selector="onDoneButtonTappedSaveUserInformation:" destination="gd3-fy-wHG" id="E5J-H2-zpO"/>
+                                <action selector="onSaveButtonTapped:" destination="gd3-fy-wHG" id="Wc2-aU-Mev"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

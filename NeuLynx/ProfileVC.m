@@ -237,8 +237,12 @@
     
 }
 //**********Save the user's information************
-- (IBAction)onDoneButtonTappedSaveUserInformation:(UIBarButtonItem *)sender {
+- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
 
+
+    if ([self.nameTextField.text isEqualToString:@""] || [self.ageTextField.text isEqualToString:@""]) {
+        [self displayAlertWithTitle:@"Error in Form" andWithMessage:@"Personal information cannot be blank"];
+    } else {
     self.currentUser.name = self.nameTextField.text;
     self.currentUser.age = self.ageTextField.text;
 
@@ -280,7 +284,7 @@
 
         }
     }];
-
+    }
 
 
 
@@ -482,7 +486,16 @@
 
 //***********HELPER METHODS **************//
 
+//Display general alert
 
+-(void)displayAlertWithTitle:(NSString *)title andWithMessage:(NSString *)message{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+    
+    
+}
 //helper method to display a success message when information has been posted.
 -(void)displaySuccessMessage{
 
