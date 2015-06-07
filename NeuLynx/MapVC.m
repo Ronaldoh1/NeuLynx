@@ -17,6 +17,7 @@
 #import "Activity.h"
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
+#import "CustomMKAnnotation.h"
 
 
 
@@ -53,7 +54,7 @@
 
 
 //MAP
-@property MKPointAnnotation *pinAnnotation;
+@property CustomMKAnnotation *pinAnnotation;
 @end
 
 @implementation MapVC
@@ -553,9 +554,11 @@
                // NSLog(@"activities are %@",activitiesArray);
 
                 for (Activity *activity in activities){
-                    self.pinAnnotation = [MKPointAnnotation new];
-                    self.pinAnnotation.coordinate = CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude);
-                    self.pinAnnotation.title = activity.activityTitle;
+                    self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
+;
+
+                 //   self.pinAnnotation.activity = activity;
+
                     [self.mapView addAnnotation:self.pinAnnotation];
 
                 }
@@ -613,7 +616,7 @@
     CABasicAnimation *theAnimation1;
 
     theAnimation1=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation1.duration=4.0;
+    theAnimation1.duration=1.25;
     theAnimation1.repeatCount=HUGE_VALF;
     theAnimation1.autoreverses=YES;
     theAnimation1.fromValue=[NSNumber numberWithFloat:1.0];
@@ -622,7 +625,7 @@
 
     CABasicAnimation *theAnimation2;
     theAnimation2=[CABasicAnimation animationWithKeyPath:@"opacity"];
-    theAnimation2.duration=3.0;
+    theAnimation2.duration=1.0;
     theAnimation2.repeatCount=HUGE_VALF;
     theAnimation2.autoreverses=YES;
     theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
@@ -723,8 +726,8 @@
         self.initialLocation = userLocation.location;
         MKCoordinateRegion mapRegion;
         mapRegion.center = mapView.userLocation.coordinate;
-        mapRegion.span.latitudeDelta = 0.01;
-        mapRegion.span.longitudeDelta = 0.01;
+        mapRegion.span.latitudeDelta = 0.04;
+        mapRegion.span.longitudeDelta = 0.04;
 
         [mapView setRegion:mapRegion animated: YES];
     }
@@ -735,10 +738,7 @@
 //helper method to zoom in
 -(void)zoom:(double *)latitude :(double *)logitude
 {
-    //    double delayInSeconds = 0.5;
-    //    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    //    dispatch_after(popTime, dispatch_get_main_queue(), ^(void)
-    //        {
+
     MKCoordinateRegion region;
     region.center.latitude = *latitude;
     region.center.longitude = *logitude;
@@ -746,7 +746,7 @@
     region.span.longitudeDelta = 0.04;
     region = [self.mapView regionThatFits:region];
     [self.mapView setRegion:region animated:YES];
-    //        });
+
 }
 
 
@@ -754,49 +754,58 @@
 
 //returns the view for the selected annotation method.
 
+
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
 
-    MKPinAnnotationView *pinAnnotation = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
 
-    if ([annotation isEqual:self.pinAnnotation]) {
+    if ([annotation isKindOfClass:[CustomMKAnnotation class]]) {
+
+        CustomMKAnnotation *pinAnnotation = (CustomMKAnnotation *)annotation;
+        MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotation"];
+
+   
+
+        if ([pinAnnotation.activity.selectedCategory isEqualToString:@"Cultural"]) {
+            UIImage *image = [UIImage imageNamed:@"culturalPin.png"];
 
 
-    }else if ([annotation isEqual:mapView.userLocation]){
-        return  nil;
+            annotationView.image =  [self resizeImageForPins:image];
+
+
+
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"]){
+            UIImage *image = [UIImage imageNamed:@"gastronomyPin.png"];
+             annotationView.image =  [self resizeImageForPins:image];
+
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"]){
+            UIImage *image = [UIImage imageNamed:@"nightOutPin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Festival"]){
+            UIImage *image = [UIImage imageNamed:@"festivalPin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Fitness"]){
+            UIImage *image = [UIImage imageNamed:@"fitnessPin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"]){
+            UIImage *image = [UIImage imageNamed:@"outdoorsPin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+        }
+
+        if(annotationView == nil){
+            annotationView = pinAnnotation.annotationView;
+        }else
+            annotationView.annotation = annotation;
+            return annotationView;
+    } else{
+        return nil;
     }
-    //allow the pin to show the callout.
-    pinAnnotation.canShowCallout = YES;
-    UIButton *selectActivityButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    selectActivityButton.frame = CGRectMake(0, 0, 70, 20);
-    [selectActivityButton setTitle:@"Details" forState:UIControlStateNormal];
-    [selectActivityButton setTitleColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1] forState:UIControlStateNormal];
-    selectActivityButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-    [selectActivityButton.layer setBorderWidth:1];
-    [selectActivityButton.layer setBorderColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor];
-    pinAnnotation.rightCalloutAccessoryView = selectActivityButton;
-
-
-
-
-    //
-
-    return pinAnnotation;
-
 }
+
 
 
 //Allow user to select their location.
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-
-//    //ask the view to give you the coordinate lat and long
-//
-//    NSLog(@"lat is: %f and long is: %f", [[view annotation] coordinate].latitude, [[view annotation] coordinate].longitude);
-//
-//    self.activityGeoPoint = [PFGeoPoint new];
-//
-//    self.activityGeoPoint.latitude = [[view annotation] coordinate].latitude;
-//    self.activityGeoPoint.longitude = [[view annotation] coordinate].longitude;o
 
 
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
@@ -809,18 +818,23 @@
 
 
 //******************HELPER METHODS****************************************//
-//Helper method to download user's profile image
-//-(void)getUsersProfileImage{
-//
-//    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//        if (!error) {
-//            UIImage *image = [UIImage imageWithData:data];
-//            self.profileImage.image = image;
-//        }
-//
-//    }];
-//}
-//
+
+//Helper method to resize pins for mapview
+
+-(UIImage *)resizeImageForPins:(UIImage *)image{
+    CGRect resizeRect;
+    resizeRect.size.height = 30;
+    resizeRect.size.width = 25;
+
+    resizeRect.origin = (CGPoint){0.0f, 0.0f};
+    UIGraphicsBeginImageContext(resizeRect.size);
+    [image drawInRect:resizeRect];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return resizedImage;
+}
+
 
 //**********************BLOCKS***********************************************//
 -(void)getUserInformationFromParse:(void(^)())block afterDelay:(NSTimeInterval)delay{

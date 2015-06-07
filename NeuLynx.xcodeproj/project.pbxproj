@@ -16,6 +16,13 @@
 		F226C81A1B0F5BC1007A1C03 /* fitness.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8191B0F5BC1007A1C03 /* fitness.png */; };
 		F226C81C1B0F5C07007A1C03 /* nightout.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C81B1B0F5C07007A1C03 /* nightout.png */; };
 		F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = F226C81E1B0F5D7B007A1C03 /* Activity.m */; };
+		F24EC7D91B23ACD80018202F /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7D81B23ACD80018202F /* outdoorsPin.png */; };
+		F24EC7DF1B23AD8C0018202F /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* culturalPin.png */; };
+		F24EC7E01B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DB1B23AD8B0018202F /* festivalPin.png */; };
+		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
+		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
+		F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DE1B23AD8B0018202F /* nightOutPin.png */; };
+		F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F24EC7EB1B23F32B0018202F /* CustomMKAnnotation.m */; };
 		F2576E041B01B8DE0006C8E1 /* newNeuLynxSlogan.png in Resources */ = {isa = PBXBuildFile; fileRef = F2576E031B01B8DE0006C8E1 /* newNeuLynxSlogan.png */; };
 		F2576E121B01BA9A0006C8E1 /* mapTabButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F2576E111B01BA9A0006C8E1 /* mapTabButton.png */; };
 		F2576E161B01C0200006C8E1 /* mailIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2576E151B01C0200006C8E1 /* mailIcon.png */; };
@@ -182,6 +189,14 @@
 		F226C81B1B0F5C07007A1C03 /* nightout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightout.png; sourceTree = "<group>"; };
 		F226C81D1B0F5D7B007A1C03 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		F226C81E1B0F5D7B007A1C03 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		F24EC7D81B23ACD80018202F /* outdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoorsPin.png; sourceTree = "<group>"; };
+		F24EC7DA1B23AD8B0018202F /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
+		F24EC7DB1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
+		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
+		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
+		F24EC7DE1B23AD8B0018202F /* nightOutPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightOutPin.png; sourceTree = "<group>"; };
+		F24EC7EA1B23F32B0018202F /* CustomMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMKAnnotation.h; sourceTree = "<group>"; };
+		F24EC7EB1B23F32B0018202F /* CustomMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMKAnnotation.m; sourceTree = "<group>"; };
 		F2576E031B01B8DE0006C8E1 /* newNeuLynxSlogan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newNeuLynxSlogan.png; sourceTree = "<group>"; };
 		F2576E111B01BA9A0006C8E1 /* mapTabButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapTabButton.png; sourceTree = "<group>"; };
 		F2576E151B01C0200006C8E1 /* mailIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mailIcon.png; sourceTree = "<group>"; };
@@ -518,6 +533,8 @@
 				F28519261AFADAED007A45FA /* Map.storyboard */,
 				F25BFBF41AFB10B000B2C5BA /* MapVC.h */,
 				F25BFBF51AFB10B000B2C5BA /* MapVC.m */,
+				F24EC7EA1B23F32B0018202F /* CustomMKAnnotation.h */,
+				F24EC7EB1B23F32B0018202F /* CustomMKAnnotation.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -559,6 +576,12 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F24EC7DA1B23AD8B0018202F /* culturalPin.png */,
+				F24EC7DB1B23AD8B0018202F /* festivalPin.png */,
+				F24EC7DC1B23AD8B0018202F /* fitnessPin.png */,
+				F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */,
+				F24EC7DE1B23AD8B0018202F /* nightOutPin.png */,
+				F24EC7D81B23ACD80018202F /* outdoorsPin.png */,
 				F2E6E8E91B2359C70083BA7F /* termsIcon.png */,
 				F2E6E8E71B2359B30083BA7F /* aboutIcon.png */,
 				F2E6E8E51B2359990083BA7F /* faqIcon.png */,
@@ -872,6 +895,7 @@
 				F2E6E8AC1B19AF490083BA7F /* mainCultural.png in Resources */,
 				F226C81C1B0F5C07007A1C03 /* nightout.png in Resources */,
 				F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */,
+				F24EC7D91B23ACD80018202F /* outdoorsPin.png in Resources */,
 				F2E6E8851B19A7660083BA7F /* AppIcon40x40@2x.png in Resources */,
 				F2E6E8AF1B19AF490083BA7F /* mainGastronomy.png in Resources */,
 				F226C80E1B0F5A2D007A1C03 /* discover1.png in Resources */,
@@ -901,6 +925,7 @@
 				F2E6E8841B19A7660083BA7F /* AppIcon32x32@2x.png in Resources */,
 				F2E6E8871B19A7660083BA7F /* AppIcon40x40@3x.png in Resources */,
 				F2E6E88F1B19A7660083BA7F /* AppIcon72x72@2x~ipad.png in Resources */,
+				F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */,
 				F2E6E8C61B1B93700083BA7F /* discover.png in Resources */,
 				F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */,
 				F2E6E8AE1B19AF490083BA7F /* mainFitness.png in Resources */,
@@ -914,6 +939,7 @@
 				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
 				F2FE7E681B04F60A00CDD057 /* backBackground.png in Resources */,
 				F2E6E8831B19A7660083BA7F /* AppIcon32x32.png in Resources */,
+				F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */,
 				F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */,
 				F2E6E8901B19A7660083BA7F /* AppIcon72x72~ipad.png in Resources */,
 				F2E6E8861B19A7660083BA7F /* AppIcon40x40@2x~ipad.png in Resources */,
@@ -924,7 +950,9 @@
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
 				F2FE7E6E1B05143800CDD057 /* us.png in Resources */,
 				F2E6E8811B19A7660083BA7F /* AppIcon29x29@3x.png in Resources */,
+				F24EC7E01B23AD8C0018202F /* festivalPin.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
+				F24EC7DF1B23AD8C0018202F /* culturalPin.png in Resources */,
 				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
 				F2E6E8931B19A7660083BA7F /* AppIcon120x120_carplay.png in Resources */,
 				F2E6E8A31B19AD4F0083BA7F /* wGastronomy.png in Resources */,
@@ -939,6 +967,7 @@
 				F2E6E87F1B19A7660083BA7F /* AppIcon29x29@2x.png in Resources */,
 				F2576E1C1B02CDED0006C8E1 /* FacebookButton.png in Resources */,
 				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
+				F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */,
 				F2E6E8D91B22C60D0083BA7F /* Faq.storyboard in Resources */,
 				F2E6E8EA1B2359C70083BA7F /* termsIcon.png in Resources */,
 				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
@@ -1027,6 +1056,7 @@
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */,
+				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */,

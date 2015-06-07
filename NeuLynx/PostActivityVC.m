@@ -131,7 +131,12 @@
 
             // The object has been saved.
             [self displaySuccessMessage];
-            [self dismissViewControllerAnimated:YES completion:nil];
+//            [self dismissViewControllerAnimated:YES completion:nil];
+
+            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+            [self presentViewController:mapNavVC animated:YES completion:nil];
+
         } else {
             // There was a problem, check error.description
             [self displayErrorMessage:error.description];
@@ -390,7 +395,28 @@
 
 
 //***********HELPER METHODS **************//
+//Helper method to get address of location chosen
 
+-(NSString*)getAddressFromLatLong : (NSString *)latLng {
+    //  NSString *string = [[Address.text stringByAppendingFormat:@"+%@",cityTxt.text] stringByAppendingFormat:@"+%@",addressText];
+    NSString *esc_addr =  [latLng stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    NSString *req = [NSString stringWithFormat:@"http://maps.google.com/maps/api/geocode/json?sensor=false&address=%@", esc_addr];
+    NSString *result = [NSString stringWithContentsOfURL:[NSURL URLWithString:req] encoding:NSUTF8StringEncoding error:NULL];
+    NSMutableDictionary *data = [NSJSONSerialization JSONObjectWithData:[result dataUsingEncoding:NSUTF8StringEncoding]options:NSJSONReadingMutableContainers error:nil];
+    NSMutableArray *dataArray = (NSMutableArray *)[data valueForKey:@"results" ];
+    if (dataArray.count == 0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Please Enter a valid address" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else{
+        for (id firstTime in dataArray) {
+            NSString *jsonStr1 = [firstTime valueForKey:@"formatted_address"];
+            return jsonStr1;
+        }
+    }
+
+    return nil;
+}
 
 //helper method to display a success message when information has been posted.
 -(void)displaySuccessMessage{
@@ -421,16 +447,7 @@
 
 -(IBAction)unwindSegueFromSetLocationOnMapViewController:(UIStoryboardSegue *)segue{
 
-//    if ([segue.sourceViewController isKindOfClass:[SelectLocationFromMapViewController class]]) {
-//        SelectLocationFromMapViewController *selectLocationVC = [segue sourceViewController];
-//        // if the user clicked Cancel, we don't want to change the color
-//        self.serviceGeoPoint = [PFGeoPoint new];
-//
-//        self.serviceGeoPoint.latitude = selectLocationVC.serviceGeoPointFromMap.latitude;
-//        self.serviceGeoPoint.longitude = selectLocationVC.serviceGeoPointFromMap.longitude;
-//        self.location.text = selectLocationVC.userLocation;
-//
-//        NSLog(@"%f %f", self.serviceGeoPoint.longitude, self.serviceGeoPoint.latitude);
+
 
     //First we need to check if the sourceViewController is of the class SelectLocaitonVC class. This step is an extra safety step.
     //If it is, the we need to create the SelectLocationVC and make it equal to the sourceViewController.
@@ -443,6 +460,7 @@
 
        self.activityGeoPoint.latitude= selectLocationVC.activityGeoPoint.latitude;
         self.activityGeoPoint.longitude = selectLocationVC.activityGeoPoint.longitude;
+        self.activityAddress.text = [self getAddressFromLatLong:[NSString stringWithFormat:@"%f,%f",self.activityGeoPoint.latitude, self.activityGeoPoint.longitude]];
 
         NSLog(@"the activity's geo point is %f %f", selectLocationVC.activityGeoPoint.latitude
               , selectLocationVC.activityGeoPoint.longitude);
