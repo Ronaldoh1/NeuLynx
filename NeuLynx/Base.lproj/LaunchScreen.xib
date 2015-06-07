@@ -22,14 +22,27 @@
                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
-                    <rect key="frame" x="8" y="413" width="398" height="287"/>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="hW9-1u-Bti">
                     <rect key="frame" x="70" y="150" width="275" height="275"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="275" id="SoP-6y-J8F"/>
                     </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
+                    <rect key="frame" x="8" y="405" width="398" height="287"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="287" id="Afu-gW-1Cy"/>
+                        <constraint firstAttribute="width" constant="398" id="WxO-re-72Z"/>
+                        <constraint firstAttribute="height" constant="287" id="dAs-Oi-h4e"/>
+                        <constraint firstAttribute="height" constant="287" id="dRN-cN-jdW"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Afu-gW-1Cy"/>
+                            <exclude reference="WxO-re-72Z"/>
+                            <exclude reference="dRN-cN-jdW"/>
+                        </mask>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -37,17 +50,16 @@
                 <constraint firstAttribute="bottom" secondItem="rcl-M2-9Hy" secondAttribute="bottom" id="1cj-Cd-nc9"/>
                 <constraint firstItem="hW9-1u-Bti" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="4cy-VG-jig"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Xc-7V-1iV"/>
-                <constraint firstAttribute="bottom" secondItem="8h0-gc-eKc" secondAttribute="bottom" constant="36" id="8Fj-uj-zKf"/>
+                <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="9EO-8S-2Vf"/>
                 <constraint firstItem="hW9-1u-Bti" firstAttribute="top" secondItem="oN2-YE-ayD" secondAttribute="bottom" constant="-46" id="CnU-Vb-Gdb"/>
+                <constraint firstAttribute="trailing" secondItem="8h0-gc-eKc" secondAttribute="trailing" constant="8" id="FiX-Oq-q67"/>
                 <constraint firstItem="oN2-YE-ayD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="IXX-3N-zcY"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFf-Lv-ETJ"/>
                 <constraint firstAttribute="trailing" secondItem="oN2-YE-ayD" secondAttribute="trailing" constant="8" id="a94-od-UAv"/>
                 <constraint firstAttribute="trailing" secondItem="rcl-M2-9Hy" secondAttribute="trailing" id="bcv-DL-Trb"/>
-                <constraint firstItem="8h0-gc-eKc" firstAttribute="top" secondItem="oN2-YE-ayD" secondAttribute="bottom" constant="217" id="drW-c8-QNr"/>
-                <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="h40-pz-3Nt"/>
+                <constraint firstAttribute="centerY" secondItem="8h0-gc-eKc" secondAttribute="centerY" constant="-180.5" id="et7-2g-XK0"/>
                 <constraint firstItem="oN2-YE-ayD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="108" id="lrj-Gn-h89"/>
                 <constraint firstAttribute="trailing" secondItem="hW9-1u-Bti" secondAttribute="trailing" constant="69" id="u4O-Mv-n2w"/>
-                <constraint firstAttribute="trailing" secondItem="8h0-gc-eKc" secondAttribute="trailing" constant="8" id="xzM-Jf-Tk8"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

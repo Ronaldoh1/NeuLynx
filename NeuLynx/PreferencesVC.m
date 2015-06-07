@@ -16,7 +16,8 @@
 @property NSArray *travelPreferenceArray;
 @property NSIndexPath *lastIndexPath;
 @property NSMutableArray *stateArrayForCheckmark;
-@property NSMutableArray *selectedTravelPreferenceArray;
+@property NSDictionary *selectedTravelPreferenceDict;
+@property NSMutableDictionary *TravelPreferenceDict;
 @property NSMutableArray *selectedPersonalityArray;
 @property User *currentUser;
 
@@ -33,7 +34,27 @@
 
     //set up preference array;
     self.travelPreferenceArray = @[@"Business Traveler", @"Adventurer Traveler", @"Solo Traveler", @"Gay Traveler", @"Group Traveler", @"The Techie", @"The Planner", @"The Chiller", @"No Budget", @"The Budgeter", @"The helpless", @"Guidebook Memorizer", @"The Minimalist", @"The Repeater", @"The Fit Traveler"];
+
     self.personalityArray = @[@"Social", @"Party Animal", @"Introverted", @"Extroverted", @"The Artist", @"The Idealist", @"The Scientist/Engineer", @"The Visionary", @"The Executive"];
+
+
+    self.TravelPreferenceDict = [NSMutableDictionary dictionaryWithDictionary: @{ @"Business Traveler" : @NO,
+        @"Adventurer Traveler": @NO,
+        @"Solo Traveler" : @NO,
+        @"Gay Traveler" : @NO,
+        @"Group Traveler" : @NO,
+        @"The Techie" : @NO,
+        @"The Planner" : @NO,
+        @"The Chiller" : @NO,
+        @"No Budget" : @NO,
+        @"The Budgeter" : @NO,
+        @"The helpless" : @NO,
+        @"Guidebook Memorizer" : @NO,
+        @"The Minimalist" : @NO,
+        @"The Repeater" : @NO,
+        @"The Fit Traveler" : @NO
+    }];
+
 
     //get reference to current user
     self.currentUser = [User currentUser];
@@ -41,16 +62,35 @@
     //Create a new state array for the checkmarks
     self.stateArrayForCheckmark = [NSMutableArray new];
 
+    //set up the NSDictionary to keep Track of user's selectons
+    self.selectedTravelPreferenceDict = self.currentUser.travelPreferences;
+
+
     //to add the boolean values to the NSMutable Array you need to add it as an NS Number. Ex. [mutableArray addObject[NSNumber numberWithBool:YES]]; or in a for loop like the one below.
 
     //if VC to present is equal to 0, then we use the travel preference array.
     //else we need to present the personality array.
     if (self.vCtoPresent == 0) {
 
-        for(int i = 0; i<15; i++){
+        if (self.selectedTravelPreferenceDict.count != 0) {
+
+            for (id key in self.selectedTravelPreferenceDict) {
+
+                if ([key boolValue] == YES) {
+                     [self.stateArrayForCheckmark addObject:@YES];
+                }else  if ([key boolValue] == NO){
+                    [self.stateArrayForCheckmark addObject:@NO];
+
+                }
+            }
+
+        }else{
+            for(int i = 0; i<15; i++){
 
 
-            [self.stateArrayForCheckmark addObject:@YES];
+                [self.stateArrayForCheckmark addObject:@NO];
+            }
+
         }
 
     } else {
@@ -80,8 +120,15 @@
 - (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
 
 
-
-    [self dismissViewControllerAnimated:YES completion:nil];
+    self.currentUser.travelPreferences = self.TravelPreferenceDict;
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [self displayErrorMessage:error.description];
+            
+        }
+    }];
 }
 
 
@@ -159,6 +206,14 @@
 
     [self.stateArrayForCheckmark replaceObjectAtIndex:indexPath.row
                                            withObject:[NSNumber numberWithBool:![[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]]];
+
+    if ([self.TravelPreferenceDict.allValues[indexPath.row] boolValue] == NO) {
+        [self.TravelPreferenceDict setValue:@YES forKey:self.travelPreferenceArray[indexPath.row]];
+
+    }else if([self.TravelPreferenceDict.allValues[indexPath.row] boolValue] == YES) {
+        [self.TravelPreferenceDict setValue:@NO forKey:self.travelPreferenceArray[indexPath.row]];
+
+    }
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 
 
@@ -168,6 +223,15 @@
 
 
 }
+
+
+//helper method to display error message
+    -(void)displayErrorMessage:(NSString *)error{
+
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+        [alertView show];
+    }
 
 
 @end
