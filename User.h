@@ -17,13 +17,17 @@
 @property NSString *orientation;
 @property NSMutableArray *languageArray;
 @property NSString *age;
-@property NSMutableArray *travelPreferencesArray;
-@property NSMutableArray *personalityArray;
 @property NSDictionary *travelPreferences;
-@property NSDictionary *personalities;
 @property NSString *userCurrentCity;
 @property NSString *userAdministrativeArea;
 @property NSString *userCountryCode;
+
+//Preferences
+@property NSMutableArray *travelPreferencesArray;
+@property NSMutableArray *TravelPreferencesBoolArray;
+
+@property NSMutableArray *personalityArray;
+@property NSMutableArray *personalityBoolArray;
 
 
 @end

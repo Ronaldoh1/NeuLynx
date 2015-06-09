@@ -15,14 +15,16 @@
 @dynamic gender;
 @dynamic orientation;
 @dynamic languageArray;
-@dynamic personalityArray;
-@dynamic travelPreferencesArray;
 @dynamic age;
-@dynamic personalities;
 @dynamic travelPreferences;
 @dynamic userCurrentCity;
 @dynamic userAdministrativeArea;
 @dynamic userCountryCode;
+@dynamic TravelPreferencesBoolArray;
+@dynamic travelPreferencesArray;
+@dynamic personalityBoolArray;
+@dynamic personalityArray;
+
 
 
 +(void)load {

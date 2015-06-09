@@ -18,26 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5F-eE-90s">
-                                <rect key="frame" x="0.0" y="-43" width="320" height="478"/>
+                                <rect key="frame" x="0.0" y="-43" width="320" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="7Fd-Ur-rPe" id="GkE-vh-32I"/>
                                 </connections>
                             </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-gc-5dU">
-                                <rect key="frame" x="0.0" y="435" width="320" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="lkH-gc-5dU" secondAttribute="bottom" id="J5z-aQ-MbP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lkH-gc-5dU" secondAttribute="trailing" constant="-16" id="PeL-qB-uPI"/>
-                            <constraint firstItem="lkH-gc-5dU" firstAttribute="leading" secondItem="ot6-qV-ocO" secondAttribute="leadingMargin" constant="-16" id="RCs-Ql-lZo"/>
-                            <constraint firstItem="lkH-gc-5dU" firstAttribute="top" secondItem="A5F-eE-90s" secondAttribute="bottom" id="lr9-3x-zgO"/>
                             <constraint firstItem="A5F-eE-90s" firstAttribute="top" secondItem="ot6-qV-ocO" secondAttribute="topMargin" constant="-43" id="mp1-lt-2ah"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A5F-eE-90s" secondAttribute="trailing" constant="-16" id="qoL-oj-5vH"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="A5F-eE-90s" secondAttribute="bottom" constant="45" id="ur0-yG-iQo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="A5F-eE-90s" secondAttribute="bottom" id="ur0-yG-iQo"/>
                             <constraint firstItem="A5F-eE-90s" firstAttribute="leading" secondItem="ot6-qV-ocO" secondAttribute="leadingMargin" constant="-16" id="z9n-HB-DjW"/>
                         </constraints>
                     </view>

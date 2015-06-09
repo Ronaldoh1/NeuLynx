@@ -8,7 +8,8 @@
 
 #import "HistoryVC.h"
 
-@interface HistoryVC ()
+@interface HistoryVC ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -32,6 +33,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return nil;
+
+}
 
 
 

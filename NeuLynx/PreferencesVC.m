@@ -9,17 +9,23 @@
 #import "PreferencesVC.h"
 #import "User.h"
 
+
 @interface PreferencesVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSArray *personalityArray;
-@property NSArray *travelPreferenceArray;
+@property NSArray *personalityArrayForTableView;
+@property NSArray *travelPreferenceArrayForTableView;
 @property NSIndexPath *lastIndexPath;
 @property NSMutableArray *stateArrayForCheckmark;
-@property NSDictionary *selectedTravelPreferenceDict;
-@property NSMutableDictionary *TravelPreferenceDict;
 @property NSMutableArray *selectedPersonalityArray;
 @property User *currentUser;
+
+
+@property NSMutableArray *localTravelPreferencesArray;
+@property NSMutableArray *localTravelPreferencesBoolArray;
+
+@property NSMutableArray *localPersonalityArray;
+@property NSMutableArray *localPersonalityBoolArray;
 
 @end
 
@@ -33,37 +39,32 @@
 -(void)initialSetUp{
 
     //set up preference array;
-    self.travelPreferenceArray = @[@"Business Traveler", @"Adventurer Traveler", @"Solo Traveler", @"Gay Traveler", @"Group Traveler", @"The Techie", @"The Planner", @"The Chiller", @"No Budget", @"The Budgeter", @"The helpless", @"Guidebook Memorizer", @"The Minimalist", @"The Repeater", @"The Fit Traveler"];
+    self.travelPreferenceArrayForTableView = @[@"Business Traveler", @"Adventurer Traveler", @"Solo Traveler", @"Gay Traveler", @"Group Traveler", @"The Techie", @"The Planner", @"The Chiller", @"No Budget", @"The Budgeter", @"The helpless", @"Guidebook Memorizer", @"The Minimalist", @"The Repeater", @"The Fit Traveler"];
 
-    self.personalityArray = @[@"Social", @"Party Animal", @"Introverted", @"Extroverted", @"The Artist", @"The Idealist", @"The Scientist/Engineer", @"The Visionary", @"The Executive"];
-
-
-    self.TravelPreferenceDict = [NSMutableDictionary dictionaryWithDictionary: @{ @"Business Traveler" : @NO,
-        @"Adventurer Traveler": @NO,
-        @"Solo Traveler" : @NO,
-        @"Gay Traveler" : @NO,
-        @"Group Traveler" : @NO,
-        @"The Techie" : @NO,
-        @"The Planner" : @NO,
-        @"The Chiller" : @NO,
-        @"No Budget" : @NO,
-        @"The Budgeter" : @NO,
-        @"The helpless" : @NO,
-        @"Guidebook Memorizer" : @NO,
-        @"The Minimalist" : @NO,
-        @"The Repeater" : @NO,
-        @"The Fit Traveler" : @NO
-    }];
-
-
+    self.personalityArrayForTableView = @[@"Social", @"Party Animal", @"Introverted", @"Extroverted", @"The Artist", @"The Idealist", @"The Scientist/Engineer", @"The Visionary", @"The Executive"];
     //get reference to current user
     self.currentUser = [User currentUser];
+
+    //set up the arrays for travel preference.
+    self.localTravelPreferencesArray = [NSMutableArray arrayWithArray:self.currentUser.travelPreferencesArray];
+    self.localTravelPreferencesBoolArray = [NSMutableArray arrayWithArray:self.currentUser.TravelPreferencesBoolArray];
+
+
+    //set up the arrays for personality
+    self.localPersonalityArray = [NSMutableArray arrayWithArray:self.currentUser.personalityArray];
+    self.localPersonalityBoolArray = [NSMutableArray arrayWithArray:self.currentUser.personalityBoolArray];
+
+
+    NSLog(@"%@", self.localTravelPreferencesArray);
+
+
+
 
     //Create a new state array for the checkmarks
     self.stateArrayForCheckmark = [NSMutableArray new];
 
-    //set up the NSDictionary to keep Track of user's selectons
-    self.selectedTravelPreferenceDict = self.currentUser.travelPreferences;
+
+
 
 
     //to add the boolean values to the NSMutable Array you need to add it as an NS Number. Ex. [mutableArray addObject[NSNumber numberWithBool:YES]]; or in a for loop like the one below.
@@ -72,13 +73,17 @@
     //else we need to present the personality array.
     if (self.vCtoPresent == 0) {
 
-        if (self.selectedTravelPreferenceDict.count != 0) {
+        if (self.localTravelPreferencesArray.count != 0) {
 
-            for (id key in self.selectedTravelPreferenceDict) {
 
-                if ([key boolValue] == YES) {
+
+            for (id preference in self.localTravelPreferencesBoolArray) {
+
+                BOOL preferenceBool = [preference boolValue];
+
+                if (preferenceBool == YES) {
                      [self.stateArrayForCheckmark addObject:@YES];
-                }else  if ([key boolValue] == NO){
+                }else  if (preferenceBool == NO){
                     [self.stateArrayForCheckmark addObject:@NO];
 
                 }
@@ -89,11 +94,31 @@
 
 
                 [self.stateArrayForCheckmark addObject:@NO];
+                [self.localTravelPreferencesBoolArray addObject:@NO];
+
+                NSLog(@"%@", self.localTravelPreferencesBoolArray);
             }
 
         }
 
-    } else {
+    } else if (self.vCtoPresent == 1) {
+
+        if (self.localPersonalityArray.count != 0) {
+
+        for (id preference in self.localPersonalityBoolArray) {
+            BOOL preferenceBool = [preference boolValue];
+            if (preferenceBool == YES) {
+                [self.stateArrayForCheckmark addObject:@YES];
+            }else if (preferenceBool == NO){
+                [self.stateArrayForCheckmark addObject:@NO];
+            }
+        }
+        }else {
+            for (int i = 0; i<15; i++) {
+                [self.stateArrayForCheckmark addObject:@NO];
+                [self.localPersonalityBoolArray addObject:@NO];
+            }
+        }
 
     }
 
@@ -119,16 +144,41 @@
 
 - (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
 
+    if (self.vCtoPresent == 0) {
+        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
+        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
 
-    self.currentUser.travelPreferences = self.TravelPreferenceDict;
-    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        }else{
-            [self displayErrorMessage:error.description];
-            
-        }
-    }];
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
+            NSLog(@"it saved");
+
+            if (succeeded) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [self displayErrorMessage:error.description];
+                
+            }
+        }];
+    } else {
+
+        self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
+        self.currentUser.personalityArray = self.localPersonalityArray.copy;
+
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
+            NSLog(@"it saved");
+
+            if (succeeded) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [self displayErrorMessage:error.description];
+                
+            }
+        }];
+    }
+
 }
 
 
@@ -140,9 +190,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     if (self.vCtoPresent == 0) {
-        return self.travelPreferenceArray.count;
-    }else{
-        return self.personalityArray.count;
+        return self.travelPreferenceArrayForTableView.count;
+    }else {
+        return self.personalityArrayForTableView.count;
     }
 }
 //***********************NOTES******************************//
@@ -160,9 +210,9 @@
     //else present the personality array.
 
     if (self.vCtoPresent == 0) {
-        cell.textLabel.text = self.travelPreferenceArray[indexPath.row];
+        cell.textLabel.text = self.travelPreferenceArrayForTableView[indexPath.row];
     }else{
-        cell.textLabel.text = self.personalityArray[indexPath.row];
+        cell.textLabel.text = self.personalityArrayForTableView[indexPath.row];
     }
 
 //    if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
@@ -207,11 +257,48 @@
     [self.stateArrayForCheckmark replaceObjectAtIndex:indexPath.row
                                            withObject:[NSNumber numberWithBool:![[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]]];
 
-    if ([self.TravelPreferenceDict.allValues[indexPath.row] boolValue] == NO) {
-        [self.TravelPreferenceDict setValue:@YES forKey:self.travelPreferenceArray[indexPath.row]];
+   //need to check if the localTravelPreferenceArray - if it's set to no, then set it back to yes. if it's set to yes, then set it back to no. This will keep track of the selected cells that will be presented to the user.
+    //Local travel preference array contain the actual travel preferences for the user. If the array already contains the preference do not add it. If the user deselects the preference, search for the preference in local Travel prefernce array if its found remove it.
+    if (self.vCtoPresent == 0) {
 
-    }else if([self.TravelPreferenceDict.allValues[indexPath.row] boolValue] == YES) {
-        [self.TravelPreferenceDict setValue:@NO forKey:self.travelPreferenceArray[indexPath.row]];
+
+    if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == NO) {
+
+        [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@YES];
+        if (![self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
+            [self.localTravelPreferencesArray addObject:self.travelPreferenceArrayForTableView[indexPath.row]];
+        }
+
+
+       NSLog(@"%@", self.localTravelPreferencesBoolArray);
+
+    }else if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == YES) {
+
+         [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@NO];
+        if ([self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
+            [self.localTravelPreferencesArray removeObject:self.travelPreferenceArrayForTableView[indexPath.row]];
+        }
+
+        //  NSLog(@"%@", [self.travelPreferenceDict.allValues[indexPath.row] boolValue]);
+        
+    }
+    }else {
+
+        if ([self.localPersonalityBoolArray[indexPath.row] boolValue] == NO) {
+            [self.localPersonalityBoolArray replaceObjectAtIndex:indexPath.row withObject:@YES];
+            if (![self.localPersonalityArray containsObject:self.personalityArrayForTableView[indexPath.row]]) {
+                [self.localPersonalityArray addObject:self.personalityArrayForTableView[indexPath.row]];
+            }
+
+        } else if([self.localPersonalityBoolArray[indexPath.row] boolValue] == YES){
+            [self.localPersonalityBoolArray replaceObjectAtIndex:indexPath.row withObject:@NO];
+            if ([self.localPersonalityArray containsObject:self.personalityArrayForTableView[indexPath.row]]) {
+                [self.localPersonalityArray removeObject:self.personalityArrayForTableView[indexPath.row]];
+            }
+
+
+        }
+
 
     }
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];

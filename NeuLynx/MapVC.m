@@ -50,7 +50,13 @@
 @property UIImageView *ring2ImageView;
 
 //Activities
-@property NSMutableArray *activitiesArray;
+@property NSMutableArray *activitiesArray; //contains all activities;
+@property NSMutableArray *festivalActivityArray;
+@property NSMutableArray *culturalActivityArray;
+@property NSMutableArray *gastronomyActivityArray;
+@property NSMutableArray *nightOutActivityArray;
+@property NSMutableArray *fitnessActivityArray;
+@property NSMutableArray *outDoorsActivityArray;
 
 
 //MAP
@@ -80,27 +86,10 @@
     [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
 
 
+
+
 }
-#pragma mark CLLocationManager Delegate
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    self.currentLocation = [locations objectAtIndex:0];
-    [self.locationManager stopUpdatingLocation];
 
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
-    [geocoder reverseGeocodeLocation:self.currentLocation
-                   completionHandler:^(NSArray *placemarks, NSError *error) {
-                       if (error){
-                           NSLog(@"Geocode failed with error: %@", error);
-                           return;
-                       }
-                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
-
-                       [User currentUser].userCurrentCity = placemark.locality;
-                       [User currentUser].userAdministrativeArea = placemark.administrativeArea;
-                       [User currentUser].userCountryCode = placemark.country;
-
-                   }];
-}
 
 -(void)viewDidAppear:(BOOL)animated{
     [self setUpProfileImage];
@@ -115,11 +104,11 @@
     if ([User currentUser] != nil) {
 
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
 
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
-         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
     }
 
 
@@ -132,6 +121,14 @@
 
 -(void)performInitialSetup{
 
+    //Setup Activity's array - initialize and allocate
+    self.festivalActivityArray = [NSMutableArray new];
+    self.fitnessActivityArray = [NSMutableArray new];
+    self.gastronomyActivityArray = [NSMutableArray new];
+    self.nightOutActivityArray = [NSMutableArray new];
+    self.fitnessActivityArray = [NSMutableArray new];
+    self.outDoorsActivityArray = [NSMutableArray new];
+
 
     //Get reference to entire window
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
@@ -140,7 +137,7 @@
 
     //Set the Searchbar Tint color.
 
-//    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
+    //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -199,7 +196,7 @@
 
     //initially we should set the didGetUserLocation to false;
     self.didGetUserLocation = false;
-    
+
 }
 //Helper method to dismiss keyboard
 -(void)dismissKeyboard{
@@ -275,8 +272,8 @@
     //create the label for the button
 
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(-73, 5, 70, 20)];
-//    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
-//    label.layer.shadowOpacity = .75;
+    //    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
+    //    label.layer.shadowOpacity = .75;
 
     label.layer.masksToBounds = NO;
     label.text= buttonTitle;
@@ -306,9 +303,9 @@
 
     [self.view addSubview:button];
 
-//    UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
-//    label.text = @"text";
-//    [self.view addSubview:label];
+    //    UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
+    //    label.text = @"text";
+    //    [self.view addSubview:label];
 
 
 
@@ -455,7 +452,7 @@
 
     }];
 
-   // NSLog(@"%@", self.tempImage);
+    // NSLog(@"%@", self.tempImage);
     UIImage *profileImage = self.tempImage;
 
     //create button frame
@@ -545,19 +542,40 @@
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
-       // NSArray *activitiesArray = activities;
+        // NSArray *activitiesArray = activities;
 
         if (!error) {
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
-               // NSLog(@"activities are %@",activitiesArray);
+                // NSLog(@"activities are %@",activitiesArray);
 
                 for (Activity *activity in activities){
                     self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
-;
+                    ;
+                    if ([activity.selectedCategory isEqualToString:@"Festival"]) {
+                        [self.fitnessActivityArray addObject:activity];
 
-                 //   self.pinAnnotation.activity = activity;
+                    }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
+                        [self.culturalActivityArray addObject:activity];
+
+                    } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
+                        [self.gastronomyActivityArray addObject:activity];
+
+                    } else if ([activity.selectedCategory isEqualToString:@"NightOut"]) {
+                        [self.nightOutActivityArray addObject:activity];
+
+                    } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
+                        [self.fitnessActivityArray addObject:activity];
+
+                    } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
+                        [self.outDoorsActivityArray addObject:activity];
+                    }
+
+
+                    //   self.pinAnnotation.activity = activity;
+
+                    NSLog(@"%@", self.fitnessActivityArray);
 
                     [self.mapView addAnnotation:self.pinAnnotation];
 
@@ -572,12 +590,12 @@
 
 
         }
-        
+
     }
-     
+
      ];
-    
-    
+
+
 
 
 }
@@ -599,7 +617,7 @@
 
     //present the actionsheet in the current view.
     [actionSheet showInView:self.view];
-    
+
 }
 
 -(void)displayAlertWithTitle:(NSString *)title andWithError:(NSString *)error{
@@ -631,9 +649,30 @@
     theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
     theAnimation2.toValue=[NSNumber numberWithFloat:0.0];
     [imageView2.layer addAnimation:theAnimation2 forKey:@"animateOpacity"];
-    
-    
-    
+
+
+
+}
+
+#pragma mark CLLocationManager Delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    self.currentLocation = [locations objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:self.currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+
+                       [User currentUser].userCurrentCity = placemark.locality;
+                       [User currentUser].userAdministrativeArea = placemark.administrativeArea;
+                       [User currentUser].userCountryCode = placemark.country;
+
+                   }];
 }
 
 #pragma Mark - ActionSheet Delegate
@@ -763,7 +802,7 @@
         CustomMKAnnotation *pinAnnotation = (CustomMKAnnotation *)annotation;
         MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotation"];
 
-   
+
 
         if ([pinAnnotation.activity.selectedCategory isEqualToString:@"Cultural"]) {
             UIImage *image = [UIImage imageNamed:@"culturalPin.png"];
@@ -775,7 +814,7 @@
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"]){
             UIImage *image = [UIImage imageNamed:@"gastronomyPin.png"];
-             annotationView.image =  [self resizeImageForPins:image];
+            annotationView.image =  [self resizeImageForPins:image];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"]){
             UIImage *image = [UIImage imageNamed:@"nightOutPin.png"];
@@ -795,7 +834,7 @@
             annotationView = pinAnnotation.annotationView;
         }else
             annotationView.annotation = annotation;
-            return annotationView;
+        return annotationView;
     } else{
         return nil;
     }
@@ -806,13 +845,13 @@
 //Allow user to select their location.
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-
-
+    
+    
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
     [self presentViewController:detailVC animated:YES completion:nil];
-
-
+    
+    
 }
 
 
@@ -823,15 +862,15 @@
 
 -(UIImage *)resizeImageForPins:(UIImage *)image{
     CGRect resizeRect;
-    resizeRect.size.height = 30;
-    resizeRect.size.width = 25;
-
+    resizeRect.size.height = 35;
+    resizeRect.size.width = 20;
+    
     resizeRect.origin = (CGPoint){0.0f, 0.0f};
     UIGraphicsBeginImageContext(resizeRect.size);
     [image drawInRect:resizeRect];
     UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
+    
     return resizedImage;
 }
 
