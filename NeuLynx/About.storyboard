@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--About NeuLynx-->
@@ -15,7 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="ot6-qV-ocO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5F-eE-90s">
+                                <rect key="frame" x="0.0" y="-43" width="320" height="478"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Fd-Ur-rPe" id="GkE-vh-32I"/>
+                                </connections>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-gc-5dU">
+                                <rect key="frame" x="0.0" y="435" width="320" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="lkH-gc-5dU" secondAttribute="bottom" id="J5z-aQ-MbP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lkH-gc-5dU" secondAttribute="trailing" constant="-16" id="PeL-qB-uPI"/>
+                            <constraint firstItem="lkH-gc-5dU" firstAttribute="leading" secondItem="ot6-qV-ocO" secondAttribute="leadingMargin" constant="-16" id="RCs-Ql-lZo"/>
+                            <constraint firstItem="lkH-gc-5dU" firstAttribute="top" secondItem="A5F-eE-90s" secondAttribute="bottom" id="lr9-3x-zgO"/>
+                            <constraint firstItem="A5F-eE-90s" firstAttribute="top" secondItem="ot6-qV-ocO" secondAttribute="topMargin" constant="-43" id="mp1-lt-2ah"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A5F-eE-90s" secondAttribute="trailing" constant="-16" id="qoL-oj-5vH"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="A5F-eE-90s" secondAttribute="bottom" constant="45" id="ur0-yG-iQo"/>
+                            <constraint firstItem="A5F-eE-90s" firstAttribute="leading" secondItem="ot6-qV-ocO" secondAttribute="leadingMargin" constant="-16" id="z9n-HB-DjW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About NeuLynx" id="HEz-iq-RXM">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="FQt-GK-R8e">
@@ -25,6 +49,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="A5F-eE-90s" id="IPg-5G-Iiy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gw-jO-ZLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,24 +74,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aG-3p-5jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="319"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ywX-83-pC1">
-            <objects>
-                <viewController id="A0X-x3-MX0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wH4-YN-sYR"/>
-                        <viewControllerLayoutGuide type="bottom" id="Dam-jS-dJt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8pv-yJ-2am">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aGF-Jh-sW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="-145" y="283"/>
         </scene>
     </scenes>
 </document>
