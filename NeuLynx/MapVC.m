@@ -22,13 +22,13 @@
 
 
 @interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate>
-@property UIButton *mainButton;
-@property UIButton *mainButton1;
-@property UIButton *mainButton2;
-@property UIButton *mainButton3;
-@property UIButton *mainButton4;
-@property UIButton *mainButton5;
-@property UIButton *mainButton6;
+@property UIButton *mainDiscoverButton;
+@property UIButton *festivalActivityButton;
+@property UIButton *culturalActivityButton;
+@property UIButton *gastronomyActivityButton;
+@property UIButton *nightOutActivityButton;
+@property UIButton *fitnessActivityButton;
+@property UIButton *outdoorsActivityButton;
 
 @property UIDynamicAnimator *dynamicAnimator;
 @property BOOL isFannedOut;
@@ -76,17 +76,6 @@
     [self setUpProfileImage];
     [self createAndDisplayBlinkingRings];
 
-    self.locationManager = [CLLocationManager new];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
-
-    //add animation to the rings
-    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
-
-
-
 
 }
 
@@ -120,6 +109,26 @@
 //helper method for initial set up
 
 -(void)performInitialSetup{
+
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+
+    //add animation to the rings
+    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
+
+    //add actions to each button
+    [self.festivalActivityButton addTarget:self action:@selector(festivalButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.culturalActivityButton addTarget:self action:@selector(culturalButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.gastronomyActivityButton addTarget:self action:@selector(gastronomyButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.nightOutActivityButton addTarget:self action:@selector(nightoutButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.fitnessActivityButton addTarget:self action:@selector(fitnessButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.outdoorsActivityButton addTarget:self action:@selector(outdoorsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+
+    
+
 
     //Setup Activity's array - initialize and allocate
     self.festivalActivityArray = [NSMutableArray new];
@@ -207,44 +216,44 @@
     //create dynamic animator
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
 
-    self.mainButton1 = [self createButton:@"Festival" willShow:YES];
-    self.mainButton2 = [self createButton:@"Cultural" willShow:YES];
-    self.mainButton3 = [self createButton:@"Gastronomy" willShow:YES];
-    self.mainButton4 = [self createButton:@"Night Out" willShow:YES];
-    self.mainButton5 = [self createButton:@"Fitness" willShow:YES];
-    self.mainButton6 = [self createButton:@"Outdoors" willShow:YES];
-    self.mainButton = [self createButton:@"" willShow:NO];
+    self.festivalActivityButton = [self createButton:@"Festival" willShow:YES];
+    self.culturalActivityButton = [self createButton:@"Cultural" willShow:YES];
+    self.gastronomyActivityButton = [self createButton:@"Gastronomy" willShow:YES];
+    self.nightOutActivityButton = [self createButton:@"Night Out" willShow:YES];
+    self.fitnessActivityButton = [self createButton:@"Fitness" willShow:YES];
+    self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
+    self.mainDiscoverButton = [self createButton:@"" willShow:NO];
 
 
 
     //set the images for each button
-    [self.mainButton setBackgroundImage:[UIImage imageNamed:@"discover"] forState:UIControlStateNormal];
-    [self.mainButton1 setBackgroundImage:[UIImage imageNamed:@"mainFestival"] forState:UIControlStateNormal];
-    [self.mainButton2 setBackgroundImage:[UIImage imageNamed:@"mainCultural"] forState:UIControlStateNormal];
-    [self.mainButton3 setBackgroundImage:[UIImage imageNamed:@"mainGastronomy"] forState:UIControlStateNormal];
-    [self.mainButton4 setBackgroundImage:[UIImage imageNamed:@"mainNightout"] forState:UIControlStateNormal];
-    [self.mainButton5 setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
-    [self.mainButton6 setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
-    [self.mainButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainDiscoverButton setBackgroundImage:[UIImage imageNamed:@"discover"] forState:UIControlStateNormal];
+    [self.festivalActivityButton setBackgroundImage:[UIImage imageNamed:@"mainFestival"] forState:UIControlStateNormal];
+    [self.culturalActivityButton setBackgroundImage:[UIImage imageNamed:@"mainCultural"] forState:UIControlStateNormal];
+    [self.gastronomyActivityButton setBackgroundImage:[UIImage imageNamed:@"mainGastronomy"] forState:UIControlStateNormal];
+    [self.nightOutActivityButton setBackgroundImage:[UIImage imageNamed:@"mainNightout"] forState:UIControlStateNormal];
+    [self.fitnessActivityButton setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
+    [self.outdoorsActivityButton setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
+    [self.mainDiscoverButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 
     //Initially hide the buttons
 
-    for(UIView *view in self.mainButton1.subviews){
+    for(UIView *view in self.festivalActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.mainButton2.subviews){
+    for(UIView *view in self.culturalActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.mainButton3.subviews){
+    for(UIView *view in self.gastronomyActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.mainButton4.subviews){
+    for(UIView *view in self.nightOutActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.mainButton5.subviews){
+    for(UIView *view in self.fitnessActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.mainButton6.subviews){
+    for(UIView *view in self.outdoorsActivityButton.subviews){
         view.hidden = YES;
     }
 
@@ -321,27 +330,27 @@
     if (!self.isFannedOut) {
         [self fanButtonOut];
 
-        for(UIView *view in self.mainButton1.subviews){
+        for(UIView *view in self.festivalActivityButton.subviews){
             view.hidden = NO;
 
         }
-        for(UIView *view in self.mainButton2.subviews){
+        for(UIView *view in self.culturalActivityButton.subviews){
             view.hidden = NO;
 
         }
-        for(UIView *view in self.mainButton3.subviews){
+        for(UIView *view in self.gastronomyActivityButton.subviews){
             view.hidden = NO;
 
         }
-        for(UIView *view in self.mainButton4.subviews){
+        for(UIView *view in self.nightOutActivityButton.subviews){
             view.hidden = NO;
 
         }
-        for(UIView *view in self.mainButton5.subviews){
+        for(UIView *view in self.fitnessActivityButton.subviews){
             view.hidden = NO;
 
         }
-        for(UIView *view in self.mainButton6.subviews){
+        for(UIView *view in self.outdoorsActivityButton.subviews){
             view.hidden = NO;
 
 
@@ -356,29 +365,29 @@
 
 
     }else {
-        [self snapButton:self.mainButton1 toPoint:self.mainButton.center];
-        [self snapButton:self.mainButton2 toPoint:self.mainButton.center];
-        [self snapButton:self.mainButton3 toPoint:self.mainButton.center];
-        [self snapButton:self.mainButton4 toPoint:self.mainButton.center];
-        [self snapButton:self.mainButton5 toPoint:self.mainButton.center];
-        [self snapButton:self.mainButton6 toPoint:self.mainButton.center];
+        [self snapButton:self.festivalActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.culturalActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.gastronomyActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.nightOutActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.fitnessActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.outdoorsActivityButton toPoint:self.mainDiscoverButton.center];
 
-        for(UIView *view in self.mainButton1.subviews){
+        for(UIView *view in self.festivalActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.mainButton2.subviews){
+        for(UIView *view in self.culturalActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.mainButton3.subviews){
+        for(UIView *view in self.gastronomyActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.mainButton4.subviews){
+        for(UIView *view in self.nightOutActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.mainButton5.subviews){
+        for(UIView *view in self.fitnessActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.mainButton6.subviews){
+        for(UIView *view in self.outdoorsActivityButton.subviews){
             view.hidden = YES;
         }
 
@@ -397,13 +406,40 @@
 
 //helper method to show buttons
 -(void)fanButtonOut{
-    [self snapButton:self.mainButton1 toPoint:CGPointMake(self.mainButton.frame.origin.x - 60.0, self.mainButton.frame.origin.y + 20.0)];
-    [self snapButton:self.mainButton2 toPoint:CGPointMake(self.mainButton.frame.origin.x - 55.0, self.mainButton.frame.origin.y - 35.0)];
-    [self snapButton:self.mainButton3 toPoint:CGPointMake(self.mainButton.frame.origin.x - 45.0, self.mainButton.frame.origin.y - 90.0)];
-    [self snapButton:self.mainButton4 toPoint:CGPointMake(self.mainButton.frame.origin.x - 35.0, self.mainButton.frame.origin.y - 145.0)];
-    [self snapButton:self.mainButton5 toPoint:CGPointMake(self.mainButton.frame.origin.x - 15.0, self.mainButton.frame.origin.y - 200.0)];
-    [self snapButton:self.mainButton6 toPoint:CGPointMake(self.mainButton.frame.origin.x + 20.0, self.mainButton.frame.origin.y - 245.0)];
+    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y + 20.0)];
+    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 55.0, self.mainDiscoverButton.frame.origin.y - 35.0)];
+    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 45.0, self.mainDiscoverButton.frame.origin.y - 90.0)];
+    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y - 145.0)];
+    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 15.0, self.mainDiscoverButton.frame.origin.y - 200.0)];
+    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 20.0, self.mainDiscoverButton.frame.origin.y - 245.0)];
 
+}
+
+
+-(IBAction)buttonPressed:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    NSLog(@"button tapped %ld", (long)button.tag);
+}
+
+#pragma mark - Button selectors for each button 
+-(void)festivalButtonTapped{
+    NSLog(@"festival button tapped");
+}
+
+-(void)culturalButtonTapped{
+    NSLog(@"cultural button tapped");
+}
+-(void)gastronomyButtonTapped{
+    NSLog(@"gastronomy button tapped");
+}
+-(void)nightoutButtonTapped{
+    NSLog(@"nightout tapped");
+}
+-(void)fitnessButtonTapped{
+    NSLog(@"fitness button tapped");
+}
+-(void)outdoorsButtonTapped{
+    NSLog(@"outdoors button tapped");
 }
 
 //helper method to create blinking ring images.
@@ -575,7 +611,8 @@
 
                     //   self.pinAnnotation.activity = activity;
 
-                    NSLog(@"%@", self.fitnessActivityArray);
+                   // NSLog(@"%@", self.fitnessActivityArray);
+
 
                     [self.mapView addAnnotation:self.pinAnnotation];
 
@@ -583,7 +620,10 @@
 
 
 
+
+
             });
+
 
         } else {
             [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
@@ -594,6 +634,14 @@
     }
 
      ];
+    //once we have the array with activity, we need to ad them to the map.
+//    [self.mapView addAnnotations:self.festivalActivityArray];
+//                [self.mapView addAnnotations:self.culturalActivityArray];
+//                [self.mapView addAnnotations:self.gastronomyActivityArray];
+//    //            [self.mapView addAnnotations:self.nightOutActivityArray];
+//    //             [self.mapView addAnnotations:self.fitnessActivityArray];
+//    //            [self.mapView addAnnotations:self.outDoorsActivityArray];
+
 
 
 
