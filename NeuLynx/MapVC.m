@@ -424,22 +424,54 @@
 #pragma mark - Button selectors for each button 
 -(void)festivalButtonTapped{
     NSLog(@"festival button tapped");
+
+
+
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
+    [self.mapView addAnnotations:self.festivalActivityArray];
+//
+//    [self.mapView removeAnnotations:self.culturalActivityArray];
+//
+//
+//    [self.mapView removeAnnotations:self.gastronomyActivityArray];
+//
+//    [self.mapView removeAnnotations:self.nightOutActivityArray];
+//
+//
+//    [self.mapView removeAnnotations:self.fitnessActivityArray];
+//
+//    [self.mapView removeAnnotations:self.outDoorsActivityArray];
+
+
 }
 
 -(void)culturalButtonTapped{
     NSLog(@"cultural button tapped");
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+
+    [self.mapView addAnnotations:self.culturalActivityArray];
 }
 -(void)gastronomyButtonTapped{
     NSLog(@"gastronomy button tapped");
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:self.gastronomyActivityArray];
 }
 -(void)nightoutButtonTapped{
     NSLog(@"nightout tapped");
+        [self.mapView removeAnnotations:self.mapView.annotations];
+[self.mapView addAnnotations:self.nightOutActivityArray];
 }
 -(void)fitnessButtonTapped{
     NSLog(@"fitness button tapped");
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:self.fitnessActivityArray];
 }
 -(void)outdoorsButtonTapped{
     NSLog(@"outdoors button tapped");
+        [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:self.outDoorsActivityArray];
 }
 
 //helper method to create blinking ring images.
@@ -475,6 +507,8 @@
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
+
+    if (self.currentUser != nil){
     //create an image and assign it to defualt image
 
 
@@ -487,6 +521,10 @@
         }
 
     }];
+    }else{
+
+        self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+    }
 
     // NSLog(@"%@", self.tempImage);
     UIImage *profileImage = self.tempImage;
@@ -590,47 +628,75 @@
                     self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
                     ;
                     if ([activity.selectedCategory isEqualToString:@"Festival"]) {
-                        [self.fitnessActivityArray addObject:activity];
+                        [self.fitnessActivityArray addObject:self.pinAnnotation];
 
                     }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
-                        [self.culturalActivityArray addObject:activity];
+                        [self.culturalActivityArray addObject:self.pinAnnotation];
 
                     } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
-                        [self.gastronomyActivityArray addObject:activity];
+                        [self.gastronomyActivityArray addObject:self.pinAnnotation];
 
                     } else if ([activity.selectedCategory isEqualToString:@"NightOut"]) {
-                        [self.nightOutActivityArray addObject:activity];
+                        [self.nightOutActivityArray addObject:self.pinAnnotation];
 
                     } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
-                        [self.fitnessActivityArray addObject:activity];
+                        [self.fitnessActivityArray addObject:self.pinAnnotation];
 
                     } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
-                        [self.outDoorsActivityArray addObject:activity];
+                        [self.outDoorsActivityArray addObject:self.pinAnnotation];
                     }
 
 
                     //   self.pinAnnotation.activity = activity;
 
-                   // NSLog(@"%@", self.fitnessActivityArray);
+                    // NSLog(@"%@", self.fitnessActivityArray);
 
-
-                    [self.mapView addAnnotation:self.pinAnnotation];
-
+                    //
+                   // [self.mapView addAnnotation:self.pinAnnotation];
+                    
                 }
+                
+                
+                
 
+                //[self.mapView addAnnotations:self.gastronomyActivityArray];
 
-
-
-
+                
             });
 
+            //check each array to make sure that is not 0 and if it's not zero go ahead and the annotation to the map.
+            if (self.festivalActivityArray.count != 0) {
 
+                 [self.mapView addAnnotations:self.festivalActivityArray];
+
+            } else if(self.festivalActivityArray.count != 0) {
+
+                [self.mapView addAnnotations:self.culturalActivityArray];
+
+            }else if(self.festivalActivityArray.count != 0) {
+                [self.mapView addAnnotations:self.gastronomyActivityArray];
+
+            }else if(self.festivalActivityArray.count != 0) {
+                [self.mapView addAnnotations:self.nightOutActivityArray];
+
+            }else if(self.festivalActivityArray.count != 0) {
+                [self.mapView addAnnotations:self.fitnessActivityArray];
+
+            }else if(self.festivalActivityArray.count != 0) {
+                [self.mapView addAnnotations:self.outDoorsActivityArray];
+
+            }
+
+
+
+
+            
         } else {
             [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-
-
+            
+            
         }
-
+        
     }
 
      ];
@@ -644,8 +710,9 @@
 
 
 
+   // NSLog(@"%@", self.gastronomyActivityArray);
 
-
+    [self.mapView addAnnotations:self.gastronomyActivityArray];
 }
 
 ////////////////////ALERT HELPER METHODS/////////////////////////////////
@@ -813,8 +880,8 @@
         self.initialLocation = userLocation.location;
         MKCoordinateRegion mapRegion;
         mapRegion.center = mapView.userLocation.coordinate;
-        mapRegion.span.latitudeDelta = 0.04;
-        mapRegion.span.longitudeDelta = 0.04;
+        mapRegion.span.latitudeDelta = 0.01;
+        mapRegion.span.longitudeDelta = 0.01;
 
         [mapView setRegion:mapRegion animated: YES];
     }
@@ -843,6 +910,7 @@
 
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
 
 
     if ([annotation isKindOfClass:[CustomMKAnnotation class]]) {
