@@ -28,6 +28,7 @@
 
 @property NSMutableArray *personalityArray;
 @property NSMutableArray *personalityBoolArray;
+@property BOOL isFbUser;
 
 
 @end

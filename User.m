@@ -24,6 +24,7 @@
 @dynamic travelPreferencesArray;
 @dynamic personalityBoolArray;
 @dynamic personalityArray;
+@dynamic isFbUser;
 
 
 

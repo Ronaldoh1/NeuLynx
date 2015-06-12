@@ -43,6 +43,7 @@
 		F2292F371B26BC21003D82D5 /* discover4.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F361B26BC21003D82D5 /* discover4.png */; };
 		F2292F391B26BC67003D82D5 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F381B26BC67003D82D5 /* discover.png */; };
 		F2292F3E1B2A8FA0003D82D5 /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */; };
+		F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */; };
 		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
 		F24EC7E01B23AD8C0018202F /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DB1B23AD8B0018202F /* culturalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
@@ -221,6 +222,8 @@
 		F2292F361B26BC21003D82D5 /* discover4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover4.png; sourceTree = "<group>"; };
 		F2292F381B26BC67003D82D5 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoorsPin.png; sourceTree = "<group>"; };
+		F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesDownloader.h; sourceTree = "<group>"; };
+		F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
 		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
 		F24EC7DB1B23AD8B0018202F /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
@@ -772,6 +775,8 @@
 				F2E6E8C31B1A60820083BA7F /* SearchVC.m */,
 				F2E6E8BF1B1A43740083BA7F /* SelectCategoryVC.h */,
 				F2E6E8C01B1A43740083BA7F /* SelectCategoryVC.m */,
+				F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */,
+				F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -1063,6 +1068,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E6E8B91B1A13E50083BA7F /* RequestVC.m in Sources */,
+				F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */,
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,

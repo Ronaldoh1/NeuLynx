@@ -117,6 +117,10 @@
 -(void)performInitialSetup{
 
 
+
+    //Get Current User
+    self.currentUser = [User currentUser];
+
     //set up profile image
      [self setUpProfileImage];
     
@@ -151,8 +155,7 @@
 
     //Get reference to entire window
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
-    //Get Current User
-    self.currentUser = [User currentUser];
+
 
     //Set the Searchbar Tint color.
 
@@ -784,6 +787,55 @@
 
 }
 
+//this helper method is used to retrieve the facebook data from the user and store in parse.
+
+- (void)getFacebookUserData{
+
+
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        // handle response
+        [User currentUser].name = result[@"name"];
+        [User currentUser].email = result[@"email"];
+        [User currentUser].isFbUser = true;
+        [[User currentUser] saveInBackground];
+
+
+        [self getFbUserProfileImage:result[@"id"]];
+
+    }];
+}
+
+//helper method to retrieve user's profile image from facebook..
+
+-(void)getFbUserProfileImage:(id)facebookID{
+
+
+    // URL should point to https://graph.facebook.com/{facebookId}/picture?type=large&return_ssl_resources=1
+    NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:pictureURL];
+
+    // Run network request asynchronously
+    [NSURLConnection sendAsynchronousRequest:urlRequest
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:
+     ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+         if (connectionError == nil && data != nil) {
+             // Set the image in the imageView
+             // UIImage *image = [UIImage imageWithData:data];
+
+             PFFile *file = [ PFFile fileWithData:data];
+
+            [User currentUser].profileImage = file;
+
+             [[User currentUser] saveInBackground];
+
+         }
+     }];
+    
+}
+
 #pragma mark CLLocationManager Delegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = [locations objectAtIndex:0];
@@ -798,9 +850,9 @@
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
 
-                       [User currentUser].userCurrentCity = placemark.locality;
-                       [User currentUser].userAdministrativeArea = placemark.administrativeArea;
-                       [User currentUser].userCountryCode = placemark.country;
+                       self.currentUser.userCurrentCity = placemark.locality;
+                       self.currentUser.userAdministrativeArea = placemark.administrativeArea;
+                       self.currentUser.userCountryCode = placemark.country;
 
                    }];
 }
@@ -835,20 +887,26 @@
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in through Facebook!");
-                //enable the inbox and profile
-                //                self.navigationItem.leftBarButtonItem.enabled = YES;
-                //                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
 
-                //                [User currentUser].travelPreferences = @{@YES :@"1"};
+                  [self getFacebookUserData];
 
-                //If the user is new then present the profile
+                //if the user is new, then we want to get his information from facebook and store it in parse.
+                [self saveFbUserInfoToParse:^{
+                    //If the user is new then present the profile
+                    UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+                    UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+                    [self presentViewController:profileNavVC animated:YES completion:nil];
+
+                } afterDelay:2];
+
+
+                //enable tabs once the user has been signed up (Profile/Inbox);
 
                 [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
                 [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
 
-                UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-                UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
-                [self presentViewController:profileNavVC animated:YES completion:nil];
+
+
 
             } else {
                 NSLog(@"User logged in through Facebook!");
@@ -927,6 +985,7 @@
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
 
 
+    //for every custom annotation, check the category, and display the appropriate image/pin for each annotation.
 
     if ([annotation isKindOfClass:[CustomMKAnnotation class]]) {
 
@@ -939,8 +998,6 @@
 
             UIImage *image = [UIImage imageNamed:@"culturalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-
-
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"]){
 
@@ -1020,6 +1077,10 @@
 }
 
 
+-(void)saveFbUserInfoToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
 
 
 

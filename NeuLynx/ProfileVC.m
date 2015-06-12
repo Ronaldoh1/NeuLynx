@@ -138,8 +138,12 @@
     if ([self.currentUser.gender isEqualToString:@"Male"]) {
         self.genderPicker.selectedSegmentIndex = 0;
 
-    } else {
-        self.genderPicker.selectedSegmentIndex = 1;
+    }else if ([self.currentUser.gender isEqualToString:@"Female"]){
+          self.genderPicker.selectedSegmentIndex = 1;
+
+    }else {
+        //in the case the that the user hasnt selected one just set it to male.
+        self.genderPicker.selectedSegmentIndex = 0;
     }
 
     //get user's orientation
@@ -155,9 +159,11 @@
     }else if ([self.currentUser.orientation isEqualToString:@"Lesbian"]){
         self.orientationPicker.selectedSegmentIndex = 3;
 
-    }else {
+    }else if ([self.currentUser.orientation isEqualToString:@"Transgender"]){
         self.orientationPicker.selectedSegmentIndex = 4;
 
+    }else{
+        self.orientationPicker.selectedSegmentIndex = 0;
     }
 
     // Initializing languageArray
@@ -287,13 +293,35 @@
         self.navigationItem.rightBarButtonItem.enabled = NO;
 
         //Get user's information and display current location and profile picture.
-        [MRProgressOverlayView showOverlayAddedTo:self.window title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+        [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+
+
         [self saveUserInformationToParse:^{
 
             [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
-                    self.navigationItem.rightBarButtonItem.enabled = YES;
-                    [self displaySuccessMessage];
+
+                   // [self displaySuccessMessage]
+
+
+
+                    [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+                    [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
+
+                    [self dismissIndicator:^{
+
+                        //once we get user's
+                        self.navigationItem.rightBarButtonItem.enabled = YES;
+                 
+
+                        [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+
+
+                    } afterDelay:1.5];
+
+
 
 
                 } else {
@@ -302,10 +330,12 @@
 
                     
                 }
+
+
             }];
 
 
-     [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
+
 
         } afterDelay:1.5];
 
@@ -564,4 +594,8 @@
     dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
+-(void)dismissIndicator:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
 @end

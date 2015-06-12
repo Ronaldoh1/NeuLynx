@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SearchVC : UIViewController
 @property NSString *selectedCategory;
-
+@property CLLocation *currentLocation;
 @end
