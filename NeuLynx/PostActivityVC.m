@@ -94,12 +94,19 @@
     [self dismissViewControllerAnimated:YES completion:nil]; 
 
 }
-//- (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
-//
-//
-//
-//}
+
 - (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
+
+    NSString *textFieldError  = @"";
+
+    //if any of the fields are blank, then we show the user an error - all fields are required.
+    if ([self.activityTitle.text isEqualToString:@""] || [self.activityDescription.text isEqualToString:@""] || [self.activityAddress.text isEqualToString:@""] || [self.activityMaxHeadCount.text isEqualToString:@""] || [self.activityStartTime.text isEqualToString:@""] || [self.activityEndTime.text isEqualToString:@""]) {
+        textFieldError = @"Error in Form - All fields are required.";
+
+    }
+
+    if ([textFieldError isEqualToString:@""]) {
+
 
     self.activity.activityTitle =  self.activityTitle.text;
     self.activity.activityDescription = self.activityDescription.text;
@@ -142,6 +149,9 @@
             [self displayErrorMessage:error.description];
         }
     }];
+    } else{
+        [self displayErrorMessage:textFieldError];
+    }
 }
 
 //*******Enable and show the secondary view with date picker.******//
@@ -202,24 +212,7 @@
 }
 
 ///************Select Category***************//
-- (IBAction)outDoorsButtonTapped:(UIButton *)sender {
-    self.selectedCategory = @"Outdoors";
-    self.outdoorsButton.alpha = 1.0;
-    self.gastronomyButton.alpha = 0.5;
-    self.festivalButton.alpha = 0.5;
-    self.nightOutButton.alpha = 0.5;
-    self.culturalButton.alpha = 0.5;
-    self.fitnessButton.alpha = 0.5;
-}
-- (IBAction)gastronomyButtonTapped:(UIButton *)sender {
-    self.selectedCategory = @"Gastronomy";
-    self.outdoorsButton.alpha = 0.5;
-    self.gastronomyButton.alpha = 1.0;
-    self.festivalButton.alpha = 0.5;
-    self.nightOutButton.alpha = 0.5;
-    self.culturalButton.alpha = 0.5;
-    self.fitnessButton.alpha = 0.5;
-}
+
 
 - (IBAction)onFestivalButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Festival";
@@ -231,15 +224,7 @@
     self.fitnessButton.alpha = 0.5;
 
 }
-- (IBAction)onNightOutButtonTapped:(UIButton *)sender {
-    self.selectedCategory = @"Night Out";
-    self.outdoorsButton.alpha = 0.5;
-    self.gastronomyButton.alpha = 0.5;
-    self.festivalButton.alpha = 0.5;
-    self.nightOutButton.alpha = 1.0;
-    self.culturalButton.alpha = 0.5;
-    self.fitnessButton.alpha = 0.5;
-}
+
 - (IBAction)onCulturalButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Cultural";
     self.outdoorsButton.alpha = 0.5;
@@ -249,6 +234,25 @@
     self.culturalButton.alpha = 1.0;
     self.fitnessButton.alpha = 0.5;
 }
+- (IBAction)gastronomyButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Gastronomy";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 1.0;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
+}
+- (IBAction)onNightOutButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Night Out";
+    self.outdoorsButton.alpha = 0.5;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 1.0;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
+}
+
 - (IBAction)onFitnessButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Fitness";
     self.outdoorsButton.alpha = 0.5;
@@ -257,6 +261,15 @@
     self.nightOutButton.alpha = 0.5;
     self.culturalButton.alpha = 0.5;
     self.fitnessButton.alpha = 1.0;
+}
+- (IBAction)outDoorsButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Outdoors";
+    self.outdoorsButton.alpha = 1.0;
+    self.gastronomyButton.alpha = 0.5;
+    self.festivalButton.alpha = 0.5;
+    self.nightOutButton.alpha = 0.5;
+    self.culturalButton.alpha = 0.5;
+    self.fitnessButton.alpha = 0.5;
 }
 
 - (IBAction)onPickFirstImageButtonTapped:(UIButton *)sender {

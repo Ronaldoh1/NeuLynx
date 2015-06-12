@@ -42,9 +42,9 @@
 		F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F341B26A7A8003D82D5 /* wOutdoors.png */; };
 		F2292F371B26BC21003D82D5 /* discover4.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F361B26BC21003D82D5 /* discover4.png */; };
 		F2292F391B26BC67003D82D5 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F381B26BC67003D82D5 /* discover.png */; };
-		F24EC7D91B23ACD80018202F /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7D81B23ACD80018202F /* outdoorsPin.png */; };
-		F24EC7DF1B23AD8C0018202F /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* culturalPin.png */; };
-		F24EC7E01B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DB1B23AD8B0018202F /* festivalPin.png */; };
+		F2292F3E1B2A8FA0003D82D5 /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */; };
+		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
+		F24EC7E01B23AD8C0018202F /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DB1B23AD8B0018202F /* culturalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
 		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
 		F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DE1B23AD8B0018202F /* nightOutPin.png */; };
@@ -220,9 +220,9 @@
 		F2292F341B26A7A8003D82D5 /* wOutdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wOutdoors.png; sourceTree = "<group>"; };
 		F2292F361B26BC21003D82D5 /* discover4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover4.png; sourceTree = "<group>"; };
 		F2292F381B26BC67003D82D5 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
-		F24EC7D81B23ACD80018202F /* outdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoorsPin.png; sourceTree = "<group>"; };
-		F24EC7DA1B23AD8B0018202F /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
-		F24EC7DB1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
+		F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoorsPin.png; sourceTree = "<group>"; };
+		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
+		F24EC7DB1B23AD8B0018202F /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
 		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
 		F24EC7DE1B23AD8B0018202F /* nightOutPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightOutPin.png; sourceTree = "<group>"; };
@@ -610,12 +610,12 @@
 				F2292ECC1B254C7C003D82D5 /* wFitness.png */,
 				F2292ECD1B254C7C003D82D5 /* wGastronomy.png */,
 				F2292ECE1B254C7C003D82D5 /* wNightOut.png */,
-				F24EC7DA1B23AD8B0018202F /* culturalPin.png */,
-				F24EC7DB1B23AD8B0018202F /* festivalPin.png */,
+				F24EC7DA1B23AD8B0018202F /* festivalPin.png */,
+				F24EC7DB1B23AD8B0018202F /* culturalPin.png */,
 				F24EC7DC1B23AD8B0018202F /* fitnessPin.png */,
 				F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */,
 				F24EC7DE1B23AD8B0018202F /* nightOutPin.png */,
-				F24EC7D81B23ACD80018202F /* outdoorsPin.png */,
+				F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */,
 				F226C80D1B0F5A2D007A1C03 /* discover1.png */,
 				F2E6E8C51B1B93700083BA7F /* discover3.png */,
 				F2292F361B26BC21003D82D5 /* discover4.png */,
@@ -914,7 +914,6 @@
 				F2292EE11B254D69003D82D5 /* coins.png in Resources */,
 				F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */,
 				F2292F391B26BC67003D82D5 /* discover.png in Resources */,
-				F24EC7D91B23ACD80018202F /* outdoorsPin.png in Resources */,
 				F2E6E8851B19A7660083BA7F /* AppIcon40x40@2x.png in Resources */,
 				F2292ED31B254C7C003D82D5 /* wGastronomy.png in Resources */,
 				F226C80E1B0F5A2D007A1C03 /* discover1.png in Resources */,
@@ -969,10 +968,10 @@
 				F2292ED21B254C7C003D82D5 /* wFitness.png in Resources */,
 				F2E6E8811B19A7660083BA7F /* AppIcon29x29@3x.png in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
-				F24EC7E01B23AD8C0018202F /* festivalPin.png in Resources */,
+				F24EC7E01B23AD8C0018202F /* culturalPin.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F2292EF41B25508E003D82D5 /* mainCultural.png in Resources */,
-				F24EC7DF1B23AD8C0018202F /* culturalPin.png in Resources */,
+				F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */,
 				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
 				F2E6E8931B19A7660083BA7F /* AppIcon120x120_carplay.png in Resources */,
 				F2576E121B01BA9A0006C8E1 /* mapTabButton.png in Resources */,
@@ -991,6 +990,7 @@
 				F2292ED11B254C7C003D82D5 /* wFestival.png in Resources */,
 				F285194D1AFAE98D007A45FA /* cityBackGround.png in Resources */,
 				F28519291AFADB09007A45FA /* PostActivity.storyboard in Resources */,
+				F2292F3E1B2A8FA0003D82D5 /* outdoorsPin.png in Resources */,
 				F2E6E8C81B1EB9470083BA7F /* bluering.png in Resources */,
 				F2FE7E701B05144500CDD057 /* fr.png in Resources */,
 				F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */,

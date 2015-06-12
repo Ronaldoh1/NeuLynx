@@ -85,7 +85,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gastronomyButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="ZPM-mM-Jsk"/>
+                                    <action selector="onCulturalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="SDL-el-bP9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QT-Qi-Avz">
@@ -98,7 +98,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onFestivalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="Bzc-w0-STe"/>
+                                    <action selector="gastronomyButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="2RT-iL-Sz9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="px2-oy-wG2">
@@ -111,7 +111,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onNightOutButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="eJx-Aw-VtO"/>
+                                    <action selector="onNightOutButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="0cp-SA-Flb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gi9-OG-U0p">
@@ -124,7 +124,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onFitnessButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="xJL-Xe-Cns"/>
+                                    <action selector="outDoorsButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="H5e-fN-9A2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA7-a7-7yN">
@@ -146,7 +146,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="outDoorsButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="Rtq-bO-nHP"/>
+                                    <action selector="onFestivalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="TxR-nJ-xAN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got Any Pictures?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeX-RF-dJh">
@@ -201,7 +201,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onCulturalButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="roS-S5-5eH"/>
+                                    <action selector="onFitnessButtonTapped:" destination="sq3-el-Syy" eventType="touchUpInside" id="baV-2B-yP8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yH8-2g-qEE">
@@ -353,15 +353,15 @@
                         <outlet property="activityMaxHeadCount" destination="OlT-C1-bbn" id="r7q-9M-I8X"/>
                         <outlet property="activityStartTime" destination="Vvm-Xr-pfC" id="CpK-jY-uuQ"/>
                         <outlet property="activityTitle" destination="e2A-mc-6Xb" id="ISK-kA-sKZ"/>
-                        <outlet property="culturalButton" destination="H0T-zS-njF" id="0QY-BD-Pms"/>
+                        <outlet property="culturalButton" destination="Edd-h4-loo" id="gVg-OS-KAG"/>
                         <outlet property="datePicker" destination="Zv9-zc-5JC" id="yU2-Bq-RQy"/>
-                        <outlet property="festivalButton" destination="8QT-Qi-Avz" id="RAy-PA-HAP"/>
-                        <outlet property="fitnessButton" destination="gi9-OG-U0p" id="iwZ-MI-fFp"/>
-                        <outlet property="gastronomyButton" destination="Edd-h4-loo" id="pBd-kC-Y0l"/>
+                        <outlet property="festivalButton" destination="ri8-gx-aDJ" id="UGp-Nq-Kwm"/>
+                        <outlet property="fitnessButton" destination="H0T-zS-njF" id="ZGC-7v-ldM"/>
+                        <outlet property="gastronomyButton" destination="8QT-Qi-Avz" id="aY9-zE-Feu"/>
                         <outlet property="image1" destination="51W-87-vm8" id="aOB-Jp-g8o"/>
                         <outlet property="image2" destination="vvb-AI-djW" id="Yoz-N0-XCS"/>
-                        <outlet property="nightOutButton" destination="px2-oy-wG2" id="kts-h5-tEs"/>
-                        <outlet property="outdoorsButton" destination="ri8-gx-aDJ" id="g2l-Cz-w3M"/>
+                        <outlet property="nightOutButton" destination="px2-oy-wG2" id="XsK-LD-ZUD"/>
+                        <outlet property="outdoorsButton" destination="gi9-OG-U0p" id="T2g-DP-dBa"/>
                         <outlet property="secondaryView" destination="aLc-ej-3y9" id="5mJ-Ip-AjP"/>
                     </connections>
                 </viewController>

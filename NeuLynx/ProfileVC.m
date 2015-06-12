@@ -96,9 +96,7 @@
     //disable age textfield
     self.ageTextField.enabled = NO;
     self.ageTextField.userInteractionEnabled = NO;
-    // Initializing languageArray
 
-    self.languageArray = [NSMutableArray new];
 
     //Dim the colors of language buttons
     self.portugueseButton.alpha = 0.5;
@@ -162,8 +160,11 @@
 
     }
 
+    // Initializing languageArray
+
+
     //get user's languages
-    self.languageArray = self.currentUser.languageArray.mutableCopy;
+    self.languageArray = [[NSMutableArray alloc] initWithArray:self.currentUser.languageArray.mutableCopy];
 
     for (int i = 0; i<self.languageArray.count; i++) {
         if ([self.languageArray[i] isEqualToString:@"Portuguese"]) {
@@ -381,7 +382,7 @@
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     // Assign new frame to your view
-    [self.view setFrame:CGRectMake(0,-110,320,500)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+    [self.view setFrame:CGRectMake(0,0,320,500)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
 
 }
 

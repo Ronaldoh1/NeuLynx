@@ -61,6 +61,9 @@
 
 //MAP
 @property CustomMKAnnotation *pinAnnotation;
+
+//Profile Image
+@property UIImage *profileImage;
 @end
 
 @implementation MapVC
@@ -73,7 +76,8 @@
 
     [self performInitialSetup]; //do initial set up for MapVC
 
-    [self setUpProfileImage];
+
+
     [self createAndDisplayBlinkingRings];
 
 
@@ -81,11 +85,13 @@
 
 
 -(void)viewDidAppear:(BOOL)animated{
+    
     [self setUpProfileImage];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
 
-
+     [self setUpProfileImage];
 
     [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
 
@@ -110,6 +116,10 @@
 
 -(void)performInitialSetup{
 
+
+    //set up profile image
+     [self setUpProfileImage];
+    
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -162,6 +172,10 @@
 
         UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
         UITabBarController *tutorialNavVC = [tutorialStoryboard instantiateViewControllerWithIdentifier:@"tutorialNavVC"];
+//        if (self.currentUser != nil) {
+//            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+//        }
+
         [self presentViewController:tutorialNavVC animated:true completion:nil];
 
     }
@@ -507,9 +521,12 @@
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
+  //  self.tempImage = [UIImage new];
+
 
     if (self.currentUser != nil){
     //create an image and assign it to defualt image
+
 
 
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -521,7 +538,9 @@
         }
 
     }];
-    }else{
+        //self.tempImage = [self getUsersProfileImage];
+
+    }else if (self.currentUser == nil){
 
         self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
     }
@@ -565,6 +584,25 @@
 
 
 }
+
+//Helper method to download user's profile image
+-(UIImage *)getUsersProfileImage{
+    UIImage *image = [UIImage new];
+    self.profileImage = [UIImage new];
+
+    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *tempImage = [UIImage imageWithData:data];
+            self.profileImage = tempImage;
+        }
+
+    }];
+
+    image = self.profileImage;
+
+    return image;
+}
+
 //helper method to show user's profile.
 
 -(void)profileImageTapped:(UIBarButtonItem* )sender{
@@ -652,42 +690,15 @@
                     // NSLog(@"%@", self.fitnessActivityArray);
 
                     //
-                   // [self.mapView addAnnotation:self.pinAnnotation];
+                   [self.mapView addAnnotation:self.pinAnnotation];
                     
                 }
-                
-                
-                
+
 
                 //[self.mapView addAnnotations:self.gastronomyActivityArray];
 
                 
             });
-
-            //check each array to make sure that is not 0 and if it's not zero go ahead and the annotation to the map.
-            if (self.festivalActivityArray.count != 0) {
-
-                 [self.mapView addAnnotations:self.festivalActivityArray];
-
-            } else if(self.festivalActivityArray.count != 0) {
-
-                [self.mapView addAnnotations:self.culturalActivityArray];
-
-            }else if(self.festivalActivityArray.count != 0) {
-                [self.mapView addAnnotations:self.gastronomyActivityArray];
-
-            }else if(self.festivalActivityArray.count != 0) {
-                [self.mapView addAnnotations:self.nightOutActivityArray];
-
-            }else if(self.festivalActivityArray.count != 0) {
-                [self.mapView addAnnotations:self.fitnessActivityArray];
-
-            }else if(self.festivalActivityArray.count != 0) {
-                [self.mapView addAnnotations:self.outDoorsActivityArray];
-
-            }
-
-
 
 
             
@@ -696,8 +707,12 @@
             
             
         }
-        
+
+
     }
+
+
+
 
      ];
     //once we have the array with activity, we need to ad them to the map.
@@ -712,7 +727,7 @@
 
    // NSLog(@"%@", self.gastronomyActivityArray);
 
-    [self.mapView addAnnotations:self.gastronomyActivityArray];
+
 }
 
 ////////////////////ALERT HELPER METHODS/////////////////////////////////
@@ -921,27 +936,34 @@
 
 
         if ([pinAnnotation.activity.selectedCategory isEqualToString:@"Cultural"]) {
+
             UIImage *image = [UIImage imageNamed:@"culturalPin.png"];
-
-
             annotationView.image =  [self resizeImageForPins:image];
 
 
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"]){
+
             UIImage *image = [UIImage imageNamed:@"gastronomyPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"]){
+
             UIImage *image = [UIImage imageNamed:@"nightOutPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
+
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Festival"]){
+
             UIImage *image = [UIImage imageNamed:@"festivalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
+
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Fitness"]){
+
             UIImage *image = [UIImage imageNamed:@"fitnessPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
+
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"]){
+            
             UIImage *image = [UIImage imageNamed:@"outdoorsPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
         }
