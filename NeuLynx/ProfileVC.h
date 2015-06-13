@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileVC : UIViewController
+@property BOOL shouldShow;
 
 @end

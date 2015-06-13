@@ -899,6 +899,7 @@
                     //If the user is new then present the profile
                     UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                     UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+                
                     [self presentViewController:profileNavVC animated:YES completion:nil];
 
                 } afterDelay:3];
@@ -964,7 +965,7 @@
         mapRegion.span.latitudeDelta = 0.01;
         mapRegion.span.longitudeDelta = 0.01;
 
-        [mapView setRegion:mapRegion animated: YES];
+        [mapView setRegion:mapRegion animated: NO];
     }
 
     [self downloadActivitiesAndDisplayOnMap];
@@ -980,7 +981,7 @@
     region.span.latitudeDelta = 0.04;
     region.span.longitudeDelta = 0.04;
     region = [self.mapView regionThatFits:region];
-    [self.mapView setRegion:region animated:YES];
+    [self.mapView setRegion:region animated:NO];
 
 }
 

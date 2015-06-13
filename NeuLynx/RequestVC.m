@@ -8,7 +8,8 @@
 
 #import "RequestVC.h"
 
-@interface RequestVC ()
+@interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -35,5 +36,38 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - TableView Delegates
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 0;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    //set up the cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    //change the color of text
+    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+
+    //change the background color
+    cell.backgroundColor = [UIColor clearColor];
+
+    //Add background image to table view
+    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+
+    //change the selection color
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    [cell setSelectedBackgroundView:bgColorView];
+
+    //change the color of scrollbar
+    tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+
+
+    return nil;
+}
 
 @end

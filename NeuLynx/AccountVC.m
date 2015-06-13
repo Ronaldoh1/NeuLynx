@@ -9,6 +9,7 @@
 #import "AccountVC.h"
 #import "User.h"
 #import "MailVC.h"
+#import "ProfileVC.h"
 
 
 @interface AccountVC ()<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
@@ -119,6 +120,8 @@
 
         UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
         UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+
+
         [self presentViewController:profileNavVC animated:YES completion:nil];
 
 }

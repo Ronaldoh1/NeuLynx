@@ -58,7 +58,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self setUpTextFieldDelegates];
+
     [self initialSetUp];
 
 }
@@ -67,6 +67,19 @@
 }
 
 -(void)initialSetUp{
+
+        //Hide back bar button Item when coming from sign up
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+        self.navigationItem.leftBarButtonItem = nil;
+
+
+
+
+
+
+    //set up textfield delegates
+    [self setUpTextFieldDelegates];
+
     //*******Setup Current User*********//
     self.currentUser = [User currentUser];
 
@@ -369,6 +382,7 @@
     self.secondaryView.userInteractionEnabled = YES;
     self.agePicker.hidden = NO;
     self.agePicker.userInteractionEnabled = YES;
+    [self.nameTextField resignFirstResponder];
 
 }
 
@@ -396,36 +410,36 @@
     [self.view endEditing:YES];
 }
 
-//move the view when the user clicks on a textfield
+////move the view when the user clicks on a textfield
+//
+//-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+//{
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+//
+//    return YES;
+//}
+////move the view when the keyboard hides.
+//
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+//
+//    [self.view endEditing:YES];
+//    return YES;
+//}
 
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
 
-    return YES;
-}
-//move the view when the keyboard hides.
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-
-    [self.view endEditing:YES];
-    return YES;
-}
-
-
-- (void)keyboardDidShow:(NSNotification *)notification
-{
-    // Assign new frame to your view
-    [self.view setFrame:CGRectMake(0,0,320,500)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
-
-}
-
--(void)keyboardDidHide:(NSNotification *)notification
-{
-    [self.view setFrame:CGRectMake(0,0,320,600)];
-}
-
+//- (void)keyboardDidShow:(NSNotification *)notification
+//{
+//    // Assign new frame to your view
+//    [self.view setFrame:CGRectMake(0,0,320,500)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+//
+//}
+//
+//-(void)keyboardDidHide:(NSNotification *)notification
+//{
+//    [self.view setFrame:CGRectMake(0,0,320,600)];
+//}
+//
 //Helper method to set up the textfield delegates
 -(void)setUpTextFieldDelegates{
     self.nameTextField.delegate = self;

@@ -57,58 +57,11 @@
 
 
 
-    NSMutableArray *activitiesForSearchArray = [NSMutableArray new];
-
-//
-//    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
-//    PFQuery *query = [Activity query];
-//
-//
-//
-//    [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
-//    [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
-//
-//        // NSArray *activitiesArray = activities;
-//        NSLog(@"%@ wattttt", activities);
-//
-//
-//        if (!error) {
-//            // Add activities to the map.
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                // NSLog(@"activities are %@",activitiesArray);
-//
-//                for (Activity *activity in activities){
-//                    NSLog(@"%@", activity);
-//                    [self.activitiesForSearchArray addObject:activity];
-//                         [self.tableView reloadData];
-//
-//                }
-//
-//
-//                //[self.mapView addAnnotations:self.gastronomyActivityArray];
-//                
-//
-//            });
-//        }
-//
-//
-//    }];
-
-
 }
 
 
 
-//-(void)gotActivities:(NSArray *)activitiesArray{
-//
-//    self.activitiesArray = activitiesArray.mutableCopy;
-//
-//    NSLog(@"%@", self.activitiesArray);
-//
-//
-//}
+
 
 -(void)pulldata{
 
@@ -128,25 +81,10 @@
             if (!error) {
 
                 self.activitiesForSearchArray = [[NSArray alloc]initWithArray:activities];
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//    
-//                    // NSLog(@"activities are %@",activitiesArray);
-//    
-//                    for (Activity *activity in activities){
-//                        NSLog(@"%@", activity);
-//                        [self.activitiesForSearchArray addObject:activity];
-//                             [self.tableView reloadData];
-//    
-//                    }
-//    
-//    
-//                    //[self.mapView addAnnotations:self.gastronomyActivityArray];
-//                    
-//    
-//                });
+                [self.tableView reloadData];
+
             }
-            [self.tableView reloadData];
-    
+
     
         }];
 
@@ -162,79 +100,12 @@
 
 }
 
-//-(void)downloadActivitiesAndDisplayOnMap{
-//
-//    self.activitiesForSearchArray = [NSMutableArray new];
-//
-//        NSLog(@"%@ ahhhhh", self.currentLocation);
-//
-//    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
-//    PFQuery *query = [Activity query];
-//
-//
-//
-//    [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
-//    [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
-//
-//        // NSArray *activitiesArray = activities;
-//         NSLog(@"%@ wattttt", activities);
-//
-//
-//        if (!error) {
-//            // Add activities to the map.
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//
-//                // NSLog(@"activities are %@",activitiesArray);
-//
-//                for (Activity *activity in activities){
-//                    NSLog(@"%@", activity);
-//                    [self.activitiesForSearchArray addObject:activity];
-//
-//                }
-//
-//
-//                //[self.mapView addAnnotations:self.gastronomyActivityArray];
-//
-//
-//            });
-//
-//
-//
-//        } else {
-//           //display error
-//
-//
-//        }
-//
-//
-//    }
-//
-//
-//
-//
-//     ];
-//    //once we have the array with activity, we need to ad them to the map.
-//    //    [self.mapView addAnnotations:self.festivalActivityArray];
-//    //                [self.mapView addAnnotations:self.culturalActivityArray];
-//    //                [self.mapView addAnnotations:self.gastronomyActivityArray];
-//    //    //            [self.mapView addAnnotations:self.nightOutActivityArray];
-//    //    //             [self.mapView addAnnotations:self.fitnessActivityArray];
-//    //    //            [self.mapView addAnnotations:self.outDoorsActivityArray];
-//    
-//    
-//    
-//    // NSLog(@"%@", self.gastronomyActivityArray);
-//
-//    
-//}
 
 
 #pragma marks - TableView Delegates
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    NSLog(@"%lu YOOOOOOOOOOOO", (unsigned long)self.activitiesForSearchArray.count);
     return self.activitiesForSearchArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -248,9 +119,38 @@
 
 //    NSDictionary *tempDictionary = [[NSDictionary alloc]initWithDictionary:[self.activitiesForSearchArray objectAtIndex:indexPath.row]];
 
+
+    //change the color of text
+    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+
+    //change the background color
+    cell.backgroundColor = [UIColor clearColor];
+
+    //Add background image to table view
+    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+
+    //change the selection color
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    [cell setSelectedBackgroundView:bgColorView];
+
+    //change the color of scrollbar
+    tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+
+    //chnage the cell accessory
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    //Use CoreLocation to get distance between activity and user's location.
+    CLLocation *activityLocation = [[CLLocation alloc]initWithLatitude:tempActivity.activityLocation.latitude longitude:tempActivity.activityLocation.longitude];
+
+    CLLocationDistance distance = [activityLocation distanceFromLocation:self.currentLocation];
+
+    double distanceInMiles = distance * (0.00062137);
+
     cell.textLabel.text = [tempActivity objectForKey:@"activityTitle"];
 
-    cell.detailTextLabel.text = [tempActivity objectForKey:@"activityDescription"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f Miles Away", distanceInMiles];
 
 
     return cell;

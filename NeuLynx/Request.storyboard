@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Requests-->
@@ -15,7 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="cKd-xE-7vE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="21I-JR-Fl8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="53" id="Qrn-MM-K9k">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qrn-MM-K9k" id="lz2-8f-JFM">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mWW-ac-Ugg" id="ycE-7S-JF2"/>
+                                    <outlet property="delegate" destination="mWW-ac-Ugg" id="n0I-Ib-1aU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="21I-JR-Fl8" firstAttribute="leading" secondItem="cKd-xE-7vE" secondAttribute="leadingMargin" constant="-16" id="606-8X-Zfi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="21I-JR-Fl8" secondAttribute="trailing" constant="-16" id="HEd-o5-kj1"/>
+                            <constraint firstItem="21I-JR-Fl8" firstAttribute="top" secondItem="cKd-xE-7vE" secondAttribute="topMargin" id="U9z-dK-LX7"/>
+                            <constraint firstItem="kfI-3S-Cp9" firstAttribute="top" secondItem="21I-JR-Fl8" secondAttribute="bottom" id="zjs-IH-abR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Requests" id="5Jn-A1-OoJ">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="PN2-5o-LMA">
@@ -25,6 +51,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="21I-JR-Fl8" id="pSW-5k-f1m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkh-Yk-uy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -5,6 +5,9 @@ target 'NeuLynx' do
 
 pod 'MRProgress'
 pod 'MRProgress/AFNetworking'
+pod 'RateView'
+
+
 
 end
 

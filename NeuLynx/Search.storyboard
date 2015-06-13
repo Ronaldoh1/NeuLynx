@@ -147,9 +147,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gjd-2J-d1Z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HkL-gC-qX0">
                                 <rect key="frame" x="0.0" y="108" width="320" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="EF9-C8-iDo" detailTextLabel="eOK-CJ-z0B" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="mzT-Fp-eJE">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -191,12 +194,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rwO-Gk-AWv" firstAttribute="top" secondItem="HkL-gC-qX0" secondAttribute="bottom" id="9kU-fx-Gtp"/>
+                            <constraint firstItem="Gjd-2J-d1Z" firstAttribute="top" secondItem="XNl-4x-z8W" secondAttribute="topMargin" id="PGK-CK-riF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gjd-2J-d1Z" secondAttribute="trailing" constant="-16" id="UJn-vm-w5F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="urC-xZ-pGw" secondAttribute="trailing" constant="-16" id="ZMx-Ab-fWE"/>
                             <constraint firstItem="HkL-gC-qX0" firstAttribute="leading" secondItem="XNl-4x-z8W" secondAttribute="leadingMargin" constant="-16" id="ajh-Pk-ti7"/>
                             <constraint firstItem="urC-xZ-pGw" firstAttribute="leading" secondItem="XNl-4x-z8W" secondAttribute="leadingMargin" constant="-16" id="dCL-jy-dA5"/>
                             <constraint firstItem="urC-xZ-pGw" firstAttribute="top" secondItem="f8g-x8-4Ab" secondAttribute="bottom" id="lGd-P1-t2x"/>
+                            <constraint firstItem="Gjd-2J-d1Z" firstAttribute="leading" secondItem="XNl-4x-z8W" secondAttribute="leadingMargin" constant="-16" id="rx7-3w-tuN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HkL-gC-qX0" secondAttribute="trailing" constant="-16" id="ryn-pR-mew"/>
                             <constraint firstItem="HkL-gC-qX0" firstAttribute="top" secondItem="urC-xZ-pGw" secondAttribute="bottom" id="uLL-lc-ThQ"/>
+                            <constraint firstItem="rwO-Gk-AWv" firstAttribute="top" secondItem="Gjd-2J-d1Z" secondAttribute="bottom" id="xSN-AR-ICn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search for Activities" id="xBR-sy-6cZ"/>
@@ -230,6 +237,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backBackground.png" width="750" height="1334"/>
         <image name="wCultural.png" width="417" height="417"/>
         <image name="wFestival.png" width="417" height="417"/>
         <image name="wFitness.png" width="417" height="417"/>

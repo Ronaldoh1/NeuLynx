@@ -156,3 +156,9 @@
 #define COCOAPODS_VERSION_MINOR_MRProgress_Stopable 8
 #define COCOAPODS_VERSION_PATCH_MRProgress_Stopable 2
 
+// RateView
+#define COCOAPODS_POD_AVAILABLE_RateView
+#define COCOAPODS_VERSION_MAJOR_RateView 1
+#define COCOAPODS_VERSION_MINOR_RateView 2
+#define COCOAPODS_VERSION_PATCH_RateView 0
+

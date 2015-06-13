@@ -8,6 +8,7 @@
 
 #import "DetailVC.h"
 
+
 @interface DetailVC ()
 
 @end
@@ -39,7 +40,6 @@
 - (IBAction)onJoinButtonTapped:(UIBarButtonItem *)sender {
 
 }
-
 
 
 @end
