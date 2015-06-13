@@ -83,6 +83,7 @@
                 UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                 UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
                 [self presentViewController:profileNavVC animated:YES completion:nil];
+//                [self dismissViewControllerAnimated:YES completion:nil];
 
 
 
@@ -97,6 +98,7 @@
 
 
 
+
         } else {
             NSLog(@"User logged in through Facebook!");
             //enable inbox and profile
@@ -105,7 +107,14 @@
             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
-    }];
+
+
+    }
+     
+
+     ];
+
+
 
 }
 

@@ -551,6 +551,9 @@
     // NSLog(@"%@", self.tempImage);
     UIImage *profileImage = self.tempImage;
 
+
+
+
     //create button frame
     CGRect buttonFrame = CGRectMake(0, 0, 40, 40);
 
@@ -564,6 +567,7 @@
     button.layer.borderColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
 
     [button setImage:profileImage forState:UIControlStateNormal];
+    [button reloadInputViews];
 
     //add at tap gesture recognizer to the left button
     UITapGestureRecognizer *tapGesture =
@@ -897,7 +901,7 @@
                     UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
                     [self presentViewController:profileNavVC animated:YES completion:nil];
 
-                } afterDelay:2];
+                } afterDelay:3];
 
 
                 //enable tabs once the user has been signed up (Profile/Inbox);
@@ -927,6 +931,10 @@
             } else if (user.isNew) {
                 NSLog(@"User signed up and logged in with Twitter!");
                 self.navigationItem.leftBarButtonItem.enabled = YES;
+
+                UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+                UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+                [self presentViewController:profileNavVC animated:YES completion:nil];
             } else {
                 NSLog(@"User logged in with Twitter!");
                 self.navigationItem.leftBarButtonItem.enabled = YES;

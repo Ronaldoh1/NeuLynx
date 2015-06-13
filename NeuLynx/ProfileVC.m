@@ -299,10 +299,11 @@
         [self saveUserInformationToParse:^{
 
             [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
                 if (succeeded) {
 
                    // [self displaySuccessMessage]
-
 
 
                     [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
@@ -317,6 +318,10 @@
 
                         [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
+
+                        UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                        UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+                        [self presentViewController:mapNavVC animated:YES completion:nil];
 
 
                     } afterDelay:1.5];
