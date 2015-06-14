@@ -11,7 +11,8 @@
 
 
 @interface DetailVC ()
-@property (weak, nonatomic) IBOutlet UIView *uiview;
+
+@property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 
 @end
 
@@ -30,6 +31,12 @@
     titleView.text = @"Activity Detail";
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
+
+    //Make user profile circular
+    self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.height/2;
+    self.userProfileImageView.layer.masksToBounds = YES;
+    self.userProfileImageView.layer.borderWidth = 0;
+    
 
 
     RateView* rv = [RateView rateViewWithRating:3.7f];

@@ -25,6 +25,7 @@
 @dynamic personalityBoolArray;
 @dynamic personalityArray;
 @dynamic isFbUser;
+@dynamic userRating;
 
 
 

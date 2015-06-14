@@ -30,5 +30,8 @@
 @property NSMutableArray *personalityBoolArray;
 @property BOOL isFbUser;
 
+//User Rating
+@property NSNumber *userRating;
+
 
 @end

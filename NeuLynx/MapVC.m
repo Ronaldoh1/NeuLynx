@@ -423,12 +423,12 @@
 
 //helper method to show buttons
 -(void)fanButtonOut{
-    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y + 20.0)];
-    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 55.0, self.mainDiscoverButton.frame.origin.y - 35.0)];
-    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 45.0, self.mainDiscoverButton.frame.origin.y - 90.0)];
-    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y - 145.0)];
-    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 15.0, self.mainDiscoverButton.frame.origin.y - 200.0)];
-    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 20.0, self.mainDiscoverButton.frame.origin.y - 245.0)];
+    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y + 38.0)];
+    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 55.0, self.mainDiscoverButton.frame.origin.y - 17.0)];
+    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 45.0, self.mainDiscoverButton.frame.origin.y - 73.0)];
+    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y - 127.0)];
+    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 15.0, self.mainDiscoverButton.frame.origin.y - 182.0)];
+    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 20.0, self.mainDiscoverButton.frame.origin.y - 227.0)];
 
 }
 
