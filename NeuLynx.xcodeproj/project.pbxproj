@@ -45,8 +45,8 @@
 		F2292F3E1B2A8FA0003D82D5 /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */; };
 		F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */; };
 		F2292F461B2C233C003D82D5 /* PictureCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F451B2C233C003D82D5 /* PictureCircle.png */; };
+		F2292F481B2D7A68003D82D5 /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F471B2D7A68003D82D5 /* culturalPin.png */; };
 		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
-		F24EC7E01B23AD8C0018202F /* culturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DB1B23AD8B0018202F /* culturalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
 		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
 		F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DE1B23AD8B0018202F /* nightOutPin.png */; };
@@ -226,8 +226,8 @@
 		F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesDownloader.h; sourceTree = "<group>"; };
 		F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
 		F2292F451B2C233C003D82D5 /* PictureCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PictureCircle.png; sourceTree = "<group>"; };
+		F2292F471B2D7A68003D82D5 /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
 		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
-		F24EC7DB1B23AD8B0018202F /* culturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = culturalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
 		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
 		F24EC7DE1B23AD8B0018202F /* nightOutPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightOutPin.png; sourceTree = "<group>"; };
@@ -617,9 +617,9 @@
 				F2292ECD1B254C7C003D82D5 /* wGastronomy.png */,
 				F2292ECE1B254C7C003D82D5 /* wNightOut.png */,
 				F24EC7DA1B23AD8B0018202F /* festivalPin.png */,
-				F24EC7DB1B23AD8B0018202F /* culturalPin.png */,
 				F24EC7DC1B23AD8B0018202F /* fitnessPin.png */,
 				F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */,
+				F2292F471B2D7A68003D82D5 /* culturalPin.png */,
 				F24EC7DE1B23AD8B0018202F /* nightOutPin.png */,
 				F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */,
 				F226C80D1B0F5A2D007A1C03 /* discover1.png */,
@@ -930,6 +930,7 @@
 				F2292EE31B254D69003D82D5 /* helpIcon.png in Resources */,
 				F2E6E87E1B19A7660083BA7F /* AppIcon29x29.png in Resources */,
 				F2E6E8801B19A7660083BA7F /* AppIcon29x29@2x~ipad.png in Resources */,
+				F2292F481B2D7A68003D82D5 /* culturalPin.png in Resources */,
 				F2292EE61B254D69003D82D5 /* locationIcon.png in Resources */,
 				F2576E161B01C0200006C8E1 /* mailIcon.png in Resources */,
 				F2576E181B023EE60006C8E1 /* signInWithTwitterButton.png in Resources */,
@@ -977,7 +978,6 @@
 				F2E6E8811B19A7660083BA7F /* AppIcon29x29@3x.png in Resources */,
 				F2292F461B2C233C003D82D5 /* PictureCircle.png in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
-				F24EC7E01B23AD8C0018202F /* culturalPin.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F2292EF41B25508E003D82D5 /* mainCultural.png in Resources */,
 				F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */,

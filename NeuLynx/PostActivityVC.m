@@ -9,6 +9,8 @@
 #import "PostActivityVC.h"
 #import "Activity.h"
 #import "SelectLocationVC.h"
+#import "MRProgressOverlayView.h"
+#import "MRProgress.h"
 
 @interface PostActivityVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *activityTitle;
@@ -17,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *activityMaxHeadCount;
 @property (weak, nonatomic) IBOutlet UITextField *activityStartTime;
 @property (weak, nonatomic) IBOutlet UITextField *activityEndTime;
+//*******Images*****************//
 @property NSMutableArray *imageArray;
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
@@ -36,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UIView *secondaryView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property BOOL startDateSelected;
+
 
 @end
 
@@ -112,18 +116,30 @@
     self.activity.activityDescription = self.activityDescription.text;
     self.activity.activityAddress = self.activityAddress.text;
     self.activity.activityLocation = self.activityGeoPoint;
-    self.activity.maxHeadCount = @([self.activityMaxHeadCount.text integerValue]);
+        self.activity.numberOfpaticipants = @0;
+        self.activity.host = [User currentUser];
+    self.activity.maxNumberOfParticipants = @([self.activityMaxHeadCount.text integerValue]);
 
     //saving images if the first is picked only save the first image. 
     self.activity.selectedCategory = self.selectedCategory;
-    if (self.isFirstImagePicked == YES) {
-        NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
+    if (self.imageArray.count == 1) {
+
+        NSMutableArray *imageTempArray = [NSMutableArray new];
+
+        NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
         self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
-    }else if(self.isSecondImagePicked == YES){
-        NSData *imageOneData = UIImagePNGRepresentation(self.image1.image);
+        //[self.activity.activityImage1 saveInBackground];
+
+    } else if(self.imageArray.count == 2){
+
+        //Image 1
+        NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
         self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
-        NSData *imageTwoData = UIImagePNGRepresentation(self.image2.image);
+        //Image 2
+        NSData *imageTwoData = UIImagePNGRepresentation((UIImage *) self.imageArray[1]);;
         self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
+
+        //[self.activity.activityimage2 saveInBackground];
     }
 
 
@@ -133,22 +149,49 @@
     //disable right nav bar item so that user does not double post.
     self.navigationItem.rightBarButtonItem.enabled = NO;
 
+        [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+
+ [self saveUserInformationToParse:^{
+
+
     [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
         if (succeeded) {
 
             // The object has been saved.
-            [self displaySuccessMessage];
+          //  [self displaySuccessMessage];
 //            [self dismissViewControllerAnimated:YES completion:nil];
+            [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
-            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
-            [self presentViewController:mapNavVC animated:YES completion:nil];
+            [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
+
+            [self dismissIndicator:^{
+
+
+
+                [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+                
+                UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+                [self presentViewController:mapNavVC animated:YES completion:nil];
+
+
+            } afterDelay:3];
+            
+
+
+
+
 
         } else {
             // There was a problem, check error.description
             [self displayErrorMessage:error.description];
         }
     }];
+
+
+ } afterDelay:1.5];
+
     } else{
         [self displayErrorMessage:textFieldError];
     }
@@ -479,6 +522,17 @@
               , selectLocationVC.activityGeoPoint.longitude);
 
     }
+}
+
+
+//**********************BLOCKS***********************************************//
+-(void)saveUserInformationToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
+-(void)dismissIndicator:(void(^)())block afterDelay:(NSTimeInterval)delay{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
+    dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
 
 @end

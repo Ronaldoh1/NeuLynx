@@ -18,6 +18,7 @@
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
 #import "CustomMKAnnotation.h"
+#import "AppDelegate.h"
 
 
 
@@ -64,6 +65,7 @@
 
 //Profile Image
 @property UIImage *profileImage;
+
 @end
 
 @implementation MapVC
@@ -465,8 +467,8 @@
 
 -(void)culturalButtonTapped{
     NSLog(@"cultural button tapped");
-    [self.mapView removeAnnotations:self.mapView.annotations];
 
+    [self.mapView removeAnnotations:self.mapView.annotations];
 
     [self.mapView addAnnotations:self.culturalActivityArray];
 }
@@ -673,7 +675,7 @@
                     self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
                     ;
                     if ([activity.selectedCategory isEqualToString:@"Festival"]) {
-                        [self.fitnessActivityArray addObject:self.pinAnnotation];
+                        [self.festivalActivityArray addObject:self.pinAnnotation];
 
                     }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
                         [self.culturalActivityArray addObject:self.pinAnnotation];
@@ -681,7 +683,7 @@
                     } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
                         [self.gastronomyActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"NightOut"]) {
+                    } else if ([activity.selectedCategory isEqualToString:@"Night Out"]) {
                         [self.nightOutActivityArray addObject:self.pinAnnotation];
 
                     } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
@@ -1046,17 +1048,25 @@
 
 
 
-//Allow user to select their location.
+//Allow user to select their activity.
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
     
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
-    [self presentViewController:detailVC animated:YES completion:nil];
+
+    //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        CustomMKAnnotation *annotation = view.annotation;
+        appDelegate.sharedActivity = annotation.activity;
+
+   [self presentViewController:detailVC animated:YES completion:nil];
     
     
 }
+
 
 
 

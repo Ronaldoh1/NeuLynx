@@ -17,7 +17,8 @@
 @dynamic endTimeAndDate;
 @dynamic activityImage1;
 @dynamic activityimage2;
-@dynamic maxHeadCount;
+@dynamic maxNumberOfParticipants;
+@dynamic numberOfpaticipants;
 @dynamic host;
 @dynamic selectedCategory;
 

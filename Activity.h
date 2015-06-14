@@ -17,12 +17,13 @@
 @property PFGeoPoint *activityLocation;
 @property NSString *activityAddress;
 @property NSDate *startTimeAndDate;
-@property NSNumber *maxHeadCount;
+@property NSNumber *maxNumberOfParticipants;
 @property NSDate *endTimeAndDate;
 @property PFFile *activityImage1;
 @property PFFile *activityimage2;
 @property User *host;
 @property NSString *selectedCategory;
+@property NSNumber *numberOfpaticipants;
 
 +(NSString *)parseClassName;
 
