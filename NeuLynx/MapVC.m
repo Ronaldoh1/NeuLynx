@@ -148,6 +148,7 @@
 
     //Setup Activity's array - initialize and allocate
     self.festivalActivityArray = [NSMutableArray new];
+    self.culturalActivityArray = [NSMutableArray new];
     self.fitnessActivityArray = [NSMutableArray new];
     self.gastronomyActivityArray = [NSMutableArray new];
     self.nightOutActivityArray = [NSMutableArray new];
@@ -694,11 +695,6 @@
                     }
 
 
-                    //   self.pinAnnotation.activity = activity;
-
-                    // NSLog(@"%@", self.fitnessActivityArray);
-
-                    //
                    [self.mapView addAnnotation:self.pinAnnotation];
                     
                 }

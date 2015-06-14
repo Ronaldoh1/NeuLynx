@@ -21,6 +21,7 @@
 @dynamic numberOfpaticipants;
 @dynamic host;
 @dynamic selectedCategory;
+@dynamic peopleAttending;
 
 +(void)load {
     [self registerSubclass];

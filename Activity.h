@@ -24,6 +24,7 @@
 @property User *host;
 @property NSString *selectedCategory;
 @property NSNumber *numberOfpaticipants;
+@property NSMutableArray *peopleAttending;
 
 +(NSString *)parseClassName;
 

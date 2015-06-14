@@ -164,6 +164,15 @@
 
 - (IBAction)onJoinButtonTapped:(UIBarButtonItem *)sender {
 
+    //1. Get the activity that user selected.
+    Activity *selectedActivity = [Activity new];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    selectedActivity = appDelegate.sharedActivity;
+
+    selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+    [selectedActivity saveInBackground];
+    
+
 }
 
 
