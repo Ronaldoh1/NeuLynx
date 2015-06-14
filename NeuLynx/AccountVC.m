@@ -10,6 +10,7 @@
 #import "User.h"
 #import "MailVC.h"
 #import "ProfileVC.h"
+#import "AppDelegate.h"
 
 
 @interface AccountVC ()<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
@@ -99,11 +100,25 @@
     //get user's location and display it.
     self.locationLabel.text = [NSString stringWithFormat:@"%@ - %@, %@", self.currentUser.userCurrentCity, self.currentUser.userAdministrativeArea, self.currentUser.userCountryCode];
     self.locationLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+
+
+    //if requests is clicked, then show done button
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+
+
+        tmpBool = NO;
+        appDelegate.hideDoneButtonForRequests = nil;
     
+
+
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+    [self presentViewController:mapNavVC animated:YES completion:nil];
 }
 
 //Display profile image for current user if he/she taps on his/her picture

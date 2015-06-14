@@ -7,9 +7,11 @@
 //
 
 #import "RequestVC.h"
+#import "AppDelegate.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -30,6 +32,18 @@
     titleView.text = @"Requests";
     titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+
+    if (tmpBool == YES) {
+
+        tmpBool = NO;
+        appDelegate.hideDoneButtonForRequests = nil;
+        self.navigationItem.rightBarButtonItem = nil;
+
+
+    }
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 

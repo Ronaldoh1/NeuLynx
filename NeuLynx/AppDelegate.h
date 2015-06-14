@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property Activity *sharedActivity;
+@property BOOL *hideDoneButtonForRequests;
 
 @property (strong, nonatomic) UIWindow *window;
 

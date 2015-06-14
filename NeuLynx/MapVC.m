@@ -206,6 +206,14 @@
     } afterDelay:2.0];
 
 
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+
+
+
+    tmpBool = YES;
+
+    appDelegate.hideDoneButtonForRequests = &(tmpBool);
 
 
 }
