@@ -29,7 +29,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPeopleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *activityDescriptionText;
 
+//Activity Images
 
+@property (weak, nonatomic) IBOutlet UIImageView *image1;
+
+@property (weak, nonatomic) IBOutlet UIImageView *image2;
 
 @end
 
@@ -115,6 +119,28 @@
     }
     self.numberOfPeopleLabel.text = [NSString stringWithFormat:@"%@ of %@ are attending!", selectedActivity.numberOfpaticipants, selectedActivity.maxNumberOfParticipants];
 
+
+    //Display activity images
+
+    PFFile *image1PFFIle = [PFFile new];
+
+    image1PFFIle = selectedActivity.activityImage1;
+
+    [image1PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+        self.image1.image = [UIImage imageWithData:data];
+        
+    }];
+
+    PFFile *image2PFFIle = [PFFile new];
+
+    image2PFFIle = selectedActivity.activityimage2;
+
+    [image2PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+        self.image2.image = [UIImage imageWithData:data];
+        
+    }];
 
 
     //Display rate flags for the user.

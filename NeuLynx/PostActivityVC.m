@@ -124,7 +124,6 @@
     self.activity.selectedCategory = self.selectedCategory;
     if (self.imageArray.count == 1) {
 
-        NSMutableArray *imageTempArray = [NSMutableArray new];
 
         NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
         self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
