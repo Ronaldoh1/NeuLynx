@@ -62,6 +62,7 @@
 
 //MAP
 @property CustomMKAnnotation *pinAnnotation;
+@property NSArray *annotationArray;
 
 //Profile Image
 @property UIImage *profileImage;
@@ -952,6 +953,14 @@
 }
 #pragma Mark - Search bar delegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+
+    //remove all annotation from map.
+    self.annotationArray = self.mapView.annotations;
+    [self.mapView removeAnnotations:self.annotationArray];
+    if (![ searchBar.text isEqualToString:@""]) {
+        NSLog(@"It workedddddd");
+    }
+
     [searchBar resignFirstResponder];
 
 }
