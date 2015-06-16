@@ -63,6 +63,8 @@
 //MAP
 @property CustomMKAnnotation *pinAnnotation;
 @property NSArray *annotationArray;
+@property NSArray *allActivitiesArray;
+@property NSMutableArray *activitySearchResults;
 
 //Profile Image
 @property UIImage *profileImage;
@@ -155,6 +157,9 @@
     self.nightOutActivityArray = [NSMutableArray new];
     self.fitnessActivityArray = [NSMutableArray new];
     self.outDoorsActivityArray = [NSMutableArray new];
+
+    self.allActivitiesArray = [NSMutableArray new];
+
 
 
     //Get reference to entire window
@@ -676,6 +681,9 @@
         // NSArray *activitiesArray = activities;
 
         if (!error) {
+        //get a copy of all activities
+            self.allActivitiesArray = activities.copy;
+
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -956,15 +964,72 @@
 
     //remove all annotation from map.
     self.annotationArray = self.mapView.annotations;
-    [self.mapView removeAnnotations:self.annotationArray];
-    if (![ searchBar.text isEqualToString:@""]) {
-        NSLog(@"It workedddddd");
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+         self.activitySearchResults = [NSMutableArray new];
+
+
+
+    if (![searchBar.text isEqualToString:@""]) {
+
+
+          NSLog(@"It workedddddd %@", self.allActivitiesArray);
+
+        for (Activity *activity in self.allActivitiesArray) {
+
+
+            if ([[activity objectForKey:@"activityTitle"] localizedCaseInsensitiveContainsString:searchBar.text] || [[activity objectForKey:@"activityDescription"] localizedCaseInsensitiveContainsString:searchBar.text]) {
+
+                [self.activitySearchResults addObject:activity];
+
+            }
+        }
+
+
     }
+
+
+    NSLog(@"It workedddddd %@", self.activitySearchResults);
+    [self addAnnotationsToMapFromSearchResultArray:self.activitySearchResults];
+
+
+//
+//    [self.mapView addAnnotations:self.activitySearchResults];
 
     [searchBar resignFirstResponder];
 
 }
 
+//helper method
+
+-(void)addAnnotationsToMapFromSearchResultArray:(NSArray *)searchResult{
+
+    NSLog(@"%@", searchResult);
+
+    for (Activity *activity in searchResult){
+        self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
+        if ([activity.selectedCategory isEqualToString:@"Festival"]) {
+            [self.festivalActivityArray addObject:self.pinAnnotation];
+
+        }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
+            [self.culturalActivityArray addObject:self.pinAnnotation];
+
+        } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
+            [self.gastronomyActivityArray addObject:self.pinAnnotation];
+
+        } else if ([activity.selectedCategory isEqualToString:@"Night Out"]) {
+            [self.nightOutActivityArray addObject:self.pinAnnotation];
+
+        } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
+            [self.fitnessActivityArray addObject:self.pinAnnotation];
+
+        } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
+            [self.outDoorsActivityArray addObject:self.pinAnnotation];
+        }
+
+        [self.mapView addAnnotation:self.pinAnnotation];
+    }
+}
 
 #pragma Mark - CLLocationManager Delegate Methods
 

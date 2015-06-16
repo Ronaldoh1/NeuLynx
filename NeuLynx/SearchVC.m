@@ -17,10 +17,14 @@
 //TABLE VIEW
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *activitiesForSearchArray;
+@property NSMutableArray *filteredTableDataArray;
+@property BOOL isFiltered;
+@property BOOL isAscending;
 
 //CORE LOCATION
 @property CLLocationManager *locationManager;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property NSMutableArray *activitiesArray;
 
@@ -59,7 +63,11 @@
 
 }
 
+//Helper Method to sort Array by distance
+-(void)sortArrayByDistance{
 
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distanceFromCurrentLocation" ascending:self.isAscending];
+}
 
 
 
@@ -100,12 +108,39 @@
 
 }
 
+#pragma mark - UISearchBarDelegate Delegate 
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+
+    if (self.searchBar.text.length == 0) {
+        self.isFiltered = NO;
+    }else{
+        self.isFiltered = YES;
+        self.filteredTableDataArray = [NSMutableArray new];
+
+        for (Activity *activity in self.activitiesForSearchArray) {
+            NSRange titleRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
+              NSRange descriptionRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
+
+            if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
+
+                [self.filteredTableDataArray addObject:activity];
+            }
+        }
+
+    }
+    [self.tableView reloadData];
+}
+
 
 
 #pragma marks - TableView Delegates
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
+    if (self.isFiltered)
+        return self.filteredTableDataArray.count;
+    else
     return self.activitiesForSearchArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -114,8 +149,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
     //for every row in parse, we are getting a PFObject back. In our case, we will be getting an activity. For every activity, we will be retrieving values to populate the cell.
+    Activity *tempActivity = [Activity new];
 
-    Activity *tempActivity = [self.activitiesForSearchArray objectAtIndex:indexPath.row];
+    if (self.isFiltered == YES) {
+
+        tempActivity = [self.filteredTableDataArray objectAtIndex:indexPath.row];
+    }else{
+
+    tempActivity = [self.activitiesForSearchArray objectAtIndex:indexPath.row];
+    }
 
 //    NSDictionary *tempDictionary = [[NSDictionary alloc]initWithDictionary:[self.activitiesForSearchArray objectAtIndex:indexPath.row]];
 

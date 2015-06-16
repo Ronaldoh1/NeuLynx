@@ -209,12 +209,13 @@
                     <navigationItem key="navigationItem" title="Search for Activities" id="xBR-sy-6cZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="searchBar" destination="urC-xZ-pGw" id="dJ6-3r-Tf7"/>
                         <outlet property="tableView" destination="HkL-gC-qX0" id="Xst-ka-rr0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLA-4g-xU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1543" y="278"/>
+            <point key="canvasLocation" x="1587" y="465"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ExU-Ba-dp3">
