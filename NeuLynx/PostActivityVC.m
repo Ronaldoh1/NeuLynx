@@ -40,6 +40,9 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property BOOL startDateSelected;
 
+@property (weak, nonatomic) IBOutlet UILabel *gotPicturesLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *pickCategoryLabel;
 
 @end
 
@@ -59,6 +62,10 @@
     }
 }
 -(void)initialSetUp{
+
+    self.gotPicturesLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+    self.pickCategoryLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+
     //Disable and Hide the Secondary View - initially
     self.secondaryView.hidden = YES;
     self.datePicker.hidden = YES;

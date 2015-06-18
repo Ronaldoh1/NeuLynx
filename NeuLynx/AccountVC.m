@@ -56,7 +56,9 @@
     self.currentUser = [User currentUser];
 
     //get user's name
-    self.usersNameLabel.text = self.currentUser.name;
+    self.usersNameLabel.text = @"";
+
+    self.usersNameLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
     //Set up Menu Array
 
@@ -78,7 +80,7 @@
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
-    self.profileImage.layer.borderColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1].CGColor;
+    self.profileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
     //change color of logout button
 
@@ -88,9 +90,9 @@
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
-    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
-    titleView.text = @"Account & Settings";
-    titleView.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    titleView.font = [UIFont fontWithName:@"Helvetica" size:25];
+    titleView.text = self.currentUser.name;
+    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
     //get user profile Image
@@ -99,7 +101,7 @@
 
     //get user's location and display it.
     self.locationLabel.text = [NSString stringWithFormat:@"%@ - %@, %@", self.currentUser.userCurrentCity, self.currentUser.userAdministrativeArea, self.currentUser.userCountryCode];
-    self.locationLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    self.locationLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
 
     //if requests is clicked, then show done button
@@ -159,16 +161,18 @@
     //display the cells for each button
     cell.textLabel.text = self.menuArray[indexPath.row];
     //change the color of text
-    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+
+    cell.textLabel.textColor = [UIColor grayColor];
+//    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
     //change the background color
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
 
      //Add background image to table view
-    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
 
     //change the selection color
     UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    bgColorView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
     [cell setSelectedBackgroundView:bgColorView];
 
     //change the color of scrollbar

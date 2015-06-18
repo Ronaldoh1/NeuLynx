@@ -73,6 +73,8 @@
         self.navigationItem.leftBarButtonItem = nil;
 
 
+//    //change the view's background color
+//    self.view.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:250.0/255.0 blue:250.0/255.0 alpha:1]
 
 
 
@@ -112,14 +114,14 @@
 
 
     //Dim the colors of language buttons
-    self.portugueseButton.alpha = 0.5;
-    self.spanishButton.alpha = 0.5;
-    self.englishButton.alpha = 0.5;
-    self.frenchButton.alpha = 0.5;
+    self.portugueseButton.alpha = 0.3;
+    self.spanishButton.alpha = 0.3;
+    self.englishButton.alpha = 0.3;
+    self.frenchButton.alpha = 0.3;
 
     //Change the Tint For segmented controls.
-    [self.genderPicker setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
-    [self.orientationPicker setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
+    [self.genderPicker setTintColor:[UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1]];
+    [self.orientationPicker setTintColor:[UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1]];
     self.genderArraySelected = NO;
     //Hide the secondary view initially
 
@@ -133,7 +135,7 @@
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
-    self.profileImage.layer.borderColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1].CGColor;
+    self.profileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
 
     //setting image to Navigation Bar's title
@@ -480,13 +482,13 @@
     //set the cell's row to preferences array.
     cell.textLabel.text = self.preferencesSelectionArray[indexPath.row];
 
-    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    cell.textLabel.textColor = [UIColor grayColor];
 
     //center the text
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
 
     //change the background color
-    cell.backgroundColor = [UIColor clearColor];
+    cell.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
 
     //add accessory to each cell
 
@@ -494,11 +496,14 @@
     
 
     //Add background image to table view
-    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+////    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+//    tableView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:250.0/255.0 alpha:1];
+
+
 
     //change the selection color
     UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    bgColorView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
     [cell setSelectedBackgroundView:bgColorView];
 
     //change the color of scrollbar

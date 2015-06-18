@@ -11,6 +11,8 @@
 #import "Activity.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ActivitiesDownloader.h"
+#import "AppDelegate.h"
+#import "CustomMKAnnotation.h"
 
 @interface SearchVC ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate>
 
@@ -64,10 +66,10 @@
 }
 
 //Helper Method to sort Array by distance
--(void)sortArrayByDistance{
-
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distanceFromCurrentLocation" ascending:self.isAscending];
-}
+//-(void)sortArrayByDistance{
+//
+//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distanceFromCurrentLocation" ascending:self.isAscending];
+//}
 
 
 
@@ -198,7 +200,27 @@
     return cell;
 }
 
-#pragma marks - Corelocation 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+
+//set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+//CustomMKAnnotation *annotation = view.annotation;
+    if (self.isFiltered) {
+        appDelegate.sharedActivity = self.filteredTableDataArray[indexPath.row];
+    } else {
+        appDelegate.sharedActivity = self.activitiesForSearchArray[indexPath.row];
+    }
+
+
+[self presentViewController:detailVC animated:YES completion:nil];
+
+}
+#pragma marks - Corelocation
 
 //First we get the user's location - and then download the activities that are within 50 miles radius.
 
