@@ -44,7 +44,7 @@
 -(void)initialSetUp{
 
     //initialize menu icons array.
-    [self setCellIconNames:[NSArray arrayWithObjects:@"messageIcon.png", @"requestIcon2", @"historyIcon", @"searchIcon", @"helpIcon", @"faqIcon", @"aboutIcon", @"termsIcon",nil]];
+    [self setCellIconNames:[NSArray arrayWithObjects:@"messageIcon", @"requestIcon", @"historyIcon", @"searchIcon", @"helpIcon", @"faqIcon", @"aboutIcon", @"termsIcon",nil]];
 
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;

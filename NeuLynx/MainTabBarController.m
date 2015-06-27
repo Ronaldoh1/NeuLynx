@@ -61,7 +61,7 @@
     UIStoryboard *requestStoryboard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
     UITabBarController *requestNavVC = [requestStoryboard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
     [self addChildViewController:requestNavVC];
-    requestNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"requestIcon"] scaledToSize:CGSizeMake(35, 35)];
+    requestNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"requestIcon2"] scaledToSize:CGSizeMake(35, 35)];
     requestNavVC.tabBarItem.title = @"Request";
     requestNavVC.tabBarItem.enabled = YES;
 }

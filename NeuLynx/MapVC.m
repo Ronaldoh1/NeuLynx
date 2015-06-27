@@ -178,7 +178,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = @"NeuLynx";
-    titleView.textColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
+    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
     //Check if the user has previously used the app.
@@ -1140,80 +1140,108 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
-        CGSize scaledSize = CGSizeMake(40, 40);
-        UIGraphicsBeginImageContext(scaledSize);
-        [leftCallOutimage drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-        profileImageView.layer.masksToBounds = YES;
-        profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-        profileImageView.clipsToBounds = YES;
-        profileImageView.userInteractionEnabled = YES;
-        annotationView.leftCalloutAccessoryView = profileImageView;
+//        CGSize scaledSize = CGSizeMake(40, 40);
+//        UIGraphicsBeginImageContext(scaledSize);
+//        [leftCallOutimage drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+//        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+//        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+//        profileImageView.layer.masksToBounds = YES;
+//        profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+//        profileImageView.clipsToBounds = YES;
+//        profileImageView.userInteractionEnabled = YES;
+//        annotationView.leftCalloutAccessoryView = profileImageView;
 
-//        //add profile image to annotation call out
-//        PFQuery *activityQuery = [Activity query];
-//        [activityQuery includeKey:@"host"];
-//       // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-//        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
-//            if(error){
-//                return;
-//            }
-//
-//            Activity *activity = (Activity *)object;
-//            User *host = activity.host;
-//
-//            //check if the user exists for the activity and check if the user has a picture.
-//            if(!(host.profileImage == nil) || !(host == nil)){
-//                [host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//
-//                    //if there is no error then display the image for the user who posted activity.
-//                    if(!error){
-//                        UIImage *image = [UIImage imageWithData:data];
-//                        CGSize scaledSize = CGSizeMake(40, 40);
-//                        UIGraphicsBeginImageContext(scaledSize);
-//                        [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-//                        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-//                        UIGraphicsEndImageContext();
-//                        UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-//                        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-//                        profileImageView.layer.masksToBounds = YES;
-//                        profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-//                        profileImageView.clipsToBounds = YES;
-//                        profileImageView.userInteractionEnabled = YES;
-//                        annotationView.leftCalloutAccessoryView = profileImageView;
-//
-//                    }
-//
-//
-//                }
-//
-//
-//                 ];
-//            }else{
-//
-//                UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
-//                CGSize scaledSize = CGSizeMake(40, 40);
-//                UIGraphicsBeginImageContext(scaledSize);
-//                [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-//                UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-//                UIGraphicsEndImageContext();
-//                UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-//                profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-//                profileImageView.layer.masksToBounds = YES;
-//                profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-//                profileImageView.clipsToBounds = YES;
-//                profileImageView.userInteractionEnabled = YES;
-//                annotationView.leftCalloutAccessoryView = profileImageView;
-//
-//            }
-//
-//
-//
-//        } ];
+        //add profile image to annotation call out
+        PFQuery *activityQuery = [Activity query];
+        [activityQuery includeKey:@"host"];
+        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
 
+
+
+
+//            [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
+
+
+
+
+
+                        Activity *activity = pinAnnotation.activity;
+                User *host = activity.host;
+
+                //check if the user exists for the activity and check if the user has a picture.
+                if(!(host.profileImage == nil) || !(host == nil)){
+
+                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+                    dispatch_async(queue, ^{
+
+
+                        [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+                        
+
+
+                            //if there is no error then display the image for the user who posted activity.
+                            if(!error){
+                                UIImage *image = [UIImage imageWithData:data];
+                                CGSize scaledSize = CGSizeMake(40, 40);
+                                UIGraphicsBeginImageContext(scaledSize);
+                                [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                                UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                                UIGraphicsEndImageContext();
+                                UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                                profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                                profileImageView.layer.masksToBounds = YES;
+                                profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                                profileImageView.clipsToBounds = YES;
+                                profileImageView.userInteractionEnabled = YES;
+                                annotationView.leftCalloutAccessoryView = profileImageView;
+
+                            }
+
+
+
+
+
+                        } ];
+
+
+
+
+                            //            }]
+                        });
+
+
+                }else{
+
+                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
+                    CGSize scaledSize = CGSizeMake(40, 40);
+                    UIGraphicsBeginImageContext(scaledSize);
+                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                    profileImageView.layer.masksToBounds = YES;
+                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                    profileImageView.clipsToBounds = YES;
+                    profileImageView.userInteractionEnabled = YES;
+                    annotationView.leftCalloutAccessoryView = profileImageView;
+                    
+                }
+
+
+//
+//                                           });
+////            }];
+//
+//
+//        });
+
+
+        
 
 
 

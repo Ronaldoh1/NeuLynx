@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-Z6-OJd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="L4J-Z6-OJd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCE-dn-sW4">
@@ -134,6 +134,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backBackground" width="750" height="1334"/>
+        <image name="blackground.png" width="1242" height="2208"/>
     </resources>
 </document>
