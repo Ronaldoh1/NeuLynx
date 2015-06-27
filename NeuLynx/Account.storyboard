@@ -388,6 +388,7 @@
                     <connections>
                         <outlet property="locationLabel" destination="Flx-Ad-1to" id="rqg-NV-vtp"/>
                         <outlet property="profileImage" destination="RDC-6i-thS" id="jtr-45-of4"/>
+                        <outlet property="tableView" destination="UDp-IG-Z0n" id="x4y-zb-S3R"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1N-Ba-ugD" userLabel="First Responder" sceneMemberID="firstResponder"/>

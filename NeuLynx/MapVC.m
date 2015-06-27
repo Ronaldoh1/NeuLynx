@@ -174,12 +174,20 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
-    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
-    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
-    titleView.text = @"NeuLynx";
-    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-    [self.navigationItem setTitleView:titleView];
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appName.png"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 160, 70)];
+    imageView.frame = titleView.bounds;
+    [titleView addSubview:imageView];
+
+    self.navigationItem.titleView = titleView;
+//    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+//    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+//    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
+//    titleView.text = @"NeuLynx";
+//    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+//    [self.navigationItem setTitleView:titleView];
 
     //Check if the user has previously used the app.
 

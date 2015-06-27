@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-Jo-rf7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-Jo-rf7">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please send us an email and we will get to your shortly. Thank you! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuV-tI-zFY">
@@ -108,6 +108,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backBackground" width="750" height="1334"/>
+        <image name="blackground.png" width="1242" height="2208"/>
     </resources>
 </document>

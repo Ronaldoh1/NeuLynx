@@ -38,7 +38,9 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+
 
     [self performInitialSetUp];
 }
@@ -75,8 +77,22 @@
 
     //Get profile image
     [self getUsersProfileImage];
-    
+
+    //if requests is clicked, then show done button
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+
+
+    tmpBool = NO;
+    appDelegate.hideDoneButtonForRequests = nil;
+
+    //Add right bar button item
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(onDoneButtonTapped)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+
 }
+
+#pragma Marks - Buttons 
 
 - (IBAction)onViewProfileButtonTapped:(id)sender {
 
@@ -112,6 +128,58 @@
         return indexPath;
     }
 
+}
+
+//the following method  handles the different actions/events to take the user to the appropriate screen.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //first we need to deselect the cell.
+
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0 && indexPath.section == 1) {
+
+        UIStoryboard *mailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+        UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
+        [self presentViewController:mailNavVC animated:YES completion:nil];
+
+
+    }else if(indexPath.row == 1 && indexPath.section == 1){
+        UIStoryboard *requestStoryBoard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
+        UITabBarController *requestVC = [requestStoryBoard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
+        [self presentViewController:requestVC animated:YES completion:nil];
+
+
+    }else if(indexPath.row == 2 && indexPath.section == 1){
+        UIStoryboard *historyStoryBoard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
+        UINavigationController *historyNavVC = [historyStoryBoard instantiateViewControllerWithIdentifier:@"HistoryNavVC"];
+        [self presentViewController:historyNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 3 && indexPath.section == 1){
+        UIStoryboard *searchActivity = [UIStoryboard storyboardWithName:@"Search" bundle:nil];
+        UINavigationController *searchNavVC = [searchActivity instantiateViewControllerWithIdentifier:@"SearchNavVC"];
+        [self presentViewController:searchNavVC animated:YES completion:nil];
+
+
+    }else if(indexPath.row == 0 && indexPath.section == 2){
+        UIStoryboard *helpStoryboard = [UIStoryboard storyboardWithName:@"Help" bundle:nil];
+        UINavigationController *helpNavVC = [helpStoryboard instantiateViewControllerWithIdentifier:@"helpNavVC"];
+        [self presentViewController:helpNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 0 && indexPath.section == 3){
+        UIStoryboard *faqStoryBoard = [UIStoryboard storyboardWithName:@"Faq" bundle:nil];
+        UINavigationController *faqNavVC = [faqStoryBoard instantiateViewControllerWithIdentifier:@"faqNavVC"];
+        [self presentViewController:faqNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 1 && indexPath.section == 3){
+        UIStoryboard *aboutStoryBoard = [UIStoryboard storyboardWithName:@"About" bundle:nil];
+        UINavigationController *aboutNavVC = [aboutStoryBoard instantiateViewControllerWithIdentifier:@"aboutNavVC"];
+        [self presentViewController:aboutNavVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 2 && indexPath.section == 3){
+        UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
+        UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
+        [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+        
+    }
 
 
 
@@ -127,6 +195,12 @@
         }
 
     }];
+}
+
+//dismiss the view Controller on Done button Tapped
+-(void)onDoneButtonTapped{
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

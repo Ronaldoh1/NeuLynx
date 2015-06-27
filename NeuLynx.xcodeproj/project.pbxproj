@@ -117,6 +117,7 @@
 		F2892E021B3EAB540010D534 /* rateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFA1B3EAB540010D534 /* rateIcon.png */; };
 		F2892E031B3EAB540010D534 /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFB1B3EAB540010D534 /* twitterIcon.png */; };
 		F2892E041B3EAB540010D534 /* vineIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFC1B3EAB540010D534 /* vineIcon.png */; };
+		F2892E061B3EC0A00010D534 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E051B3EC0A00010D534 /* appName.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -324,6 +325,7 @@
 		F2892DFA1B3EAB540010D534 /* rateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rateIcon.png; sourceTree = "<group>"; };
 		F2892DFB1B3EAB540010D534 /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
 		F2892DFC1B3EAB540010D534 /* vineIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vineIcon.png; sourceTree = "<group>"; };
+		F2892E051B3EC0A00010D534 /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appName.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F2892E051B3EC0A00010D534 /* appName.png */,
 				F23437311B3D2EA10065D11C /* blackground.png */,
 				F2292F451B2C233C003D82D5 /* PictureCircle.png */,
 				F2292EEE1B25508E003D82D5 /* mainCultural.png */,
@@ -971,6 +974,7 @@
 				F2E6E88C1B19A7660083BA7F /* AppIcon57x57@2x.png in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
 				F2892E041B3EAB540010D534 /* vineIcon.png in Resources */,
+				F2892E061B3EC0A00010D534 /* appName.png in Resources */,
 				F28519101AFACE75007A45FA /* launchScreen.png in Resources */,
 				F2FE7E9A1B0AF0C900CDD057 /* spa.png in Resources */,
 				F2E6E8921B19A7660083BA7F /* AppIcon76x76~ipad.png in Resources */,
