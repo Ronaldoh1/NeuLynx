@@ -65,13 +65,68 @@
     [self.locationManager startUpdatingLocation];
     //get user's location and display it.
     self.locationLabel.text = [NSString stringWithFormat:@"%@ %@, %@", self.currentUser.userCurrentCity, self.currentUser.userAdministrativeArea, self.currentUser.userCountryCode];
+    self.locationLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
     //Make profile image round.
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.height/2;
     self.profileImage.layer.masksToBounds = YES;
     self.profileImage.layer.borderWidth = 4.0;
     self.profileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+
+    //Get profile image
+    [self getUsersProfileImage];
     
+}
+
+- (IBAction)onViewProfileButtonTapped:(id)sender {
+
+
+    UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+    UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+
+
+    [self presentViewController:profileNavVC animated:YES completion:nil];
+
+
+
+}
+- (IBAction)onSignOutButtonTapped:(id)sender {
+    [User logOut];
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UITableView Delegate Methods
+
+//The following method is used to managed which cells are selectable.
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.row == 0 && indexPath.section == 0) {
+        return nil;
+    }else if (indexPath.row == 8 && indexPath.section == 4) {
+        return nil;
+    } else {
+        return indexPath;
+    }
+
+
+
+
+}
+//*******************Helper Method***************************//
+//Helper method to download user's profile image
+-(void)getUsersProfileImage{
+
+    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.profileImage.image = image;
+        }
+
+    }];
 }
 
 @end
