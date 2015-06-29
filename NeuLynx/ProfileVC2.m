@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "ProfileVC.h"
+#import "ProfileVC2.h"
 #import "User.h"
 #import "PreferencesVC.h"
 #import <CoreText/CoreText.h>
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
 
-@interface ProfileVC ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
+@interface ProfileVC2 ()<UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
@@ -53,7 +53,7 @@
 
 @end
 
-@implementation ProfileVC
+@implementation ProfileVC2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -461,6 +461,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 //dismiss the view controller when user cancels.
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self cancelPicker];

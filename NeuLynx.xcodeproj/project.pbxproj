@@ -64,7 +64,7 @@
 		F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC481AFB392900B2C5BA /* profileicon.png */; };
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
-		F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */; };
+		F25BFC541AFB9E3900B2C5BA /* ProfileVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */; };
 		F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
 		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
@@ -118,6 +118,7 @@
 		F2892E031B3EAB540010D534 /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFB1B3EAB540010D534 /* twitterIcon.png */; };
 		F2892E041B3EAB540010D534 /* vineIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFC1B3EAB540010D534 /* vineIcon.png */; };
 		F2892E061B3EC0A00010D534 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E051B3EC0A00010D534 /* appName.png */; };
+		F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892E081B4179EA0010D534 /* ProfileTVC.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -260,8 +261,8 @@
 		F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mail.storyboard; sourceTree = "<group>"; };
 		F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
-		F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
-		F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
+		F25BFC521AFB9E3900B2C5BA /* ProfileVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC2.h; sourceTree = "<group>"; };
+		F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC2.m; sourceTree = "<group>"; };
 		F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityVC.h; sourceTree = "<group>"; };
 		F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
@@ -326,6 +327,8 @@
 		F2892DFB1B3EAB540010D534 /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
 		F2892DFC1B3EAB540010D534 /* vineIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vineIcon.png; sourceTree = "<group>"; };
 		F2892E051B3EC0A00010D534 /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appName.png; sourceTree = "<group>"; };
+		F2892E071B4179EA0010D534 /* ProfileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTVC.h; sourceTree = "<group>"; };
+		F2892E081B4179EA0010D534 /* ProfileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTVC.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -496,13 +499,13 @@
 				F2E6E8501B1602060083BA7F /* Help */,
 				F2E6E84A1B15FB540083BA7F /* Terms */,
 				F2FE7E931B0A319100CDD057 /* Account */,
+				F285190C1AFAC132007A45FA /* Profile */,
 				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
 				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
 				F285190D1AFAC172007A45FA /* History */,
 				F2E6E8EB1B2382B80083BA7F /* Detail */,
 				F285190B1AFAC126007A45FA /* PostActivity */,
 				F285190A1AFAC110007A45FA /* Map */,
-				F285190C1AFAC132007A45FA /* Profile */,
 				F28519091AFAC0D7007A45FA /* Sign Up */,
 				F28519071AFAC0A2007A45FA /* Sign In */,
 				F285190E1AFACE5C007A45FA /* Images */,
@@ -593,10 +596,12 @@
 			isa = PBXGroup;
 			children = (
 				F28519241AFADADA007A45FA /* Profile.storyboard */,
+				F2892E071B4179EA0010D534 /* ProfileTVC.h */,
+				F2892E081B4179EA0010D534 /* ProfileTVC.m */,
 				F2FE7E9B1B0B03CB00CDD057 /* PreferencesVC.h */,
 				F2FE7E9C1B0B03CB00CDD057 /* PreferencesVC.m */,
-				F25BFC521AFB9E3900B2C5BA /* ProfileVC.h */,
-				F25BFC531AFB9E3900B2C5BA /* ProfileVC.m */,
+				F25BFC521AFB9E3900B2C5BA /* ProfileVC2.h */,
+				F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1131,7 +1136,7 @@
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
-				F25BFC541AFB9E3900B2C5BA /* ProfileVC.m in Sources */,
+				F25BFC541AFB9E3900B2C5BA /* ProfileVC2.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
@@ -1139,6 +1144,7 @@
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
 				F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
+				F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */,
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,

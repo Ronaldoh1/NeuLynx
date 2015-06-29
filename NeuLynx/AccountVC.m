@@ -9,7 +9,7 @@
 #import "AccountVC.h"
 #import "User.h"
 #import "MailVC.h"
-#import "ProfileVC.h"
+#import "ProfileVC2.h"
 #import "AppDelegate.h"
 
 

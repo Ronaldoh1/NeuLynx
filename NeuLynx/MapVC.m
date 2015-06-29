@@ -1175,7 +1175,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
-                        Activity *activity = pinAnnotation.activity;
+                Activity *activity = pinAnnotation.activity;
                 User *host = activity.host;
 
                 //check if the user exists for the activity and check if the user has a picture.

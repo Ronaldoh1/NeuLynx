@@ -9,7 +9,7 @@
 #import "AccountAndSettingsTVC.h"
 #import "User.h"
 #import "MailVC.h"
-#import "ProfileVC.h"
+#import "ProfileVC2.h"
 #import "AppDelegate.h"
 
 
@@ -115,7 +115,21 @@
 }
 
 #pragma mark - UITableView Delegate Methods
-
+//
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    UITableViewCell *cell = nil;
+//
+//    if (indexPath.row == 1) {
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"profileCell"];
+//    } else {
+//
+//
+//    }
+//
+//
+//    return cell;
+//}
 //The following method is used to managed which cells are selectable.
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -178,6 +192,59 @@
         UIStoryboard *termsAndConditionsStoryBoard = [UIStoryboard storyboardWithName:@"TermsAndConditions" bundle:nil];
         UINavigationController *termsAndConditionsNavVC = [termsAndConditionsStoryBoard instantiateViewControllerWithIdentifier:@"TermsAndConditionsNavVC"];
         [self presentViewController:termsAndConditionsNavVC animated:YES completion:nil];
+        
+    }else if(indexPath.row == 0 && indexPath.section == 4){
+
+        NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+
+    }else if(indexPath.row == 1 && indexPath.section == 4){
+
+      NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
+        NSMutableArray *array = [NSMutableArray arrayWithObject:iTunesLink];
+
+        UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:array applicationActivities:nil];
+        [self presentViewController:activityController animated:YES completion:nil];
+
+        
+    }else if(indexPath.row == 2 && indexPath.section == 4){
+
+        NSString *fbURL = @"https://www.facebook.com/NeuLynx?filter=1";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:fbURL]];
+
+        
+    }else if(indexPath.row == 3 && indexPath.section == 4){
+        NSString *twitterURL = @"https://twitter.com/neulynx";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:twitterURL]];
+        
+    }else if(indexPath.row == 4 && indexPath.section == 4){
+
+        NSString *instaURL = @"https://instagram.com/neulynx/";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:instaURL]];
+
+        
+    }else if(indexPath.row == 5 && indexPath.section == 4){
+
+
+        NSString *periscopeURL = @"https://www.periscope.tv";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:periscopeURL]];
+
+    }else if(indexPath.row == 6 && indexPath.section == 4){
+
+        NSString *vineURL = @"https://vine.co";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vineURL]];
+        
+    }else if(indexPath.row == 7 && indexPath.section == 4){
+
+        NSString *googlePlusURL = @"https://plus.google.com/100840424703355995696/posts";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googlePlusURL]];
         
     }
 
