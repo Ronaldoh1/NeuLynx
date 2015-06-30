@@ -11,6 +11,7 @@
 
 @interface User : PFUser<PFSubclassing>
 @property NSString *name;
+@property NSString *aboutMe;
 @property PFFile *profileImage;
 @property PFGeoPoint *userHomeLocation;
 @property NSString *gender;

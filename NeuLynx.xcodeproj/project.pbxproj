@@ -30,7 +30,7 @@
 		F2292F331B26A785003D82D5 /* mainOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F321B26A785003D82D5 /* mainOutdoors.png */; };
 		F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F341B26A7A8003D82D5 /* wOutdoors.png */; };
 		F2292F371B26BC21003D82D5 /* discover4.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F361B26BC21003D82D5 /* discover4.png */; };
-		F2292F391B26BC67003D82D5 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F381B26BC67003D82D5 /* discover.png */; };
+		F2292F391B26BC67003D82D5 /* discoverExtra.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F381B26BC67003D82D5 /* discoverExtra.png */; };
 		F2292F3E1B2A8FA0003D82D5 /* outdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */; };
 		F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */; };
 		F2292F461B2C233C003D82D5 /* PictureCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F451B2C233C003D82D5 /* PictureCircle.png */; };
@@ -64,7 +64,6 @@
 		F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC481AFB392900B2C5BA /* profileicon.png */; };
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
-		F25BFC541AFB9E3900B2C5BA /* ProfileVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */; };
 		F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
 		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
@@ -119,6 +118,7 @@
 		F2892E041B3EAB540010D534 /* vineIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFC1B3EAB540010D534 /* vineIcon.png */; };
 		F2892E061B3EC0A00010D534 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E051B3EC0A00010D534 /* appName.png */; };
 		F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892E081B4179EA0010D534 /* ProfileTVC.m */; };
+		F2892E0B1B4215BF0010D534 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E0A1B4215BF0010D534 /* discover.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -180,7 +180,6 @@
 		F2FE7E741B0519EB00CDD057 /* editbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E731B0519EB00CDD057 /* editbutton.png */; };
 		F2FE7E821B0583F700CDD057 /* imagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */; };
 		F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E941B0A31AC00CDD057 /* Account.storyboard */; };
-		F2FE7E981B0A343200CDD057 /* AccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E971B0A343200CDD057 /* AccountVC.m */; };
 		F2FE7E9A1B0AF0C900CDD057 /* spa.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E991B0AF0C900CDD057 /* spa.png */; };
 		F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E9C1B0B03CB00CDD057 /* PreferencesVC.m */; };
 /* End PBXBuildFile section */
@@ -222,7 +221,7 @@
 		F2292F321B26A785003D82D5 /* mainOutdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainOutdoors.png; sourceTree = "<group>"; };
 		F2292F341B26A7A8003D82D5 /* wOutdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wOutdoors.png; sourceTree = "<group>"; };
 		F2292F361B26BC21003D82D5 /* discover4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover4.png; sourceTree = "<group>"; };
-		F2292F381B26BC67003D82D5 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		F2292F381B26BC67003D82D5 /* discoverExtra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discoverExtra.png; sourceTree = "<group>"; };
 		F2292F3D1B2A8FA0003D82D5 /* outdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoorsPin.png; sourceTree = "<group>"; };
 		F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesDownloader.h; sourceTree = "<group>"; };
 		F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
@@ -261,8 +260,6 @@
 		F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mail.storyboard; sourceTree = "<group>"; };
 		F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
-		F25BFC521AFB9E3900B2C5BA /* ProfileVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC2.h; sourceTree = "<group>"; };
-		F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC2.m; sourceTree = "<group>"; };
 		F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityVC.h; sourceTree = "<group>"; };
 		F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
@@ -329,6 +326,7 @@
 		F2892E051B3EC0A00010D534 /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appName.png; sourceTree = "<group>"; };
 		F2892E071B4179EA0010D534 /* ProfileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTVC.h; sourceTree = "<group>"; };
 		F2892E081B4179EA0010D534 /* ProfileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTVC.m; sourceTree = "<group>"; };
+		F2892E0A1B4215BF0010D534 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -401,8 +399,6 @@
 		F2FE7E731B0519EB00CDD057 /* editbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton.png; sourceTree = "<group>"; };
 		F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagePlaceholder.png; sourceTree = "<group>"; };
 		F2FE7E941B0A31AC00CDD057 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
-		F2FE7E961B0A343200CDD057 /* AccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountVC.h; sourceTree = "<group>"; };
-		F2FE7E971B0A343200CDD057 /* AccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountVC.m; sourceTree = "<group>"; };
 		F2FE7E991B0AF0C900CDD057 /* spa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spa.png; sourceTree = "<group>"; };
 		F2FE7E9B1B0B03CB00CDD057 /* PreferencesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesVC.h; sourceTree = "<group>"; };
 		F2FE7E9C1B0B03CB00CDD057 /* PreferencesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesVC.m; sourceTree = "<group>"; };
@@ -600,8 +596,6 @@
 				F2892E081B4179EA0010D534 /* ProfileTVC.m */,
 				F2FE7E9B1B0B03CB00CDD057 /* PreferencesVC.h */,
 				F2FE7E9C1B0B03CB00CDD057 /* PreferencesVC.m */,
-				F25BFC521AFB9E3900B2C5BA /* ProfileVC2.h */,
-				F25BFC531AFB9E3900B2C5BA /* ProfileVC2.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -619,6 +613,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F2892E0A1B4215BF0010D534 /* discover.png */,
 				F2892E051B3EC0A00010D534 /* appName.png */,
 				F23437311B3D2EA10065D11C /* blackground.png */,
 				F2292F451B2C233C003D82D5 /* PictureCircle.png */,
@@ -662,7 +657,7 @@
 				F226C80D1B0F5A2D007A1C03 /* discover1.png */,
 				F2E6E8C51B1B93700083BA7F /* discover3.png */,
 				F2292F361B26BC21003D82D5 /* discover4.png */,
-				F2292F381B26BC67003D82D5 /* discover.png */,
+				F2292F381B26BC67003D82D5 /* discoverExtra.png */,
 				F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */,
 				F2FE7E731B0519EB00CDD057 /* editbutton.png */,
 				F2FE7E6D1B05143800CDD057 /* us.png */,
@@ -860,8 +855,6 @@
 				F2FE7E941B0A31AC00CDD057 /* Account.storyboard */,
 				F2892DF21B3E8E640010D534 /* AccountAndSettingsTVC.h */,
 				F2892DF31B3E8E640010D534 /* AccountAndSettingsTVC.m */,
-				F2FE7E961B0A343200CDD057 /* AccountVC.h */,
-				F2FE7E971B0A343200CDD057 /* AccountVC.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -962,7 +955,7 @@
 				F226C81C1B0F5C07007A1C03 /* nightout.png in Resources */,
 				F2292EE11B254D69003D82D5 /* coins.png in Resources */,
 				F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */,
-				F2292F391B26BC67003D82D5 /* discover.png in Resources */,
+				F2292F391B26BC67003D82D5 /* discoverExtra.png in Resources */,
 				F2892E021B3EAB540010D534 /* rateIcon.png in Resources */,
 				F2E6E8851B19A7660083BA7F /* AppIcon40x40@2x.png in Resources */,
 				F2292ED31B254C7C003D82D5 /* wGastronomy.png in Resources */,
@@ -1020,6 +1013,7 @@
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
 				F2FE7E6E1B05143800CDD057 /* us.png in Resources */,
+				F2892E0B1B4215BF0010D534 /* discover.png in Resources */,
 				F23435101B3605A60065D11C /* bluering.png in Resources */,
 				F2292ED21B254C7C003D82D5 /* wFitness.png in Resources */,
 				F2E6E8811B19A7660083BA7F /* AppIcon29x29@3x.png in Resources */,
@@ -1131,12 +1125,10 @@
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
-				F2FE7E981B0A343200CDD057 /* AccountVC.m in Sources */,
 				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
-				F25BFC541AFB9E3900B2C5BA /* ProfileVC2.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,

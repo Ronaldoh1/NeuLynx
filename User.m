@@ -10,6 +10,7 @@
 
 @implementation User
 @dynamic name;
+@dynamic aboutMe;
 @dynamic profileImage;
 @dynamic userHomeLocation;
 @dynamic gender;

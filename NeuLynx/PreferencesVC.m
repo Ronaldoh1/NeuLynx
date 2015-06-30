@@ -36,6 +36,42 @@
     [self initialSetUp];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+
+    if (self.vCtoPresent == 0) {
+        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
+        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
+
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
+
+            if (succeeded) {
+                //[self dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [self displayErrorMessage:error.description];
+
+            }
+        }];
+    } else {
+
+        self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
+        self.currentUser.personalityArray = self.localPersonalityArray.copy;
+
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+
+
+            if (succeeded) {
+               // [self dismissViewControllerAnimated:YES completion:nil];
+            }else{
+                [self displayErrorMessage:error.description];
+                
+            }
+        }];
+    }
+
+}
 -(void)initialSetUp{
 
     //set up preference array;
@@ -55,7 +91,7 @@
     self.localPersonalityBoolArray = [NSMutableArray arrayWithArray:self.currentUser.personalityBoolArray];
 
 
-    NSLog(@"%@", self.localTravelPreferencesArray);
+
 
 
 
@@ -96,7 +132,7 @@
                 [self.stateArrayForCheckmark addObject:@NO];
                 [self.localTravelPreferencesBoolArray addObject:@NO];
 
-                NSLog(@"%@", self.localTravelPreferencesBoolArray);
+
             }
 
         }
@@ -128,7 +164,7 @@
 
     //change the tint for table view
 
-    [self.tableView setTintColor:[UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1]];
+    [self.tableView setTintColor:[UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1]];
     
 
 
@@ -142,44 +178,42 @@
 
 }
 
-- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
-
-    if (self.vCtoPresent == 0) {
-        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
-        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
-
-        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-
-
-            NSLog(@"it saved");
-
-            if (succeeded) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }else{
-                [self displayErrorMessage:error.description];
-                
-            }
-        }];
-    } else {
-
-        self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
-        self.currentUser.personalityArray = self.localPersonalityArray.copy;
-
-        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-
-
-            NSLog(@"it saved");
-
-            if (succeeded) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }else{
-                [self displayErrorMessage:error.description];
-                
-            }
-        }];
-    }
-
-}
+//- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
+//
+//    if (self.vCtoPresent == 0) {
+//        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
+//        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
+//
+//        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//
+//
+//
+//            if (succeeded) {
+//                [self dismissViewControllerAnimated:YES completion:nil];
+//            }else{
+//                [self displayErrorMessage:error.description];
+//                
+//            }
+//        }];
+//    } else {
+//
+//        self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
+//        self.currentUser.personalityArray = self.localPersonalityArray.copy;
+//
+//        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//
+//
+//
+//            if (succeeded) {
+//                [self dismissViewControllerAnimated:YES completion:nil];
+//            }else{
+//                [self displayErrorMessage:error.description];
+//                
+//            }
+//        }];
+//    }
+//
+//}
 
 
 
@@ -222,18 +256,18 @@
 //    }
 
     //CONFIGURE CELL
-    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+    cell.textLabel.textColor = [UIColor grayColor];
 
-    //change the background color
-    cell.backgroundColor = [UIColor clearColor];
+//    //change the background color
+//    cell.backgroundColor = [UIColor clearColor];
 
-    //Add background image to table view
-    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+//    //Add background image to table view
+//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
 
-    //change the selection color
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
-    [cell setSelectedBackgroundView:bgColorView];
+//    //change the selection color
+//    UIView *bgColorView = [[UIView alloc] init];
+//    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+//    [cell setSelectedBackgroundView:bgColorView];
 
     //Add CheckMarks
     if ([[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]) {
@@ -270,7 +304,7 @@
         }
 
 
-       NSLog(@"%@", self.localTravelPreferencesBoolArray);
+
 
     }else if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == YES) {
 
@@ -279,7 +313,7 @@
             [self.localTravelPreferencesArray removeObject:self.travelPreferenceArrayForTableView[indexPath.row]];
         }
 
-        //  NSLog(@"%@", [self.travelPreferenceDict.allValues[indexPath.row] boolValue]);
+
         
     }
     }else {
