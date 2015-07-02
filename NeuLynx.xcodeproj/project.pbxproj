@@ -119,6 +119,8 @@
 		F2892E061B3EC0A00010D534 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E051B3EC0A00010D534 /* appName.png */; };
 		F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892E081B4179EA0010D534 /* ProfileTVC.m */; };
 		F2892E0B1B4215BF0010D534 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E0A1B4215BF0010D534 /* discover.png */; };
+		F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320961B43C126001B9930 /* ActivityDetailTVC.m */; };
+		F293209B1B4507B9001B9930 /* whatsAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F293209A1B4507B9001B9930 /* whatsAppIcon.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -327,6 +329,9 @@
 		F2892E071B4179EA0010D534 /* ProfileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTVC.h; sourceTree = "<group>"; };
 		F2892E081B4179EA0010D534 /* ProfileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTVC.m; sourceTree = "<group>"; };
 		F2892E0A1B4215BF0010D534 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
+		F29320951B43C126001B9930 /* ActivityDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailTVC.h; sourceTree = "<group>"; };
+		F29320961B43C126001B9930 /* ActivityDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailTVC.m; sourceTree = "<group>"; };
+		F293209A1B4507B9001B9930 /* whatsAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsAppIcon.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -409,11 +414,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
+				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
 				F2E6E8CE1B2152500083BA7F /* MessageUI.framework in Frameworks */,
 				F2E6E85D1B16B9360083BA7F /* Accelerate.framework in Frameworks */,
-				F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */,
 				F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */,
-				F285194B1AFAE360007A45FA /* Social.framework in Frameworks */,
 				F25BFC741B017CAE00B2C5BA /* FBSDKLoginKit.framework in Frameworks */,
 				F25BFC731B017CAE00B2C5BA /* FBSDKCoreKit.framework in Frameworks */,
 				F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */,
@@ -613,6 +618,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F293209A1B4507B9001B9930 /* whatsAppIcon.png */,
 				F2892E0A1B4215BF0010D534 /* discover.png */,
 				F2892E051B3EC0A00010D534 /* appName.png */,
 				F23437311B3D2EA10065D11C /* blackground.png */,
@@ -831,6 +837,8 @@
 			isa = PBXGroup;
 			children = (
 				F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */,
+				F29320951B43C126001B9930 /* ActivityDetailTVC.h */,
+				F29320961B43C126001B9930 /* ActivityDetailTVC.m */,
 				F2E6E8EE1B2385730083BA7F /* DetailVC.h */,
 				F2E6E8EF1B2385730083BA7F /* DetailVC.m */,
 			);
@@ -986,6 +994,7 @@
 				F2E6E8841B19A7660083BA7F /* AppIcon32x32@2x.png in Resources */,
 				F23435241B37C9BC0065D11C /* requestIcon.png in Resources */,
 				F234351B1B37C8C10065D11C /* faqIcon.png in Resources */,
+				F293209B1B4507B9001B9930 /* whatsAppIcon.png in Resources */,
 				F2E6E8871B19A7660083BA7F /* AppIcon40x40@3x.png in Resources */,
 				F234351C1B37C8C10065D11C /* helpIcon.png in Resources */,
 				F2E6E88F1B19A7660083BA7F /* AppIcon72x72@2x~ipad.png in Resources */,
@@ -1135,6 +1144,7 @@
 				F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
 				F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */,
+				F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
 				F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */,
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,

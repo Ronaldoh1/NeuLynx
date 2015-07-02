@@ -641,7 +641,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method to show user's profile.
 
 -(void)profileImageTapped:(UIBarButtonItem* )sender{
-    NSLog(@"Image tapped");
+
 
     //present the account view controller to display menus for user
     //if the current user does not exist, then make him/her sign up.
@@ -1017,7 +1017,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 -(void)addAnnotationsToMapFromSearchResultArray:(NSArray *)searchResult{
 
-    NSLog(@"%@", searchResult);
+
 
     for (Activity *activity in searchResult){
         self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
@@ -1372,7 +1372,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
-        NSLog(@"%ld", (long)index);
     }
 }
 
