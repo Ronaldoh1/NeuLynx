@@ -1304,7 +1304,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     // Annotation is your custom class that holds information about the annotation
     if ([view.annotation isKindOfClass:[CustomMKAnnotation class]]) {
         CustomMKAnnotation *annot = view.annotation;
-        NSInteger index = [self.annotationArray indexOfObject:annot];
+       // NSInteger index = [self.annotationArray indexOfObject:annot];
 
 
         //add profile image to annotation call out

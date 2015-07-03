@@ -22,6 +22,8 @@
 @dynamic host;
 @dynamic selectedCategory;
 @dynamic peopleAttending;
+@dynamic activityPrivacy;
+
 
 +(void)load {
     [self registerSubclass];

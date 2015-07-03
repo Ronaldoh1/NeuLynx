@@ -64,7 +64,6 @@
 		F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC481AFB392900B2C5BA /* profileicon.png */; };
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
-		F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
 		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
 		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
@@ -121,6 +120,8 @@
 		F2892E0B1B4215BF0010D534 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E0A1B4215BF0010D534 /* discover.png */; };
 		F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320961B43C126001B9930 /* ActivityDetailTVC.m */; };
 		F293209B1B4507B9001B9930 /* whatsAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F293209A1B4507B9001B9930 /* whatsAppIcon.png */; };
+		F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F293209D1B466263001B9930 /* PostActivityTVC.m */; };
+		F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A01B46E072001B9930 /* SelectTimeTVC.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -262,8 +263,6 @@
 		F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mail.storyboard; sourceTree = "<group>"; };
 		F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
-		F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityVC.h; sourceTree = "<group>"; };
-		F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
 		F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
 		F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailVC.h; sourceTree = "<group>"; };
@@ -332,6 +331,10 @@
 		F29320951B43C126001B9930 /* ActivityDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailTVC.h; sourceTree = "<group>"; };
 		F29320961B43C126001B9930 /* ActivityDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailTVC.m; sourceTree = "<group>"; };
 		F293209A1B4507B9001B9930 /* whatsAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsAppIcon.png; sourceTree = "<group>"; };
+		F293209C1B466263001B9930 /* PostActivityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostActivityTVC.h; sourceTree = "<group>"; };
+		F293209D1B466263001B9930 /* PostActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityTVC.m; sourceTree = "<group>"; };
+		F293209F1B46E072001B9930 /* SelectTimeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeTVC.h; sourceTree = "<group>"; };
+		F29320A01B46E072001B9930 /* SelectTimeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeTVC.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -585,10 +588,12 @@
 			isa = PBXGroup;
 			children = (
 				F28519281AFADB09007A45FA /* PostActivity.storyboard */,
+				F293209F1B46E072001B9930 /* SelectTimeTVC.h */,
+				F29320A01B46E072001B9930 /* SelectTimeTVC.m */,
+				F293209C1B466263001B9930 /* PostActivityTVC.h */,
+				F293209D1B466263001B9930 /* PostActivityTVC.m */,
 				F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */,
 				F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */,
-				F25BFC551AFB9E6F00B2C5BA /* PostActivityVC.h */,
-				F25BFC561AFB9E6F00B2C5BA /* PostActivityVC.m */,
 			);
 			name = PostActivity;
 			sourceTree = "<group>";
@@ -1131,8 +1136,8 @@
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
 				F2E6E8F01B2385730083BA7F /* DetailVC.m in Sources */,
+				F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
-				F25BFC571AFB9E6F00B2C5BA /* PostActivityVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
 				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
@@ -1140,6 +1145,7 @@
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
+				F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
 				F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,

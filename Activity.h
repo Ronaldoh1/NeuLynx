@@ -26,6 +26,9 @@
 @property NSNumber *numberOfpaticipants;
 @property NSMutableArray *peopleAttending;
 
+//**0 = public 1 = private**
+@property NSNumber *activityPrivacy;
+
 +(NSString *)parseClassName;
 
 

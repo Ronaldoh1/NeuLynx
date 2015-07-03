@@ -233,33 +233,33 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Share Activity With Friends " id="Dfx-dJ-T1D">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="j0g-4W-64w">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="j0g-4W-64w">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j0g-4W-64w" id="rbh-60-XUs">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebookIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="aRW-sS-zro">
-                                                    <rect key="frame" x="8" y="0.0" width="35" height="35"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7o-Mt-pPJ">
-                                                    <rect key="frame" x="51" y="7" width="241" height="21"/>
+                                                    <rect key="frame" x="51" y="11" width="241" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facebookIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="aRW-sS-zro">
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="W0F-hg-TCs">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="W0F-hg-TCs">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W0F-hg-TCs" id="rlS-ZF-Biw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitterIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="pbG-fD-2Aj">
-                                                    <rect key="frame" x="8" y="0.0" width="35" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB6-SK-lEj">
-                                                    <rect key="frame" x="51" y="6" width="247" height="21"/>
+                                                    <rect key="frame" x="51" y="11" width="247" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -267,84 +267,16 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="tp9-vj-ibf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="tp9-vj-ibf">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tp9-vj-ibf" id="B3Y-oX-emb">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="SLo-tI-IbC">
-                                                    <rect key="frame" x="7" y="1" width="35" height="35"/>
+                                                    <rect key="frame" x="7" y="4" width="35" height="35"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hup-ai-gfI">
-                                                    <rect key="frame" x="50" y="6" width="247" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="cLw-b8-JH1">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLw-b8-JH1" id="Umv-7l-Csx">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gLd-U0-fkP">
-                                                    <rect key="frame" x="7" y="1" width="35" height="35"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQm-4W-GU9">
-                                                    <rect key="frame" x="50" y="6" width="247" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="sV5-5m-dlk">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sV5-5m-dlk" id="SZg-0e-i4E">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GrB-r1-pWy">
-                                                    <rect key="frame" x="7" y="1" width="35" height="35"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUA-nt-iuo">
-                                                    <rect key="frame" x="50" y="6" width="247" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="X6E-CY-CvP">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6E-CY-CvP" id="aUP-fN-exC">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mpr-Vd-rxZ">
-                                                    <rect key="frame" x="7" y="1" width="35" height="35"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-Cb-cge">
-                                                    <rect key="frame" x="50" y="6" width="247" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="36" id="lGx-IG-f9q">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lGx-IG-f9q" id="QRg-e4-HcH">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whatsAppIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="XNI-Zb-RLy">
-                                                    <rect key="frame" x="7" y="1" width="35" height="35"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Activity on WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7J-90-h18">
-                                                    <rect key="frame" x="50" y="6" width="247" height="21"/>
+                                                    <rect key="frame" x="50" y="11" width="247" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -392,230 +324,6 @@
             </objects>
             <point key="canvasLocation" x="796" y="934"/>
         </scene>
-        <!--DetailVC-->
-        <scene sceneID="n2Z-SH-rL8">
-            <objects>
-                <viewController id="pS5-9E-yOj" customClass="DetailVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="deO-JP-mS9"/>
-                        <viewControllerLayoutGuide type="bottom" id="3hy-eT-hdR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Q4E-zy-78Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="beu-xK-gnN">
-                                <rect key="frame" x="108" y="86" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="0zL-4Y-PW8"/>
-                                    <constraint firstAttribute="height" constant="100" id="FVM-T2-W7u"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qon-6B-XU3">
-                                <rect key="frame" x="16" y="316" width="288" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="2Dn-Tv-sP3"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD6-Vk-e95">
-                                <rect key="frame" x="16" y="364" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="iSE-OS-Fw2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="W1Y-Og-pzP">
-                                <rect key="frame" x="67" y="393" width="74" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="cYz-NF-m2K"/>
-                                    <constraint firstAttribute="width" constant="74" id="xEl-EF-4Ou"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="RqQ-Aq-9Am">
-                                <rect key="frame" x="183" y="393" width="74" height="73"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="RTU-II-Gp7"/>
-                                    <constraint firstAttribute="height" constant="73" id="yh3-eV-AsG"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="spa.png" translatesAutoresizingMaskIntoConstraints="NO" id="LNR-Jh-KGn">
-                                <rect key="frame" x="167" y="252" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="XCI-5b-lrT"/>
-                                    <constraint firstAttribute="height" constant="25" id="vod-VS-c73"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="us.png" translatesAutoresizingMaskIntoConstraints="NO" id="bvu-Xr-IMh">
-                                <rect key="frame" x="134" y="252" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="OMD-I3-Erb"/>
-                                    <constraint firstAttribute="width" constant="25" id="UO7-Kr-GmD"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fr.png" translatesAutoresizingMaskIntoConstraints="NO" id="wIL-v5-A5G">
-                                <rect key="frame" x="200" y="252" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="anQ-se-9T7"/>
-                                    <constraint firstAttribute="width" constant="25" id="d7M-hD-8MQ"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PictureCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="mjB-xp-Pjz">
-                                <rect key="frame" x="90" y="69" width="135" height="135"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="IPG-b1-s42"/>
-                                    <constraint firstAttribute="width" constant="135" id="pUC-mW-OjV"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMo-jt-1Sc">
-                                <rect key="frame" x="16" y="200" width="288" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="uc7-lW-dLd"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Ronald Hernandez">
-                                        <attributes>
-                                            <color key="NSColor" red="0.17856890810648662" green="0.8203624180041118" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5h-0b-WaB">
-                                <rect key="frame" x="16" y="229" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="s4T-7K-rR3"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="Male, Straight">
-                                        <attributes>
-                                            <color key="NSColor" red="0.25467659757077288" green="0.73221465952786891" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="br.png" translatesAutoresizingMaskIntoConstraints="NO" id="760-bS-bAi">
-                                <rect key="frame" x="101" y="252" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="9tB-dr-Hen"/>
-                                    <constraint firstAttribute="height" constant="25" id="Jg9-5R-cuA"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oD6-Vk-e95" firstAttribute="top" secondItem="Qon-6B-XU3" secondAttribute="bottom" constant="8" id="3b2-MH-Tn1"/>
-                            <constraint firstItem="W1Y-Og-pzP" firstAttribute="top" secondItem="oD6-Vk-e95" secondAttribute="bottom" constant="8" id="86w-3g-imc"/>
-                            <constraint firstAttribute="centerX" secondItem="mjB-xp-Pjz" secondAttribute="centerX" constant="2.5" id="DQa-Xq-Tpx"/>
-                            <constraint firstItem="Qon-6B-XU3" firstAttribute="leading" secondItem="Q4E-zy-78Q" secondAttribute="leadingMargin" id="Dke-Wb-FUM"/>
-                            <constraint firstAttribute="centerX" secondItem="LNR-Jh-KGn" secondAttribute="centerX" constant="-19.5" id="Elv-It-bVR"/>
-                            <constraint firstAttribute="centerX" secondItem="RqQ-Aq-9Am" secondAttribute="centerX" constant="-60" id="IAw-rC-XOr"/>
-                            <constraint firstAttribute="centerX" secondItem="beu-xK-gnN" secondAttribute="centerX" constant="2" id="Jg2-5E-8lk"/>
-                            <constraint firstItem="RqQ-Aq-9Am" firstAttribute="top" secondItem="oD6-Vk-e95" secondAttribute="bottom" constant="8" id="JyC-eD-1rw"/>
-                            <constraint firstItem="oD6-Vk-e95" firstAttribute="leading" secondItem="Q4E-zy-78Q" secondAttribute="leadingMargin" id="NRF-Rb-H3c"/>
-                            <constraint firstItem="mjB-xp-Pjz" firstAttribute="top" secondItem="deO-JP-mS9" secondAttribute="bottom" constant="5" id="PY6-jt-7vC"/>
-                            <constraint firstItem="760-bS-bAi" firstAttribute="top" secondItem="K5h-0b-WaB" secondAttribute="bottom" constant="2" id="T5a-Zc-G7i"/>
-                            <constraint firstItem="bvu-Xr-IMh" firstAttribute="top" secondItem="K5h-0b-WaB" secondAttribute="bottom" constant="2" id="W3H-oc-gE1"/>
-                            <constraint firstAttribute="centerX" secondItem="W1Y-Og-pzP" secondAttribute="centerX" constant="56" id="Wd7-OS-VgK"/>
-                            <constraint firstItem="rMo-jt-1Sc" firstAttribute="top" secondItem="mjB-xp-Pjz" secondAttribute="bottom" constant="-4" id="bCD-fz-pAy"/>
-                            <constraint firstItem="Qon-6B-XU3" firstAttribute="top" secondItem="760-bS-bAi" secondAttribute="bottom" constant="39" id="bRq-HX-810"/>
-                            <constraint firstItem="oD6-Vk-e95" firstAttribute="trailing" secondItem="Q4E-zy-78Q" secondAttribute="trailingMargin" id="cII-mM-x3t"/>
-                            <constraint firstItem="Qon-6B-XU3" firstAttribute="trailing" secondItem="Q4E-zy-78Q" secondAttribute="trailingMargin" id="cO7-bJ-Dkz"/>
-                            <constraint firstItem="rMo-jt-1Sc" firstAttribute="trailing" secondItem="Q4E-zy-78Q" secondAttribute="trailingMargin" id="geV-gv-D6r"/>
-                            <constraint firstItem="rMo-jt-1Sc" firstAttribute="leading" secondItem="Q4E-zy-78Q" secondAttribute="leadingMargin" id="gtC-3h-9xJ"/>
-                            <constraint firstItem="beu-xK-gnN" firstAttribute="top" secondItem="deO-JP-mS9" secondAttribute="bottom" constant="22" id="lmz-iV-ZWl"/>
-                            <constraint firstAttribute="centerX" secondItem="760-bS-bAi" secondAttribute="centerX" constant="46.5" id="mIE-hS-UCv"/>
-                            <constraint firstAttribute="centerX" secondItem="bvu-Xr-IMh" secondAttribute="centerX" constant="13.5" id="nXA-02-cQy"/>
-                            <constraint firstItem="K5h-0b-WaB" firstAttribute="top" secondItem="rMo-jt-1Sc" secondAttribute="bottom" id="p3d-Wt-eOf"/>
-                            <constraint firstItem="K5h-0b-WaB" firstAttribute="trailing" secondItem="Q4E-zy-78Q" secondAttribute="trailingMargin" id="r6i-BJ-jud"/>
-                            <constraint firstAttribute="centerX" secondItem="wIL-v5-A5G" secondAttribute="centerX" constant="-52.5" id="ryk-Oo-kQJ"/>
-                            <constraint firstItem="wIL-v5-A5G" firstAttribute="top" secondItem="K5h-0b-WaB" secondAttribute="bottom" constant="2" id="tKK-da-y8v"/>
-                            <constraint firstItem="K5h-0b-WaB" firstAttribute="leading" secondItem="Q4E-zy-78Q" secondAttribute="leadingMargin" id="z35-68-pCd"/>
-                            <constraint firstItem="LNR-Jh-KGn" firstAttribute="top" secondItem="K5h-0b-WaB" secondAttribute="bottom" constant="2" id="zcI-yl-YX4"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="IcP-A8-QJl">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="bgN-Wo-3Ha">
-                            <connections>
-                                <action selector="onCancelButtonTapped:" destination="pS5-9E-yOj" id="3Dw-HA-lc8"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Join" id="zxa-Wk-m2k">
-                            <connections>
-                                <action selector="onJoinButtonTapped:" destination="pS5-9E-yOj" id="c0J-wn-EfE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="activityDescriptionText" destination="Qon-6B-XU3" id="qCc-em-guS"/>
-                        <outlet property="americanFlag" destination="bvu-Xr-IMh" id="25g-Nr-8pU"/>
-                        <outlet property="frenchFlag" destination="wIL-v5-A5G" id="dZI-hu-PZz"/>
-                        <outlet property="genderAndOrientationLabel" destination="K5h-0b-WaB" id="JyL-QP-1et"/>
-                        <outlet property="image1" destination="W1Y-Og-pzP" id="ZjY-AU-36j"/>
-                        <outlet property="image2" destination="RqQ-Aq-9Am" id="uDg-lV-NgP"/>
-                        <outlet property="numberOfPeopleLabel" destination="oD6-Vk-e95" id="Jvo-Ad-ne1"/>
-                        <outlet property="portugueseFlag" destination="760-bS-bAi" id="MG7-iS-cY8"/>
-                        <outlet property="spanishFlag" destination="LNR-Jh-KGn" id="PvO-QY-dVP"/>
-                        <outlet property="userNameLabel" destination="rMo-jt-1Sc" id="0Zq-y6-W6G"/>
-                        <outlet property="userProfileImageView" destination="beu-xK-gnN" id="Xkn-BL-M15"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="akF-Pu-Wyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="687" y="327"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wUM-WC-oH9">
-            <objects>
-                <viewController id="CRa-hV-Sk0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Lgd-FA-a1E"/>
-                        <viewControllerLayoutGuide type="bottom" id="vcO-FI-2X7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jq2-Zb-gWg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="4tL-pj-Stl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-J0-4S9">
-                                <rect key="frame" x="119" y="83" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9Au-cX-jmr"/>
-                                    <constraint firstAttribute="width" constant="100" id="XXN-bn-lLo"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gcm-J0-4S9" firstAttribute="top" secondItem="Lgd-FA-a1E" secondAttribute="bottom" constant="19" id="AOR-Dg-dFa"/>
-                            <constraint firstItem="4tL-pj-Stl" firstAttribute="leading" secondItem="jq2-Zb-gWg" secondAttribute="leadingMargin" constant="-16" id="FZx-Y8-WSx"/>
-                            <constraint firstItem="4tL-pj-Stl" firstAttribute="top" secondItem="jq2-Zb-gWg" secondAttribute="topMargin" id="TU3-42-sTF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4tL-pj-Stl" secondAttribute="trailing" constant="-16" id="Xxj-Rq-yYV"/>
-                            <constraint firstItem="vcO-FI-2X7" firstAttribute="top" secondItem="4tL-pj-Stl" secondAttribute="bottom" id="itE-G3-8xf"/>
-                            <constraint firstAttribute="centerX" secondItem="gcm-J0-4S9" secondAttribute="centerX" constant="-9" id="mvJ-V3-KpT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="e9b-WG-Khv"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QJu-MY-5ef" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1095" y="304"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="XVu-du-nfc">
             <objects>
@@ -638,7 +346,6 @@
     </scenes>
     <resources>
         <image name="PictureCircle.png" width="200" height="200"/>
-        <image name="backBackground" width="750" height="1334"/>
         <image name="br.png" width="48" height="48"/>
         <image name="defaultImage" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
