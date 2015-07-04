@@ -45,6 +45,17 @@
     [Parse setApplicationId:@"dVqRtRCI3XoXgNS0R0X2SFJIo9f0XvroJr150eGZ"
                   clientKey:@"9QqlKEgCjQQYpCRpZfWejT2zKCAVsoCsXq9yeX7V"];
 
+
+    //Setup Push Notifications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+
+
     //Initialize facebook
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
 
@@ -64,6 +75,27 @@
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
 }
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    currentInstallation.channels = @[@"global" ];
+    if([User currentUser] != nil){
+        [currentInstallation setObject:[User currentUser] forKey:@"user"];
+    }
+
+
+    [currentInstallation saveInBackground];
+    
+    
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

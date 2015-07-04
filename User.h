@@ -34,5 +34,8 @@
 //User Rating
 @property NSNumber *userRating;
 
+//Activities Joined & Accepted
+@property NSMutableArray *pastActivities;
+
 
 @end

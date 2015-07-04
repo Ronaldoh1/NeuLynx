@@ -122,6 +122,7 @@
 		F293209B1B4507B9001B9930 /* whatsAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F293209A1B4507B9001B9930 /* whatsAppIcon.png */; };
 		F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F293209D1B466263001B9930 /* PostActivityTVC.m */; };
 		F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A01B46E072001B9930 /* SelectTimeTVC.m */; };
+		F29320A41B48227C001B9930 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A31B48227C001B9930 /* CustomCell.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -171,7 +172,6 @@
 		F2E6E8D91B22C60D0083BA7F /* Faq.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8D81B22C60D0083BA7F /* Faq.storyboard */; };
 		F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8DB1B22C6AE0083BA7F /* FaqVc.m */; };
 		F2E6E8ED1B2383C10083BA7F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */; };
-		F2E6E8F01B2385730083BA7F /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8EF1B2385730083BA7F /* DetailVC.m */; };
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
@@ -335,6 +335,8 @@
 		F293209D1B466263001B9930 /* PostActivityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostActivityTVC.m; sourceTree = "<group>"; };
 		F293209F1B46E072001B9930 /* SelectTimeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTimeTVC.h; sourceTree = "<group>"; };
 		F29320A01B46E072001B9930 /* SelectTimeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTimeTVC.m; sourceTree = "<group>"; };
+		F29320A21B48227C001B9930 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		F29320A31B48227C001B9930 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -392,8 +394,6 @@
 		F2E6E8DA1B22C6AE0083BA7F /* FaqVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaqVc.h; sourceTree = "<group>"; };
 		F2E6E8DB1B22C6AE0083BA7F /* FaqVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaqVc.m; sourceTree = "<group>"; };
 		F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		F2E6E8EE1B2385730083BA7F /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
-		F2E6E8EF1B2385730083BA7F /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
 		F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		F2FE7E611B04EF3C00CDD057 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
@@ -824,6 +824,8 @@
 				F2E6E8C01B1A43740083BA7F /* SelectCategoryVC.m */,
 				F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */,
 				F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */,
+				F29320A21B48227C001B9930 /* CustomCell.h */,
+				F29320A31B48227C001B9930 /* CustomCell.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -844,8 +846,6 @@
 				F2E6E8EC1B2383C10083BA7F /* Detail.storyboard */,
 				F29320951B43C126001B9930 /* ActivityDetailTVC.h */,
 				F29320961B43C126001B9930 /* ActivityDetailTVC.m */,
-				F2E6E8EE1B2385730083BA7F /* DetailVC.h */,
-				F2E6E8EF1B2385730083BA7F /* DetailVC.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -1135,8 +1135,8 @@
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
-				F2E6E8F01B2385730083BA7F /* DetailVC.m in Sources */,
 				F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */,
+				F29320A41B48227C001B9930 /* CustomCell.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
 				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,

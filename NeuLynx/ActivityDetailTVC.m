@@ -198,7 +198,32 @@
     selectedActivity = appDelegate.sharedActivity;
 
     selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
-    [selectedActivity saveInBackground];
+    [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+
+
+
+            // Create our Installation query
+            PFQuery *pushQuery = [PFInstallation query];
+            // only return Installations that belong to a User that
+            // matches the innerQuery
+            [pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+
+            // Send push notification to query
+            PFPush *push = [[PFPush alloc] init];
+            [push setQuery:pushQuery]; // Set our Installation query
+            [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your activity. Please check your Requests to review this request", [User currentUser].name]];
+            [push sendPushInBackground];
+
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [alert show];
+
+        }
+    }];
+
 
 
 }
@@ -257,16 +282,16 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
-        
+
     }
-    
+
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results{
-    
+
 }
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer{
-    
+
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{

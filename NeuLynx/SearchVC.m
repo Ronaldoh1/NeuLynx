@@ -13,6 +13,7 @@
 #import "ActivitiesDownloader.h"
 #import "AppDelegate.h"
 #import "CustomMKAnnotation.h"
+#import "CustomCell.h"
 
 @interface SearchVC ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate>
 
@@ -122,7 +123,7 @@
 
         for (Activity *activity in self.activitiesForSearchArray) {
             NSRange titleRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
-              NSRange descriptionRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
+              NSRange descriptionRange = [activity.activityDescription rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
 
             if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
 
@@ -145,10 +146,10 @@
     else
     return self.activitiesForSearchArray.count;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //set up the cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    CustomCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
     //for every row in parse, we are getting a PFObject back. In our case, we will be getting an activity. For every activity, we will be retrieving values to populate the cell.
     Activity *tempActivity = [Activity new];
@@ -165,19 +166,19 @@
 
 
     //change the color of text
-    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
-    cell.detailTextLabel.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+//    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
+//    cell.detailTextLabel.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
     //change the background color
     cell.backgroundColor = [UIColor clearColor];
 
-    //Add background image to table view
-    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
+//    //Add background image to table view
+//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
 
     //change the selection color
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
-    [cell setSelectedBackgroundView:bgColorView];
+//    UIView *bgColorView = [[UIView alloc] init];
+//    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+//    [cell setSelectedBackgroundView:bgColorView];
 
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
@@ -192,9 +193,22 @@
 
     double distanceInMiles = distance * (0.00062137);
 
-    cell.textLabel.text = [tempActivity objectForKey:@"activityTitle"];
 
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f Miles Away", distanceInMiles];
+    [tempActivity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userProfileImage.image = image;
+        }
+
+    }];
+
+    
+    cell.activityTitleLabel.text = [tempActivity objectForKey:@"activityTitle"];
+    cell.activityTitleLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+
+    cell.activityDescriptionText.text = [tempActivity objectForKey:@"activityDescription"];
+
+    cell.distanceToActivityLabel.text = [NSString stringWithFormat:@"%.2f Miles Away", distanceInMiles];
 
 
     return cell;
