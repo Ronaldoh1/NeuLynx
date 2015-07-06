@@ -197,7 +197,30 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     selectedActivity = appDelegate.sharedActivity;
 
+    NSMutableArray *tempActivityArray = [NSMutableArray arrayWithArray:selectedActivity.RequestsArray];
+
+    //check if the current user has already sent a request.
+    
+    if ([tempActivityArray containsObject:[User currentUser]]) {
+
+        [self displayErrorMessage];
+
+
+
+    }else {
+
+
+
+
     selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+    //add current user to the request.
+
+
+
+    [tempActivityArray addObject:[User currentUser]];
+
+        selectedActivity.RequestsArray = tempActivityArray.copy;
+
     [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
@@ -224,7 +247,7 @@
         }
     }];
 
-
+    }
 
 }
 
@@ -297,4 +320,14 @@
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{
     NSLog(@"%@",error);
 }
+
+
+//helper method to display error message
+-(void)displayErrorMessage{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Request Already Sent!" message:@"You have already sent a request to join this Activity!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+}
+
 @end

@@ -24,7 +24,8 @@
 @property User *host;
 @property NSString *selectedCategory;
 @property NSNumber *numberOfpaticipants;
-@property NSMutableArray *peopleAttending;
+@property NSMutableArray *acceptedPeopleArray;
+@property NSMutableArray *RequestsArray;
 
 //**0 = public 1 = private**
 @property NSNumber *activityPrivacy;

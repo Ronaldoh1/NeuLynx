@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,16 +17,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="21I-JR-Fl8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="21I-JR-Fl8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="53" id="Qrn-MM-K9k">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="Qrn-MM-K9k" customClass="RequestCustomCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qrn-MM-K9k" id="lz2-8f-JFM">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm1-qT-xl9">
+                                                    <rect key="frame" x="166.5" y="31" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="gvv-xr-VUW"/>
+                                                        <constraint firstAttribute="width" constant="50" id="sbT-kz-hJ0"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="thumbsDown.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onRejectButtonTapped:" destination="mWW-ac-Ugg" eventType="touchUpInside" id="JdA-FQ-l1s"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-EJ-gvP">
+                                                    <rect key="frame" x="249.5" y="31" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="XBc-d2-sbW"/>
+                                                        <constraint firstAttribute="width" constant="50" id="snT-6k-vul"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="thumbsUp.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onAcceptButtonTapped:" destination="mWW-ac-Ugg" eventType="touchUpInside" id="lWE-QW-oeY"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-In-8Cw">
+                                                    <rect key="frame" x="0.0" y="13" width="75" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="BaQ-KR-LJI"/>
+                                                        <constraint firstAttribute="height" constant="73" id="zhS-hl-ZBy"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="Fm1-qT-xl9" secondAttribute="centerX" constant="-31.5" id="60e-XT-E7g"/>
+                                                <constraint firstAttribute="centerY" secondItem="Fm1-qT-xl9" secondAttribute="centerY" constant="-6" id="Eaq-YQ-Z8m"/>
+                                                <constraint firstAttribute="centerY" secondItem="4wV-In-8Cw" secondAttribute="centerY" id="FlJ-9P-zqb"/>
+                                                <constraint firstAttribute="centerX" secondItem="4wV-In-8Cw" secondAttribute="centerX" constant="122.5" id="h7n-ZB-pmN"/>
+                                                <constraint firstAttribute="centerX" secondItem="lbC-EJ-gvP" secondAttribute="centerX" constant="-114.5" id="vcj-JP-Ahj"/>
+                                                <constraint firstAttribute="centerY" secondItem="lbC-EJ-gvP" secondAttribute="centerY" constant="-6" id="vzg-6f-4hq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="userProfileImage" destination="4wV-In-8Cw" id="gMj-PS-9w7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -79,4 +125,9 @@
             <point key="canvasLocation" x="387" y="313"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultImage" width="1200" height="1200"/>
+        <image name="thumbsDown.png" width="833" height="833"/>
+        <image name="thumbsUp.png" width="833" height="833"/>
+    </resources>
 </document>

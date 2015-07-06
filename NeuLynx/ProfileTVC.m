@@ -112,9 +112,9 @@
     self.englishButton.alpha = 0.3;
     self.frenchButton.alpha = 0.3;
 
-    //add borders to the textView
-    self.aboutMeTextView.layer.borderWidth = 4.0f;
-    self.aboutMeTextView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+//    //add borders to the textView
+//    self.aboutMeTextView.layer.borderWidth = 4.0f;
+//    self.aboutMeTextView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
 }
 

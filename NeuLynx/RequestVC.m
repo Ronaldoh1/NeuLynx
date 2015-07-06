@@ -7,6 +7,7 @@
 //
 
 #import "RequestVC.h"
+#import "RequestCustomCell.h"
 #import "AppDelegate.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
@@ -49,18 +50,26 @@
 
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)onAcceptButtonTapped:(UIButton *)sender {
+
+    
+}
+- (IBAction)onRejectButtonTapped:(UIButton *)sender {
+
+    NSLog(@"rejected");
+}
 
 #pragma mark - TableView Delegates
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 0;
+    return 5;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(RequestCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
     //set up the cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    RequestCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
     //change the color of text
     cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
@@ -82,7 +91,7 @@
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
 
-    return nil;
+    return cell;
 }
 
 @end

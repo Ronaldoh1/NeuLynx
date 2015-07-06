@@ -27,6 +27,8 @@
 @dynamic personalityArray;
 @dynamic isFbUser;
 @dynamic userRating;
+@dynamic pastActivities;
+
 
 
 

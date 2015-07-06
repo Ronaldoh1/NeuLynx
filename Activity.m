@@ -21,7 +21,8 @@
 @dynamic numberOfpaticipants;
 @dynamic host;
 @dynamic selectedCategory;
-@dynamic peopleAttending;
+@dynamic acceptedPeopleArray;
+@dynamic RequestsArray;
 @dynamic activityPrivacy;
 
 

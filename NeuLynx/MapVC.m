@@ -685,6 +685,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [Activity query];
+    
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
@@ -1169,7 +1170,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
-//            [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
+        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
 
 
 
@@ -1243,13 +1244,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 //
 //                                           });
-////            }];
+      }];
 //
 //
 //        });
 
 
-        
+
 
 
 
@@ -1259,11 +1260,12 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             annotationView.annotation = annotation;
         }
 
-        
+
         return annotationView;
     } else{
         return nil;
     }
+
 
     
 }
