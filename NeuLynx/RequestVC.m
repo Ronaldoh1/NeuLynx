@@ -9,9 +9,13 @@
 #import "RequestVC.h"
 #import "RequestCustomCell.h"
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray* tempActivitiestArray;
+@property (weak, nonatomic) IBOutlet UILabel *participantNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *participantProfileImage;
 
 
 @end
@@ -22,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performInitialSetUp];
+    [self downloadActivityRequests];
 }
 
 -(void)performInitialSetUp{
@@ -52,19 +57,123 @@
 }
 - (IBAction)onAcceptButtonTapped:(UIButton *)sender {
 
+
     
 }
 - (IBAction)onRejectButtonTapped:(UIButton *)sender {
 
-    NSLog(@"rejected");
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    Activity *activity = self.tempActivitiestArray[indexPath.section];
+
+
+    [activity.RequestsArray removeObjectAtIndex:[self.tableView indexPathForSelectedRow].row];
+
+
+    [activity saveInBackground];
+
+
+     [self downloadActivityRequests];
+
+    [self.tableView reloadData];
+
 }
+
+//helper method to download the activities
+
+-(void)downloadActivityRequests{
+
+    PFQuery *query = [Activity query];
+
+    [query whereKey:@"host" equalTo:[User currentUser]];
+    [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+
+        if (!error) {
+            //get a copy of all activities
+
+
+            // Add activities to the map.
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                // NSLog(@"activities are %@",activitiesArray);
+                self.tempActivitiestArray = [NSMutableArray arrayWithArray:activities].copy;
+                [self.tableView reloadData];
+
+                NSLog(@"it printed %lu", (unsigned long)self.tempActivitiestArray.count);
+                //[self.mapView addAnnotations:self.gastronomyActivityArray];
+
+
+            });
+
+
+
+        } else {
+            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
+
+
+        }
+
+
+    }
+
+
+
+
+     ];
+    //once we have the array with activity, we need to ad them to the map.
+    //    [self.mapView addAnnotations:self.festivalActivityArray];
+    //                [self.mapView addAnnotations:self.culturalActivityArray];
+    //                [self.mapView addAnnotations:self.gastronomyActivityArray];
+    //    //            [self.mapView addAnnotations:self.nightOutActivityArray];
+    //    //             [self.mapView addAnnotations:self.fitnessActivityArray];
+    //    //            [self.mapView addAnnotations:self.outDoorsActivityArray];
+    
+    
+    
+    // NSLog(@"%@", self.gastronomyActivityArray);
+    
+    
+}
+
+-(void)displayAlertWithTitle:(NSString *)title andWithError:(NSString *)error{
+
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alert show];
+    
+}
+
 
 #pragma mark - TableView Delegates
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 5;
+  //  Activity *activity = self.tempActivitiestArray[indexPath.row];
+
+//    //here we need to get the total count of requests in case the user has posted more than one activity.
+//    int count = 0;
+//
+//    for (int i  = 0; i<self.tempActivitiestArray.count; i++) {
+//        count = count + (int)((Activity *)self.tempActivitiestArray[i]).RequestsArray.count;
+//    }
+    //User *participant = activity.RequestsArray[0]
+
+    return [((Activity*)[self.tempActivitiestArray objectAtIndex:section]).RequestsArray count];
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return self.tempActivitiestArray.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+    return ((Activity *)self.tempActivitiestArray[section]).activityTitle;
+}
+
 -(RequestCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
@@ -89,6 +198,20 @@
     
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+
+    Activity *activity = self.tempActivitiestArray[indexPath.section];
+    User *participant = activity.RequestsArray[indexPath.row];
+
+    cell.nameLabel.text = participant.name;
+    cell.aboutParticipant.text = participant.aboutMe;
+
+    [participant.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userProfileImage.image = image;
+        }
+
+    }];
 
 
     return cell;

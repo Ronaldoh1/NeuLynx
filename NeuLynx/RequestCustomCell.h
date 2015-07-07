@@ -10,5 +10,7 @@
 
 @interface RequestCustomCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *aboutParticipant;
 
 @end

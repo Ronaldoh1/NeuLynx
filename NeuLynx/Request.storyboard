@@ -26,8 +26,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qrn-MM-K9k" id="lz2-8f-JFM">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-In-8Cw">
+                                                    <rect key="frame" x="0.0" y="13" width="75" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="BaQ-KR-LJI"/>
+                                                        <constraint firstAttribute="height" constant="73" id="zhS-hl-ZBy"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm1-qT-xl9">
-                                                    <rect key="frame" x="166.5" y="31" width="50" height="50"/>
+                                                    <rect key="frame" x="225" y="31" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="gvv-xr-VUW"/>
                                                         <constraint firstAttribute="width" constant="50" id="sbT-kz-hJ0"/>
@@ -40,7 +47,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbC-EJ-gvP">
-                                                    <rect key="frame" x="249.5" y="31" width="50" height="50"/>
+                                                    <rect key="frame" x="284" y="31" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="XBc-d2-sbW"/>
                                                         <constraint firstAttribute="width" constant="50" id="snT-6k-vul"/>
@@ -52,26 +59,42 @@
                                                         <action selector="onAcceptButtonTapped:" destination="mWW-ac-Ugg" eventType="touchUpInside" id="lWE-QW-oeY"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="4wV-In-8Cw">
-                                                    <rect key="frame" x="0.0" y="13" width="75" height="73"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="BaQ-KR-LJI"/>
-                                                        <constraint firstAttribute="height" constant="73" id="zhS-hl-ZBy"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-ll-ogN">
+                                                    <rect key="frame" x="83" y="8" width="134" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-IB-brJ">
+                                                    <rect key="frame" x="78" y="31" width="139" height="61"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="Fm1-qT-xl9" secondAttribute="centerX" constant="-31.5" id="60e-XT-E7g"/>
+                                                <constraint firstAttribute="centerX" secondItem="Fm1-qT-xl9" secondAttribute="centerX" constant="-90" id="60e-XT-E7g"/>
+                                                <constraint firstItem="Ew4-IB-brJ" firstAttribute="bottom" secondItem="lz2-8f-JFM" secondAttribute="bottomMargin" id="7FU-IE-IpT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fcx-ll-ogN" secondAttribute="bottom" constant="58" id="AbR-C0-3mB"/>
                                                 <constraint firstAttribute="centerY" secondItem="Fm1-qT-xl9" secondAttribute="centerY" constant="-6" id="Eaq-YQ-Z8m"/>
                                                 <constraint firstAttribute="centerY" secondItem="4wV-In-8Cw" secondAttribute="centerY" id="FlJ-9P-zqb"/>
+                                                <constraint firstItem="Fcx-ll-ogN" firstAttribute="leading" secondItem="4wV-In-8Cw" secondAttribute="trailing" constant="8" id="JaP-N9-5uO"/>
+                                                <constraint firstItem="Ew4-IB-brJ" firstAttribute="leading" secondItem="4wV-In-8Cw" secondAttribute="trailing" constant="3" id="KBa-fT-qaR"/>
+                                                <constraint firstItem="Ew4-IB-brJ" firstAttribute="top" secondItem="lz2-8f-JFM" secondAttribute="topMargin" constant="23" id="Xf9-M9-23g"/>
+                                                <constraint firstItem="Fm1-qT-xl9" firstAttribute="leading" secondItem="Ew4-IB-brJ" secondAttribute="trailing" constant="8" id="dvH-N7-pec"/>
                                                 <constraint firstAttribute="centerX" secondItem="4wV-In-8Cw" secondAttribute="centerX" constant="122.5" id="h7n-ZB-pmN"/>
-                                                <constraint firstAttribute="centerX" secondItem="lbC-EJ-gvP" secondAttribute="centerX" constant="-114.5" id="vcj-JP-Ahj"/>
+                                                <constraint firstItem="Fcx-ll-ogN" firstAttribute="top" secondItem="lz2-8f-JFM" secondAttribute="topMargin" id="uuP-Gm-oN5"/>
+                                                <constraint firstAttribute="centerX" secondItem="lbC-EJ-gvP" secondAttribute="centerX" constant="-149" id="vcj-JP-Ahj"/>
                                                 <constraint firstAttribute="centerY" secondItem="lbC-EJ-gvP" secondAttribute="centerY" constant="-6" id="vzg-6f-4hq"/>
+                                                <constraint firstItem="Fm1-qT-xl9" firstAttribute="leading" secondItem="Fcx-ll-ogN" secondAttribute="trailing" constant="8" id="wLJ-We-aPp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="userProfileImage" destination="4wV-In-8Cw" id="gMj-PS-9w7"/>
+                                            <outlet property="aboutParticipant" destination="Ew4-IB-brJ" id="plf-wg-hm9"/>
+                                            <outlet property="nameLabel" destination="Fcx-ll-ogN" id="Y2T-ES-CHV"/>
+                                            <outlet property="userProfileImage" destination="4wV-In-8Cw" id="o8G-60-IS7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
