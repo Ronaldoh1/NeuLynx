@@ -50,6 +50,7 @@
 		F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */; };
 		F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2D91B49F57700A3BAE7 /* thumbsDown.png */; };
 		F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */; };
+		F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F249D2E01B5024B100A3BAE7 /* MailVC.swift */; };
 		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
 		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
@@ -68,7 +69,7 @@
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
-		F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */; };
+		F25BFC5D1AFB9F0100B2C5BA /* MailVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC5C1AFB9F0100B2C5BA /* MailVC2.m */; };
 		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
 		F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */; };
 		F25BFC731B017CAE00B2C5BA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */; };
@@ -249,6 +250,8 @@
 		F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCustomCell.m; sourceTree = "<group>"; };
 		F249D2D91B49F57700A3BAE7 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
 		F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUp.png; sourceTree = "<group>"; };
+		F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeuLynx-Bridging-Header.h"; sourceTree = "<group>"; };
+		F249D2E01B5024B100A3BAE7 /* MailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailVC.swift; sourceTree = "<group>"; };
 		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
 		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
@@ -272,8 +275,8 @@
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
 		F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
-		F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailVC.h; sourceTree = "<group>"; };
-		F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailVC.m; sourceTree = "<group>"; };
+		F25BFC5B1AFB9F0100B2C5BA /* MailVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailVC2.h; sourceTree = "<group>"; };
+		F25BFC5C1AFB9F0100B2C5BA /* MailVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailVC2.m; sourceTree = "<group>"; };
 		F25BFC5E1AFB9F4100B2C5BA /* postButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postButton.png; sourceTree = "<group>"; };
 		F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
 		F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -469,14 +472,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F25BFC4A1AFB3C8500B2C5BA /* Mail */ = {
+		F25BFC4A1AFB3C8500B2C5BA /* Messages */ = {
 			isa = PBXGroup;
 			children = (
 				F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */,
-				F25BFC5B1AFB9F0100B2C5BA /* MailVC.h */,
-				F25BFC5C1AFB9F0100B2C5BA /* MailVC.m */,
+				F249D2E01B5024B100A3BAE7 /* MailVC.swift */,
+				F25BFC5B1AFB9F0100B2C5BA /* MailVC2.h */,
+				F25BFC5C1AFB9F0100B2C5BA /* MailVC2.m */,
+				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
 			);
-			name = Mail;
+			name = Messages;
 			sourceTree = "<group>";
 		};
 		F28518D21AFABFAD007A45FA = {
@@ -512,7 +517,7 @@
 				F2FE7E931B0A319100CDD057 /* Account */,
 				F285190C1AFAC132007A45FA /* Profile */,
 				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
-				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
+				F25BFC4A1AFB3C8500B2C5BA /* Messages */,
 				F285190D1AFAC172007A45FA /* History */,
 				F2E6E8EB1B2382B80083BA7F /* Detail */,
 				F285190B1AFAC126007A45FA /* PostActivity */,
@@ -1145,6 +1150,7 @@
 				F2E6E8B91B1A13E50083BA7F /* RequestVC.m in Sources */,
 				F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */,
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
+				F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
@@ -1152,7 +1158,7 @@
 				F29320A41B48227C001B9930 /* CustomCell.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
-				F25BFC5D1AFB9F0100B2C5BA /* MailVC.m in Sources */,
+				F25BFC5D1AFB9F0100B2C5BA /* MailVC2.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
@@ -1299,6 +1305,7 @@
 			baseConfigurationReference = 8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1309,6 +1316,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1318,6 +1327,7 @@
 			baseConfigurationReference = C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1328,6 +1338,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

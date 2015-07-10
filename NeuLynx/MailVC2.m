@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "MailVC.h"
+#import "MailVC2.h"
 
-@interface MailVC ()
+@interface MailVC2 ()
 
 @end
 
-@implementation MailVC
+@implementation MailVC2
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -62,18 +62,22 @@
 }
 - (IBAction)onRejectButtonTapped:(UIButton *)sender {
 
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+  //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 
     Activity *activity = self.tempActivitiestArray[indexPath.section];
 
 
-    [activity.RequestsArray removeObjectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
 
     [activity saveInBackground];
 
 
      [self downloadActivityRequests];
+
+    indexPath = nil;
 
     [self.tableView reloadData];
 
@@ -163,7 +167,16 @@
 
     return [((Activity*)[self.tempActivitiestArray objectAtIndex:section]).RequestsArray count];
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    NSLog(@"%ld", (long)indexPath.row);
+
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return indexPath;
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
     return self.tempActivitiestArray.count;

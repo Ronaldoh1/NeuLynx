@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MailVC : UIViewController
+@interface MailVC2 : UIViewController
 
 @end
