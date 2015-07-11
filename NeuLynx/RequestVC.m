@@ -10,6 +10,7 @@
 #import "RequestCustomCell.h"
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "User.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -72,7 +73,26 @@
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
 
-    [activity saveInBackground];
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+
+
+
+     // Create our Installation query
+     PFQuery *pushQuery = [PFInstallation query];
+     // only return Installations that belong to a User that
+     // matches the innerQuery
+     [pushQuery whereKey:@"user" matchesQuery: activity.host];
+
+     // Send push notification to query
+     PFPush *push = [[PFPush alloc] init];
+     [push setQuery:pushQuery]; // Set our Installation query
+     [push setMessage:[NSString stringWithFormat:@"%@ has rejected your request. Don't give up keep looking for other activities!", [User currentUser].name]];
+     [push sendPushInBackground];
+        }
+    }
+
+     ];
 
 
      [self downloadActivityRequests];
