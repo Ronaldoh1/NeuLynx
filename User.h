@@ -23,6 +23,9 @@
 @property NSString *userAdministrativeArea;
 @property NSString *userCountryCode;
 
+//List of Users who sent Messages
+@property NSMutableArray *inboxArray;
+
 //Preferences
 @property NSMutableArray *travelPreferencesArray;
 @property NSMutableArray *TravelPreferencesBoolArray;

@@ -28,6 +28,7 @@
 @dynamic isFbUser;
 @dynamic userRating;
 @dynamic pastActivities;
+@dynamic inboxArray;
 
 
 

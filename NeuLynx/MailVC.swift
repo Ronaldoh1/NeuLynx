@@ -190,5 +190,5 @@ class MailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         
         
     }
-    
+
 }

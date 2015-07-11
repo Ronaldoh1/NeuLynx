@@ -1,24 +1,24 @@
 //
-//  MailVC.m
+//  DialogVC.m
 //  NeuLynx
 //
-//  Created by Ronald Hernandez on 5/7/15.
+//  Created by Ronald Hernandez on 7/11/15.
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "MailVC2.h"
+#import "DialogVC.h"
 
-@interface MailVC2 ()
+@interface DialogVC ()
 
 @end
 
-@implementation MailVC2
+@implementation DialogVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [self initialSetUp];
 }
@@ -32,10 +32,5 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 }
-
-- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 @end
