@@ -7,9 +7,13 @@
 //
 
 #import "SendMessageTVC.h"
+#import "Message.h"
+#import "User.h"
+#import "AppDelegate.h"
 
 @interface SendMessageTVC ()<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *messageText;
+@property (weak, nonatomic) IBOutlet UITextField *subjectTextField;
 
 @end
 
@@ -123,6 +127,46 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (IBAction)onSendButtonTapped:(UIBarButtonItem *)sender {
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+
+
+    Message *message = [Message new];
+
+    message.subject = self.subjectTextField.text;
+    message.messageText = self.messageText.text;
+    message.sender = [User currentUser];
+    message.recepient = appDelegate.sharedActivity.host;
+
+    [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            //let the user know his message has been sent.
+
+            [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+        } else {
+            // There was a problem, check error.description
+
+            [self displayErrorMessage:error.description];
+
+        }
+
+        
+    }];
+
+    
+
+    
+
+
+}
+
 #pragma mark - UITextView Delegate Methods
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
@@ -164,6 +208,23 @@
     if([text isEqualToString:@"\n"])
         [textView resignFirstResponder];
     return YES;
+}
+
+//helper alert method
+
+//helper method to display error message
+-(void)displayErrorMessage:(NSString *)error{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+}
+
+-(void)displaySuccessMessage:(NSString *)recepient{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Message Sent!" message:[NSString stringWithFormat:@"Your message has been sent to %@ ", recepient]  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
 }
 
 @end

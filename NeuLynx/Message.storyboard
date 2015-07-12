@@ -80,11 +80,16 @@
                                 <action selector="onCancelButtonTapped:" destination="YOI-4P-650" id="BW3-Gm-avG"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="9pd-Zi-g3z"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="9pd-Zi-g3z">
+                            <connections>
+                                <action selector="onSendButtonTapped:" destination="YOI-4P-650" id="jhv-YE-gUb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="messageText" destination="SiS-cs-HPM" id="eRR-Vu-hBh"/>
+                        <outlet property="subjectTextField" destination="tEO-al-4JW" id="Px9-wC-0rP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s01-QZ-xSL" userLabel="First Responder" sceneMemberID="firstResponder"/>

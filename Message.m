@@ -9,6 +9,7 @@
 #import "Message.h"
 
 @implementation Message
+@dynamic subject;
 @dynamic recepient;
 @dynamic sender;
 @dynamic messageText;
