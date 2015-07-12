@@ -564,7 +564,10 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
 
-            self.tempImage = image;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.tempImage = image;
+            });
+
             //self.profileImage.image = image;
         }
 
@@ -628,7 +631,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *tempImage = [UIImage imageWithData:data];
-            self.profileImage = tempImage;
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.profileImage = tempImage;
+            });
+
         }
 
     }];
@@ -696,7 +703,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             self.allActivitiesArray = activities.copy;
 
             // Add activities to the map.
-            dispatch_async(dispatch_get_main_queue(), ^{
+
 
                 // NSLog(@"activities are %@",activitiesArray);
 
@@ -726,15 +733,18 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     }
 
 
-                   [self.mapView addAnnotation:self.pinAnnotation];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+
+
+                        [self.mapView addAnnotation:self.pinAnnotation];
+                    });
+
                     
                 }
 
 
                 //[self.mapView addAnnotations:self.gastronomyActivityArray];
 
-                
-            });
 
 
             
@@ -1173,18 +1183,15 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
 
 
-
-
-
                 Activity *activity = pinAnnotation.activity;
                 User *host = activity.host;
 
                 //check if the user exists for the activity and check if the user has a picture.
                 if(!(host.profileImage == nil) || !(host == nil)){
 
-                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-
-                    dispatch_async(queue, ^{
+//                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//
+//                    dispatch_async(queue, ^{
 
 
                         [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -1194,6 +1201,10 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                             //if there is no error then display the image for the user who posted activity.
                             if(!error){
+
+                                dispatch_async(dispatch_get_main_queue(), ^{
+
+
                                 UIImage *image = [UIImage imageWithData:data];
                                 CGSize scaledSize = CGSizeMake(40, 40);
                                 UIGraphicsBeginImageContext(scaledSize);
@@ -1208,6 +1219,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                                 profileImageView.userInteractionEnabled = YES;
                                 annotationView.leftCalloutAccessoryView = profileImageView;
 
+
+                                });
+
                             }
 
 
@@ -1220,10 +1234,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
                             //            }]
-                        });
+//                        });
 
 
                 }else{
+
+                       dispatch_async(dispatch_get_main_queue(), ^{
+
 
                     UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
                     CGSize scaledSize = CGSizeMake(40, 40);
@@ -1238,6 +1255,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     profileImageView.clipsToBounds = YES;
                     profileImageView.userInteractionEnabled = YES;
                     annotationView.leftCalloutAccessoryView = profileImageView;
+
+                             });
                     
                 }
 
@@ -1327,6 +1346,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                     //if there is no error then display the image for the user who posted activity.
                     if(!error){
+
+
+                         dispatch_async(dispatch_get_main_queue(), ^{
                         UIImage *image = [UIImage imageWithData:data];
                         CGSize scaledSize = CGSizeMake(40, 40);
                         UIGraphicsBeginImageContext(scaledSize);
@@ -1339,6 +1361,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                         profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
                         profileImageView.clipsToBounds = YES;
                         profileImageView.userInteractionEnabled = YES;
+
+                               });
                        // annotationView.leftCalloutAccessoryView = profileImageView;
                         NSLog(@"afdsflajksdkflsajfl it printteedddd" );
 
@@ -1350,6 +1374,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                  ];
             }else{
+
+                dispatch_async(dispatch_get_main_queue(), ^{
 
                 UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
                 CGSize scaledSize = CGSizeMake(40, 40);
@@ -1364,7 +1390,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                 profileImageView.clipsToBounds = YES;
                 profileImageView.userInteractionEnabled = YES;
                 //                annotationView.leftCalloutAccessoryView = profileImageView;
-                
+                    });
             }
             
             

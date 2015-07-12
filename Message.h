@@ -11,7 +11,8 @@
 #import "User.h"
 
 @interface Message : PFObject<PFSubclassing>
-@property User *recepient; 
+@property User *recepient;
+@property User *sender;
 @property NSString *messageText;
 
 +(NSString *)parseClassName;

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "User.h"
 @interface DialogVC : UIViewController
 
-@property (strong, nonatomic) NSString *chatMateId;     /* add this line */
+@property (strong, nonatomic) NSString *chatMateId;
+@property User *selectedRecepient;
 
 @end

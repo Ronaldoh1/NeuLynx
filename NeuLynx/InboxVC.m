@@ -79,7 +79,7 @@
     if ([segue.identifier isEqualToString:@"OpenDialogSegue"]) {
         self.activeDialogVC = segue.destinationViewController;
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
-        self.activeDialogVC.chatMateId = self.inboxArray[chatMateIndex];
+        self.activeDialogVC.selectedRecepient = self.inboxArray[chatMateIndex];
         return;
     }
 }

@@ -10,6 +10,7 @@
 
 @implementation Message
 @dynamic recepient;
+@dynamic sender;
 @dynamic messageText;
 
 +(void)load {

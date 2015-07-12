@@ -76,6 +76,8 @@
 -(void)retrieveMessages{
 
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    //[query whereKey:@"sender" equalTo:self.selectedRecepient];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
         self.MessageArray = [NSMutableArray new];
@@ -140,6 +142,7 @@
 
     //Set the text key to the text of the message textfield
     message[@"messageText"] = self.messageTextField.text;
+    message[@"sender"] = [User currentUser];
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
