@@ -108,7 +108,12 @@
 
     [profileImagePFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-        self.userProfileImageView.image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            self.userProfileImageView.image = [UIImage imageWithData:data];
+
+        });
+
 
     }];
 
@@ -155,8 +160,14 @@
     image1PFFIle = selectedActivity.activityImage1;
 
     [image1PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
 
-        self.image1.image = [UIImage imageWithData:data];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+           self.image1.image = [UIImage imageWithData:data];
+
+        });
 
     }];
 
@@ -166,7 +177,13 @@
 
     [image2PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-        self.image2.image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+
+            self.image2.image = [UIImage imageWithData:data];
+            
+        });
+
 
     }];
 

@@ -257,7 +257,13 @@
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
-            self.profileImage.image = image;
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                self.profileImage.image = image;
+                
+            });
+
         }
 
     }];
