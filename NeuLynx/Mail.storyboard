@@ -35,7 +35,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="l7V-0n-u1D" kind="show" id="F6X-Fc-Rzk"/>
+                                            <segue destination="oxB-yv-yI1" kind="show" id="mpd-s4-dfr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -61,31 +61,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYc-OM-Ndz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="245"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="7Aj-CA-JbU">
-            <objects>
-                <viewController id="l7V-0n-u1D" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="baz-rK-VJY"/>
-                        <viewControllerLayoutGuide type="bottom" id="KWM-0w-g9N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ste-gU-MEr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DpL-Uv-nUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1964" y="124"/>
+            <point key="canvasLocation" x="1174" y="245"/>
         </scene>
         <!--Inbox-->
         <scene sceneID="qWy-Nr-YYb">
             <objects>
-                <viewController id="oxB-yv-yI1" customClass="MailVC" customModule="NeuLynx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oxB-yv-yI1" customClass="DialogVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c3o-zD-ClE"/>
                         <viewControllerLayoutGuide type="bottom" id="zlD-5k-x8i"/>
@@ -114,8 +95,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="oxB-yv-yI1" id="kdp-Dk-aYh"/>
-                                    <outlet property="delegate" destination="oxB-yv-yI1" id="Fyk-7M-Xpd"/>
+                                    <outlet property="dataSource" destination="oxB-yv-yI1" id="hc9-a8-D0L"/>
+                                    <outlet property="delegate" destination="oxB-yv-yI1" id="2E2-Hk-kqB"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-5r-kGJ" userLabel="DockView">
@@ -130,7 +111,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onSendButtonTapped:" destination="oxB-yv-yI1" eventType="touchUpInside" id="MuR-If-C1p"/>
+                                            <action selector="onSendButtonTapped:" destination="oxB-yv-yI1" eventType="touchUpInside" id="tto-XR-pKj"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btc-FP-QHu">
@@ -173,15 +154,15 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="heightConstraint" destination="OpK-f9-Mny" id="K9S-Y6-5St"/>
-                        <outlet property="messageTextField" destination="btc-FP-QHu" id="dHg-gv-9SN"/>
-                        <outlet property="sendButton" destination="ucK-L5-bob" id="bF8-ru-4q4"/>
-                        <outlet property="tableView" destination="TL7-b9-fox" id="TKN-Ym-Qzx"/>
+                        <outlet property="heightConstraint" destination="OpK-f9-Mny" id="G5w-wC-wFB"/>
+                        <outlet property="messageTextField" destination="btc-FP-QHu" id="Hyq-lJ-nFN"/>
+                        <outlet property="sendButton" destination="ucK-L5-bob" id="Trq-nk-36o"/>
+                        <outlet property="tableView" destination="TL7-b9-fox" id="7Gb-a5-VZA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcb-fQ-uiz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987" y="666"/>
+            <point key="canvasLocation" x="1628" y="238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JuH-rG-CiG">

@@ -9,10 +9,12 @@
 #import "InboxVC.h"
 #import <Parse/Parse.h>
 #import "User.h"
+#import "DialogVC.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *inboxArray;
+@property DialogVC *activeDialogVC;
 
 @end
 
@@ -24,6 +26,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+
+    self.activeDialogVC = nil;
+
     [self initialSetUp];
 }
 -(void)initialSetUp{
@@ -64,6 +69,19 @@
     cell.textLabel.text = sender.name;
 
     return cell;
+}
+
+
+#pragma mark Prepare For Segue 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Segue to open a dialog
+    if ([segue.identifier isEqualToString:@"OpenDialogSegue"]) {
+        self.activeDialogVC = segue.destinationViewController;
+        NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
+        self.activeDialogVC.chatMateId = self.inboxArray[chatMateIndex];
+        return;
+    }
 }
 
 

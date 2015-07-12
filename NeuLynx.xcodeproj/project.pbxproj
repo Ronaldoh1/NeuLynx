@@ -53,6 +53,7 @@
 		F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F249D2E01B5024B100A3BAE7 /* MailVC.swift */; };
 		F249D2F01B51969E00A3BAE7 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2EF1B51969E00A3BAE7 /* InboxVC.m */; };
 		F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F21B51B8B900A3BAE7 /* DialogVC.m */; };
+		F249D2F61B51D6FD00A3BAE7 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F51B51D6FD00A3BAE7 /* Message.m */; };
 		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
 		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
@@ -257,6 +258,8 @@
 		F249D2EF1B51969E00A3BAE7 /* InboxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxVC.m; sourceTree = "<group>"; };
 		F249D2F11B51B8B900A3BAE7 /* DialogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogVC.h; sourceTree = "<group>"; };
 		F249D2F21B51B8B900A3BAE7 /* DialogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogVC.m; sourceTree = "<group>"; };
+		F249D2F41B51D6FD00A3BAE7 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		F249D2F51B51D6FD00A3BAE7 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
 		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
@@ -481,10 +484,10 @@
 				F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */,
 				F249D2EE1B51969E00A3BAE7 /* InboxVC.h */,
 				F249D2EF1B51969E00A3BAE7 /* InboxVC.m */,
-				F249D2E01B5024B100A3BAE7 /* MailVC.swift */,
-				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
 				F249D2F11B51B8B900A3BAE7 /* DialogVC.h */,
 				F249D2F21B51B8B900A3BAE7 /* DialogVC.m */,
+				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
+				F249D2E01B5024B100A3BAE7 /* MailVC.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -789,6 +792,8 @@
 				F25BFC461AFB2BF100B2C5BA /* User.m */,
 				F226C81D1B0F5D7B007A1C03 /* Activity.h */,
 				F226C81E1B0F5D7B007A1C03 /* Activity.m */,
+				F249D2F41B51D6FD00A3BAE7 /* Message.h */,
+				F249D2F51B51D6FD00A3BAE7 /* Message.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
 				F249D2F01B51969E00A3BAE7 /* InboxVC.m in Sources */,
+				F249D2F61B51D6FD00A3BAE7 /* Message.m in Sources */,
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,

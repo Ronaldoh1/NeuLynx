@@ -8,7 +8,7 @@
 
 #import "AccountAndSettingsTVC.h"
 #import "User.h"
-#import "MailVC2.h"
+
 #import "AppDelegate.h"
 
 
