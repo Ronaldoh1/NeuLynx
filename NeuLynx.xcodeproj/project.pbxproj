@@ -54,6 +54,9 @@
 		F249D2F01B51969E00A3BAE7 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2EF1B51969E00A3BAE7 /* InboxVC.m */; };
 		F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F21B51B8B900A3BAE7 /* DialogVC.m */; };
 		F249D2F61B51D6FD00A3BAE7 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F51B51D6FD00A3BAE7 /* Message.m */; };
+		F249D2FA1B52B75700A3BAE7 /* chatIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2F91B52B75700A3BAE7 /* chatIcon.png */; };
+		F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F249D2FC1B52BA6E00A3BAE7 /* Message.storyboard */; };
+		F249D3001B52BDCA00A3BAE7 /* SendMessageTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2FF1B52BDCA00A3BAE7 /* SendMessageTVC.m */; };
 		F24EC7DF1B23AD8C0018202F /* festivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DA1B23AD8B0018202F /* festivalPin.png */; };
 		F24EC7E11B23AD8C0018202F /* fitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DC1B23AD8B0018202F /* fitnessPin.png */; };
 		F24EC7E21B23AD8C0018202F /* gastronomyPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */; };
@@ -260,6 +263,10 @@
 		F249D2F21B51B8B900A3BAE7 /* DialogVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogVC.m; sourceTree = "<group>"; };
 		F249D2F41B51D6FD00A3BAE7 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		F249D2F51B51D6FD00A3BAE7 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		F249D2F91B52B75700A3BAE7 /* chatIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatIcon.png; sourceTree = "<group>"; };
+		F249D2FC1B52BA6E00A3BAE7 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		F249D2FE1B52BDCA00A3BAE7 /* SendMessageTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageTVC.h; sourceTree = "<group>"; };
+		F249D2FF1B52BDCA00A3BAE7 /* SendMessageTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageTVC.m; sourceTree = "<group>"; };
 		F24EC7DA1B23AD8B0018202F /* festivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = festivalPin.png; sourceTree = "<group>"; };
 		F24EC7DC1B23AD8B0018202F /* fitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fitnessPin.png; sourceTree = "<group>"; };
 		F24EC7DD1B23AD8B0018202F /* gastronomyPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastronomyPin.png; sourceTree = "<group>"; };
@@ -478,7 +485,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F25BFC4A1AFB3C8500B2C5BA /* Messages */ = {
+		F249D2FB1B52BA0C00A3BAE7 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F249D2FC1B52BA6E00A3BAE7 /* Message.storyboard */,
+				F249D2FE1B52BDCA00A3BAE7 /* SendMessageTVC.h */,
+				F249D2FF1B52BDCA00A3BAE7 /* SendMessageTVC.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		F25BFC4A1AFB3C8500B2C5BA /* Mail */ = {
 			isa = PBXGroup;
 			children = (
 				F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */,
@@ -489,7 +506,7 @@
 				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
 				F249D2E01B5024B100A3BAE7 /* MailVC.swift */,
 			);
-			name = Messages;
+			name = Mail;
 			sourceTree = "<group>";
 		};
 		F28518D21AFABFAD007A45FA = {
@@ -522,10 +539,11 @@
 				F2E6E8561B16030A0083BA7F /* About */,
 				F2E6E8501B1602060083BA7F /* Help */,
 				F2E6E84A1B15FB540083BA7F /* Terms */,
+				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
 				F2FE7E931B0A319100CDD057 /* Account */,
 				F285190C1AFAC132007A45FA /* Profile */,
-				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
-				F25BFC4A1AFB3C8500B2C5BA /* Messages */,
+				F249D2FB1B52BA0C00A3BAE7 /* Message */,
+				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
 				F285190D1AFAC172007A45FA /* History */,
 				F2E6E8EB1B2382B80083BA7F /* Detail */,
 				F285190B1AFAC126007A45FA /* PostActivity */,
@@ -643,6 +661,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F249D2F91B52B75700A3BAE7 /* chatIcon.png */,
 				F293209A1B4507B9001B9930 /* whatsAppIcon.png */,
 				F249D2D91B49F57700A3BAE7 /* thumbsDown.png */,
 				F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */,
@@ -1059,6 +1078,7 @@
 				F2292ED21B254C7C003D82D5 /* wFitness.png in Resources */,
 				F2E6E8811B19A7660083BA7F /* AppIcon29x29@3x.png in Resources */,
 				F2292F461B2C233C003D82D5 /* PictureCircle.png in Resources */,
+				F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F23435221B37C8C10065D11C /* termsIcon.png in Resources */,
@@ -1100,6 +1120,7 @@
 				F226C8141B0F5B28007A1C03 /* gastronomy.png in Resources */,
 				F2292F331B26A785003D82D5 /* mainOutdoors.png in Resources */,
 				F234351F1B37C8C10065D11C /* messageIcon.png in Resources */,
+				F249D2FA1B52B75700A3BAE7 /* chatIcon.png in Resources */,
 				F2E6E8B61B1A13A70083BA7F /* Request.storyboard in Resources */,
 				F2E6E88B1B19A7660083BA7F /* AppIcon57x57.png in Resources */,
 				F2E6E8521B1602190083BA7F /* Help.storyboard in Resources */,
@@ -1191,6 +1212,7 @@
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,
 				F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */,
+				F249D3001B52BDCA00A3BAE7 /* SendMessageTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

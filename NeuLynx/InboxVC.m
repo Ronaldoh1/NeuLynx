@@ -46,6 +46,7 @@
     self.inboxArray = [NSMutableArray arrayWithArray:[User currentUser].inboxArray];
 
     [self.inboxArray addObject:[User currentUser]];
+    [[User currentUser] save];
 
     
 

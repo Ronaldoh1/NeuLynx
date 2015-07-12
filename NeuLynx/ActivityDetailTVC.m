@@ -256,7 +256,7 @@
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.section == 3) {
+    if (indexPath.section == 3 || indexPath.section == 4) {
         return indexPath;
     } else {
         return nil;
@@ -305,6 +305,13 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
+
+    }else if (indexPath.section == 4 && indexPath.row == 0){
+
+
+        UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+        UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
+        [self presentViewController:messageNavVC animated:YES completion:nil];
 
     }
 

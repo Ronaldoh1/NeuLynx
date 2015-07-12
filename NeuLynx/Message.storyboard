@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send Message-->
+        <scene sceneID="BgV-ef-PAZ">
+            <objects>
+                <tableViewController id="YOI-4P-650" customClass="SendMessageTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5kQ-5W-KsM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Subject" id="zlI-D0-hu9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hxX-7f-9jh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hxX-7f-9jh" id="dzo-Ar-VbR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's Your Question About?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-al-4JW">
+                                                    <rect key="frame" x="8" y="7" width="304" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YOI-4P-650" id="tdT-IF-fmA"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tEO-al-4JW" secondAttribute="bottom" constant="-1" id="VPH-RS-Ocw"/>
+                                                <constraint firstItem="tEO-al-4JW" firstAttribute="leading" secondItem="dzo-Ar-VbR" secondAttribute="leadingMargin" id="dec-q6-5e4"/>
+                                                <constraint firstItem="tEO-al-4JW" firstAttribute="top" secondItem="dzo-Ar-VbR" secondAttribute="topMargin" constant="-1" id="nhi-Sl-LYV"/>
+                                                <constraint firstItem="tEO-al-4JW" firstAttribute="trailing" secondItem="dzo-Ar-VbR" secondAttribute="trailingMargin" id="qmM-Qa-cMd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Text" id="i4k-c6-SMw">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="330" id="86Y-NH-0st">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86Y-NH-0st" id="acf-14-2OU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiS-cs-HPM">
+                                                    <rect key="frame" x="8" y="8" width="304" height="314"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YOI-4P-650" id="93K-pP-hJo"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SiS-cs-HPM" secondAttribute="trailing" id="37C-LG-hpU"/>
+                                                <constraint firstItem="SiS-cs-HPM" firstAttribute="leading" secondItem="acf-14-2OU" secondAttribute="leadingMargin" id="eBZ-xx-5Um"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="SiS-cs-HPM" secondAttribute="bottom" id="ke0-re-UXa"/>
+                                                <constraint firstItem="SiS-cs-HPM" firstAttribute="top" secondItem="acf-14-2OU" secondAttribute="topMargin" id="wbm-Wi-h8a"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="YOI-4P-650" id="9Rk-Av-LjM"/>
+                            <outlet property="delegate" destination="YOI-4P-650" id="auM-AU-taI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Send Message" id="1mb-q8-yGw">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="mQ3-Ac-Zuo">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="YOI-4P-650" id="BW3-Gm-avG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="9pd-Zi-g3z"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="messageText" destination="SiS-cs-HPM" id="eRR-Vu-hBh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s01-QZ-xSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="222"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s2t-du-bKk">
+            <objects>
+                <navigationController storyboardIdentifier="SendMessageNavVC" automaticallyAdjustsScrollViewInsets="NO" id="txo-K6-0MU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a4I-Jp-SZz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YOI-4P-650" kind="relationship" relationship="rootViewController" id="xzd-RG-2Wd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Qg-fa-H9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="222"/>
+        </scene>
+    </scenes>
+</document>

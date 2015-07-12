@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eYH-nR-ffF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eYH-nR-ffF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3Cd-c0-olh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0b-qz-XFS">
                                 <rect key="frame" x="16" y="327" width="288" height="30"/>
                                 <constraints>
@@ -118,11 +115,7 @@
                             <constraint firstAttribute="centerX" secondItem="9tT-4N-9O7" secondAttribute="centerX" id="K18-EL-b8M"/>
                             <constraint firstItem="9tT-4N-9O7" firstAttribute="top" secondItem="RcW-Ot-nmQ" secondAttribute="topMargin" constant="30" id="MQl-6j-A35"/>
                             <constraint firstItem="EJ2-hy-lII" firstAttribute="top" secondItem="1Wz-my-v9Y" secondAttribute="bottom" constant="158" id="Mt2-1n-qG3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3Cd-c0-olh" secondAttribute="trailing" constant="-16" id="NC5-1E-5fl"/>
-                            <constraint firstItem="wCS-xB-Fwe" firstAttribute="top" secondItem="3Cd-c0-olh" secondAttribute="bottom" id="QQF-as-Vfh"/>
                             <constraint firstItem="EJ2-hy-lII" firstAttribute="trailing" secondItem="RcW-Ot-nmQ" secondAttribute="trailingMargin" id="QdZ-I0-FTa"/>
-                            <constraint firstItem="3Cd-c0-olh" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" constant="-16" id="URb-kH-ddY"/>
-                            <constraint firstItem="3Cd-c0-olh" firstAttribute="top" secondItem="RcW-Ot-nmQ" secondAttribute="topMargin" id="Z6o-ZP-eo6"/>
                             <constraint firstItem="DPP-lc-P77" firstAttribute="top" secondItem="JSm-Dn-T8f" secondAttribute="bottom" constant="8" id="aHm-ua-5Ef"/>
                             <constraint firstItem="nmo-Dj-Qde" firstAttribute="trailing" secondItem="RcW-Ot-nmQ" secondAttribute="trailingMargin" id="b4E-ka-p5c"/>
                             <constraint firstItem="nmo-Dj-Qde" firstAttribute="top" secondItem="EJ2-hy-lII" secondAttribute="bottom" constant="8" id="cGT-S7-Kmf"/>
@@ -171,7 +164,6 @@
     <resources>
         <image name="FacebookButton.png" width="1162" height="125"/>
         <image name="Logo" width="2083" height="2083"/>
-        <image name="backBackground" width="750" height="1334"/>
         <image name="or.png" width="1122" height="22"/>
         <image name="signInWithTwitterButton.png" width="600" height="64"/>
     </resources>
