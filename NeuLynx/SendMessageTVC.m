@@ -141,14 +141,21 @@
     message.sender = [User currentUser];
     message.recepient = appDelegate.sharedActivity.host;
 
+    User *recepient = [User new];
+
+    recepient = appDelegate.sharedActivity.host;
+
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
             //let the user know his message has been sent.
 
             [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
+
+
+
+
+
 
         } else {
             // There was a problem, check error.description
@@ -160,9 +167,20 @@
         
     }];
 
-    
+    [recepient.inboxArray addObject:[User currentUser]];
 
-    
+    [recepient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+
+
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+        }
+
+    } ];
+
+
+
 
 
 }

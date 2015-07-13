@@ -59,6 +59,61 @@
 - (IBAction)onAcceptButtonTapped:(UIButton *)sender {
 
 
+
+    //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+
+    Activity *activity = self.tempActivitiestArray[indexPath.section];
+
+
+    //get the user who we are sending the request to and add it to the accepted people array.
+
+    User *tempUser = [User new];
+    tempUser = activity.RequestsArray[indexPath.row];
+
+    NSMutableArray *tempArray = [NSMutableArray new];
+    tempArray = activity.acceptedPeopleArray.mutableCopy;
+
+
+    [tempArray addObject:tempUser];
+
+    activity.acceptedPeopleArray = tempArray.copy;
+
+    [activity.RequestsArray removeObjectAtIndex: indexPath.row];
+
+
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+
+
+
+            // Create our Installation query
+            PFQuery *pushQuery = [PFInstallation query];
+            // only return Installations that belong to a User that
+            // matches the innerQuery
+            [pushQuery whereKey:@"user" matchesQuery: tempUser];
+
+            // Send push notification to query
+            PFPush *push = [[PFPush alloc] init];
+            [push setQuery:pushQuery]; // Set our Installation query
+            [push setMessage:[NSString stringWithFormat:@"%@ has accepted your request!", [User currentUser].name]];
+            [push sendPushInBackground];
+        }
+    }
+     
+     ];
+    
+    
+    [self downloadActivityRequests];
+    
+    indexPath = nil;
+    
+    [self.tableView reloadData];
+
+
+
+
     
 }
 - (IBAction)onRejectButtonTapped:(UIButton *)sender {
@@ -70,6 +125,13 @@
     Activity *activity = self.tempActivitiestArray[indexPath.section];
 
 
+
+    //get the user who we are sending the request to and add it to the accepted people array.
+
+    User *tempUser = [User new];
+    tempUser = activity.RequestsArray[indexPath.row];
+
+    //[activity.acceptedPeopleArray addObject:tempUser];
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
 
@@ -82,7 +144,7 @@
      PFQuery *pushQuery = [PFInstallation query];
      // only return Installations that belong to a User that
      // matches the innerQuery
-     [pushQuery whereKey:@"user" matchesQuery: activity.host];
+     [pushQuery whereKey:@"user" matchesQuery: tempUser];
 
      // Send push notification to query
      PFPush *push = [[PFPush alloc] init];
