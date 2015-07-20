@@ -35,7 +35,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="oxB-yv-yI1" kind="show" id="mpd-s4-dfr"/>
+                                            <segue destination="oxB-yv-yI1" kind="show" identifier="OpenDialogSegue" id="Na7-Tr-yCA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

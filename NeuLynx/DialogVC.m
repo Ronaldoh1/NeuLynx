@@ -25,10 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+   //
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [self initialSetUp];
+
+     NSLog(@"%@ hkhjhkjjhkjhhhk", self.selectedRecepient.name);
 }
 -(void)initialSetUp{
     //setting image to Navigation Bar's title
@@ -76,7 +80,8 @@
 -(void)retrieveMessages{
 
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-    //[query whereKey:@"sender" equalTo:self.selectedRecepient];
+   [query whereKey:@"recepient" equalTo:self.selectedRecepient];
+   [query whereKey:@"sender" equalTo:[User currentUser]];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
@@ -143,6 +148,7 @@
     //Set the text key to the text of the message textfield
     message[@"messageText"] = self.messageTextField.text;
     message[@"sender"] = [User currentUser];
+    message[@"recepient"] = self.selectedRecepient;
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.

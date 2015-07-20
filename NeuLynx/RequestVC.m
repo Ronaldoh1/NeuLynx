@@ -50,6 +50,8 @@
         self.navigationItem.rightBarButtonItem = nil;
 
 
+
+
     }
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
@@ -81,7 +83,6 @@
     activity.acceptedPeopleArray = tempArray.copy;
 
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
-
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {

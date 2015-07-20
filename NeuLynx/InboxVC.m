@@ -67,6 +67,8 @@
 
     User *sender = (User *)self.inboxArray[indexPath.row];
 
+    NSLog(@"%@", sender.name);
+
     cell.textLabel.text = sender.name;
 
     return cell;
@@ -80,7 +82,9 @@
     if ([segue.identifier isEqualToString:@"OpenDialogSegue"]) {
         self.activeDialogVC = segue.destinationViewController;
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
-        self.activeDialogVC.selectedRecepient = self.inboxArray[chatMateIndex];
+        self.activeDialogVC.selectedRecepient = (User *)self.inboxArray[chatMateIndex];
+
+ //       NSLog(@"%@ jjjjjjjj", self.inboxArray[chatMateIndex]);
         return;
     }
 }

@@ -14,6 +14,7 @@
 @interface SendMessageTVC ()<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *messageText;
 @property (weak, nonatomic) IBOutlet UITextField *subjectTextField;
+@property NSMutableArray *inboxArray;
 
 @end
 
@@ -52,7 +53,10 @@
     self.messageText.text = @"Need to know info about this activity? myself? etc? Just send me a quick messsage!";
     self.messageText.textColor = [UIColor lightGrayColor]; //optional
 
+    //initialize array.
+     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
+    self.inboxArray = [NSMutableArray arrayWithArray:appDelegate.sharedActivity.host.inboxArray];
 
     
 }
@@ -141,9 +145,13 @@
     message.sender = [User currentUser];
     message.recepient = appDelegate.sharedActivity.host;
 
+
+
     User *recepient = [User new];
 
     recepient = appDelegate.sharedActivity.host;
+
+    NSLog(@"%@ YOOoooooooooooooo", recepient);
 
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -167,7 +175,11 @@
         
     }];
 
-    [recepient.inboxArray addObject:[User currentUser]];
+
+
+    [self.inboxArray addObject:[User currentUser]];
+
+    recepient.inboxArray = self.inboxArray.copy;
 
     [recepient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
