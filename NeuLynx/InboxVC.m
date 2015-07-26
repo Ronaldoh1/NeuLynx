@@ -74,6 +74,13 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //deselect the cell that was selected. 
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+
+}
 
 #pragma mark Prepare For Segue 
 
@@ -84,7 +91,6 @@
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
         self.activeDialogVC.selectedRecepient = (User *)self.inboxArray[chatMateIndex];
 
- //       NSLog(@"%@ jjjjjjjj", self.inboxArray[chatMateIndex]);
         return;
     }
 }

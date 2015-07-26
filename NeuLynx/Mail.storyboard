@@ -76,31 +76,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TL7-b9-fox">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="391"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCell" textLabel="noU-EB-pF0" style="IBUITableViewCellStyleDefault" id="eRK-3V-Y1g">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eRK-3V-Y1g" id="Cml-oA-V9M">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="noU-EB-pF0">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="oxB-yv-yI1" id="hc9-a8-D0L"/>
                                     <outlet property="delegate" destination="oxB-yv-yI1" id="2E2-Hk-kqB"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-5r-kGJ" userLabel="DockView">
-                                <rect key="frame" x="0.0" y="392" width="320" height="88"/>
+                                <rect key="frame" x="0.0" y="420" width="320" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucK-L5-bob">
                                         <rect key="frame" x="230" y="15" width="70" height="30"/>
@@ -127,7 +111,7 @@
                                 <constraints>
                                     <constraint firstItem="btc-FP-QHu" firstAttribute="leading" secondItem="Ojj-5r-kGJ" secondAttribute="leading" constant="15" id="6Xp-NB-JSo"/>
                                     <constraint firstItem="ucK-L5-bob" firstAttribute="leading" secondItem="btc-FP-QHu" secondAttribute="trailing" constant="8" id="Cj0-w3-Pii"/>
-                                    <constraint firstAttribute="height" constant="88" id="OpK-f9-Mny"/>
+                                    <constraint firstAttribute="height" constant="60" id="OpK-f9-Mny"/>
                                     <constraint firstItem="btc-FP-QHu" firstAttribute="top" secondItem="Ojj-5r-kGJ" secondAttribute="top" constant="15" id="ZCN-PR-5Zx"/>
                                     <constraint firstItem="ucK-L5-bob" firstAttribute="top" secondItem="Ojj-5r-kGJ" secondAttribute="top" constant="15" id="jbw-Z4-Dzq"/>
                                     <constraint firstAttribute="trailing" secondItem="ucK-L5-bob" secondAttribute="trailing" constant="20" id="tWw-1A-m7d"/>
