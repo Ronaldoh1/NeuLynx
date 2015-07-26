@@ -30,6 +30,7 @@
 @property UIButton *nightOutActivityButton;
 @property UIButton *fitnessActivityButton;
 @property UIButton *outdoorsActivityButton;
+@property UIButton *universityActivityButton;
 
 @property UIDynamicAnimator *dynamicAnimator;
 @property BOOL isFannedOut;
@@ -87,6 +88,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
     [self createAndDisplayBlinkingRings];
+    //[[UINavigationBar appearance]setBarTintColor:[UIColor purpleColor]];
 
 
 }
@@ -123,6 +125,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method for initial set up
 
 -(void)performInitialSetup{
+
 
 
 
@@ -174,10 +177,10 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appName.png"]];
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmallBlack.png"]];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
 
-    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 160, 70)];
+    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 70)];
     imageView.frame = titleView.bounds;
     [titleView addSubview:imageView];
 
@@ -267,6 +270,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.nightOutActivityButton = [self createButton:@"Night Out" willShow:YES];
     self.fitnessActivityButton = [self createButton:@"Fitness" willShow:YES];
     self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
+    // self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
+    self.universityActivityButton = [self createButton:@"Student Life" willShow:YES];
     self.mainDiscoverButton = [self createButton:@"" willShow:NO];
 
 
@@ -279,6 +284,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.nightOutActivityButton setBackgroundImage:[UIImage imageNamed:@"mainNightout"] forState:UIControlStateNormal];
     [self.fitnessActivityButton setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
     [self.outdoorsActivityButton setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
+    [self.universityActivityButton setBackgroundImage:[UIImage imageNamed:@"mainStudentLife"] forState:UIControlStateNormal];
     [self.mainDiscoverButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 
     //Initially hide the buttons
@@ -299,6 +305,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         view.hidden = YES;
     }
     for(UIView *view in self.outdoorsActivityButton.subviews){
+        view.hidden = YES;
+    }
+    for(UIView *view in self.universityActivityButton.subviews){
         view.hidden = YES;
     }
 
@@ -400,6 +409,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
         }
+        for(UIView *view in self.universityActivityButton.subviews){
+            view.hidden = NO;
+
+            
+        }
 
         //remove animations of the rings and hide them.
         [self.ring1ImageView.layer removeAllAnimations];
@@ -416,6 +430,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [self snapButton:self.nightOutActivityButton toPoint:self.mainDiscoverButton.center];
         [self snapButton:self.fitnessActivityButton toPoint:self.mainDiscoverButton.center];
         [self snapButton:self.outdoorsActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.universityActivityButton toPoint:self.mainDiscoverButton.center];
 
         for(UIView *view in self.festivalActivityButton.subviews){
             view.hidden = YES;
@@ -435,6 +450,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         for(UIView *view in self.outdoorsActivityButton.subviews){
             view.hidden = YES;
         }
+        for(UIView *view in self.universityActivityButton.subviews){
+            view.hidden = YES;
+        }
 
         //add animation to the rings and show them
         [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
@@ -451,13 +469,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 //helper method to show buttons
 -(void)fanButtonOut{
-    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y + 38.0)];
-    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 55.0, self.mainDiscoverButton.frame.origin.y - 17.0)];
-    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 45.0, self.mainDiscoverButton.frame.origin.y - 73.0)];
-    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y - 127.0)];
-    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 15.0, self.mainDiscoverButton.frame.origin.y - 182.0)];
-    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 20.0, self.mainDiscoverButton.frame.origin.y - 227.0)];
-
+    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 85.0, self.mainDiscoverButton.frame.origin.y + 40.0)];
+    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 80.0, self.mainDiscoverButton.frame.origin.y - 13.0)];
+    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 70.0, self.mainDiscoverButton.frame.origin.y - 65.0)];
+    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y - 117.0)];
+    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 40.0, self.mainDiscoverButton.frame.origin.y - 166.0)];
+    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 10.0, self.mainDiscoverButton.frame.origin.y - 211.0)];
+    [self snapButton:self.universityActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 32.0, self.mainDiscoverButton.frame.origin.y - 244.0)];
 }
 
 

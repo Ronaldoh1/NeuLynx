@@ -85,24 +85,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gNN-Gk-BVK" id="Vm8-s8-aih">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-aG-vY9">
-                                                    <rect key="frame" x="54" y="46" width="60" height="55"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="00b-hp-gpl"/>
-                                                        <constraint firstAttribute="height" constant="55" id="Ql4-fO-1hj"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="wCultural.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="onCulturalButtonTapped:" destination="fz1-a5-1ea" eventType="touchUpInside" id="8Pm-yM-Lyz"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vso-7S-Vlx">
-                                                    <rect key="frame" x="104" y="46" width="60" height="55"/>
+                                                    <rect key="frame" x="85" y="46" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="4f5-wI-VqH"/>
-                                                        <constraint firstAttribute="height" constant="55" id="QiY-oI-K2o"/>
+                                                        <constraint firstAttribute="width" constant="40" id="4f5-wI-VqH"/>
+                                                        <constraint firstAttribute="height" constant="40" id="QiY-oI-K2o"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="wGastronomy.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,10 +99,10 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJT-Qm-Gcs">
-                                                    <rect key="frame" x="157" y="46" width="60" height="55"/>
+                                                    <rect key="frame" x="132" y="46" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="55" id="lNJ-Wz-04C"/>
-                                                        <constraint firstAttribute="width" constant="60" id="y9N-A0-Zkr"/>
+                                                        <constraint firstAttribute="height" constant="40" id="lNJ-Wz-04C"/>
+                                                        <constraint firstAttribute="width" constant="40" id="y9N-A0-Zkr"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="wNightOut.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,10 +112,10 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8h-BZ-4VF">
-                                                    <rect key="frame" x="258" y="46" width="60" height="55"/>
+                                                    <rect key="frame" x="227" y="46" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="8kl-bz-sxg"/>
-                                                        <constraint firstAttribute="height" constant="55" id="Ii1-Eg-tdq"/>
+                                                        <constraint firstAttribute="width" constant="40" id="8kl-bz-sxg"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Ii1-Eg-tdq"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="wOutdoors.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,10 +125,10 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Saw-0B-No9">
-                                                    <rect key="frame" x="2" y="46" width="60" height="55"/>
+                                                    <rect key="frame" x="0.0" y="46" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="Koy-kl-ZS4"/>
-                                                        <constraint firstAttribute="height" constant="55" id="giX-4Y-ubQ"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Koy-kl-ZS4"/>
+                                                        <constraint firstAttribute="height" constant="40" id="giX-4Y-ubQ"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="wFestival.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,10 +138,10 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ak-m2-osh">
-                                                    <rect key="frame" x="209" y="46" width="60" height="55"/>
+                                                    <rect key="frame" x="181" y="46" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="Hlp-O4-MiV"/>
-                                                        <constraint firstAttribute="height" constant="55" id="Mrw-ve-elr"/>
+                                                        <constraint firstAttribute="width" constant="40" id="Hlp-O4-MiV"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Mrw-ve-elr"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="wFitness.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,23 +159,51 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38Z-3U-d3j">
+                                                    <rect key="frame" x="271" y="46" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="GTV-2y-rHl"/>
+                                                        <constraint firstAttribute="width" constant="40" id="NXn-ib-68u"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="wOutdoors.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="outDoorsButtonTapped:" destination="fz1-a5-1ea" eventType="touchUpInside" id="A60-g5-aUb"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-aG-vY9">
+                                                    <rect key="frame" x="44" y="46" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="00b-hp-gpl"/>
+                                                        <constraint firstAttribute="height" constant="40" id="Ql4-fO-1hj"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="wCultural.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onCulturalButtonTapped:" destination="fz1-a5-1ea" eventType="touchUpInside" id="8Pm-yM-Lyz"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="Vso-7S-Vlx" secondAttribute="centerY" constant="-15" id="8mV-Hx-ncX"/>
-                                                <constraint firstAttribute="centerX" secondItem="m8h-BZ-4VF" secondAttribute="centerX" constant="-128" id="Bgf-4P-4pT"/>
-                                                <constraint firstAttribute="centerY" secondItem="4ak-m2-osh" secondAttribute="centerY" constant="-15" id="C5v-6k-eg0"/>
-                                                <constraint firstAttribute="centerX" secondItem="sJT-Qm-Gcs" secondAttribute="centerX" constant="-27" id="DUz-Cz-FIN"/>
-                                                <constraint firstAttribute="centerY" secondItem="m8h-BZ-4VF" secondAttribute="centerY" constant="-15" id="M2h-u9-Mq8"/>
-                                                <constraint firstAttribute="centerY" secondItem="GhT-aG-vY9" secondAttribute="centerY" constant="-15" id="MGA-CL-JKc"/>
+                                                <constraint firstAttribute="centerY" secondItem="38Z-3U-d3j" secondAttribute="centerY" constant="-7.5" id="1fq-XH-8ao"/>
+                                                <constraint firstAttribute="centerY" secondItem="Vso-7S-Vlx" secondAttribute="centerY" constant="-7.5" id="8mV-Hx-ncX"/>
+                                                <constraint firstAttribute="centerX" secondItem="m8h-BZ-4VF" secondAttribute="centerX" constant="-87" id="Bgf-4P-4pT"/>
+                                                <constraint firstAttribute="centerY" secondItem="4ak-m2-osh" secondAttribute="centerY" constant="-7.5" id="C5v-6k-eg0"/>
+                                                <constraint firstAttribute="centerX" secondItem="sJT-Qm-Gcs" secondAttribute="centerX" constant="8" id="DUz-Cz-FIN"/>
+                                                <constraint firstAttribute="centerY" secondItem="m8h-BZ-4VF" secondAttribute="centerY" constant="-7.5" id="M2h-u9-Mq8"/>
+                                                <constraint firstAttribute="centerY" secondItem="GhT-aG-vY9" secondAttribute="centerY" constant="-7.5" id="MGA-CL-JKc"/>
                                                 <constraint firstItem="nrJ-YD-yb8" firstAttribute="leading" secondItem="Vm8-s8-aih" secondAttribute="leadingMargin" id="NIy-IR-Ze7"/>
-                                                <constraint firstAttribute="centerY" secondItem="sJT-Qm-Gcs" secondAttribute="centerY" constant="-15" id="Xye-fl-Ne7"/>
-                                                <constraint firstAttribute="centerX" secondItem="Vso-7S-Vlx" secondAttribute="centerX" constant="26" id="ZGs-51-6rV"/>
-                                                <constraint firstAttribute="centerX" secondItem="4ak-m2-osh" secondAttribute="centerX" constant="-79" id="d9R-k3-RxS"/>
-                                                <constraint firstAttribute="centerX" secondItem="GhT-aG-vY9" secondAttribute="centerX" constant="76" id="f30-d4-bUy"/>
+                                                <constraint firstAttribute="centerY" secondItem="sJT-Qm-Gcs" secondAttribute="centerY" constant="-7.5" id="Xye-fl-Ne7"/>
+                                                <constraint firstAttribute="centerX" secondItem="Vso-7S-Vlx" secondAttribute="centerX" constant="55" id="ZGs-51-6rV"/>
+                                                <constraint firstAttribute="centerX" secondItem="4ak-m2-osh" secondAttribute="centerX" constant="-41" id="d9R-k3-RxS"/>
+                                                <constraint firstAttribute="centerX" secondItem="38Z-3U-d3j" secondAttribute="centerX" constant="-131" id="eI6-o1-gFP"/>
+                                                <constraint firstAttribute="centerX" secondItem="GhT-aG-vY9" secondAttribute="centerX" constant="96" id="f30-d4-bUy"/>
                                                 <constraint firstItem="nrJ-YD-yb8" firstAttribute="top" secondItem="Vm8-s8-aih" secondAttribute="topMargin" id="jPP-b1-sE2"/>
                                                 <constraint firstItem="nrJ-YD-yb8" firstAttribute="trailing" secondItem="Vm8-s8-aih" secondAttribute="trailingMargin" id="jhe-tA-YCH"/>
-                                                <constraint firstAttribute="centerX" secondItem="Saw-0B-No9" secondAttribute="centerX" constant="128" id="lYG-eU-e1g"/>
-                                                <constraint firstAttribute="centerY" secondItem="Saw-0B-No9" secondAttribute="centerY" constant="-15" id="z1u-eR-Ndt"/>
+                                                <constraint firstAttribute="centerX" secondItem="Saw-0B-No9" secondAttribute="centerX" constant="140" id="lYG-eU-e1g"/>
+                                                <constraint firstAttribute="centerY" secondItem="Saw-0B-No9" secondAttribute="centerY" constant="-7.5" id="z1u-eR-Ndt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
