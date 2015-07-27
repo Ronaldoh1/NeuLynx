@@ -25,7 +25,7 @@
 @dynamic RequestsArray;
 @dynamic activityPrivacy;
 @dynamic studentsOnly;
-
+@dynamic isLBGT;
 
 +(void)load {
     [self registerSubclass];

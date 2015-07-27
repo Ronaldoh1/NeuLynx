@@ -422,6 +422,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="LGBT?" id="uIf-Oc-JtB">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mv9-Cs-0g4">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mv9-Cs-0g4" id="BET-Uz-58b">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="71s-c3-Ds8">
+                                                    <rect key="frame" x="8" y="8" width="304" height="29"/>
+                                                    <segments>
+                                                        <segment title="No"/>
+                                                        <segment title="Yes"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="71s-c3-Ds8" firstAttribute="top" secondItem="BET-Uz-58b" secondAttribute="topMargin" id="B1k-n1-x5k"/>
+                                                <constraint firstItem="71s-c3-Ds8" firstAttribute="leading" secondItem="BET-Uz-58b" secondAttribute="leadingMargin" id="D3O-LW-Mtk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="71s-c3-Ds8" secondAttribute="bottom" constant="-1" id="mKE-t0-Fma"/>
+                                                <constraint firstItem="71s-c3-Ds8" firstAttribute="trailing" secondItem="BET-Uz-58b" secondAttribute="trailingMargin" id="zht-Db-Evd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="fz1-a5-1ea" id="1v8-hR-Kwc"/>
@@ -453,6 +478,7 @@
                         <outlet property="gastronomyButton" destination="Vso-7S-Vlx" id="8kK-qy-TkD"/>
                         <outlet property="image1" destination="ODn-yr-V20" id="1Jw-h0-wWG"/>
                         <outlet property="image2" destination="0sH-Rv-sAn" id="4FD-ay-tos"/>
+                        <outlet property="lgbtSelector" destination="71s-c3-Ds8" id="Haz-M3-z3f"/>
                         <outlet property="nightOutButton" destination="sJT-Qm-Gcs" id="1fQ-SL-8rh"/>
                         <outlet property="outdoorsButton" destination="m8h-BZ-4VF" id="ZcD-Hc-Fag"/>
                         <outlet property="privacySelector" destination="gzg-Yp-uyZ" id="19f-qR-va8"/>

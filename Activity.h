@@ -33,6 +33,10 @@
 //**0 = public 1 = private**
 @property NSNumber *activityPrivacy;
 
+//**0 = No 1 = Yes**
+@property NSNumber *isLBGT;
+
+
 +(NSString *)parseClassName;
 
 

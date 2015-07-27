@@ -233,7 +233,7 @@
     }else if(indexPath.row == 5 && indexPath.section == 4){
 
 
-        NSString *periscopeURL = @"https://watchonperiscope.com/users/neulynx/9201917";
+        NSString *periscopeURL = @"pscp://user?screen_name=neulynx";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:periscopeURL]];
 

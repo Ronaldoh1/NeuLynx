@@ -67,6 +67,7 @@
 @property NSArray *allActivitiesArray;
 @property NSMutableArray *activitySearchResults;
 @property BOOL activityIsSelected;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *lgbtActivitySelector;
 
 //Profile Image
 @property UIImage *profileImage;
@@ -152,7 +153,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.fitnessActivityButton addTarget:self action:@selector(fitnessButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.outdoorsActivityButton addTarget:self action:@selector(outdoorsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 
-    
+    //Set up activity LGBT filter
+    self.lgbtActivitySelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
 
     //Setup Activity's array - initialize and allocate
@@ -177,14 +179,22 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmall.png"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmall.png"]];
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//
+//    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 50)];
+//    imageView.frame = titleView.bounds;
+//    [titleView addSubview:imageView];
+//
+//    self.navigationItem.titleView = titleView;
 
-    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 70)];
-    imageView.frame = titleView.bounds;
-    [titleView addSubview:imageView];
-
-    self.navigationItem.titleView = titleView;
+    //setting image to Navigation Bar's title
+    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 28)];
+    titleView.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
+    titleView.text = @"NeuLynx";
+    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
+    [self.navigationItem setTitleView:titleView];
 //    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
 //    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
 //    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];

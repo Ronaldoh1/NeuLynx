@@ -67,7 +67,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Important" id="fVp-oa-Xyf">
+                            <tableViewSection headerTitle="Search &amp; Connect 🔎" id="fVp-oa-Xyf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="4Yn-lq-ksf">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -139,7 +139,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Help" id="zxC-g5-GtT">
+                            <tableViewSection headerTitle="Help 💬❓" id="zxC-g5-GtT">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="if5-he-abZ">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -160,7 +160,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Important Information" id="lKG-O1-i9p">
+                            <tableViewSection headerTitle="Important Information ❗️" id="lKG-O1-i9p">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KkC-vX-XS4">
                                         <autoresizingMask key="autoresizingMask"/>

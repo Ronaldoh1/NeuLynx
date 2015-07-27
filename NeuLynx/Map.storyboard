@@ -27,6 +27,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Ofr-QE-oAU"/>
+                                    <constraint firstAttribute="height" constant="44" id="Xtl-bK-5JC"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
@@ -38,6 +39,13 @@
                                     <outlet property="delegate" destination="Dhs-Ky-Aot" id="sVq-EN-AeQ"/>
                                 </connections>
                             </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o9x-fO-nDQ">
+                                <rect key="frame" x="0.0" y="108" width="320" height="29"/>
+                                <segments>
+                                    <segment title="Any"/>
+                                    <segment title="LGBT"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -45,10 +53,14 @@
                             <constraint firstItem="DSL-s4-Shd" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="2Lm-M8-gx0"/>
                             <constraint firstItem="DSL-s4-Shd" firstAttribute="top" secondItem="GQj-2a-Y8K" secondAttribute="bottom" id="C8M-ef-29v"/>
                             <constraint firstItem="DSL-s4-Shd" firstAttribute="leading" secondItem="oKg-sS-Qbh" secondAttribute="leading" id="EGl-5b-EsO"/>
+                            <constraint firstItem="DSL-s4-Shd" firstAttribute="top" secondItem="GQj-2a-Y8K" secondAttribute="bottom" id="Gds-LE-pYK"/>
+                            <constraint firstItem="o9x-fO-nDQ" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="Z5c-RA-EaK"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="top" secondItem="nCP-oT-zPp" secondAttribute="topMargin" id="c7e-NI-fiH"/>
                             <constraint firstItem="buX-nv-5uW" firstAttribute="top" secondItem="oKg-sS-Qbh" secondAttribute="bottom" id="f3t-0J-f54"/>
                             <constraint firstItem="oKg-sS-Qbh" firstAttribute="leading" secondItem="nCP-oT-zPp" secondAttribute="leadingMargin" constant="-16" id="hiI-zt-3mc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o9x-fO-nDQ" secondAttribute="trailing" constant="-16" id="rk5-BA-6tG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oKg-sS-Qbh" secondAttribute="trailing" constant="-16" id="sid-ZN-im6"/>
+                            <constraint firstItem="o9x-fO-nDQ" firstAttribute="top" secondItem="DSL-s4-Shd" secondAttribute="bottom" id="slE-qI-AyS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZYh-ie-qtU">
@@ -62,6 +74,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="lgbtActivitySelector" destination="o9x-fO-nDQ" id="wtK-qS-QB8"/>
                         <outlet property="mapView" destination="oKg-sS-Qbh" id="1xY-ty-mdI"/>
                         <outlet property="searchBar" destination="DSL-s4-Shd" id="210-fi-ATK"/>
                     </connections>

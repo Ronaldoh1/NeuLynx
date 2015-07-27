@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *activityHeadCount;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *privacySelector;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *whoCanJoinSelector;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *lgbtSelector;
 
 @property (weak, nonatomic) IBOutlet UILabel *activityAddress;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
@@ -129,6 +130,8 @@
     //set up segmented control for who can join
     self.whoCanJoinSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
+    //set up the segmented control for LGBT
+    self.lgbtSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -163,6 +166,7 @@
         self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
         self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
         self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
+        self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
 
         //saving images if the first is picked only save the first image.
         self.activity.selectedCategory = self.selectedCategory;
