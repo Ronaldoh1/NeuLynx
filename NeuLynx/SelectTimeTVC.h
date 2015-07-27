@@ -14,5 +14,7 @@
 @property Activity *activity;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property NSDate *startDateAndTime;
+@property NSDate *endDateAndTime;
 
 @end

@@ -88,7 +88,7 @@
                                                         <constraint firstAttribute="width" constant="35" id="wfi-Kc-vT8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PictureCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-PH-FZs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-PH-FZs">
                                                     <rect key="frame" x="93" y="4" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="135" id="QV2-AO-t9t"/>
@@ -366,12 +366,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PictureCircle.png" width="200" height="200"/>
         <image name="br.png" width="48" height="48"/>
         <image name="chatIcon.png" width="512" height="512"/>
         <image name="defaultImage" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="fr.png" width="48" height="48"/>
+        <image name="profileCircle.png" width="417" height="417"/>
         <image name="spa.png" width="32" height="32"/>
         <image name="twitterIcon.png" width="128" height="128"/>
         <image name="us.png" width="48" height="48"/>

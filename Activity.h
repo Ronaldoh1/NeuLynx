@@ -27,6 +27,9 @@
 @property NSMutableArray *acceptedPeopleArray;
 @property NSMutableArray *RequestsArray;
 
+//**0 = anyone 1 = students only**
+@property NSNumber *studentsOnly;
+
 //**0 = public 1 = private**
 @property NSNumber *activityPrivacy;
 

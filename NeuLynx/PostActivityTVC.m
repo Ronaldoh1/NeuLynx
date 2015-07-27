@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *activityNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *activityHeadCount;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *privacySelector;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *whoCanJoinSelector;
+
 @property (weak, nonatomic) IBOutlet UILabel *activityAddress;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
@@ -41,7 +43,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *nightOutButton;
 @property (weak, nonatomic) IBOutlet UIButton *culturalButton;
 @property (weak, nonatomic) IBOutlet UIButton *fitnessButton;
+@property (weak, nonatomic) IBOutlet UIButton *studentLifeButton;
 
+
+//********Date & Times*********
+@property NSDate *startDateAndTime;
+@property NSDate *endDateAndTime;
 
 @end
 
@@ -119,6 +126,8 @@
     //set up segmented control
     self.privacySelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
+    //set up segmented control for who can join
+    self.whoCanJoinSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
 }
 
@@ -149,8 +158,11 @@
         self.activity.activityLocation = self.activityGeoPoint;
         self.activity.numberOfpaticipants = @0;
         self.activity.host = [User currentUser];
+        self.activity.startTimeAndDate = self.startDateAndTime;
+        self.activity.endTimeAndDate = self.endDateAndTime;
         self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
         self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
+        self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
 
         //saving images if the first is picked only save the first image.
         self.activity.selectedCategory = self.selectedCategory;
@@ -315,6 +327,16 @@
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
 }
+- (IBAction)onStudentLifeButtonTapped:(UIButton *)sender {
+    self.selectedCategory = @"Student Life";
+    self.studentLifeButton.alpha = 1.0;
+    self.outdoorsButton.alpha = 0.3;
+    self.gastronomyButton.alpha = 0.3;
+    self.festivalButton.alpha = 0.3;
+    self.nightOutButton.alpha = 0.3;
+    self.culturalButton.alpha = 0.3;
+    self.fitnessButton.alpha = 0.3;
+}
 
 #pragma mark - UITextView Delegate Methods
 
@@ -360,13 +382,14 @@
 }
 
 #pragma mark - Table view data source
+
 //The following method is used to managed which cells are selectable.
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.row == 0 && indexPath.section == 1) {
+    if (indexPath.row == 0 && indexPath.section == 2) {
         return indexPath;
-    } if (indexPath.row == 0 && indexPath.section == 2){
+    } if (indexPath.row == 0 && indexPath.section == 3){
         return indexPath;
     }else {
         return nil;
@@ -511,8 +534,11 @@
 
 if([segue.sourceViewController isKindOfClass:[SelectTimeTVC class]]){
     SelectTimeTVC *selectTimeVC = [segue sourceViewController];
-    self.activity.startTimeAndDate = selectTimeVC.activity.startTimeAndDate;
-    self.activity.endTimeAndDate = selectTimeVC.activity.endTimeAndDate;
+    self.startDateAndTime = selectTimeVC.activity.startTimeAndDate;
+    self.endDateAndTime = selectTimeVC.activity.endTimeAndDate;
+
+    NSLog(@"%@", selectTimeVC.startTimeLabel.text);
+    NSLog(@"%@", self.endDateAndTime);
     self.startTimeLabel.text = [NSString stringWithFormat:@"Start: %@", selectTimeVC.startTimeLabel.text];
     self.endTimeLabel.text = [NSString stringWithFormat:@"End: %@",selectTimeVC.endTimeLabel.text];
     self.tempLabel.text = @"";

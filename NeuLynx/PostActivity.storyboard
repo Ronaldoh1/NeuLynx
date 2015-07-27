@@ -169,7 +169,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="outDoorsButtonTapped:" destination="fz1-a5-1ea" eventType="touchUpInside" id="A60-g5-aUb"/>
+                                                        <action selector="onStudentLifeButtonTapped:" destination="fz1-a5-1ea" eventType="touchUpInside" id="h47-HB-7Wl"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhT-aG-vY9">
@@ -231,14 +231,6 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got Any Pictures?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Y-7h-R8f">
-                                                    <rect key="frame" x="90" y="12" width="141" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="PTP-ct-aDV"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePlaceholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="ODn-yr-V20">
                                                     <rect key="frame" x="18" y="41" width="130" height="130"/>
                                                     <constraints>
@@ -272,6 +264,14 @@
                                                         <action selector="onImageTwoSelected:" destination="fz1-a5-1ea" eventType="touchUpInside" id="jUv-au-orY"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Got Any Pictures?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0Y-7h-R8f">
+                                                    <rect key="frame" x="90" y="12" width="141" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="PTP-ct-aDV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="6Js-58-JIS" secondAttribute="centerY" constant="-19" id="5zt-Z7-L6G"/>
@@ -306,6 +306,31 @@
                                                 <constraint firstItem="gzg-Yp-uyZ" firstAttribute="trailing" secondItem="OJD-tW-FZc" secondAttribute="trailingMargin" id="caR-uS-o1m"/>
                                                 <constraint firstItem="gzg-Yp-uyZ" firstAttribute="top" secondItem="OJD-tW-FZc" secondAttribute="topMargin" id="df3-Ul-kb3"/>
                                                 <constraint firstItem="gzg-Yp-uyZ" firstAttribute="leading" secondItem="OJD-tW-FZc" secondAttribute="leadingMargin" id="tII-xJ-iiV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Who?" id="qP4-sL-Gl1" userLabel="Who Can Join?">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aoW-lE-hUW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aoW-lE-hUW" id="w0e-Yi-C4n">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-bj-f8M">
+                                                    <rect key="frame" x="8" y="5" width="304" height="34"/>
+                                                    <segments>
+                                                        <segment title="Anyone"/>
+                                                        <segment title="Students Only"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vCP-bj-f8M" secondAttribute="bottom" constant="-3" id="GPN-G5-OyE"/>
+                                                <constraint firstItem="vCP-bj-f8M" firstAttribute="leading" secondItem="w0e-Yi-C4n" secondAttribute="leadingMargin" id="Nc9-Xg-xOY"/>
+                                                <constraint firstItem="vCP-bj-f8M" firstAttribute="trailing" secondItem="w0e-Yi-C4n" secondAttribute="trailingMargin" id="WZ3-Du-Gfb"/>
+                                                <constraint firstItem="vCP-bj-f8M" firstAttribute="top" secondItem="w0e-Yi-C4n" secondAttribute="topMargin" constant="-3" id="ndI-Z2-Zpk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -432,7 +457,9 @@
                         <outlet property="outdoorsButton" destination="m8h-BZ-4VF" id="ZcD-Hc-Fag"/>
                         <outlet property="privacySelector" destination="gzg-Yp-uyZ" id="19f-qR-va8"/>
                         <outlet property="startTimeLabel" destination="tFb-Ux-qdz" id="mOG-9r-EOL"/>
+                        <outlet property="studentLifeButton" destination="38Z-3U-d3j" id="8V9-4w-f1B"/>
                         <outlet property="tempLabel" destination="mj8-5F-QrV" id="mzu-od-WnJ"/>
+                        <outlet property="whoCanJoinSelector" destination="vCP-bj-f8M" id="H3h-SZ-Ksu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abb-vT-7Hj" userLabel="First Responder" sceneMemberID="firstResponder"/>

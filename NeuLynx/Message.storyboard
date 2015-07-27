@@ -31,7 +31,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tEO-al-4JW" secondAttribute="bottom" constant="-1" id="VPH-RS-Ocw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tEO-al-4JW" secondAttribute="bottom" constant="-2" id="VPH-RS-Ocw"/>
                                                 <constraint firstItem="tEO-al-4JW" firstAttribute="leading" secondItem="dzo-Ar-VbR" secondAttribute="leadingMargin" id="dec-q6-5e4"/>
                                                 <constraint firstItem="tEO-al-4JW" firstAttribute="top" secondItem="dzo-Ar-VbR" secondAttribute="topMargin" constant="-1" id="nhi-Sl-LYV"/>
                                                 <constraint firstItem="tEO-al-4JW" firstAttribute="trailing" secondItem="dzo-Ar-VbR" secondAttribute="trailingMargin" id="qmM-Qa-cMd"/>
@@ -47,7 +47,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86Y-NH-0st" id="acf-14-2OU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiS-cs-HPM">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SiS-cs-HPM">
                                                     <rect key="frame" x="8" y="8" width="304" height="314"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>

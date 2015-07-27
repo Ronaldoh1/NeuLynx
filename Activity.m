@@ -24,6 +24,7 @@
 @dynamic acceptedPeopleArray;
 @dynamic RequestsArray;
 @dynamic activityPrivacy;
+@dynamic studentsOnly;
 
 
 +(void)load {
