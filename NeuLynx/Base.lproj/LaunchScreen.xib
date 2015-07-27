@@ -29,16 +29,23 @@
                         </mask>
                     </variation>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-Ns-4XX">
+                    <rect key="frame" x="8" y="80" width="398" height="141"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="rcl-M2-9Hy" secondAttribute="bottom" id="1cj-Cd-nc9"/>
+                <constraint firstItem="8h0-gc-eKc" firstAttribute="top" secondItem="AY2-Ns-4XX" secondAttribute="bottom" constant="205" id="5AG-Gr-sm9"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Xc-7V-1iV"/>
                 <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="9EO-8S-2Vf"/>
                 <constraint firstAttribute="trailing" secondItem="8h0-gc-eKc" secondAttribute="trailing" constant="8" id="FiX-Oq-q67"/>
+                <constraint firstAttribute="trailing" secondItem="AY2-Ns-4XX" secondAttribute="trailing" constant="8" id="NUW-rd-Lca"/>
+                <constraint firstItem="AY2-Ns-4XX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="QWs-wF-5XV"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFf-Lv-ETJ"/>
                 <constraint firstAttribute="trailing" secondItem="rcl-M2-9Hy" secondAttribute="trailing" id="bcv-DL-Trb"/>
                 <constraint firstAttribute="centerY" secondItem="8h0-gc-eKc" secondAttribute="centerY" constant="-211.5" id="et7-2g-XK0"/>
+                <constraint firstItem="AY2-Ns-4XX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="yZo-a7-Y8x"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -47,6 +54,7 @@
     </objects>
     <resources>
         <image name="NeuLynxSlogan" width="1080" height="400"/>
+        <image name="appNameMedium.png" width="800" height="345"/>
         <image name="introSplashScreen.png" width="1242" height="2208"/>
     </resources>
 </document>

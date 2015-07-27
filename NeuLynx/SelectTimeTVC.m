@@ -71,6 +71,8 @@
                 self.tempString1 = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
         
                 self.activity.startTimeAndDate = self.datePicker.date;
+
+                self.startDateAndTime = self.datePicker.date;
     
 
 //            } else {
@@ -93,6 +95,7 @@
 
         self.endTimeLabel.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
         self.activity.endTimeAndDate = self.datePicker.date;
+        self.endDateAndTime = self.datePicker.date;
 
     }
 }

@@ -209,33 +209,37 @@
         
     }else if(indexPath.row == 2 && indexPath.section == 4){
 
-        NSString *fbURL = @"https://www.facebook.com/NeuLynx?filter=1";
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:fbURL]];
+        NSURL *fanPageURL = [NSURL URLWithString:@"fb://profile/647265878689136"];
+        [[UIApplication sharedApplication] openURL:fanPageURL];
 
         
     }else if(indexPath.row == 3 && indexPath.section == 4){
-        NSString *twitterURL = @"https://twitter.com/neulynx";
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:twitterURL]];
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=neulynx"]];
         
     }else if(indexPath.row == 4 && indexPath.section == 4){
 
-        NSString *instaURL = @"https://instagram.com/neulynx/";
+//        NSString *instaURL = @"https://instagram.com/neulynx/";
+//
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:instaURL]];
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:instaURL]];
-
+        NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=neulynx"];
+        if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+            [[UIApplication sharedApplication] openURL:instagramURL];
+        }
         
     }else if(indexPath.row == 5 && indexPath.section == 4){
 
 
-        NSString *periscopeURL = @"https://www.periscope.tv";
+        NSString *periscopeURL = @"https://watchonperiscope.com/users/neulynx/9201917";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:periscopeURL]];
 
     }else if(indexPath.row == 6 && indexPath.section == 4){
 
-        NSString *vineURL = @"https://vine.co";
+        NSString *vineURL = @"vine://user/1010410284269150208";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vineURL]];
         

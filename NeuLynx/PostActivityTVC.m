@@ -534,11 +534,10 @@
 
 if([segue.sourceViewController isKindOfClass:[SelectTimeTVC class]]){
     SelectTimeTVC *selectTimeVC = [segue sourceViewController];
-    self.startDateAndTime = selectTimeVC.activity.startTimeAndDate;
-    self.endDateAndTime = selectTimeVC.activity.endTimeAndDate;
+    self.startDateAndTime = selectTimeVC.startDateAndTime;
+    self.endDateAndTime = selectTimeVC.endDateAndTime;
 
-    NSLog(@"%@", selectTimeVC.startTimeLabel.text);
-    NSLog(@"%@", self.endDateAndTime);
+
     self.startTimeLabel.text = [NSString stringWithFormat:@"Start: %@", selectTimeVC.startTimeLabel.text];
     self.endTimeLabel.text = [NSString stringWithFormat:@"End: %@",selectTimeVC.endTimeLabel.text];
     self.tempLabel.text = @"";

@@ -177,7 +177,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
 
     //Set the Title and Color
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmallBlack.png"]];
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmall.png"]];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
 
     UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 70)];

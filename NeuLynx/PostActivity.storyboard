@@ -165,7 +165,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="GTV-2y-rHl"/>
                                                         <constraint firstAttribute="width" constant="40" id="NXn-ib-68u"/>
                                                     </constraints>
-                                                    <state key="normal" backgroundImage="wOutdoors.png">
+                                                    <state key="normal" backgroundImage="wStudentLife.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -692,5 +692,6 @@
         <image name="wGastronomy.png" width="417" height="417"/>
         <image name="wNightOut.png" width="417" height="417"/>
         <image name="wOutdoors.png" width="417" height="417"/>
+        <image name="wStudentLife.png" width="417" height="417"/>
     </resources>
 </document>
