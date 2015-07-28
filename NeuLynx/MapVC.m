@@ -193,7 +193,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 28)];
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
     titleView.text = @"NeuLynx";
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];

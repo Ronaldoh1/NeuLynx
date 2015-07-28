@@ -48,7 +48,7 @@
 
     //Set the title for the VC.
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = [NSString stringWithFormat:@"Search for %@", self.selectedCategory];
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
