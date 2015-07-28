@@ -191,7 +191,7 @@
 
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
-        self.heightConstraint.constant = 250;
+        self.heightConstraint.constant = 260;
         [self.view layoutIfNeeded];
 
     } completion:nil];

@@ -30,7 +30,7 @@
 @property UIButton *nightOutActivityButton;
 @property UIButton *fitnessActivityButton;
 @property UIButton *outdoorsActivityButton;
-@property UIButton *universityActivityButton;
+@property UIButton *studentLifeActivityButton;
 
 @property UIDynamicAnimator *dynamicAnimator;
 @property BOOL isFannedOut;
@@ -59,6 +59,7 @@
 @property NSMutableArray *nightOutActivityArray;
 @property NSMutableArray *fitnessActivityArray;
 @property NSMutableArray *outDoorsActivityArray;
+@property NSMutableArray *studentLifeActivityArray;
 
 
 //MAP
@@ -152,6 +153,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.nightOutActivityButton addTarget:self action:@selector(nightoutButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.fitnessActivityButton addTarget:self action:@selector(fitnessButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.outdoorsActivityButton addTarget:self action:@selector(outdoorsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.studentLifeActivityButton addTarget:self action:@selector(studentLifeButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 
     //Set up activity LGBT filter
     self.lgbtActivitySelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
@@ -165,6 +167,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.nightOutActivityArray = [NSMutableArray new];
     self.fitnessActivityArray = [NSMutableArray new];
     self.outDoorsActivityArray = [NSMutableArray new];
+    self.studentLifeActivityArray = [NSMutableArray new];
 
     self.allActivitiesArray = [NSMutableArray new];
 
@@ -281,7 +284,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.fitnessActivityButton = [self createButton:@"Fitness" willShow:YES];
     self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
     // self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
-    self.universityActivityButton = [self createButton:@"Student Life" willShow:YES];
+    self.studentLifeActivityButton = [self createButton:@"Student Life" willShow:YES];
     self.mainDiscoverButton = [self createButton:@"" willShow:NO];
 
 
@@ -294,7 +297,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.nightOutActivityButton setBackgroundImage:[UIImage imageNamed:@"mainNightout"] forState:UIControlStateNormal];
     [self.fitnessActivityButton setBackgroundImage:[UIImage imageNamed:@"mainFitness"] forState:UIControlStateNormal];
     [self.outdoorsActivityButton setBackgroundImage:[UIImage imageNamed:@"mainOutdoors"] forState:UIControlStateNormal];
-    [self.universityActivityButton setBackgroundImage:[UIImage imageNamed:@"mainStudentLife"] forState:UIControlStateNormal];
+    [self.studentLifeActivityButton setBackgroundImage:[UIImage imageNamed:@"mainStudentLife"] forState:UIControlStateNormal];
     [self.mainDiscoverButton addTarget:self action:@selector(fanButtons:) forControlEvents:UIControlEventTouchUpInside];
 
     //Initially hide the buttons
@@ -317,7 +320,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     for(UIView *view in self.outdoorsActivityButton.subviews){
         view.hidden = YES;
     }
-    for(UIView *view in self.universityActivityButton.subviews){
+    for(UIView *view in self.studentLifeActivityButton.subviews){
         view.hidden = YES;
     }
 
@@ -419,7 +422,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
         }
-        for(UIView *view in self.universityActivityButton.subviews){
+        for(UIView *view in self.studentLifeActivityButton.subviews){
             view.hidden = NO;
 
             
@@ -440,7 +443,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [self snapButton:self.nightOutActivityButton toPoint:self.mainDiscoverButton.center];
         [self snapButton:self.fitnessActivityButton toPoint:self.mainDiscoverButton.center];
         [self snapButton:self.outdoorsActivityButton toPoint:self.mainDiscoverButton.center];
-        [self snapButton:self.universityActivityButton toPoint:self.mainDiscoverButton.center];
+        [self snapButton:self.studentLifeActivityButton toPoint:self.mainDiscoverButton.center];
 
         for(UIView *view in self.festivalActivityButton.subviews){
             view.hidden = YES;
@@ -460,7 +463,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         for(UIView *view in self.outdoorsActivityButton.subviews){
             view.hidden = YES;
         }
-        for(UIView *view in self.universityActivityButton.subviews){
+        for(UIView *view in self.studentLifeActivityButton.subviews){
             view.hidden = YES;
         }
 
@@ -485,7 +488,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y - 117.0)];
     [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 40.0, self.mainDiscoverButton.frame.origin.y - 166.0)];
     [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 10.0, self.mainDiscoverButton.frame.origin.y - 211.0)];
-    [self snapButton:self.universityActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 32.0, self.mainDiscoverButton.frame.origin.y - 244.0)];
+    [self snapButton:self.studentLifeActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 32.0, self.mainDiscoverButton.frame.origin.y - 244.0)];
 }
 
 
@@ -498,24 +501,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 -(void)festivalButtonTapped{
     NSLog(@"festival button tapped");
 
-
-
     [self.mapView removeAnnotations:self.mapView.annotations];
     
     [self.mapView addAnnotations:self.festivalActivityArray];
-//
-//    [self.mapView removeAnnotations:self.culturalActivityArray];
-//
-//
-//    [self.mapView removeAnnotations:self.gastronomyActivityArray];
-//
-//    [self.mapView removeAnnotations:self.nightOutActivityArray];
-//
-//
-//    [self.mapView removeAnnotations:self.fitnessActivityArray];
-//
-//    [self.mapView removeAnnotations:self.outDoorsActivityArray];
-
 
 }
 
@@ -545,6 +533,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     NSLog(@"outdoors button tapped");
         [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:self.outDoorsActivityArray];
+}
+-(void)studentLifeButtonTapped{
+    NSLog(@"student Life button tapped");
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:self.studentLifeActivityArray];
 }
 
 //helper method to create blinking ring images.
@@ -758,6 +751,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                     } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
                         [self.outDoorsActivityArray addObject:self.pinAnnotation];
+
+                    } else if ([activity.selectedCategory isEqualToString:@"Student Life"]) {
+                        [self.studentLifeActivityArray addObject:self.pinAnnotation];
                     }
 
 
@@ -1077,6 +1073,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
             [self.outDoorsActivityArray addObject:self.pinAnnotation];
+
+        } else if ([activity.selectedCategory isEqualToString:@"Student Life"]) {
+            [self.outDoorsActivityArray addObject:self.pinAnnotation];
         }
 
         [self.mapView addAnnotation:self.pinAnnotation];
@@ -1180,6 +1179,12 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
             
             UIImage *image = [UIImage imageNamed:@"outdoorsPin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+
+        } else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Student Life"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
+
+            UIImage *image = [UIImage imageNamed:@"studentLifePin.png"];
             annotationView.image =  [self resizeImageForPins:image];
             leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
