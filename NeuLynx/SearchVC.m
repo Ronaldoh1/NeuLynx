@@ -86,7 +86,7 @@
         [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
     
             // NSArray *activitiesArray = activities;
-            NSLog(@"%@ wattttt", activities);
+           // NSLog(@"%@ wattttt", activities);
     
     
             if (!error) {

@@ -108,8 +108,7 @@
 
     NSString *text = ((Message *)[self.MessageArray objectAtIndex:indexPath.row]).messageText;
 
-    // iOS7だとこのコードが使えないのでその下のコード
-    // 後にiOS6以下でも走るよう条件分岐する必要があるかも
+
     // CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:14.0] constrainedToSize:CGSizeMake(240.0f, 480.0f) lineBreakMode:NSLineBreakByWordWrapping];
     CGSize size = [text boundingRectWithSize:CGSizeMake(240.0f, 480.0f)
                                      options:NSStringDrawingUsesLineFragmentOrigin
@@ -118,9 +117,10 @@
 
     UIImage *balloon;
 
-    // ここでセルに表示する左右の分岐
-    if(indexPath.row % 2 == 0)
-    {
+   
+//    if(indexPath.row % 2 == 0)
+        if([((Message *)[self.MessageArray objectAtIndex:indexPath.row]).sender isEqual:[User currentUser]]) {
+
         balloonView.frame = CGRectMake(370.0f - (size.width + 28.0f), 2.0f, size.width + 28.0f, size.height + 15.0f);
         balloon = [[UIImage imageNamed:@"aqua.png"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
         label.frame = CGRectMake(357.0f - (size.width + 5.0f), 8.0f, size.width + 5.0f, size.height);

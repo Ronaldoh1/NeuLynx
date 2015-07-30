@@ -71,6 +71,11 @@
     [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
 }
 
+- (IBAction)onStudentLifeButtonTapped:(id)sender {
+
+    self.selectedCategory = @"Student Life";
+    [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
+}
 //SEGUE
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 

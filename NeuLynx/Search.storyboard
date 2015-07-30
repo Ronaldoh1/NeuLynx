@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-Oy-ljZ">
-                                <rect key="frame" x="200" y="154" width="125" height="125"/>
+                                <rect key="frame" x="222" y="154" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="4Jf-s5-Ny6"/>
-                                    <constraint firstAttribute="height" constant="125" id="oGr-Yx-1mB"/>
+                                    <constraint firstAttribute="width" constant="100" id="4Jf-s5-Ny6"/>
+                                    <constraint firstAttribute="height" constant="100" id="oGr-Yx-1mB"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wGastronomy.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,10 +31,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gM-Jr-uvB">
-                                <rect key="frame" x="0.0" y="282" width="125" height="125"/>
+                                <rect key="frame" x="0.0" y="282" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="8fq-eG-uKv"/>
-                                    <constraint firstAttribute="width" constant="125" id="gaE-NS-MyI"/>
+                                    <constraint firstAttribute="height" constant="100" id="8fq-eG-uKv"/>
+                                    <constraint firstAttribute="width" constant="100" id="gaE-NS-MyI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wNightOut.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,10 +44,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJM-i7-eGb">
-                                <rect key="frame" x="194" y="282" width="125" height="125"/>
+                                <rect key="frame" x="217" y="282" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="R0P-NR-Bgy"/>
-                                    <constraint firstAttribute="height" constant="125" id="hmO-Nn-vdP"/>
+                                    <constraint firstAttribute="width" constant="100" id="R0P-NR-Bgy"/>
+                                    <constraint firstAttribute="height" constant="100" id="hmO-Nn-vdP"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wOutdoors.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,10 +57,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-Ho-npY">
-                                <rect key="frame" x="100" y="360" width="125" height="125"/>
+                                <rect key="frame" x="112" y="360" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="G77-9S-zYI"/>
-                                    <constraint firstAttribute="height" constant="125" id="Jab-6k-aB3"/>
+                                    <constraint firstAttribute="width" constant="100" id="G77-9S-zYI"/>
+                                    <constraint firstAttribute="height" constant="100" id="Jab-6k-aB3"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wFitness.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,10 +70,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnH-J3-axH">
-                                <rect key="frame" x="100" y="64" width="125" height="125"/>
+                                <rect key="frame" x="111" y="64" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="Mgr-UQ-5Rh"/>
-                                    <constraint firstAttribute="width" constant="125" id="XMy-wf-w45"/>
+                                    <constraint firstAttribute="height" constant="100" id="Mgr-UQ-5Rh"/>
+                                    <constraint firstAttribute="width" constant="100" id="XMy-wf-w45"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wCultural.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,10 +83,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtN-j2-lwL">
-                                <rect key="frame" x="0.0" y="154" width="125" height="125"/>
+                                <rect key="frame" x="0.0" y="154" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="09f-Vp-Mq6"/>
-                                    <constraint firstAttribute="width" constant="125" id="2bs-nq-mFJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="09f-Vp-Mq6"/>
+                                    <constraint firstAttribute="width" constant="100" id="2bs-nq-mFJ"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="wFestival.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,21 +95,36 @@
                                     <action selector="onFestivalButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="VvC-QU-v15"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubF-YM-lX3">
+                                <rect key="frame" x="110" y="207" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ZL8-lG-vIU"/>
+                                    <constraint firstAttribute="height" constant="100" id="cLT-zC-mhg"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="wStudentLife.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStudentLifeButtonTapped:" destination="kwW-3Z-Ve1" eventType="touchUpInside" id="Cze-uy-8jt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="d7e-Oy-ljZ" secondAttribute="centerX" constant="-102.5" id="1d4-vb-7eh"/>
+                            <constraint firstAttribute="centerX" secondItem="d7e-Oy-ljZ" secondAttribute="centerX" constant="-112" id="1d4-vb-7eh"/>
+                            <constraint firstAttribute="centerY" secondItem="ubF-YM-lX3" secondAttribute="centerY" constant="-17" id="6Fu-9k-igc"/>
                             <constraint firstAttribute="centerX" secondItem="f4o-Ho-npY" secondAttribute="centerX" constant="-2.5" id="8rM-rL-9uk"/>
-                            <constraint firstAttribute="centerY" secondItem="4gM-Jr-uvB" secondAttribute="centerY" constant="-104.5" id="BKY-xN-pfz"/>
-                            <constraint firstAttribute="centerY" secondItem="f4o-Ho-npY" secondAttribute="centerY" constant="-182.5" id="IUQ-Qh-xNt"/>
-                            <constraint firstAttribute="centerY" secondItem="d7e-Oy-ljZ" secondAttribute="centerY" constant="23.5" id="Jzv-Bm-Sjb"/>
-                            <constraint firstAttribute="centerY" secondItem="lJM-i7-eGb" secondAttribute="centerY" constant="-104.5" id="RaH-ph-U9V"/>
-                            <constraint firstAttribute="centerY" secondItem="wtN-j2-lwL" secondAttribute="centerY" constant="23.5" id="SVI-He-rPr"/>
-                            <constraint firstAttribute="centerX" secondItem="lJM-i7-eGb" secondAttribute="centerX" constant="-96.5" id="WgW-yG-acS"/>
-                            <constraint firstAttribute="centerY" secondItem="rnH-J3-axH" secondAttribute="centerY" constant="113.5" id="co1-m6-oot"/>
-                            <constraint firstAttribute="centerX" secondItem="rnH-J3-axH" secondAttribute="centerX" constant="-2.5" id="lfB-E4-aTc"/>
-                            <constraint firstAttribute="centerX" secondItem="4gM-Jr-uvB" secondAttribute="centerX" constant="97.5" id="se5-31-Swy"/>
-                            <constraint firstAttribute="centerX" secondItem="wtN-j2-lwL" secondAttribute="centerX" constant="97.5" id="vsr-pv-qzN"/>
+                            <constraint firstAttribute="centerY" secondItem="4gM-Jr-uvB" secondAttribute="centerY" constant="-92" id="BKY-xN-pfz"/>
+                            <constraint firstAttribute="centerY" secondItem="f4o-Ho-npY" secondAttribute="centerY" constant="-170" id="IUQ-Qh-xNt"/>
+                            <constraint firstAttribute="centerY" secondItem="d7e-Oy-ljZ" secondAttribute="centerY" constant="36" id="Jzv-Bm-Sjb"/>
+                            <constraint firstAttribute="centerY" secondItem="lJM-i7-eGb" secondAttribute="centerY" constant="-92" id="RaH-ph-U9V"/>
+                            <constraint firstAttribute="centerY" secondItem="wtN-j2-lwL" secondAttribute="centerY" constant="36" id="SVI-He-rPr"/>
+                            <constraint firstAttribute="centerX" secondItem="lJM-i7-eGb" secondAttribute="centerX" constant="-107" id="WgW-yG-acS"/>
+                            <constraint firstAttribute="centerX" secondItem="ubF-YM-lX3" secondAttribute="centerX" id="akQ-go-ShL"/>
+                            <constraint firstAttribute="centerY" secondItem="rnH-J3-axH" secondAttribute="centerY" constant="126" id="co1-m6-oot"/>
+                            <constraint firstAttribute="centerX" secondItem="rnH-J3-axH" secondAttribute="centerX" constant="-1" id="lfB-E4-aTc"/>
+                            <constraint firstAttribute="centerX" secondItem="4gM-Jr-uvB" secondAttribute="centerX" constant="110" id="se5-31-Swy"/>
+                            <constraint firstAttribute="centerX" secondItem="wtN-j2-lwL" secondAttribute="centerX" constant="110" id="vsr-pv-qzN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Category" id="BWk-II-K93">
@@ -269,5 +284,6 @@
         <image name="wGastronomy.png" width="417" height="417"/>
         <image name="wNightOut.png" width="417" height="417"/>
         <image name="wOutdoors.png" width="417" height="417"/>
+        <image name="wStudentLife.png" width="417" height="417"/>
     </resources>
 </document>
