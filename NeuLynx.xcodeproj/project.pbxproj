@@ -163,6 +163,7 @@
 		F2D38AFF1B67332E007EBF41 /* AppIcon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AEB1B67332E007EBF41 /* AppIcon76x76~ipad.png */; };
 		F2D38B001B67332E007EBF41 /* AppIcon120x120_carplay.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AEC1B67332E007EBF41 /* AppIcon120x120_carplay.png */; };
 		F2D38B021B673DA7007EBF41 /* appNameMedium.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B011B673DA7007EBF41 /* appNameMedium.png */; };
+		F2D38B051B6A029A007EBF41 /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -390,6 +391,8 @@
 		F2D38AEB1B67332E007EBF41 /* AppIcon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76~ipad.png"; sourceTree = "<group>"; };
 		F2D38AEC1B67332E007EBF41 /* AppIcon120x120_carplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120x120_carplay.png; sourceTree = "<group>"; };
 		F2D38B011B673DA7007EBF41 /* appNameMedium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appNameMedium.png; sourceTree = "<group>"; };
+		F2D38B031B6A029A007EBF41 /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTVC.h; sourceTree = "<group>"; };
+		F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTVC.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -956,6 +959,8 @@
 			isa = PBXGroup;
 			children = (
 				F2E6E8BD1B1A43560083BA7F /* Search.storyboard */,
+				F2D38B031B6A029A007EBF41 /* SearchResultsTVC.h */,
+				F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */,
 				F2E6E8C21B1A60820083BA7F /* SearchVC.h */,
 				F2E6E8C31B1A60820083BA7F /* SearchVC.m */,
 				F2E6E8BF1B1A43740083BA7F /* SelectCategoryVC.h */,
@@ -1296,6 +1301,7 @@
 				F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */,
 				F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */,
 				F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */,
+				F2D38B051B6A029A007EBF41 /* SearchResultsTVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
 				F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */,
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,

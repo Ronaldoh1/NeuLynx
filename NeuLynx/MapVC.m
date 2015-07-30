@@ -157,6 +157,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     //Set up activity LGBT filter
     self.lgbtActivitySelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+    self.lgbtActivitySelector.backgroundColor = [UIColor whiteColor];
 
 
     //Setup Activity's array - initialize and allocate

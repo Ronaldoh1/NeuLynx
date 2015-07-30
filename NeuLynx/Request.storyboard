@@ -59,13 +59,13 @@
                                                         <action selector="onAcceptButtonTapped:" destination="mWW-ac-Ugg" eventType="touchUpInside" id="lWE-QW-oeY"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-ll-ogN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Fcx-ll-ogN">
                                                     <rect key="frame" x="83" y="8" width="134" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-IB-brJ">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-IB-brJ">
                                                     <rect key="frame" x="78" y="31" width="139" height="61"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -75,8 +75,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="Fm1-qT-xl9" secondAttribute="centerX" constant="-90" id="60e-XT-E7g"/>
-                                                <constraint firstItem="Ew4-IB-brJ" firstAttribute="bottom" secondItem="lz2-8f-JFM" secondAttribute="bottomMargin" id="7FU-IE-IpT"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Fcx-ll-ogN" secondAttribute="bottom" constant="58" id="AbR-C0-3mB"/>
+                                                <constraint firstItem="Ew4-IB-brJ" firstAttribute="bottom" secondItem="lz2-8f-JFM" secondAttribute="bottomMargin" constant="1" id="7FU-IE-IpT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Fcx-ll-ogN" secondAttribute="bottom" constant="57" id="AbR-C0-3mB"/>
                                                 <constraint firstAttribute="centerY" secondItem="Fm1-qT-xl9" secondAttribute="centerY" constant="-6" id="Eaq-YQ-Z8m"/>
                                                 <constraint firstAttribute="centerY" secondItem="4wV-In-8Cw" secondAttribute="centerY" id="FlJ-9P-zqb"/>
                                                 <constraint firstItem="Fcx-ll-ogN" firstAttribute="leading" secondItem="4wV-In-8Cw" secondAttribute="trailing" constant="8" id="JaP-N9-5uO"/>

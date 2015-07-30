@@ -14,12 +14,18 @@
 #import "AppDelegate.h"
 #import "CustomMKAnnotation.h"
 #import "CustomCell.h"
+#import "SearchResultsTVC.h"
 
-@interface SearchVC ()<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate>
+@interface SearchVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, CLLocationManagerDelegate>
+
+//Search Controller
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *searchResults;
+
 
 //TABLE VIEW
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSArray *activitiesForSearchArray;
+@property NSArray *activities;
 @property NSMutableArray *filteredTableDataArray;
 @property BOOL isFiltered;
 @property BOOL isAscending;
@@ -27,7 +33,7 @@
 //CORE LOCATION
 @property CLLocationManager *locationManager;
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 @property NSMutableArray *activitiesArray;
 
@@ -61,8 +67,19 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
 
+    //Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
 
+    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
 
+    //get an instance of UISearch Controller
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:searchResultsController];
+
+    self.searchController.searchResultsUpdater = self;
+
+    // We need to create our SearchBar Programatically
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 
 }
 
@@ -91,7 +108,7 @@
     
             if (!error) {
 
-                self.activitiesForSearchArray = [[NSArray alloc]initWithArray:activities];
+                self.activities = [[NSArray alloc]initWithArray:activities];
                 [self.tableView reloadData];
 
             }
@@ -104,47 +121,44 @@
 -(void)download{
 
     [ActivitiesDownloader downloadActivitiesForLocation:self.currentLocation andCategory:self.selectedCategory withCompletion:^(NSArray * array) {
-        self.activitiesForSearchArray = [NSMutableArray arrayWithArray:array];
+        self.activities = [NSMutableArray arrayWithArray:array];
 
     }];
 
 
 }
-
-#pragma mark - UISearchBarDelegate Delegate 
-
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-
-    if (self.searchBar.text.length == 0) {
-        self.isFiltered = NO;
-    }else{
-        self.isFiltered = YES;
-        self.filteredTableDataArray = [NSMutableArray new];
-
-        for (Activity *activity in self.activitiesForSearchArray) {
-            NSRange titleRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
-              NSRange descriptionRange = [activity.activityDescription rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
-
-            if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
-
-                [self.filteredTableDataArray addObject:activity];
-            }
-        }
-
-    }
-    [self.tableView reloadData];
-}
-
+//
+//#pragma mark - UISearchBarDelegate Delegate 
+//
+//-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+//
+//    if (self.searchBar.text.length == 0) {
+//        self.isFiltered = NO;
+//    }else{
+//        self.isFiltered = YES;
+//        self.filteredTableDataArray = [NSMutableArray new];
+//
+//        for (Activity *activity in self.activities) {
+//            NSRange titleRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
+//              NSRange descriptionRange = [activity.activityDescription rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
+//
+//            if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
+//
+//                [self.filteredTableDataArray addObject:activity];
+//            }
+//        }
+//
+//    }
+//    [self.tableView reloadData];
+//}
+//
 
 
 #pragma marks - TableView Delegates
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    if (self.isFiltered)
-        return self.filteredTableDataArray.count;
-    else
-    return self.activitiesForSearchArray.count;
+    return self.activities.count;
 }
 -(CustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -154,13 +168,13 @@
     //for every row in parse, we are getting a PFObject back. In our case, we will be getting an activity. For every activity, we will be retrieving values to populate the cell.
     Activity *tempActivity = [Activity new];
 
-    if (self.isFiltered == YES) {
+//    if (self.isFiltered == YES) {
+//
+//        tempActivity = [self.filteredTableDataArray objectAtIndex:indexPath.row];
+//    }else{
 
-        tempActivity = [self.filteredTableDataArray objectAtIndex:indexPath.row];
-    }else{
-
-    tempActivity = [self.activitiesForSearchArray objectAtIndex:indexPath.row];
-    }
+    tempActivity = [self.activities objectAtIndex:indexPath.row];
+    //}
 
 //    NSDictionary *tempDictionary = [[NSDictionary alloc]initWithDictionary:[self.activitiesForSearchArray objectAtIndex:indexPath.row]];
 
@@ -214,6 +228,67 @@
     return cell;
 }
 
+#pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
+
+// Called when the search bar becomes first responder
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+
+ //   NSLog(@"Ronald ");
+    // Set searchString equal to what's typed into the searchbar
+    NSString *searchString = self.searchController.searchBar.text;
+
+
+    [self updateFilteredContentForActivity:searchString];
+
+    // If searchResultsController
+    if (self.searchController.searchResultsController) {
+
+        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
+
+        // Present SearchResultsTableViewController as the topViewController
+        SearchResultsTVC *vc = (SearchResultsTVC *)navController.topViewController;
+
+        // Update searchResults
+        vc.searchResults = self.searchResults;
+
+        // And reload the tableView with the new data
+        [vc.tableView reloadData];
+    }
+}
+
+
+// Update self.searchResults based on searchString, which is the argument in passed to this method
+- (void)updateFilteredContentForActivity:(NSString *)searchStr
+{
+
+    if (searchStr == nil) {
+
+        // If empty the search results are the same as the original data
+        self.searchResults = [self.searchResults mutableCopy];
+    } else {
+
+
+        NSMutableArray *searchResults = [[NSMutableArray alloc] init];
+
+        //here we want to make sure that we return the activities that contain the string for non-case sensitive strings.
+
+        for (Activity *activity in self.activities) {
+            NSRange titleRange = [activity.activityTitle rangeOfString:searchStr options:NSCaseInsensitiveSearch];
+            NSRange descriptionRange = [activity.activityDescription rangeOfString:searchStr options:NSCaseInsensitiveSearch];
+
+            if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
+
+                 [searchResults addObject:activity];
+            }
+        }
+
+
+            self.searchResults = searchResults;
+
+    }
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
@@ -227,7 +302,7 @@ AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] del
     if (self.isFiltered) {
         appDelegate.sharedActivity = self.filteredTableDataArray[indexPath.row];
     } else {
-        appDelegate.sharedActivity = self.activitiesForSearchArray[indexPath.row];
+        appDelegate.sharedActivity = self.activities[indexPath.row];
     }
 
 
