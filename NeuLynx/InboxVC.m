@@ -52,6 +52,9 @@
 
 }
 
+- (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 #pragma mark - UITableView Delegate 

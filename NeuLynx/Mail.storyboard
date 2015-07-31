@@ -53,7 +53,13 @@
                             <constraint firstItem="lyQ-4m-IDT" firstAttribute="leading" secondItem="O7D-WS-1NQ" secondAttribute="leadingMargin" constant="-16" id="k7u-aC-IKI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Inbox" id="9Pf-Ll-Had"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="9Pf-Ll-Had">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="agt-TI-Ld2">
+                            <connections>
+                                <action selector="onDoneButtonDone:" destination="M5h-75-FTC" id="ZIC-Ze-3s3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="lyQ-4m-IDT" id="z7w-2F-JLe"/>

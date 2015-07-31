@@ -166,6 +166,7 @@
 		F2D38B051B6A029A007EBF41 /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */; };
 		F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */; };
 		F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */; };
+		F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -398,6 +399,7 @@
 		F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exclusive.storyboard; sourceTree = "<group>"; };
 		F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveTVC.h; sourceTree = "<group>"; };
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
+		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -914,6 +916,7 @@
 				F2D38AB51B649992007EBF41 /* neulynxName.png */,
 				F2D38AB41B649992007EBF41 /* clearLogo.png */,
 				F2D38AD51B65DE18007EBF41 /* neulynxNameSmall.png */,
+				F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */,
 				F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */,
 			);
 			name = "App Logo";
@@ -1183,6 +1186,7 @@
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */,
 				F2D38AF91B67332E007EBF41 /* AppIcon57x57@2x.png in Resources */,
+				F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */,
 				F23435221B37C8C10065D11C /* termsIcon.png in Resources */,
 				F2D38AFB1B67332E007EBF41 /* AppIcon60x60@3x.png in Resources */,
 				F2292EF41B25508E003D82D5 /* mainCultural.png in Resources */,
