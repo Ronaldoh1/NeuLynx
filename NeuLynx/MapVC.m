@@ -509,7 +509,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.culturalActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
@@ -523,7 +523,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.gastronomyActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
@@ -537,7 +537,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.nightOutActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
@@ -551,7 +551,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.fitnessActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
@@ -565,7 +565,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.outDoorsActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
@@ -579,7 +579,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-        [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.studentLifeActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
