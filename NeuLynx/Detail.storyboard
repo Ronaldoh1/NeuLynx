@@ -191,6 +191,26 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="36" id="SsK-8i-u6f">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SsK-8i-u6f" id="8rW-wi-wxG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0b2-xz-W5I">
+                                                    <rect key="frame" x="8" y="7" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0b2-xz-W5I" firstAttribute="top" secondItem="8rW-wi-wxG" secondAttribute="topMargin" constant="-1" id="M2C-kG-vBa"/>
+                                                <constraint firstItem="0b2-xz-W5I" firstAttribute="trailing" secondItem="8rW-wi-wxG" secondAttribute="trailingMargin" id="UiY-jQ-mbd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0b2-xz-W5I" secondAttribute="bottom" constant="-1" id="s92-jb-3Ra"/>
+                                                <constraint firstItem="0b2-xz-W5I" firstAttribute="leading" secondItem="8rW-wi-wxG" secondAttribute="leadingMargin" id="vUG-kY-b0H"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Cool Pictures" id="01u-OZ-bhm">
@@ -337,6 +357,7 @@
                         <outlet property="numberOfPeopleLabel" destination="sXf-6q-MCh" id="LSy-Li-hqj"/>
                         <outlet property="portugueseFlag" destination="wzv-4U-Fq3" id="B4L-VZ-evx"/>
                         <outlet property="spanishFlag" destination="Y0W-nn-zXw" id="q0u-Ho-wcb"/>
+                        <outlet property="typeActivityLabel" destination="0b2-xz-W5I" id="h1K-fE-XlD"/>
                         <outlet property="userNameLabel" destination="zc7-W3-czk" id="BKT-fn-fml"/>
                         <outlet property="userProfileImageView" destination="DK2-Mi-ASX" id="CXB-Wk-aU4"/>
                     </connections>

@@ -53,6 +53,7 @@
 
 //Activities
 @property NSMutableArray *activitiesArray; //contains all activities;
+@property NSMutableArray *lgbtFilteredActivitiesArray;
 @property NSMutableArray *festivalActivityArray;
 @property NSMutableArray *culturalActivityArray;
 @property NSMutableArray *gastronomyActivityArray;
@@ -171,6 +172,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.studentLifeActivityArray = [NSMutableArray new];
 
     self.allActivitiesArray = [NSMutableArray new];
+    self.lgbtFilteredActivitiesArray = [NSMutableArray new];
 
 
 
@@ -178,19 +180,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
 
 
-    //Set the Searchbar Tint color.
-
-    //    self.searchBar.barTintColor = [UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1];
-
-    //Set the Title and Color
-//    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxNameSmall.png"]];
-//    imageView.contentMode = UIViewContentModeScaleAspectFit;
-//
-//    UIView* titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 50)];
-//    imageView.frame = titleView.bounds;
-//    [titleView addSubview:imageView];
-//
-//    self.navigationItem.titleView = titleView;
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -199,12 +188,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     titleView.text = @"NeuLynx";
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
-//    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-//    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
-//    titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
-//    titleView.text = @"NeuLynx";
-//    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-//    [self.navigationItem setTitleView:titleView];
+
 
     //Check if the user has previously used the app.
 
@@ -500,45 +484,109 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 #pragma mark - Button selectors for each button 
 -(void)festivalButtonTapped{
-    NSLog(@"festival button tapped");
+
 
     [self.mapView removeAnnotations:self.mapView.annotations];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+         [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.festivalActivityArray]];
+
+    }
     
-    [self.mapView addAnnotations:self.festivalActivityArray];
+
 
 }
 
 -(void)culturalButtonTapped{
-    NSLog(@"cultural button tapped");
 
     [self.mapView removeAnnotations:self.mapView.annotations];
 
-    [self.mapView addAnnotations:self.culturalActivityArray];
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.culturalActivityArray]];
+
+    }
+
 }
 -(void)gastronomyButtonTapped{
-    NSLog(@"gastronomy button tapped");
-        [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.gastronomyActivityArray];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.gastronomyActivityArray]];
+
+    }
+
 }
 -(void)nightoutButtonTapped{
-    NSLog(@"nightout tapped");
-        [self.mapView removeAnnotations:self.mapView.annotations];
-[self.mapView addAnnotations:self.nightOutActivityArray];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.nightOutActivityArray]];
+        
+    }
+
 }
 -(void)fitnessButtonTapped{
-    NSLog(@"fitness button tapped");
-        [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.fitnessActivityArray];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.fitnessActivityArray]];
+        
+    }
+
 }
 -(void)outdoorsButtonTapped{
-    NSLog(@"outdoors button tapped");
-        [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.outDoorsActivityArray];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.outDoorsActivityArray]];
+        
+    }
+
 }
 -(void)studentLifeButtonTapped{
-    NSLog(@"student Life button tapped");
     [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.studentLifeActivityArray];
+
+    if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
+
+        [self.mapView addAnnotations:self.festivalActivityArray];
+
+    } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
+
+        [self.mapView addAnnotations:[self filterLGBTactivities:self.studentLifeActivityArray]];
+        
+    }
+
 }
 
 //helper method to create blinking ring images.
@@ -557,8 +605,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.ring2ImageView setFrame:CGRectMake(self.view.frame.size.width - 77.0, self.view.frame.size.height - 127.0, 75.0, 75.0)];
 
     [self.view addSubview:self.ring2ImageView];
-
-
 
 
 
@@ -716,6 +762,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     PFQuery *query = [Activity query];
     
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
+    [query includeKey:@"isLGBT"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
         // NSArray *activitiesArray = activities;
@@ -727,11 +774,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             // Add activities to the map.
 
 
-                // NSLog(@"activities are %@",activitiesArray);
-
                 for (Activity *activity in activities){
 
-                   // NSLog(@"%@", activity.host.profileImage);
+
 
                     self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
                     ;
@@ -768,10 +813,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                 }
 
 
-                //[self.mapView addAnnotations:self.gastronomyActivityArray];
-
-
-
             
         } else {
             [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
@@ -786,17 +827,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
      ];
-    //once we have the array with activity, we need to ad them to the map.
-//    [self.mapView addAnnotations:self.festivalActivityArray];
-//                [self.mapView addAnnotations:self.culturalActivityArray];
-//                [self.mapView addAnnotations:self.gastronomyActivityArray];
-//    //            [self.mapView addAnnotations:self.nightOutActivityArray];
-//    //             [self.mapView addAnnotations:self.fitnessActivityArray];
-//    //            [self.mapView addAnnotations:self.outDoorsActivityArray];
-
-
-
-   // NSLog(@"%@", self.gastronomyActivityArray);
 
 
 }
@@ -828,6 +858,68 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [alert show];
 
 }
+
+#pragma Mark - methods to filter Services with SegmentedControl
+- (IBAction)onSegmentSelected:(UISegmentedControl *)sender {
+
+    [self filterLGBTActivities:sender];
+
+
+}
+
+-(void)filterLGBTActivities:(UISegmentedControl *)sender{
+
+    //remove all anotations from map.
+    self.annotationArray = self.mapView.annotations;
+    [self.mapView removeAnnotations:self.annotationArray];
+
+    self.lgbtFilteredActivitiesArray = [NSMutableArray new];
+
+    for (Activity * activity in self.activitiesArray) {
+        if (sender.selectedSegmentIndex == 1 || (NSInteger)activity.isLBGT == 1) {
+            [self.lgbtFilteredActivitiesArray addObject:activity];
+            [self addAnnotationsToMapFromSearchResultArray:self.lgbtFilteredActivitiesArray];
+
+        } else {
+
+        }
+    }
+
+
+
+
+}
+
+//returns an NSArray of pinAnnotations (CustomMKAnnotation)
+
+-(NSArray *)filterLGBTactivities:(NSMutableArray *)activitiesArray{
+
+    NSMutableArray *filteredActivities = [NSMutableArray new];
+
+
+    //remove all anotations from map.
+    //self.annotationArray = self.mapView.annotations;
+    //[self.mapView removeAnnotations:self.annotationArray];
+
+    //self.lgbtFilteredActivitiesArray = [NSMutableArray new];
+
+    for (CustomMKAnnotation * pinAnnotation in activitiesArray) {
+
+        if ([pinAnnotation.activity.isLBGT integerValue] == 1) {
+
+            [filteredActivities addObject:pinAnnotation];
+         //   [self addAnnotationsToMapFromSearchResultArray:self.lgbtFilteredActivitiesArray];
+
+        }
+        //filteredActivities = self.lgbtFilteredActivitiesArray.copy;
+    }
+
+    return filteredActivities;
+
+}
+
+
+
 
 //Add blinking/pulse annimation
 //Need to handle the show options for label.
@@ -1022,7 +1114,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     if (![searchBar.text isEqualToString:@""]) {
 
 
-          NSLog(@"It workedddddd %@", self.allActivitiesArray);
 
         for (Activity *activity in self.allActivitiesArray) {
 
@@ -1042,8 +1133,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self addAnnotationsToMapFromSearchResultArray:self.activitySearchResults];
 
 
-//
-//    [self.mapView addAnnotations:self.activitySearchResults];
 
     [searchBar resignFirstResponder];
 
@@ -1225,21 +1314,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         }
 
 
-
-
-
-//        CGSize scaledSize = CGSizeMake(40, 40);
-//        UIGraphicsBeginImageContext(scaledSize);
-//        [leftCallOutimage drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-//        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-//        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-//        profileImageView.layer.masksToBounds = YES;
-//        profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-//        profileImageView.clipsToBounds = YES;
-//        profileImageView.userInteractionEnabled = YES;
-//        annotationView.leftCalloutAccessoryView = profileImageView;
 
         //add profile image to annotation call out
         PFQuery *activityQuery = [Activity query];

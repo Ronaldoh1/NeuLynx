@@ -45,6 +45,9 @@
                                     <segment title="Any"/>
                                     <segment title="LGBT"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentSelected:" destination="Dhs-Ky-Aot" eventType="valueChanged" id="buf-j3-cmA"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

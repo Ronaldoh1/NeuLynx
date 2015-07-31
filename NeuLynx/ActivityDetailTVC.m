@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderAndOrientationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeActivityLabel;
 
 //Languages
 @property (weak, nonatomic) IBOutlet UIImageView *portugueseFlag;
@@ -92,8 +93,8 @@
     self.ActivityTitleLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
     //add borders to the textView
-    self.activityDescriptionText.layer.borderWidth = 4.0f;
-    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+//    self.activityDescriptionText.layer.borderWidth = 4.0f;
+//    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
     //Initially set the flags to 0.4 alpha and change them based on host actual langauges.
     self.portugueseFlag.alpha = 0.3;
@@ -150,8 +151,16 @@
     if (selectedActivity.numberOfpaticipants == nil) {
         selectedActivity.numberOfpaticipants = 0;
     }
+
+    //number of participants
     self.numberOfPeopleLabel.text = [NSString stringWithFormat:@"%@ of %@ are attending!", selectedActivity.numberOfpaticipants, selectedActivity.maxNumberOfParticipants];
 
+    //Activity type.
+    if ([selectedActivity.isLBGT integerValue] == 1) {
+        self.typeActivityLabel.text = [NSString stringWithFormat:@"Type: LGBT"];
+    } else {
+        self.typeActivityLabel.text = [NSString stringWithFormat:@"Type: Any"];
+    }
 
     //Display activity images
 

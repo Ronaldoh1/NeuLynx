@@ -151,7 +151,7 @@
 
     recepient = appDelegate.sharedActivity.host;
 
-    NSLog(@"%@ YOOoooooooooooooo", recepient);
+   // NSLog(@"%@ YOOoooooooooooooo", recepient);
 
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
