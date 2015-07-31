@@ -172,6 +172,12 @@
         [self presentViewController:searchNavVC animated:YES completion:nil];
 
 
+    }else if(indexPath.row == 4 && indexPath.section == 1){
+        UIStoryboard *exclusiveStoryboard = [UIStoryboard storyboardWithName:@"Exclusive" bundle:nil];
+        UINavigationController *exclusiveTVC = [exclusiveStoryboard instantiateViewControllerWithIdentifier:@"exclusiveTVC"];
+        [self presentViewController:exclusiveTVC animated:YES completion:nil];
+
+        
     }else if(indexPath.row == 0 && indexPath.section == 2){
         UIStoryboard *helpStoryboard = [UIStoryboard storyboardWithName:@"Help" bundle:nil];
         UINavigationController *helpNavVC = [helpStoryboard instantiateViewControllerWithIdentifier:@"helpNavVC"];

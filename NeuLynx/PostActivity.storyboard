@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="What?" id="n5D-XP-lyI">
+                            <tableViewSection headerTitle="What?📝" id="n5D-XP-lyI">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Oz0-zc-uGG">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -311,7 +311,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Who?" id="qP4-sL-Gl1" userLabel="Who Can Join?">
+                            <tableViewSection id="qP4-sL-Gl1" userLabel="Who Can Join?">
+                                <string key="headerTitle">Who?❓
+
+</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aoW-lE-hUW">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -336,7 +339,9 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Where?" id="CYD-ws-y6c">
+                            <tableViewSection id="CYD-ws-y6c">
+                                <string key="headerTitle">Where? 🌆
+</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="50" id="B9U-6L-kqu">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -363,7 +368,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="When?" id="T7N-le-W5V">
+                            <tableViewSection headerTitle="When?⌛️" id="T7N-le-W5V">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="77" id="g4N-5B-Wn9">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -422,7 +427,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="LGBT?" id="uIf-Oc-JtB">
+                            <tableViewSection headerTitle="LGBT? ❓" id="uIf-Oc-JtB">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mv9-Cs-0g4">
                                         <autoresizingMask key="autoresizingMask"/>

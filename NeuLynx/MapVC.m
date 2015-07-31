@@ -98,13 +98,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+
     [self setUpProfileImage];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
 
-     [self setUpProfileImage];
+    [self setUpProfileImage];
 
     [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
 
@@ -136,8 +136,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.currentUser = [User currentUser];
 
     //set up profile image
-     [self setUpProfileImage];
-    
+    [self setUpProfileImage];
+
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -196,9 +196,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
         UITabBarController *tutorialNavVC = [tutorialStoryboard instantiateViewControllerWithIdentifier:@"tutorialNavVC"];
-//        if (self.currentUser != nil) {
-//            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
-//        }
+        //        if (self.currentUser != nil) {
+        //            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+        //        }
 
         [self presentViewController:tutorialNavVC animated:true completion:nil];
 
@@ -268,7 +268,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.nightOutActivityButton = [self createButton:@"Night Out" willShow:YES];
     self.fitnessActivityButton = [self createButton:@"Fitness" willShow:YES];
     self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
-    // self.outdoorsActivityButton = [self createButton:@"Outdoors" willShow:YES];
     self.studentLifeActivityButton = [self createButton:@"Student Life" willShow:YES];
     self.mainDiscoverButton = [self createButton:@"" willShow:NO];
 
@@ -410,7 +409,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         for(UIView *view in self.studentLifeActivityButton.subviews){
             view.hidden = NO;
 
-            
+
         }
 
         //remove animations of the rings and hide them.
@@ -482,7 +481,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     NSLog(@"button tapped %ld", (long)button.tag);
 }
 
-#pragma mark - Button selectors for each button 
+#pragma mark - Button selectors for each button
 -(void)festivalButtonTapped{
 
 
@@ -490,15 +489,14 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     if (self.lgbtActivitySelector.selectedSegmentIndex == 0){
 
-         [self.mapView addAnnotations:self.festivalActivityArray];
+        [self.mapView addAnnotations:self.festivalActivityArray];
 
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
-        
+
         [self.mapView addAnnotations:[self filterLGBTactivities:self.festivalActivityArray]];
 
     }
-    
 
 
 }
@@ -542,7 +540,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
         [self.mapView addAnnotations:[self filterLGBTactivities:self.nightOutActivityArray]];
-        
+
     }
 
 }
@@ -556,7 +554,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
         [self.mapView addAnnotations:[self filterLGBTactivities:self.fitnessActivityArray]];
-        
+
     }
 
 }
@@ -570,7 +568,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
         [self.mapView addAnnotations:[self filterLGBTactivities:self.outDoorsActivityArray]];
-        
+
     }
 
 }
@@ -584,7 +582,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     } else if(self.lgbtActivitySelector.selectedSegmentIndex == 1) {
 
         [self.mapView addAnnotations:[self filterLGBTactivities:self.studentLifeActivityArray]];
-        
+
     }
 
 }
@@ -620,37 +618,38 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
-  //  self.tempImage = [UIImage new];
+    //  self.tempImage = [UIImage new];
 
 
     if (self.currentUser != nil){
-    //create an image and assign it to defualt image
+        //create an image and assign it to defualt image
 
 
 
-    [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            UIImage *image = [UIImage imageWithData:data];
+        [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:data];
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.tempImage = image;
-            });
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.tempImage = image;
+                });
 
-            //self.profileImage.image = image;
-        }
+            }
 
-    }];
-        //self.tempImage = [self getUsersProfileImage];
+        }];
+
 
     }else if (self.currentUser == nil){
 
-        self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+              self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+        });
+
     }
 
-    // NSLog(@"%@", self.tempImage);
+
     UIImage *profileImage = self.tempImage;
-
-
 
 
     //create button frame
@@ -760,7 +759,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [Activity query];
-    
+
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query includeKey:@"isLGBT"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
@@ -768,56 +767,56 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         // NSArray *activitiesArray = activities;
 
         if (!error) {
-        //get a copy of all activities
+            //get a copy of all activities
             self.allActivitiesArray = activities.copy;
 
             // Add activities to the map.
 
 
-                for (Activity *activity in activities){
+            for (Activity *activity in activities){
 
 
 
-                    self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
-                    ;
-                    if ([activity.selectedCategory isEqualToString:@"Festival"]) {
-                        [self.festivalActivityArray addObject:self.pinAnnotation];
+                self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
+                ;
+                if ([activity.selectedCategory isEqualToString:@"Festival"]) {
+                    [self.festivalActivityArray addObject:self.pinAnnotation];
 
-                    }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
-                        [self.culturalActivityArray addObject:self.pinAnnotation];
+                }else if ([activity.selectedCategory isEqualToString:@"Cultural"]) {
+                    [self.culturalActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
-                        [self.gastronomyActivityArray addObject:self.pinAnnotation];
+                } else if ([activity.selectedCategory isEqualToString:@"Gastronomy"]) {
+                    [self.gastronomyActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"Night Out"]) {
-                        [self.nightOutActivityArray addObject:self.pinAnnotation];
+                } else if ([activity.selectedCategory isEqualToString:@"Night Out"]) {
+                    [self.nightOutActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
-                        [self.fitnessActivityArray addObject:self.pinAnnotation];
+                } else if ([activity.selectedCategory isEqualToString:@"Fitness"]) {
+                    [self.fitnessActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
-                        [self.outDoorsActivityArray addObject:self.pinAnnotation];
+                } else if ([activity.selectedCategory isEqualToString:@"Outdoors"]) {
+                    [self.outDoorsActivityArray addObject:self.pinAnnotation];
 
-                    } else if ([activity.selectedCategory isEqualToString:@"Student Life"]) {
-                        [self.studentLifeActivityArray addObject:self.pinAnnotation];
-                    }
-
-
-                    dispatch_async(dispatch_get_main_queue(), ^{
-
-
-                        [self.mapView addAnnotation:self.pinAnnotation];
-                    });
-
-                    
+                } else if ([activity.selectedCategory isEqualToString:@"Student Life"]) {
+                    [self.studentLifeActivityArray addObject:self.pinAnnotation];
                 }
 
 
-            
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+
+                    [self.mapView addAnnotation:self.pinAnnotation];
+                });
+
+
+            }
+
+
+
         } else {
             [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-            
-            
+
+
         }
 
 
@@ -908,7 +907,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         if ([pinAnnotation.activity.isLBGT integerValue] == 1) {
 
             [filteredActivities addObject:pinAnnotation];
-         //   [self addAnnotationsToMapFromSearchResultArray:self.lgbtFilteredActivitiesArray];
+            //   [self addAnnotationsToMapFromSearchResultArray:self.lgbtFilteredActivitiesArray];
 
         }
         //filteredActivities = self.lgbtFilteredActivitiesArray.copy;
@@ -987,13 +986,16 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
              PFFile *file = [ PFFile fileWithData:data];
 
-            [User currentUser].profileImage = file;
+             dispatch_async(dispatch_get_main_queue(), ^{
+
+                 [User currentUser].profileImage = file;
+             });
 
              [[User currentUser] saveInBackground];
 
          }
      }];
-    
+
 }
 
 #pragma mark CLLocationManager Delegate
@@ -1046,16 +1048,15 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             if (!user) {
                 NSLog(@"Uh oh. The user cancelled the Facebook login.");
             } else if (user.isNew) {
-                NSLog(@"User signed up and logged in through Facebook!");
 
-                  [self getFacebookUserData];
+                [self getFacebookUserData];
 
                 //if the user is new, then we want to get his information from facebook and store it in parse.
                 [self saveFbUserInfoToParse:^{
                     //If the user is new then present the profile
                     UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                     UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
-                
+
                     [self presentViewController:profileNavVC animated:YES completion:nil];
 
                 } afterDelay:3];
@@ -1107,13 +1108,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.annotationArray = self.mapView.annotations;
     [self.mapView removeAnnotations:self.mapView.annotations];
 
-         self.activitySearchResults = [NSMutableArray new];
-
-
+    self.activitySearchResults = [NSMutableArray new];
 
     if (![searchBar.text isEqualToString:@""]) {
-
-
 
         for (Activity *activity in self.allActivitiesArray) {
 
@@ -1128,11 +1125,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     }
 
-
-    NSLog(@"It workedddddd %@", self.activitySearchResults);
     [self addAnnotationsToMapFromSearchResultArray:self.activitySearchResults];
-
-
 
     [searchBar resignFirstResponder];
 
@@ -1211,7 +1204,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 //returns the view for the selected annotation method.
 
-
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
 
 
@@ -1267,7 +1259,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             leftCallOutimage = [UIImage imageNamed:@"mainFitness.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
-            
+
             UIImage *image = [UIImage imageNamed:@"outdoorsPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
             leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
@@ -1321,68 +1313,53 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
 
 
-
-
         [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
 
 
-                Activity *activity = pinAnnotation.activity;
-                User *host = activity.host;
+            Activity *activity = pinAnnotation.activity;
+            User *host = activity.host;
 
-                //check if the user exists for the activity and check if the user has a picture.
-                if(!(host.profileImage == nil) || !(host == nil)){
-
-//                    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//
-//                    dispatch_async(queue, ^{
+            //check if the user exists for the activity and check if the user has a picture.
+            if(!(host.profileImage == nil) || !(host == nil)){
 
 
-                        [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-                        
+                    //if there is no error then display the image for the user who posted activity.
+                    if(!error){
 
-
-                            //if there is no error then display the image for the user who posted activity.
-                            if(!error){
-
-                                dispatch_async(dispatch_get_main_queue(), ^{
+                        dispatch_async(dispatch_get_main_queue(), ^{
 
 
-                                UIImage *image = [UIImage imageWithData:data];
-                                CGSize scaledSize = CGSizeMake(40, 40);
-                                UIGraphicsBeginImageContext(scaledSize);
-                                [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                                UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                                UIGraphicsEndImageContext();
-                                UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                                profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                                profileImageView.layer.masksToBounds = YES;
-                                profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                                profileImageView.clipsToBounds = YES;
-                                profileImageView.userInteractionEnabled = YES;
-                                annotationView.leftCalloutAccessoryView = profileImageView;
+                            UIImage *image = [UIImage imageWithData:data];
+                            CGSize scaledSize = CGSizeMake(40, 40);
+                            UIGraphicsBeginImageContext(scaledSize);
+                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                            UIGraphicsEndImageContext();
+                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                            profileImageView.layer.masksToBounds = YES;
+                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                            profileImageView.clipsToBounds = YES;
+                            profileImageView.userInteractionEnabled = YES;
+                            annotationView.leftCalloutAccessoryView = profileImageView;
 
 
-                                });
+                        });
 
-                            }
+                    }
 
 
 
 
 
-                        } ];
+                } ];
 
 
+            }else{
 
-
-                            //            }]
-//                        });
-
-
-                }else{
-
-                       dispatch_async(dispatch_get_main_queue(), ^{
+                dispatch_async(dispatch_get_main_queue(), ^{
 
 
                     UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
@@ -1399,21 +1376,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     profileImageView.userInteractionEnabled = YES;
                     annotationView.leftCalloutAccessoryView = profileImageView;
 
-                             });
-                    
-                }
+                });
 
+            }
 
-//
-//                                           });
-      }];
-//
-//
-//        });
-
-
-
-
+        }];
 
 
         if(annotationView == nil){
@@ -1429,7 +1396,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     }
 
 
-    
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -1443,12 +1410,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         if (annotationSelected) {
 
             self.activityIsSelected = YES;
-            NSLog(@"Annotation was selected, do whatever required");
-            
             // Accions when annotation selected
         }else {
             self.activityIsSelected = NO;
-            NSLog(@"Annotation was deselected, do what you must");
             // Accions when annotation deselected
         }
     }
@@ -1468,7 +1432,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     // Annotation is your custom class that holds information about the annotation
     if ([view.annotation isKindOfClass:[CustomMKAnnotation class]]) {
         CustomMKAnnotation *annot = view.annotation;
-       // NSInteger index = [self.annotationArray indexOfObject:annot];
+        // NSInteger index = [self.annotationArray indexOfObject:annot];
 
 
         //add profile image to annotation call out
@@ -1491,58 +1455,56 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     if(!error){
 
 
-                         dispatch_async(dispatch_get_main_queue(), ^{
-                        UIImage *image = [UIImage imageWithData:data];
-                        CGSize scaledSize = CGSizeMake(40, 40);
-                        UIGraphicsBeginImageContext(scaledSize);
-                        [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                        UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                        UIGraphicsEndImageContext();
-                        UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                        profileImageView.layer.masksToBounds = YES;
-                        profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                        profileImageView.clipsToBounds = YES;
-                        profileImageView.userInteractionEnabled = YES;
-
-                               });
-                       // annotationView.leftCalloutAccessoryView = profileImageView;
-                        NSLog(@"afdsflajksdkflsajfl it printteedddd" );
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            UIImage *image = [UIImage imageWithData:data];
+                            CGSize scaledSize = CGSizeMake(40, 40);
+                            UIGraphicsBeginImageContext(scaledSize);
+                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                            UIGraphicsEndImageContext();
+                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                            profileImageView.layer.masksToBounds = YES;
+                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                            profileImageView.clipsToBounds = YES;
+                            profileImageView.userInteractionEnabled = YES;
+                            
+                        });
 
                     }
-
-
+                    
+                    
                 }
-
-
+                 
+                 
                  ];
             }else{
-
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
-
-                UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
-                CGSize scaledSize = CGSizeMake(40, 40);
-                UIGraphicsBeginImageContext(scaledSize);
-                [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                profileImageView.layer.masksToBounds = YES;
-                profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                profileImageView.clipsToBounds = YES;
-                profileImageView.userInteractionEnabled = YES;
-                //                annotationView.leftCalloutAccessoryView = profileImageView;
-                    });
+                    
+                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
+                    CGSize scaledSize = CGSizeMake(40, 40);
+                    UIGraphicsBeginImageContext(scaledSize);
+                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                    profileImageView.layer.masksToBounds = YES;
+                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                    profileImageView.clipsToBounds = YES;
+                    profileImageView.userInteractionEnabled = YES;
+                    //                annotationView.leftCalloutAccessoryView = profileImageView;
+                });
             }
             
             
             
         } ];
-
-
-
-
+        
+        
+        
+        
     }
 }
 
@@ -1554,14 +1516,14 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
     UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
-
+    
     //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-        CustomMKAnnotation *annotation = view.annotation;
-        appDelegate.sharedActivity = annotation.activity;
-
-   [self presentViewController:detailVC animated:YES completion:nil];
+    
+    CustomMKAnnotation *annotation = view.annotation;
+    appDelegate.sharedActivity = annotation.activity;
+    
+    [self presentViewController:detailVC animated:YES completion:nil];
     
     
 }

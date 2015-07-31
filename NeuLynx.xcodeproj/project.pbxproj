@@ -164,6 +164,8 @@
 		F2D38B001B67332E007EBF41 /* AppIcon120x120_carplay.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AEC1B67332E007EBF41 /* AppIcon120x120_carplay.png */; };
 		F2D38B021B673DA7007EBF41 /* appNameMedium.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B011B673DA7007EBF41 /* appNameMedium.png */; };
 		F2D38B051B6A029A007EBF41 /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */; };
+		F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */; };
+		F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -393,6 +395,9 @@
 		F2D38B011B673DA7007EBF41 /* appNameMedium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appNameMedium.png; sourceTree = "<group>"; };
 		F2D38B031B6A029A007EBF41 /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsTVC.h; sourceTree = "<group>"; };
 		F2D38B041B6A029A007EBF41 /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsTVC.m; sourceTree = "<group>"; };
+		F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Exclusive.storyboard; sourceTree = "<group>"; };
+		F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveTVC.h; sourceTree = "<group>"; };
+		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -702,6 +707,7 @@
 				F2E6E84A1B15FB540083BA7F /* Terms */,
 				F2FE7E5E1B04EDDD00CDD057 /* Tutorial */,
 				F2FE7E931B0A319100CDD057 /* Account */,
+				F2D38B061B6B6F82007EBF41 /* Exclusive Activities */,
 				F285190C1AFAC132007A45FA /* Profile */,
 				F249D2FB1B52BA0C00A3BAE7 /* Message */,
 				F25BFC4A1AFB3C8500B2C5BA /* Mail */,
@@ -911,6 +917,16 @@
 				F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */,
 			);
 			name = "App Logo";
+			sourceTree = "<group>";
+		};
+		F2D38B061B6B6F82007EBF41 /* Exclusive Activities */ = {
+			isa = PBXGroup;
+			children = (
+				F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */,
+				F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */,
+				F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */,
+			);
+			name = "Exclusive Activities";
 			sourceTree = "<group>";
 		};
 		F2E6E84A1B15FB540083BA7F /* Terms */ = {
@@ -1165,6 +1181,7 @@
 				F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
+				F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */,
 				F2D38AF91B67332E007EBF41 /* AppIcon57x57@2x.png in Resources */,
 				F23435221B37C8C10065D11C /* termsIcon.png in Resources */,
 				F2D38AFB1B67332E007EBF41 /* AppIcon60x60@3x.png in Resources */,
@@ -1278,6 +1295,7 @@
 				F2E6E8B91B1A13E50083BA7F /* RequestVC.m in Sources */,
 				F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */,
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
+				F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */,
 				F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
