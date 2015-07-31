@@ -167,6 +167,7 @@
 		F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */; };
 		F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */; };
 		F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */; };
+		F2D38B0F1B6C1E60007EBF41 /* exclusiveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -400,6 +401,7 @@
 		F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveTVC.h; sourceTree = "<group>"; };
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
+		F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 		F21EC4721B6474CD000E535B /* Action Icons */ = {
 			isa = PBXGroup;
 			children = (
+				F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */,
 				F226C8111B0F5AC0007A1C03 /* outdoors.png */,
 				F2892DF91B3EAB540010D534 /* share.png */,
 				F2892DFA1B3EAB540010D534 /* rateIcon.png */,
@@ -1174,6 +1177,7 @@
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
 				F2FE7E6E1B05143800CDD057 /* us.png in Resources */,
+				F2D38B0F1B6C1E60007EBF41 /* exclusiveIcon.png in Resources */,
 				F2D38AC61B64BA45007EBF41 /* uFitnessPin.png in Resources */,
 				F2892E0B1B4215BF0010D534 /* discover.png in Resources */,
 				F23435101B3605A60065D11C /* bluering.png in Resources */,

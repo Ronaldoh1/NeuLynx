@@ -142,7 +142,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uEz-g5-NcU" id="AN7-65-yOJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="searchIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1r-mq-zEW">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exclusiveIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1r-mq-zEW">
                                                     <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exclusive Activities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0D-SV-ZFI">
@@ -435,6 +435,7 @@
     <resources>
         <image name="aboutIcon.png" width="300" height="300"/>
         <image name="defaultImage" width="1200" height="1200"/>
+        <image name="exclusiveIcon.png" width="313" height="313"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="faqIcon.png" width="300" height="300"/>
         <image name="googlePlusIcon.png" width="128" height="128"/>

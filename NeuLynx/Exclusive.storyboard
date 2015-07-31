@@ -18,7 +18,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Tw-Ro-5gM" id="e4X-cM-pV7">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCH-m0-vB2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCH-m0-vB2">
                                             <rect key="frame" x="73" y="7" width="223" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="d25-T2-zib"/>
@@ -28,7 +28,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-a8-TFZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-a8-TFZ">
                                             <rect key="frame" x="180" y="131" width="112" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="112" id="82k-xM-jrc"/>
@@ -38,7 +38,7 @@
                                             <color key="textColor" red="0.90404040399999996" green="0.0" blue="0.050232261649999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exy-Oh-tA3">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exy-Oh-tA3">
                                             <rect key="frame" x="83" y="33" width="209" height="90"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -49,7 +49,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-pD-bjl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-pD-bjl">
                                             <rect key="frame" x="-17" y="38" width="82" height="79"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="79" id="2v6-fk-JAf"/>
@@ -61,11 +61,11 @@
                                         <constraint firstAttribute="centerY" secondItem="tCH-m0-vB2" secondAttribute="centerY" constant="56.5" id="6G5-83-ySQ"/>
                                         <constraint firstAttribute="centerY" secondItem="hKZ-a8-TFZ" secondAttribute="centerY" constant="-63" id="ArO-zU-jGg"/>
                                         <constraint firstAttribute="centerY" secondItem="exy-Oh-tA3" secondAttribute="centerY" id="M6u-qq-BxT"/>
-                                        <constraint firstAttribute="centerX" secondItem="hKZ-a8-TFZ" secondAttribute="centerX" constant="-76" id="P8E-NC-FU7"/>
-                                        <constraint firstAttribute="centerX" secondItem="tCH-m0-vB2" secondAttribute="centerX" constant="-24.5" id="eYG-Kz-yF4"/>
+                                        <constraint firstAttribute="centerX" secondItem="hKZ-a8-TFZ" secondAttribute="centerX" constant="-92.5" id="P8E-NC-FU7"/>
+                                        <constraint firstAttribute="centerX" secondItem="tCH-m0-vB2" secondAttribute="centerX" constant="-41" id="eYG-Kz-yF4"/>
                                         <constraint firstAttribute="centerY" secondItem="RJm-pD-bjl" secondAttribute="centerY" constant="1" id="jYy-zg-q4C"/>
-                                        <constraint firstAttribute="centerX" secondItem="RJm-pD-bjl" secondAttribute="centerX" constant="136" id="nf0-0a-9SS"/>
-                                        <constraint firstAttribute="centerX" secondItem="exy-Oh-tA3" secondAttribute="centerX" constant="-27.5" id="umR-Ze-MC7"/>
+                                        <constraint firstAttribute="centerX" secondItem="RJm-pD-bjl" secondAttribute="centerX" constant="119.5" id="nf0-0a-9SS"/>
+                                        <constraint firstAttribute="centerX" secondItem="exy-Oh-tA3" secondAttribute="centerX" constant="-44" id="umR-Ze-MC7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
