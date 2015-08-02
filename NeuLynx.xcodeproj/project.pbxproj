@@ -109,6 +109,7 @@
 		F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F285194E1AFAEA33007A45FA /* NeulynxLogo.png */; };
 		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
+		F28789AF1B6EAC7200D4F5A3 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28789AE1B6EAC7200D4F5A3 /* LogInViewController.m */; };
 		F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892DF31B3E8E640010D534 /* AccountAndSettingsTVC.m */; };
 		F2892DFD1B3EAB540010D534 /* facebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DF51B3EAB540010D534 /* facebookIcon.png */; };
 		F2892DFE1B3EAB540010D534 /* googlePlusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DF61B3EAB540010D534 /* googlePlusIcon.png */; };
@@ -335,6 +336,8 @@
 		F28519521AFAED9F007A45FA /* or.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = or.png; sourceTree = "<group>"; };
 		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
+		F28789AD1B6EAC7200D4F5A3 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		F28789AE1B6EAC7200D4F5A3 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		F2892DF21B3E8E640010D534 /* AccountAndSettingsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAndSettingsTVC.h; sourceTree = "<group>"; };
 		F2892DF31B3E8E640010D534 /* AccountAndSettingsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAndSettingsTVC.m; sourceTree = "<group>"; };
 		F2892DF51B3EAB540010D534 /* facebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookIcon.png; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
 		F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
+		F2D38B101B6C672C007EBF41 /* XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -683,6 +687,7 @@
 		F28518D21AFABFAD007A45FA = {
 			isa = PBXGroup;
 			children = (
+				F2D38B101B6C672C007EBF41 /* XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision */,
 				F285192D1AFADB47007A45FA /* Data Model */,
 				F285192C1AFADB3E007A45FA /* Frameworks */,
 				F28518DD1AFABFAD007A45FA /* NeuLynx */,
@@ -765,6 +770,8 @@
 			isa = PBXGroup;
 			children = (
 				F28519201AFAD7AD007A45FA /* SignIn.storyboard */,
+				F28789AD1B6EAC7200D4F5A3 /* LogInViewController.h */,
+				F28789AE1B6EAC7200D4F5A3 /* LogInViewController.m */,
 				F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */,
 				F25BFC501AFB47DB00B2C5BA /* SignInVC.m */,
 			);
@@ -1310,6 +1317,7 @@
 				F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
 				F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */,
+				F28789AF1B6EAC7200D4F5A3 /* LogInViewController.m in Sources */,
 				F29320A41B48227C001B9930 /* CustomCell.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
@@ -1465,7 +1473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1473,7 +1481,7 @@
 				INFOPLIST_FILE = NeuLynx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1487,7 +1495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1495,7 +1503,7 @@
 				INFOPLIST_FILE = NeuLynx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
