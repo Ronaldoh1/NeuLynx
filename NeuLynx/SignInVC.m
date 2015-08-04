@@ -90,7 +90,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
                 UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                 UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
                 [self presentViewController:profileNavVC animated:YES completion:nil];
-//                [self dismissViewControllerAnimated:YES completion:nil];
+                //                [self dismissViewControllerAnimated:YES completion:nil];
 
 
 
@@ -117,7 +117,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 
     }
-     
+
 
      ];
 
@@ -170,16 +170,25 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
              [User currentUser].profileImage = file;
 
              [[User currentUser] saveInBackground];
-             
+
          }
      }];
-    
-}
 
-- (IBAction)onCancelButtonTapped:(UIButton *)sender {
+}
+- (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
+
+- (IBAction)onSignUpButtonTapped:(UIButton *)sender {
+
+    UIStoryboard *signUpStoryBoard = [UIStoryboard storyboardWithName:@"SignUp" bundle:nil];
+
+    UIViewController *signUpVC = [signUpStoryBoard instantiateViewControllerWithIdentifier:@"SignUpNavVC"];
+    [self presentViewController:signUpVC animated:YES completion:nil];
+}
+
+
+
 - (IBAction)onSignInButtonTapped:(UIButton *)sender {
     NSString *error = @"";
 
@@ -188,15 +197,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     }else{
 
         [User logInWithUsernameInBackground:self.email.text password:self.password.text
-                                        block:^(PFUser *user, NSError *error) {
-                                            if (user) {
-                                                // Do stuff after successful login.
-                                                NSLog(@"logged in");
+                                      block:^(PFUser *user, NSError *error) {
+                                          if (user) {
+                                              // Do stuff after successful login.
+                                              NSLog(@"logged in");
 
-                                            } else {
-                                                // The login failed. Check error to see why.
-                                            }
-                                        }];
+                                          } else {
+                                              // The login failed. Check error to see why.
+                                          }
+                                      }];
 
     }
 
