@@ -13,6 +13,7 @@
 @interface MapVC : UIViewController
 
 
-
+//Profile Image
+@property UIImage *profileImage;
 
 @end

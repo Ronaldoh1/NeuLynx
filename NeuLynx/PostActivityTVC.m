@@ -14,7 +14,7 @@
 #import "SelectTimeTVC.h"
 
 
-@interface PostActivityTVC ()<UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PostActivityTVC ()<UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *activityDescriptionText;
 @property (weak, nonatomic) IBOutlet UITextField *activityNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *activityHeadCount;
@@ -373,10 +373,7 @@
 }
 //helper method
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch * touch = [touches anyObject];
-    if(touch.phase == UITouchPhaseBegan) {
-        [self.activityDescriptionText resignFirstResponder];
-    }
+    [self.view endEditing:YES];
 }
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
@@ -384,6 +381,8 @@
         [textView resignFirstResponder];
     return YES;
 }
+
+
 
 #pragma mark - Table view data source
 

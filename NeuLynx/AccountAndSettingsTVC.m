@@ -9,6 +9,7 @@
 #import "AccountAndSettingsTVC.h"
 #import "User.h"
 
+
 #import "AppDelegate.h"
 
 
@@ -107,10 +108,16 @@
 }
 - (IBAction)onSignOutButtonTapped:(id)sender {
     [User logOut];
+
     self.navigationItem.leftBarButtonItem.enabled = NO;
     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
+    
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+    [self presentViewController:mapNavVC animated:YES completion:nil];
+
+   
 }
 
 #pragma mark - UITableView Delegate Methods

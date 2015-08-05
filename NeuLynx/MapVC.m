@@ -71,8 +71,7 @@
 @property BOOL activityIsSelected;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *lgbtActivitySelector;
 
-//Profile Image
-@property UIImage *profileImage;
+
 
 @end
 
@@ -811,13 +810,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
             }
 
-
-
-        } else {
-            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-
-
         }
+
+//        } else {
+//            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
+//
+//
+//        }
 
 
     }
@@ -1225,85 +1224,92 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         //define left call out image
 
 
-        UIImage *leftCallOutimage = [UIImage new];
+        //UIImage *leftCallOutimage = [UIImage new];
 
         if ([pinAnnotation.activity.selectedCategory isEqualToString:@"Cultural"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]) {
 
             UIImage *image = [UIImage imageNamed:@"culturalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainCultural.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainCultural.png"];
 
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"gastronomyPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainGastronomy.png"];
+           // leftCallOutimage = [UIImage imageNamed:@"mainGastronomy.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"nightOutPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainNightout.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainNightout.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Festival"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"festivalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainFestival.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainFestival.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Fitness"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"fitnessPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainFitness.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainFitness.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"outdoorsPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
         } else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Student Life"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
             UIImage *image = [UIImage imageNamed:@"studentLifePin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
         } else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Outdoors"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uOutdoorsPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Fitness"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uFitnessPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Festival"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uFestivalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uNightOutPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Gastronomy"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uGastronomyPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Cultural"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
 
             UIImage *image = [UIImage imageNamed:@"uCulturalPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-            leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+        }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Student Life"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@1]){
+
+            UIImage *image = [UIImage imageNamed:@"uStudentLifePin.png"];
+            annotationView.image =  [self resizeImageForPins:image];
+            //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
+            
         }
+
 
 
 

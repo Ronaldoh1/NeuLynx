@@ -297,7 +297,7 @@
                                                     <rect key="frame" x="8" y="8" width="304" height="34"/>
                                                     <segments>
                                                         <segment title="Public"/>
-                                                        <segment title="Private"/>
+                                                        <segment title="Friends Only"/>
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>

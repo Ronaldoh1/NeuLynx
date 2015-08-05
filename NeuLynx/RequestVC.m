@@ -189,19 +189,18 @@
                 self.tempActivitiestArray = [NSMutableArray arrayWithArray:activities].copy;
                 [self.tableView reloadData];
 
-                NSLog(@"it printed %lu", (unsigned long)self.tempActivitiestArray.count);
-                //[self.mapView addAnnotations:self.gastronomyActivityArray];
+
 
 
             });
 
-
-
-        } else {
-            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-
-
         }
+
+//        } else {
+//            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
+//
+//
+//        }
 
 
     }
@@ -210,17 +209,7 @@
 
 
      ];
-    //once we have the array with activity, we need to ad them to the map.
-    //    [self.mapView addAnnotations:self.festivalActivityArray];
-    //                [self.mapView addAnnotations:self.culturalActivityArray];
-    //                [self.mapView addAnnotations:self.gastronomyActivityArray];
-    //    //            [self.mapView addAnnotations:self.nightOutActivityArray];
-    //    //             [self.mapView addAnnotations:self.fitnessActivityArray];
-    //    //            [self.mapView addAnnotations:self.outDoorsActivityArray];
-    
-    
-    
-    // NSLog(@"%@", self.gastronomyActivityArray);
+  
     
     
 }
