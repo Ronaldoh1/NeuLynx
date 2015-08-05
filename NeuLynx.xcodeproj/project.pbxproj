@@ -110,6 +110,8 @@
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
 		F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */; };
+		F28789C01B70A09E00D4F5A3 /* blackShadeSignInBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BF1B70A09E00D4F5A3 /* blackShadeSignInBackground.png */; };
+		F28789C21B70A17900D4F5A3 /* blackShadeSignUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789C11B70A17900D4F5A3 /* blackShadeSignUpBackground.png */; };
 		F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892DF31B3E8E640010D534 /* AccountAndSettingsTVC.m */; };
 		F2892DFD1B3EAB540010D534 /* facebookIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DF51B3EAB540010D534 /* facebookIcon.png */; };
 		F2892DFE1B3EAB540010D534 /* googlePlusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DF61B3EAB540010D534 /* googlePlusIcon.png */; };
@@ -337,6 +339,8 @@
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
 		F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
+		F28789BF1B70A09E00D4F5A3 /* blackShadeSignInBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShadeSignInBackground.png; sourceTree = "<group>"; };
+		F28789C11B70A17900D4F5A3 /* blackShadeSignUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShadeSignUpBackground.png; sourceTree = "<group>"; };
 		F2892DF21B3E8E640010D534 /* AccountAndSettingsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountAndSettingsTVC.h; sourceTree = "<group>"; };
 		F2892DF31B3E8E640010D534 /* AccountAndSettingsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountAndSettingsTVC.m; sourceTree = "<group>"; };
 		F2892DF51B3EAB540010D534 /* facebookIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookIcon.png; sourceTree = "<group>"; };
@@ -904,7 +908,9 @@
 		F28789B81B70716C00D4F5A3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F28789BF1B70A09E00D4F5A3 /* blackShadeSignInBackground.png */,
 				F28789B91B70717800D4F5A3 /* loginBG.png */,
+				F28789C11B70A17900D4F5A3 /* blackShadeSignUpBackground.png */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -1140,6 +1146,8 @@
 				F2D38AFA1B67332E007EBF41 /* AppIcon60x60@2x.png in Resources */,
 				F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */,
 				F2E6E8BE1B1A43560083BA7F /* Search.storyboard in Resources */,
+				F28789C01B70A09E00D4F5A3 /* blackShadeSignInBackground.png in Resources */,
+				F28789C21B70A17900D4F5A3 /* blackShadeSignUpBackground.png in Resources */,
 				F2292ED01B254C7C003D82D5 /* wCultural.png in Resources */,
 				F2892E011B3EAB540010D534 /* share.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,

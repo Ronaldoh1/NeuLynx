@@ -15,7 +15,7 @@
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface SignInVC ()<UITextFieldDelegate>
+@interface SignInVC ()<UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property CGFloat animatedDistance;
@@ -214,6 +214,40 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     self.email.delegate = self;
     self.password.delegate = self;
 }
+
+- (IBAction)onForgotPasswordButtonTapped:(UIButton *)sender {
+
+
+   // [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
+
+    UIAlertController *alertController = [ UIAlertController alertControllerWithTitle:@"Reset Password" message:@"Enter your email address" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Email Address";
+    }];
+
+
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"Cancel action");
+                                   }];
+    UIAlertAction *resetPasswordAction = [UIAlertAction actionWithTitle:@"Reset" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+
+        UITextField *textField = alertController.textFields.firstObject;
+        [PFUser requestPasswordResetForEmail:textField.text];
+    }];
+
+    [alertController addAction:resetPasswordAction];
+    [alertController addAction:cancelAction];
+
+    [self presentViewController:alertController animated:YES
+                     completion:nil];
+
+
+}
+
 
 
 #pragma Marks - hiding keyboard

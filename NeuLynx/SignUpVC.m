@@ -53,11 +53,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 }
 
-- (IBAction)onCancelButtonTapped:(UIButton *)sender {
-
+- (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-
 }
+
+
 - (IBAction)onFbSignUpButtonTapped:(UIButton *)sender {
     //Setting up loginwith facebook
 
