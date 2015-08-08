@@ -408,7 +408,6 @@
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
 		F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
-		F2D38B101B6C672C007EBF41 /* XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -690,7 +689,6 @@
 		F28518D21AFABFAD007A45FA = {
 			isa = PBXGroup;
 			children = (
-				F2D38B101B6C672C007EBF41 /* XC_Ad_Hoc_comNeuLynxNeuLynx.mobileprovision */,
 				F285192D1AFADB47007A45FA /* Data Model */,
 				F285192C1AFADB3E007A45FA /* Frameworks */,
 				F28518DD1AFABFAD007A45FA /* NeuLynx */,

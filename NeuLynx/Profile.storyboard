@@ -273,7 +273,7 @@
                                             <segue destination="FN7-4F-Bhy" kind="show" identifier="toPreferenceSelection" id="33a-Ui-jLm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dTY-uP-Tjt">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="dTY-uP-Tjt">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dTY-uP-Tjt" id="Uvt-Zv-59K">
                                             <autoresizingMask key="autoresizingMask"/>

@@ -177,6 +177,7 @@
         
     }
 
+
 }
 
 
@@ -447,7 +448,12 @@
 //}
 //
 
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    return cell;
+}
 
 #pragma Marks - hiding keyboard
 //hide keyboard when the user clicks return

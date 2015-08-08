@@ -22,7 +22,7 @@
 
 
 
-@interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate>
+@interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 @property UIButton *mainDiscoverButton;
 @property UIButton *festivalActivityButton;
 @property UIButton *culturalActivityButton;
@@ -314,7 +314,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 -(UIButton *)createButton:(NSString *)buttonTitle willShow:(BOOL)show{
 
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 66.0, self.view.frame.size.height - 116.0, 53.0, 53.0)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 40.0, 40.0)];
 
     button.backgroundColor = [UIColor whiteColor];
 
@@ -465,13 +465,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 //helper method to show buttons
 -(void)fanButtonOut{
-    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 85.0, self.mainDiscoverButton.frame.origin.y + 40.0)];
-    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 80.0, self.mainDiscoverButton.frame.origin.y - 13.0)];
-    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 70.0, self.mainDiscoverButton.frame.origin.y - 65.0)];
-    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 60.0, self.mainDiscoverButton.frame.origin.y - 117.0)];
-    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 40.0, self.mainDiscoverButton.frame.origin.y - 166.0)];
-    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 10.0, self.mainDiscoverButton.frame.origin.y - 211.0)];
-    [self snapButton:self.studentLifeActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 32.0, self.mainDiscoverButton.frame.origin.y - 244.0)];
+    [self snapButton:self.festivalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y + 40.0)];
+    [self snapButton:self.culturalActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 45.0, self.mainDiscoverButton.frame.origin.y - 2.0)];
+    [self snapButton:self.gastronomyActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 43.0, self.mainDiscoverButton.frame.origin.y - 44.0)];
+    [self snapButton:self.nightOutActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 35.0, self.mainDiscoverButton.frame.origin.y - 85.0)];
+    [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 23.0, self.mainDiscoverButton.frame.origin.y - 125.0)];
+    [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 2.0, self.mainDiscoverButton.frame.origin.y - 158.0)];
+    [self snapButton:self.studentLifeActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 34.0, self.mainDiscoverButton.frame.origin.y - 184.0)];
 }
 
 
@@ -642,7 +642,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
         dispatch_async(dispatch_get_main_queue(), ^{
-              self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
+            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
         });
 
     }
@@ -812,11 +812,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         }
 
-//        } else {
-//            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-//
-//
-//        }
+        //        } else {
+        //            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
+        //
+        //
+        //        }
 
 
     }
@@ -833,19 +833,153 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 //helper method to create actionsheet
 -(void)presentActionSheetToLogInUser{
-    NSString *actionSheetTitle = @"You must be logged in to post events";
-    NSString *button1 = @"Sign In";
-    NSString *button2 = @"Sign Up";
-    NSString *button3 = @"Sign in with Facebook";
-    NSString *button4 = @"Sign in with Twitter";
-    NSString *cancelTitle = @"Never Mind";
 
-    //create the action sheet.
+    UIAlertController * view=   [UIAlertController
+                                 alertControllerWithTitle:@"You Must Login!"
+                                 message:@"Please Login To Post/View Activities"
+                                 preferredStyle:UIAlertControllerStyleActionSheet];
 
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle delegate:self cancelButtonTitle:cancelTitle destructiveButtonTitle:nil otherButtonTitles:button1,button2, button3, button4, nil];
+    UIAlertAction* signInButton = [UIAlertAction
+                                   actionWithTitle:@"Sign In"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                       //Do some thing here
 
-    //present the actionsheet in the current view.
-    [actionSheet showInView:self.view];
+                                       //if the first button is tapped, then present  sign in storyboard
+                                       UIStoryboard *signInStoryBoard = [UIStoryboard storyboardWithName:@"SignIn" bundle:nil];
+                                       UIViewController *signInVC = [signInStoryBoard instantiateViewControllerWithIdentifier:@"signInNavVC"];
+                                       [self presentViewController:signInVC animated:YES completion:nil];
+
+
+
+                                       [view dismissViewControllerAnimated:YES completion:nil];
+
+                                   }];
+
+
+    UIAlertAction* signUpButton = [UIAlertAction
+                                   actionWithTitle:@"Sign Up"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                       //Do some thing here
+
+                                       //if the second button is tapped, then present the sign up storyboard/vc
+
+                                       UIStoryboard *signUpStoryBoard = [UIStoryboard storyboardWithName:@"SignUp" bundle:nil];
+
+                                       UIViewController *signUpVC = [signUpStoryBoard instantiateViewControllerWithIdentifier:@"SignUpNavVC"];
+                                       [self presentViewController:signUpVC animated:YES completion:nil];
+
+
+                                       [view dismissViewControllerAnimated:YES completion:nil];
+
+                                   }];
+
+    UIAlertAction* fbUpButton = [UIAlertAction
+                                 actionWithTitle:@"Sign in with Facebook"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+
+                                     //1. need to get user's permissions.
+                                     NSArray *permissionsArray = @[ @"email", @"public_profile"];
+
+                                     [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+                                         if (!user) {
+                                             NSLog(@"Uh oh. The user cancelled the Facebook login.");
+                                         } else if (user.isNew) {
+
+                                             [self getFacebookUserData];
+
+                                             //if the user is new, then we want to get his information from facebook and store it in parse.
+                                             [self saveFbUserInfoToParse:^{
+                                                 //If the user is new then present the profile
+                                                 UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+                                                 UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+
+                                                 [self presentViewController:profileNavVC animated:YES completion:nil];
+
+                                             } afterDelay:3];
+
+
+                                             //enable tabs once the user has been signed up (Profile/Inbox);
+
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+
+
+
+
+                                         } else {
+                                             NSLog(@"User logged in through Facebook!");
+                                             //enable inbox and profile
+                                             self.navigationItem.leftBarButtonItem.enabled = YES;
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+                                         }
+                                     }];
+
+
+
+
+                                     [view dismissViewControllerAnimated:YES completion:nil];
+
+                                 }];
+
+    UIAlertAction* twitterUpButton = [UIAlertAction
+                                      actionWithTitle:@"Sign in with Twitter"
+                                      style:UIAlertActionStyleDefault
+                                      handler:^(UIAlertAction * action)
+                                      {
+                                          //Do some thing here
+
+
+                                          [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
+                                              if (!user) {
+                                                  NSLog(@"Uh oh. The user cancelled the Twitter login.");
+                                                  return;
+                                              } else if (user.isNew) {
+                                                  NSLog(@"User signed up and logged in with Twitter!");
+                                                  self.navigationItem.leftBarButtonItem.enabled = YES;
+
+                                                  UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
+                                                  UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+                                                  [self presentViewController:profileNavVC animated:YES completion:nil];
+                                              } else {
+                                                  NSLog(@"User logged in with Twitter!");
+                                                  self.navigationItem.leftBarButtonItem.enabled = YES;
+                                              }
+                                          }];
+
+                                          [view dismissViewControllerAnimated:YES completion:nil];
+
+                                      }];
+
+
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Never Mind"
+                             style:UIAlertActionStyleCancel
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [view dismissViewControllerAnimated:YES completion:nil];
+
+                             }];
+
+
+    [view addAction:signInButton];
+    [view addAction:signUpButton];
+    [view addAction:fbUpButton];
+    [view addAction:twitterUpButton];
+    [view addAction:cancel];
+
+
+
+    view.popoverPresentationController.sourceView = self.view;
+    view.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0 - 160, self.view.bounds.size.height / 2.0, 0.0, 0.0);
+    [self presentViewController: view animated:YES completion:nil];
+
 
 }
 
@@ -1018,88 +1152,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                    }];
 }
 
-#pragma Mark - ActionSheet Delegate
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-
-    if (buttonIndex == 0) {
-        //if the first button is tapped, then present  sign in storyboard
-        UIStoryboard *signInStoryBoard = [UIStoryboard storyboardWithName:@"SignIn" bundle:nil];
-        UIViewController *signInVC = [signInStoryBoard instantiateViewControllerWithIdentifier:@"signInNavVC"];
-        [self presentViewController:signInVC animated:YES completion:nil];
-
-    }else if(buttonIndex == 1){
-        //if the second button is tapped, then present the sign up storyboard/vc
-
-        UIStoryboard *signUpStoryBoard = [UIStoryboard storyboardWithName:@"SignUp" bundle:nil];
-
-        UIViewController *signUpVC = [signUpStoryBoard instantiateViewControllerWithIdentifier:@"SignUpNavVC"];
-        [self presentViewController:signUpVC animated:YES completion:nil];
-
-    }else if(buttonIndex == 2){
-
-        //Setting up loginwith facebook
-
-        //1. need to get user's permissions.
-        NSArray *permissionsArray = @[ @"email", @"public_profile"];
-
-        [PFFacebookUtils logInInBackgroundWithReadPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-            if (!user) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-            } else if (user.isNew) {
-
-                [self getFacebookUserData];
-
-                //if the user is new, then we want to get his information from facebook and store it in parse.
-                [self saveFbUserInfoToParse:^{
-                    //If the user is new then present the profile
-                    UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-                    UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
-
-                    [self presentViewController:profileNavVC animated:YES completion:nil];
-
-                } afterDelay:3];
-
-
-                //enable tabs once the user has been signed up (Profile/Inbox);
-
-                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-                [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
-
-
-
-
-            } else {
-                NSLog(@"User logged in through Facebook!");
-                //enable inbox and profile
-                self.navigationItem.leftBarButtonItem.enabled = YES;
-                [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-                [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
-            }
-        }];
-
-
-    }else if(buttonIndex == 3){
-
-        [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
-            if (!user) {
-                NSLog(@"Uh oh. The user cancelled the Twitter login.");
-                return;
-            } else if (user.isNew) {
-                NSLog(@"User signed up and logged in with Twitter!");
-                self.navigationItem.leftBarButtonItem.enabled = YES;
-
-                UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
-                UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
-                [self presentViewController:profileNavVC animated:YES completion:nil];
-            } else {
-                NSLog(@"User logged in with Twitter!");
-                self.navigationItem.leftBarButtonItem.enabled = YES;
-            }
-        }];
-
-    }
-}
 #pragma Mark - Search bar delegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 
@@ -1237,7 +1290,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
             UIImage *image = [UIImage imageNamed:@"gastronomyPin.png"];
             annotationView.image =  [self resizeImageForPins:image];
-           // leftCallOutimage = [UIImage imageNamed:@"mainGastronomy.png"];
+            // leftCallOutimage = [UIImage imageNamed:@"mainGastronomy.png"];
 
         }else if([pinAnnotation.activity.selectedCategory isEqualToString:@"Night Out"] && [(NSNumber *)pinAnnotation.activity.studentsOnly isEqual:@0]){
 
@@ -1307,7 +1360,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             UIImage *image = [UIImage imageNamed:@"uStudentLifePin.png"];
             annotationView.image =  [self resizeImageForPins:image];
             //leftCallOutimage = [UIImage imageNamed:@"mainOutdoors.png"];
-            
+
         }
 
 
@@ -1476,7 +1529,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                             profileImageView.userInteractionEnabled = YES;
                             
                         });
-
+                        
                     }
                     
                     

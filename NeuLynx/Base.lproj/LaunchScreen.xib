@@ -13,13 +13,13 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introSplashScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="rcl-M2-9Hy">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-Ns-4XX">
-                    <rect key="frame" x="8" y="44" width="398" height="141"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-Ns-4XX">
+                    <rect key="frame" x="8" y="55" width="398" height="187"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="141" id="nF1-Zc-Kj5"/>
+                        <constraint firstAttribute="height" constant="187" id="nF1-Zc-Kj5"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeuLynxSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="8h0-gc-eKc">
                     <rect key="frame" x="0.0" y="534" width="414" height="156"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="287" id="Afu-gW-1Cy"/>
@@ -43,7 +43,7 @@
                 <constraint firstItem="8h0-gc-eKc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6wg-2o-Q0R"/>
                 <constraint firstAttribute="trailing" secondItem="8h0-gc-eKc" secondAttribute="trailing" id="9L3-XN-xsD"/>
                 <constraint firstAttribute="trailing" secondItem="AY2-Ns-4XX" secondAttribute="trailing" constant="8" id="Pmb-yd-geZ"/>
-                <constraint firstItem="AY2-Ns-4XX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="Ycb-Y3-q5i"/>
+                <constraint firstItem="AY2-Ns-4XX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="55" id="Ycb-Y3-q5i"/>
                 <constraint firstItem="rcl-M2-9Hy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZFf-Lv-ETJ"/>
                 <constraint firstAttribute="trailing" secondItem="rcl-M2-9Hy" secondAttribute="trailing" id="bcv-DL-Trb"/>
                 <constraint firstItem="AY2-Ns-4XX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ed4-fk-ax5"/>
