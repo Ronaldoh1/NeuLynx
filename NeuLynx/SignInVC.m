@@ -196,16 +196,28 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
     if ([self.email.text isEqualToString:@""] || [self.password.text isEqualToString:@""]) {
         error = @"All fields are required, please try again!";
+
+        [self displayAlertWithTitle:@"All Fields Required!" andWithMessage:error];
     }else{
 
         [User logInWithUsernameInBackground:self.email.text password:self.password.text
                                       block:^(PFUser *user, NSError *error) {
                                           if (user) {
+
+                                              //Enable the message and requests tabs.
+                                              self.navigationItem.leftBarButtonItem.enabled = YES;
+                                              [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+                                              [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+
+                                              
                                               // Do stuff after successful login.
-                                              NSLog(@"logged in");
+                                              UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                              UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+                                              [self presentViewController:mapNavVC animated:YES completion:nil];
 
                                           } else {
                                               // The login failed. Check error to see why.
+                                              [self displayAlertWithTitle:@"Error Loggin in" andWithMessage:error.localizedDescription];
                                           }
                                       }];
 
@@ -251,8 +263,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 }
 
 
-
-#pragma Marks - hiding keyboard
 #pragma Marks - hiding keyboard
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     CGRect textFieldRect =
@@ -321,9 +331,19 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 }
 
 
+//************Helper Methods ****************************//
+//Display general alert
 
+-(void)displayAlertWithTitle:(NSString *)title andWithMessage:(NSString *)message{
 
-//**********************BLOCKS***********************************************//
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+    
+    
+}
+
+//**********************BLOCKS*********************************//
 
 -(void)saveFbUserInfoToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));

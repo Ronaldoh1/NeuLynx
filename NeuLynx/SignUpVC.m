@@ -90,8 +90,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
             //enable tabs once the user has been signed up (Profile/Inbox);
 
-            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
 
 
 
@@ -100,8 +100,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             NSLog(@"User logged in through Facebook!");
             //enable inbox and profile
             self.navigationItem.leftBarButtonItem.enabled = YES;
-            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
@@ -181,9 +181,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {   // Hooray! Let them use the app now.
             //If the user is new then present the profile
+            //Enable the message and requests tabs. 
+            self.navigationItem.leftBarButtonItem.enabled = YES;
+            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
 
             UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
             UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
+
+
             [self presentViewController:profileNavVC animated:YES completion:nil];
 
         } else { //show the error
