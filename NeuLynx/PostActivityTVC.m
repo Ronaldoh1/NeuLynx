@@ -95,29 +95,6 @@
     [self.navigationItem setTitleView:titleView];
 
 
-//    self.gotPicturesLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-//    self.pickCategoryLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-
-    //Disable and Hide the Secondary View - initially
-//    self.secondaryView.hidden = YES;
-//    self.datePicker.hidden = YES;
-//    self.datePicker.enabled = NO;
-
-
-    //Disable start and end time fields.
-//    self.activityStartTime.enabled = NO;
-//    self.activityStartTime.userInteractionEnabled = NO;
-//
-//    self.activityEndTime.enabled = NO;
-//    self.activityEndTime.userInteractionEnabled = NO;
-
-//    //Change the color of the secondary view to yellow.
-//    self.secondaryView.backgroundColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
-//
-//    //change the color of the date picker
-//    [self.datePicker setValue:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1] forKeyPath:@"textColor"];
-
-
     //Initialize the Activity
     self.activity = [Activity new];
 
@@ -132,6 +109,13 @@
 
     //set up the segmented control for LGBT
     self.lgbtSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
+
+    //Add UITapgesture Recognizer and assign it to the view, and then resign the first responder on the textfield on it's selector.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -380,6 +364,10 @@
     if([text isEqualToString:@"\n"])
         [textView resignFirstResponder];
     return YES;
+}
+-(void)dismissKeyboard{
+
+    [self.activityHeadCount resignFirstResponder];
 }
 
 

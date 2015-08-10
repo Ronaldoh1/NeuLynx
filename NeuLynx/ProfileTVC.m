@@ -112,10 +112,6 @@
     self.englishButton.alpha = 0.3;
     self.frenchButton.alpha = 0.3;
 
-//    //add borders to the textView
-//    self.aboutMeTextView.layer.borderWidth = 4.0f;
-//    self.aboutMeTextView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
-
 }
 
 //helper method to get user's languages
@@ -180,8 +176,6 @@
 
 }
 
-
-
 //Helper method to download user's profile image
 -(void)getUsersProfileImage{
 
@@ -194,27 +188,6 @@
     }];
 }
 
-//#pragma mark - Action Buttons 
-////Show the View and enable the picker
-//- (IBAction)onSetAgeButtonTapped:(UIButton *)sender {
-//
-//    self.secondaryView.hidden = NO;
-//    self.secondaryView.userInteractionEnabled = YES;
-//    self.agePicker.hidden = NO;
-//    self.agePicker.userInteractionEnabled = YES;
-//    [self.nameTextField resignFirstResponder];
-//
-//}
-////hide the Age Picker
-//- (IBAction)onDoneButtonHideAgePicker:(UIButton *)sender {
-//    //Hide the View and Disable the picker
-//    self.secondaryView.hidden = YES;
-//    self.secondaryView.userInteractionEnabled = NO;
-//    self.agePicker.hidden = YES;
-//    self.agePicker.userInteractionEnabled = NO;
-//    self.ageTextField.text = self.selectedEntry;
-//
-//}
 
 //********Choose Profile Image ***********
 - (IBAction)onChooseImageButtonTapped:(id)sender {
@@ -306,21 +279,13 @@
                         
                     } afterDelay:1.5];
                     
-                    
-                    
-                    
                 } else {
                     self.navigationItem.rightBarButtonItem.enabled = YES;
                     [self displayErrorMessage:error.localizedDescription];
                     
                     
                 }
-                
-                
             }];
-            
-            
-            
             
         } afterDelay:1.5];
     }
@@ -396,8 +361,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 #pragma mark - UITableView Delegate Methods
 
 //the following method will not allow to select items in the first section but will allow the user to select items in the second section.
@@ -408,51 +371,6 @@
     } else {
         return nil;
     }
-}
-
-
-//#pragma mark - UIPickerView Delegate methods
-////THen number of columns of data.
-//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-//
-//    return 1;
-//}
-////the number of rows  of data
-//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-//
-//    return self.ageArray.count;
-//
-//}
-//
-////return the data for the row and component column that's being passed in .
-//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//
-//
-//    return self.ageArray[row];
-//
-////}
-//
-////get the selected value of picker.
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-//
-//
-//    self.selectedEntry = [self.ageArray objectAtIndex:row];
-//
-//
-//}
-//-(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//
-//    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:self.ageArray[row] attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1]}];
-//    
-//    return attString;
-//}
-//
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-
-    return cell;
 }
 
 #pragma Marks - hiding keyboard
@@ -476,18 +394,12 @@
         [textView resignFirstResponder];
     return YES;
 }
-//hide keyboard when user touches outside.
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    [self.view endEditing:YES];
-//}
+
 //Helper method to set up the textfield delegates
 -(void)setUpTextFieldDelegates{
     self.nameTextField.delegate = self;
     self.ageTextField.delegate = self;
 }
-
-
 
 //***********HELPER METHODS **************//
 

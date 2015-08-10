@@ -65,11 +65,9 @@
 		F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFBF51AFB10B000B2C5BA /* MapVC.m */; };
 		F25BFBFA1AFB1D2B00B2C5BA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */; };
 		F25BFC471AFB2BF100B2C5BA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC461AFB2BF100B2C5BA /* User.m */; };
-		F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC481AFB392900B2C5BA /* profileicon.png */; };
 		F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */; };
 		F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC501AFB47DB00B2C5BA /* SignInVC.m */; };
 		F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */; };
-		F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC5E1AFB9F4100B2C5BA /* postButton.png */; };
 		F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */; };
 		F25BFC731B017CAE00B2C5BA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */; };
 		F25BFC741B017CAE00B2C5BA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */; };
@@ -104,7 +102,6 @@
 		F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519461AFAE347007A45FA /* libsqlite3.dylib */; };
 		F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519481AFAE358007A45FA /* Accounts.framework */; };
 		F285194B1AFAE360007A45FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285194A1AFAE360007A45FA /* Social.framework */; };
-		F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F285194E1AFAEA33007A45FA /* NeulynxLogo.png */; };
 		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
@@ -120,7 +117,6 @@
 		F2892E021B3EAB540010D534 /* rateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFA1B3EAB540010D534 /* rateIcon.png */; };
 		F2892E031B3EAB540010D534 /* twitterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFB1B3EAB540010D534 /* twitterIcon.png */; };
 		F2892E041B3EAB540010D534 /* vineIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892DFC1B3EAB540010D534 /* vineIcon.png */; };
-		F2892E061B3EC0A00010D534 /* appName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E051B3EC0A00010D534 /* appName.png */; };
 		F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2892E081B4179EA0010D534 /* ProfileTVC.m */; };
 		F2892E0B1B4215BF0010D534 /* discover.png in Resources */ = {isa = PBXBuildFile; fileRef = F2892E0A1B4215BF0010D534 /* discover.png */; };
 		F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320961B43C126001B9930 /* ActivityDetailTVC.m */; };
@@ -285,13 +281,11 @@
 		F25BFBF91AFB1D2B00B2C5BA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F25BFC451AFB2BF100B2C5BA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F25BFC461AFB2BF100B2C5BA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		F25BFC481AFB392900B2C5BA /* profileicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileicon.png; sourceTree = "<group>"; };
 		F25BFC4B1AFB3CB400B2C5BA /* Mail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mail.storyboard; sourceTree = "<group>"; };
 		F25BFC4F1AFB47DB00B2C5BA /* SignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInVC.h; sourceTree = "<group>"; };
 		F25BFC501AFB47DB00B2C5BA /* SignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInVC.m; sourceTree = "<group>"; };
 		F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
 		F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
-		F25BFC5E1AFB9F4100B2C5BA /* postButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postButton.png; sourceTree = "<group>"; };
 		F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
 		F25BFC701B017CAE00B2C5BA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F25BFC711B017CAE00B2C5BA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -332,7 +326,6 @@
 		F28519461AFAE347007A45FA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F28519481AFAE358007A45FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F285194A1AFAE360007A45FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		F285194E1AFAEA33007A45FA /* NeulynxLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeulynxLogo.png; sourceTree = "<group>"; };
 		F28519521AFAED9F007A45FA /* or.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = or.png; sourceTree = "<group>"; };
 		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
@@ -350,7 +343,6 @@
 		F2892DFA1B3EAB540010D534 /* rateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rateIcon.png; sourceTree = "<group>"; };
 		F2892DFB1B3EAB540010D534 /* twitterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterIcon.png; sourceTree = "<group>"; };
 		F2892DFC1B3EAB540010D534 /* vineIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vineIcon.png; sourceTree = "<group>"; };
-		F2892E051B3EC0A00010D534 /* appName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appName.png; sourceTree = "<group>"; };
 		F2892E071B4179EA0010D534 /* ProfileTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTVC.h; sourceTree = "<group>"; };
 		F2892E081B4179EA0010D534 /* ProfileTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTVC.m; sourceTree = "<group>"; };
 		F2892E0A1B4215BF0010D534 /* discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = discover.png; sourceTree = "<group>"; };
@@ -851,10 +843,6 @@
 				F21EC4741B6475CC000E535B /* Map Pins */,
 				F2D38AB31B648CC6007EBF41 /* Miscellaneous */,
 				F21EC4711B6473F6000E535B /* Tabs */,
-				F2892E051B3EC0A00010D534 /* appName.png */,
-				F25BFC5E1AFB9F4100B2C5BA /* postButton.png */,
-				F25BFC481AFB392900B2C5BA /* profileicon.png */,
-				F285194E1AFAEA33007A45FA /* NeulynxLogo.png */,
 			);
 			name = Images;
 			path = ../NeuLynx.xcodeproj;
@@ -1162,13 +1150,11 @@
 				F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
 				F2892E041B3EAB540010D534 /* vineIcon.png in Resources */,
-				F2892E061B3EC0A00010D534 /* appName.png in Resources */,
 				F2D38AD81B669431007EBF41 /* studentLifePin.png in Resources */,
 				F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */,
 				F2FE7E9A1B0AF0C900CDD057 /* spa.png in Resources */,
 				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
 				F23435211B37C8C10065D11C /* searchIcon.png in Resources */,
-				F25BFC491AFB392900B2C5BA /* profileicon.png in Resources */,
 				F2892E031B3EAB540010D534 /* twitterIcon.png in Resources */,
 				F23435241B37C9BC0065D11C /* requestIcon.png in Resources */,
 				F2D38B021B673DA7007EBF41 /* appNameMedium.png in Resources */,
@@ -1180,7 +1166,6 @@
 				F28518EF1AFABFAD007A45FA /* Images.xcassets in Resources */,
 				F2D38AC91B64BA45007EBF41 /* uStudentLifePin.png in Resources */,
 				F2E6E8ED1B2383C10083BA7F /* Detail.storyboard in Resources */,
-				F25BFC5F1AFB9F4100B2C5BA /* postButton.png in Resources */,
 				F226C8161B0F5B57007A1C03 /* cultural.png in Resources */,
 				F2892DFE1B3EAB540010D534 /* googlePlusIcon.png in Resources */,
 				F285192B1AFADB20007A45FA /* History.storyboard in Resources */,
@@ -1228,7 +1213,6 @@
 				F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */,
 				F234351A1B37C8C10065D11C /* aboutIcon.png in Resources */,
 				F2D38AC81B64BA45007EBF41 /* uNightOutPin.png in Resources */,
-				F285194F1AFAEA33007A45FA /* NeulynxLogo.png in Resources */,
 				F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */,
 				F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */,
 				F2D38AF41B67332E007EBF41 /* AppIcon40x40@3x.png in Resources */,
