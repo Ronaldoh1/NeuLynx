@@ -92,10 +92,6 @@
     self.ActivityTitleLabel.text = selectedActivity.activityTitle;
     self.ActivityTitleLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
-    //add borders to the textView
-//    self.activityDescriptionText.layer.borderWidth = 4.0f;
-//    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
-
     //Initially set the flags to 0.4 alpha and change them based on host actual langauges.
     self.portugueseFlag.alpha = 0.3;
     self.americanFlag.alpha = 0.3;
@@ -200,7 +196,7 @@
     //Display rate flags for the user.
     RateView* rv = [RateView rateViewWithRating:3.7f];
     rv.starFillColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:0/255.0 alpha:1];
-    rv.frame = CGRectMake(115, 235, 150, 30);
+    rv.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 3.3, 235, 150, 30);
 
     [self.view addSubview:rv];
 
@@ -235,13 +231,10 @@
 
     }else {
 
-
-
-
     selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
-    //add current user to the request.
 
 
+        //add current user to the request.
 
     [tempActivityArray addObject:[User currentUser]];
 
@@ -301,9 +294,6 @@
     if (indexPath.section == 3 && indexPath.row == 0) {
 
 
-        //        self.activitySL = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        //        [self.activitySL setInitialText:[NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text]];
-        //        [self presentViewController:self.activitySL animated:YES completion:nil];
         FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
         content.contentURL = [NSURL URLWithString:@"http://developers.facebook.com"];
         content.contentDescription = [NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text];
@@ -337,10 +327,6 @@
 
         UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
         UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
-
-
-        
-
 
         [self presentViewController:messageNavVC animated:YES completion:nil];
 

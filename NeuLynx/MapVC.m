@@ -195,9 +195,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
         UITabBarController *tutorialNavVC = [tutorialStoryboard instantiateViewControllerWithIdentifier:@"tutorialNavVC"];
-        //        if (self.currentUser != nil) {
-        //            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
-        //        }
+
 
         [self presentViewController:tutorialNavVC animated:true completion:nil];
 
@@ -231,6 +229,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     tmpBool = YES;
 
     appDelegate.hideDoneButtonForRequests = &(tmpBool);
+    appDelegate.hideDoneButtonForMessages = &(tmpBool);
 
 
 }
@@ -355,18 +354,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     }
 
-
-
-
     [button addSubview:label];
 
     [self.view addSubview:button];
-
-    //    UILabel *label =  [[UILabel alloc] initWithFrame: CGRectMake(self.view.frame.size.width - 60.0, self.view.frame.size.height - 110.0, 53.0, 53.0)];
-    //    label.text = @"text";
-    //    [self.view addSubview:label];
-
-
 
 
     return button;
@@ -454,8 +444,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
         self.ring1ImageView.hidden = NO;
         self.ring2ImageView.hidden = NO;
-
-
 
     }
     self.isFannedOut = !self.isFannedOut;
@@ -589,14 +577,12 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method to create blinking ring images.
 -(void)createAndDisplayBlinkingRings{
     UIImage *ring1 = [UIImage imageNamed:@"bluering.png"];
-    //UIImage *image2 = [UIImage imageNamed:@"image2.png"];
 
     self.ring1ImageView = [[UIImageView alloc] initWithImage:ring1];
     [self.ring1ImageView setFrame:CGRectMake(self.view.frame.size.width - 72.0, self.view.frame.size.height - 122.0, 65.0, 65.0)];
 
     [self.view addSubview:self.ring1ImageView];
     UIImage *ring2 = [UIImage imageNamed:@"bluering.png"];
-    //UIImage *image2 = [UIImage imageNamed:@"image2.png"];
 
     self.ring2ImageView = [[UIImageView alloc] initWithImage:ring2];
     [self.ring2ImageView setFrame:CGRectMake(self.view.frame.size.width - 77.0, self.view.frame.size.height - 127.0, 75.0, 75.0)];
@@ -683,8 +669,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     UIBarButtonItem *profileButtonItem = [[UIBarButtonItem alloc]initWithCustomView:profileButtonView];
 
     self.navigationItem.leftBarButtonItem = profileButtonItem;
-
-    //CREATE RIGHT BUTTON FOR POST
 
 
 }
@@ -811,12 +795,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             }
 
         }
-
-        //        } else {
-        //            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-        //
-        //
-        //        }
 
 
     }

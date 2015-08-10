@@ -46,7 +46,6 @@
 		F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */; };
 		F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2D91B49F57700A3BAE7 /* thumbsDown.png */; };
 		F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */; };
-		F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F249D2E01B5024B100A3BAE7 /* MailVC.swift */; };
 		F249D2F01B51969E00A3BAE7 /* InboxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2EF1B51969E00A3BAE7 /* InboxVC.m */; };
 		F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F21B51B8B900A3BAE7 /* DialogVC.m */; };
 		F249D2F61B51D6FD00A3BAE7 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2F51B51D6FD00A3BAE7 /* Message.m */; };
@@ -125,6 +124,7 @@
 		F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A01B46E072001B9930 /* SelectTimeTVC.m */; };
 		F29320A41B48227C001B9930 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A31B48227C001B9930 /* CustomCell.m */; };
 		F29A95041B71DF74004892A4 /* blackShadeSignUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */; };
+		F29A95071B786230004892A4 /* bugIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F29A95061B786230004892A4 /* bugIcon.png */; };
 		F2D38AB71B649992007EBF41 /* clearLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AB41B649992007EBF41 /* clearLogo.png */; };
 		F2D38AB81B649992007EBF41 /* neulynxName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AB51B649992007EBF41 /* neulynxName.png */; };
 		F2D38ABB1B649E56007EBF41 /* neulynxNameSmallBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */; };
@@ -255,7 +255,6 @@
 		F249D2D91B49F57700A3BAE7 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
 		F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUp.png; sourceTree = "<group>"; };
 		F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeuLynx-Bridging-Header.h"; sourceTree = "<group>"; };
-		F249D2E01B5024B100A3BAE7 /* MailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailVC.swift; sourceTree = "<group>"; };
 		F249D2EE1B51969E00A3BAE7 /* InboxVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxVC.h; sourceTree = "<group>"; };
 		F249D2EF1B51969E00A3BAE7 /* InboxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxVC.m; sourceTree = "<group>"; };
 		F249D2F11B51B8B900A3BAE7 /* DialogVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogVC.h; sourceTree = "<group>"; };
@@ -356,6 +355,7 @@
 		F29320A21B48227C001B9930 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		F29320A31B48227C001B9930 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShadeSignUpBackground.png; sourceTree = "<group>"; };
+		F29A95061B786230004892A4 /* bugIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bugIcon.png; sourceTree = "<group>"; };
 		F2D38AB41B649992007EBF41 /* clearLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearLogo.png; sourceTree = "<group>"; };
 		F2D38AB51B649992007EBF41 /* neulynxName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxName.png; sourceTree = "<group>"; };
 		F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxNameSmallBlack.png; sourceTree = "<group>"; };
@@ -592,6 +592,7 @@
 		F21EC4721B6474CD000E535B /* Action Icons */ = {
 			isa = PBXGroup;
 			children = (
+				F29A95061B786230004892A4 /* bugIcon.png */,
 				F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */,
 				F226C8111B0F5AC0007A1C03 /* outdoors.png */,
 				F2892DF91B3EAB540010D534 /* share.png */,
@@ -673,7 +674,6 @@
 				F249D2F11B51B8B900A3BAE7 /* DialogVC.h */,
 				F249D2F21B51B8B900A3BAE7 /* DialogVC.m */,
 				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
-				F249D2E01B5024B100A3BAE7 /* MailVC.swift */,
 			);
 			name = Mail;
 			sourceTree = "<group>";
@@ -1194,6 +1194,7 @@
 				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */,
 				F2D38AF91B67332E007EBF41 /* AppIcon57x57@2x.png in Resources */,
+				F29A95071B786230004892A4 /* bugIcon.png in Resources */,
 				F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */,
 				F23435221B37C8C10065D11C /* termsIcon.png in Resources */,
 				F2D38AFB1B67332E007EBF41 /* AppIcon60x60@3x.png in Resources */,
@@ -1308,7 +1309,6 @@
 				F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */,
 				F28518E41AFABFAD007A45FA /* AppDelegate.m in Sources */,
 				F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */,
-				F249D2E11B5024B100A3BAE7 /* MailVC.swift in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
 				F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */,

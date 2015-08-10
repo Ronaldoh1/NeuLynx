@@ -196,12 +196,6 @@
 
         }
 
-//        } else {
-//            [self displayAlertWithTitle:@"Could Not Retrieve Activities" andWithError:@"Make sure you're connected to WiFi or Phone Network"];
-//
-//
-//        }
-
 
     }
 
@@ -227,18 +221,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-  //  Activity *activity = self.tempActivitiestArray[indexPath.row];
-
-//    //here we need to get the total count of requests in case the user has posted more than one activity.
-//    int count = 0;
-//
-//    for (int i  = 0; i<self.tempActivitiestArray.count; i++) {
-//        count = count + (int)((Activity *)self.tempActivitiestArray[i]).RequestsArray.count;
-//    }
-    //User *participant = activity.RequestsArray[0]
-
     return [((Activity*)[self.tempActivitiestArray objectAtIndex:section]).RequestsArray count];
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     NSLog(@"%ld", (long)indexPath.row);

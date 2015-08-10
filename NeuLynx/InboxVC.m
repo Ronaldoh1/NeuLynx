@@ -10,11 +10,13 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "DialogVC.h"
+#import "AppDelegate.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *inboxArray;
 @property DialogVC *activeDialogVC;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 
 @end
 
@@ -48,8 +50,18 @@
 //    [self.inboxArray addObject:[User currentUser]];
 //    [[User currentUser] save];
 
-    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    BOOL tmpBool = appDelegate.hideDoneButtonForMessages;
 
+    if (tmpBool == YES) {
+
+        tmpBool = NO;
+        appDelegate.hideDoneButtonForMessages = nil;
+        self.navigationItem.rightBarButtonItem = nil;
+        self.doneBarButton.enabled = NO;
+        
+        
+    }
 }
 
 - (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {

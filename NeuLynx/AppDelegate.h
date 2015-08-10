@@ -14,6 +14,7 @@
 
 @property Activity *sharedActivity;
 @property BOOL *hideDoneButtonForRequests;
+@property BOOL *hideDoneButtonForMessages;
 
 @property (strong, nonatomic) UIWindow *window;
 

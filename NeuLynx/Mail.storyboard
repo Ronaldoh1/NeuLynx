@@ -62,6 +62,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="doneBarButton" destination="agt-TI-Ld2" id="v3h-sq-j1s"/>
                         <outlet property="tableView" destination="lyQ-4m-IDT" id="z7w-2F-JLe"/>
                     </connections>
                 </viewController>
