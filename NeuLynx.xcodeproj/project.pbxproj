@@ -44,6 +44,8 @@
 		F2361DD61B7B08EC007228C0 /* termsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DD51B7B08EC007228C0 /* termsIcon.png */; };
 		F2361DD81B7B08FD007228C0 /* searchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DD71B7B08FD007228C0 /* searchIcon.png */; };
 		F2361DDA1B7B092C007228C0 /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DD91B7B092C007228C0 /* locationIcon.png */; };
+		F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2361DDD1B7B48AE007228C0 /* BugReportVC.m */; };
+		F2361DE01B7B48CB007228C0 /* bugReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */; };
 		F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */; };
 		F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2D91B49F57700A3BAE7 /* thumbsDown.png */; };
 		F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */; };
@@ -102,7 +104,6 @@
 		F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519461AFAE347007A45FA /* libsqlite3.dylib */; };
 		F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519481AFAE358007A45FA /* Accounts.framework */; };
 		F285194B1AFAE360007A45FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285194A1AFAE360007A45FA /* Social.framework */; };
-		F28519531AFAED9F007A45FA /* or.png in Resources */ = {isa = PBXBuildFile; fileRef = F28519521AFAED9F007A45FA /* or.png */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
@@ -125,9 +126,6 @@
 		F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A01B46E072001B9930 /* SelectTimeTVC.m */; };
 		F29320A41B48227C001B9930 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A31B48227C001B9930 /* CustomCell.m */; };
 		F29A95041B71DF74004892A4 /* blackShadeSignUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */; };
-		F2D38AB71B649992007EBF41 /* clearLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AB41B649992007EBF41 /* clearLogo.png */; };
-		F2D38AB81B649992007EBF41 /* neulynxName.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AB51B649992007EBF41 /* neulynxName.png */; };
-		F2D38ABB1B649E56007EBF41 /* neulynxNameSmallBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */; };
 		F2D38AC41B64BA45007EBF41 /* uCulturalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ABD1B64BA45007EBF41 /* uCulturalPin.png */; };
 		F2D38AC51B64BA45007EBF41 /* uFestivalPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ABE1B64BA45007EBF41 /* uFestivalPin.png */; };
 		F2D38AC61B64BA45007EBF41 /* uFitnessPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ABF1B64BA45007EBF41 /* uFitnessPin.png */; };
@@ -139,7 +137,6 @@
 		F2D38ACE1B65C763007EBF41 /* profileCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ACD1B65C763007EBF41 /* profileCircle.png */; };
 		F2D38AD01B65D46A007EBF41 /* introSplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ACF1B65D46A007EBF41 /* introSplashScreen.png */; };
 		F2D38AD41B65DC72007EBF41 /* wStudentLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AD31B65DC72007EBF41 /* wStudentLife.png */; };
-		F2D38AD61B65DE18007EBF41 /* neulynxNameSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AD51B65DE18007EBF41 /* neulynxNameSmall.png */; };
 		F2D38AD81B669431007EBF41 /* studentLifePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AD71B669431007EBF41 /* studentLifePin.png */; };
 		F2D38AED1B67332E007EBF41 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38AD91B67332E007EBF41 /* AppIcon29x29.png */; };
 		F2D38AEE1B67332E007EBF41 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ADA1B67332E007EBF41 /* AppIcon29x29@2x.png */; };
@@ -188,11 +185,9 @@
 		F2FE7E601B04EDF500CDD057 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E5F1B04EDF500CDD057 /* Tutorial.storyboard */; };
 		F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */; };
 		F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */; };
-		F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E691B050F6F00CDD057 /* person_default_page.jpg */; };
 		F2FE7E6E1B05143800CDD057 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E6D1B05143800CDD057 /* us.png */; };
 		F2FE7E701B05144500CDD057 /* fr.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E6F1B05144500CDD057 /* fr.png */; };
 		F2FE7E721B05146100CDD057 /* br.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E711B05146100CDD057 /* br.png */; };
-		F2FE7E741B0519EB00CDD057 /* editbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E731B0519EB00CDD057 /* editbutton.png */; };
 		F2FE7E821B0583F700CDD057 /* imagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */; };
 		F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E941B0A31AC00CDD057 /* Account.storyboard */; };
 		F2FE7E9A1B0AF0C900CDD057 /* spa.png in Resources */ = {isa = PBXBuildFile; fileRef = F2FE7E991B0AF0C900CDD057 /* spa.png */; };
@@ -251,6 +246,9 @@
 		F2361DD51B7B08EC007228C0 /* termsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = termsIcon.png; sourceTree = "<group>"; };
 		F2361DD71B7B08FD007228C0 /* searchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon.png; sourceTree = "<group>"; };
 		F2361DD91B7B092C007228C0 /* locationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationIcon.png; sourceTree = "<group>"; };
+		F2361DDC1B7B48AE007228C0 /* BugReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugReportVC.h; sourceTree = "<group>"; };
+		F2361DDD1B7B48AE007228C0 /* BugReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugReportVC.m; sourceTree = "<group>"; };
+		F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = bugReport.storyboard; sourceTree = "<group>"; };
 		F249D2D21B49A57200A3BAE7 /* RequestCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCustomCell.h; sourceTree = "<group>"; };
 		F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCustomCell.m; sourceTree = "<group>"; };
 		F249D2D91B49F57700A3BAE7 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
@@ -326,7 +324,6 @@
 		F28519461AFAE347007A45FA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F28519481AFAE358007A45FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		F285194A1AFAE360007A45FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		F28519521AFAED9F007A45FA /* or.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = or.png; sourceTree = "<group>"; };
 		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
@@ -356,9 +353,6 @@
 		F29320A21B48227C001B9930 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		F29320A31B48227C001B9930 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShadeSignUpBackground.png; sourceTree = "<group>"; };
-		F2D38AB41B649992007EBF41 /* clearLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clearLogo.png; sourceTree = "<group>"; };
-		F2D38AB51B649992007EBF41 /* neulynxName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxName.png; sourceTree = "<group>"; };
-		F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxNameSmallBlack.png; sourceTree = "<group>"; };
 		F2D38ABD1B64BA45007EBF41 /* uCulturalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uCulturalPin.png; sourceTree = "<group>"; };
 		F2D38ABE1B64BA45007EBF41 /* uFestivalPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uFestivalPin.png; sourceTree = "<group>"; };
 		F2D38ABF1B64BA45007EBF41 /* uFitnessPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uFitnessPin.png; sourceTree = "<group>"; };
@@ -370,7 +364,6 @@
 		F2D38ACD1B65C763007EBF41 /* profileCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileCircle.png; sourceTree = "<group>"; };
 		F2D38ACF1B65D46A007EBF41 /* introSplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introSplashScreen.png; sourceTree = "<group>"; };
 		F2D38AD31B65DC72007EBF41 /* wStudentLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wStudentLife.png; sourceTree = "<group>"; };
-		F2D38AD51B65DE18007EBF41 /* neulynxNameSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxNameSmall.png; sourceTree = "<group>"; };
 		F2D38AD71B669431007EBF41 /* studentLifePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studentLifePin.png; sourceTree = "<group>"; };
 		F2D38AD91B67332E007EBF41 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		F2D38ADA1B67332E007EBF41 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
@@ -431,11 +424,9 @@
 		F2FE7E621B04EF3C00CDD057 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
 		F2FE7E641B04EF5900CDD057 /* MainTutorialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTutorialVC.h; sourceTree = "<group>"; };
 		F2FE7E651B04EF5900CDD057 /* MainTutorialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTutorialVC.m; sourceTree = "<group>"; };
-		F2FE7E691B050F6F00CDD057 /* person_default_page.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = person_default_page.jpg; sourceTree = "<group>"; };
 		F2FE7E6D1B05143800CDD057 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = us.png; sourceTree = "<group>"; };
 		F2FE7E6F1B05144500CDD057 /* fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fr.png; sourceTree = "<group>"; };
 		F2FE7E711B05146100CDD057 /* br.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = br.png; sourceTree = "<group>"; };
-		F2FE7E731B0519EB00CDD057 /* editbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editbutton.png; sourceTree = "<group>"; };
 		F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imagePlaceholder.png; sourceTree = "<group>"; };
 		F2FE7E941B0A31AC00CDD057 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		F2FE7E991B0AF0C900CDD057 /* spa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spa.png; sourceTree = "<group>"; };
@@ -655,6 +646,16 @@
 			name = Flags;
 			sourceTree = "<group>";
 		};
+		F2361DDB1B7B4866007228C0 /* Bug Report */ = {
+			isa = PBXGroup;
+			children = (
+				F2361DDC1B7B48AE007228C0 /* BugReportVC.h */,
+				F2361DDD1B7B48AE007228C0 /* BugReportVC.m */,
+				F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */,
+			);
+			name = "Bug Report";
+			sourceTree = "<group>";
+		};
 		F249D2FB1B52BA0C00A3BAE7 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +703,7 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F2361DDB1B7B4866007228C0 /* Bug Report */,
 				F2E6E8D71B22C5EC0083BA7F /* Faq */,
 				F2E6E8BC1B1A432D0083BA7F /* Search */,
 				F2E6E8B41B1A13930083BA7F /* Request */,
@@ -909,11 +911,8 @@
 				F2576E211B02D5A70006C8E1 /* post.png */,
 				F249D2D91B49F57700A3BAE7 /* thumbsDown.png */,
 				F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */,
-				F2FE7E731B0519EB00CDD057 /* editbutton.png */,
 				F25BFC601AFBA2AC00B2C5BA /* defaultImage.png */,
 				F2FE7E811B0583F700CDD057 /* imagePlaceholder.png */,
-				F2FE7E691B050F6F00CDD057 /* person_default_page.jpg */,
-				F28519521AFAED9F007A45FA /* or.png */,
 			);
 			name = Miscellaneous;
 			sourceTree = "<group>";
@@ -921,11 +920,7 @@
 		F2D38ABC1B649E63007EBF41 /* App Logo */ = {
 			isa = PBXGroup;
 			children = (
-				F2D38AB51B649992007EBF41 /* neulynxName.png */,
-				F2D38AB41B649992007EBF41 /* clearLogo.png */,
-				F2D38AD51B65DE18007EBF41 /* neulynxNameSmall.png */,
 				F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */,
-				F2D38ABA1B649E56007EBF41 /* neulynxNameSmallBlack.png */,
 			);
 			name = "App Logo";
 			sourceTree = "<group>";
@@ -1126,7 +1121,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2D38AF61B67332E007EBF41 /* AppIcon50x50@2x~ipad.png in Resources */,
-				F2FE7E741B0519EB00CDD057 /* editbutton.png in Resources */,
 				F2892DFD1B3EAB540010D534 /* facebookIcon.png in Resources */,
 				F2FE7E821B0583F700CDD057 /* imagePlaceholder.png in Resources */,
 				F2361DD41B7B08D9007228C0 /* requestIcon.png in Resources */,
@@ -1139,7 +1133,6 @@
 				F2892E011B3EAB540010D534 /* share.png in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
 				F226C81C1B0F5C07007A1C03 /* nightout.png in Resources */,
-				F2D38AB71B649992007EBF41 /* clearLogo.png in Resources */,
 				F21EC4401B5D6E56000E535B /* aqua.png in Resources */,
 				F2D38AEF1B67332E007EBF41 /* AppIcon29x29@2x~ipad.png in Resources */,
 				F2FE7E951B0A31AC00CDD057 /* Account.storyboard in Resources */,
@@ -1179,6 +1172,7 @@
 				F2576E041B01B8DE0006C8E1 /* newNeuLynxSlogan.png in Resources */,
 				F2361DD61B7B08EC007228C0 /* termsIcon.png in Resources */,
 				F2D38AED1B67332E007EBF41 /* AppIcon29x29.png in Resources */,
+				F2361DE01B7B48CB007228C0 /* bugReport.storyboard in Resources */,
 				F25BFC611AFBA2AC00B2C5BA /* defaultImage.png in Resources */,
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
@@ -1193,7 +1187,6 @@
 				F2D38AF11B67332E007EBF41 /* AppIcon29x29~ipad.png in Resources */,
 				F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
-				F2FE7E6A1B050F6F00CDD057 /* person_default_page.jpg in Resources */,
 				F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */,
 				F2D38AF91B67332E007EBF41 /* AppIcon57x57@2x.png in Resources */,
 				F2361DC81B7B0832007228C0 /* bugIcon.png in Resources */,
@@ -1210,14 +1203,12 @@
 				F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */,
 				F2576E121B01BA9A0006C8E1 /* mapTabButton.png in Resources */,
 				F2FE7E721B05146100CDD057 /* br.png in Resources */,
-				F2D38AD61B65DE18007EBF41 /* neulynxNameSmall.png in Resources */,
 				F2292EF71B25508E003D82D5 /* mainGastronomy.png in Resources */,
 				F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */,
 				F2D38AC81B64BA45007EBF41 /* uNightOutPin.png in Resources */,
 				F24EC7E31B23AD8C0018202F /* nightOutPin.png in Resources */,
 				F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */,
 				F2D38AF41B67332E007EBF41 /* AppIcon40x40@3x.png in Resources */,
-				F2D38ABB1B649E56007EBF41 /* neulynxNameSmallBlack.png in Resources */,
 				F2D38ACA1B64BA45007EBF41 /* uOutdoorsPin.png in Resources */,
 				F2D38AC71B64BA45007EBF41 /* uGastronomyPin.png in Resources */,
 				F2892E001B3EAB540010D534 /* periscope.png in Resources */,
@@ -1246,14 +1237,12 @@
 				F249D2FA1B52B75700A3BAE7 /* chatIcon.png in Resources */,
 				F2E6E8B61B1A13A70083BA7F /* Request.storyboard in Resources */,
 				F2E6E8521B1602190083BA7F /* Help.storyboard in Resources */,
-				F28519531AFAED9F007A45FA /* or.png in Resources */,
 				F2D38AF81B67332E007EBF41 /* AppIcon57x57.png in Resources */,
 				F2361DCC1B7B0866007228C0 /* faqIcon.png in Resources */,
 				F2361DD81B7B08FD007228C0 /* searchIcon.png in Resources */,
 				F2361DD01B7B0891007228C0 /* historyIcon.png in Resources */,
 				F2292EF51B25508E003D82D5 /* mainFestival.png in Resources */,
 				F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */,
-				F2D38AB81B649992007EBF41 /* neulynxName.png in Resources */,
 				F2576E221B02D5A80006C8E1 /* post.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1335,6 +1324,7 @@
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
 				F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */,
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,
+				F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
@@ -1477,9 +1467,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02b76bc9-9f2e-484a-ac2b-b496f8473e5c";
+				PROVISIONING_PROFILE = "227c96a1-8a4f-4f03-aea5-976c2bca00af";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1499,9 +1490,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02b76bc9-9f2e-484a-ac2b-b496f8473e5c";
+				PROVISIONING_PROFILE = "227c96a1-8a4f-4f03-aea5-976c2bca00af";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

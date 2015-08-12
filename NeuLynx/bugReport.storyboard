@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bug ReportVC-->
+        <scene sceneID="227-ix-2n4">
+            <objects>
+                <viewController id="j3i-ls-tDu" customClass="BugReportVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Wx-CN-S2y"/>
+                        <viewControllerLayoutGuide type="bottom" id="m9k-9R-lZr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zm2-uW-nmx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackShadeSignInBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="zgp-MR-mVf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Us Improve NeuLynx! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSA-5i-dux">
+                                <rect key="frame" x="16" y="64" width="288" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="C2M-kN-a6r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Problem Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NN2-pG-rAl">
+                                <rect key="frame" x="16" y="105" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="j3i-ls-tDu" id="4rG-TQ-CE1"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDg-FL-a67">
+                                <rect key="frame" x="16" y="143" width="288" height="226"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="trd-u0-ZWM"/>
+                                </constraints>
+                                <string key="text">Please describe in details the problem you encountered.  If something isn't working please let us know - e.g. features, notifications etc. Or simply provide general feedback. We would love to hear from you. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="j3i-ls-tDu" id="H4J-gh-SDi"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hDg-FL-a67" firstAttribute="trailing" secondItem="Zm2-uW-nmx" secondAttribute="trailingMargin" id="6Ye-uj-kqa"/>
+                            <constraint firstAttribute="centerX" secondItem="NN2-pG-rAl" secondAttribute="centerX" id="79u-HF-F5L"/>
+                            <constraint firstAttribute="centerY" secondItem="ZSA-5i-dux" secondAttribute="centerY" constant="154" id="Db2-Km-YJO"/>
+                            <constraint firstAttribute="centerY" secondItem="NN2-pG-rAl" secondAttribute="centerY" constant="120" id="F3Q-Hu-2nI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zgp-MR-mVf" secondAttribute="trailing" constant="-16" id="KtZ-6H-6l4"/>
+                            <constraint firstItem="ZSA-5i-dux" firstAttribute="trailing" secondItem="Zm2-uW-nmx" secondAttribute="trailingMargin" id="SfU-Pu-0m0"/>
+                            <constraint firstItem="ZSA-5i-dux" firstAttribute="leading" secondItem="Zm2-uW-nmx" secondAttribute="leadingMargin" id="Z87-9r-fvQ"/>
+                            <constraint firstItem="NN2-pG-rAl" firstAttribute="leading" secondItem="Zm2-uW-nmx" secondAttribute="leadingMargin" id="chf-o4-B8v"/>
+                            <constraint firstItem="m9k-9R-lZr" firstAttribute="top" secondItem="zgp-MR-mVf" secondAttribute="bottom" id="kQT-I2-bh7"/>
+                            <constraint firstItem="hDg-FL-a67" firstAttribute="leading" secondItem="Zm2-uW-nmx" secondAttribute="leadingMargin" id="kRf-D1-JPT"/>
+                            <constraint firstItem="zgp-MR-mVf" firstAttribute="leading" secondItem="Zm2-uW-nmx" secondAttribute="leadingMargin" constant="-16" id="kTZ-10-nxn"/>
+                            <constraint firstAttribute="centerY" secondItem="hDg-FL-a67" secondAttribute="centerY" constant="-16" id="u2n-g6-3So"/>
+                            <constraint firstItem="NN2-pG-rAl" firstAttribute="trailing" secondItem="Zm2-uW-nmx" secondAttribute="trailingMargin" id="wld-Iw-sqm"/>
+                            <constraint firstItem="zgp-MR-mVf" firstAttribute="top" secondItem="2Wx-CN-S2y" secondAttribute="bottom" id="xKV-Oe-gu1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="46P-7l-jQY">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="VnR-M0-VgY">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="j3i-ls-tDu" id="fRL-gQ-XwQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="pYj-5s-5NN">
+                            <connections>
+                                <action selector="onSendEmailButtonTapped:" destination="j3i-ls-tDu" id="dky-dQ-heQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="messageBody" destination="hDg-FL-a67" id="IPo-R4-nCk"/>
+                        <outlet property="problemTitle" destination="NN2-pG-rAl" id="z63-du-KQU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0CI-hJ-agm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="193"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="10x-NO-llT">
+            <objects>
+                <navigationController storyboardIdentifier="bugReportNavVC" automaticallyAdjustsScrollViewInsets="NO" id="T7m-BW-zKD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vsm-FE-YkT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j3i-ls-tDu" kind="relationship" relationship="rootViewController" id="e7V-ni-EvM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vJb-lE-gBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="200"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="blackShadeSignInBackground.png" width="1080" height="1920"/>
+    </resources>
+</document>

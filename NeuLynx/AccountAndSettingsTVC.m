@@ -142,7 +142,7 @@
 
     if (indexPath.row == 0 && indexPath.section == 0) {
         return nil;
-    }else if (indexPath.row == 8 && indexPath.section == 4) {
+    }else if (indexPath.row == 8 && indexPath.section == 5) {
         return nil;
     } else {
         return indexPath;
@@ -207,11 +207,17 @@
         
     }else if(indexPath.row == 0 && indexPath.section == 4){
 
+        UIStoryboard *bugStoryBoard = [UIStoryboard storyboardWithName:@"bugReport" bundle:nil];
+        UINavigationController *bugReportNavVC = [bugStoryBoard instantiateViewControllerWithIdentifier:@"bugReportNavVC"];
+        [self presentViewController:bugReportNavVC animated:YES completion:nil];
+        
+    }else if(indexPath.row == 0 && indexPath.section == 5){
+
         NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
 
-    }else if(indexPath.row == 1 && indexPath.section == 4){
+    }else if(indexPath.row == 1 && indexPath.section == 5){
 
       NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
         NSMutableArray *array = [NSMutableArray arrayWithObject:iTunesLink];
@@ -220,19 +226,19 @@
         [self presentViewController:activityController animated:YES completion:nil];
 
         
-    }else if(indexPath.row == 2 && indexPath.section == 4){
+    }else if(indexPath.row == 2 && indexPath.section == 5){
 
 
         NSURL *fanPageURL = [NSURL URLWithString:@"fb://profile/647265878689136"];
         [[UIApplication sharedApplication] openURL:fanPageURL];
 
         
-    }else if(indexPath.row == 3 && indexPath.section == 4){
+    }else if(indexPath.row == 3 && indexPath.section == 5){
 
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=neulynx"]];
         
-    }else if(indexPath.row == 4 && indexPath.section == 4){
+    }else if(indexPath.row == 4 && indexPath.section == 5){
 
 //        NSString *instaURL = @"https://instagram.com/neulynx/";
 //
@@ -243,20 +249,20 @@
             [[UIApplication sharedApplication] openURL:instagramURL];
         }
         
-    }else if(indexPath.row == 5 && indexPath.section == 4){
+    }else if(indexPath.row == 5 && indexPath.section == 5){
 
 
         NSString *periscopeURL = @"pscp://user?screen_name=neulynx";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:periscopeURL]];
 
-    }else if(indexPath.row == 6 && indexPath.section == 4){
+    }else if(indexPath.row == 6 && indexPath.section == 5){
 
         NSString *vineURL = @"vine://user/1010410284269150208";
 
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:vineURL]];
         
-    }else if(indexPath.row == 7 && indexPath.section == 4){
+    }else if(indexPath.row == 7 && indexPath.section == 5){
 
         NSString *googlePlusURL = @"https://plus.google.com/100840424703355995696/posts";
 
