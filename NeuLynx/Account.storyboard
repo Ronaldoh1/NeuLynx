@@ -455,7 +455,7 @@
     </scenes>
     <resources>
         <image name="aboutIcon.png" width="300" height="300"/>
-        <image name="bugIcon.png" width="313" height="313"/>
+        <image name="bugIcon.png" width="200" height="200"/>
         <image name="defaultImage" width="1200" height="1200"/>
         <image name="exclusiveIcon.png" width="313" height="313"/>
         <image name="facebookIcon.png" width="128" height="128"/>
