@@ -84,14 +84,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
     [self setUpFanOutButton]; // set up fan out buttons
-
     [self performInitialSetup]; //do initial set up for MapVC
-
-
-
     [self createAndDisplayBlinkingRings];
     //[[UINavigationBar appearance]setBarTintColor:[UIColor purpleColor]];
-
+    if([User currentUser] != nil){
+        [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
+        [[PFInstallation currentInstallation] saveEventually];
+    }
 
 }
 
