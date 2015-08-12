@@ -143,7 +143,7 @@
     message.subject = self.subjectTextField.text;
     message.messageText = self.messageText.text;
     message.sender = [User currentUser];
-    message.recepient = appDelegate.sharedActivity.host;
+    message.recepient = (User *)appDelegate.sharedActivity.host;
 
 
 
@@ -159,11 +159,6 @@
             //let the user know his message has been sent.
 
             [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
-
-
-
-
-
 
         } else {
             // There was a problem, check error.description
@@ -187,6 +182,8 @@
 
             [self dismissViewControllerAnimated:YES completion:nil];
 
+        }else{
+            NSLog(@"%@", error.description);
         }
 
     } ];

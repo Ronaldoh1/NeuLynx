@@ -174,14 +174,13 @@
 
     [query whereKey:@"host" equalTo:[User currentUser]];
     [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
+    [query includeKey:@"RequestsArray"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
         // NSArray *activitiesArray = activities;
 
         if (!error) {
             //get a copy of all activities
-
-
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -189,18 +188,12 @@
                 self.tempActivitiestArray = [NSMutableArray arrayWithArray:activities].copy;
                 [self.tableView reloadData];
 
-
-
-
             });
 
         }
 
 
     }
-
-
-
 
      ];
   
@@ -270,7 +263,7 @@
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
     Activity *activity = self.tempActivitiestArray[indexPath.section];
-    User *participant = activity.RequestsArray[indexPath.row];
+    User *participant = (User *)activity.RequestsArray[indexPath.row];
 
     cell.nameLabel.text = participant.name;
     cell.aboutParticipant.text = participant.aboutMe;
