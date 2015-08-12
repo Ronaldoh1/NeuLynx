@@ -363,7 +363,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="s70-45-yXo" kind="show" id="QxF-7b-HC0"/>
+                                            <segue destination="s70-45-yXo" kind="show" id="l9m-5H-yJ2"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -410,7 +410,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="9yr-lx-q91" kind="show" identifier="toSelectTime" id="QBL-em-hR1"/>
+                                            <segue destination="9yr-lx-q91" kind="show" id="cN8-Uz-wt3"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -463,6 +463,7 @@
                         <outlet property="activityAddress" destination="FzB-xy-XHf" id="nyo-3a-agf"/>
                         <outlet property="activityDescriptionText" destination="JW7-mx-bcu" id="SbR-50-muw"/>
                         <outlet property="activityHeadCount" destination="Fw1-RV-RgW" id="qEY-YF-jRs"/>
+                        <outlet property="activityInfoCell" destination="Oz0-zc-uGG" id="U9U-DD-Fh1"/>
                         <outlet property="activityNameTextField" destination="0xU-dd-Twx" id="cxM-WK-E8u"/>
                         <outlet property="culturalButton" destination="GhT-aG-vY9" id="QyZ-MN-C3y"/>
                         <outlet property="endTimeLabel" destination="0MO-yP-W8q" id="sJJ-SS-WyC"/>
@@ -681,7 +682,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTi-Xs-ntE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="IZE-Qw-dYP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="1320"/>
+            <point key="canvasLocation" x="1712" y="1316"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DQm-MA-hb7">

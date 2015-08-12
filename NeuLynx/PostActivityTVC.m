@@ -1,4 +1,4 @@
-//
+
 //  PostActivityTVC.m
 //  NeuLynx
 //
@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+
+@property (weak, nonatomic) IBOutlet UITableViewCell *activityInfoCell;
 
 //*******Images*****************//
 @property NSMutableArray *imageArray;
@@ -115,7 +117,7 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
 
-    [self.view addGestureRecognizer:tap];
+    //[self.tableView addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -209,11 +211,7 @@
                         
                     } afterDelay:3];
                     
-                    
-                    
-                    
-                    
-                    
+
                 } else {
                     // There was a problem, check error.description
                     [self displayErrorMessage:error.description];
@@ -229,7 +227,7 @@
 }
 
 - (IBAction)onCancelButtonTapped:(id)sender {
-     [self dismissViewControllerAnimated:YES completion:nil]; 
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -266,6 +264,7 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
 
 }
 
@@ -277,6 +276,8 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 1.0;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
+
 }
 - (IBAction)gastronomyButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Gastronomy";
@@ -286,6 +287,7 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
 }
 - (IBAction)onNightOutButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Night Out";
@@ -295,6 +297,7 @@
     self.nightOutButton.alpha = 1.0;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
 }
 
 - (IBAction)onFitnessButtonTapped:(UIButton *)sender {
@@ -305,6 +308,7 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 1.0;
+    [self dismissKeyboard];
 }
 - (IBAction)outDoorsButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Outdoors";
@@ -314,6 +318,7 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
 }
 - (IBAction)onStudentLifeButtonTapped:(UIButton *)sender {
     self.selectedCategory = @"Student Life";
@@ -324,6 +329,7 @@
     self.nightOutButton.alpha = 0.3;
     self.culturalButton.alpha = 0.3;
     self.fitnessButton.alpha = 0.3;
+    [self dismissKeyboard];
 }
 
 #pragma mark - UITextView Delegate Methods
@@ -534,7 +540,7 @@ if([segue.sourceViewController isKindOfClass:[SelectTimeTVC class]]){
     self.tempLabel.text = @"";
 
 
-}
+ }
 }
 
 //**********************BLOCKS***********************************************//
