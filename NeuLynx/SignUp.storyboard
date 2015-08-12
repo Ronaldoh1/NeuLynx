@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mmi-PK-2tx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mmi-PK-2tx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,144 +14,161 @@
                         <viewControllerLayoutGuide type="bottom" id="mr0-D7-FoG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yvy-OQ-ybq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cityBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="ovt-YF-Fda">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackShadeSignUpBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="B9B-JI-Ayj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViU-lp-vqh">
+                                <rect key="frame" x="10" y="368" width="141" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lfM-i3-Wlh"/>
+                                </constraints>
+                                <state key="normal" image="facebookLoginButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFbSignUpButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="DP8-av-wDq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtC-eT-tRl">
+                                <rect key="frame" x="168" y="367" width="142" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="n01-R9-wMf"/>
+                                </constraints>
+                                <state key="normal" image="twitterLoginButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignUpWithTwitter:" destination="zSA-Da-pJm" eventType="touchUpInside" id="AlL-mO-gSj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQj-HI-hEo">
+                                <rect key="frame" x="158" y="372" width="3" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="3" id="aNi-qH-LiK"/>
+                                    <constraint firstAttribute="height" constant="21" id="bQG-7W-69u"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SJ3-WR-Fa2">
                                 <rect key="frame" x="10" y="10" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-GX-AqK">
-                                <rect key="frame" x="100" y="64" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="obD-9I-zLV"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-Hm-D4H">
-                                <rect key="frame" x="35" y="260" width="250" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZg-Hm-D4H">
+                                <rect key="frame" x="0.0" y="192" width="320" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="VQX-6v-KCC"/>
+                                    <constraint firstAttribute="height" constant="40" id="f1W-g2-Fwi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VQX-6v-KCC"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nc-iV-kcg">
-                                <rect key="frame" x="35" y="335" width="250" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-PI-k4u">
+                                <rect key="frame" x="0.0" y="230" width="320" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="oe6-6D-GrD"/>
+                                    <constraint firstAttribute="height" constant="40" id="WIA-dG-SII"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC4-WE-hvp">
-                                <rect key="frame" x="35" y="187" width="250" height="35"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nc-iV-kcg">
+                                <rect key="frame" x="0.0" y="268" width="320" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="CxO-tJ-9km"/>
+                                    <constraint firstAttribute="height" constant="40" id="RcJ-O4-McD"/>
                                 </constraints>
-                                <state key="normal" title="     Sign Up with Facebook" backgroundImage="FbButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onFbSignUpButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="COj-BR-syH"/>
-                                    <action selector="onSignUpWithFbButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="47q-Vj-SNh"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or.png" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-DQ-sYn">
-                                <rect key="frame" x="35" y="237" width="250" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbn-15-fJL">
+                                <rect key="frame" x="0.0" y="310" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="Aa0-O5-ox5"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3p-W8-ktP">
-                                <rect key="frame" x="35" y="417" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="K5q-MR-gqj"/>
-                                </constraints>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onCancelButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="IYy-xi-Oz2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbn-15-fJL">
-                                <rect key="frame" x="230" y="417" width="55" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="vJd-nd-5Bw"/>
+                                    <constraint firstAttribute="height" constant="50" id="xmD-ql-0nc"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onSignUpButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="4CC-NW-LGQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-GX-AqK">
+                                <rect key="frame" x="16" y="80" width="288" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="R1S-qX-8v6"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-NF-pQA">
-                                <rect key="frame" x="35" y="485" width="250" height="30"/>
+                                <rect key="frame" x="16" y="420" width="288" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="WVq-pG-fmp"/>
+                                </constraints>
                                 <state key="normal" title="Terms &amp; Conditions">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="g4o-hY-MEC" kind="show" identifier="termAndConditions" id="KiP-CS-Mju"/>
+                                    <action selector="onTermsAndConditionsButtonTapped:" destination="zSA-Da-pJm" eventType="touchUpInside" id="v3O-99-PaO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spU-PI-k4u">
-                                <rect key="frame" x="35" y="297" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZVL-gO-fyC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="gC4-WE-hvp" secondAttribute="trailing" constant="19" id="1dr-3W-K9s"/>
-                            <constraint firstItem="dEG-GX-AqK" firstAttribute="top" secondItem="zZZ-lf-FqV" secondAttribute="bottom" id="1hK-7h-h24"/>
-                            <constraint firstItem="b3p-W8-ktP" firstAttribute="top" secondItem="7nc-iV-kcg" secondAttribute="bottom" constant="52" id="2d4-oi-KGe"/>
-                            <constraint firstItem="KfW-DQ-sYn" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="2x8-jN-e9q"/>
-                            <constraint firstItem="dEG-GX-AqK" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="84" id="4gG-6M-JjY"/>
-                            <constraint firstItem="5yO-NF-pQA" firstAttribute="top" secondItem="hbn-15-fJL" secondAttribute="bottom" constant="38" id="67z-x0-ltx"/>
-                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="hbn-15-fJL" secondAttribute="bottom" constant="121" id="BTM-NT-AlL"/>
-                            <constraint firstItem="ovt-YF-Fda" firstAttribute="top" secondItem="Yvy-OQ-ybq" secondAttribute="topMargin" id="E36-OY-JJw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dEG-GX-AqK" secondAttribute="trailing" constant="84" id="IDM-An-BEc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hbn-15-fJL" secondAttribute="trailing" constant="19" id="JNu-Nc-daT"/>
-                            <constraint firstItem="KfW-DQ-sYn" firstAttribute="top" secondItem="gC4-WE-hvp" secondAttribute="bottom" constant="15" id="LuV-jO-xcU"/>
-                            <constraint firstItem="nZg-Hm-D4H" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="Nqp-Yh-Y6y"/>
-                            <constraint firstItem="spU-PI-k4u" firstAttribute="top" secondItem="nZg-Hm-D4H" secondAttribute="bottom" constant="7" id="Qft-ad-MKI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nZg-Hm-D4H" secondAttribute="trailing" constant="19" id="Ybx-Ev-Axs"/>
-                            <constraint firstItem="7nc-iV-kcg" firstAttribute="top" secondItem="spU-PI-k4u" secondAttribute="bottom" constant="8" id="Yin-1R-VzV"/>
-                            <constraint firstItem="nZg-Hm-D4H" firstAttribute="top" secondItem="KfW-DQ-sYn" secondAttribute="bottom" constant="13" id="aJj-tR-bHJ"/>
-                            <constraint firstItem="5yO-NF-pQA" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="avc-n4-ple"/>
-                            <constraint firstItem="spU-PI-k4u" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="bZz-05-re2"/>
-                            <constraint firstItem="ovt-YF-Fda" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="ba9-pa-Y2N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7nc-iV-kcg" secondAttribute="trailing" constant="19" id="baW-bY-PSc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ovt-YF-Fda" secondAttribute="trailing" constant="-16" id="bbk-ju-mpf"/>
-                            <constraint firstItem="gC4-WE-hvp" firstAttribute="top" secondItem="dEG-GX-AqK" secondAttribute="bottom" constant="3" id="dMF-FO-yB0"/>
-                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="ovt-YF-Fda" secondAttribute="bottom" id="f1v-W4-oaT"/>
-                            <constraint firstItem="7nc-iV-kcg" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="hUo-8N-Atg"/>
-                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="b3p-W8-ktP" secondAttribute="bottom" constant="121" id="lnw-H7-9gI"/>
-                            <constraint firstItem="b3p-W8-ktP" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="pRl-Et-LAq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KfW-DQ-sYn" secondAttribute="trailing" constant="19" id="qEl-lT-WFT"/>
-                            <constraint firstItem="hbn-15-fJL" firstAttribute="top" secondItem="7nc-iV-kcg" secondAttribute="bottom" constant="52" id="qi5-3R-eNg"/>
-                            <constraint firstItem="gC4-WE-hvp" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="19" id="t2z-Kr-1JT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5yO-NF-pQA" secondAttribute="trailing" constant="19" id="tQ4-d8-R81"/>
-                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="5yO-NF-pQA" secondAttribute="bottom" constant="53" id="wM4-8O-EZ9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="spU-PI-k4u" secondAttribute="trailing" constant="19" id="xpF-Pt-15Y"/>
+                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="B9B-JI-Ayj" secondAttribute="bottom" id="0Kr-zg-zct"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7nc-iV-kcg" secondAttribute="trailing" constant="-16" id="5qH-Xp-8xx"/>
+                            <constraint firstItem="mr0-D7-FoG" firstAttribute="top" secondItem="5yO-NF-pQA" secondAttribute="bottom" constant="41" id="7lr-kZ-KWj"/>
+                            <constraint firstItem="nZg-Hm-D4H" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="FqU-P6-0BM"/>
+                            <constraint firstItem="5yO-NF-pQA" firstAttribute="trailing" secondItem="Yvy-OQ-ybq" secondAttribute="trailingMargin" id="Hdl-9y-PiM"/>
+                            <constraint firstItem="kQj-HI-hEo" firstAttribute="leading" secondItem="ViU-lp-vqh" secondAttribute="trailing" constant="7" id="Ho3-WW-hU0"/>
+                            <constraint firstAttribute="centerY" secondItem="7nc-iV-kcg" secondAttribute="centerY" constant="-47" id="JkR-eb-d1f"/>
+                            <constraint firstItem="spU-PI-k4u" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="LBu-wN-YSf"/>
+                            <constraint firstItem="B9B-JI-Ayj" firstAttribute="top" secondItem="Yvy-OQ-ybq" secondAttribute="topMargin" id="LvU-6o-V3T"/>
+                            <constraint firstItem="7nc-iV-kcg" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="Lw7-fK-G7v"/>
+                            <constraint firstItem="dEG-GX-AqK" firstAttribute="trailing" secondItem="Yvy-OQ-ybq" secondAttribute="trailingMargin" id="Qud-DX-6QE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vtC-eT-tRl" secondAttribute="trailing" constant="-6" id="TMx-uV-m2R"/>
+                            <constraint firstItem="ViU-lp-vqh" firstAttribute="top" secondItem="hbn-15-fJL" secondAttribute="bottom" constant="8" id="WJr-r2-uRn"/>
+                            <constraint firstAttribute="centerY" secondItem="hbn-15-fJL" secondAttribute="centerY" constant="-94" id="YNm-Vm-bTR"/>
+                            <constraint firstItem="hbn-15-fJL" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="ZzT-Lx-P6z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="spU-PI-k4u" secondAttribute="trailing" constant="-16" id="az4-rr-bYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B9B-JI-Ayj" secondAttribute="trailing" constant="-16" id="bZ2-Ar-GYz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hbn-15-fJL" secondAttribute="trailing" constant="-16" id="cfz-Or-edD"/>
+                            <constraint firstItem="vtC-eT-tRl" firstAttribute="top" secondItem="hbn-15-fJL" secondAttribute="bottom" constant="8" id="gVf-32-t3u"/>
+                            <constraint firstItem="dEG-GX-AqK" firstAttribute="top" secondItem="zZZ-lf-FqV" secondAttribute="bottom" constant="16" id="hfd-Jy-hb8"/>
+                            <constraint firstAttribute="centerY" secondItem="kQj-HI-hEo" secondAttribute="centerY" constant="-142.5" id="iXM-KH-85U"/>
+                            <constraint firstItem="vtC-eT-tRl" firstAttribute="leading" secondItem="kQj-HI-hEo" secondAttribute="trailing" constant="7" id="jFn-b0-ScJ"/>
+                            <constraint firstAttribute="centerY" secondItem="nZg-Hm-D4H" secondAttribute="centerY" constant="29" id="l0O-Nd-S62"/>
+                            <constraint firstAttribute="centerY" secondItem="spU-PI-k4u" secondAttribute="centerY" constant="-9" id="mAH-ZP-PJR"/>
+                            <constraint firstItem="B9B-JI-Ayj" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-16" id="mqZ-kb-Hit"/>
+                            <constraint firstItem="dEG-GX-AqK" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" id="rwU-3r-8zV"/>
+                            <constraint firstItem="5yO-NF-pQA" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" id="tZU-0v-Kc7"/>
+                            <constraint firstItem="ViU-lp-vqh" firstAttribute="leading" secondItem="Yvy-OQ-ybq" secondAttribute="leadingMargin" constant="-6" id="uvb-oD-dAy"/>
+                            <constraint firstAttribute="centerX" secondItem="kQj-HI-hEo" secondAttribute="centerX" constant="1" id="wPv-KM-gnz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nZg-Hm-D4H" secondAttribute="trailing" constant="-16" id="zkT-aU-hGK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Let's Get Started" id="qzb-Rt-qsZ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationItem key="navigationItem" title="Let's Get Started" id="qzb-Rt-qsZ">
+                        <barButtonItem key="leftBarButtonItem" title="X" style="done" id="XRa-8I-psF">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="zSA-Da-pJm" id="41L-ol-OfO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="confirmPassword" destination="7nc-iV-kcg" id="hN1-Kz-u8w"/>
                         <outlet property="email" destination="nZg-Hm-D4H" id="haG-yL-dtL"/>
@@ -160,463 +177,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPo-Qq-FdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1680" y="374"/>
-        </scene>
-        <!--Terms & Conditions-->
-        <scene sceneID="gYN-Ro-JHe">
-            <objects>
-                <viewController id="g4o-hY-MEC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C2B-OX-UwP"/>
-                        <viewControllerLayoutGuide type="bottom" id="FoZ-tI-WLp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7mB-aT-E8Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8a-2c-9g5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">By accessing, downloading, installing, running or using the NeuLynx Software Corporation ("NeuLynx," "our" or "we") web site, service, and/or applications, including any mobile applications, made available by NeuLynx (together, the "Service"), you ("you," or "your") agree to be bound by these terms of use ("Terms"). These Terms constitute a binding legal agreement between you and NeuLynx and affect your legal rights and obligations. If you do not agree with these Terms, you may not access, download, install, run or use the Service.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">1. RIGHT TO USE THE SERVICE
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">a. Subject to the terms and conditions set forth herein, we hereby grant you a personal, limited, non-exclusive, revocable, non-sublicensable, non-transferable right to access and use the Service solely for its intended purposes. If applicable, your use of any mobile/web application comprising part of the Service is subject to your further agreement with the terms and conditions contained within such application and with the usage rules of the applicable mobile application store, including, but not limited to, the Apple Inc. App Store Terms of Service. NeuLynx may modify these Terms at any time, which modifications will become effective once posted on www.neulynx.com (the "Site"). If you do not agree with a modification, you must immediately stop using the Service. We reserve the right to stop offering the Service at any time either permanently or temporarily, at which point these Terms will terminate automatically. If we stop offering the Service, you understand and acknowledge we will not be required to provide refunds, benefits, or other compensation to you in connection with such a discontinuation. You agree your use of the Service is neither contingent upon the delivery of any future functionality or features, nor is it dependent upon any oral or written comments made by Connect with respect to future functionality or features.
-b. You may not use the Service if you are under the age of 13. If you are under the age of 18, you represent and warrant that your legal guardian has reviewed and agreed (on your behalf) to these Terms.
-c. We retain the right to refuse to allow anyone to access and use the Service for any reason at any time. Although we currently provide the Service without charge, with prior written notice to you, we may begin charging you to use the Service.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">2. ACCOUNT 
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">In order to use the Service, you must establish an account (the "Account") with us and, to the extent permitted by the Service, with certain online third party properties such as Facebook, Twitter and LinkedIn (each, a "Social Network"). If you establish an Account with NeuLynx, you agree that you do not own or have any property interest in the Account. If you establish an Account with a Social Network, or use a pre-existing Account with a Social Network, you understand you are solely responsible for ensuring that your use of such Account complies with all applicable foreign, federal and state laws and regulations and does not violate any term, condition, rule, procedure, policy or other guideline published by the Social Network. You agree to maintain your Account password in strict confidence. In the event your Account password is lost or otherwise compromised, you agree you will be responsible solely for all actions, damages, liabilities and losses incurred as a result of such loss or compromise, except to the extent arising from NeuLynx's gross negligence or willful misconduct. You are responsible for any fees, including internet connection or mobile fees, that you incur while using the Service.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">3. RESTRICTIONS ON USE
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You agree you will not, under any circumstance: 
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">●	use or design cheats, exploits, automation software, bots, hacks, mods or any unauthorized third party software designed to modify or interfere with the Service;
-●	attempt to gain unauthorized access to accounts registered to other users or to our computers, servers, or networks;
-●	share any Content (as defined below) that is abusive, threatening, obscene, defamatory, libelous, or racially, sexually, or religiously offensive or otherwise objectionable, or that infringes any intellectual property right, right of privacy, right of publicity, or other right of any person or entity, or that impersonates any other person, or that contains nudity, excessive violence, or offensive subject matter;
-●	harass, stalk, disturb, abuse, or harm, or advocate or incite harassment, abuse or harm of, another person or group;
-●	use the Service or any part thereof for any commercial purpose;
-●	use the Service in connection with, or to otherwise promote, any violation of applicable law or regulation;
-●	transmit unauthorized communications through the Service, including junk mail, chain letters, spam, or duplicative or unsolicited messages in violation of applicable law;
-●	solicit or attempt to solicit personal information from other users of the Service, including the Account login information of other users;
-●	perform or facilitate any act which, directly or indirectly, causes to be transmitted to, uploaded or downloaded by, the Service or any end user any software viruses, worms, Trojan horses, time bombs, trap doors or any other computer code, files or programs or repetitive requests for information designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment or to diminish the quality of, interfere with the performance of, or impair the functionality of the Service;
-●	contact any user who has asked not to be contacted; or
-●	use any robot, spider, scraper or other automated means to access the Service, create Accounts, or collect content for any purpose without Connect's express written permission.
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="10" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="33" headIndent="51" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="18"/>
-                                                    <textTab alignment="natural" location="51"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">4. USE OF DATA
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You understand NeuLynx collects certain information about you and other users, including, but not limited to, contact information inputted during Account registration information which identifies your mobile device, application software and peripheral hardware; device and application IDs; your mobile carrier; geographic location; and information related to usage. You hereby consent to NeuLynx's use and disclosure of such information in connection with: (a) NeuLynx's provision of the Service and enforcement of its rights hereunder; (b) NeuLynx's delivery to you of marketing communications and customer and technical support information; and (c) the creation of benchmarking, statistical, research and marketing analyses, surveys, reports and studies, but only in aggregate, blinded, non-personally identifiable formats that do not identify, reference or imply an association with you. For the purposes set forth in subsection (c) hereof, you hereby grant NeuLynx a non-exclusive, perpetual, worldwide, fully-paid up, royalty-free license. For additional information about how NeuLynx uses and protects your information, please review NeuLynx's privacy policy posted on the Site.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">5. USER CONTENT
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">a. You understand and acknowledge NeuLynx does not own or control any messages, texts, files, images, photos, graphics, videos, audio or other materials (the "Content") posted, presented, displayed or published on, or transmitted, distributed or otherwise linked through the Service (individually and collectively, "Publish"). You understand you, and not NeuLynx, are responsible for all Content you Publish through the Service. By using the Service, you consent and provide all rights necessary to enable NeuLynx to Publish your Content and to enable other users to sync (including through an application) their devices and Accounts with any of your Content that is visible to them through the Service. You understand and agree Connect is not responsible for, and expressly disclaims all representations and warranties with respect to and all liability related to or arising from, the Content and Connection during activities outside the application after connecting. Under no circumstances will NeuLynx be liable in any way for any Content and Connection or for any loss or damage of any kind incurred as a result of your use of any Content/ activities; and NeuLynx has no obligation to monitor, preview, verify, flag, modify, filter or remove any Content. Notwithstanding the foregoing, NeuLynx, in its sole discretion, reserves the right to refuse, move, modify or delete any Content for any reason, with or without notice to you.
-b. If you Publish Content, you hereby represent and warrant to NeuLynx: (i) you either own all right, title and interest in and to such Content, or you possess, sufficient rights, approvals, licenses, consents and permissions as are necessary to Publish such Content; (ii) such Content and the Publication of such Content, does not and will not, directly or indirectly, infringe on, violate or misappropriate the intellectual property rights, privacy rights or other rights of any third party; (iii) such Content does not and will not violate any applicable law, rule or regulation; and (iv) all such Content is truthful and accurate in all material respects. 
-c. Certain Content may contain links to other websites that are completely independent of the Site and/or the Service. NeuLynx makes no representation or warranty as to the accuracy, completeness or authenticity of the information contained on such other websites.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">6. THIRD PARTY INTERACTIONS
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Any exchange of data or other interaction between you and a third party (each, a "Third Party Interaction") is solely between you and such third party, and you hereby agree to release and hold  NeuLynx harmless from, and will look to such third party with regard to, any claims relating to or arising out of a Third Party Interaction. Connect is not a party to, has no involvement or interest in, makes no representation, warranty or guaranty with respect to, and has no obligation in connection with, any communication, transaction, interaction, dispute or any relation whatsoever between you and any third party through the Service. You hereby acknowledge and agree that you are responsible solely for ensuring that your Third Party Interactions: (a) comply with all applicable foreign, federal and state laws and regulations; and (b) do not violate any term, condition, rule, procedure, policy or other guideline published by Connect and/or any Social Network. 
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">7. CONFIDENTIAL INFORMATION
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Each party (in such capacity, the "Receiving Party") understands that the other party (in such capacity, the "Disclosing Party") has disclosed or may disclose certain information relating to the Disclosing Party's business and that reasonably should be known by the Receiving Party to be confidential or proprietary to the Disclosing Party under the circumstances of disclosure or in light of the nature of the information disclosed (the "Confidential Information"). Each Receiving Party agrees: (a) to take reasonable precautions to protect such Confidential Information; and (b) not to use (except as permitted by these Terms) or divulge to any third party all or any portion of a Disclosing Party's Confidential Information. Each party agrees that the following information shall not be considered Confidential Information: (i) information that is or subsequently becomes generally available to the public through no fault of the Receiving Party; (ii) information that was in the Receiving Party's possession or known by such Receiving Party prior to receipt from the Disclosing Party as evidenced by its prior written records; or (iii) was rightfully disclosed to the Receiving Party by a third party without violation of law or any duty of confidentiality. You hereby agree NeuLynx is permitted to disclose your Confidential Information in order to comply with any legally compelled or required disclosure. 
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">8. NO OBLIGATION TO SUPPORT
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">We have no obligation to provide maintenance or installation services of any kind, hard-copy documentation, support, telephone assistance, error corrections, bug fixes, patches, updates or other modifications to the Service ("Support"). In the event that we provide any Support to you, such Support will be considered part of the Service and will be subject to the terms and conditions set forth herein. Neulynx's email contact information to which you may address questions, complaints, or claims with respect to the Service is as follows: </string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="support@neulynx.com">
-                                        <attributes>
-                                            <color key="NSColor" red="0.12941176470588237" green="0.71372549019607845" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">9. PROPRIETARY RIGHTS
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">a. As between you and NeuLynx, all software embedded in the Service (the "Software") is and shall remain the sole and exclusive property of NeuLynx. You agree not to take any actions inconsistent with NeuLynx’s ownership of each of NeuLynx's rights in and to the Software and the Service. Except as otherwise expressly granted in these Terms, you will not have or acquire any rights or interest in or to the Software or the Service. You acknowledge the Software contains proprietary information and trade secrets of NeuLynx. You agree you will not directly or indirectly: (i) assign, distribute, license, sublicense, transfer, sell, rent, lease, time share, grant a security interest in, or otherwise transfer any rights in or to the Software, or make the Software available to third parties except as authorized by these Terms; (ii) modify, translate, reverse engineer, decompile or disassemble the Software for any purpose, including, without limitation, the creation of derivative works or similar products; (iii) upload, link to or post any portion of the Software on a bulletin board, intranet, extranet or web site; (iv) use or distribute the Software in violation of any applicable laws, regulations or export restrictions; (v) possess or use the Software in any format other than machine-readable format; or (vi) take any act to remove, obscure, interfere with or modify the presentation or functionality of any aspect of the Software or the Service. 
-b. You acknowledge and understand that during the Beta Period (as defined herein), you will not be charged a fee for using the Service. In consideration for such use, however, you agree to report to NeuLynx any errors, bugs or problems with the Service, and to respond to such other questions, as may be reasonably requested through the Service and/or your Account. Since such reports and responses are an important part of NeuLynx's development of the Service, you agree that NeuLynx may use or incorporate any suggestions or recommendations submitted by you without compensation or attribution, and you hereby assign to NeuLynx all rights, title and interest in and to such suggestions or recommendations. Nothing set forth herein shall be construed to obligate NeuLynx to make the Services available for third party use either on a general or a limited basis. For purposes of these Terms, "Beta Period" means the period of time beginning on the date you indicate your acceptance of these Terms and ending on the date that is fifteen (15) days after the date that NeuLynx notifies you the Beta Period is ending.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">10. DISCLAIMER OF WARRANTIES
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" AND WITHOUT REPRESENTATION OR WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CONNECT AND ITS AFFILIATES, RESELLERS, AND AGENTS (COLLECTIVELY, THE "REPRESENTATIVES") DISCLAIM ANY AND ALL REPRESENTATIONS AND WARRANTIES, WHETHER ORAL OR WRITTEN, EXPRESS OR IMPLIED, INCLUDING (WITHOUT LIMITATION) ANY WARRANTY AS TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR USE, TITLE, OR NON-INFRINGEMENT. WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, THE REPRESENTATIVES DO NOT PROVIDE ANY WARRANTY: (A) THE SERVICE WILL MEET YOUR REQUIREMENTS; (B) THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE; OR (C) ABOUT ANY RESULTS THAT MAY BE OBTAINED BY USING THE SERVICE.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">11. LIMITATION OF LIABILITY
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">In no event will NeuLynx be liable to you for any direct, indirect, incidental, consequential, punitive, special or exemplary damages (even if NeuLynx has been advised of the possibility of such damages) arising from these Terms, including, but not limited to, loss of revenue or anticipated profits or lost business, loss of data or loss of use. IN NO EVENT WILL NEULYNX'S TOTAL CUMULATIVE LIABILITY FOR CLAIMS OF ANY KIND, WHETHER BASED ON CONTRACT, TORT, NEGLIGENCE, INDEMNITY OR OTHERWISE, FOR ANY LOSS OR DAMAGE ARISING OUT OF OR RELATED TO THESE TERMS OR THE SERVICE EXCEED THE GREATER OF ONE HUNDRED DOLLARS ($100) AND AMOUNTS ACTUALLY PAID BY USER FOR THE LICENSE TO USE THE SERVICE. NO CLAIM MAY BE ASSERTED BY YOU AGAINST NEULYNX MORE THAN TWELVE (12) MONTHS AFTER THE EARLIER DATE OF: (A) THE CAUSE OF ACTION UNDERLYING SUCH CLAIM; AND (B) THE TERMINATION OR EXPIRATION OF THESE TERMS AND YOUR USE OF THE SERVICE. NOTHING SET FORTH IN THESE TERMS SHALL EXCLUDE OR LIMIT LIABILITY TO A GREATER EXTENT THAN IS PERMITTED BY APPLICABLE LAW. IN ADDITION, SOLELY IF AND TO THE EXTENT REQUIRED IN ORDER TO MAKE THIS LIMITATION OF LIABILITY ENFORCEABLE UNDER APPLICABLE LAW, NOTHING SET FORTH IN THESE TERMS SHALL EXCLUDE OR LIMIT LIABILITY FOR FRAUD, FRAUDULENT MISREPRESENTATION OR FOR DEATH OR PERSONAL INJURY CAUSED BY NEGLIGENCE. IF YOU ARE A CALIFORNIA RESIDENT, YOU WAIVE CALIFORNIA CIVIL CODE §1542 WHICH STATES: A GENERAL RELEASE DOES NOT EXTEND TO CLAIMS WHICH THE CREDITOR DOES NOT KNOW OR SUSPECT TO EXIST IN HIS FAVOR AT THE TIME OF EXECUTING THE RELEASE, WHICH IF KNOWN BY HIM MUST HAVE MATERIALLY AFFECTED HIS SETTLEMENT WITH THE DEBTOR.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">12. WAIVER; SEVERABILITY
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You agree NeuLynx's failure to enforce any right or provision of these Terms will not be deemed a waiver of any such right or provision. In the event that a provision of these Terms is held to be invalid or unenforceable for any reason, then that provision will be limited to the minimum extent necessary to uphold these Terms, and the remaining provisions of these Terms will remain in full force and effect.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">13. INDEMNIFICATION
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">At your sole cost and expense, you hereby agree to defend and hold harmless NeuLynx and its affiliates, subsidiaries, officers, managers, members, employees, consultants, representatives, agents, successors and assigns (the "Indemnitees") in any action or claim, and to indemnify NeuLynx and the Indemnitees from and against any and all losses, liabilities, sums of money, damages, expenses, and costs (including, but not limited to, reasonable attorneys' fees) (collectively, "Claims") arising from such action or claim and related to: (a) your breach of any term, condition, representation or warranty set forth in these Terms; (b) a Third Party Interaction; (c) your infringement or misappropriation of any intellectual property, privacy or other rights of any third party; (d) any Content published by you or through your Account; and/or (d) your violation of applicable law. NeuLynx reserves the right, at your expense, to assume the exclusive defense and control of any Claim for which you are required to indemnify us, and you agree to cooperate with our defense of this Claim. We will use reasonable efforts to notify you of any Claim upon becoming aware of it.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">14. TERM AND TERMINATION
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">These Terms will commence on the earlier of the date you register for an Account or you begin using the Service and will terminate on the earlier of the date that: (a) you breach any term or condition, or any representation or warranty set forth in these Terms; or (b) we stop offering the Service at any time either permanently or temporarily or revoke your right to use the Service at any time. Upon termination of these Terms, all licenses and other rights granted to you in these Terms will immediately cease. The provisions of these Terms that by their nature and context are intended to survive the performance and termination of this Terms, will survive the termination of these Terms. 
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">15. GOVERNING LAW AND DISPUTE RESOLUTION
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">These Terms are governed by, and interpreted in accordance with, the laws of the State of California except for those conflicts of law rules thereof that would require or permit the application of the laws of another jurisdiction. Any dispute or controversy arising under, out of, or in connection with these Terms shall be resolved by binding arbitration under then current Commercial Rules of the American Arbitration Association (including the expedited procedures and optional rules for emergency measures of protection thereunder) before a single arbitrator. Any such arbitration shall be conducted in San Francisco County, California. Judgment upon any award may be entered in any court of competent jurisdiction. The arbitrator shall be designated by mutual agreement of the parties hereto or, if the parties cannot agree on an arbitrator within ten (10) days after a request for arbitration hereunder, each party shall designate one (1) arbitrator and the arbitrators so designated shall designate a third arbitrator who shall conduct the arbitration. The decision of the arbitrator shall be binding and conclusive upon the parties. Any arbitration award granted hereunder shall be enforceable under the applicable terms and conditions of the Convention on the Recognition and Enforcement of Foreign Arbitral Awards, 1958 (the New York Convention), as amended to date. Notwithstanding the foregoing, NeuLynx shall have the right to seek injunctive relief or other equitable or legal remedies in a court of competent jurisdiction in the State of California, to which jurisdiction, for such purpose, you hereby irrevocably consent. The parties hereto expressly agree these Terms shall not be governed by the provisions of the United Nations Convention on Contracts for the International Sale of Goods. If you bring a legal action or claim against us in contravention of this Section 14, you agree you will reimburse us for our costs and expenses incurred in connection with contesting such action or claim; provided that we notified you in writing of the improperly filed claim, and you failed to promptly withdraw the claim. In the event a non-English version of these Terms is created and there is a conflict of terms between such non-English version and the English version of these Terms, the English version will govern.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">16. EXPORT
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">You agree to abide by U.S. and other applicable export control laws and agree not to take any action which would violate the U.S. Export Administration Regulations, the U.S. Arms Export Control Act or any sanctions policies administered by the U.S. Department of the Treasury's Office of Foreign Assets Control, or cause NeuLynx to be in violation thereof. You represent, warrant and certify that you are not a person with whom NeuLynx (as a U.S. corporation) is prohibited from transacting business under applicable law. If you are located outside the U.S., you hereby consent to having your personal data transferred to and processed in the U.S.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">17. FORCE MAJEURE
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="8" paragraphSpacingBefore="15" tailIndent="432" lineHeightMultiple="1.1500000000000001" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">We will not be liable for any delay or failure to perform resulting from causes outside our reasonable control, including, without limitation, any failure to perform hereunder due to unforeseen circumstances such as acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, network infrastructure failures, strikes, or shortages of transportation facilities, fuel, energy, labor or materials.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="ArialMT"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="11" tailIndent="432" lineHeightMultiple="1.5999999999999999" defaultTabInterval="36">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="n8a-2c-9g5" firstAttribute="top" secondItem="7mB-aT-E8Y" secondAttribute="topMargin" id="POL-2m-1xr"/>
-                            <constraint firstItem="n8a-2c-9g5" firstAttribute="leading" secondItem="7mB-aT-E8Y" secondAttribute="leadingMargin" constant="-16" id="eUX-sH-izL"/>
-                            <constraint firstItem="FoZ-tI-WLp" firstAttribute="top" secondItem="n8a-2c-9g5" secondAttribute="bottom" id="g6G-jc-ERP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n8a-2c-9g5" secondAttribute="trailing" constant="-16" id="yio-KZ-ef8"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="bry-Is-TUv"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uV7-88-RBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2117" y="539"/>
+            <point key="canvasLocation" x="1782" y="365"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4da-Ie-Xee">
             <objects>
                 <navigationController storyboardIdentifier="SignUpNavVC" id="Mmi-PK-2tx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N9D-xV-Fmi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -632,9 +200,9 @@ b. You acknowledge and understand that during the Beta Period (as defined herein
         </scene>
     </scenes>
     <resources>
-        <image name="FbButton" width="1162" height="188"/>
-        <image name="Logo" width="2083" height="2083"/>
-        <image name="cityBackGround" width="640" height="1136"/>
-        <image name="or.png" width="1122" height="22"/>
+        <image name="appNameMedium.png" width="834" height="360"/>
+        <image name="blackShadeSignUpBackground.png" width="1080" height="1920"/>
+        <image name="facebookLoginButton.png" width="566" height="121"/>
+        <image name="twitterLoginButton.png" width="574" height="120"/>
     </resources>
 </document>

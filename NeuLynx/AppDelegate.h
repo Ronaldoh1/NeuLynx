@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Activity.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property Activity *sharedActivity;
+@property BOOL *hideDoneButtonForRequests;
+@property BOOL *hideDoneButtonForMessages;
 
 @property (strong, nonatomic) UIWindow *window;
 
