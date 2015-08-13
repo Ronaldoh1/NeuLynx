@@ -83,14 +83,6 @@
 
 }
 
-//Helper Method to sort Array by distance
-//-(void)sortArrayByDistance{
-//
-//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distanceFromCurrentLocation" ascending:self.isAscending];
-//}
-
-
-
 -(void)pulldata{
 
         PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
@@ -102,10 +94,7 @@
         [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
         [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
     
-            // NSArray *activitiesArray = activities;
-           // NSLog(@"%@ wattttt", activities);
-    
-    
+
             if (!error) {
 
                 self.activities = [[NSArray alloc]initWithArray:activities];

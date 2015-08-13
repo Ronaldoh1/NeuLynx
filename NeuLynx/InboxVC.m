@@ -11,6 +11,7 @@
 #import "User.h"
 #import "DialogVC.h"
 #import "AppDelegate.h"
+#import "Message.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self initialSetUp]; 
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -45,31 +47,33 @@
 
     //initialize the inboxArray
 
-    self.inboxArray = [NSMutableArray arrayWithArray:[User currentUser].inboxArray];
-
-//    [self.inboxArray addObject:[User currentUser]];
-//    [[User currentUser] save];
+    [self downloadInboxForCurrentUser];
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     BOOL tmpBool = appDelegate.hideDoneButtonForMessages;
 
     if (tmpBool == YES) {
-
         tmpBool = NO;
         appDelegate.hideDoneButtonForMessages = nil;
         self.navigationItem.rightBarButtonItem = nil;
         self.doneBarButton.enabled = NO;
-        
-        
+
     }
 }
 
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+
+    [self downloadInboxForCurrentUser];
+}
 - (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
-#pragma mark - UITableView Delegate 
+#pragma mark - UITableView Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
@@ -79,25 +83,21 @@
 
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
-
-    User *sender = (User *)self.inboxArray[indexPath.row];
-
-    NSLog(@"%@", sender.name);
-
+    User *sender = ((Message *)(self.inboxArray[indexPath.row])).sender;
+    Message *message = ((Message *)(self.inboxArray[indexPath.row]));
     cell.textLabel.text = sender.name;
-
+    cell.detailTextLabel.text = message.subject;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    //deselect the cell that was selected. 
+    //deselect the cell that was selected.
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 
 }
 
-#pragma mark Prepare For Segue 
+#pragma mark Prepare For Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Segue to open a dialog
@@ -110,29 +110,30 @@
     }
 }
 
+#pragma mark - Helper methods
+//This helper method allows us retrieve an array which contains the messages that have been sent the current user. Query the database where the recepient is the current user and then iterate through each object found and add message object and sender pointer to the inboxArray if and only if it has not been previously added.
 
-#pragma mark Functional methods
+-(void)downloadInboxForCurrentUser{
+    NSMutableArray *array = [NSMutableArray new];
 
-////we need to retrieve the full list of individuals who have messaged the current user.
-//-(NSMutableArray *)retrieveListUsersWhoMessaged{
-//
-//    //we need to clean the list of array so that we don't append the same twice.
-//    [self.inboxArray removeAllObjects];
-//
-//
-//    //perform query and retrieve the array that contains the users who have messaged the person.
-//    PFQuery *query = [PFUser query];
-//
-////    [query findObjectsInBackgroundWithBlock:
-////
-////
-////     ]
-//
-//
-//
-//
-//
-//}
+    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    [query whereKey:@"recepient" equalTo:[User currentUser]];
+    [query includeKey:@"sender"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
+        if (!error) {
+            for (Message *message in objects) {
 
+                if (![array containsObject:message.sender]) {
+                    [array addObject:message];
+
+                }
+            }
+            self.inboxArray = [NSMutableArray arrayWithArray:array];
+            [self.tableView reloadData];
+            
+        }
+        
+    }];
+}
 @end

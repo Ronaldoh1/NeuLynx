@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "User.h"
-
+#import "Activity.h"
 @interface Message : PFObject<PFSubclassing>
 @property NSString *subject;
 @property User *recepient;

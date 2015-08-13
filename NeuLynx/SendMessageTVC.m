@@ -147,9 +147,11 @@
 
 
 
-    User *recepient = [User new];
 
-    recepient = appDelegate.sharedActivity.host;
+    [self.inboxArray addObject:[User currentUser]];
+
+    //message.recepient.inboxArray = self.inboxArray.copy;
+    //recepient = appDelegate.sharedActivity.host;
 
    // NSLog(@"%@ YOOoooooooooooooo", recepient);
 
@@ -169,27 +171,6 @@
 
         
     }];
-
-
-
-    [self.inboxArray addObject:[User currentUser]];
-
-    recepient.inboxArray = self.inboxArray.copy;
-
-    [recepient saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-
-
-            [self dismissViewControllerAnimated:YES completion:nil];
-
-        }else{
-            NSLog(@"%@", error.description);
-        }
-
-    } ];
-
-
-
 
 
 }

@@ -46,6 +46,7 @@
 		F2361DDA1B7B092C007228C0 /* locationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DD91B7B092C007228C0 /* locationIcon.png */; };
 		F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2361DDD1B7B48AE007228C0 /* BugReportVC.m */; };
 		F2361DE01B7B48CB007228C0 /* bugReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */; };
+		F2361DE21B7BC04B007228C0 /* exclusiveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DE11B7BC04B007228C0 /* exclusiveIcon.png */; };
 		F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */; };
 		F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2D91B49F57700A3BAE7 /* thumbsDown.png */; };
 		F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */; };
@@ -163,7 +164,6 @@
 		F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */; };
 		F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */; };
 		F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */; };
-		F2D38B0F1B6C1E60007EBF41 /* exclusiveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -249,6 +249,7 @@
 		F2361DDC1B7B48AE007228C0 /* BugReportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugReportVC.h; sourceTree = "<group>"; };
 		F2361DDD1B7B48AE007228C0 /* BugReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugReportVC.m; sourceTree = "<group>"; };
 		F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = bugReport.storyboard; sourceTree = "<group>"; };
+		F2361DE11B7BC04B007228C0 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
 		F249D2D21B49A57200A3BAE7 /* RequestCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCustomCell.h; sourceTree = "<group>"; };
 		F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCustomCell.m; sourceTree = "<group>"; };
 		F249D2D91B49F57700A3BAE7 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
@@ -392,7 +393,6 @@
 		F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveTVC.h; sourceTree = "<group>"; };
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
-		F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -583,9 +583,9 @@
 		F21EC4721B6474CD000E535B /* Action Icons */ = {
 			isa = PBXGroup;
 			children = (
+				F2361DE11B7BC04B007228C0 /* exclusiveIcon.png */,
 				F2361DC91B7B084C007228C0 /* aboutIcon.png */,
 				F2361DC71B7B0832007228C0 /* bugIcon.png */,
-				F2D38B0E1B6C1E60007EBF41 /* exclusiveIcon.png */,
 				F226C8111B0F5AC0007A1C03 /* outdoors.png */,
 				F2892DF91B3EAB540010D534 /* share.png */,
 				F2361DCB1B7B0866007228C0 /* faqIcon.png */,
@@ -1092,6 +1092,7 @@
 					};
 					F28518F61AFABFAE007A45FA = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = A37GTC4NZF;
 						TestTargetID = F28518DA1AFABFAD007A45FA;
 					};
 				};
@@ -1157,6 +1158,7 @@
 				F2D38AC91B64BA45007EBF41 /* uStudentLifePin.png in Resources */,
 				F2E6E8ED1B2383C10083BA7F /* Detail.storyboard in Resources */,
 				F2361DCE1B7B087B007228C0 /* helpIcon.png in Resources */,
+				F2361DE21B7BC04B007228C0 /* exclusiveIcon.png in Resources */,
 				F2361DD21B7B08B3007228C0 /* messageIcon.png in Resources */,
 				F226C8161B0F5B57007A1C03 /* cultural.png in Resources */,
 				F2892DFE1B3EAB540010D534 /* googlePlusIcon.png in Resources */,
@@ -1177,7 +1179,6 @@
 				F28519211AFAD7AD007A45FA /* SignIn.storyboard in Resources */,
 				F25BFC4C1AFB3CB400B2C5BA /* Mail.storyboard in Resources */,
 				F2FE7E6E1B05143800CDD057 /* us.png in Resources */,
-				F2D38B0F1B6C1E60007EBF41 /* exclusiveIcon.png in Resources */,
 				F2D38AC61B64BA45007EBF41 /* uFitnessPin.png in Resources */,
 				F2892E0B1B4215BF0010D534 /* discover.png in Resources */,
 				F23435101B3605A60065D11C /* bluering.png in Resources */,
@@ -1412,6 +1413,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "02b76bc9-9f2e-484a-ac2b-b496f8473e5c";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1449,6 +1451,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "02b76bc9-9f2e-484a-ac2b-b496f8473e5c";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1503,6 +1506,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1514,6 +1519,7 @@
 				INFOPLIST_FILE = NeuLynxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuLynx.app/NeuLynx";
 			};
 			name = Debug;
@@ -1522,6 +1528,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1529,6 +1537,7 @@
 				INFOPLIST_FILE = NeuLynxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuLynx.app/NeuLynx";
 			};
 			name = Release;
