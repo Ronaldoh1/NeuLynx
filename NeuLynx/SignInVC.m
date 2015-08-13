@@ -232,7 +232,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (IBAction)onForgotPasswordButtonTapped:(UIButton *)sender {
 
 
-   // [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
+    // [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
 
     UIAlertController *alertController = [ UIAlertController alertControllerWithTitle:@"Reset Password" message:@"Enter your email address" preferredStyle:UIAlertControllerStyleAlert];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -335,9 +335,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 //Display general alert
 
 -(void)displayAlertWithTitle:(NSString *)title andWithMessage:(NSString *)message{
-
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-
+    
     [alertView show];
     
     

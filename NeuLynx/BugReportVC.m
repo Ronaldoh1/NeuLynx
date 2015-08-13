@@ -26,7 +26,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
     [self initialSetUp];
 }
@@ -105,16 +104,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
     //if there is no errror
     if (!error) {
-
-
-
         [self dismissViewControllerAnimated:YES completion:^{
             self.problemTitle.text = @"";
             self.messageBody.text = @"Please describe in detailsthe problem you encountered.  If something isn't working please let us know - e.g. features, notifications etc. Or simply provide general feedback. We would love to hear from you.";
             self.navigationItem.leftBarButtonItem.title = @"Cancel";
         }];
-
-
 
         //if there is an error we present an alert.
     } else {
@@ -122,9 +116,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         [self dismissViewControllerAnimated:YES completion:nil];
 
     }
-
-
-
 }
 #pragma Marks - hiding keyboard
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -134,15 +125,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     return true;
 }
 
-
-- (IBAction)hideKeyBoardForLocationTextField:(UITextField *)sender {
-    [sender resignFirstResponder];
-
-}
-
 //hide keyboard when user touches outside.
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
 
@@ -207,21 +191,5 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
     [UIView commitAnimations];
 }
-//////hide keyboard when the user clicks return
-//-(BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    [textField resignFirstResponder];
-//
-//    [self.view endEditing:true];
-//    return true;
-//}
-////hide keyboard when user touches outside.
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    [self.view endEditing:YES];
-//}
-
-
-
-
 
 @end

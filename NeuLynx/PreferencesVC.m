@@ -44,8 +44,6 @@
 
         [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
-
-
             if (succeeded) {
                 //[self dismissViewControllerAnimated:YES completion:nil];
             }else{
@@ -60,13 +58,11 @@
 
         [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
-
-
             if (succeeded) {
-               // [self dismissViewControllerAnimated:YES completion:nil];
+                // [self dismissViewControllerAnimated:YES completion:nil];
             }else{
                 [self displayErrorMessage:error.description];
-                
+
             }
         }];
     }
@@ -90,17 +86,8 @@
     self.localPersonalityArray = [NSMutableArray arrayWithArray:self.currentUser.personalityArray];
     self.localPersonalityBoolArray = [NSMutableArray arrayWithArray:self.currentUser.personalityBoolArray];
 
-
-
-
-
-
-
     //Create a new state array for the checkmarks
     self.stateArrayForCheckmark = [NSMutableArray new];
-
-
-
 
 
     //to add the boolean values to the NSMutable Array you need to add it as an NS Number. Ex. [mutableArray addObject[NSNumber numberWithBool:YES]]; or in a for loop like the one below.
@@ -112,13 +99,12 @@
         if (self.localTravelPreferencesArray.count != 0) {
 
 
-
             for (id preference in self.localTravelPreferencesBoolArray) {
 
                 BOOL preferenceBool = [preference boolValue];
 
                 if (preferenceBool == YES) {
-                     [self.stateArrayForCheckmark addObject:@YES];
+                    [self.stateArrayForCheckmark addObject:@YES];
                 }else  if (preferenceBool == NO){
                     [self.stateArrayForCheckmark addObject:@NO];
 
@@ -141,14 +127,14 @@
 
         if (self.localPersonalityArray.count != 0) {
 
-        for (id preference in self.localPersonalityBoolArray) {
-            BOOL preferenceBool = [preference boolValue];
-            if (preferenceBool == YES) {
-                [self.stateArrayForCheckmark addObject:@YES];
-            }else if (preferenceBool == NO){
-                [self.stateArrayForCheckmark addObject:@NO];
+            for (id preference in self.localPersonalityBoolArray) {
+                BOOL preferenceBool = [preference boolValue];
+                if (preferenceBool == YES) {
+                    [self.stateArrayForCheckmark addObject:@YES];
+                }else if (preferenceBool == NO){
+                    [self.stateArrayForCheckmark addObject:@NO];
+                }
             }
-        }
         }else {
             for (int i = 0; i<15; i++) {
                 [self.stateArrayForCheckmark addObject:@NO];
@@ -158,14 +144,10 @@
 
     }
 
-
-
-
-
     //change the tint for table view
 
     [self.tableView setTintColor:[UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1]];
-    
+
 
 
     //setting image to Navigation Bar's title
@@ -177,46 +159,6 @@
     [self.navigationItem setTitleView:titleView];
 
 }
-
-//- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
-//
-//    if (self.vCtoPresent == 0) {
-//        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
-//        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
-//
-//        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//
-//
-//
-//            if (succeeded) {
-//                [self dismissViewControllerAnimated:YES completion:nil];
-//            }else{
-//                [self displayErrorMessage:error.description];
-//                
-//            }
-//        }];
-//    } else {
-//
-//        self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
-//        self.currentUser.personalityArray = self.localPersonalityArray.copy;
-//
-//        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//
-//
-//
-//            if (succeeded) {
-//                [self dismissViewControllerAnimated:YES completion:nil];
-//            }else{
-//                [self displayErrorMessage:error.description];
-//                
-//            }
-//        }];
-//    }
-//
-//}
-
-
-
 
 
 #pragma mark - UITableView Delegate
@@ -249,25 +191,8 @@
         cell.textLabel.text = self.personalityArrayForTableView[indexPath.row];
     }
 
-//    if ([indexPath compare:self.lastIndexPath] == NSOrderedSame) {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }else{
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-
     //CONFIGURE CELL
     cell.textLabel.textColor = [UIColor grayColor];
-
-//    //change the background color
-//    cell.backgroundColor = [UIColor clearColor];
-
-//    //Add background image to table view
-//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
-
-//    //change the selection color
-//    UIView *bgColorView = [[UIView alloc] init];
-//    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
-//    [cell setSelectedBackgroundView:bgColorView];
 
     //Add CheckMarks
     if ([[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]) {
@@ -291,31 +216,25 @@
     [self.stateArrayForCheckmark replaceObjectAtIndex:indexPath.row
                                            withObject:[NSNumber numberWithBool:![[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]]];
 
-   //need to check if the localTravelPreferenceArray - if it's set to no, then set it back to yes. if it's set to yes, then set it back to no. This will keep track of the selected cells that will be presented to the user.
+    //need to check if the localTravelPreferenceArray - if it's set to no, then set it back to yes. if it's set to yes, then set it back to no. This will keep track of the selected cells that will be presented to the user.
     //Local travel preference array contain the actual travel preferences for the user. If the array already contains the preference do not add it. If the user deselects the preference, search for the preference in local Travel prefernce array if its found remove it.
     if (self.vCtoPresent == 0) {
 
 
-    if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == NO) {
+        if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == NO) {
 
-        [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@YES];
-        if (![self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
-            [self.localTravelPreferencesArray addObject:self.travelPreferenceArrayForTableView[indexPath.row]];
+            [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@YES];
+            if (![self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
+                [self.localTravelPreferencesArray addObject:self.travelPreferenceArrayForTableView[indexPath.row]];
+            }
+
+        }else if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == YES) {
+
+            [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@NO];
+            if ([self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
+                [self.localTravelPreferencesArray removeObject:self.travelPreferenceArrayForTableView[indexPath.row]];
+            }
         }
-
-
-
-
-    }else if ([self.localTravelPreferencesBoolArray[indexPath.row] boolValue] == YES) {
-
-         [self.localTravelPreferencesBoolArray replaceObjectAtIndex:indexPath.row  withObject:@NO];
-        if ([self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
-            [self.localTravelPreferencesArray removeObject:self.travelPreferenceArrayForTableView[indexPath.row]];
-        }
-
-
-        
-    }
     }else {
 
         if ([self.localPersonalityBoolArray[indexPath.row] boolValue] == NO) {
@@ -332,27 +251,25 @@
 
 
         }
-
-
+        
+        
     }
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-
-
-
+    
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
+    
+    
 }
 
 
 //helper method to display error message
-    -(void)displayErrorMessage:(NSString *)error{
-
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-
-        [alertView show];
-    }
+-(void)displayErrorMessage:(NSString *)error{
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alertView show];
+}
 
 
 @end

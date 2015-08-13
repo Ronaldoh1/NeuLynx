@@ -34,14 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
-
-
     [self performInitialSetUp];
 }
 
@@ -49,7 +41,6 @@
 
     //get Current User
     self.currentUser = [User currentUser];
-    
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -65,6 +56,7 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.locationManager startUpdatingLocation];
+
     //get user's location and display it.
     self.locationLabel.text = [NSString stringWithFormat:@"%@ %@, %@", self.currentUser.userCurrentCity, self.currentUser.userAdministrativeArea, self.currentUser.userCountryCode];
     self.locationLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
@@ -96,14 +88,10 @@
 
 - (IBAction)onViewProfileButtonTapped:(id)sender {
 
-
     UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
     UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
 
-
     [self presentViewController:profileNavVC animated:YES completion:nil];
-
-
 
 }
 - (IBAction)onSignOutButtonTapped:(id)sender {
@@ -112,32 +100,12 @@
     self.navigationItem.leftBarButtonItem.enabled = NO;
     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
     
-
     UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
     [self presentViewController:mapNavVC animated:YES completion:nil];
-
-   
 }
 
 #pragma mark - UITableView Delegate Methods
-//
-//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//
-//    UITableViewCell *cell = nil;
-//
-//    if (indexPath.row == 1) {
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"profileCell"];
-//    } else {
-//
-//
-//    }
-//
-//
-//    return cell;
-//}
-//The following method is used to managed which cells are selectable.
-
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (indexPath.row == 0 && indexPath.section == 0) {
@@ -161,12 +129,10 @@
         UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
         [self presentViewController:mailNavVC animated:YES completion:nil];
 
-
     }else if(indexPath.row == 1 && indexPath.section == 1){
         UIStoryboard *requestStoryBoard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
         UITabBarController *requestVC = [requestStoryBoard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
         [self presentViewController:requestVC animated:YES completion:nil];
-
 
     }else if(indexPath.row == 2 && indexPath.section == 1){
         UIStoryboard *historyStoryBoard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
@@ -239,10 +205,6 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=neulynx"]];
         
     }else if(indexPath.row == 4 && indexPath.section == 5){
-
-//        NSString *instaURL = @"https://instagram.com/neulynx/";
-//
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:instaURL]];
 
         NSURL *instagramURL = [NSURL URLWithString:@"instagram://user?username=neulynx"];
         if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {

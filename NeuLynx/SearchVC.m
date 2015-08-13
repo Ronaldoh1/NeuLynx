@@ -32,11 +32,7 @@
 
 //CORE LOCATION
 @property CLLocationManager *locationManager;
-
-
-
 @property NSMutableArray *activitiesArray;
-
 @end
 
 @implementation SearchVC
@@ -85,63 +81,21 @@
 
 -(void)pulldata{
 
-        PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
-        PFQuery *query = [Activity query];
-    
-    
-    
-        [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
-        [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
-    
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
+    PFQuery *query = [Activity query];
+    [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
+    [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
 
-            if (!error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
+        if (!error) {
 
-                self.activities = [[NSArray alloc]initWithArray:activities];
-                [self.tableView reloadData];
+            self.activities = [[NSArray alloc]initWithArray:activities];
+            [self.tableView reloadData];
 
-            }
-
-    
-        }];
-
-}
-
--(void)download{
-
-    [ActivitiesDownloader downloadActivitiesForLocation:self.currentLocation andCategory:self.selectedCategory withCompletion:^(NSArray * array) {
-        self.activities = [NSMutableArray arrayWithArray:array];
-
+        }
     }];
 
-
 }
-//
-//#pragma mark - UISearchBarDelegate Delegate 
-//
-//-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-//
-//    if (self.searchBar.text.length == 0) {
-//        self.isFiltered = NO;
-//    }else{
-//        self.isFiltered = YES;
-//        self.filteredTableDataArray = [NSMutableArray new];
-//
-//        for (Activity *activity in self.activities) {
-//            NSRange titleRange = [activity.activityTitle rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
-//              NSRange descriptionRange = [activity.activityDescription rangeOfString:self.searchBar.text options:NSCaseInsensitiveSearch];
-//
-//            if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
-//
-//                [self.filteredTableDataArray addObject:activity];
-//            }
-//        }
-//
-//    }
-//    [self.tableView reloadData];
-//}
-//
-
 
 #pragma marks - TableView Delegates
 
@@ -157,31 +111,10 @@
     //for every row in parse, we are getting a PFObject back. In our case, we will be getting an activity. For every activity, we will be retrieving values to populate the cell.
     Activity *tempActivity = [Activity new];
 
-//    if (self.isFiltered == YES) {
-//
-//        tempActivity = [self.filteredTableDataArray objectAtIndex:indexPath.row];
-//    }else{
-
     tempActivity = [self.activities objectAtIndex:indexPath.row];
-    //}
-
-//    NSDictionary *tempDictionary = [[NSDictionary alloc]initWithDictionary:[self.activitiesForSearchArray objectAtIndex:indexPath.row]];
-
-
-    //change the color of text
-//    cell.textLabel.textColor = [UIColor colorWithRed:250/255.0 green:223/255.0 blue:6/255.0 alpha:1];
-//    cell.detailTextLabel.textColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
     //change the background color
     cell.backgroundColor = [UIColor clearColor];
-
-//    //Add background image to table view
-//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
-
-    //change the selection color
-//    UIView *bgColorView = [[UIView alloc] init];
-//    bgColorView.backgroundColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
-//    [cell setSelectedBackgroundView:bgColorView];
 
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
@@ -205,7 +138,6 @@
 
     }];
 
-    
     cell.activityTitleLabel.text = [tempActivity objectForKey:@"activityTitle"];
     cell.activityTitleLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
@@ -213,20 +145,16 @@
 
     cell.distanceToActivityLabel.text = [NSString stringWithFormat:@"%.2f Miles Away", distanceInMiles];
 
-
     return cell;
 }
 
 #pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
 
 // Called when the search bar becomes first responder
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
-{
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
 
- //   NSLog(@"Ronald ");
     // Set searchString equal to what's typed into the searchbar
     NSString *searchString = self.searchController.searchBar.text;
-
 
     [self updateFilteredContentForActivity:searchString];
 
@@ -246,17 +174,15 @@
     }
 }
 
-
 // Update self.searchResults based on searchString, which is the argument in passed to this method
-- (void)updateFilteredContentForActivity:(NSString *)searchStr
-{
+- (void)updateFilteredContentForActivity:(NSString *)searchStr{
 
     if (searchStr == nil) {
 
         // If empty the search results are the same as the original data
         self.searchResults = [self.searchResults mutableCopy];
-    } else {
 
+    } else {
 
         NSMutableArray *searchResults = [[NSMutableArray alloc] init];
 
@@ -268,12 +194,11 @@
 
             if (titleRange.location != NSNotFound || descriptionRange.location != NSNotFound) {
 
-                 [searchResults addObject:activity];
+                [searchResults addObject:activity];
             }
         }
 
-
-            self.searchResults = searchResults;
+        self.searchResults = searchResults;
 
     }
 }
@@ -281,46 +206,36 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
-UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+    UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+    UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
 
-//set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
-AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-//CustomMKAnnotation *annotation = view.annotation;
+    //CustomMKAnnotation *annotation = view.annotation;
     if (self.isFiltered) {
         appDelegate.sharedActivity = self.filteredTableDataArray[indexPath.row];
     } else {
         appDelegate.sharedActivity = self.activities[indexPath.row];
     }
 
-
-[self presentViewController:detailVC animated:YES completion:nil];
+    [self presentViewController:detailVC animated:YES completion:nil];
 
 }
 #pragma marks - Corelocation
 
 //First we get the user's location - and then download the activities that are within 50 miles radius.
 
-
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     self.currentLocation = locations.firstObject;
-
+    
     if (self.currentLocation) {
-           //[self downloadActivitiesAndDisplayOnMap];
-
-
-            [self pulldata];
-
-
+        //[self downloadActivitiesAndDisplayOnMap];
+        
+        [self pulldata];
+        
     }
-
-
-
-
-    NSLog(@"%@", self.currentLocation);
+    
     [self.locationManager stopUpdatingLocation];
 }
-
-
 @end

@@ -31,8 +31,6 @@
 }
 -(void)initialSetUp{
 
-
-
     //setup color tint
     self.navigationController.navigationBar.tintColor = [UIColor blueColor];
 
@@ -44,6 +42,7 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
+    //Set up arrays
 
     self.arrayPageFirstLabel = @[@"Text 1",@"Text 2",@"Text 3", @"Text 4", @"Text 5"];
 
@@ -75,33 +74,31 @@
 }
 
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
+
     NSUInteger index = ((PageContentVC*) viewController).pageIndex;
-    if ((index == 0) || (index == NSNotFound))
-    {
+    if ((index == 0) || (index == NSNotFound)){
         return nil;
     }
     index--;
     return [self viewControllerAtIndex:index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
+
     NSUInteger index = ((PageContentVC*) viewController).pageIndex;
-    if (index == NSNotFound)
-    {
+    if (index == NSNotFound){
+
         return nil;
     }
     index++;
-    if (index == [self.arrayPageFirstLabel count])
-    {
+    if (index == [self.arrayPageFirstLabel count]){
         return nil;
     }
     return [self viewControllerAtIndex:index];
 }
-- (PageContentVC *)viewControllerAtIndex:(NSUInteger)index
-{
+- (PageContentVC *)viewControllerAtIndex:(NSUInteger)index{
+
     if (([self.arrayPageFirstLabel count] == 0) || (index >= [self.arrayPageFirstLabel count])) {
         return nil;
     }
@@ -114,15 +111,11 @@
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
 }
--(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
+-(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
     return [self.arrayPageFirstLabel count];
 }
 
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController{
     return 0;
 }
-
-
 @end

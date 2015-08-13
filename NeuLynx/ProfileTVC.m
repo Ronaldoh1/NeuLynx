@@ -55,12 +55,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     [self performInitialSetUp];
     //get user's profile Image
@@ -75,10 +69,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    
-
-}
 
 //Initial set up of Nav Bar, User, Profile Image, Set up Delegates.
 -(void)performInitialSetUp{
@@ -93,7 +83,6 @@
     self.profileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
 
-
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
     titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
@@ -104,7 +93,6 @@
 
     //set up textfield delegates.
     [self setUpTextFieldDelegates];
-
 
     //Dim the colors of language buttons
     self.portugueseButton.alpha = 0.3;
@@ -162,15 +150,14 @@
         }else if([self.languageArray[i] isEqualToString:@"Spanish"]){
             self.spanishButton.alpha = 1.0;
 
-
         }else if([self.languageArray[i] isEqualToString:@"English"]){
             self.englishButton.alpha = 1.0;
 
         }else if([self.languageArray[i] isEqualToString:@"French"]){
             self.frenchButton.alpha = 1.0;
-            
+
         }
-        
+
     }
 
 
@@ -253,13 +240,7 @@
 
             [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
-
                 if (succeeded) {
-
-                    // [self displaySuccessMessage]
-
-
-                    [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
                     [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
 
@@ -275,21 +256,21 @@
                         UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
                         [self presentViewController:mapNavVC animated:YES completion:nil];
-                        
-                        
+
+
                     } afterDelay:1.5];
-                    
+
                 } else {
                     self.navigationItem.rightBarButtonItem.enabled = YES;
                     [self displayErrorMessage:error.localizedDescription];
-                    
-                    
+
+
                 }
             }];
-            
+
         } afterDelay:1.5];
     }
-    
+
 }
 
 //**************Adding and Removing languages**********
@@ -447,19 +428,19 @@
 
 //***************Prepare for Segue ******************
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
     if ([[segue identifier]isEqualToString:@"toPreferenceSelection"]){
-
+        
         PreferencesVC *destinationVC = [segue destinationViewController];
         destinationVC.navBarTitle = @"Travel Preferences";
         destinationVC.vCtoPresent = ((int)[self.tableView indexPathForSelectedRow].row);
     }else if ([[segue identifier]isEqualToString:@"toPersonalitySelection"]){
-
+        
         PreferencesVC *destinationVC = [segue destinationViewController];
         destinationVC.navBarTitle = @"Personality";
         destinationVC.vCtoPresent = ((int)[self.tableView indexPathForSelectedRow].row);
     }
-
+    
 }
 
 @end

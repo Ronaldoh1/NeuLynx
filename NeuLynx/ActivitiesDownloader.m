@@ -38,39 +38,21 @@
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
-                // NSLog(@"activities are %@",activitiesArray);
-
                 for (Activity *activity in activities){
                     NSLog(@"%@", activity);
                     [activitiesForSearchArray addObject:activity];
 
                 }
 
-
-                //[self.mapView addAnnotations:self.gastronomyActivityArray];
-                
-
             });
 
-            
-            
-            
         } else {
             //display error
-            
-            
         }
-        
-        
-    }
-
-
-     
-     
-     ];
-
+    }];
+    
     complete(activitiesForSearchArray);
-
+    
 }
 
 

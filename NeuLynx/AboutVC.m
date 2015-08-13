@@ -46,7 +46,7 @@
     [self loadNeuLynxWebPage:^{
         [self loadNeuLynx];
 
-         [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+        [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
     } afterDelay:2];
 }

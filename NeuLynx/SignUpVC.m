@@ -136,15 +136,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
         signUpError = @"All fields are required, please try again!";
 
-    //passwords must match
+        //passwords must match
     }else if(![self.password.text isEqualToString:self.confirmPassword.text]){
         signUpError = @"Passwords do not match, please try again!";
 
-    //password must be at least 6 characters
+        //password must be at least 6 characters
     }else if([self.password.text length] < 6 || [self.confirmPassword.text length] < 6){
         signUpError = @"Your Password must be at least 6 characters";
 
-    //if the user has met all of these conditions, then we sign him up.
+        //if the user has met all of these conditions, then we sign him up.
     }else{
         [self signUp];
 
@@ -181,7 +181,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {   // Hooray! Let them use the app now.
             //If the user is new then present the profile
-            //Enable the message and requests tabs. 
+            //Enable the message and requests tabs.
             self.navigationItem.leftBarButtonItem.enabled = YES;
             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
@@ -258,9 +258,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
-    
+
     [self.view setFrame:viewFrame];
-    
+
     [UIView commitAnimations];
 }
 ////hide keyboard when the user clicks return
@@ -282,7 +282,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 //
 //{
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
-//    
+//
 //    return YES;
 //}
 ////move the view when the keyboard hides.

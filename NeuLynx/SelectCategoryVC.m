@@ -20,9 +20,6 @@
     [super viewDidLoad];
 
     [self performInitialSetUp];
-
-
-
 }
 -(void)performInitialSetUp{
 
@@ -76,6 +73,7 @@
     self.selectedCategory = @"Student Life";
     [self performSegueWithIdentifier:@"presentSearchVC" sender:sender];
 }
+
 //SEGUE
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
@@ -87,11 +85,5 @@
         [destVC setSelectedCategory:self.selectedCategory];
         
     }
-
-    
-
-
 }
-
-
 @end

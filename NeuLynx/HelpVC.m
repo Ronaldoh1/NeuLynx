@@ -44,35 +44,34 @@
 
 ///////////////ACTION BUTTONS//////////////////////////////
 - (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
-     [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 - (IBAction)onSendEmailButtonTapped:(UIBarButtonItem *)sender {
 
     if([self.subjectTitle.text isEqualToString:@""] || [self.messageBody.text isEqualToString:@""]){
-        
-        [self displayAlert:@"Error Sending Message" andWith:@"Please include a subject title and a message"];
 
+        [self displayAlert:@"Error Sending Message" andWith:@"Please include a subject title and a message"];
 
     }else {
 
-    //allocate mail composer
-    MFMailComposeViewController *composer = [MFMailComposeViewController new];
-    //set the delegate
-    [composer setMailComposeDelegate:self ];
+        //allocate mail composer
+        MFMailComposeViewController *composer = [MFMailComposeViewController new];
+        //set the delegate
+        [composer setMailComposeDelegate:self ];
 
-    //check if devise can send email
+        //check if devise can send email
 
-    if ([MFMailComposeViewController canSendMail]){
-        [composer setToRecipients:[NSArray arrayWithObjects:@"support@neulynx.com", nil]];
-        [composer setSubject:self.subjectTitle.text];
-        [composer setMessageBody:self.messageBody.text isHTML:NO];
-        [composer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-        [self presentViewController:composer animated:YES completion:nil];
+        if ([MFMailComposeViewController canSendMail]){
+            [composer setToRecipients:[NSArray arrayWithObjects:@"support@neulynx.com", nil]];
+            [composer setSubject:self.subjectTitle.text];
+            [composer setMessageBody:self.messageBody.text isHTML:NO];
+            [composer setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [self presentViewController:composer animated:YES completion:nil];
 
-    } else {
-        NSLog(@"Can't send mail");
-    }
+        } else {
+            [self displayAlert:@"Cannot Send Email" andWith:@"Please try again"];
+        }
     }
 
 }
@@ -102,9 +101,6 @@
 
     //if there is no errror
     if (!error) {
-
-
-
         [self dismissViewControllerAnimated:YES completion:^{
             self.subjectTitle.text = @"";
             self.messageBody.text = @"How can we help?";
@@ -113,14 +109,12 @@
 
 
 
-    //if there is an error we present an alert.
+        //if there is an error we present an alert.
     } else {
         [self displayAlertWithTitle:@"Error Sending Email" andWith:error];
         [self dismissViewControllerAnimated:YES completion:nil];
 
     }
-
-
 
 }
 #pragma Marks - hiding keyboard
@@ -131,15 +125,8 @@
     return true;
 }
 
-
-- (IBAction)hideKeyBoardForLocationTextField:(UITextField *)sender {
-    [sender resignFirstResponder];
-    
-}
-
 //hide keyboard when user touches outside.
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
 
@@ -148,9 +135,5 @@
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     textView.text = @"";
 }
-
-
-
-
 
 @end

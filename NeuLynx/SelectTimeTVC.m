@@ -35,12 +35,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-
- //self.activity.startTimeAndDate = self.datePicker.date;
-
-
-}
 
 #pragma marks - UItableView Delegate Methods.
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -56,29 +50,24 @@
 
     if (indexPath.section == 0 && indexPath.row == 0) {
 
-            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"MM-dd-yyyy"];
-        
-            NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
-            [timeFormat setDateFormat:@"hh:mm a"];
-        
-        
-            NSString *theDate = [dateFormat stringFromDate:self.datePicker.date];
-            NSString *theTime = [timeFormat stringFromDate:self.datePicker.date];
-        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"MM-dd-yyyy"];
 
-                self.startTimeLabel.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
-                self.tempString1 = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
-        
-                self.activity.startTimeAndDate = self.datePicker.date;
+        NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+        [timeFormat setDateFormat:@"hh:mm a"];
 
-                self.startDateAndTime = self.datePicker.date;
-    
 
-//            } else {
-//                self.activityEndTime.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
-//                self.activity.endTimeAndDate = self.datePicker.date;
-//            }
+        NSString *theDate = [dateFormat stringFromDate:self.datePicker.date];
+        NSString *theTime = [timeFormat stringFromDate:self.datePicker.date];
+
+
+        self.startTimeLabel.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
+        self.tempString1 = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
+
+        self.activity.startTimeAndDate = self.datePicker.date;
+
+        self.startDateAndTime = self.datePicker.date;
+
 
     }else if(indexPath.section == 0 && indexPath.row == 1){
 
@@ -96,7 +85,7 @@
         self.endTimeLabel.text = [NSString stringWithFormat:@"%@ @ %@",theDate, theTime];
         self.activity.endTimeAndDate = self.datePicker.date;
         self.endDateAndTime = self.datePicker.date;
-
+        
     }
 }
 

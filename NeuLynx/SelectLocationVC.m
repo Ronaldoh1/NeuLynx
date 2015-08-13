@@ -161,15 +161,8 @@
     [selectLocationButton.layer setBorderColor:[UIColor blueColor].CGColor];
     pinAnnotation.rightCalloutAccessoryView = selectLocationButton;
 
-
-
-//    NSLog(@"%f", [annotation coordinate].latitude);
-//    NSLog(@"%f", [annotation coordinate].longitude);
     return pinAnnotation;
 }
-
-
-
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     NSLog(@"Latitude: %f", view.annotation.coordinate.latitude);
@@ -181,8 +174,6 @@
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
 
     //ask the view to give you the coordinate lat and long
-
-    NSLog(@"lat is: %f and long is: %f", [[view annotation] coordinate].latitude, [[view annotation] coordinate].longitude);
 
     self.activityGeoPoint = [PFGeoPoint new];
 

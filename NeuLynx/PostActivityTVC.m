@@ -59,17 +59,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
 
     [self initialSetUp];
-    //[self setTextFieldsDelegates];
-
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -112,12 +103,6 @@
     //set up the segmented control for LGBT
     self.lgbtSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
-    //Add UITapgesture Recognizer and assign it to the view, and then resign the first responder on the textfield on it's selector.
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-
-    //[self.tableView addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,7 +120,6 @@
     if ([self.activityNameTextField.text isEqualToString:@""] || [self.activityDescriptionText.text isEqualToString:@""] || [self.activityAddress.text isEqualToString:@""] || [self.activityHeadCount.text isEqualToString:@""] ) {
         textFieldError = @"Error in Form - All fields are required.";
 
-        //|| [self.activityStartTime.text isEqualToString:@""] || [self.activityEndTime.text isEqualToString:@""]
     }
 
     if ([textFieldError isEqualToString:@""]) {
@@ -207,27 +191,27 @@
                         UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                         UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
                         [self presentViewController:mapNavVC animated:YES completion:nil];
-                        
-                        
+
+
                     } afterDelay:3];
-                    
+
 
                 } else {
                     // There was a problem, check error.description
                     [self displayErrorMessage:error.description];
                 }
             }];
-            
-            
+
+
         } afterDelay:1.5];
-        
+
     } else{
         [self displayErrorMessage:textFieldError];
     }
 }
 
 - (IBAction)onCancelButtonTapped:(id)sender {
-     [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -391,7 +375,7 @@
     }else {
         return nil;
     }
-    
+
 }
 #pragma Mark - Image Picker Delegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
@@ -439,11 +423,11 @@
             UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
             [self.imageArray insertObject:image atIndex:1];
         }
-        
+
     }
     //dismiss the picker viewcontroller when user chooses
     [self dismissViewControllerAnimated:YES completion:nil];
-    
+
 }
 
 
@@ -492,7 +476,7 @@
 //dismiss the view controller when user cancels.
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     [self cancelPicker];
-    
+
 }
 
 
@@ -529,18 +513,18 @@
 
 -(IBAction)unwindSegueFromSetActivityTimeViewController:(UIStoryboardSegue *)segue{
 
-if([segue.sourceViewController isKindOfClass:[SelectTimeTVC class]]){
-    SelectTimeTVC *selectTimeVC = [segue sourceViewController];
-    self.startDateAndTime = selectTimeVC.startDateAndTime;
-    self.endDateAndTime = selectTimeVC.endDateAndTime;
+    if([segue.sourceViewController isKindOfClass:[SelectTimeTVC class]]){
+        SelectTimeTVC *selectTimeVC = [segue sourceViewController];
+        self.startDateAndTime = selectTimeVC.startDateAndTime;
+        self.endDateAndTime = selectTimeVC.endDateAndTime;
 
 
-    self.startTimeLabel.text = [NSString stringWithFormat:@"Start: %@", selectTimeVC.startTimeLabel.text];
-    self.endTimeLabel.text = [NSString stringWithFormat:@"End: %@",selectTimeVC.endTimeLabel.text];
-    self.tempLabel.text = @"";
-
-
- }
+        self.startTimeLabel.text = [NSString stringWithFormat:@"Start: %@", selectTimeVC.startTimeLabel.text];
+        self.endTimeLabel.text = [NSString stringWithFormat:@"End: %@",selectTimeVC.endTimeLabel.text];
+        self.tempLabel.text = @"";
+        
+        
+    }
 }
 
 //**********************BLOCKS***********************************************//

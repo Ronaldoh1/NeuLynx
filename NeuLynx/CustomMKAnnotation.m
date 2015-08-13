@@ -45,21 +45,4 @@
 }
 
 
-//        pinAnnotation.image =resizedImage;
-//
-//
-//        //allow the pin to show the callout.
-//        pinAnnotation.canShowCallout = YES;
-//        UIButton *selectActivityButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//        selectActivityButton.frame = CGRectMake(0, 0, 70, 20);
-//        [selectActivityButton setTitle:@"Details" forState:UIControlStateNormal];
-//        [selectActivityButton setTitleColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1] forState:UIControlStateNormal];
-//        selectActivityButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-//        [selectActivityButton.layer setBorderWidth:1];
-//        [selectActivityButton.layer setBorderColor:[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor];
-//        pinAnnotation.rightCalloutAccessoryView = selectActivityButton;
-//
-
-
-
 @end

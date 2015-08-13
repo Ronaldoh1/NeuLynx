@@ -165,12 +165,12 @@
     image1PFFIle = selectedActivity.activityImage1;
 
     [image1PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        
+
 
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
-           self.image1.image = [UIImage imageWithData:data];
+            self.image1.image = [UIImage imageWithData:data];
 
         });
 
@@ -186,7 +186,7 @@
 
 
             self.image2.image = [UIImage imageWithData:data];
-            
+
         });
 
 
@@ -222,7 +222,7 @@
     NSMutableArray *tempActivityArray = [NSMutableArray arrayWithArray:selectedActivity.RequestsArray];
 
     //check if the current user has already sent a request.
-    
+
     if ([tempActivityArray containsObject:[User currentUser]]) {
 
         [self displayErrorMessage];
@@ -231,40 +231,40 @@
 
     }else {
 
-    selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+        selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
 
 
         //add current user to the request.
 
-    [tempActivityArray addObject:[User currentUser]];
+        [tempActivityArray addObject:[User currentUser]];
 
         selectedActivity.RequestsArray = tempActivityArray.copy;
 
-    [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
+        [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
 
 
 
-            // Create our Installation query
-            PFQuery *pushQuery = [PFInstallation query];
-            // only return Installations that belong to a User that
-            // matches the innerQuery
-            [pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+                // Create our Installation query
+                PFQuery *pushQuery = [PFInstallation query];
+                // only return Installations that belong to a User that
+                // matches the innerQuery
+                [pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
 
-            // Send push notification to query
-            PFPush *push = [[PFPush alloc] init];
-            [push setQuery:pushQuery]; // Set our Installation query
-            [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your activity. Please check your Requests to review this request", [User currentUser].name]];
-            [push sendPushInBackground];
+                // Send push notification to query
+                PFPush *push = [[PFPush alloc] init];
+                [push setQuery:pushQuery]; // Set our Installation query
+                [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your activity. Please check your Requests to review this request", [User currentUser].name]];
+                [push sendPushInBackground];
 
-            [self dismissViewControllerAnimated:YES completion:nil];
+                [self dismissViewControllerAnimated:YES completion:nil];
 
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [alert show];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                [alert show];
 
-        }
-    }];
+            }
+        }];
 
     }
 
@@ -327,30 +327,29 @@
 
         UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
         UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
-
+        
         [self presentViewController:messageNavVC animated:YES completion:nil];
-
+        
     }
-
+    
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results{
-
+    
 }
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer{
-
+    
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{
-    NSLog(@"%@",error);
 }
 
 
 //helper method to display error message
 -(void)displayErrorMessage{
-
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Request Already Sent!" message:@"You have already sent a request to join this Activity!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-
+    
     [alertView show];
 }
 

@@ -42,7 +42,7 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
-  
+
     cell.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
     //change the selection color
     UIView *bgColorView = [[UIView alloc] init];
@@ -50,7 +50,7 @@
     [cell setSelectedBackgroundView:bgColorView];
 
     return cell;
-
+    
 }
 
 

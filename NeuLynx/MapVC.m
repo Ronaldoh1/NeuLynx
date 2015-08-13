@@ -339,8 +339,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     label.backgroundColor = [UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:1];
 
 
-
-
     if(show == YES){
         label.alpha = 1.0;
     }else if(show == NO){
@@ -348,8 +346,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
         [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
-
-
 
     }
 
@@ -602,13 +598,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
-    //  self.tempImage = [UIImage new];
-
 
     if (self.currentUser != nil){
         //create an image and assign it to defualt image
-
-
 
         [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             if (!error) {
@@ -796,12 +788,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         }
 
 
-    }
-
-
-
-
-     ];
+    }];
 
 
 }
@@ -1005,13 +992,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     NSMutableArray *filteredActivities = [NSMutableArray new];
 
-
-    //remove all anotations from map.
-    //self.annotationArray = self.mapView.annotations;
-    //[self.mapView removeAnnotations:self.annotationArray];
-
-    //self.lgbtFilteredActivitiesArray = [NSMutableArray new];
-
     for (CustomMKAnnotation * pinAnnotation in activitiesArray) {
 
         if ([pinAnnotation.activity.isLBGT integerValue] == 1) {
@@ -1026,8 +1006,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     return filteredActivities;
 
 }
-
-
 
 
 //Add blinking/pulse annimation
@@ -1051,7 +1029,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     theAnimation2.fromValue=[NSNumber numberWithFloat:1.0];
     theAnimation2.toValue=[NSNumber numberWithFloat:0.0];
     [imageView2.layer addAnimation:theAnimation2 forKey:@"animateOpacity"];
-
 
 
 }
@@ -1386,10 +1363,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                     }
 
-
-
-
-
                 } ];
 
 
@@ -1430,7 +1403,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     } else{
         return nil;
     }
-
 
 
 }
@@ -1490,7 +1462,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     //if there is no error then display the image for the user who posted activity.
                     if(!error){
 
-
+                        
                         dispatch_async(dispatch_get_main_queue(), ^{
                             UIImage *image = [UIImage imageWithData:data];
                             CGSize scaledSize = CGSizeMake(40, 40);
@@ -1510,10 +1482,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                     }
                     
                     
-                }
-                 
-                 
-                 ];
+                }];
+                
             }else{
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1536,7 +1506,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
             
             
             
-        } ];
+        }];
         
         
         
@@ -1597,9 +1567,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
     dispatch_after(popTime,dispatch_get_main_queue(), block);
 }
-
-
-
 
 
 

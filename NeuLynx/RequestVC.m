@@ -49,9 +49,6 @@
         appDelegate.hideDoneButtonForRequests = nil;
         self.navigationItem.rightBarButtonItem = nil;
 
-
-
-
     }
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
@@ -60,9 +57,6 @@
 }
 - (IBAction)onAcceptButtonTapped:(UIButton *)sender {
 
-
-
-    //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 
@@ -70,24 +64,17 @@
 
 
     //get the user who we are sending the request to and add it to the accepted people array.
-
     User *tempUser = [User new];
     tempUser = activity.RequestsArray[indexPath.row];
 
     NSMutableArray *tempArray = [NSMutableArray new];
     tempArray = activity.acceptedPeopleArray.mutableCopy;
-
-
     [tempArray addObject:tempUser];
-
     activity.acceptedPeopleArray = tempArray.copy;
-
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-
-
 
             // Create our Installation query
             PFQuery *pushQuery = [PFInstallation query];
@@ -101,64 +88,46 @@
             [push setMessage:[NSString stringWithFormat:@"%@ has accepted your request!", [User currentUser].name]];
             [push sendPushInBackground];
         }
-    }
-     
-     ];
-    
-    
+    }];
+
+
     [self downloadActivityRequests];
-    
+
     indexPath = nil;
-    
+
     [self.tableView reloadData];
 
-
-
-
-    
 }
 - (IBAction)onRejectButtonTapped:(UIButton *)sender {
 
-  //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
-
     Activity *activity = self.tempActivitiestArray[indexPath.section];
-
-
 
     //get the user who we are sending the request to and add it to the accepted people array.
 
     User *tempUser = [User new];
     tempUser = activity.RequestsArray[indexPath.row];
-
-    //[activity.acceptedPeopleArray addObject:tempUser];
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
-
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
+            // Create our Installation query
+            PFQuery *pushQuery = [PFInstallation query];
+            // only return Installations that belong to a User that
+            // matches the innerQuery
+            [pushQuery whereKey:@"user" matchesQuery: tempUser];
 
-
-     // Create our Installation query
-     PFQuery *pushQuery = [PFInstallation query];
-     // only return Installations that belong to a User that
-     // matches the innerQuery
-     [pushQuery whereKey:@"user" matchesQuery: tempUser];
-
-     // Send push notification to query
-     PFPush *push = [[PFPush alloc] init];
-     [push setQuery:pushQuery]; // Set our Installation query
-     [push setMessage:[NSString stringWithFormat:@"%@ has rejected your request. Don't give up keep looking for other activities!", [User currentUser].name]];
-     [push sendPushInBackground];
+            // Send push notification to query
+            PFPush *push = [[PFPush alloc] init];
+            [push setQuery:pushQuery]; // Set our Installation query
+            [push setMessage:[NSString stringWithFormat:@"%@ has rejected your request. Don't give up keep looking for other activities!", [User currentUser].name]];
+            [push sendPushInBackground];
         }
-    }
+    }];
 
-     ];
-
-
-     [self downloadActivityRequests];
+    [self downloadActivityRequests];
 
     indexPath = nil;
 
@@ -175,38 +144,30 @@
     [query whereKey:@"host" equalTo:[User currentUser]];
     [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
     [query includeKey:@"RequestsArray"];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
         // NSArray *activitiesArray = activities;
-
         if (!error) {
             //get a copy of all activities
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
-                // NSLog(@"activities are %@",activitiesArray);
                 self.tempActivitiestArray = [NSMutableArray arrayWithArray:activities].copy;
                 [self.tableView reloadData];
 
             });
 
         }
+    }];
 
-
-    }
-
-     ];
-  
-    
-    
 }
 
 -(void)displayAlertWithTitle:(NSString *)title andWithError:(NSString *)error{
 
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-
     [alert show];
-    
+
 }
 
 
@@ -219,7 +180,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NSLog(@"%ld", (long)indexPath.row);
 
 }
 
@@ -239,7 +199,6 @@
 
 -(RequestCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-
     //set up the cell
     RequestCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
@@ -252,13 +211,12 @@
 
     //Add background image to table view
     tableView.backgroundColor = [UIColor whiteColor];
-//    tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blackBackground"]];
 
     //change the selection color
     UIView *bgColorView = [[UIView alloc] init];
     bgColorView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
     [cell setSelectedBackgroundView:bgColorView];
-    
+
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
@@ -267,16 +225,16 @@
 
     cell.nameLabel.text = participant.name;
     cell.aboutParticipant.text = participant.aboutMe;
-
+    
     [participant.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
             cell.userProfileImage.image = image;
         }
-
+        
     }];
-
-
+    
+    
     return cell;
 }
 

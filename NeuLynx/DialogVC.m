@@ -173,7 +173,6 @@
 
                 [self.MessageArray addObject:message];
 
-
             }
 
         }
