@@ -13,6 +13,8 @@
 @dynamic recipient;
 @dynamic sender;
 @dynamic messageText;
+@dynamic recipientUsername;
+@dynamic senderUsername;
 
 +(void)load {
     [self registerSubclass];

@@ -118,12 +118,12 @@
 
    
 //    if(indexPath.row % 2 == 0)
-        if([((Message *)[self.MessageArray objectAtIndex:indexPath.row]).sender isEqual:[User currentUser]]) {
+        if([((Message *)[self.MessageArray objectAtIndex:indexPath.row]).senderUsername isEqual:[User currentUser].username]) {
 
         balloonView.frame = CGRectMake(370.0f - (size.width + 28.0f), 2.0f, size.width + 28.0f, size.height + 15.0f);
         balloon = [[UIImage imageNamed:@"aqua.png"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
         label.frame = CGRectMake(357.0f - (size.width + 5.0f), 8.0f, size.width + 5.0f, size.height);
-    }else if (![((Message *)[self.MessageArray objectAtIndex:indexPath.row]).sender isEqual:[User currentUser]]){
+    }else if (![((Message *)[self.MessageArray objectAtIndex:indexPath.row]).senderUsername isEqual:[User currentUser].username]){
         balloonView.frame = CGRectMake(0.0, 2.0, size.width + 28, size.height + 15);
         balloon = [[UIImage imageNamed:@"grey_2"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
         label.frame = CGRectMake(16, 8, size.width + 5, size.height);
@@ -155,11 +155,16 @@
 
 -(void)retrieveMessages{
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-  // [query whereKey:@"recipient" equalTo:self.selectedRecipient];
-   //[query whereKey:@"sender" equalTo:[User currentUser]];
-    [query includeKey:@"recipient"];
-    [query includeKey:@"sender"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat: @"(senderUsername = '%@' AND recipientUsername = '%@') OR (senderUsername = '%@' AND recipientUsername = '%@')", self.selectedRecipient.username, [User currentUser].username, [User currentUser].username, self.selectedRecipient.username]];
+
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Message" predicate:predicate];
+
+    [query orderByAscending:@"updatedAt"];
+
+   // [query whereKey:@"senderUsername" equalTo:self.selectedRecipient.username];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
@@ -171,8 +176,6 @@
             for (Message *message in objects) {
 
                 [self.MessageArray addObject:message];
-
-                NSLog(@"%@", message.messageText);
 
             }
 
@@ -226,8 +229,8 @@
 
     //Set the text key to the text of the message textfield
     message[@"messageText"] = self.messageTextField.text;
-    message[@"sender"] = [User currentUser];
-    message[@"recipient"] = self.selectedRecipient;
+    message[@"senderUsername"] = [User currentUser].username;
+    message[@"recipientUsername"] = self.selectedRecipient.username;
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.

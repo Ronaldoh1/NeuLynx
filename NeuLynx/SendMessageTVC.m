@@ -89,25 +89,24 @@
 
     message.subject = self.subjectTextField.text;
     message.messageText = self.messageText.text;
-    message.sender = [User currentUser];
-    message.recipient = (User *)appDelegate.sharedActivity.host;
+    message.senderUsername = [User currentUser].username;
+    message.recipientUsername = ((User *)appDelegate.sharedActivity.host).username;
 
 
 
 
     [self.inboxArray addObject:[User currentUser]];
 
-    //message.recepient.inboxArray = self.inboxArray.copy;
-    //recepient = appDelegate.sharedActivity.host;
-
-   // NSLog(@"%@ YOOoooooooooooooo", recepient);
-
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
             //let the user know his message has been sent.
 
-            [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
+            [self dismissViewControllerAnimated:YES completion:^{
+
+             [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
+            }];
+
 
         } else {
             // There was a problem, check error.description

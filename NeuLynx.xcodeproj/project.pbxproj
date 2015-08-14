@@ -100,7 +100,6 @@
 		F285193B1AFAE2F9007A45FA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */; };
 		F285193D1AFAE304007A45FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193C1AFAE304007A45FA /* QuartzCore.framework */; };
 		F285193F1AFAE30D007A45FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285193E1AFAE30D007A45FA /* Security.framework */; };
-		F28519411AFAE317007A45FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519401AFAE317007A45FA /* StoreKit.framework */; };
 		F28519431AFAE321007A45FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519421AFAE321007A45FA /* SystemConfiguration.framework */; };
 		F28519451AFAE332007A45FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519441AFAE332007A45FA /* libz.dylib */; };
 		F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519461AFAE347007A45FA /* libsqlite3.dylib */; };
@@ -322,7 +321,6 @@
 		F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F285193C1AFAE304007A45FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F285193E1AFAE30D007A45FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		F28519401AFAE317007A45FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F28519421AFAE321007A45FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F28519441AFAE332007A45FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F28519461AFAE347007A45FA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -452,7 +450,6 @@
 				F28519471AFAE347007A45FA /* libsqlite3.dylib in Frameworks */,
 				F28519451AFAE332007A45FA /* libz.dylib in Frameworks */,
 				F28519431AFAE321007A45FA /* SystemConfiguration.framework in Frameworks */,
-				F28519411AFAE317007A45FA /* StoreKit.framework in Frameworks */,
 				F285193F1AFAE30D007A45FA /* Security.framework in Frameworks */,
 				F285193D1AFAE304007A45FA /* QuartzCore.framework in Frameworks */,
 				F285193B1AFAE2F9007A45FA /* MobileCoreServices.framework in Frameworks */,
@@ -870,7 +867,6 @@
 				F28519461AFAE347007A45FA /* libsqlite3.dylib */,
 				F28519441AFAE332007A45FA /* libz.dylib */,
 				F28519421AFAE321007A45FA /* SystemConfiguration.framework */,
-				F28519401AFAE317007A45FA /* StoreKit.framework */,
 				F285193E1AFAE30D007A45FA /* Security.framework */,
 				F285193C1AFAE304007A45FA /* QuartzCore.framework */,
 				F285193A1AFAE2F9007A45FA /* MobileCoreServices.framework */,
@@ -1094,6 +1090,11 @@
 					F28518DA1AFABFAD007A45FA = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = A37GTC4NZF;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					F28518F61AFABFAE007A45FA = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1469,8 +1470,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1492,8 +1493,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

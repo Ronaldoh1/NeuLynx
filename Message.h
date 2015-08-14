@@ -13,6 +13,8 @@
 @interface Message : PFObject<PFSubclassing>
 @property NSString *subject;
 @property User *recipient;
+@property NSString *recipientUsername;
+@property NSString *senderUsername;
 @property User *sender;
 @property NSString *messageText;
 
