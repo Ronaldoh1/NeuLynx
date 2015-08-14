@@ -164,6 +164,8 @@
 		F2D38B081B6B6FC7007EBF41 /* Exclusive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B071B6B6FC7007EBF41 /* Exclusive.storyboard */; };
 		F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */; };
 		F2D38B0D1B6B7EE1007EBF41 /* NeuLynxBlueColor.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */; };
+		F2E0BD8D1B7E50C80004921F /* SearchForUserTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E0BD8C1B7E50C80004921F /* SearchForUserTVC.m */; };
+		F2E0BD901B7E54AB0004921F /* UserCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E0BD8F1B7E54AB0004921F /* UserCustomCell.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -394,6 +396,10 @@
 		F2D38B091B6B7119007EBF41 /* ExclusiveTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveTVC.h; sourceTree = "<group>"; };
 		F2D38B0A1B6B7119007EBF41 /* ExclusiveTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveTVC.m; sourceTree = "<group>"; };
 		F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NeuLynxBlueColor.png; sourceTree = "<group>"; };
+		F2E0BD8B1B7E50C80004921F /* SearchForUserTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchForUserTVC.h; sourceTree = "<group>"; };
+		F2E0BD8C1B7E50C80004921F /* SearchForUserTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchForUserTVC.m; sourceTree = "<group>"; };
+		F2E0BD8E1B7E54AB0004921F /* UserCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCustomCell.h; sourceTree = "<group>"; };
+		F2E0BD8F1B7E54AB0004921F /* UserCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCustomCell.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -805,6 +811,10 @@
 				F293209D1B466263001B9930 /* PostActivityTVC.m */,
 				F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */,
 				F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */,
+				F2E0BD8B1B7E50C80004921F /* SearchForUserTVC.h */,
+				F2E0BD8C1B7E50C80004921F /* SearchForUserTVC.m */,
+				F2E0BD8E1B7E54AB0004921F /* UserCustomCell.h */,
+				F2E0BD8F1B7E54AB0004921F /* UserCustomCell.m */,
 			);
 			name = PostActivity;
 			sourceTree = "<group>";
@@ -1322,8 +1332,10 @@
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
+				F2E0BD901B7E54AB0004921F /* UserCustomCell.m in Sources */,
 				F2E6E8591B1603220083BA7F /* AboutVC.m in Sources */,
 				F2FE7E631B04EF3C00CDD057 /* PageContentVC.m in Sources */,
+				F2E0BD8D1B7E50C80004921F /* SearchForUserTVC.m in Sources */,
 				F2E6E8551B16027C0083BA7F /* HelpVC.m in Sources */,
 				F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */,
 				F29320971B43C126001B9930 /* ActivityDetailTVC.m in Sources */,

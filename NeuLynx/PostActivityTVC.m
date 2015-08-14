@@ -40,6 +40,7 @@
 
 
 //*********Buttons***********//
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *postOrSendButton;
 @property (weak, nonatomic) IBOutlet UIButton *outdoorsButton;
 @property (weak, nonatomic) IBOutlet UIButton *gastronomyButton;
 @property (weak, nonatomic) IBOutlet UIButton *festivalButton;
@@ -112,7 +113,9 @@
 
 #pragma mark - Action Buttons
 
-- (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
+- (IBAction)onPostOrSendButtonTapped:(UIBarButtonItem *)sender {
+
+    if ([sender.title isEqualToString:@"Post"]) {
 
     NSString *textFieldError  = @"";
 
@@ -208,14 +211,113 @@
     } else{
         [self displayErrorMessage:textFieldError];
     }
+    }else if([self.postOrSendButton.title isEqualToString:@"Continue"]){
+        NSLog(@" select users to send to");
+
+
+
+        NSString *textFieldError  = @"";
+
+        //if any of the fields are blank, then we show the user an error - all fields are required.
+        if ([self.activityNameTextField.text isEqualToString:@""] || [self.activityDescriptionText.text isEqualToString:@""] || [self.activityAddress.text isEqualToString:@""] || [self.activityHeadCount.text isEqualToString:@""] ) {
+            textFieldError = @"Error in Form - All fields are required.";
+
+        }
+
+        if ([textFieldError isEqualToString:@""]) {
+
+
+            self.activity.activityTitle =  self.activityNameTextField.text;
+            self.activity.activityDescription = self.activityDescriptionText.text;
+            self.activity.activityAddress = self.activityAddress.text;
+            self.activity.activityLocation = self.activityGeoPoint;
+            self.activity.numberOfpaticipants = @0;
+            self.activity.host = [User currentUser];
+            self.activity.startTimeAndDate = self.startDateAndTime;
+            self.activity.endTimeAndDate = self.endDateAndTime;
+            self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
+            self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
+            self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
+            self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
+
+            //saving images if the first is picked only save the first image.
+            self.activity.selectedCategory = self.selectedCategory;
+            if (self.imageArray.count == 1) {
+
+
+                NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
+                self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+                //[self.activity.activityImage1 saveInBackground];
+
+            } else if(self.imageArray.count == 2){
+
+                //Image 1
+                NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
+                self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+                //Image 2
+                NSData *imageTwoData = UIImagePNGRepresentation((UIImage *) self.imageArray[1]);;
+                self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
+
+                //[self.activity.activityimage2 saveInBackground];
+            }
+
+
+            // self.activity.activityImage2 = self.image2.image;
+
+
+            //disable right nav bar item so that user does not double post.
+            self.navigationItem.rightBarButtonItem.enabled = NO;
+
+            [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+
+            [self saveUserInformationToParse:^{
+
+
+                [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+                    if (succeeded) {
+
+                        // The object has been saved.
+                        //  [self displaySuccessMessage];
+                        //            [self dismissViewControllerAnimated:YES completion:nil];
+                        [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+                        [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
+
+                        [self dismissIndicator:^{
+
+
+
+                            [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+//                            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+//                            [self presentViewController:mapNavVC animated:YES completion:nil];
+                            [self performSegueWithIdentifier:@"toSearchUser" sender:self];
+
+                            
+                        } afterDelay:3];
+                        
+                        
+                    } else {
+                        // There was a problem, check error.description
+                        [self displayErrorMessage:error.description];
+                    }
+                }];
+                
+                
+            } afterDelay:1.5];
+            
+        } else{
+            [self displayErrorMessage:textFieldError];
+        }
+
+    }
 }
 
 - (IBAction)onCancelButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-
 
 - (IBAction)onImageOneSelected:(UIButton *)sender {
 
@@ -316,10 +418,21 @@
     [self dismissKeyboard];
 }
 
+- (IBAction)privacySelectorTapped:(UISegmentedControl *)sender {
+
+    if (sender.selectedSegmentIndex == 0) {
+
+         self.postOrSendButton.title = @"Post";
+    }else{
+        self.postOrSendButton.title = @"Continue";
+    }
+
+
+}
+
 #pragma mark - UITextView Delegate Methods
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
+- (void)textViewDidBeginEditing:(UITextView *)textView{
     if ([textView.text isEqualToString:@"Activity Description - What is it? What's good? What's popping? etc."]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
@@ -327,8 +440,7 @@
     [textView becomeFirstResponder];
 }
 
-- (void)textViewDidEndEditing:(UITextView *)textView
-{
+- (void)textViewDidEndEditing:(UITextView *)textView{
     if ([textView.text isEqualToString:@""]) {
         textView.text = @"Activity Description - What is it? What's good? What's popping? etc.";
         textView.textColor = [UIColor lightGrayColor]; //optional
@@ -349,8 +461,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
 }
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if([text isEqualToString:@"\n"])
         [textView resignFirstResponder];
     return YES;
