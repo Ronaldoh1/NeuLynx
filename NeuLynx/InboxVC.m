@@ -12,6 +12,7 @@
 #import "DialogVC.h"
 #import "AppDelegate.h"
 #import "Message.h"
+#import "InboxCustomCell.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,6 +33,8 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     self.activeDialogVC = nil;
+
+   
 
     [self initialSetUp];
 }
@@ -82,11 +85,19 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
-    User *sender = ((Message *)(self.inboxArray[indexPath.row])).sender;
-    Message *message = ((Message *)(self.inboxArray[indexPath.row]));
-    cell.textLabel.text = sender.name;
-    cell.detailTextLabel.text = message.subject;
+     InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
+    User *sender = (User *)(self.inboxArray[indexPath.row]);
+   // Message *message = ((Message *)(self.inboxArray[indexPath.row]));
+    cell.senderNameLabel.text = sender.name;
+
+    [sender.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userProfileImage.image = image;
+        }
+
+    }];
+    //cell.detailTextLabel.text = @"You got a Message";
     return cell;
 }
 
@@ -104,7 +115,7 @@
     if ([segue.identifier isEqualToString:@"OpenDialogSegue"]) {
         self.activeDialogVC = segue.destinationViewController;
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
-        self.activeDialogVC.selectedRecepient = (User *)self.inboxArray[chatMateIndex];
+        self.activeDialogVC.selectedRecipient = (User *)self.inboxArray[chatMateIndex];
 
         return;
     }
@@ -117,7 +128,7 @@
     NSMutableArray *array = [NSMutableArray new];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-    [query whereKey:@"recepient" equalTo:[User currentUser]];
+    [query whereKey:@"recipient" equalTo:[User currentUser]];
     [query includeKey:@"sender"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
@@ -125,10 +136,10 @@
             for (Message *message in objects) {
 
                 if (![array containsObject:message.sender]) {
-                    [array addObject:message];
+                    [array addObject:message.sender];
 
                 }
-            }
+                }
             self.inboxArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
             

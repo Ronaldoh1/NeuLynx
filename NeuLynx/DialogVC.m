@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-   //
+    NSLog(@"%@", self.selectedRecipient.name);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -76,7 +76,6 @@
 
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    // バルーンとテキストの部分を宣言
     UIImageView *balloonView;
     UILabel *label;
 
@@ -124,9 +123,7 @@
         balloonView.frame = CGRectMake(370.0f - (size.width + 28.0f), 2.0f, size.width + 28.0f, size.height + 15.0f);
         balloon = [[UIImage imageNamed:@"aqua.png"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
         label.frame = CGRectMake(357.0f - (size.width + 5.0f), 8.0f, size.width + 5.0f, size.height);
-    }
-    else
-    {
+    }else if (![((Message *)[self.MessageArray objectAtIndex:indexPath.row]).sender isEqual:[User currentUser]]){
         balloonView.frame = CGRectMake(0.0, 2.0, size.width + 28, size.height + 15);
         balloon = [[UIImage imageNamed:@"grey_2"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
         label.frame = CGRectMake(16, 8, size.width + 5, size.height);
@@ -141,7 +138,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     NSString *body = ((Message *)self.MessageArray[indexPath.row]).messageText;
-    // CGSize size = [body sizeWithFont:[UIFont systemFontOfSize:14.0] constrainedToSize:CGSizeMake(240.0, 480.0) lineBreakMode:NSLineBreakByWordWrapping];
+
     CGSize size = [body boundingRectWithSize:CGSizeMake(240.0f, 480.0f)
                                      options:NSStringDrawingUsesLineFragmentOrigin
                                   attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.0]}
@@ -159,8 +156,10 @@
 -(void)retrieveMessages{
 
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-   [query whereKey:@"recepient" equalTo:self.selectedRecepient];
-   [query whereKey:@"sender" equalTo:[User currentUser]];
+  // [query whereKey:@"recipient" equalTo:self.selectedRecipient];
+   //[query whereKey:@"sender" equalTo:[User currentUser]];
+    [query includeKey:@"recipient"];
+    [query includeKey:@"sender"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
@@ -172,6 +171,8 @@
             for (Message *message in objects) {
 
                 [self.MessageArray addObject:message];
+
+                NSLog(@"%@", message.messageText);
 
             }
 
@@ -226,7 +227,7 @@
     //Set the text key to the text of the message textfield
     message[@"messageText"] = self.messageTextField.text;
     message[@"sender"] = [User currentUser];
-    message[@"recepient"] = self.selectedRecepient;
+    message[@"recipient"] = self.selectedRecipient;
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.

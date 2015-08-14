@@ -11,6 +11,6 @@
 @interface DialogVC : UIViewController
 
 @property (strong, nonatomic) NSString *chatMateId;
-@property User *selectedRecepient;
+@property User *selectedRecipient;
 
 @end

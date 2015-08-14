@@ -12,7 +12,7 @@
 #import "Activity.h"
 @interface Message : PFObject<PFSubclassing>
 @property NSString *subject;
-@property User *recepient;
+@property User *recipient;
 @property User *sender;
 @property NSString *messageText;
 

@@ -47,6 +47,7 @@
 		F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2361DDD1B7B48AE007228C0 /* BugReportVC.m */; };
 		F2361DE01B7B48CB007228C0 /* bugReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */; };
 		F2361DE21B7BC04B007228C0 /* exclusiveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DE11B7BC04B007228C0 /* exclusiveIcon.png */; };
+		F2361DE81B7D867C007228C0 /* InboxCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2361DE71B7D867C007228C0 /* InboxCustomCell.m */; };
 		F249D2D41B49A57200A3BAE7 /* RequestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */; };
 		F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2D91B49F57700A3BAE7 /* thumbsDown.png */; };
 		F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F249D2DA1B49F57700A3BAE7 /* thumbsUp.png */; };
@@ -250,6 +251,8 @@
 		F2361DDD1B7B48AE007228C0 /* BugReportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BugReportVC.m; sourceTree = "<group>"; };
 		F2361DDF1B7B48CB007228C0 /* bugReport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = bugReport.storyboard; sourceTree = "<group>"; };
 		F2361DE11B7BC04B007228C0 /* exclusiveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclusiveIcon.png; sourceTree = "<group>"; };
+		F2361DE61B7D867C007228C0 /* InboxCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxCustomCell.h; sourceTree = "<group>"; };
+		F2361DE71B7D867C007228C0 /* InboxCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxCustomCell.m; sourceTree = "<group>"; };
 		F249D2D21B49A57200A3BAE7 /* RequestCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestCustomCell.h; sourceTree = "<group>"; };
 		F249D2D31B49A57200A3BAE7 /* RequestCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestCustomCell.m; sourceTree = "<group>"; };
 		F249D2D91B49F57700A3BAE7 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
@@ -675,6 +678,8 @@
 				F249D2F11B51B8B900A3BAE7 /* DialogVC.h */,
 				F249D2F21B51B8B900A3BAE7 /* DialogVC.m */,
 				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
+				F2361DE61B7D867C007228C0 /* InboxCustomCell.h */,
+				F2361DE71B7D867C007228C0 /* InboxCustomCell.m */,
 			);
 			name = Mail;
 			sourceTree = "<group>";
@@ -1328,6 +1333,7 @@
 				F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
+				F2361DE81B7D867C007228C0 /* InboxCustomCell.m in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,
 				F25BFC5A1AFB9EE100B2C5BA /* HistoryVC.m in Sources */,

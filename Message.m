@@ -10,7 +10,7 @@
 
 @implementation Message
 @dynamic subject;
-@dynamic recepient;
+@dynamic recipient;
 @dynamic sender;
 @dynamic messageText;
 

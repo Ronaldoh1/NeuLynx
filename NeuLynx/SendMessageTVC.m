@@ -90,7 +90,7 @@
     message.subject = self.subjectTextField.text;
     message.messageText = self.messageText.text;
     message.sender = [User currentUser];
-    message.recepient = (User *)appDelegate.sharedActivity.host;
+    message.recipient = (User *)appDelegate.sharedActivity.host;
 
 
 
