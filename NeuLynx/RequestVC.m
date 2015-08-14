@@ -76,11 +76,17 @@
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
+//            // Create our Installation query
+//            PFQuery *pushQuery = [PFInstallation query];
+//            // only return Installations that belong to a User that
+//            // matches the innerQuery
+//            [pushQuery whereKey:@"user" matchesQuery: tempUser];
+
             // Create our Installation query
             PFQuery *pushQuery = [PFInstallation query];
             // only return Installations that belong to a User that
-            // matches the innerQuery
-            [pushQuery whereKey:@"user" matchesQuery: tempUser];
+
+            [pushQuery whereKey:@"user" equalTo:tempUser];
 
             // Send push notification to query
             PFPush *push = [[PFPush alloc] init];
@@ -113,11 +119,18 @@
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
+//            // Create our Installation query
+//            PFQuery *pushQuery = [PFInstallation query];
+//            // only return Installations that belong to a User that
+//            // matches the innerQuery
+//            [pushQuery whereKey:@"user" matchesQuery: tempUser];
+
+
             // Create our Installation query
             PFQuery *pushQuery = [PFInstallation query];
             // only return Installations that belong to a User that
-            // matches the innerQuery
-            [pushQuery whereKey:@"user" matchesQuery: tempUser];
+
+            [pushQuery whereKey:@"user" equalTo:tempUser];
 
             // Send push notification to query
             PFPush *push = [[PFPush alloc] init];

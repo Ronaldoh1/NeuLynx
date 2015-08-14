@@ -248,8 +248,12 @@
                 // Create our Installation query
                 PFQuery *pushQuery = [PFInstallation query];
                 // only return Installations that belong to a User that
+
+                [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
                 // matches the innerQuery
-                [pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+                //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
+                // matches the innerQuery
+                //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
 
                 // Send push notification to query
                 PFPush *push = [[PFPush alloc] init];
