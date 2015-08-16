@@ -69,6 +69,7 @@
 @property NSArray *allActivitiesArray;
 @property NSMutableArray *activitySearchResults;
 @property BOOL activityIsSelected;
+@property PFGeoPoint *userCurrentLocationGeoPoint;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *lgbtActivitySelector;
 
 
@@ -83,6 +84,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [super viewDidLoad];
 
 [PFUser enableRevocableSessionInBackground];
+
     [self setUpFanOutButton]; // set up fan out buttons
     [self performInitialSetup]; //do initial set up for MapVC
     [self createAndDisplayBlinkingRings];
@@ -229,6 +231,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     appDelegate.hideDoneButtonForRequests = &(tmpBool);
     appDelegate.hideDoneButtonForMessages = &(tmpBool);
+
+
+    self.currentLocation = [CLLocation new];
 
 
 }
@@ -892,11 +897,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                                  }];
 
-    UIAlertAction* twitterUpButton = [UIAlertAction
-                                      actionWithTitle:@"Sign in with Twitter"
-                                      style:UIAlertActionStyleDefault
-                                      handler:^(UIAlertAction * action)
-                                      {
+    UIAlertAction* twitterUpButton = [UIAlertAction actionWithTitle:@"Sign in with Twitter" style:UIAlertActionStyleDefault
+                                      handler:^(UIAlertAction * action){
                                           //Do some thing here
 
 
@@ -1088,6 +1090,21 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 #pragma mark CLLocationManager Delegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = [locations objectAtIndex:0];
+
+
+    //Save the user's current Location in Background
+
+    self.userCurrentLocationGeoPoint = [PFGeoPoint new];
+
+    self.userCurrentLocationGeoPoint.latitude = self.currentLocation.coordinate.latitude;
+    self.userCurrentLocationGeoPoint.longitude = self.currentLocation.coordinate.latitude;
+
+    [User currentUser].currentLoccation = self.userCurrentLocationGeoPoint;
+
+
+    [[User currentUser] saveInBackground];
+
+
     [self.locationManager stopUpdatingLocation];
 
     CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
@@ -1098,6 +1115,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                            return;
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+
 
                        self.currentUser.userCurrentCity = placemark.locality;
                        self.currentUser.userAdministrativeArea = placemark.administrativeArea;
@@ -1184,6 +1202,17 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         mapRegion.center = mapView.userLocation.coordinate;
         mapRegion.span.latitudeDelta = 0.01;
         mapRegion.span.longitudeDelta = 0.01;
+
+
+        //save user's current location in background
+        self.userCurrentLocationGeoPoint = [PFGeoPoint new];
+
+        self.userCurrentLocationGeoPoint.latitude = userLocation.location.coordinate.latitude;
+        self.userCurrentLocationGeoPoint.longitude = userLocation.location.coordinate.latitude;
+
+        [User currentUser].currentLoccation = self.userCurrentLocationGeoPoint;
+
+        [[User currentUser] saveInBackground];
 
         [mapView setRegion:mapRegion animated: NO];
     }

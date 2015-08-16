@@ -22,6 +22,7 @@
 @property NSString *userCurrentCity;
 @property NSString *userAdministrativeArea;
 @property NSString *userCountryCode;
+@property PFGeoPoint *currentLoccation;
 
 //List of Users who sent Messages
 @property NSMutableArray *inboxArray;

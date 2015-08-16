@@ -180,7 +180,7 @@
     if (searchStr == nil) {
 
         // If empty the search results are the same as the original data
-        self.searchResults = [self.searchResults mutableCopy];
+        self.searchResults = [self.activities mutableCopy];
 
     } else {
 

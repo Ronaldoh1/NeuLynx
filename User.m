@@ -29,6 +29,7 @@
 @dynamic userRating;
 @dynamic pastActivities;
 @dynamic inboxArray;
+@dynamic currentLoccation;
 
 
 
