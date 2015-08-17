@@ -172,6 +172,7 @@
 		F2E0BDB71B8092280004921F /* uNightoutPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E0BDA91B8092280004921F /* uNightoutPin.png */; };
 		F2E0BDB81B8092280004921F /* uOutdoorsPin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E0BDAA1B8092280004921F /* uOutdoorsPin.png */; };
 		F2E0BDB91B8092280004921F /* uStudentLifePin.png in Resources */ = {isa = PBXBuildFile; fileRef = F2E0BDAB1B8092280004921F /* uStudentLifePin.png */; };
+		F2E0BDBC1B8194350004921F /* ExclusiveInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E0BDBB1B8194350004921F /* ExclusiveInvite.m */; };
 		F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */; };
 		F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */; };
 		F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E6E84E1B15FC6A0083BA7F /* TermsAndConditionsVC.m */; };
@@ -409,6 +410,8 @@
 		F2E0BDA91B8092280004921F /* uNightoutPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uNightoutPin.png; sourceTree = "<group>"; };
 		F2E0BDAA1B8092280004921F /* uOutdoorsPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uOutdoorsPin.png; sourceTree = "<group>"; };
 		F2E0BDAB1B8092280004921F /* uStudentLifePin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uStudentLifePin.png; sourceTree = "<group>"; };
+		F2E0BDBA1B8194350004921F /* ExclusiveInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExclusiveInvite.h; sourceTree = "<group>"; };
+		F2E0BDBB1B8194350004921F /* ExclusiveInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExclusiveInvite.m; sourceTree = "<group>"; };
 		F2E6E8451B143EC90083BA7F /* SelectLocationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationVC.h; sourceTree = "<group>"; };
 		F2E6E8461B143EC90083BA7F /* SelectLocationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationVC.m; sourceTree = "<group>"; };
 		F2E6E84B1B15FB670083BA7F /* TermsAndConditions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TermsAndConditions.storyboard; sourceTree = "<group>"; };
@@ -903,6 +906,8 @@
 			children = (
 				F25BFC451AFB2BF100B2C5BA /* User.h */,
 				F25BFC461AFB2BF100B2C5BA /* User.m */,
+				F2E0BDBA1B8194350004921F /* ExclusiveInvite.h */,
+				F2E0BDBB1B8194350004921F /* ExclusiveInvite.m */,
 				F226C81D1B0F5D7B007A1C03 /* Activity.h */,
 				F226C81E1B0F5D7B007A1C03 /* Activity.m */,
 				F249D2F41B51D6FD00A3BAE7 /* Message.h */,
@@ -1337,6 +1342,7 @@
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
+				F2E0BDBC1B8194350004921F /* ExclusiveInvite.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */,

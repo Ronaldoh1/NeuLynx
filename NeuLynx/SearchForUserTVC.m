@@ -11,6 +11,8 @@
 #import "User.h"
 #import <Parse/Parse.h>
 #import "UserSearchResultTVC.h"
+#import "ExclusiveInvite.h"
+
 @interface SearchForUserTVC ()<UISearchResultsUpdating, CLLocationManagerDelegate>
 
 //Search Controller
@@ -122,34 +124,62 @@
 
     //NSLog(@"%@ activityyyyyyyyyyy", self.exclusiveActivity);
 
-    NSMutableArray *tempArray = [NSMutableArray new];
+    ExclusiveInvite *exclusiveInvite = [ExclusiveInvite new];
 
-       [tempArray addObject:self.exclusiveActivity];
+    exclusiveInvite.exclusiveInvitee = user;
+    exclusiveInvite.activity = self.exclusiveActivity;
 
-    user.exclusiveInvitesArray = tempArray.copy;
+//
+//    NSMutableArray *tempArray = [NSMutableArray new];
+//
+//       [tempArray addObject:self.exclusiveActivity];
+//
+//    user.exclusiveInvitesArray = tempArray.copy;
 
-//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//
-//        if (succeeded) {
-//
-//            NSLog(@"it savedddd ronald it saved!!!");
-//        }
-//
+    [exclusiveInvite saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+        if (succeeded) {
+
+            NSLog(@"it saved exclusive activity");
+
+        }else{
+
+            NSLog(@"%@", error.localizedDescription);
+        }
+
+    }];
+
+
+//    [PFCloud callFunctionInBackground:@"updateUser" withParameters:@{@"objectId":user.objectId, @"exclusiveActivity":self.exclusiveActivity.objectId} block:^(NSString *result, NSError *error)
+//     {
+//         if (!error) {
+//             NSLog(@"%@",result);
+//         }else if(error){
+//             NSLog(@"%@", error);
+//         }
 //     }];
-
-    [PFCloud callFunctionInBackground:@"updateUser" withParameters:@{@"objectId":user.objectId, @"activity":self.exclusiveActivity} block:^(NSString *result, NSError *error)
-     {
-         if (!error) {
-             NSLog(@"%@",result);
-         }else if(error){
-             NSLog(@"%@", error);
-         }
-     }];
 
 
 
 }
 
+-(void)downloadExclusiveInvitesForUser:(User *)user{
+
+    PFQuery *query = [PFQuery queryWithClassName:@"ExclusiveInvite"];
+    [query whereKey:@"exclusiveInvitee" equalTo:user];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *invitesArray, NSError *error) {
+        if (error) {
+            // There was an error
+            NSLog(@"%@", error.description);
+        } else {
+            // objects has all the Posts the current user liked.
+
+            NSLog(@"%@",invitesArray);
+
+        }
+    }];
+}
 
 
 
