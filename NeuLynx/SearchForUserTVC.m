@@ -103,10 +103,54 @@
 
 
 }
-- (IBAction)onSendButtonTapped:(UIBarButtonItem *)sender {
+- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
+
+//To get access of the button tapped, we need to get the button position and obtain the indexPath for the cell that was tapped.
+
+- (IBAction)onSendButtonTapped:(UIButton *)sender {
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+
+    User *user = (User *)self.usersArray[indexPath.row];
+
+    //NSLog(@"%@ userrrrr", user);
+
+    //NSLog(@"%@ activityyyyyyyyyyy", self.exclusiveActivity);
+
+    NSMutableArray *tempArray = [NSMutableArray new];
+
+       [tempArray addObject:self.exclusiveActivity];
+
+    user.exclusiveInvitesArray = tempArray.copy;
+
+//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//
+//        if (succeeded) {
+//
+//            NSLog(@"it savedddd ronald it saved!!!");
+//        }
+//
+//     }];
+
+    [PFCloud callFunctionInBackground:@"updateUser" withParameters:@{@"objectId":user.objectId, @"activity":self.exclusiveActivity} block:^(NSString *result, NSError *error)
+     {
+         if (!error) {
+             NSLog(@"%@",result);
+         }else if(error){
+             NSLog(@"%@", error);
+         }
+     }];
+
+
+
+}
+
+
 
 
 #pragma mark - Table view data source

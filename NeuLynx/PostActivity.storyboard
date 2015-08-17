@@ -594,6 +594,9 @@
                                             <state key="normal" title="Send">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="onSendButtonTapped:" destination="bxp-1Z-gGE" eventType="touchUpInside" id="SaJ-KW-rmi"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -621,7 +624,7 @@
                     <navigationItem key="navigationItem" id="ZNE-tX-ZLn">
                         <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="qyF-k1-E2V">
                             <connections>
-                                <action selector="onSendButtonTapped:" destination="bxp-1Z-gGE" id="dlW-PS-mVr"/>
+                                <action selector="onDoneButtonTapped:" destination="bxp-1Z-gGE" id="FKe-Sd-VpM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

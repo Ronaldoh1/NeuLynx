@@ -36,6 +36,7 @@
 //**0 = No 1 = Yes**
 @property NSNumber *isLBGT;
 
+@property NSMutableArray *exclusiveInvitesArray;
 
 +(NSString *)parseClassName;
 

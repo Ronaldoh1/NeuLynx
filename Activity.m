@@ -26,6 +26,7 @@
 @dynamic activityPrivacy;
 @dynamic studentsOnly;
 @dynamic isLBGT;
+@dynamic exclusiveInvitesArray;
 
 +(void)load {
     [self registerSubclass];

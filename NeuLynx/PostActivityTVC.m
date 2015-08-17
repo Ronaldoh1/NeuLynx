@@ -12,6 +12,7 @@
 #import "MRProgressOverlayView.h"
 #import "MRProgress.h"
 #import "SelectTimeTVC.h"
+#import "SearchForUserTVC.h"
 
 
 @interface PostActivityTVC ()<UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
@@ -635,6 +636,17 @@
         self.tempLabel.text = @"";
         
         
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"toSearchUser"]) {
+
+        SearchForUserTVC *destVC = segue.destinationViewController;
+
+        destVC.exclusiveActivity = self.activity;
+
     }
 }
 

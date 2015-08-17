@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
 
 @interface SearchForUserTVC : UITableViewController
-
+@property Activity *exclusiveActivity;
 
 
 @end

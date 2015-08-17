@@ -41,5 +41,7 @@
 //Activities Joined & Accepted
 @property NSMutableArray *pastActivities;
 
+@property NSMutableArray *exclusiveInvitesArray;
+
 
 @end
