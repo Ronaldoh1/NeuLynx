@@ -89,7 +89,7 @@
 
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [User query];
-    [query whereKey:@"currentLoccation" nearGeoPoint:geoPoint withinMiles:50.0];
+  //  [query whereKey:@"currentLoccation" nearGeoPoint:geoPoint withinMiles:100];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error){
         if (!error) {
@@ -128,6 +128,8 @@
 
     exclusiveInvite.exclusiveInvitee = user;
     exclusiveInvite.activity = self.exclusiveActivity;
+    exclusiveInvite.isDispositioned = @0;
+
 
 //
 //    NSMutableArray *tempArray = [NSMutableArray new];
@@ -140,47 +142,60 @@
 
         if (succeeded) {
 
-            NSLog(@"it saved exclusive activity");
+
+
+            // Create our Installation query
+            PFQuery *pushQuery = [PFInstallation query];
+            // only return Installations that belong to a User that
+
+            [pushQuery whereKey:@"user" equalTo:exclusiveInvite.exclusiveInvitee];
+            // matches the innerQuery
+            //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
+            // matches the innerQuery
+            //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+
+            // Send push notification to query
+            PFPush *push = [[PFPush alloc] init];
+            [push setQuery:pushQuery]; // Set our Installation query
+            [push setMessage:[NSString stringWithFormat:@"%@ has sent you an exclusive invite to join his activity. Please check your exclusive invites for details", [User currentUser].name]];
+            [push sendPushInBackground];
+
+            //Display success alert
+
+            [self displaySuccessMessage];
+
+
+
+            
 
         }else{
+            [self displayErrorMessage:error.localizedDescription];
 
-            NSLog(@"%@", error.localizedDescription);
         }
 
     }];
 
 
-//    [PFCloud callFunctionInBackground:@"updateUser" withParameters:@{@"objectId":user.objectId, @"exclusiveActivity":self.exclusiveActivity.objectId} block:^(NSString *result, NSError *error)
-//     {
-//         if (!error) {
-//             NSLog(@"%@",result);
-//         }else if(error){
-//             NSLog(@"%@", error);
-//         }
-//     }];
-
-
-
 }
 
--(void)downloadExclusiveInvitesForUser:(User *)user{
-
-    PFQuery *query = [PFQuery queryWithClassName:@"ExclusiveInvite"];
-    [query whereKey:@"exclusiveInvitee" equalTo:user];
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *invitesArray, NSError *error) {
-        if (error) {
-            // There was an error
-            NSLog(@"%@", error.description);
-        } else {
-            // objects has all the Posts the current user liked.
-
-            NSLog(@"%@",invitesArray);
-
-        }
-    }];
-}
-
+//-(void)downloadExclusiveInvitesForUser:(User *)user{
+//
+//    PFQuery *query = [PFQuery queryWithClassName:@"ExclusiveInvite"];
+//    [query whereKey:@"exclusiveInvitee" equalTo:user];
+//
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *invitesArray, NSError *error) {
+//        if (error) {
+//            // There was an error
+//            NSLog(@"%@", error.description);
+//        } else {
+//            // objects has all the Posts the current user liked.
+//
+//            NSLog(@"%@",invitesArray);
+//
+//        }
+//    }];
+//}
+//
 
 
 #pragma mark - Table view data source
@@ -329,6 +344,24 @@
     }
 
     [self.locationManager stopUpdatingLocation];
+}
+
+//helper method to display error message
+-(void)displayErrorMessage:(NSString *)error{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+}
+
+//helper method to display a success message when information has been posted.
+-(void)displaySuccessMessage{
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your invite has been sent!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+    [alertView show];
+    
+    
 }
 
 @end

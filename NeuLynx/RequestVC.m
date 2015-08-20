@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "User.h"
+#import "History.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -75,6 +76,13 @@
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+
+//Create history record for user.
+
+            History *historyRecord = [History new];
+            historyRecord.activityJoined = activity;
+            historyRecord.user = tempUser;
+            [historyRecord saveInBackground];
 
 //            // Create our Installation query
 //            PFQuery *pushQuery = [PFInstallation query];

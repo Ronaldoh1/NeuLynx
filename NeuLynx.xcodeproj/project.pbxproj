@@ -100,6 +100,8 @@
 		F28519491AFAE358007A45FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28519481AFAE358007A45FA /* Accounts.framework */; };
 		F285194B1AFAE360007A45FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F285194A1AFAE360007A45FA /* Social.framework */; };
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
+		F286776C1B8578D400BD6B1D /* HistoryCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */; };
+		F286776F1B8582D100BD6B1D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776E1B8582D100BD6B1D /* History.m */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
 		F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */; };
@@ -327,6 +329,10 @@
 		F285194A1AFAE360007A45FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		F285195A1AFB0294007A45FA /* SignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpVC.h; sourceTree = "<group>"; };
 		F285195B1AFB0294007A45FA /* SignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpVC.m; sourceTree = "<group>"; };
+		F286776A1B8578D400BD6B1D /* HistoryCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryCustomCell.h; sourceTree = "<group>"; };
+		F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCustomCell.m; sourceTree = "<group>"; };
+		F286776D1B8582D100BD6B1D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		F286776E1B8582D100BD6B1D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
 		F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
@@ -847,6 +853,8 @@
 				F285192A1AFADB20007A45FA /* History.storyboard */,
 				F25BFC581AFB9EE100B2C5BA /* HistoryVC.h */,
 				F25BFC591AFB9EE100B2C5BA /* HistoryVC.m */,
+				F286776A1B8578D400BD6B1D /* HistoryCustomCell.h */,
+				F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -912,6 +920,8 @@
 				F226C81E1B0F5D7B007A1C03 /* Activity.m */,
 				F249D2F41B51D6FD00A3BAE7 /* Message.h */,
 				F249D2F51B51D6FD00A3BAE7 /* Message.m */,
+				F286776D1B8582D100BD6B1D /* History.h */,
+				F286776E1B8582D100BD6B1D /* History.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -1344,6 +1354,7 @@
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
 				F2E0BDBC1B8194350004921F /* ExclusiveInvite.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
+				F286776C1B8578D400BD6B1D /* HistoryCustomCell.m in Sources */,
 				F2FE7E9D1B0B03CB00CDD057 /* PreferencesVC.m in Sources */,
 				F293209E1B466263001B9930 /* PostActivityTVC.m in Sources */,
 				F25BFBF61AFB10B000B2C5BA /* MapVC.m in Sources */,
@@ -1362,6 +1373,7 @@
 				F2E0BD9B1B7F7E080004921F /* UserSearchResultTVC.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
+				F286776F1B8582D100BD6B1D /* History.m in Sources */,
 				F2361DE81B7D867C007228C0 /* InboxCustomCell.m in Sources */,
 				F25BFC511AFB47DB00B2C5BA /* SignInVC.m in Sources */,
 				F28518E11AFABFAD007A45FA /* main.m in Sources */,

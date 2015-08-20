@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "Activity.h"
+#import "ExclusiveInvite.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property Activity *sharedActivity;
+@property ExclusiveInvite *exclusiveInvite;
 @property BOOL *hideDoneButtonForRequests;
 @property BOOL *hideDoneButtonForMessages;
 

@@ -15,6 +15,8 @@
 
 @property User *exclusiveInvitee;
 @property Activity *activity;
+//**0 = No 1 = Yes**
+@property NSNumber *isDispositioned;
 
 
 @end

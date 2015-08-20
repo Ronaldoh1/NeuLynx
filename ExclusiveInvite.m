@@ -11,6 +11,7 @@
 @implementation ExclusiveInvite
 @dynamic exclusiveInvitee;
 @dynamic activity;
+@dynamic isDispositioned;
 
 +(void)load {
     [self registerSubclass];

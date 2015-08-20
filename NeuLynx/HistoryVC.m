@@ -7,9 +7,13 @@
 //
 
 #import "HistoryVC.h"
+#import "History.h"
+#import "HistoryCustomCell.h"
+#import "AppDelegate.h"
 
 @interface HistoryVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *historyArray;
 
 @end
 
@@ -28,26 +32,122 @@
     titleView.text = @"History";
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
+
+    [self downloadHistoryForCurrentUser];
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)onMessageButtonTapped:(UIButton *)sender {
+
+
+    //1. Get the activity that user selected.
+    Activity *selectedActivity = [Activity new];
+
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+
+
+    History *historyRecord = (History *)self.historyArray[indexPath.row];
+
+    selectedActivity = (Activity *)historyRecord.activityJoined;
+
+    NSLog(@"%@ activityyyyyyyyyyyy", selectedActivity);
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+     appDelegate.sharedActivity = selectedActivity;
+
+    UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+            UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
+    
+            [self presentViewController:messageNavVC animated:YES completion:nil];
+
+}
+
+-(void)downloadHistoryForCurrentUser{
+
+
+
+    PFQuery *query = [History query];
+
+    [query whereKey:@"user" equalTo:[User currentUser]];
+
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
+
+
+        if (!error) {
+            //get a copy of all activities
+            self.historyArray = [NSMutableArray arrayWithArray:historyArray];
+            // Add activities to the map.
+            if (self.historyArray.count == 0) {
+
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Activities Yet 😕" message:@"You haven't joined any activities. Be adventurous and find activities happening near you. Simply head over to the map and check them out!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+
+
+                [alertView show];
+            }
+
+            
+        }
+        [self.tableView reloadData];
+        
+    }];
+    
+    
+}
+
+
+
+#pragma marks - TableView Delegate Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 1;
+    return [self.historyArray count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(HistoryCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    HistoryCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    //change the background color
+    cell.backgroundColor = [UIColor clearColor];
+
+    //change the color of scrollbar
+    tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
 
-    cell.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1];
-    //change the selection color
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1];
-    [cell setSelectedBackgroundView:bgColorView];
+
+    //For every exclusive invite, we need to popuplate each cell
+
+    History *historyRecord  = (History *)self.historyArray[indexPath.row];
+
+    Activity *activity = (Activity *)historyRecord.activityJoined;
+
+    [activity fetchIfNeededInBackground];
+
+    [(User *)activity.host fetchIfNeeded];
+
+    User * user = (User *)activity.host;
+
+    [user.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+        if (!error) {
+
+            UIImage *image = [UIImage imageWithData:data];
+            cell.userProfileImage.image = image;
+        }else{
+            NSLog(@" %@       errorrrrrr %@", error.localizedDescription, error.description);
+        }
+
+
+    }];
+
+    cell.activityTitleLabel.text = activity.activityTitle;
+    cell.activityDescriptionText.text = activity.activityDescription;
+
+
 
     return cell;
     

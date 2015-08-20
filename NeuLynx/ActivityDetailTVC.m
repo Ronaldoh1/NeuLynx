@@ -209,7 +209,19 @@
 
 - (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        ExclusiveInvite *exclusivInvite = [ExclusiveInvite new];
+        exclusivInvite = appDelegate.exclusiveInvite;
+
+        if (exclusivInvite != nil) {
+
+            exclusivInvite.isDispositioned = @0;
+        }
+
+    }];
 }
 
 - (IBAction)onJoinButtonTapped:(UIBarButtonItem *)sender {
@@ -231,6 +243,64 @@
 
     }else {
 
+        //we want to disposition the exclusive invite.
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        ExclusiveInvite *exclusivInvite = [ExclusiveInvite new];
+        exclusivInvite = appDelegate.exclusiveInvite;
+
+        if (exclusivInvite != nil) {
+
+            exclusivInvite.isDispositioned = @1;
+
+            [exclusivInvite saveInBackground];
+
+
+
+            selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+
+
+            //add current user to the request.
+
+            [tempActivityArray addObject:[User currentUser]];
+
+            selectedActivity.RequestsArray = tempActivityArray.copy;
+
+            [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+
+
+
+                    // Create our Installation query
+                    PFQuery *pushQuery = [PFInstallation query];
+                    // only return Installations that belong to a User that
+
+                    [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+
+                    // Send push notification to query
+                    PFPush *push = [[PFPush alloc] init];
+                    [push setQuery:pushQuery]; // Set our Installation query
+                    [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your exclusive invite. Please check your Requests to confirm.", [User currentUser].name]];
+                    [push sendPushInBackground];
+
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                    
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [alert show];
+                    
+                }
+            }];
+
+
+
+
+        }else{
+
         selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
 
 
@@ -242,8 +312,6 @@
 
         [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-
-
 
                 // Create our Installation query
                 PFQuery *pushQuery = [PFInstallation query];
@@ -270,6 +338,7 @@
             }
         }];
 
+        }
     }
 
 }
@@ -287,7 +356,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    //firt thing we want to do is deselect the cell.
+    //first thing we want to do is deselect the cell.
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     //the next thing we want to do is handle the user's selections.
@@ -325,17 +394,19 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
-
-    }else if (indexPath.section == 4 && indexPath.row == 0){
-
-
-        UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-        UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
-        
-        [self presentViewController:messageNavVC animated:YES completion:nil];
-        
     }
-    
+
+
+//    }else if (indexPath.section == 4 && indexPath.row == 0){
+//
+//
+//        UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+//        UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
+//        
+//        [self presentViewController:messageNavVC animated:YES completion:nil];
+//        
+//    }
+
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results{

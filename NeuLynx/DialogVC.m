@@ -53,7 +53,9 @@
     [self retrieveMessages];
 
 }
-
+- (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma UITableView Delegate
 
 #define kBalloonView 1
