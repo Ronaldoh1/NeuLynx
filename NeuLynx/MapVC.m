@@ -19,7 +19,7 @@
 #import "MRProgress.h"
 #import "CustomMKAnnotation.h"
 #import "AppDelegate.h"
-
+#import <Lookback/Lookback.h>
 
 
 @interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
@@ -134,6 +134,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     //Get Current User
     self.currentUser = [User currentUser];
+
+
+     [Lookback sharedLookback].options.userIdentifier = [User currentUser].name;
 
     //set up profile image
     [self setUpProfileImage];

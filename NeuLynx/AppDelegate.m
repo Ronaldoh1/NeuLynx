@@ -14,7 +14,7 @@
 
 
 #import "User.h"
-
+#import <Lookback/Lookback.h>
 
 
 @interface AppDelegate ()
@@ -54,6 +54,12 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+
+
+    //Lookback Set Up
+    [Lookback setupWithAppToken:@"AytNTqPfmoZR7b56H"];
+    [Lookback sharedLookback].shakeToRecord = YES;
+    [Lookback sharedLookback].feedbackBubbleVisible = YES;
 
 
     //Initialize facebook

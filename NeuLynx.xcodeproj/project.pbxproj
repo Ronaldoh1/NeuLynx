@@ -102,6 +102,7 @@
 		F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F285195B1AFB0294007A45FA /* SignUpVC.m */; };
 		F286776C1B8578D400BD6B1D /* HistoryCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */; };
 		F286776F1B8582D100BD6B1D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776E1B8582D100BD6B1D /* History.m */; };
+		F28677711B8695CF00BD6B1D /* neulynxRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F28677701B8695CF00BD6B1D /* neulynxRedLogo.png */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
 		F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */; };
@@ -333,6 +334,7 @@
 		F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryCustomCell.m; sourceTree = "<group>"; };
 		F286776D1B8582D100BD6B1D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		F286776E1B8582D100BD6B1D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		F28677701B8695CF00BD6B1D /* neulynxRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxRedLogo.png; sourceTree = "<group>"; };
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
 		F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
@@ -954,6 +956,7 @@
 		F2D38ABC1B649E63007EBF41 /* App Logo */ = {
 			isa = PBXGroup;
 			children = (
+				F28677701B8695CF00BD6B1D /* neulynxRedLogo.png */,
 				F2D38B0C1B6B7EE1007EBF41 /* NeuLynxBlueColor.png */,
 			);
 			name = "App Logo";
@@ -1254,6 +1257,7 @@
 				F21EC4411B5D6E56000E535B /* grey_2.png in Resources */,
 				F2E0BD941B7F748E0004921F /* fr.png in Resources */,
 				F28519291AFADB09007A45FA /* PostActivity.storyboard in Resources */,
+				F28677711B8695CF00BD6B1D /* neulynxRedLogo.png in Resources */,
 				F2E6E8C81B1EB9470083BA7F /* bluering2.png in Resources */,
 				F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */,
 				F2D38AFC1B67332E007EBF41 /* AppIcon72x72@2x~ipad.png in Resources */,
