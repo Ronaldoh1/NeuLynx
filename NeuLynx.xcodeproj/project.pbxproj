@@ -103,6 +103,8 @@
 		F286776C1B8578D400BD6B1D /* HistoryCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776B1B8578D400BD6B1D /* HistoryCustomCell.m */; };
 		F286776F1B8582D100BD6B1D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776E1B8582D100BD6B1D /* History.m */; };
 		F28677731B86A50C00BD6B1D /* neulynxRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F28677721B86A50C00BD6B1D /* neulynxRedLogo.png */; };
+		F28677761B87435400BD6B1D /* OldActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28677751B87435400BD6B1D /* OldActivity.storyboard */; };
+		F28677791B8743E800BD6B1D /* OldActitvityTVCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
 		F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */; };
@@ -335,6 +337,9 @@
 		F286776D1B8582D100BD6B1D /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		F286776E1B8582D100BD6B1D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		F28677721B86A50C00BD6B1D /* neulynxRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxRedLogo.png; sourceTree = "<group>"; };
+		F28677751B87435400BD6B1D /* OldActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OldActivity.storyboard; sourceTree = "<group>"; };
+		F28677771B8743E800BD6B1D /* OldActitvityTVCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldActitvityTVCTableViewController.h; sourceTree = "<group>"; };
+		F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldActitvityTVCTableViewController.m; sourceTree = "<group>"; };
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
 		F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
@@ -727,6 +732,7 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F28677741B87433000BD6B1D /* Old Activity */,
 				F2361DDB1B7B4866007228C0 /* Bug Report */,
 				F2E6E8D71B22C5EC0083BA7F /* Faq */,
 				F2E6E8BC1B1A432D0083BA7F /* Search */,
@@ -926,6 +932,16 @@
 				F286776E1B8582D100BD6B1D /* History.m */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		F28677741B87433000BD6B1D /* Old Activity */ = {
+			isa = PBXGroup;
+			children = (
+				F28677751B87435400BD6B1D /* OldActivity.storyboard */,
+				F28677771B8743E800BD6B1D /* OldActitvityTVCTableViewController.h */,
+				F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */,
+			);
+			name = "Old Activity";
 			sourceTree = "<group>";
 		};
 		F28789B81B70716C00D4F5A3 /* Login */ = {
@@ -1226,6 +1242,7 @@
 				F2292ED21B254C7C003D82D5 /* wFitness.png in Resources */,
 				F2D38ACC1B64BABB007EBF41 /* mainStudentLife.png in Resources */,
 				F2D38AF11B67332E007EBF41 /* AppIcon29x29~ipad.png in Resources */,
+				F28677761B87435400BD6B1D /* OldActivity.storyboard in Resources */,
 				F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
 				F2E0BD961B7F748E0004921F /* us.png in Resources */,
@@ -1375,6 +1392,7 @@
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,
 				F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */,
 				F2E0BD9B1B7F7E080004921F /* UserSearchResultTVC.m in Sources */,
+				F28677791B8743E800BD6B1D /* OldActitvityTVCTableViewController.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F286776F1B8582D100BD6B1D /* History.m in Sources */,

@@ -293,8 +293,8 @@
 
 
 
-        UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-        UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+        UIStoryboard *oldDetailStoryboard = [UIStoryboard storyboardWithName:@"OldActivity" bundle:nil];
+        UIViewController *detailVC = [oldDetailStoryboard instantiateViewControllerWithIdentifier:@"OldActivityNavVC"];
 
         //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -310,8 +310,8 @@
     }else if(indexPath.section == 1){
 
 
-        UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-        UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+        UIStoryboard *oldDetailStoryboard = [UIStoryboard storyboardWithName:@"OldActivity" bundle:nil];
+        UIViewController *detailVC = [oldDetailStoryboard instantiateViewControllerWithIdentifier:@"OldActivityNavVC"];
         detailVC.navigationItem.rightBarButtonItem = nil;
 
         //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
