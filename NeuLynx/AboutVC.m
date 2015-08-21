@@ -54,7 +54,7 @@
 -(void)loadNeuLynx{
 
     //create a string that will hold the url- this will be replaced with the neulyx.com
-    NSString *urlString = @"http://signup.neulynx.com";
+    NSString *urlString = @"http://neulynxblog.com/";
 
     //create an NSURl from the string above
     NSURL *url = [NSURL URLWithString:urlString];

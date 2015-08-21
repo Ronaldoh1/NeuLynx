@@ -13,7 +13,8 @@
 
 @interface HistoryVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *historyArray;
+@property NSMutableArray *acceptedHistoryArray;
+@property NSMutableArray *postedHistoryArray;
 
 @end
 
@@ -33,7 +34,7 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
-    [self downloadHistoryForCurrentUser];
+    [self downloadActivitiesJoinedForCurrentUser];
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -49,7 +50,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 
 
-    History *historyRecord = (History *)self.historyArray[indexPath.row];
+    History *historyRecord = (History *)self.acceptedHistoryArray[indexPath.row];
 
     selectedActivity = (Activity *)historyRecord.activityJoined;
 
@@ -65,23 +66,32 @@
 
 }
 
--(void)downloadHistoryForCurrentUser{
+-(void)downloadActivitiesJoinedForCurrentUser{
 
 
+    PFQuery *historyQuery = [PFQuery queryWithClassName:@"History"];
+    [historyQuery whereKey:@"user" equalTo:[User currentUser]];
+    [historyQuery includeKey:@"activityJoined"];
+    [historyQuery  includeKey:@"activityJoined.host"];
 
-    PFQuery *query = [History query];
 
-    [query whereKey:@"user" equalTo:[User currentUser]];
+//    PFQuery *query = [History query];
+//
+//    [query whereKey:@"user" equalTo:[User currentUser]];
+//    [query includeKey:@"activity"];
+//    [query includeKey:@"exclusiveInvitee"];
 
 
-    [query findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
+    [historyQuery findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
 
 
         if (!error) {
+
+            NSLog(@"%@", historyArray);
             //get a copy of all activities
-            self.historyArray = [NSMutableArray arrayWithArray:historyArray];
+            self.acceptedHistoryArray = [NSMutableArray arrayWithArray:historyArray];
             // Add activities to the map.
-            if (self.historyArray.count == 0) {
+            if (self.acceptedHistoryArray.count == 0) {
 
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Activities Yet 😕" message:@"You haven't joined any activities. Be adventurous and find activities happening near you. Simply head over to the map and check them out!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 
@@ -102,9 +112,28 @@
 
 #pragma marks - TableView Delegate Methods
 
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return 2;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
+
+    if (section == 0){
+
+        return @"Activities You Joined";
+
+    }else{
+        return @"Activities You Posted";
+    }
+    
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return [self.historyArray count];
+    return [self.acceptedHistoryArray count];
 }
 
 -(HistoryCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -121,22 +150,31 @@
 
     //For every exclusive invite, we need to popuplate each cell
 
-    History *historyRecord  = (History *)self.historyArray[indexPath.row];
+    History *historyRecord  = (History *)self.acceptedHistoryArray[indexPath.row];
 
-    Activity *activity = (Activity *)historyRecord.activityJoined;
+    Activity *activity =  [Activity new];
 
-    [activity fetchIfNeededInBackground];
+    activity =  (Activity *)historyRecord.activityJoined;
 
-    [(User *)activity.host fetchIfNeeded];
 
-    User * user = (User *)activity.host;
+  [activity fetchIfNeededInBackground];
+
+
+    User *user = [User new];
+
+    user = (User *)activity.host;
+
 
     [user.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
         if (!error) {
 
+            dispatch_async(dispatch_get_main_queue(), ^{
+             
             UIImage *image = [UIImage imageWithData:data];
             cell.userProfileImage.image = image;
+
+             });
         }else{
             NSLog(@" %@       errorrrrrr %@", error.localizedDescription, error.description);
         }

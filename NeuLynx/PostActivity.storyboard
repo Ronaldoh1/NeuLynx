@@ -622,7 +622,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZNE-tX-ZLn">
-                        <barButtonItem key="rightBarButtonItem" title="Send" style="done" id="qyF-k1-E2V">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="qyF-k1-E2V">
                             <connections>
                                 <action selector="onDoneButtonTapped:" destination="bxp-1Z-gGE" id="FKe-Sd-VpM"/>
                             </connections>

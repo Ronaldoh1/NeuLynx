@@ -181,15 +181,17 @@
 
         NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
-
-    }else if(indexPath.row == 1 && indexPath.section == 5){
-
-      NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
         NSMutableArray *array = [NSMutableArray arrayWithObject:iTunesLink];
 
         UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:array applicationActivities:nil];
         [self presentViewController:activityController animated:YES completion:nil];
+
+
+    }else if(indexPath.row == 1 && indexPath.section == 5){
+        NSString *iTunesLink = @"http://itunes.apple.com/us/app/warehouse51/id364201184?mt=8";
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+
 
         
     }else if(indexPath.row == 2 && indexPath.section == 5){
