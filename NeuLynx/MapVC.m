@@ -183,17 +183,14 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.window = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
 
 
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"neulynxRedLogo.png"]];
+    CGSize imageSize = CGSizeMake(150, 60);
+    CGFloat marginX = (self.navigationController.navigationBar.frame.size.width / 2) - (imageSize.width / 2);
 
-    //setting image to Navigation Bar's title
-    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
-    titleView.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
-    titleView.text = @"NeuLynx";
-    titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-    [self.navigationItem setTitleView:titleView];
+    imageView.frame = CGRectMake(marginX, -10, imageSize.width, imageSize.height);
+    [self.navigationController.navigationBar addSubview:imageView];
 
 
-    //Check if the user has previously used the app.
 
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasBeenRun"]) {
 
