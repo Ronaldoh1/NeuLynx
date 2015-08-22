@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
 @property (weak, nonatomic) IBOutlet UILabel *activityTitleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *activityDescriptionText;
-@property (weak, nonatomic) IBOutlet UILabel *distanceToActivityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

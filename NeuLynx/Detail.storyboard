@@ -21,7 +21,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vqf-0J-ZTC" id="Srv-i7-N6s">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="DK2-Mi-ASX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="DK2-Mi-ASX">
                                                     <rect key="frame" x="98" y="5" width="125" height="125"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="UVA-Ly-6PF"/>
@@ -95,9 +95,23 @@
                                                         <constraint firstAttribute="width" constant="135" id="xnt-YE-fsh"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAy-or-dOf">
+                                                    <rect key="frame" x="81" y="8" width="164" height="131"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="164" id="15f-Q6-Xbp"/>
+                                                        <constraint firstAttribute="height" constant="131" id="zCq-ML-dnm"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onProfileImageTapped:" destination="3h0-3E-G9E" eventType="touchUpInside" id="qbW-tA-p30"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wGO-Cb-3h8" firstAttribute="top" secondItem="a78-9s-kn3" secondAttribute="bottom" id="0sd-dD-8ya"/>
+                                                <constraint firstAttribute="centerY" secondItem="hAy-or-dOf" secondAttribute="centerY" constant="70.5" id="2NW-c7-cQg"/>
                                                 <constraint firstItem="zc7-W3-czk" firstAttribute="leading" secondItem="Srv-i7-N6s" secondAttribute="leadingMargin" constant="8" id="34Z-px-EUA"/>
                                                 <constraint firstItem="Xbe-PH-FZs" firstAttribute="top" secondItem="Srv-i7-N6s" secondAttribute="topMargin" constant="-4" id="Cz4-Zu-Hj3"/>
                                                 <constraint firstItem="a78-9s-kn3" firstAttribute="leading" secondItem="Srv-i7-N6s" secondAttribute="leadingMargin" constant="8" id="HQq-DF-1YP"/>
@@ -105,6 +119,7 @@
                                                 <constraint firstItem="zc7-W3-czk" firstAttribute="top" secondItem="Xbe-PH-FZs" secondAttribute="bottom" constant="2" id="KDf-0z-V3Y"/>
                                                 <constraint firstItem="Y0W-nn-zXw" firstAttribute="top" secondItem="a78-9s-kn3" secondAttribute="bottom" id="LuY-hV-O5j"/>
                                                 <constraint firstAttribute="centerY" secondItem="DK2-Mi-ASX" secondAttribute="centerY" constant="76.5" id="NMK-uz-Vgy"/>
+                                                <constraint firstAttribute="centerX" secondItem="hAy-or-dOf" secondAttribute="centerX" constant="-3" id="NPr-IU-GoR"/>
                                                 <constraint firstAttribute="centerX" secondItem="wGO-Cb-3h8" secondAttribute="centerX" constant="-67.5" id="UTB-uN-67j"/>
                                                 <constraint firstAttribute="centerX" secondItem="Y0W-nn-zXw" secondAttribute="centerX" constant="-24.5" id="cUH-VQ-reZ"/>
                                                 <constraint firstAttribute="centerX" secondItem="wzv-4U-Fq3" secondAttribute="centerX" constant="61.5" id="fr5-Yj-7Gq"/>
@@ -368,6 +383,7 @@
     <resources>
         <image name="br.png" width="100" height="100"/>
         <image name="defaultImage" width="1200" height="1200"/>
+        <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="fr.png" width="100" height="100"/>
         <image name="profileCircle.png" width="417" height="417"/>

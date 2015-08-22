@@ -16,6 +16,8 @@
 @property NSMutableArray *acceptedHistoryArray;
 @property NSMutableArray *postedHistoryArray;
 
+
+
 @end
 
 @implementation HistoryVC
@@ -246,6 +248,7 @@
 
     }];
 
+        cell.nameLabel.text = user.name;
     cell.activityTitleLabel.text = activity.activityTitle;
     cell.activityDescriptionText.text = activity.activityDescription;
 
@@ -282,7 +285,8 @@
             
             
         }];
-        
+
+           cell.nameLabel.text = user.name;
         cell.activityTitleLabel.text = activity.activityTitle;
         cell.activityDescriptionText.text = activity.activityDescription;
 
