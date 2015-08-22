@@ -88,7 +88,7 @@
                                                         <constraint firstAttribute="width" constant="35" id="wfi-Kc-vT8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileCircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-PH-FZs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-PH-FZs" userLabel="x">
                                                     <rect key="frame" x="93" y="4" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="135" id="QV2-AO-t9t"/>
@@ -101,7 +101,7 @@
                                                         <constraint firstAttribute="width" constant="164" id="15f-Q6-Xbp"/>
                                                         <constraint firstAttribute="height" constant="131" id="zCq-ML-dnm"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -386,7 +386,6 @@
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="fr.png" width="100" height="100"/>
-        <image name="profileCircle.png" width="417" height="417"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="twitterIcon.png" width="128" height="128"/>
         <image name="us.png" width="100" height="100"/>

@@ -26,6 +26,7 @@
 
 @property NSMutableArray *localPersonalityArray;
 @property NSMutableArray *localPersonalityBoolArray;
+@property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
 
 @end
 
@@ -39,19 +40,31 @@
 -(void)viewWillDisappear:(BOOL)animated{
 
     if (self.vCtoPresent == 0) {
-        self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
-        self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
 
-        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (self.localTravelPreferencesArray.count <= 4) {
+            self.currentUser.TravelPreferencesBoolArray = self.localTravelPreferencesBoolArray.copy;
+            self.currentUser.travelPreferencesArray = self.localTravelPreferencesArray.copy;
 
-            if (succeeded) {
-                //[self dismissViewControllerAnimated:YES completion:nil];
-            }else{
-                [self displayErrorMessage:error.description];
+            [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
-            }
-        }];
+                if (succeeded) {
+                    //[self dismissViewControllerAnimated:YES completion:nil];
+                }else{
+
+
+                    [self displayAlertWithTitle:@"Error" andWithError:error.description];
+
+                }
+            }];
+        }else{
+            [self displayAlertWithTitle:@"Only 4 Selections Allowed" andWithError:@"Please choose the best 4 options to discribe your travel preferences"];
+            [self.localTravelPreferencesArray removeAllObjects];
+            [self.localTravelPreferencesBoolArray removeAllObjects];
+
+        }
     } else {
+
+        if (self.localPersonalityArray.count <= 4) {
 
         self.currentUser.personalityBoolArray = self.localPersonalityBoolArray.copy;
         self.currentUser.personalityArray = self.localPersonalityArray.copy;
@@ -61,12 +74,16 @@
             if (succeeded) {
                 // [self dismissViewControllerAnimated:YES completion:nil];
             }else{
-                [self displayErrorMessage:error.description];
+                [self displayAlertWithTitle:@"Error" andWithError:error.description];
 
             }
         }];
-    }
 
+        }else{
+            [self displayAlertWithTitle:@"Only 4 Selections Allowed" andWithError:@"Please choose the best 4 options to discribe Personality"];
+
+        }
+    }
 }
 -(void)initialSetUp{
 
@@ -158,6 +175,9 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
+    //Set up instructions label
+    self.instructionsLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+
 }
 
 
@@ -213,6 +233,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+
+    //here want to only allow the user to select up to 4 else we want to present the user with an alert and let them know that they can only choose 4.
+
+
+
     [self.stateArrayForCheckmark replaceObjectAtIndex:indexPath.row
                                            withObject:[NSNumber numberWithBool:![[self.stateArrayForCheckmark objectAtIndex:indexPath.row] boolValue]]];
 
@@ -234,8 +259,12 @@
             if ([self.localTravelPreferencesArray containsObject:self.travelPreferenceArrayForTableView[indexPath.row]]) {
                 [self.localTravelPreferencesArray removeObject:self.travelPreferenceArrayForTableView[indexPath.row]];
             }
+
+
         }
+
     }else {
+
 
         if ([self.localPersonalityBoolArray[indexPath.row] boolValue] == NO) {
             [self.localPersonalityBoolArray replaceObjectAtIndex:indexPath.row withObject:@YES];
@@ -251,10 +280,11 @@
 
 
         }
-        
-        
+
     }
+    
     [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
     
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -262,13 +292,11 @@
     
 }
 
-
-//helper method to display error message
--(void)displayErrorMessage:(NSString *)error{
+-(void)displayAlertWithTitle:(NSString *)title andWithError:(NSString *)error{
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error - Please Try Again!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
-    [alertView show];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 

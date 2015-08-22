@@ -216,7 +216,7 @@
 
 
 
-    //For every exclusive invite, we need to popuplate each cell
+   //we need to popuplate each cell
 
     History *historyRecord  = (History *)self.acceptedHistoryArray[indexPath.row];
 

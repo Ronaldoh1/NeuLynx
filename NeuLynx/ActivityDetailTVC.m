@@ -99,9 +99,14 @@
     self.ActivityTitleLabel.text = selectedActivity.activityTitle;
     self.ActivityTitleLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
 
-    //add borders to the textView
-    self.activityDescriptionText.layer.borderWidth = 4.0f;
-    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+//    //add borders to the textView
+//    self.activityDescriptionText.layer.borderWidth = 4.0f;
+//    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+
+    self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.height/2;
+    self.userProfileImageView.layer.masksToBounds = YES;
+    self.userProfileImageView.layer.borderWidth = 4.0;
+    self.userProfileImageView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
     //Initially set the flags to 0.4 alpha and change them based on host actual langauges.
     self.portugueseFlag.alpha = 0.3;

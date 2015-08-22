@@ -77,11 +77,12 @@
 
 
 
-    PFQuery *query = [ExclusiveInvite query];
+    PFQuery *query = [PFQuery queryWithClassName:@"ExclusiveInvite"];
 
     [query whereKey:@"exclusiveInvitee" equalTo:[User currentUser]];
     [query whereKey:@"isDispositioned" equalTo:@0];
     [query includeKey:@"activity"];
+    [query includeKey:@"activity.host"];
     [query includeKey:@"exclusiveInvitee"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *exclusiveInvitesArray, NSError *error){
@@ -139,7 +140,9 @@
 
     ExclusiveInvite *exclusiveInvite = (ExclusiveInvite *)self.exclusiveInvitesArray[indexPath.row];
 
-    Activity *activity = (Activity *)exclusiveInvite.activity;
+    Activity *activity = [Activity new];
+
+    activity = (Activity *)exclusiveInvite.activity;
 
     [activity fetchIfNeededInBackground];
 
@@ -151,9 +154,11 @@
 
     double distanceInMiles = distance * (0.00062137);
 
-    [(User *)activity.host fetchIfNeeded];
+    //[(User *)activity.host fetchInBackground];
 
-    User * user = (User *)activity.host;
+    User * user = [User new];
+
+    user = (User *)activity.host;
     
     [user.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
@@ -171,6 +176,7 @@
     cell.activityTitleLabel.text = activity.activityTitle;
     cell.activityDescriptionText.text = activity.activityDescription;
     cell.distanceToActivityLabel.text = [NSString stringWithFormat:@"%.2f Miles Away", distanceInMiles];
+
 
 
     return cell;
