@@ -39,8 +39,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="CWv-ek-pEE">
-                                                    <rect key="frame" x="7" y="40" width="82" height="82"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="CWv-ek-pEE">
+                                                    <rect key="frame" x="17" y="40" width="82" height="82"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="cpN-FM-bjd"/>
                                                         <constraint firstAttribute="height" constant="82" id="o24-1w-OvF"/>
@@ -56,6 +56,19 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzJ-9E-vYs">
+                                                    <rect key="frame" x="17" y="45" width="82" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="82" id="Zn9-RW-j6v"/>
+                                                        <constraint firstAttribute="height" constant="77" id="laC-rh-M5m"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onProfileImageTapped:" destination="r7E-AO-cHj" eventType="touchUpInside" id="aAd-dy-74a"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="s0c-Mg-C8D" secondAttribute="trailing" constant="-13" id="52f-Gs-prP"/>
@@ -64,12 +77,14 @@
                                                 <constraint firstAttribute="centerX" secondItem="CWv-ek-pEE" secondAttribute="centerX" constant="78.5" id="Buw-5u-rJF"/>
                                                 <constraint firstAttribute="centerY" secondItem="CWv-ek-pEE" secondAttribute="centerY" constant="-2.5" id="CTj-Gm-zCY"/>
                                                 <constraint firstItem="s0c-Mg-C8D" firstAttribute="top" secondItem="cvh-Uk-d7c" secondAttribute="topMargin" constant="37" id="DK8-jI-v66"/>
+                                                <constraint firstAttribute="centerY" secondItem="WzJ-9E-vYs" secondAttribute="centerY" constant="-5" id="P6B-QB-hkp"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="s0c-Mg-C8D" secondAttribute="bottom" constant="27" id="PMd-AT-dCk"/>
                                                 <constraint firstItem="92r-GW-nBi" firstAttribute="top" secondItem="cvh-Uk-d7c" secondAttribute="topMargin" constant="2" id="eaw-nQ-O8w"/>
                                                 <constraint firstItem="s0c-Mg-C8D" firstAttribute="leading" secondItem="CWv-ek-pEE" secondAttribute="trailing" constant="8" id="gsL-tH-jhu"/>
                                                 <constraint firstAttribute="centerX" secondItem="jXK-qt-ldf" secondAttribute="centerX" constant="88.5" id="iao-rl-mCf"/>
                                                 <constraint firstItem="92r-GW-nBi" firstAttribute="leading" secondItem="cvh-Uk-d7c" secondAttribute="leadingMargin" constant="61" id="jKb-do-Xkk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="92r-GW-nBi" secondAttribute="trailing" constant="-47" id="lNp-8h-oef"/>
+                                                <constraint firstAttribute="centerX" secondItem="WzJ-9E-vYs" secondAttribute="centerX" constant="78.5" id="msq-HY-xzO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

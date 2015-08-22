@@ -104,7 +104,9 @@
 		F286776F1B8582D100BD6B1D /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = F286776E1B8582D100BD6B1D /* History.m */; };
 		F28677731B86A50C00BD6B1D /* neulynxRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F28677721B86A50C00BD6B1D /* neulynxRedLogo.png */; };
 		F28677761B87435400BD6B1D /* OldActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F28677751B87435400BD6B1D /* OldActivity.storyboard */; };
-		F28677791B8743E800BD6B1D /* OldActitvityTVCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */; };
+		F28677791B8743E800BD6B1D /* OldActitvityTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F28677781B8743E800BD6B1D /* OldActitvityTVC.m */; };
+		F286777C1B87D68800BD6B1D /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F286777B1B87D68800BD6B1D /* UserDetail.storyboard */; };
+		F286777F1B87D70800BD6B1D /* UserDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F286777E1B87D70800BD6B1D /* UserDetailTVC.m */; };
 		F28789BA1B70717800D4F5A3 /* loginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789B91B70717800D4F5A3 /* loginBG.png */; };
 		F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */; };
 		F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */; };
@@ -338,8 +340,11 @@
 		F286776E1B8582D100BD6B1D /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		F28677721B86A50C00BD6B1D /* neulynxRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = neulynxRedLogo.png; sourceTree = "<group>"; };
 		F28677751B87435400BD6B1D /* OldActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OldActivity.storyboard; sourceTree = "<group>"; };
-		F28677771B8743E800BD6B1D /* OldActitvityTVCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldActitvityTVCTableViewController.h; sourceTree = "<group>"; };
-		F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldActitvityTVCTableViewController.m; sourceTree = "<group>"; };
+		F28677771B8743E800BD6B1D /* OldActitvityTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldActitvityTVC.h; sourceTree = "<group>"; };
+		F28677781B8743E800BD6B1D /* OldActitvityTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldActitvityTVC.m; sourceTree = "<group>"; };
+		F286777B1B87D68800BD6B1D /* UserDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		F286777D1B87D70800BD6B1D /* UserDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailTVC.h; sourceTree = "<group>"; };
+		F286777E1B87D70800BD6B1D /* UserDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailTVC.m; sourceTree = "<group>"; };
 		F28789B91B70717800D4F5A3 /* loginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginBG.png; sourceTree = "<group>"; };
 		F28789BB1B707CAA00D4F5A3 /* twitterLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterLoginButton.png; sourceTree = "<group>"; };
 		F28789BD1B707CB600D4F5A3 /* facebookLoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLoginButton.png; sourceTree = "<group>"; };
@@ -732,6 +737,7 @@
 		F28518DD1AFABFAD007A45FA /* NeuLynx */ = {
 			isa = PBXGroup;
 			children = (
+				F286777A1B87D60A00BD6B1D /* User Profile */,
 				F28677741B87433000BD6B1D /* Old Activity */,
 				F2361DDB1B7B4866007228C0 /* Bug Report */,
 				F2E6E8D71B22C5EC0083BA7F /* Faq */,
@@ -938,10 +944,20 @@
 			isa = PBXGroup;
 			children = (
 				F28677751B87435400BD6B1D /* OldActivity.storyboard */,
-				F28677771B8743E800BD6B1D /* OldActitvityTVCTableViewController.h */,
-				F28677781B8743E800BD6B1D /* OldActitvityTVCTableViewController.m */,
+				F28677771B8743E800BD6B1D /* OldActitvityTVC.h */,
+				F28677781B8743E800BD6B1D /* OldActitvityTVC.m */,
 			);
 			name = "Old Activity";
+			sourceTree = "<group>";
+		};
+		F286777A1B87D60A00BD6B1D /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F286777B1B87D68800BD6B1D /* UserDetail.storyboard */,
+				F286777D1B87D70800BD6B1D /* UserDetailTVC.h */,
+				F286777E1B87D70800BD6B1D /* UserDetailTVC.m */,
+			);
+			name = "User Profile";
 			sourceTree = "<group>";
 		};
 		F28789B81B70716C00D4F5A3 /* Login */ = {
@@ -1304,6 +1320,7 @@
 				F2E0BDAD1B8092280004921F /* festivalPin.png in Resources */,
 				F2292EF51B25508E003D82D5 /* mainFestival.png in Resources */,
 				F2E0BDB41B8092280004921F /* uFestivalPin.png in Resources */,
+				F286777C1B87D68800BD6B1D /* UserDetail.storyboard in Resources */,
 				F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */,
 				F2576E221B02D5A80006C8E1 /* post.png in Resources */,
 			);
@@ -1373,6 +1390,7 @@
 				F285191F1AFAD67C007A45FA /* MainTabBarController.m in Sources */,
 				F285195C1AFB0294007A45FA /* SignUpVC.m in Sources */,
 				F2892DF41B3E8E640010D534 /* AccountAndSettingsTVC.m in Sources */,
+				F286777F1B87D70800BD6B1D /* UserDetailTVC.m in Sources */,
 				F2E0BDBC1B8194350004921F /* ExclusiveInvite.m in Sources */,
 				F24EC7EC1B23F32B0018202F /* CustomMKAnnotation.m in Sources */,
 				F286776C1B8578D400BD6B1D /* HistoryCustomCell.m in Sources */,
@@ -1392,7 +1410,7 @@
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,
 				F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */,
 				F2E0BD9B1B7F7E080004921F /* UserSearchResultTVC.m in Sources */,
-				F28677791B8743E800BD6B1D /* OldActitvityTVCTableViewController.m in Sources */,
+				F28677791B8743E800BD6B1D /* OldActitvityTVC.m in Sources */,
 				F2E6E84F1B15FC6A0083BA7F /* TermsAndConditionsVC.m in Sources */,
 				F28518E71AFABFAD007A45FA /* NeuLynx.xcdatamodeld in Sources */,
 				F286776F1B8582D100BD6B1D /* History.m in Sources */,

@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "Activity.h"
 #import "ExclusiveInvite.h"
+#import "User.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,6 +18,7 @@
 @property ExclusiveInvite *exclusiveInvite;
 @property BOOL *hideDoneButtonForRequests;
 @property BOOL *hideDoneButtonForMessages;
+@property User *selectedUser;
 
 @property (strong, nonatomic) UIWindow *window;
 

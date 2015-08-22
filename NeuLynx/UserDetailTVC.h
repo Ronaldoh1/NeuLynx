@@ -1,5 +1,5 @@
 //
-//  OldActitvityTVCTableViewController.h
+//  UserDetail.h
 //  NeuLynx
 //
 //  Created by Ronald Hernandez on 8/21/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OldActitvityTVCTableViewController : UITableViewController
+@interface UserDetailTVC : UITableViewController
 
 @end

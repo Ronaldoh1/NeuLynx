@@ -41,6 +41,37 @@
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)onProfileImageTapped:(id)sender {
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+
+    if (indexPath.section == 0) {
+        User *user = [User new];
+
+       user = (User *)((History *)self.acceptedHistoryArray[indexPath.section]).activityJoined.host;
+
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+
+        appDelegate.selectedUser = user;
+
+
+        UIStoryboard *UserDetailStoryboard = [UIStoryboard storyboardWithName:@"UserDetail" bundle:nil];
+        UINavigationController *userDetailNavVC = [UserDetailStoryboard instantiateViewControllerWithIdentifier:@"userDetailNavVC"];
+
+        [self presentViewController:userDetailNavVC animated:YES completion:nil];
+
+
+        NSLog(@"%@", user);
+
+    }
+
+
+}
+
+
 - (IBAction)onMessageButtonTapped:(UIButton *)sender {
 
 
@@ -55,8 +86,6 @@
     History *historyRecord = (History *)self.acceptedHistoryArray[indexPath.row];
 
     selectedActivity = (Activity *)historyRecord.activityJoined;
-
-    NSLog(@"%@ activityyyyyyyyyyyy", selectedActivity);
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
      appDelegate.sharedActivity = selectedActivity;
@@ -77,28 +106,21 @@
 
 
 
-//    PFQuery *query = [History query];
-//
-//    [query whereKey:@"user" equalTo:[User currentUser]];
-//    [query includeKey:@"activity"];
-//    [query includeKey:@"exclusiveInvitee"];
-
-
     [historyQuery findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
 
 
         if (!error) {
 
-            NSLog(@"%@", historyArray);
+          //  NSLog(@"%@", historyArray);
             //get a copy of all activities
             self.postedHistoryArray = [NSMutableArray arrayWithArray:historyArray];
             // Add activities to the map.
             if (self.acceptedHistoryArray.count == 0) {
 
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Activities Yet 😕" message:@"You haven't joined any activities. Be adventurous and find activities happening near you. Simply head over to the map and check them out!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Posted Activities 😕" message:@"You haven't posted any activities. Are you in a new city? Traveling alone? Post an activity and make new friends and connections." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 
 
-                //[alertView show];
+                [alertView show];
             }
 
             
@@ -120,20 +142,12 @@
     [historyQuery  includeKey:@"activityJoined.host"];
 
 
-    //    PFQuery *query = [History query];
-    //
-    //    [query whereKey:@"user" equalTo:[User currentUser]];
-    //    [query includeKey:@"activity"];
-    //    [query includeKey:@"exclusiveInvitee"];
-
-
     [historyQuery findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
 
 
         if (!error) {
 
-            //NSLog(@"%@", historyArray);
-            //get a copy of all activities
+
             self.acceptedHistoryArray = [NSMutableArray arrayWithArray:historyArray];
             // Add activities to the map.
             if (self.acceptedHistoryArray.count == 0) {
@@ -227,8 +241,6 @@
             cell.userProfileImage.image = image;
 
              });
-        }else{
-            NSLog(@" %@       errorrrrrr %@", error.localizedDescription, error.description);
         }
 
 
@@ -243,9 +255,6 @@
     }else{
 
 
-        //Display activities that were posted by current user.
-
-        //History *historyRecord  = (History *)self.acceptedHistoryArray[indexPath.row];
 
         Activity *activity =  [Activity new];
 
@@ -269,8 +278,6 @@
                     cell.userProfileImage.image = image;
 
                 });
-            }else{
-                NSLog(@" %@       errorrrrrr %@", error.localizedDescription, error.description);
             }
             
             
@@ -329,19 +336,6 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-//    if(){
-//
-////        DetailViewController *destinationVC = (DetailViewController *)segue.destinationViewController;
-////        destinationVC.icon = self.icon;
-//        NSLog(@"hiiiiiiii");
-//
-//    }else if([segue.identifier isEqual:@"goToRating"]){
-////        RatingTableViewController *destinationVC = (RatingTableViewController *)segue.destinationViewController;
-////        destinationVC.icon = self.icon;
-//
-//        NSLog(@"Byeee");
-//    }
-//    
 
 }
 

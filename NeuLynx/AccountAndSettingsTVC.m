@@ -70,13 +70,13 @@
     //Get profile image
     [self getUsersProfileImage];
 
-    //if requests is clicked, then show done button
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
-
-
-    tmpBool = NO;
-    appDelegate.hideDoneButtonForRequests = nil;
+//    //if requests is clicked, then show done button
+////    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+////    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+//
+//
+//    tmpBool = NO;
+//    appDelegate.hideDoneButtonForRequests = nil;
 
     //Add right bar button item
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(onDoneButtonTapped)];

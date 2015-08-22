@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "OldActitvityTVCTableViewController.h"
+#import "OldActitvityTVC.h"
 #import <RateView.h>
 #import "Activity.h"
 #import "AppDelegate.h"
@@ -14,7 +14,7 @@
 #import <Accounts/Accounts.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
-@interface OldActitvityTVCTableViewController ()
+@interface OldActitvityTVC ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -42,7 +42,7 @@
 
 @end
 
-@implementation OldActitvityTVCTableViewController
+@implementation OldActitvityTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
