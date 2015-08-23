@@ -56,6 +56,9 @@
     [application registerForRemoteNotifications];
 
 
+    
+
+
     //Lookback Set Up
     [Lookback setupWithAppToken:@"AytNTqPfmoZR7b56H"];
     [Lookback sharedLookback].shakeToRecord = YES;
@@ -93,6 +96,23 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+
+
+    static int i=1;
+    [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
+
+
+    if (userInfo) {
+        NSLog(@"%@",userInfo);
+
+        if ([userInfo objectForKey:@"aps"]) {
+            if([[userInfo objectForKey:@"aps"] objectForKey:@"badgecount"]) {
+                [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badgecount"] intValue];
+
+
+            }
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -112,6 +132,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBSDKAppEvents activateApp];
+
+    //clear the notifications
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
 }
 
 

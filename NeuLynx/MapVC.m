@@ -460,6 +460,12 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self snapButton:self.fitnessActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x - 23.0, self.mainDiscoverButton.frame.origin.y - 125.0)];
     [self snapButton:self.outdoorsActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 2.0, self.mainDiscoverButton.frame.origin.y - 158.0)];
     [self snapButton:self.studentLifeActivityButton toPoint:CGPointMake(self.mainDiscoverButton.frame.origin.x + 34.0, self.mainDiscoverButton.frame.origin.y - 184.0)];
+
+
+    //everytime the user clicks discover we want to update the activities and retrieve any new ones.
+
+
+    [self downloadActivitiesAndDisplayOnMap];
 }
 
 

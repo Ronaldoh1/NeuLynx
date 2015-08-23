@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "Message.h"
 #import "InboxCustomCell.h"
+#import "inbox.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -127,16 +128,16 @@
 -(void)downloadInboxForCurrentUser{
     NSMutableArray *array = [NSMutableArray new];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Message"];
-    [query whereKey:@"recipient" equalTo:[User currentUser]];
-    [query includeKey:@"sender"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
+    [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
+    [query includeKey:@"MessageContact"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
         if (!error) {
-            for (Message *message in objects) {
+            for (inbox *contact in objects) {
 
-                if (![array containsObject:message.sender]) {
-                    [array addObject:message.sender];
+                if (![array containsObject:contact.MessageContact]) {
+                    [array addObject:contact.MessageContact];
 
                 }
                 }

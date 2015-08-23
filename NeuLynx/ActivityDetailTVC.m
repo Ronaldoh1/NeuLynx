@@ -205,7 +205,17 @@
     [self.view addSubview:rv];
 
 
-    self.timeLabel.text = [NSString stringWithFormat:@"Start Time: %@ /n End Time: %@", selectedActivity.startTimeAndDate, selectedActivity.endTimeAndDate];
+
+    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
+    [myDateFormatter setDateFormat:@"MMMM dd yyyy @ hh:mm aaa"]; //a,aa or aa all will work.
+    NSString *startDate = [myDateFormatter stringFromDate:selectedActivity.startTimeAndDate];
+    NSString *endDate = [myDateFormatter stringFromDate:selectedActivity.endTimeAndDate];
+
+
+    self.timeLabel.text = [NSString stringWithFormat:@"Start Time: %@ \n End Time: %@", startDate, endDate];
+
+    self.locationLabel.text = [NSString stringWithFormat: @"Location: %@", selectedActivity.activityAddress];
+
 
 
 }
@@ -303,6 +313,7 @@
                     // only return Installations that belong to a User that
 
                     [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
+                    
                     // matches the innerQuery
                     //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
                     // matches the innerQuery
@@ -312,6 +323,8 @@
                     PFPush *push = [[PFPush alloc] init];
                     [push setQuery:pushQuery]; // Set our Installation query
                     [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your exclusive invite. Please check your Requests to confirm.", [User currentUser].name]];
+
+
                     [push sendPushInBackground];
 
                     [self dismissViewControllerAnimated:YES completion:nil];

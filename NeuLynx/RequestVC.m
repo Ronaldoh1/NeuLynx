@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "History.h"
+#import "inbox.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -74,6 +75,11 @@
     activity.acceptedPeopleArray = tempArray.copy;
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
+    //Add users to inbox.
+    inbox *newContact = [inbox new];
+
+
+
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
@@ -101,8 +107,17 @@
             [push setQuery:pushQuery]; // Set our Installation query
             [push setMessage:[NSString stringWithFormat:@"%@ has accepted your request!", [User currentUser].name]];
             [push sendPushInBackground];
+
+
+            newContact.inboxOwner = [User currentUser];
+            newContact.MessageContact = tempUser;
+            [newContact saveInBackground];
+
+
         }
     }];
+
+
 
 
     [self downloadActivityRequests];

@@ -128,6 +128,7 @@
 		F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A01B46E072001B9930 /* SelectTimeTVC.m */; };
 		F29320A41B48227C001B9930 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F29320A31B48227C001B9930 /* CustomCell.m */; };
 		F29A95041B71DF74004892A4 /* blackShadeSignUpBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */; };
+		F2C448751B89E1920013D5E8 /* inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C448741B89E1920013D5E8 /* inbox.m */; };
 		F2D38ACC1B64BABB007EBF41 /* mainStudentLife.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ACB1B64BABB007EBF41 /* mainStudentLife.png */; };
 		F2D38ACE1B65C763007EBF41 /* profileCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ACD1B65C763007EBF41 /* profileCircle.png */; };
 		F2D38AD01B65D46A007EBF41 /* introSplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F2D38ACF1B65D46A007EBF41 /* introSplashScreen.png */; };
@@ -372,6 +373,8 @@
 		F29320A21B48227C001B9930 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		F29320A31B48227C001B9930 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackShadeSignUpBackground.png; sourceTree = "<group>"; };
+		F2C448731B89E1920013D5E8 /* inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inbox.h; sourceTree = "<group>"; };
+		F2C448741B89E1920013D5E8 /* inbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inbox.m; sourceTree = "<group>"; };
 		F2D38ACB1B64BABB007EBF41 /* mainStudentLife.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainStudentLife.png; sourceTree = "<group>"; };
 		F2D38ACD1B65C763007EBF41 /* profileCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileCircle.png; sourceTree = "<group>"; };
 		F2D38ACF1B65D46A007EBF41 /* introSplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introSplashScreen.png; sourceTree = "<group>"; };
@@ -930,6 +933,8 @@
 				F25BFC461AFB2BF100B2C5BA /* User.m */,
 				F2E0BDBA1B8194350004921F /* ExclusiveInvite.h */,
 				F2E0BDBB1B8194350004921F /* ExclusiveInvite.m */,
+				F2C448731B89E1920013D5E8 /* inbox.h */,
+				F2C448741B89E1920013D5E8 /* inbox.m */,
 				F226C81D1B0F5D7B007A1C03 /* Activity.h */,
 				F226C81E1B0F5D7B007A1C03 /* Activity.m */,
 				F249D2F41B51D6FD00A3BAE7 /* Message.h */,
@@ -1383,6 +1388,7 @@
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
 				F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */,
 				F29320A41B48227C001B9930 /* CustomCell.m in Sources */,
+				F2C448751B89E1920013D5E8 /* inbox.m in Sources */,
 				F2E6E8C41B1A60820083BA7F /* SearchVC.m in Sources */,
 				F25BFC471AFB2BF100B2C5BA /* User.m in Sources */,
 				F249D2F01B51969E00A3BAE7 /* InboxVC.m in Sources */,
@@ -1557,13 +1563,13 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "301a1f92-77d2-4ebd-ac94-8c58a9ed5e3b";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1580,12 +1586,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "301a1f92-77d2-4ebd-ac94-8c58a9ed5e3b";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

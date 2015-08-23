@@ -44,7 +44,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iHa-6B-zlq" id="dkM-dy-VPT">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-ZF-Lu2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-ZF-Lu2">
                                                     <rect key="frame" x="8" y="8" width="304" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +53,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RIi-ZF-Lu2" firstAttribute="leading" secondItem="dkM-dy-VPT" secondAttribute="leadingMargin" id="413-4O-Jnl"/>
-                                                <constraint firstItem="RIi-ZF-Lu2" firstAttribute="bottom" secondItem="dkM-dy-VPT" secondAttribute="bottomMargin" id="TZr-Pa-AOz"/>
+                                                <constraint firstItem="RIi-ZF-Lu2" firstAttribute="bottom" secondItem="dkM-dy-VPT" secondAttribute="bottomMargin" constant="1" id="TZr-Pa-AOz"/>
                                                 <constraint firstItem="RIi-ZF-Lu2" firstAttribute="top" secondItem="dkM-dy-VPT" secondAttribute="topMargin" id="VML-Cf-ir5"/>
                                                 <constraint firstItem="RIi-ZF-Lu2" firstAttribute="trailing" secondItem="dkM-dy-VPT" secondAttribute="trailingMargin" id="cSR-Hj-61w"/>
                                             </constraints>
@@ -64,7 +64,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KBX-1f-lww" id="am2-Hu-rEB">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGf-Cc-sws">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGf-Cc-sws">
                                                     <rect key="frame" x="8" y="8" width="304" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +73,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tGf-Cc-sws" firstAttribute="trailing" secondItem="am2-Hu-rEB" secondAttribute="trailingMargin" id="44d-x0-RsR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tGf-Cc-sws" secondAttribute="bottom" constant="4" id="QOi-wp-yb5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tGf-Cc-sws" secondAttribute="bottom" constant="3" id="QOi-wp-yb5"/>
                                                 <constraint firstItem="tGf-Cc-sws" firstAttribute="leading" secondItem="am2-Hu-rEB" secondAttribute="leadingMargin" id="j13-eP-pAe"/>
                                                 <constraint firstItem="tGf-Cc-sws" firstAttribute="top" secondItem="am2-Hu-rEB" secondAttribute="topMargin" id="kWs-Id-pg1"/>
                                             </constraints>
@@ -84,7 +84,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kn9-f2-ccQ" id="wFp-aN-HJ3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mt-Nn-Mfx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mt-Nn-Mfx">
                                                     <rect key="frame" x="8" y="8" width="304" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,7 +93,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="trailing" secondItem="wFp-aN-HJ3" secondAttribute="trailingMargin" id="BQv-ZC-k9s"/>
-                                                <constraint firstItem="4mt-Nn-Mfx" firstAttribute="bottom" secondItem="wFp-aN-HJ3" secondAttribute="bottomMargin" id="e7R-5J-eBL"/>
+                                                <constraint firstItem="4mt-Nn-Mfx" firstAttribute="bottom" secondItem="wFp-aN-HJ3" secondAttribute="bottomMargin" constant="1" id="e7R-5J-eBL"/>
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="leading" secondItem="wFp-aN-HJ3" secondAttribute="leadingMargin" id="eFJ-rd-15e"/>
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="top" secondItem="wFp-aN-HJ3" secondAttribute="topMargin" id="o75-6K-gVQ"/>
                                             </constraints>
@@ -104,7 +104,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rEH-XW-njB" id="WdQ-gO-z0u">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n53-Sl-paV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n53-Sl-paV">
                                                     <rect key="frame" x="8" y="8" width="304" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,7 +115,7 @@
                                                 <constraint firstItem="n53-Sl-paV" firstAttribute="trailing" secondItem="WdQ-gO-z0u" secondAttribute="trailingMargin" id="2pw-th-5Nz"/>
                                                 <constraint firstItem="n53-Sl-paV" firstAttribute="top" secondItem="WdQ-gO-z0u" secondAttribute="topMargin" id="FPw-k1-9qg"/>
                                                 <constraint firstItem="n53-Sl-paV" firstAttribute="leading" secondItem="WdQ-gO-z0u" secondAttribute="leadingMargin" id="d1C-D8-Hzc"/>
-                                                <constraint firstItem="n53-Sl-paV" firstAttribute="bottom" secondItem="WdQ-gO-z0u" secondAttribute="bottomMargin" id="mBV-IQ-Rsa"/>
+                                                <constraint firstItem="n53-Sl-paV" firstAttribute="bottom" secondItem="WdQ-gO-z0u" secondAttribute="bottomMargin" constant="1" id="mBV-IQ-Rsa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
