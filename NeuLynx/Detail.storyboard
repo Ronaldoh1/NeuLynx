@@ -195,6 +195,47 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="36" id="vMW-8R-A9J">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vMW-8R-A9J" id="8fN-oq-O9M">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOk-R5-aM6">
+                                                    <rect key="frame" x="8" y="7" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NOk-R5-aM6" firstAttribute="top" secondItem="8fN-oq-O9M" secondAttribute="topMargin" constant="-1" id="0vl-z6-9h0"/>
+                                                <constraint firstItem="NOk-R5-aM6" firstAttribute="top" secondItem="8fN-oq-O9M" secondAttribute="topMargin" constant="-1" id="b0t-ds-mMR"/>
+                                                <constraint firstItem="NOk-R5-aM6" firstAttribute="trailing" secondItem="8fN-oq-O9M" secondAttribute="trailingMargin" id="uSw-eZ-oHD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NOk-R5-aM6" secondAttribute="bottom" constant="-1" id="wWz-oE-Y9X"/>
+                                                <constraint firstItem="NOk-R5-aM6" firstAttribute="leading" secondItem="8fN-oq-O9M" secondAttribute="leadingMargin" id="yH8-2p-zHi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="36" id="9Hm-je-MxT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Hm-je-MxT" id="6JC-9p-2OZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87v-Om-sm1">
+                                                    <rect key="frame" x="8" y="7" width="304" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="87v-Om-sm1" firstAttribute="leading" secondItem="6JC-9p-2OZ" secondAttribute="leadingMargin" id="OdD-fv-f00"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="87v-Om-sm1" secondAttribute="bottom" constant="-1" id="RPe-8j-30f"/>
+                                                <constraint firstItem="87v-Om-sm1" firstAttribute="top" secondItem="6JC-9p-2OZ" secondAttribute="topMargin" constant="-1" id="iby-8o-uLn"/>
+                                                <constraint firstItem="87v-Om-sm1" firstAttribute="trailing" secondItem="6JC-9p-2OZ" secondAttribute="trailingMargin" id="s84-cQ-Vib"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Cool Pictures" id="01u-OZ-bhm">
@@ -316,9 +357,11 @@
                         <outlet property="frenchFlag" destination="wGO-Cb-3h8" id="KBt-yW-HFl"/>
                         <outlet property="image1" destination="pAA-tS-RU9" id="gnD-2x-MwY"/>
                         <outlet property="image2" destination="2ul-6V-vrg" id="5Bf-An-VeZ"/>
+                        <outlet property="locationLabel" destination="87v-Om-sm1" id="Kek-jj-wwq"/>
                         <outlet property="numberOfPeopleLabel" destination="sXf-6q-MCh" id="LSy-Li-hqj"/>
                         <outlet property="portugueseFlag" destination="wzv-4U-Fq3" id="B4L-VZ-evx"/>
                         <outlet property="spanishFlag" destination="Y0W-nn-zXw" id="q0u-Ho-wcb"/>
+                        <outlet property="timeLabel" destination="NOk-R5-aM6" id="MZV-Nt-9yk"/>
                         <outlet property="typeActivityLabel" destination="0b2-xz-W5I" id="h1K-fE-XlD"/>
                         <outlet property="userNameLabel" destination="zc7-W3-czk" id="BKT-fn-fml"/>
                         <outlet property="userProfileImageView" destination="DK2-Mi-ASX" id="CXB-Wk-aU4"/>
@@ -326,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ad6-e4-qtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="934"/>
+            <point key="canvasLocation" x="807" y="969"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XVu-du-nfc">

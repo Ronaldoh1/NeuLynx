@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeActivityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+
 
 //Languages
 @property (weak, nonatomic) IBOutlet UIImageView *portugueseFlag;
@@ -202,6 +205,7 @@
     [self.view addSubview:rv];
 
 
+    self.timeLabel.text = [NSString stringWithFormat:@"Start Time: %@ /n End Time: %@", selectedActivity.startTimeAndDate, selectedActivity.endTimeAndDate];
 
 
 }

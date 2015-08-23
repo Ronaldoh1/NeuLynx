@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="108" width="320" height="29"/>
                                 <segments>
                                     <segment title="All Activities"/>
-                                    <segment title="LGBT Only"/>
+                                    <segment title="LGBT Activities"/>
                                 </segments>
                                 <connections>
                                     <action selector="onSegmentSelected:" destination="Dhs-Ky-Aot" eventType="valueChanged" id="buf-j3-cmA"/>
