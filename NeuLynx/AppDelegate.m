@@ -59,10 +59,10 @@
     
 
 
-    //Lookback Set Up
-    [Lookback setupWithAppToken:@"AytNTqPfmoZR7b56H"];
-    [Lookback sharedLookback].shakeToRecord = YES;
-    [Lookback sharedLookback].feedbackBubbleVisible = YES;
+//    //Lookback Set Up
+//    [Lookback setupWithAppToken:@"AytNTqPfmoZR7b56H"];
+//    [Lookback sharedLookback].shakeToRecord = YES;
+//    [Lookback sharedLookback].feedbackBubbleVisible = YES;
 
 
     //Initialize facebook
@@ -101,18 +101,18 @@
     static int i=1;
     [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
 
-
-    if (userInfo) {
-        NSLog(@"%@",userInfo);
-
-        if ([userInfo objectForKey:@"aps"]) {
-            if([[userInfo objectForKey:@"aps"] objectForKey:@"badgecount"]) {
-                [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badgecount"] intValue];
-
-
-            }
-        }
-    }
+//
+//    if (userInfo) {
+//        NSLog(@"%@",userInfo);
+//
+//        if ([userInfo objectForKey:@"aps"]) {
+//            if([[userInfo objectForKey:@"aps"] objectForKey:@"badgecount"]) {
+//                [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badgecount"] intValue];
+//
+//
+//            }
+//        }
+//    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

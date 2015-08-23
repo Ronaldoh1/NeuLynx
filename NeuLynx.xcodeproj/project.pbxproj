@@ -1563,7 +1563,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "301a1f92-77d2-4ebd-ac94-8c58a9ed5e3b";
@@ -1586,7 +1586,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = NeuLynx/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "301a1f92-77d2-4ebd-ac94-8c58a9ed5e3b";

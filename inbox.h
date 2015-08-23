@@ -12,7 +12,7 @@
 
 
 @interface inbox : PFObject<PFSubclassing>
-@property User *MessageContact;
+@property User *messageContact;
 @property User *inboxOwner;
 
 @end

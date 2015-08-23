@@ -6,8 +6,8 @@ target 'NeuLynx' do
 pod 'MRProgress'
 pod 'MRProgress/AFNetworking'
 pod 'RateView'
-pod 'Lookback', :configurations => ['Debug']
-pod 'LookbackSafe', :configurations => ['Release']
+#pod 'Lookback', :configurations => ['Debug']
+#pod 'LookbackSafe', :configurations => ['Release']
 
 
 

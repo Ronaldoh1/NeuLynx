@@ -110,7 +110,7 @@
 
 
             newContact.inboxOwner = [User currentUser];
-            newContact.MessageContact = tempUser;
+            newContact.messageContact = tempUser;
             [newContact saveInBackground];
 
 

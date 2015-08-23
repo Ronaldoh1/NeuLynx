@@ -11,7 +11,7 @@
 @implementation inbox
 
 @dynamic inboxOwner;
-@dynamic MessageContact;
+@dynamic messageContact;
 
 
 +(void)load {

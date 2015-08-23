@@ -130,15 +130,19 @@
 
     PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
     [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
-    [query includeKey:@"MessageContact"];
+    [query whereKey:@"messageContact" equalTo:[User currentUser]];
+    [query includeKey:@"messageContact"];
+    [query includeKey:@"inboxOwner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
         if (!error) {
             for (inbox *contact in objects) {
 
-                if (![array containsObject:contact.MessageContact]) {
-                    [array addObject:contact.MessageContact];
+                if (![array containsObject:contact.messageContact])  {
+                    [array addObject:contact.messageContact];
 
+                }else if (![array containsObject:contact.inboxOwner]){
+                    [array addObject:contact.inboxOwner];
                 }
                 }
             self.inboxArray = [NSMutableArray arrayWithArray:array];
