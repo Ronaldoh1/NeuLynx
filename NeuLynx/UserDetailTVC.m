@@ -11,9 +11,12 @@
 #import "AppDelegate.h"
 
 @interface UserDetailTVC ()
-@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *orientationLabel;
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
@@ -37,8 +40,6 @@
 @property NSString *selectedEntry;
 
 @property BOOL genderArraySelected;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *genderPicker;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *orientationPicker;
 
 
 @property UIWindow *window;
@@ -108,9 +109,22 @@
 
 //helper method to get user's languages
 -(void)getUsersPersonalInformation{
-    //******Get the information of the current user********//
-    self.nameTextField.text = self.selectedUser.name;
-    self.ageTextField.text = self.selectedUser.age;
+    //******Get the information of the current user********//i
+
+    //change the color of the basic info label.
+    self.nameLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+    self.genderLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+    self.orientationLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+    self.ageLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
+
+
+    //get basic information
+    
+    self.nameLabel.text = self.selectedUser.name;
+    self.ageLabel.text = [NSString stringWithFormat:@"%@ Years Old", self.selectedUser.age];
+    self.genderLabel.text = self.selectedUser.gender;
+    self.orientationLabel.text = self.selectedUser.orientation;
+
     self.aboutMeTextView.text = self.selectedUser.aboutMe;
 
     //get the user's personality
@@ -145,37 +159,7 @@
     }
 
 
-    //get user's gender
-    if ([self.selectedUser.gender isEqualToString:@"Male"]) {
-        self.genderPicker.selectedSegmentIndex = 0;
 
-    }else if ([self.selectedUser.gender isEqualToString:@"Female"]){
-        self.genderPicker.selectedSegmentIndex = 1;
-
-    }else {
-        //in the case the that the user hasnt selected one just set it to male.
-        self.genderPicker.selectedSegmentIndex = 0;
-    }
-
-    //get user's orientation
-    if ([self.selectedUser.orientation isEqualToString:@"Straight"]) {
-        self.orientationPicker.selectedSegmentIndex = 0;
-
-    }else if([self.selectedUser.orientation isEqualToString:@"Bisexual"]){
-        self.orientationPicker.selectedSegmentIndex = 1;
-
-    }else if([self.selectedUser.orientation isEqualToString:@"Gay"]){
-        self.orientationPicker.selectedSegmentIndex = 2;
-
-    }else if ([self.selectedUser.orientation isEqualToString:@"Lesbian"]){
-        self.orientationPicker.selectedSegmentIndex = 3;
-
-    }else if ([self.selectedUser.orientation isEqualToString:@"Transgender"]){
-        self.orientationPicker.selectedSegmentIndex = 4;
-
-    }else{
-        self.orientationPicker.selectedSegmentIndex = 0;
-    }
 
     //get user's languages
     self.languageArray = [[NSMutableArray alloc] initWithArray:self.selectedUser.languageArray.mutableCopy];

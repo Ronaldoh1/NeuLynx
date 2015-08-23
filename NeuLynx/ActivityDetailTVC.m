@@ -1,4 +1,4 @@
-//
+
 //  ActivityDetailTVC.m
 //  NeuLynx
 //
@@ -16,7 +16,6 @@
 @interface ActivityDetailTVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *genderAndOrientationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeActivityLabel;
 
 //Languages
@@ -31,7 +30,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *numberOfPeopleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *activityDescriptionText;
-@property Activity *selectedActivity;
 
 //Activity Images
 
@@ -42,11 +40,11 @@
 //Sharing on Social Media
 @property SLComposeViewController *activitySL;
 
+@property Activity  *selectedActivity;
+
 @end
 
 @implementation ActivityDetailTVC
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,17 +65,15 @@
     //Display the user information
 
     //1. Get the activity that user selected.
-
-    self.selectedActivity = [Activity new];
     Activity *selectedActivity = [Activity new];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     selectedActivity = appDelegate.sharedActivity;
-
+    self.selectedActivity = [Activity new];
     self.selectedActivity = selectedActivity;
 
     //setting image to Navigation Bar's title
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 20)];
+    titleView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
     titleView.font = [UIFont fontWithName:@"Helvetica" size:20];
     titleView.text = selectedActivity.activityTitle;
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
@@ -86,27 +82,17 @@
     //Make user profile circular
     self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.height/2;
     self.userProfileImageView.layer.masksToBounds = YES;
-    self.userProfileImageView.layer.borderWidth = 0;
+    self.userProfileImageView.layer.borderWidth = 4.0;
+    self.userProfileImageView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
     //Set up user's name label
     self.userNameLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
-    //Set up user's gender and orientation label
-    self.genderAndOrientationLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
     //set the title of the activity
 
     self.ActivityTitleLabel.text = selectedActivity.activityTitle;
     self.ActivityTitleLabel.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
-
-//    //add borders to the textView
-//    self.activityDescriptionText.layer.borderWidth = 4.0f;
-//    self.activityDescriptionText.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
-
-    self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.height/2;
-    self.userProfileImageView.layer.masksToBounds = YES;
-    self.userProfileImageView.layer.borderWidth = 4.0;
-    self.userProfileImageView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
 
     //Initially set the flags to 0.4 alpha and change them based on host actual langauges.
     self.portugueseFlag.alpha = 0.3;
@@ -121,13 +107,17 @@
 
     [profileImagePFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-        self.userProfileImageView.image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            self.userProfileImageView.image = [UIImage imageWithData:data];
+
+        });
+
 
     }];
 
 
     self.userNameLabel.text = selectedActivity.host.name;
-    self.genderAndOrientationLabel.text = [NSString stringWithFormat:@"%@, %@", selectedActivity.host.gender, selectedActivity.host.orientation];
 
     NSArray *languageArray = selectedActivity.host.languageArray.copy;
 
@@ -158,8 +148,16 @@
     if (selectedActivity.numberOfpaticipants == nil) {
         selectedActivity.numberOfpaticipants = 0;
     }
+
+    //number of participants
     self.numberOfPeopleLabel.text = [NSString stringWithFormat:@"%@ of %@ are attending!", selectedActivity.numberOfpaticipants, selectedActivity.maxNumberOfParticipants];
 
+    //Activity type.
+    if ([selectedActivity.isLBGT integerValue] == 1) {
+        self.typeActivityLabel.text = [NSString stringWithFormat:@"Type: LGBT"];
+    } else {
+        self.typeActivityLabel.text = [NSString stringWithFormat:@"Type: Any"];
+    }
 
     //Display activity images
 
@@ -169,7 +167,13 @@
 
     [image1PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-        self.image1.image = [UIImage imageWithData:data];
+
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            self.image1.image = [UIImage imageWithData:data];
+
+        });
 
     }];
 
@@ -179,7 +183,13 @@
 
     [image2PFFIle getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
-        self.image2.image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+
+            self.image2.image = [UIImage imageWithData:data];
+
+        });
+
 
     }];
 
@@ -187,7 +197,7 @@
     //Display rate flags for the user.
     RateView* rv = [RateView rateViewWithRating:3.7f];
     rv.starFillColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:0/255.0 alpha:1];
-    rv.frame = CGRectMake(115, 235, 150, 30);
+    rv.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 3.3, 235, 150, 30);
 
     [self.view addSubview:rv];
 
@@ -196,11 +206,45 @@
 
 }
 
+
+
 ///*************ACTION BUTTONS***************************//
+- (IBAction)onProfileImageTapped:(UIButton *)sender {
+
+    User *user = [User new];
+
+
+    user = (User *)self.selectedActivity.host;
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+
+    appDelegate.selectedUser = user;
+
+    UIStoryboard *UserDetailStoryboard = [UIStoryboard storyboardWithName:@"UserDetail" bundle:nil];
+    UINavigationController *userDetailNavVC = [UserDetailStoryboard instantiateViewControllerWithIdentifier:@"userDetailNavVC"];
+
+    [self presentViewController:userDetailNavVC animated:YES completion:nil];
+
+
+    NSLog(@"%@", user);
+}
 
 - (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        ExclusiveInvite *exclusivInvite = [ExclusiveInvite new];
+        exclusivInvite = appDelegate.exclusiveInvite;
+
+        if (exclusivInvite != nil) {
+
+            exclusivInvite.isDispositioned = @0;
+        }
+
+    }];
 }
 
 - (IBAction)onJoinButtonTapped:(UIBarButtonItem *)sender {
@@ -210,9 +254,115 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     selectedActivity = appDelegate.sharedActivity;
 
-    selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
-    [selectedActivity saveInBackground];
+    NSMutableArray *tempActivityArray = [NSMutableArray arrayWithArray:selectedActivity.RequestsArray];
 
+    //check if the current user has already sent a request.
+
+    if ([tempActivityArray containsObject:[User currentUser]]) {
+
+        [self displayErrorMessage];
+
+
+
+    }else {
+
+        //we want to disposition the exclusive invite.
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        ExclusiveInvite *exclusivInvite = [ExclusiveInvite new];
+        exclusivInvite = appDelegate.exclusiveInvite;
+
+        if (exclusivInvite != nil) {
+
+            exclusivInvite.isDispositioned = @1;
+
+            [exclusivInvite saveInBackground];
+
+
+
+            selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+
+
+            //add current user to the request.
+
+            [tempActivityArray addObject:[User currentUser]];
+
+            selectedActivity.RequestsArray = tempActivityArray.copy;
+
+            [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+
+
+
+                    // Create our Installation query
+                    PFQuery *pushQuery = [PFInstallation query];
+                    // only return Installations that belong to a User that
+
+                    [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+
+                    // Send push notification to query
+                    PFPush *push = [[PFPush alloc] init];
+                    [push setQuery:pushQuery]; // Set our Installation query
+                    [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your exclusive invite. Please check your Requests to confirm.", [User currentUser].name]];
+                    [push sendPushInBackground];
+
+                    [self dismissViewControllerAnimated:YES completion:nil];
+
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [alert show];
+
+                }
+            }];
+
+
+
+
+        }else{
+
+            selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
+
+
+            //add current user to the request.
+
+            [tempActivityArray addObject:[User currentUser]];
+
+            selectedActivity.RequestsArray = tempActivityArray.copy;
+
+            [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+
+                    // Create our Installation query
+                    PFQuery *pushQuery = [PFInstallation query];
+                    // only return Installations that belong to a User that
+
+                    [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
+                    // matches the innerQuery
+                    //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
+
+                    // Send push notification to query
+                    PFPush *push = [[PFPush alloc] init];
+                    [push setQuery:pushQuery]; // Set our Installation query
+                    [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your activity. Please check your Requests to review this request", [User currentUser].name]];
+                    [push sendPushInBackground];
+
+                    [self dismissViewControllerAnimated:YES completion:nil];
+
+                } else {
+                    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"There was an error sending your request. Please try again!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [alert show];
+
+                }
+            }];
+
+        }
+    }
 
 }
 
@@ -221,7 +371,7 @@
 
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (indexPath.section == 3) {
+    if (indexPath.section == 3 || indexPath.section == 4) {
         return indexPath;
     } else {
         return nil;
@@ -229,7 +379,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    //firt thing we want to do is deselect the cell.
+    //first thing we want to do is deselect the cell.
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     //the next thing we want to do is handle the user's selections.
@@ -240,9 +390,6 @@
     if (indexPath.section == 3 && indexPath.row == 0) {
 
 
-        //        self.activitySL = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        //        [self.activitySL setInitialText:[NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text]];
-        //        [self presentViewController:self.activitySL animated:YES completion:nil];
         FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
         content.contentURL = [NSURL URLWithString:@"http://developers.facebook.com"];
         content.contentDescription = [NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text];
@@ -270,8 +417,18 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
-        
     }
+    
+    
+    //    }else if (indexPath.section == 4 && indexPath.row == 0){
+    //
+    //
+    //        UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
+    //        UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
+    //        
+    //        [self presentViewController:messageNavVC animated:YES completion:nil];
+    //        
+    //    }
     
 }
 
@@ -282,8 +439,20 @@
     
 }
 
+- (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{
+}
 
 
+////////////////*****************HELPER METHODS************************///////////////////
+//display alert method
+-(void)displayAlertWithTitle:(NSString *)title andWith:(NSError *)error{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
+                                                   message:[NSString stringWithFormat:@"Error %@", [error description]]
+                                                  delegate:self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil, nil];
+    [alert show];
+}
 
 //helper method to display error message
 -(void)displayErrorMessage{
@@ -292,30 +461,5 @@
 
     [alertView show];
 }
-
-- (IBAction)onProfileImageTapped:(UIButton *)sender {
-
-
-        User *user = [User new];
-
-
-        user = (User *)self.selectedActivity.host;
-
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-
-    appDelegate.selectedUser = user;
-
-        UIStoryboard *UserDetailStoryboard = [UIStoryboard storyboardWithName:@"UserDetail" bundle:nil];
-        UINavigationController *userDetailNavVC = [UserDetailStoryboard instantiateViewControllerWithIdentifier:@"userDetailNavVC"];
-
-        [self presentViewController:userDetailNavVC animated:YES completion:nil];
-        
-        
-        NSLog(@"%@", user);
-        
-
-}
-
 
 @end
