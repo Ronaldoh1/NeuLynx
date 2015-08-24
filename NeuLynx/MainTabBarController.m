@@ -8,6 +8,8 @@
 
 #import "MainTabBarController.h"
 
+#import "AppDelegate.h"
+
 @interface MainTabBarController ()
 
 @end
@@ -23,11 +25,17 @@
 
 
 }
+-(void)viewDidAppear:(BOOL)animated{
+
+    [self setUpTabBars];
+}
 
 
 -(void)setUpTabBars{
 
     //set up the tint for the tabbar
+
+
 
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1]];
 
@@ -64,6 +72,10 @@
     requestNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"requestIcon2"] scaledToSize:CGSizeMake(35, 35)];
     requestNavVC.tabBarItem.title = @"Request";
     requestNavVC.tabBarItem.enabled = YES;
+
+
+
+
 }
 - (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);

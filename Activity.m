@@ -27,6 +27,7 @@
 @dynamic studentsOnly;
 @dynamic isLBGT;
 @dynamic exclusiveInvitesArray;
+@dynamic isNew;
 
 +(void)load {
     [self registerSubclass];

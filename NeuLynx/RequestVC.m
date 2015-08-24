@@ -33,6 +33,9 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [self performInitialSetUp];
+
+
+    [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:nil];
 }
 
 -(void)performInitialSetUp{

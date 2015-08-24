@@ -11,7 +11,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-
+#import "MainTabBarController.h"
 
 #import "User.h"
 //#import <Lookback/Lookback.h>
@@ -102,17 +102,46 @@
     [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
 
 //
-//    if (userInfo) {
-//        NSLog(@"%@",userInfo);
+//    MainTabBarController *tabBar = [MainTabBarController new];
 //
-//        if ([userInfo objectForKey:@"aps"]) {
-//            if([[userInfo objectForKey:@"aps"] objectForKey:@"badgecount"]) {
-//                [UIApplication sharedApplication].applicationIconBadgeNumber = [[[userInfo objectForKey:@"aps"] objectForKey: @"badgecount"] intValue];
+//    [[[tabBar.viewControllers objectAtIndex:2] tabBarItem] setBadgeValue:@"1"];
+    //    [requestNavVC.tabBarItem setBadgeValue:@"1"];
+
+//    // This is where you handle incoming push notifications while your app is running in the foreground or background.
 //
+//    if ( application.applicationState == UIApplicationStateActive ) {
 //
+//        UITabBarController *tabBarController = (UITabBarController*)self.window.rootViewController;
+//        int count = (int)[tabBarController.tabBar.items count];
+//
+//        if (count > 1) {//If we have tabs increment the badge on the first one
+//
+//            UITabBarItem *inboxTab = [tabBarController.tabBar.items objectAtIndex:0];
+//
+//            NSString * badgeString = [NSString stringWithFormat:@"%@",[[userInfo
+//                                                                        objectForKey:@"aps"] valueForKey:@"badge"]];
+//            NSInteger bagdeValue = [badgeString integerValue];
+//
+//            if (bagdeValue > 0) {
+//                //Set the inbox to badge
+//                inboxTab.badgeValue = badgeString;
+//                //and the application badge
+//                application.applicationIconBadgeNumber = bagdeValue;
 //            }
+//
+//            //Notify any listeners
+//            [[NSNotificationCenter defaultCenter]
+//             postNotificationName:@"recievedNewMessage" object:nil userInfo:userInfo];
+//
 //        }
 //    }
+//    else {
+//        // application is in the background and user tapped the notification.
+//        NSLog(@"AppDelegate In Background Received Notification");
+//              
+//              }
+
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

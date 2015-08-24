@@ -72,7 +72,7 @@
 @property PFGeoPoint *userCurrentLocationGeoPoint;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *lgbtActivitySelector;
 
-
+@property int count;
 
 @end
 
@@ -100,6 +100,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 -(void)viewDidAppear:(BOOL)animated{
 
     [self setUpProfileImage];
+    [self downloadActivityRequestsCount];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -132,6 +133,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
+
+
+    [self downloadActivityRequestsCount];
     //Get Current User
     self.currentUser = [User currentUser];
 
@@ -236,6 +240,44 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     self.currentLocation = [CLLocation new];
 
 
+}
+
+-(void)downloadActivityRequestsCount{
+
+    PFQuery *query = [Activity query];
+
+
+
+
+    [query whereKey:@"host" equalTo:[User currentUser]];
+    [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
+    [query includeKey:@"RequestsArray"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+        if (!error) {
+            //get a copy of all activities
+            // Add activities to the map.
+
+            int count = 0;
+
+            for (Activity *activity in activities) {
+
+                count = (int)(activity.RequestsArray.count + count);
+            }
+
+            if (count !=0) {
+
+            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", count]];
+
+            }
+            
+            NSLog(@"%d", self.count);
+
+        }
+    }];
+    // totalCount = self.count;
 }
 
 //Get user's current location

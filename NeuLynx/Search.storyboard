@@ -186,8 +186,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="JkT-bI-UZH">
-                                                    <rect key="frame" x="-9" y="39" width="82" height="79"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="JkT-bI-UZH">
+                                                    <rect key="frame" x="6" y="39" width="82" height="79"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="XpE-Tu-gFs"/>
                                                         <constraint firstAttribute="height" constant="79" id="gdY-r6-7G1"/>
@@ -207,7 +207,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Kt8-Ae-Ixx" secondAttribute="bottom" constant="26" id="oNB-8V-62K"/>
                                                 <constraint firstItem="TWL-wL-6Lv" firstAttribute="trailing" secondItem="BlM-KP-CpV" secondAttribute="trailingMargin" id="qJ8-Pi-a6I"/>
                                                 <constraint firstItem="53q-Yh-aaW" firstAttribute="leading" secondItem="BlM-KP-CpV" secondAttribute="leadingMargin" constant="86" id="tzp-0k-KeQ"/>
-                                                <constraint firstAttribute="centerX" secondItem="JkT-bI-UZH" secondAttribute="centerX" constant="111.5" id="uk6-2o-G8R"/>
+                                                <constraint firstAttribute="centerX" secondItem="JkT-bI-UZH" secondAttribute="centerX" constant="96.5" id="uk6-2o-G8R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -277,7 +277,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="POp-7W-8FU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="POp-7W-8FU">
                                             <rect key="frame" x="17" y="39" width="82" height="82"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="82" id="Azb-ac-DpY"/>
@@ -366,7 +366,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultImage" width="1200" height="1200"/>
+        <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="wCultural.png" width="417" height="417"/>
         <image name="wFestival.png" width="417" height="417"/>
         <image name="wFitness.png" width="417" height="417"/>

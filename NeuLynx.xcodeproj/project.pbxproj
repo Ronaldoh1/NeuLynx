@@ -30,6 +30,7 @@
 		F2292F331B26A785003D82D5 /* mainOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F321B26A785003D82D5 /* mainOutdoors.png */; };
 		F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F341B26A7A8003D82D5 /* wOutdoors.png */; };
 		F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */; };
+		F22E4A1F1B8B1C94006956A6 /* InboxSearchResultTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22E4A1E1B8B1C93006956A6 /* InboxSearchResultTVC.m */; };
 		F23435101B3605A60065D11C /* bluering.png in Resources */ = {isa = PBXBuildFile; fileRef = F234350F1B3605A60065D11C /* bluering.png */; };
 		F23435261B37CDDE0065D11C /* requestIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F23435251B37CDDE0065D11C /* requestIcon2.png */; };
 		F2361DC81B7B0832007228C0 /* bugIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DC71B7B0832007228C0 /* bugIcon.png */; };
@@ -245,6 +246,8 @@
 		F2292F341B26A7A8003D82D5 /* wOutdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wOutdoors.png; sourceTree = "<group>"; };
 		F2292F3F1B2B3C55003D82D5 /* ActivitiesDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesDownloader.h; sourceTree = "<group>"; };
 		F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
+		F22E4A1D1B8B1C93006956A6 /* InboxSearchResultTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxSearchResultTVC.h; sourceTree = "<group>"; };
+		F22E4A1E1B8B1C93006956A6 /* InboxSearchResultTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxSearchResultTVC.m; sourceTree = "<group>"; };
 		F234350F1B3605A60065D11C /* bluering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluering.png; sourceTree = "<group>"; };
 		F23435251B37CDDE0065D11C /* requestIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestIcon2.png; sourceTree = "<group>"; };
 		F2361DC71B7B0832007228C0 /* bugIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bugIcon.png; sourceTree = "<group>"; };
@@ -712,6 +715,8 @@
 				F249D2DD1B50231900A3BAE7 /* NeuLynx-Bridging-Header.h */,
 				F2361DE61B7D867C007228C0 /* InboxCustomCell.h */,
 				F2361DE71B7D867C007228C0 /* InboxCustomCell.m */,
+				F22E4A1D1B8B1C93006956A6 /* InboxSearchResultTVC.h */,
+				F22E4A1E1B8B1C93006956A6 /* InboxSearchResultTVC.m */,
 			);
 			name = Mail;
 			sourceTree = "<group>";
@@ -1413,6 +1418,7 @@
 				F2D38B051B6A029A007EBF41 /* SearchResultsTVC.m in Sources */,
 				F2E6E8471B143ECA0083BA7F /* SelectLocationVC.m in Sources */,
 				F2892E091B4179EA0010D534 /* ProfileTVC.m in Sources */,
+				F22E4A1F1B8B1C94006956A6 /* InboxSearchResultTVC.m in Sources */,
 				F2E6E8C11B1A43740083BA7F /* SelectCategoryVC.m in Sources */,
 				F2361DDE1B7B48AE007228C0 /* BugReportVC.m in Sources */,
 				F2E0BD9B1B7F7E080004921F /* UserSearchResultTVC.m in Sources */,

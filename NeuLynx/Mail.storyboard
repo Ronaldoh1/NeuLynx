@@ -88,6 +88,62 @@
             </objects>
             <point key="canvasLocation" x="1174" y="245"/>
         </scene>
+        <!--Inbox Search ResultTVC-->
+        <scene sceneID="fks-jJ-f1T">
+            <objects>
+                <tableViewController id="WNX-cq-TEp" customClass="InboxSearchResultTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="pxX-sS-WQx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="fromCell" rowHeight="102" id="FN1-0a-x8Z" customClass="InboxCustomCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FN1-0a-x8Z" id="qYf-VU-S3D">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="UCy-GI-bmo">
+                                            <rect key="frame" x="12" y="13" width="75" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="75" id="xeV-qA-qFU"/>
+                                                <constraint firstAttribute="width" constant="75" id="xmk-YS-b5K"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcb-pE-bmJ">
+                                            <rect key="frame" x="95" y="27" width="192" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="zw5-tU-eqC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lcb-pE-bmJ" secondAttribute="trailing" constant="-8" id="CWw-TF-tTQ"/>
+                                        <constraint firstAttribute="centerY" secondItem="UCy-GI-bmo" secondAttribute="centerY" id="Ej6-QO-9dA"/>
+                                        <constraint firstAttribute="centerX" secondItem="UCy-GI-bmo" secondAttribute="centerX" constant="94" id="f8j-am-QFI"/>
+                                        <constraint firstItem="lcb-pE-bmJ" firstAttribute="leading" secondItem="UCy-GI-bmo" secondAttribute="trailing" constant="8" id="pdL-OU-ZE3"/>
+                                        <constraint firstAttribute="centerY" secondItem="lcb-pE-bmJ" secondAttribute="centerY" constant="6.5" id="vHG-70-O7F"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="senderNameLabel" destination="lcb-pE-bmJ" id="Qdk-tj-X2O"/>
+                                    <outlet property="userProfileImage" destination="UCy-GI-bmo" id="cMI-gE-MqR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WNX-cq-TEp" id="6af-DF-zMT"/>
+                            <outlet property="delegate" destination="WNX-cq-TEp" id="3Ws-ZV-yYp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="CVu-Nq-aH9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsQ-Z5-3wq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1179" y="798"/>
+        </scene>
         <!--Inbox-->
         <scene sceneID="qWy-Nr-YYb">
             <objects>
@@ -191,6 +247,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8M-zB-t9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="710" y="245"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bVG-Ym-DMl">
+            <objects>
+                <navigationController storyboardIdentifier="TableSearchResultsNavController" automaticallyAdjustsScrollViewInsets="NO" id="rGO-EE-hvk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fCC-XS-t3o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WNX-cq-TEp" kind="relationship" relationship="rootViewController" id="qBI-tk-Qap"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVr-uc-fHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="808"/>
         </scene>
     </scenes>
     <resources>

@@ -38,6 +38,9 @@
 
 @property NSMutableArray *exclusiveInvitesArray;
 
+//**0 = No 1 = Yes**
+@property NSNumber* isNew;
+
 +(NSString *)parseClassName;
 
 

@@ -14,8 +14,15 @@
 #import "Message.h"
 #import "InboxCustomCell.h"
 #import "Inbox.h"
+#import "InboxSearchResultTVC.h"
 
-@interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
+
+//Search Controller
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *searchResults;
+
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *inboxArray;
 @property DialogVC *activeDialogVC;
@@ -63,6 +70,20 @@
         self.doneBarButton.enabled = NO;
 
     }
+
+    //Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
+
+    UINavigationController *searchResultsController = [[self storyboard] instantiateViewControllerWithIdentifier:@"TableSearchResultsNavController"];
+
+    //get an instance of UISearch Controller
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:searchResultsController];
+
+    self.searchController.searchResultsUpdater = self;
+
+    // We need to create our SearchBar Programatically
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+
+    self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
 
@@ -120,6 +141,62 @@
         self.activeDialogVC.selectedRecipient = (User *)self.inboxArray[chatMateIndex];
 
         return;
+    }
+}
+
+
+#pragma mark - UISearchControllerDelegate & UISearchResultsDelegate
+
+// Called when the search bar becomes first responder
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+
+    // Set searchString equal to what's typed into the searchbar
+    NSString *searchString = self.searchController.searchBar.text;
+
+    [self updateFilteredContentForActivity:searchString];
+
+    // If searchResultsController
+    if (self.searchController.searchResultsController) {
+
+        UINavigationController *navController = (UINavigationController *)self.searchController.searchResultsController;
+
+        // Present SearchResultsTableViewController as the topViewController
+        InboxSearchResultTVC *vc = (InboxSearchResultTVC *)navController.topViewController;
+
+        // Update searchResults
+        vc.searchResults = self.searchResults;
+
+        // And reload the tableView with the new data
+        [vc.tableView reloadData];
+    }
+}
+
+// Update self.searchResults based on searchString, which is the argument in passed to this method
+- (void)updateFilteredContentForActivity:(NSString *)searchStr{
+
+    if (searchStr == nil) {
+
+        // If empty the search results are the same as the original data
+        self.searchResults = [self.inboxArray mutableCopy];
+
+    } else {
+
+        NSMutableArray *searchResults = [[NSMutableArray alloc] init];
+
+        //here we want to make sure that we return the activities that contain the string for non-case sensitive strings.
+
+        for (User *user in self.inboxArray){
+            NSRange NameRange = [user.name rangeOfString:searchStr options:NSCaseInsensitiveSearch];
+//            NSRange descriptionRange = [activity.activityDescription rangeOfString:searchStr options:NSCaseInsensitiveSearch];
+//
+            if (NameRange.location != NSNotFound) {
+
+                [searchResults addObject:user];
+            }
+        }
+        
+        self.searchResults = searchResults;
+        
     }
 }
 
