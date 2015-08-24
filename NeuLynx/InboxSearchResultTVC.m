@@ -10,6 +10,7 @@
 #import "User.h"
 #import "DialogVC.h"
 #import "InboxCustomCell.h"
+#import "AppDelegate.h"
 
 @interface InboxSearchResultTVC ()
 @property DialogVC *activeDialogVC;
@@ -46,6 +47,24 @@
     return self.searchResults.count;
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //deselect the cell that was selected.
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+
+    UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+    UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"navVC"];
+
+    //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.selectedRecepient = (User *) self.searchResults[indexPath.row];
+
+    [self presentViewController:detailVC animated:YES completion:nil];
+    
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
@@ -70,11 +89,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Segue to open a dialog
-    if ([segue.identifier isEqualToString:@"OpenDialogSegue"]) {
+    if ([segue.identifier isEqualToString:@"OpenDialogSegueFromSearch"]) {
         self.activeDialogVC = segue.destinationViewController;
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
         self.activeDialogVC.selectedRecipient = (User *)self.searchResults[chatMateIndex];
 
+        
+
+        //Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
+    
+               
         return;
     }
 }

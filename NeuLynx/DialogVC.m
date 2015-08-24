@@ -10,7 +10,8 @@
 #import "User.h"
 #import <Parse/Parse.h>
 #import "Message.h"
-
+#import "InboxVC.h"
+#import "AppDelegate.h"
 @interface DialogVC ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -27,6 +28,8 @@
     // Do any additional setup after loading the view.
 
     NSLog(@"%@", self.selectedRecipient.name);
+      [self initialSetUp];
+   // self.definesPresentationContext = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -51,6 +54,10 @@
 
     //retreive messages from parse.
     [self retrieveMessages];
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.selectedRecipient = appDelegate.selectedRecepient;
+
 
 }
 - (IBAction)onDoneButtonDone:(UIBarButtonItem *)sender {
@@ -196,7 +203,7 @@
 
     [UIView animateWithDuration:0.5 animations:^{
         [self.view layoutIfNeeded];
-        self.heightConstraint.constant = 260;
+        self.heightConstraint.constant = 305;
         [self.view layoutIfNeeded];
 
     } completion:nil];

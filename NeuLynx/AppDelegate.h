@@ -19,6 +19,7 @@
 @property BOOL *hideDoneButtonForRequests;
 @property BOOL *hideDoneButtonForMessages;
 @property User *selectedUser;
+@property User *selectedRecepient;
 
 @property (strong, nonatomic) UIWindow *window;
 

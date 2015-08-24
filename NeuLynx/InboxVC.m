@@ -84,6 +84,8 @@
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
 
     self.tableView.tableHeaderView = self.searchController.searchBar;
+
+    
 }
 
 
@@ -128,7 +130,14 @@
 
     //deselect the cell that was selected.
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
+    UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"navVC"];
 
+    //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.selectedRecepient = (User *) self.inboxArray[indexPath.row];
+
+    [self presentViewController:detailVC animated:YES completion:nil];
 }
 
 #pragma mark Prepare For Segue
@@ -139,6 +148,8 @@
         self.activeDialogVC = segue.destinationViewController;
         NSInteger chatMateIndex = [[self.tableView indexPathForCell:(UITableViewCell *)sender] row];
         self.activeDialogVC.selectedRecipient = (User *)self.inboxArray[chatMateIndex];
+
+        self.searchController.active = NO;
 
         return;
     }
