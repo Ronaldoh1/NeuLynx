@@ -12,7 +12,7 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "History.h"
-#import "inbox.h"
+#import "Inbox.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,14 +25,19 @@
 
 @implementation RequestVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performInitialSetUp];
-    [self downloadActivityRequests];
+
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self performInitialSetUp];
 }
 
 -(void)performInitialSetUp{
+
+    [self downloadActivityRequests];
 
     //Set the title for the VC.
     UILabel *titleView = (UILabel *)self.navigationItem.titleView;
@@ -43,7 +48,7 @@
     [self.navigationItem setTitleView:titleView];
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
+    BOOL tmpBool = *(appDelegate.hideDoneButtonForRequests);
 
     if (tmpBool == YES) {
 
@@ -76,7 +81,7 @@
     [activity.RequestsArray removeObjectAtIndex: indexPath.row];
 
     //Add users to inbox.
-    inbox *newContact = [inbox new];
+    Inbox *newContact = [Inbox new];
 
 
 
@@ -110,7 +115,9 @@
 
 
             newContact.inboxOwner = [User currentUser];
+            newContact.inboxOwnerUsername = [User currentUser].username;
             newContact.messageContact = tempUser;
+            newContact.messageContactUsername = tempUser.username;
             [newContact saveInBackground];
 
 

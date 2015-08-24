@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 #import "Message.h"
 #import "InboxCustomCell.h"
-#import "inbox.h"
+#import "Inbox.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -88,6 +88,7 @@
 
      InboxCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fromCell"];
     User *sender = (User *)(self.inboxArray[indexPath.row]);
+    [sender fetchIfNeededInBackground];
    // Message *message = ((Message *)(self.inboxArray[indexPath.row]));
     cell.senderNameLabel.text = sender.name;
 
@@ -128,23 +129,40 @@
 -(void)downloadInboxForCurrentUser{
     NSMutableArray *array = [NSMutableArray new];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
-    [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
-    [query whereKey:@"messageContact" equalTo:[User currentUser]];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat: @"(messageContactUsername = '%@') OR (inboxOwnerUsername = '%@')", [User currentUser].username, [User currentUser].username]];
+
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Inbox" predicate:predicate];
+
+    //[query orderByAscending:@"updatedAt"];
+
+//
+//    PFQuery *query = [PFQuery queryWithClassName:@"Inbox"];
+//    [query whereKey:@"inboxOwner" equalTo:[User currentUser]];
+//    [query whereKey:@"messageContact" equalTo:[User currentUser]];
     [query includeKey:@"messageContact"];
     [query includeKey:@"inboxOwner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
-        if (!error) {
-            for (inbox *contact in objects) {
+    NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
 
-                if (![array containsObject:contact.messageContact])  {
+        if (!error) {
+            for (Inbox *contact in objects) {
+
+
+
+                if (![array containsObject:contact.messageContact] && contact.messageContact != [User currentUser])  {
                     [array addObject:contact.messageContact];
 
-                }else if (![array containsObject:contact.inboxOwner]){
+                }else if (![array containsObject:contact.inboxOwner]  && contact.inboxOwner != [User currentUser]){
+                    
                     [array addObject:contact.inboxOwner];
                 }
                 }
+
+           // NSLog(@"%@", array);
             self.inboxArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
             

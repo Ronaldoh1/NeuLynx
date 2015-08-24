@@ -20,10 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Lookback (1.0.5):
-    - SSZipArchive
-  - LookbackSafe (1.0.5):
-    - SSZipArchive
   - MRProgress (0.8.2):
     - MRProgress/ActivityIndicator (= 0.8.2)
     - MRProgress/Blur (= 0.8.2)
@@ -80,21 +76,15 @@ PODS:
   - MRProgress/Stopable (0.8.2):
     - MRProgress/Helper
   - RateView (1.2)
-  - SSZipArchive (0.3.2)
 
 DEPENDENCIES:
-  - Lookback
-  - LookbackSafe
   - MRProgress
   - MRProgress/AFNetworking
   - RateView
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Lookback: 73d744e90d1756a1ab2ed3f732cc7977de66bc6a
-  LookbackSafe: 2babad03349aeeb4265048c1364dfd4792af0885
   MRProgress: f4cfe862082418e8f542f077772283f425d6c699
   RateView: d4d12e9bb76dc23a77a56f4e5c5fb530a3f3f998
-  SSZipArchive: 11801759495fa4efb7512ef652eb0042d68305d7
 
 COCOAPODS: 0.37.2
