@@ -17,7 +17,7 @@
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray* tempActivitiestArray;
+@property NSMutableArray* activitiestArray;
 @property (weak, nonatomic) IBOutlet UILabel *participantNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *participantProfileImage;
 
@@ -71,7 +71,7 @@
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
 
-    Activity *activity = self.tempActivitiestArray[indexPath.section];
+    Activity *activity = self.activitiestArray[indexPath.section];
 
 
     //get the user who we are sending the request to and add it to the accepted people array.
@@ -154,7 +154,7 @@
 
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
-    Activity *activity = self.tempActivitiestArray[indexPath.section];
+    Activity *activity = self.activitiestArray[indexPath.section];
 
     //get the user who we are sending the request to and add it to the accepted people array.
 
@@ -164,13 +164,6 @@
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-
-//            // Create our Installation query
-//            PFQuery *pushQuery = [PFInstallation query];
-//            // only return Installations that belong to a User that
-//            // matches the innerQuery
-//            [pushQuery whereKey:@"user" matchesQuery: tempUser];
-
 
             // Create our Installation query
             PFQuery *pushQuery = [PFInstallation query];
@@ -194,6 +187,35 @@
 
 }
 
+- (IBAction)onProfileButtonTapped:(UIButton *)sender {
+
+    //get the indexPath for the request.
+
+    CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
+
+    //use the indexPath to get the activity related to the request.
+    Activity *activity = self.activitiestArray[indexPath.section];
+
+    //get the participant for that activity based on the index Path.
+    User *participant = (User *)activity.RequestsArray[indexPath.row];
+
+    //Set the selectedUser which will be used in the Profile Detail.
+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+
+    appDelegate.selectedUser = participant;
+
+
+    UIStoryboard *UserDetailStoryboard = [UIStoryboard storyboardWithName:@"UserDetail" bundle:nil];
+    UINavigationController *userDetailNavVC = [UserDetailStoryboard instantiateViewControllerWithIdentifier:@"userDetailNavVC"];
+
+    [self presentViewController:userDetailNavVC animated:YES completion:nil];
+    
+}
+
+
 //helper method to download the activities
 
 -(void)downloadActivityRequests{
@@ -213,7 +235,7 @@
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
-                self.tempActivitiestArray = [NSMutableArray arrayWithArray:activities].copy;
+                self.activitiestArray = [NSMutableArray arrayWithArray:activities].copy;
                 [self.tableView reloadData];
 
             });
@@ -235,7 +257,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return [((Activity*)[self.tempActivitiestArray objectAtIndex:section]).RequestsArray count];
+    return [((Activity*)[self.activitiestArray objectAtIndex:section]).RequestsArray count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -249,12 +271,12 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return self.tempActivitiestArray.count;
+    return self.activitiestArray.count;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
-    return ((Activity *)self.tempActivitiestArray[section]).activityTitle;
+    return ((Activity *)self.activitiestArray[section]).activityTitle;
 }
 
 -(RequestCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -280,7 +302,7 @@
     //change the color of scrollbar
     tableView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
 
-    Activity *activity = self.tempActivitiestArray[indexPath.section];
+    Activity *activity = self.activitiestArray[indexPath.section];
     User *participant = (User *)activity.RequestsArray[indexPath.row];
 
     cell.nameLabel.text = participant.name;

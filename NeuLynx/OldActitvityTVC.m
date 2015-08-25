@@ -70,9 +70,10 @@
 
     //Make user profile circular
     self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.frame.size.height/2;
-    self.userProfileImageView.layer.masksToBounds = YES;
-    self.userProfileImageView.layer.borderWidth = 0;
 
+    self.userProfileImageView.layer.masksToBounds = YES;
+    self.userProfileImageView.layer.borderWidth = 4.0;
+    self.userProfileImageView.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
     //Set up user's name label
     self.userNameLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 

@@ -241,7 +241,7 @@
     [self presentViewController:userDetailNavVC animated:YES completion:nil];
 
 
-    NSLog(@"%@", user);
+
 }
 
 - (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {

@@ -103,8 +103,15 @@
 
 
     PFQuery *historyQuery = [PFQuery queryWithClassName:@"Activity"];
+    // add ordering
+    [historyQuery orderByAscending:@"updatedAt"];
     [historyQuery whereKey:@"host" equalTo:[User currentUser]];
     [historyQuery includeKey:@"host"];
+
+
+
+    
+
 
 
 
@@ -114,8 +121,11 @@
         if (!error) {
 
           //  NSLog(@"%@", historyArray);
-            //get a copy of all activities
-            self.postedHistoryArray = [NSMutableArray arrayWithArray:historyArray];
+            //get a copy of all activitiesi
+
+            NSArray* reversedArray = [[historyArray reverseObjectEnumerator] allObjects];
+            self.postedHistoryArray = [NSMutableArray arrayWithArray:reversedArray];
+
             // Add activities to the map.
             if (self.acceptedHistoryArray.count == 0) {
 
