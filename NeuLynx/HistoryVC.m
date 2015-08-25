@@ -109,12 +109,6 @@
     [historyQuery includeKey:@"host"];
 
 
-
-    
-
-
-
-
     [historyQuery findObjectsInBackgroundWithBlock:^(NSArray *historyArray, NSError *error){
 
 

@@ -77,9 +77,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="9tT-4N-9O7">
-                                <rect key="frame" x="16" y="98" width="288" height="115"/>
+                                <rect key="frame" x="16" y="79" width="288" height="134"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="sTH-ov-HiI"/>
+                                    <constraint firstAttribute="height" constant="134" id="sTH-ov-HiI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPP-lc-P77">
@@ -140,7 +140,7 @@
                             <constraint firstAttribute="centerY" secondItem="DPP-lc-P77" secondAttribute="centerY" constant="-43" id="MBs-N9-EBB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TDA-pS-Yof" secondAttribute="trailing" constant="-16" id="Ovz-4m-kY7"/>
                             <constraint firstItem="nmo-Dj-Qde" firstAttribute="leading" secondItem="sJY-CP-7QM" secondAttribute="trailing" constant="11" id="PZE-Nl-fZ7"/>
-                            <constraint firstItem="9tT-4N-9O7" firstAttribute="top" secondItem="1Wz-my-v9Y" secondAttribute="bottom" constant="34" id="YK3-i3-wLX"/>
+                            <constraint firstItem="9tT-4N-9O7" firstAttribute="top" secondItem="1Wz-my-v9Y" secondAttribute="bottom" constant="15" id="YK3-i3-wLX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T0b-qz-XFS" secondAttribute="trailing" constant="-16" id="d5D-0m-V0B"/>
                             <constraint firstAttribute="centerY" secondItem="T0b-qz-XFS" secondAttribute="centerY" constant="43" id="gJj-iM-5OB"/>
                             <constraint firstAttribute="centerX" secondItem="sJY-CP-7QM" secondAttribute="centerX" id="inW-Jr-ayD"/>

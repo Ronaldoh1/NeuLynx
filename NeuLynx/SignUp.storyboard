@@ -96,9 +96,9 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="dEG-GX-AqK">
-                                <rect key="frame" x="16" y="80" width="288" height="115"/>
+                                <rect key="frame" x="16" y="64" width="288" height="131"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="R1S-qX-8v6"/>
+                                    <constraint firstAttribute="height" constant="131" id="R1S-qX-8v6"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-NF-pQA">
@@ -149,7 +149,7 @@
                             <constraint firstItem="vtC-eT-tRl" firstAttribute="leading" secondItem="kQj-HI-hEo" secondAttribute="trailing" constant="8" id="e5v-OO-8Sf"/>
                             <constraint firstItem="ViU-lp-vqh" firstAttribute="top" secondItem="hbn-15-fJL" secondAttribute="bottom" constant="8" id="ecA-R5-5ye"/>
                             <constraint firstItem="kQj-HI-hEo" firstAttribute="leading" secondItem="ViU-lp-vqh" secondAttribute="trailing" constant="7" id="f7d-6E-CLw"/>
-                            <constraint firstItem="dEG-GX-AqK" firstAttribute="top" secondItem="zZZ-lf-FqV" secondAttribute="bottom" constant="16" id="hfd-Jy-hb8"/>
+                            <constraint firstItem="dEG-GX-AqK" firstAttribute="top" secondItem="zZZ-lf-FqV" secondAttribute="bottom" id="hfd-Jy-hb8"/>
                             <constraint firstAttribute="centerY" secondItem="kQj-HI-hEo" secondAttribute="centerY" constant="-142.5" id="iXM-KH-85U"/>
                             <constraint firstAttribute="centerY" secondItem="nZg-Hm-D4H" secondAttribute="centerY" constant="29" id="l0O-Nd-S62"/>
                             <constraint firstAttribute="centerY" secondItem="spU-PI-k4u" secondAttribute="centerY" constant="-9" id="mAH-ZP-PJR"/>
