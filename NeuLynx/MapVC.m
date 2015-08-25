@@ -83,6 +83,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+
+
+
 [PFUser enableRevocableSessionInBackground];
 
     [self setUpFanOutButton]; // set up fan out buttons
@@ -93,6 +96,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
         [[PFInstallation currentInstallation] saveEventually];
     }
+
+
 
 }
 

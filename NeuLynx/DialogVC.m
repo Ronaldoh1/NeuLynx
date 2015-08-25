@@ -12,6 +12,7 @@
 #import "Message.h"
 #import "InboxVC.h"
 #import "AppDelegate.h"
+#import "Alert.h"
 @interface DialogVC ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
@@ -27,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    NSLog(@"%@", self.selectedRecipient.name);
+
       [self initialSetUp];
    // self.definesPresentationContext = NO;
 }
@@ -194,6 +195,9 @@
         });
 
     }];
+
+
+
 }
 
 
@@ -240,6 +244,8 @@
     message[@"messageText"] = self.messageTextField.text;
     message[@"senderUsername"] = [User currentUser].username;
     message[@"recipientUsername"] = self.selectedRecipient.username;
+    message[@"isNew"] = @1;
+
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -249,6 +255,15 @@
 
             self.messageTextField.enabled = YES;
             self.sendButton.enabled = YES;
+
+            Alert *msgAlert = [Alert new];
+
+            msgAlert[@"messageIsNew"] = @1;
+            msgAlert[@"recipientUsername"] = self.selectedRecipient.username;
+            msgAlert[@"senderUsername"] = [User currentUser].username;
+
+            [msgAlert saveInBackground];
+
 
             [self retrieveMessages];
         } else {

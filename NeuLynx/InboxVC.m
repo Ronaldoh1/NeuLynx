@@ -15,6 +15,7 @@
 #import "InboxCustomCell.h"
 #import "Inbox.h"
 #import "InboxSearchResultTVC.h"
+#import "Alert.h"
 
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
 
@@ -28,6 +29,9 @@
 @property DialogVC *activeDialogVC;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 
+
+//alerts
+@property NSMutableArray *alertArray;
 @end
 
 @implementation InboxVC
@@ -45,6 +49,7 @@
    
 
     [self initialSetUp];
+    [self downloadNewAlerts];
 }
 -(void)initialSetUp{
     //setting image to Navigation Bar's title
@@ -122,7 +127,20 @@
         }
 
     }];
-    //cell.detailTextLabel.text = @"You got a Message";
+
+
+    for (Alert *alert in self.alertArray) {
+
+
+        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
+            NSLog(@"%@ has a new message", sender.name);
+
+            cell.blueDot.alpha = 1.0;
+        }
+
+    }
+
+       //cell.detailTextLabel.text = @"You got a Message";
     return cell;
 }
 
@@ -234,7 +252,7 @@
     [query includeKey:@"inboxOwner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
-    NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
+   // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
 
         if (!error) {
             for (Inbox *contact in objects) {
@@ -252,6 +270,40 @@
 
            // NSLog(@"%@", array);
             self.inboxArray = [NSMutableArray arrayWithArray:array];
+            [self.tableView reloadData];
+            
+        }
+        
+    }];
+}
+
+-(void)downloadNewAlerts{
+    NSMutableArray *array = [NSMutableArray new];
+
+
+
+
+    PFQuery *query = [Alert query];
+
+    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+
+       // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
+
+        if (!error) {
+            for (Alert *alert in objects) {
+
+
+
+                if (![array containsObject:alert.senderUsername] )  {
+                    [array addObject:alert];
+
+                }
+            }
+
+            // NSLog(@"%@", array);
+            self.alertArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
             
         }

@@ -17,6 +17,8 @@
     self.userProfileImage.layer.masksToBounds = YES;
     self.userProfileImage.layer.borderWidth = 4.0;
     self.userProfileImage.layer.borderColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1].CGColor;
+
+    self.blueDot.alpha = 0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

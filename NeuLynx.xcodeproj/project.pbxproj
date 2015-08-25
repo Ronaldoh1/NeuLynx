@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		445B82E50B90A6814FC0D132 /* libPods-NeuLynx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */; };
+		F217C44F1B8BF97600A30FD1 /* blueDot.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C44E1B8BF97600A30FD1 /* blueDot.png */; };
 		F21EC4401B5D6E56000E535B /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43E1B5D6E56000E535B /* aqua.png */; };
 		F21EC4411B5D6E56000E535B /* grey_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43F1B5D6E56000E535B /* grey_2.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
@@ -31,6 +32,7 @@
 		F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F2292F341B26A7A8003D82D5 /* wOutdoors.png */; };
 		F2292F411B2B3C55003D82D5 /* ActivitiesDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */; };
 		F22E4A1F1B8B1C94006956A6 /* InboxSearchResultTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22E4A1E1B8B1C93006956A6 /* InboxSearchResultTVC.m */; };
+		F22E4A221B8BDE13006956A6 /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = F22E4A211B8BDE13006956A6 /* Alert.m */; };
 		F23435101B3605A60065D11C /* bluering.png in Resources */ = {isa = PBXBuildFile; fileRef = F234350F1B3605A60065D11C /* bluering.png */; };
 		F23435261B37CDDE0065D11C /* requestIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F23435251B37CDDE0065D11C /* requestIcon2.png */; };
 		F2361DC81B7B0832007228C0 /* bugIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F2361DC71B7B0832007228C0 /* bugIcon.png */; };
@@ -222,6 +224,7 @@
 		6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeuLynx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.release.xcconfig"; sourceTree = "<group>"; };
+		F217C44E1B8BF97600A30FD1 /* blueDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueDot.png; sourceTree = "<group>"; };
 		F21EC43E1B5D6E56000E535B /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		F21EC43F1B5D6E56000E535B /* grey_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_2.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 		F2292F401B2B3C55003D82D5 /* ActivitiesDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesDownloader.m; sourceTree = "<group>"; };
 		F22E4A1D1B8B1C93006956A6 /* InboxSearchResultTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxSearchResultTVC.h; sourceTree = "<group>"; };
 		F22E4A1E1B8B1C93006956A6 /* InboxSearchResultTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxSearchResultTVC.m; sourceTree = "<group>"; };
+		F22E4A201B8BDE13006956A6 /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		F22E4A211B8BDE13006956A6 /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
 		F234350F1B3605A60065D11C /* bluering.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluering.png; sourceTree = "<group>"; };
 		F23435251B37CDDE0065D11C /* requestIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestIcon2.png; sourceTree = "<group>"; };
 		F2361DC71B7B0832007228C0 /* bugIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bugIcon.png; sourceTree = "<group>"; };
@@ -585,6 +590,7 @@
 		F21EC46F1B646EC3000E535B /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				F217C44E1B8BF97600A30FD1 /* blueDot.png */,
 				F21EC43E1B5D6E56000E535B /* aqua.png */,
 				F21EC43F1B5D6E56000E535B /* grey_2.png */,
 			);
@@ -946,6 +952,8 @@
 				F249D2F51B51D6FD00A3BAE7 /* Message.m */,
 				F286776D1B8582D100BD6B1D /* History.h */,
 				F286776E1B8582D100BD6B1D /* History.m */,
+				F22E4A201B8BDE13006956A6 /* Alert.h */,
+				F22E4A211B8BDE13006956A6 /* Alert.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -1307,6 +1315,7 @@
 				F2E0BDB01B8092280004921F /* nightOutPin.png in Resources */,
 				F2292ED41B254C7C003D82D5 /* wNightOut.png in Resources */,
 				F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */,
+				F217C44F1B8BF97600A30FD1 /* blueDot.png in Resources */,
 				F226C8181B0F5B64007A1C03 /* festival.png in Resources */,
 				F2D38AFD1B67332E007EBF41 /* AppIcon72x72~ipad.png in Resources */,
 				F2292EF61B25508E003D82D5 /* mainFitness.png in Resources */,
@@ -1389,6 +1398,7 @@
 				F2D38B0B1B6B7119007EBF41 /* ExclusiveTVC.m in Sources */,
 				F2FE7E661B04EF5A00CDD057 /* MainTutorialVC.m in Sources */,
 				F2E6E8DC1B22C6AE0083BA7F /* FaqVc.m in Sources */,
+				F22E4A221B8BDE13006956A6 /* Alert.m in Sources */,
 				F249D2F31B51B8B900A3BAE7 /* DialogVC.m in Sources */,
 				F226C81F1B0F5D7B007A1C03 /* Activity.m in Sources */,
 				F29320A11B46E072001B9930 /* SelectTimeTVC.m in Sources */,

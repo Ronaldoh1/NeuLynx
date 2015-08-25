@@ -101,6 +101,9 @@
     static int i=1;
     [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
 
+
+   UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+[[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
 //
 //    MainTabBarController *tabBar = [MainTabBarController new];
 //
@@ -165,7 +168,8 @@
     //clear the notifications
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
+
+
 }
 
 

@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImage;
 @property (weak, nonatomic) IBOutlet UILabel *senderNameLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *blueDot;
 
 @end

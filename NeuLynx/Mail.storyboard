@@ -41,8 +41,17 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueDot.png" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-eJ-JyV">
+                                                    <rect key="frame" x="272" y="43" width="15" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="30G-0O-KH6"/>
+                                                        <constraint firstAttribute="width" constant="15" id="Yoy-vM-k0S"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="C2e-eJ-JyV" secondAttribute="trailing" constant="-8" id="9qq-Lt-4nf"/>
+                                                <constraint firstItem="C2e-eJ-JyV" firstAttribute="top" secondItem="haA-pF-mEQ" secondAttribute="topMargin" constant="35" id="C6T-Ke-VlY"/>
                                                 <constraint firstItem="eDO-Bz-G5K" firstAttribute="leading" secondItem="Cfx-IQ-iL4" secondAttribute="trailing" constant="8" id="GAx-nD-lbU"/>
                                                 <constraint firstAttribute="centerY" secondItem="Cfx-IQ-iL4" secondAttribute="centerY" id="Nhf-fw-LQD"/>
                                                 <constraint firstItem="Cfx-IQ-iL4" firstAttribute="leading" secondItem="haA-pF-mEQ" secondAttribute="leadingMargin" constant="-4" id="iI9-8y-gRG"/>
@@ -51,6 +60,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="blueDot" destination="C2e-eJ-JyV" id="X5F-xl-bp5"/>
                                             <outlet property="senderNameLabel" destination="eDO-Bz-G5K" id="eIu-ER-LRF"/>
                                             <outlet property="userProfileImage" destination="Cfx-IQ-iL4" id="vBH-ct-k1m"/>
                                         </connections>
@@ -287,6 +297,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueDot.png" width="50" height="50"/>
         <image name="defaultImage.png" width="1200" height="1200"/>
     </resources>
 </document>

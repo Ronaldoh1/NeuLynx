@@ -11,6 +11,7 @@
 #import "User.h"
 #import "AppDelegate.h"
 
+
 @interface SendMessageTVC ()<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *messageText;
 @property (weak, nonatomic) IBOutlet UITextField *subjectTextField;
@@ -106,6 +107,10 @@
             //let the user know his message has been sent.
 
             [self dismissViewControllerAnimated:YES completion:^{
+
+
+
+
 
              [self displaySuccessMessage:appDelegate.sharedActivity.host.name];
             }];
