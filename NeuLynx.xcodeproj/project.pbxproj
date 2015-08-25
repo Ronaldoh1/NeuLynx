@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		445B82E50B90A6814FC0D132 /* libPods-NeuLynx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E94471C94AE7F80261BF5FD /* libPods-NeuLynx.a */; };
 		F217C44F1B8BF97600A30FD1 /* blueDot.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C44E1B8BF97600A30FD1 /* blueDot.png */; };
+		F217C4511B8C432500A30FD1 /* exitIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4501B8C432500A30FD1 /* exitIcon.png */; };
+		F217C4551B8C4A4800A30FD1 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4541B8C4A4800A30FD1 /* checkmark.png */; };
 		F21EC4401B5D6E56000E535B /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43E1B5D6E56000E535B /* aqua.png */; };
 		F21EC4411B5D6E56000E535B /* grey_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43F1B5D6E56000E535B /* grey_2.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
@@ -225,6 +227,8 @@
 		8F44E3C1E80C14F3CD0E7BC2 /* Pods-NeuLynx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeuLynx.release.xcconfig"; path = "Pods/Target Support Files/Pods-NeuLynx/Pods-NeuLynx.release.xcconfig"; sourceTree = "<group>"; };
 		F217C44E1B8BF97600A30FD1 /* blueDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueDot.png; sourceTree = "<group>"; };
+		F217C4501B8C432500A30FD1 /* exitIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitIcon.png; sourceTree = "<group>"; };
+		F217C4541B8C4A4800A30FD1 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		F21EC43E1B5D6E56000E535B /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		F21EC43F1B5D6E56000E535B /* grey_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_2.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
@@ -981,6 +985,8 @@
 		F28789B81B70716C00D4F5A3 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F217C4541B8C4A4800A30FD1 /* checkmark.png */,
+				F217C4501B8C432500A30FD1 /* exitIcon.png */,
 				F28789BF1B70A09E00D4F5A3 /* blackShadeSignInBackground.png */,
 				F28789B91B70717800D4F5A3 /* loginBG.png */,
 				F29A95031B71DF74004892A4 /* blackShadeSignUpBackground.png */,
@@ -1242,6 +1248,7 @@
 				F249D2DB1B49F57700A3BAE7 /* thumbsDown.png in Resources */,
 				F28519251AFADADA007A45FA /* Profile.storyboard in Resources */,
 				F2892E031B3EAB540010D534 /* twitterIcon.png in Resources */,
+				F217C4551B8C4A4800A30FD1 /* checkmark.png in Resources */,
 				F2D38B021B673DA7007EBF41 /* appNameMedium.png in Resources */,
 				F2D38ACE1B65C763007EBF41 /* profileCircle.png in Resources */,
 				F293209B1B4507B9001B9930 /* whatsAppIcon.png in Resources */,
@@ -1299,6 +1306,7 @@
 				F2E0BDB51B8092280004921F /* uFitnessPin.png in Resources */,
 				F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */,
 				F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */,
+				F217C4511B8C432500A30FD1 /* exitIcon.png in Resources */,
 				F2D38AF41B67332E007EBF41 /* AppIcon40x40@3x.png in Resources */,
 				F2E0BDB71B8092280004921F /* uNightoutPin.png in Resources */,
 				F2892E001B3EAB540010D534 /* periscope.png in Resources */,

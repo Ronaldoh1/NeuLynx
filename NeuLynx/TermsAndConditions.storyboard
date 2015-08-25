@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yj-cQ-sVs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Yj-cQ-sVs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">By accessing, downloading, installing, running or using the NeuLynx Software Corporation ("NeuLynx," "our" or "we") web site, service, and/or applications, including any mobile applications, made available by NeuLynx (together, the "Service"), you ("you," or "your") agree to be bound by these terms of use ("Terms"). These Terms constitute a binding legal agreement between you and NeuLynx and affect your legal rights and obligations. If you do not agree with these Terms, you may not access, download, install, run or use the Service.
@@ -448,7 +448,8 @@ b. You acknowledge and understand that during the Beta Period (as defined herein
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="CGd-IU-Hnj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yes-rG-qX1">
+                        <barButtonItem key="rightBarButtonItem" image="checkmark.png" id="Yes-rG-qX1">
+                            <inset key="imageInsets" minX="0.0" minY="-18" maxX="9" maxY="-15"/>
                             <connections>
                                 <action selector="onDoneButtonTapped:" destination="9Gn-vt-yTU" id="Igv-55-Rra"/>
                             </connections>
@@ -480,4 +481,7 @@ b. You acknowledge and understand that during the Beta Period (as defined herein
             <point key="canvasLocation" x="2218" y="425"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark.png" width="38" height="38"/>
+    </resources>
 </document>

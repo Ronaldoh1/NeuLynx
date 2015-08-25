@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,14 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wCS-xB-Fwe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RcW-Ot-nmQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackShadeSignInBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="TDA-pS-Yof">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bH9-PD-VCG">
-                                <rect key="frame" x="16" y="611" width="343" height="45"/>
+                                <rect key="frame" x="16" y="424" width="288" height="45"/>
                                 <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="CBn-7g-iEs"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JSm-Dn-T8f">
-                                <rect key="frame" x="0.0" y="309" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="215" width="320" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="orF-C0-sM1"/>
@@ -44,8 +44,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-hy-lII">
-                                <rect key="frame" x="11" y="411" width="168" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-hy-lII">
+                                <rect key="frame" x="11" y="317" width="141" height="40"/>
                                 <state key="normal" image="facebookLoginButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmo-Dj-Qde">
-                                <rect key="frame" x="201" y="411" width="167" height="40"/>
+                                <rect key="frame" x="173" y="317" width="140" height="40"/>
                                 <state key="normal" image="twitterLoginButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFt-U2-Pxd">
-                                <rect key="frame" x="16" y="486" width="343" height="19"/>
+                                <rect key="frame" x="16" y="392" width="288" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="Iob-q6-kst"/>
                                 </constraints>
@@ -77,13 +77,13 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appNameMedium.png" translatesAutoresizingMaskIntoConstraints="NO" id="9tT-4N-9O7">
-                                <rect key="frame" x="16" y="98" width="343" height="115"/>
+                                <rect key="frame" x="16" y="98" width="288" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="sTH-ov-HiI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPP-lc-P77">
-                                <rect key="frame" x="0.0" y="352" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="258" width="320" height="50"/>
                                 <color key="backgroundColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16g-YS-QDG"/>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJY-CP-7QM">
-                                <rect key="frame" x="186" y="402" width="4" height="21"/>
+                                <rect key="frame" x="158" y="308" width="4" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dcf-Ca-qZc"/>
                                     <constraint firstAttribute="width" constant="4" id="dv7-dy-XTT"/>
@@ -107,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0b-qz-XFS">
-                                <rect key="frame" x="0.0" y="271" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="177" width="320" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LFb-1m-iAF"/>
@@ -153,13 +153,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Back!" id="5ms-gR-SQg">
-                        <barButtonItem key="leftBarButtonItem" title="X" style="done" id="rTR-kb-Kex">
+                        <barButtonItem key="leftBarButtonItem" image="exitIcon.png" style="done" id="rTR-kb-Kex">
+                            <inset key="imageInsets" minX="-15" minY="5" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="onCancelButtonTapped:" destination="LqY-EI-rwc" id="PIy-VV-Iqa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="email" destination="T0b-qz-XFS" id="xtL-mr-FcQ"/>
                         <outlet property="password" destination="JSm-Dn-T8f" id="Avx-dn-n1m"/>
@@ -192,6 +193,7 @@
     <resources>
         <image name="appNameMedium.png" width="834" height="360"/>
         <image name="blackShadeSignInBackground.png" width="1080" height="1920"/>
+        <image name="exitIcon.png" width="50" height="50"/>
         <image name="facebookLoginButton.png" width="566" height="121"/>
         <image name="twitterLoginButton.png" width="574" height="120"/>
     </resources>
