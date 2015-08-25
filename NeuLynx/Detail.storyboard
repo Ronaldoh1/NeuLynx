@@ -84,6 +84,13 @@
                                                         <action selector="onProfileImageTapped:" destination="3h0-3E-G9E" eventType="touchUpInside" id="vCa-7i-4GS"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="socialGold.png" translatesAutoresizingMaskIntoConstraints="NO" id="xK4-oc-Y6T">
+                                                    <rect key="frame" x="182" y="110" width="60" height="57"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="re7-Ae-rP1"/>
+                                                        <constraint firstAttribute="height" constant="57" id="vzX-pa-qwc"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="hAy-or-dOf" secondAttribute="centerY" constant="56" id="2NW-c7-cQg"/>
@@ -95,8 +102,10 @@
                                                 <constraint firstItem="zc7-W3-czk" firstAttribute="top" secondItem="Xbe-PH-FZs" secondAttribute="bottom" id="KDf-0z-V3Y"/>
                                                 <constraint firstAttribute="centerY" secondItem="DK2-Mi-ASX" secondAttribute="centerY" constant="54" id="NMK-uz-Vgy"/>
                                                 <constraint firstAttribute="centerX" secondItem="hAy-or-dOf" secondAttribute="centerX" id="NPr-IU-GoR"/>
+                                                <constraint firstAttribute="centerY" secondItem="xK4-oc-Y6T" secondAttribute="centerY" constant="5.75" id="PhH-Ly-wt7"/>
                                                 <constraint firstItem="4cL-94-bth" firstAttribute="top" secondItem="zc7-W3-czk" secondAttribute="bottom" constant="5" id="QEP-U7-CMK"/>
                                                 <constraint firstAttribute="centerX" secondItem="wGO-Cb-3h8" secondAttribute="centerX" constant="-67.5" id="UTB-uN-67j"/>
+                                                <constraint firstAttribute="centerX" secondItem="xK4-oc-Y6T" secondAttribute="centerX" constant="-52" id="bo1-au-tFu"/>
                                                 <constraint firstAttribute="centerX" secondItem="Y0W-nn-zXw" secondAttribute="centerX" constant="-24.5" id="cUH-VQ-reZ"/>
                                                 <constraint firstItem="Y0W-nn-zXw" firstAttribute="top" secondItem="zc7-W3-czk" secondAttribute="bottom" constant="5" id="cvB-3L-o3j"/>
                                                 <constraint firstAttribute="centerX" secondItem="wzv-4U-Fq3" secondAttribute="centerX" constant="61.5" id="fr5-Yj-7Gq"/>
@@ -401,6 +410,7 @@
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="fr.png" width="100" height="100"/>
+        <image name="socialGold.png" width="261" height="261"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="twitterIcon.png" width="128" height="128"/>
         <image name="us.png" width="100" height="100"/>

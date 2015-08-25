@@ -26,6 +26,7 @@
 //section 1 - profile image
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userBadge;
 
 @end
 
@@ -69,6 +70,20 @@
 
     //Get profile image
     [self getUsersProfileImage];
+
+
+    //Set up badge for current user.
+    if ([[User currentUser].activitiesJoinedCounter intValue] == 0) {
+        self.userBadge.image = nil;
+    }else if ([[User currentUser].activitiesJoinedCounter intValue] > 5){
+        self.userBadge.image = [UIImage imageNamed:@"bronzeSocial"];
+    }else if ([[User currentUser].activitiesJoinedCounter intValue] > 10){
+        self.userBadge.image = [UIImage imageNamed:@"platinumSocial"];
+    }else if ([[User currentUser].activitiesJoinedCounter intValue] > 25){
+        self.userBadge.image = [UIImage imageNamed:@"silverSocial"];
+    }else if ([[User currentUser].activitiesJoinedCounter intValue] > 50){
+        self.userBadge.image = [UIImage imageNamed:@"Social"];
+    }
 
 //    //if requests is clicked, then show done button
 ////    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

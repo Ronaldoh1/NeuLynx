@@ -12,6 +12,10 @@
 		F217C4511B8C432500A30FD1 /* exitIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4501B8C432500A30FD1 /* exitIcon.png */; };
 		F217C4551B8C4A4800A30FD1 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4541B8C4A4800A30FD1 /* checkmark.png */; };
 		F217C4571B8C4DEB00A30FD1 /* green-checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4561B8C4DEB00A30FD1 /* green-checkmark.png */; };
+		F217C45C1B8C791200A30FD1 /* bronzeSocial.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4581B8C791200A30FD1 /* bronzeSocial.png */; };
+		F217C45D1B8C791200A30FD1 /* platinumSocial.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4591B8C791200A30FD1 /* platinumSocial.png */; };
+		F217C45E1B8C791200A30FD1 /* silverSocial.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C45A1B8C791200A30FD1 /* silverSocial.png */; };
+		F217C45F1B8C791200A30FD1 /* goldSocial.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C45B1B8C791200A30FD1 /* goldSocial.png */; };
 		F21EC4401B5D6E56000E535B /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43E1B5D6E56000E535B /* aqua.png */; };
 		F21EC4411B5D6E56000E535B /* grey_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43F1B5D6E56000E535B /* grey_2.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
@@ -231,6 +235,10 @@
 		F217C4501B8C432500A30FD1 /* exitIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitIcon.png; sourceTree = "<group>"; };
 		F217C4541B8C4A4800A30FD1 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		F217C4561B8C4DEB00A30FD1 /* green-checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-checkmark.png"; sourceTree = "<group>"; };
+		F217C4581B8C791200A30FD1 /* bronzeSocial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bronzeSocial.png; sourceTree = "<group>"; };
+		F217C4591B8C791200A30FD1 /* platinumSocial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platinumSocial.png; sourceTree = "<group>"; };
+		F217C45A1B8C791200A30FD1 /* silverSocial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silverSocial.png; sourceTree = "<group>"; };
+		F217C45B1B8C791200A30FD1 /* goldSocial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldSocial.png; sourceTree = "<group>"; };
 		F21EC43E1B5D6E56000E535B /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		F21EC43F1B5D6E56000E535B /* grey_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_2.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
@@ -531,6 +539,17 @@
 				C8A99E1D5D6AA88E2A9354EC /* Pods-NeuLynx.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F217C4601B8C791E00A30FD1 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				F217C4581B8C791200A30FD1 /* bronzeSocial.png */,
+				F217C4591B8C791200A30FD1 /* platinumSocial.png */,
+				F217C45A1B8C791200A30FD1 /* silverSocial.png */,
+				F217C45B1B8C791200A30FD1 /* goldSocial.png */,
+			);
+			name = Badges;
 			sourceTree = "<group>";
 		};
 		F21EC4421B645F42000E535B /* Map Buttons */ = {
@@ -896,6 +915,7 @@
 		F285190E1AFACE5C007A45FA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F217C4601B8C791E00A30FD1 /* Badges */,
 				F28789B81B70716C00D4F5A3 /* Login */,
 				F2D38ABC1B649E63007EBF41 /* App Logo */,
 				F21EC4751B6479EF000E535B /* Flags */,
@@ -1246,6 +1266,7 @@
 				F2576E161B01C0200006C8E1 /* mailIcon.png in Resources */,
 				F28519231AFAD7BD007A45FA /* SignUp.storyboard in Resources */,
 				F2E0BDAC1B8092280004921F /* culturalPin.png in Resources */,
+				F217C45D1B8C791200A30FD1 /* platinumSocial.png in Resources */,
 				F28518F21AFABFAD007A45FA /* LaunchScreen.xib in Resources */,
 				F217C4571B8C4DEB00A30FD1 /* green-checkmark.png in Resources */,
 				F2892E041B3EAB540010D534 /* vineIcon.png in Resources */,
@@ -1311,6 +1332,7 @@
 				F2E6E84C1B15FB670083BA7F /* TermsAndConditions.storyboard in Resources */,
 				F28789BC1B707CAA00D4F5A3 /* twitterLoginButton.png in Resources */,
 				F217C4511B8C432500A30FD1 /* exitIcon.png in Resources */,
+				F217C45F1B8C791200A30FD1 /* goldSocial.png in Resources */,
 				F2D38AF41B67332E007EBF41 /* AppIcon40x40@3x.png in Resources */,
 				F2E0BDB71B8092280004921F /* uNightoutPin.png in Resources */,
 				F2892E001B3EAB540010D534 /* periscope.png in Resources */,
@@ -1323,6 +1345,7 @@
 				F28677731B86A50C00BD6B1D /* neulynxRedLogo.png in Resources */,
 				F2E6E8C81B1EB9470083BA7F /* bluering2.png in Resources */,
 				F2292F351B26A7A8003D82D5 /* wOutdoors.png in Resources */,
+				F217C45E1B8C791200A30FD1 /* silverSocial.png in Resources */,
 				F2D38AFC1B67332E007EBF41 /* AppIcon72x72@2x~ipad.png in Resources */,
 				F2E0BDB01B8092280004921F /* nightOutPin.png in Resources */,
 				F2292ED41B254C7C003D82D5 /* wNightOut.png in Resources */,
@@ -1333,6 +1356,7 @@
 				F2292EF61B25508E003D82D5 /* mainFitness.png in Resources */,
 				F2D38B001B67332E007EBF41 /* AppIcon120x120_carplay.png in Resources */,
 				F2E6E85B1B16032E0083BA7F /* About.storyboard in Resources */,
+				F217C45C1B8C791200A30FD1 /* bronzeSocial.png in Resources */,
 				F2D38AF01B67332E007EBF41 /* AppIcon29x29@3x.png in Resources */,
 				F226C8141B0F5B28007A1C03 /* gastronomy.png in Resources */,
 				F2D38AFF1B67332E007EBF41 /* AppIcon76x76~ipad.png in Resources */,

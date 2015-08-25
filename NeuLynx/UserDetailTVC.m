@@ -105,6 +105,11 @@
     self.englishButton.alpha = 0.3;
     self.frenchButton.alpha = 0.3;
 
+    //Set up badge for current user.
+    if ([[User currentUser].activitiesJoinedCounter intValue] == 0) {
+
+    }
+
 }
 
 //helper method to get user's languages
@@ -122,8 +127,7 @@
     
     self.nameLabel.text = self.selectedUser.name;
     self.ageLabel.text = [NSString stringWithFormat:@"%@ Years Old", self.selectedUser.age];
-    self.genderLabel.text = self.selectedUser.gender;
-    self.orientationLabel.text = self.selectedUser.orientation;
+    self.genderLabel.text = [NSString stringWithFormat: @"%@, %@", self.selectedUser.gender, self.selectedUser.orientation];
 
     self.aboutMeTextView.text = self.selectedUser.aboutMe;
 

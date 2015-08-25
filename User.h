@@ -42,6 +42,7 @@
 @property NSMutableArray *pastActivities;
 
 @property NSMutableArray *exclusiveInvitesArray;
+@property NSNumber *activitiesJoinedCounter;
 
 
 

@@ -31,7 +31,7 @@
 @dynamic inboxArray;
 @dynamic currentLoccation;
 @dynamic exclusiveInvitesArray;
-
+@dynamic activitiesJoinedCounter;
 
 
 

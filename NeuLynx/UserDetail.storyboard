@@ -28,8 +28,17 @@
                                                         <constraint firstAttribute="width" constant="150" id="ieo-Qc-fmB"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="socialGold.png" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-gw-d4r">
+                                                    <rect key="frame" x="165" y="121" width="60" height="57"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="57" id="11u-yJ-056"/>
+                                                        <constraint firstAttribute="width" constant="60" id="fnZ-Y6-oAD"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="OHx-gw-d4r" firstAttribute="bottom" secondItem="LDa-Mq-OOu" secondAttribute="bottomMargin" constant="-22" id="6Gt-5y-5vc"/>
+                                                <constraint firstItem="OHx-gw-d4r" firstAttribute="trailing" secondItem="LDa-Mq-OOu" secondAttribute="trailingMargin" constant="-87" id="A32-C0-fMh"/>
                                                 <constraint firstAttribute="centerX" secondItem="ScB-5C-hwT" secondAttribute="centerX" id="CbP-Mo-6cB"/>
                                                 <constraint firstAttribute="centerY" secondItem="ScB-5C-hwT" secondAttribute="centerY" constant="11.5" id="ohj-fY-IX5"/>
                                             </constraints>
@@ -96,26 +105,6 @@
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="bottom" secondItem="wFp-aN-HJ3" secondAttribute="bottomMargin" constant="1" id="e7R-5J-eBL"/>
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="leading" secondItem="wFp-aN-HJ3" secondAttribute="leadingMargin" id="eFJ-rd-15e"/>
                                                 <constraint firstItem="4mt-Nn-Mfx" firstAttribute="top" secondItem="wFp-aN-HJ3" secondAttribute="topMargin" id="o75-6K-gVQ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rEH-XW-njB">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rEH-XW-njB" id="WdQ-gO-z0u">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n53-Sl-paV">
-                                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="n53-Sl-paV" firstAttribute="trailing" secondItem="WdQ-gO-z0u" secondAttribute="trailingMargin" id="2pw-th-5Nz"/>
-                                                <constraint firstItem="n53-Sl-paV" firstAttribute="top" secondItem="WdQ-gO-z0u" secondAttribute="topMargin" id="FPw-k1-9qg"/>
-                                                <constraint firstItem="n53-Sl-paV" firstAttribute="leading" secondItem="WdQ-gO-z0u" secondAttribute="leadingMargin" id="d1C-D8-Hzc"/>
-                                                <constraint firstItem="n53-Sl-paV" firstAttribute="bottom" secondItem="WdQ-gO-z0u" secondAttribute="bottomMargin" constant="1" id="mBV-IQ-Rsa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -293,7 +282,6 @@
                         <outlet property="frenchButton" destination="Aii-Kx-sDF" id="XXD-Y8-VRv"/>
                         <outlet property="genderLabel" destination="4mt-Nn-Mfx" id="q9I-Q6-7fY"/>
                         <outlet property="nameLabel" destination="RIi-ZF-Lu2" id="hsQ-3d-P8D"/>
-                        <outlet property="orientationLabel" destination="n53-Sl-paV" id="XCn-T3-xPH"/>
                         <outlet property="personalityTextView" destination="xew-tR-bs3" id="cJ2-DO-nJF"/>
                         <outlet property="portugueseButton" destination="OXl-lq-V6N" id="j6c-s0-4zh"/>
                         <outlet property="profileImage" destination="ScB-5C-hwT" id="fIn-iU-TrK"/>
@@ -329,6 +317,7 @@
         <image name="br.png" width="100" height="100"/>
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="fr.png" width="100" height="100"/>
+        <image name="socialGold.png" width="261" height="261"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="us.png" width="100" height="100"/>
     </resources>
