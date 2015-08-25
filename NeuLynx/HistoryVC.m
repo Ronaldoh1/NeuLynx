@@ -120,14 +120,13 @@
 
         if (!error) {
 
-          //  NSLog(@"%@", historyArray);
-            //get a copy of all activitiesi
+            NSMutableArray *reversedArray = [NSMutableArray arrayWithArray:[self reverseArray:historyArray]];
 
-            NSArray* reversedArray = [[historyArray reverseObjectEnumerator] allObjects];
+
             self.postedHistoryArray = [NSMutableArray arrayWithArray:reversedArray];
 
             // Add activities to the map.
-            if (self.acceptedHistoryArray.count == 0) {
+            if (self.postedHistoryArray.count == 0) {
 
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Posted Activities 😕" message:@"You haven't posted any activities. Are you in a new city? Traveling alone? Post an activity and make new friends and connections." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 
@@ -140,7 +139,6 @@
         [self.tableView reloadData];
         
     }];
-    
     
 }
 
@@ -159,8 +157,11 @@
 
         if (!error) {
 
+            NSMutableArray *reversedArray = [NSMutableArray arrayWithArray:[self reverseArray:historyArray]];
 
-            self.acceptedHistoryArray = [NSMutableArray arrayWithArray:historyArray];
+
+
+            self.acceptedHistoryArray = [NSMutableArray arrayWithArray:reversedArray];
             // Add activities to the map.
             if (self.acceptedHistoryArray.count == 0) {
 
@@ -177,6 +178,13 @@
     }];
     
     
+}
+
+
+
+// Function reverseArray
+-(NSArray *) reverseArray : (NSArray *) myArray {
+    return [[myArray reverseObjectEnumerator] allObjects];
 }
 
 #pragma marks - TableView Delegate Methods
