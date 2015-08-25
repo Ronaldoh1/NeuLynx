@@ -101,8 +101,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
             //enable tabs once the user has been signed up (Profile/Inbox);
 
-            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+            [self presentViewController:mapNavVC animated:YES completion:nil];
 
 
 
@@ -112,9 +115,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             NSLog(@"User logged in through Facebook!");
             //enable inbox and profile
             self.navigationItem.leftBarButtonItem.enabled = YES;
-            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+            [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+            
+            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+            [self presentViewController:mapNavVC animated:YES completion:nil];
         }
 
 

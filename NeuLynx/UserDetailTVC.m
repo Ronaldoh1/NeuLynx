@@ -72,10 +72,6 @@
 
     //*******Setup Current User*********//
 
-//
-//    appDelegate.sharedActivity = (Activity *)(((ExclusiveInvite *)self.exclusiveInvitesArray[indexPath.row]).activity);
-//    appDelegate.exclusiveInvite = ((ExclusiveInvite *)self.exclusiveInvitesArray[indexPath.row]);
-
 
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 

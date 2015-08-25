@@ -162,7 +162,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Let's Get Started" id="qzb-Rt-qsZ">
-                        <barButtonItem key="leftBarButtonItem" image="exitIcon.png" style="done" id="XRa-8I-psF">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="done" id="XRa-8I-psF">
                             <inset key="imageInsets" minX="-15" minY="5" maxX="4" maxY="2"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -204,7 +204,6 @@
     <resources>
         <image name="appNameMedium.png" width="834" height="360"/>
         <image name="blackShadeSignUpBackground.png" width="287" height="510"/>
-        <image name="exitIcon.png" width="50" height="50"/>
         <image name="facebookLoginButton.png" width="566" height="121"/>
         <image name="twitterLoginButton.png" width="574" height="120"/>
     </resources>

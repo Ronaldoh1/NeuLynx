@@ -963,6 +963,12 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                                              self.navigationItem.leftBarButtonItem.enabled = YES;
                                              [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
                                              [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+
+                                             [self setUpProfileImage];
+
+//                                             UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                                             UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+//                                             [self presentViewController:mapNavVC animated:YES completion:nil];
                                          }
                                      }];
 
@@ -1675,6 +1681,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
                                          otherButtonTitles:nil, nil];
     [alert show];
 }
+
+//Helper method to get profile image.
+
 
 
 //**********************BLOCKS***********************************************//

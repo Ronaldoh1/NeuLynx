@@ -44,8 +44,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-hy-lII">
-                                <rect key="frame" x="11" y="317" width="141" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-hy-lII">
+                                <rect key="frame" x="11" y="317" width="140.5" height="40"/>
                                 <state key="normal" image="facebookLoginButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmo-Dj-Qde">
-                                <rect key="frame" x="173" y="317" width="140" height="40"/>
+                                <rect key="frame" x="173" y="317" width="139.5" height="40"/>
                                 <state key="normal" image="twitterLoginButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -153,7 +153,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Back!" id="5ms-gR-SQg">
-                        <barButtonItem key="leftBarButtonItem" image="exitIcon.png" style="done" id="rTR-kb-Kex">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="done" id="rTR-kb-Kex">
                             <inset key="imageInsets" minX="-15" minY="5" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="onCancelButtonTapped:" destination="LqY-EI-rwc" id="PIy-VV-Iqa"/>
@@ -193,7 +193,6 @@
     <resources>
         <image name="appNameMedium.png" width="834" height="360"/>
         <image name="blackShadeSignInBackground.png" width="1080" height="1920"/>
-        <image name="exitIcon.png" width="50" height="50"/>
         <image name="facebookLoginButton.png" width="566" height="121"/>
         <image name="twitterLoginButton.png" width="574" height="120"/>
     </resources>

@@ -28,7 +28,7 @@
                                                         <constraint firstAttribute="width" constant="150" id="ieo-Qc-fmB"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="socialGold.png" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-gw-d4r">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldSocial.png" translatesAutoresizingMaskIntoConstraints="NO" id="OHx-gw-d4r">
                                                     <rect key="frame" x="165" y="121" width="60" height="57"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="57" id="11u-yJ-056"/>
@@ -317,7 +317,7 @@
         <image name="br.png" width="100" height="100"/>
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="fr.png" width="100" height="100"/>
-        <image name="socialGold.png" width="261" height="261"/>
+        <image name="goldSocial.png" width="261" height="261"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="us.png" width="100" height="100"/>
     </resources>
