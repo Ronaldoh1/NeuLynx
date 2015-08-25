@@ -13,6 +13,7 @@
 #import "User.h"
 #import "History.h"
 #import "Inbox.h"
+#import "Reward.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -86,6 +87,11 @@
     //Add users to inbox.
     Inbox *newContact = [Inbox new];
 
+    //increment the counter for user reward.
+
+    Reward *reward = [Reward new];
+
+   /// reward = tempUser.reward;
 
 
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -123,6 +129,13 @@
             newContact.messageContactUsername = tempUser.username;
             [newContact saveInBackground];
 
+
+            //update reward number
+
+            reward.activitiesJoinedCounter = [NSNumber numberWithInteger:[reward.activitiesJoinedCounter integerValue] + 1];
+            reward.rewardOwner = tempUser;
+
+            [reward saveInBackground];
 
         }
     }];
@@ -190,6 +203,7 @@
     [query whereKey:@"host" equalTo:[User currentUser]];
     [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
     [query includeKey:@"RequestsArray"];
+    [query includeKey:@"Reward"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 

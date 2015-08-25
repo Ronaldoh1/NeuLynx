@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Reward.h"
+
+@class Reward;
 
 @interface User : PFUser<PFSubclassing>
 @property NSString *name;
@@ -44,6 +47,7 @@
 @property NSMutableArray *exclusiveInvitesArray;
 @property NSNumber *activitiesJoinedCounter;
 
+@property Reward *reward;
 
 
 @end
