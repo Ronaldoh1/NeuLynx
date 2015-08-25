@@ -105,6 +105,9 @@
     //set up the segmented control for LGBT
     self.lgbtSelector.tintColor = [UIColor colorWithRed:34/255.0 green:152/255.0 blue:212/255.0 alpha:1];
 
+    //set selected category to nil initially.
+    self.selectedCategory = @"";
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -116,116 +119,28 @@
 
 - (IBAction)onPostOrSendButtonTapped:(UIBarButtonItem *)sender {
 
-    if ([sender.title isEqualToString:@"Post"]) {
 
-    NSString *textFieldError  = @"";
+
+    NSString *error  = @"";
 
     //if any of the fields are blank, then we show the user an error - all fields are required.
     if ([self.activityNameTextField.text isEqualToString:@""] || [self.activityDescriptionText.text isEqualToString:@""] || [self.activityAddress.text isEqualToString:@""] || [self.activityHeadCount.text isEqualToString:@""] ) {
-        textFieldError = @"Error in Form - All fields are required.";
+        error = @"Error in Form - All fields are required.";
 
+    }else if ([self.selectedCategory isEqualToString:@""]){
+        error = @"Oops - Looks you forgot to choose a category!";
+    }else if (self.activityGeoPoint == nil){
+        error = @"Please choose location";
+    }else if (self.startDateAndTime == nil){
+        error = @"Please choose a start time";
+    }else if (self.endDateAndTime == nil){
+        error = @"Please choose an end time";
     }
 
-    if ([textFieldError isEqualToString:@""]) {
 
+    if ([error isEqualToString:@""]) {
 
-        self.activity.activityTitle =  self.activityNameTextField.text;
-        self.activity.activityDescription = self.activityDescriptionText.text;
-        self.activity.activityAddress = self.activityAddress.text;
-        self.activity.activityLocation = self.activityGeoPoint;
-        self.activity.numberOfpaticipants = @0;
-        self.activity.host = [User currentUser];
-        self.activity.startTimeAndDate = self.startDateAndTime;
-        self.activity.endTimeAndDate = self.endDateAndTime;
-        self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
-        self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
-        self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
-        self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
-
-        //saving images if the first is picked only save the first image.
-        self.activity.selectedCategory = self.selectedCategory;
-        if (self.imageArray.count == 1) {
-
-
-            NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
-            self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
-            //[self.activity.activityImage1 saveInBackground];
-
-        } else if(self.imageArray.count == 2){
-
-            //Image 1
-            NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
-            self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
-            //Image 2
-            NSData *imageTwoData = UIImagePNGRepresentation((UIImage *) self.imageArray[1]);;
-            self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
-
-            //[self.activity.activityimage2 saveInBackground];
-        }
-
-
-        // self.activity.activityImage2 = self.image2.image;
-
-
-        //disable right nav bar item so that user does not double post.
-        self.navigationItem.rightBarButtonItem.enabled = NO;
-
-        [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
-
-        [self saveUserInformationToParse:^{
-
-
-            [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-
-                if (succeeded) {
-
-                    // The object has been saved.
-                    //  [self displaySuccessMessage];
-                    //            [self dismissViewControllerAnimated:YES completion:nil];
-                    [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
-
-                    [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
-
-                    [self dismissIndicator:^{
-
-
-
-                        [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
-
-                        UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                        UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
-                        [self presentViewController:mapNavVC animated:YES completion:nil];
-
-
-                    } afterDelay:3];
-
-
-                } else {
-                    // There was a problem, check error.description
-                    [self displayErrorMessage:error.description];
-                }
-            }];
-
-
-        } afterDelay:1.5];
-
-    } else{
-        [self displayErrorMessage:textFieldError];
-    }
-    }else if([self.postOrSendButton.title isEqualToString:@"Continue"]){
-        NSLog(@" select users to send to");
-
-
-
-        NSString *textFieldError  = @"";
-
-        //if any of the fields are blank, then we show the user an error - all fields are required.
-        if ([self.activityNameTextField.text isEqualToString:@""] || [self.activityDescriptionText.text isEqualToString:@""] || [self.activityAddress.text isEqualToString:@""] || [self.activityHeadCount.text isEqualToString:@""] ) {
-            textFieldError = @"Error in Form - All fields are required.";
-
-        }
-
-        if ([textFieldError isEqualToString:@""]) {
+        if ([sender.title isEqualToString:@"Post"]) {
 
 
             self.activity.activityTitle =  self.activityNameTextField.text;
@@ -259,11 +174,78 @@
                 NSData *imageTwoData = UIImagePNGRepresentation((UIImage *) self.imageArray[1]);;
                 self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
 
-                //[self.activity.activityimage2 saveInBackground];
             }
 
+            //disable right nav bar item so that user does not double post.
+            self.navigationItem.rightBarButtonItem.enabled = NO;
 
-            // self.activity.activityImage2 = self.image2.image;
+            [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Saving..." mode:MRProgressOverlayViewModeIndeterminate animated:YES];
+
+            [self saveUserInformationToParse:^{
+
+
+                [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+                    if (succeeded) {
+
+                        [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+                        [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
+
+                        [self dismissIndicator:^{
+
+                            [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
+
+                            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+                            [self presentViewController:mapNavVC animated:YES completion:nil];
+
+                        } afterDelay:3];
+
+
+                    } else {
+                        // There was a problem, check error.description
+                        [self displayErrorMessage:error.description];
+                    }
+                }];
+
+
+            } afterDelay:1.5];
+
+
+        }else if([self.postOrSendButton.title isEqualToString:@"Continue"]){
+
+            self.activity.activityTitle =  self.activityNameTextField.text;
+            self.activity.activityDescription = self.activityDescriptionText.text;
+            self.activity.activityAddress = self.activityAddress.text;
+            self.activity.activityLocation = self.activityGeoPoint;
+            self.activity.numberOfpaticipants = @0;
+            self.activity.host = [User currentUser];
+            self.activity.startTimeAndDate = self.startDateAndTime;
+            self.activity.endTimeAndDate = self.endDateAndTime;
+            self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
+            self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
+            self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
+            self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
+
+            //saving images if the first is picked only save the first image.
+            self.activity.selectedCategory = self.selectedCategory;
+            if (self.imageArray.count == 1) {
+
+
+                NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
+                self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+
+            } else if(self.imageArray.count == 2){
+
+                //Image 1
+                NSData *imageOneData = UIImagePNGRepresentation((UIImage *) self.imageArray[0]);
+                self.activity.activityImage1 = [PFFile fileWithData:imageOneData];
+                //Image 2
+                NSData *imageTwoData = UIImagePNGRepresentation((UIImage *) self.imageArray[1]);;
+                self.activity.activityimage2 = [PFFile fileWithData:imageTwoData];
+
+            }
 
 
             //disable right nav bar item so that user does not double post.
@@ -278,41 +260,32 @@
 
                     if (succeeded) {
 
-                        // The object has been saved.
-                        //  [self displaySuccessMessage];
-                        //            [self dismissViewControllerAnimated:YES completion:nil];
                         [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
                         [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
 
                         [self dismissIndicator:^{
 
-
-
                             [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
-//                            UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//                            UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
-//                            [self presentViewController:mapNavVC animated:YES completion:nil];
                             [self performSegueWithIdentifier:@"toSearchUser" sender:self];
 
-                            
+
                         } afterDelay:3];
-                        
-                        
+
+
                     } else {
                         // There was a problem, check error.description
                         [self displayErrorMessage:error.description];
                     }
                 }];
-                
-                
+
+
             } afterDelay:1.5];
-            
-        } else{
-            [self displayErrorMessage:textFieldError];
         }
 
+    }else{
+        [self displayErrorMessage:error];
     }
 }
 
@@ -423,7 +396,7 @@
 
     if (sender.selectedSegmentIndex == 0) {
 
-         self.postOrSendButton.title = @"Post";
+        self.postOrSendButton.title = @"Post";
     }else{
         self.postOrSendButton.title = @"Continue";
     }
@@ -629,8 +602,8 @@
         SelectTimeTVC *selectTimeVC = [segue sourceViewController];
         self.startDateAndTime = selectTimeVC.startDateAndTime;
         self.endDateAndTime = selectTimeVC.endDateAndTime;
-
-
+        
+        
         self.startTimeLabel.text = [NSString stringWithFormat:@"Start: %@", selectTimeVC.startTimeLabel.text];
         self.endTimeLabel.text = [NSString stringWithFormat:@"End: %@",selectTimeVC.endTimeLabel.text];
         self.tempLabel.text = @"";
@@ -640,13 +613,13 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
+    
     if ([segue.identifier isEqualToString:@"toSearchUser"]) {
-
+        
         SearchForUserTVC *destVC = segue.destinationViewController;
-
+        
         destVC.exclusiveActivity = self.activity;
-
+        
     }
 }
 
