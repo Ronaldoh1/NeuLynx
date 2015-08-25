@@ -20,7 +20,7 @@
 #import "CustomMKAnnotation.h"
 #import "AppDelegate.h"
 //#import <Lookback/Lookback.h>
-
+#import "Alert.h"
 
 @interface MapVC ()<MKMapViewDelegate, UIActionSheetDelegate, UISearchBarDelegate,CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 @property UIButton *mainDiscoverButton;
@@ -85,18 +85,24 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
+      [self performInitialSetup]; //do initial set up for MapVC
 
-[PFUser enableRevocableSessionInBackground];
-
-    [self setUpFanOutButton]; // set up fan out buttons
-    [self performInitialSetup]; //do initial set up for MapVC
-    [self createAndDisplayBlinkingRings];
-    //[[UINavigationBar appearance]setBarTintColor:[UIColor purpleColor]];
     if([User currentUser] != nil){
         [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
         [[PFInstallation currentInstallation] saveEventually];
+
+
+        [self downloadActivityRequestsCount];
+
+        [self checkForNewMessages];
+
+        [self setUpProfileImage];
+
     }
 
+    [self downloadActivitiesAndDisplayOnMap];
+
+    [PFUser enableRevocableSessionInBackground];
 
 
 }
@@ -104,22 +110,34 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 -(void)viewDidAppear:(BOOL)animated{
 
-    [self setUpProfileImage];
-    [self downloadActivityRequestsCount];
+
+    if ([User currentUser] != nil) {
+
+        [self downloadActivityRequestsCount];
+
+        [self checkForNewMessages];
+
+        [self setUpProfileImage];
+        
+    }
+
+
 
 }
 -(void)viewWillAppear:(BOOL)animated{
 
-    [self setUpProfileImage];
 
-    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
-
-    //If the user is logged in, then we want to allow him to tab on history
     if ([User currentUser] != nil) {
 
-        [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-        [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
+        [self downloadActivityRequestsCount];
 
+        [self checkForNewMessages];
+
+        [self setUpProfileImage];
+
+        [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+        
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
@@ -127,6 +145,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
+    [self addAnimation:self.ring1ImageView andTo:self.ring2ImageView];
 
 }
 
@@ -135,12 +154,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 -(void)performInitialSetup{
 
+    //set up the rings.
+
+    [self createAndDisplayBlinkingRings];
+
+    [self setUpFanOutButton]; // set up fan out buttons
 
 
-
-
-
-    [self downloadActivityRequestsCount];
     //Get Current User
     self.currentUser = [User currentUser];
 
@@ -243,6 +263,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
     self.currentLocation = [CLLocation new];
+
+
+
 
 
 }
@@ -1401,77 +1424,77 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
-
-        //add profile image to annotation call out
-        PFQuery *activityQuery = [Activity query];
-        [activityQuery includeKey:@"host"];
-        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-
-
-        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
-
-
-            Activity *activity = pinAnnotation.activity;
-            User *host = activity.host;
-
-            //check if the user exists for the activity and check if the user has a picture.
-            if(!(host.profileImage == nil) || !(host == nil)){
-
-
-                [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-
-                    //if there is no error then display the image for the user who posted activity.
-                    if(!error){
-
-                        dispatch_async(dispatch_get_main_queue(), ^{
-
-
-                            UIImage *image = [UIImage imageWithData:data];
-                            CGSize scaledSize = CGSizeMake(40, 40);
-                            UIGraphicsBeginImageContext(scaledSize);
-                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                            UIGraphicsEndImageContext();
-                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                            profileImageView.layer.masksToBounds = YES;
-                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                            profileImageView.clipsToBounds = YES;
-                            profileImageView.userInteractionEnabled = YES;
-                            annotationView.leftCalloutAccessoryView = profileImageView;
-
-
-                        });
-
-                    }
-
-                } ];
-
-
-            }else{
-
-                dispatch_async(dispatch_get_main_queue(), ^{
-
-
-                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
-                    CGSize scaledSize = CGSizeMake(40, 40);
-                    UIGraphicsBeginImageContext(scaledSize);
-                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                    profileImageView.layer.masksToBounds = YES;
-                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                    profileImageView.clipsToBounds = YES;
-                    profileImageView.userInteractionEnabled = YES;
-                    annotationView.leftCalloutAccessoryView = profileImageView;
-
-                });
-
-            }
-
-        }];
+//
+//        //add profile image to annotation call out
+//        PFQuery *activityQuery = [Activity query];
+//        [activityQuery includeKey:@"host"];
+//        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//
+//
+//        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
+//
+//
+//            Activity *activity = pinAnnotation.activity;
+//            User *host = activity.host;
+//
+//            //check if the user exists for the activity and check if the user has a picture.
+//            if(!(host.profileImage == nil) || !(host == nil)){
+//
+//
+//                [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//
+//                    //if there is no error then display the image for the user who posted activity.
+//                    if(!error){
+//
+//                        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//
+//                            UIImage *image = [UIImage imageWithData:data];
+//                            CGSize scaledSize = CGSizeMake(40, 40);
+//                            UIGraphicsBeginImageContext(scaledSize);
+//                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+//                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//                            UIGraphicsEndImageContext();
+//                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+//                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+//                            profileImageView.layer.masksToBounds = YES;
+//                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+//                            profileImageView.clipsToBounds = YES;
+//                            profileImageView.userInteractionEnabled = YES;
+//                            annotationView.leftCalloutAccessoryView = profileImageView;
+//
+//
+//                        });
+//
+//                    }
+//
+//                } ];
+//
+//
+//            }else{
+//
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//
+//
+//                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
+//                    CGSize scaledSize = CGSizeMake(40, 40);
+//                    UIGraphicsBeginImageContext(scaledSize);
+//                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+//                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//                    UIGraphicsEndImageContext();
+//                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+//                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+//                    profileImageView.layer.masksToBounds = YES;
+//                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+//                    profileImageView.clipsToBounds = YES;
+//                    profileImageView.userInteractionEnabled = YES;
+//                    annotationView.leftCalloutAccessoryView = profileImageView;
+//
+//                });
+//
+//            }
+//
+//        }];
 
 
         if(annotationView == nil){
@@ -1597,22 +1620,27 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 }
 
 
-//Allow user to select their activity.
+//Allow user to select their activity. Only when the user is logged in. Else, we need to present them with an alert.
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
-    
-    UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
-    UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
-    
-    //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    CustomMKAnnotation *annotation = view.annotation;
-    appDelegate.sharedActivity = annotation.activity;
-    
-    [self presentViewController:detailVC animated:YES completion:nil];
-    
+
+
+    if ([User currentUser] != nil) {
+
+        UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
+        UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
+
+        //set the activity that is goign to be shared through out the app - to dispay to the user when the user clicks on detail.
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        CustomMKAnnotation *annotation = view.annotation;
+        appDelegate.sharedActivity = annotation.activity;
+
+        [self presentViewController:detailVC animated:YES completion:nil];
+
+    }else{
+           [self presentActionSheetToLogInUser];
+    }
     
 }
 
@@ -1637,6 +1665,17 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     return resizedImage;
 }
 
+//Helper methods for alerts.
+
+-(void)displayAlertWithTitle:(NSString *)title andWith:(NSString *)error{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
+                                                   message:error
+                                                  delegate:self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil, nil];
+    [alert show];
+}
+
 
 //**********************BLOCKS***********************************************//
 -(void)getUserInformationFromParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
@@ -1648,6 +1687,47 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 -(void)saveFbUserInfoToParse:(void(^)())block afterDelay:(NSTimeInterval)delay{
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC));
     dispatch_after(popTime,dispatch_get_main_queue(), block);
+}
+
+
+
+-(void)checkForNewMessages{
+    NSMutableArray *array = [NSMutableArray new];
+
+
+
+
+    PFQuery *query = [Alert query];
+
+    [query whereKey:@"recipientUsername" equalTo:[User currentUser].username];
+    [query whereKey:@"messageIsNew" equalTo:@1];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+
+        // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
+
+        if (!error) {
+            for (Alert *alert in objects) {
+
+
+
+                if (![array containsObject:alert.senderUsername] )  {
+                    [array addObject:alert];
+
+                }
+            }
+
+            // NSLog(@"%@", array);
+            if ([array count] != 0) {
+
+
+                UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+                [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
+            }
+            
+        }
+        
+    }];
 }
 
 

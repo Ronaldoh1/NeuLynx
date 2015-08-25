@@ -102,8 +102,15 @@
     [UIApplication sharedApplication].applicationIconBadgeNumber = i++;
 
 
-   UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
-[[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
+    NSLog(@"%@", [userInfo objectForKey:@"aps"]);
+    if ([[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] containsString:@"message"]) {
+
+        UITabBarController *tabController = (UITabBarController *)self.window.rootViewController;
+        [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = @"New!";
+
+    }
+
+
 //
 //    MainTabBarController *tabBar = [MainTabBarController new];
 //

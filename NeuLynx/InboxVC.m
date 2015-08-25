@@ -17,6 +17,7 @@
 #import "InboxSearchResultTVC.h"
 #import "Alert.h"
 
+
 @interface InboxVC ()<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating>
 
 //Search Controller
@@ -90,7 +91,10 @@
 
     self.tableView.tableHeaderView = self.searchController.searchBar;
 
-    
+    UITabBarController *tabController = (UITabBarController *)self.tabBarController;
+    [[tabController.viewControllers objectAtIndex:1] tabBarItem].badgeValue = nil;
+
+
 }
 
 
@@ -148,6 +152,31 @@
 
     //deselect the cell that was selected.
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    //need to remove the blue dot from the cell.
+    ((InboxCustomCell *)[self.tableView cellForRowAtIndexPath:indexPath]).blueDot.alpha = 0;
+    //we need to mark our alerts as read.
+
+
+    User *sender = [User new];
+    sender = (User *)self.inboxArray[indexPath.row];
+    Alert *selectedAlert = [Alert new];
+
+    for (Alert *alert in self.alertArray) {
+
+
+        if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
+
+            alert.messageIsNew = @0;
+            NSLog(@"Message has been read" );
+            selectedAlert = alert;
+        }
+        
+    }
+    [selectedAlert saveInBackground];
+
+
+
     UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
     UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"navVC"];
 
