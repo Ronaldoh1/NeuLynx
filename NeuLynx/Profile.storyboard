@@ -258,14 +258,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel Preferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-QU-Kht">
-                                                    <rect key="frame" x="87" y="11" width="141" height="21"/>
+                                                    <rect key="frame" x="87" y="12" width="141" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="uvZ-rd-487">
+                                                    <rect key="frame" x="13" y="11" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="6F3-Wf-c1n"/>
+                                                        <constraint firstAttribute="width" constant="23" id="Mfm-PQ-0Js"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="nbS-QU-Kht" secondAttribute="centerX" constant="-14" id="AUm-9f-oGP"/>
+                                                <constraint firstItem="uvZ-rd-487" firstAttribute="leading" secondItem="j3V-mm-OO1" secondAttribute="leadingMargin" constant="5" id="FTM-wK-3Dd"/>
+                                                <constraint firstAttribute="centerY" secondItem="uvZ-rd-487" secondAttribute="centerY" id="Rck-np-LE4"/>
                                                 <constraint firstAttribute="centerY" secondItem="nbS-QU-Kht" secondAttribute="centerY" id="SSC-EN-qxe"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -284,21 +293,24 @@
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgV-67-J28">
+                                                    <rect key="frame" x="14" y="10" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="A0D-9p-vjF"/>
+                                                        <constraint firstAttribute="height" constant="23" id="DKh-Rf-2pa"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="QgV-67-J28" secondAttribute="centerY" id="6rf-gG-fnM"/>
                                                 <constraint firstAttribute="centerX" secondItem="sdw-T7-JfU" secondAttribute="centerX" constant="-13" id="M54-bv-eWS"/>
+                                                <constraint firstItem="QgV-67-J28" firstAttribute="leading" secondItem="Uvt-Zv-59K" secondAttribute="leadingMargin" constant="6" id="fuP-hS-7u0"/>
                                                 <constraint firstAttribute="centerY" secondItem="sdw-T7-JfU" secondAttribute="centerY" constant="-3" id="lfE-wK-UwN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="FN7-4F-Bhy" kind="show" identifier="toPersonalitySelection" id="Dpv-Eq-114"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Wmk-T1-UX9">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wmk-T1-UX9" id="UfK-fo-gjF">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -309,6 +321,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="KvD-GI-hgl">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="3rR-0U-qln">
+                            <connections>
+                                <action selector="onCancelButtonTapped:" destination="fDM-dT-Fnz" id="8y0-Pv-tpC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="aKy-RP-ApQ">
                             <connections>
                                 <action selector="onSaveButtonTapped:" destination="fDM-dT-Fnz" id="bsR-cL-WaW"/>
@@ -324,9 +341,11 @@
                         <outlet property="genderPicker" destination="PDo-EF-Nf7" id="Ftz-62-O94"/>
                         <outlet property="nameTextField" destination="idk-7q-JZk" id="Lo9-SK-i1g"/>
                         <outlet property="orientationPicker" destination="9Jd-Q9-uF5" id="atl-FB-ML1"/>
+                        <outlet property="personalityCheckMark" destination="QgV-67-J28" id="8Nx-w7-mNN"/>
                         <outlet property="portugueseButton" destination="gZJ-fA-9F1" id="XOg-IM-97b"/>
                         <outlet property="profileImage" destination="Rkt-6T-sNv" id="WZA-JC-aHe"/>
                         <outlet property="spanishButton" destination="GJe-bQ-wbP" id="Nj7-zQ-4t2"/>
+                        <outlet property="travelPreferencesCheckmark" destination="uvZ-rd-487" id="PrM-Sc-xsC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoY-Xi-jQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,6 +436,7 @@
         <image name="br.png" width="100" height="100"/>
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="fr.png" width="100" height="100"/>
+        <image name="green-checkmark.png" width="25" height="25"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="us.png" width="100" height="100"/>
     </resources>

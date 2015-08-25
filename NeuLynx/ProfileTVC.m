@@ -42,12 +42,12 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderPicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *orientationPicker;
 
-
-
 @property UIWindow *window;
 
 @property NSArray *preferencesSelectionArray;
 
+@property (weak, nonatomic) IBOutlet UIImageView *travelPreferencesCheckmark;
+@property (weak, nonatomic) IBOutlet UIImageView *personalityCheckMark;
 
 @end
 
@@ -69,7 +69,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
 
+    [[User currentUser] fetchIfNeededInBackground];
+
+    if ([[User currentUser].travelPreferencesArray count] != 0) {
+
+        self.travelPreferencesCheckmark.alpha = 1.0;
+
+    }else{
+        self.travelPreferencesCheckmark.alpha = 0.0;
+
+    }
+
+    if([[User currentUser].personalityArray count] != 0){
+        self.personalityCheckMark.alpha = 1.0;
+
+    }else{
+
+        self.personalityCheckMark.alpha = 0.0;
+    }
+
+}
 //Initial set up of Nav Bar, User, Profile Image, Set up Delegates.
 -(void)performInitialSetUp{
 
@@ -160,6 +181,16 @@
 
     }
 
+
+}
+
+//get user's travel preferences and personality.
+-(void)getCurrentUserInfo{
+    PFQuery *query = [User query];
+
+    [query whereKey:@"username" equalTo:[User currentUser].username];
+
+    [query findObjectsInBackground];
 
 }
 
@@ -271,6 +302,9 @@
         } afterDelay:1.5];
     }
 
+}
+- (IBAction)onCancelButtonTapped:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //**************Adding and Removing languages**********
