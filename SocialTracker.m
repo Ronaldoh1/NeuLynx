@@ -6,19 +6,19 @@
 //  Copyright (c) 2015 NeuLynx. All rights reserved.
 //
 
-#import "Reward.h"
+#import "SocialTracker.h"
 
-@implementation Reward
+@implementation SocialTracker
 
-@dynamic activitiesJoinedCounter;
-@dynamic username;
 @dynamic rewardOwner;
+@dynamic username;
+@dynamic points;
 ;
 
 +(void)load {
     [self registerSubclass];
 }
 + (NSString *)parseClassName{
-    return @"Reward";
+    return @"SocialTracker";
 }
 @end

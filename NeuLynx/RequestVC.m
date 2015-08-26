@@ -13,7 +13,7 @@
 #import "User.h"
 #import "History.h"
 #import "Inbox.h"
-#import "Reward.h"
+#import "SocialTracker.h"
 
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -89,7 +89,7 @@
 
     //increment the counter for user reward.
 
-    Reward *reward = [Reward new];
+   // SocialTracker *reward = [SocialTracker new];
 
    /// reward = tempUser.reward;
 
@@ -131,11 +131,11 @@
 
 
             //update reward number
-
-            reward.activitiesJoinedCounter = [NSNumber numberWithInteger:[reward.activitiesJoinedCounter integerValue] + 1];
-            reward.rewardOwner = tempUser;
-
-            [reward saveInBackground];
+//
+//            reward.activitiesJoinedCounter = [NSNumber numberWithInteger:[reward.activitiesJoinedCounter integerValue] + 1];
+//            reward.rewardOwner = tempUser;
+//
+//            [reward saveInBackground];
 
         }
     }];

@@ -12,11 +12,11 @@
 
 @class  User;
 
-@interface Reward : PFObject<PFSubclassing>
+@interface SocialTracker : PFObject<PFSubclassing>
 
 
 @property NSString *username;
 @property User *rewardOwner;
-@property NSNumber *activitiesJoinedCounter;
+@property NSNumber *points;
 
 @end

@@ -45,7 +45,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ2-hy-lII">
-                                <rect key="frame" x="11" y="317" width="140.5" height="40"/>
+                                <rect key="frame" x="11" y="317" width="141" height="40"/>
                                 <state key="normal" image="facebookLoginButton.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmo-Dj-Qde">
-                                <rect key="frame" x="173" y="317" width="139.5" height="40"/>
+                                <rect key="frame" x="173" y="317" width="140" height="40"/>
                                 <state key="normal" image="twitterLoginButton.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -133,7 +133,7 @@
                             <constraint firstAttribute="centerY" secondItem="sJY-CP-7QM" secondAttribute="centerY" constant="-78.5" id="H3x-cD-huP"/>
                             <constraint firstItem="UFt-U2-Pxd" firstAttribute="top" secondItem="EJ2-hy-lII" secondAttribute="bottom" constant="35" id="HG3-ue-7Ok"/>
                             <constraint firstItem="bH9-PD-VCG" firstAttribute="leading" secondItem="RcW-Ot-nmQ" secondAttribute="leadingMargin" id="J4v-at-NBC"/>
-                            <constraint firstItem="sJY-CP-7QM" firstAttribute="leading" secondItem="EJ2-hy-lII" secondAttribute="trailing" constant="7" id="LFu-If-c2Z"/>
+                            <constraint firstItem="sJY-CP-7QM" firstAttribute="leading" secondItem="EJ2-hy-lII" secondAttribute="trailing" constant="6" id="LFu-If-c2Z"/>
                             <constraint firstItem="UFt-U2-Pxd" firstAttribute="top" secondItem="nmo-Dj-Qde" secondAttribute="bottom" constant="35" id="LPI-gy-HbC"/>
                             <constraint firstItem="EJ2-hy-lII" firstAttribute="top" secondItem="DPP-lc-P77" secondAttribute="bottom" constant="9" id="LcA-ML-t85"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nmo-Dj-Qde" secondAttribute="trailing" constant="-9" id="Li2-Fu-xvo"/>

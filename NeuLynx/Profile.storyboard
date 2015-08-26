@@ -111,8 +111,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ood-TZ-Dxf" id="OTr-jJ-7S5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PDo-EF-Nf7">
-                                                    <rect key="frame" x="32" y="8" width="304" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PDo-EF-Nf7">
+                                                    <rect key="frame" x="8" y="8" width="304" height="29"/>
                                                     <segments>
                                                         <segment title="Male"/>
                                                         <segment title="Female"/>

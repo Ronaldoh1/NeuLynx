@@ -26,8 +26,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gts-5E-AwF" id="cvh-Uk-d7c">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92r-GW-nBi">
-                                                    <rect key="frame" x="69" y="10" width="223" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92r-GW-nBi">
+                                                    <rect key="frame" x="70" y="10" width="223" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="s0c-Mg-C8D" secondAttribute="trailing" constant="-8" id="52f-Gs-prP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="92r-GW-nBi" secondAttribute="bottom" constant="109" id="Ad3-hS-jSw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="92r-GW-nBi" secondAttribute="bottom" constant="110" id="Ad3-hS-jSw"/>
                                                 <constraint firstAttribute="centerY" secondItem="jXK-qt-ldf" secondAttribute="centerY" constant="-55" id="BWF-op-zfq"/>
                                                 <constraint firstAttribute="centerX" secondItem="CWv-ek-pEE" secondAttribute="centerX" constant="89.5" id="Buw-5u-rJF"/>
                                                 <constraint firstAttribute="centerY" secondItem="CWv-ek-pEE" secondAttribute="centerY" constant="-2.5" id="CTj-Gm-zCY"/>
@@ -82,8 +82,8 @@
                                                 <constraint firstItem="92r-GW-nBi" firstAttribute="top" secondItem="cvh-Uk-d7c" secondAttribute="topMargin" constant="2" id="eaw-nQ-O8w"/>
                                                 <constraint firstItem="s0c-Mg-C8D" firstAttribute="leading" secondItem="CWv-ek-pEE" secondAttribute="trailing" constant="1" id="gsL-tH-jhu"/>
                                                 <constraint firstAttribute="centerX" secondItem="jXK-qt-ldf" secondAttribute="centerX" constant="80" id="iao-rl-mCf"/>
-                                                <constraint firstItem="92r-GW-nBi" firstAttribute="leading" secondItem="cvh-Uk-d7c" secondAttribute="leadingMargin" constant="61" id="jKb-do-Xkk"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="92r-GW-nBi" secondAttribute="trailing" constant="-47" id="lNp-8h-oef"/>
+                                                <constraint firstItem="92r-GW-nBi" firstAttribute="leading" secondItem="cvh-Uk-d7c" secondAttribute="leadingMargin" constant="62" id="jKb-do-Xkk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="92r-GW-nBi" secondAttribute="trailing" constant="-28" id="lNp-8h-oef"/>
                                                 <constraint firstAttribute="centerX" secondItem="WzJ-9E-vYs" secondAttribute="centerX" constant="90.5" id="msq-HY-xzO"/>
                                             </constraints>
                                         </tableViewCellContentView>
