@@ -221,6 +221,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 
 
+
+    //*check if the application has been previously run. If it's hasn't then present, the tutorial.*//
+
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasBeenRun"]) {
 
         UIStoryboard *tutorialStoryboard = [UIStoryboard storyboardWithName:@"Tutorial" bundle:nil];
@@ -231,8 +234,9 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     }
 
-    //if it has displayed the map then we say it has been run...therefore we do not show the Tutorial again
+    //*if it has displayed the map then we say it has been run...therefore we do not show the Tutorial again*//
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasBeenRun"];
+
     //Dismiss Keyboard when user touches outside of the search bar.
     //first - create a tap gesture.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -250,16 +254,16 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
         [MRProgressOverlayView dismissOverlayForView: self.window animated:YES];
     } afterDelay:2.0];
 
+//
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    //BOOL tmpBool = (appDelegate.hideDoneButtonForRequests);
+//
 
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL tmpBool = appDelegate.hideDoneButtonForRequests;
 
-
-
-    tmpBool = YES;
-
-    appDelegate.hideDoneButtonForRequests = &(tmpBool);
-    appDelegate.hideDoneButtonForMessages = &(tmpBool);
+//    tmpBool = YES;
+//
+//    appDelegate.hideDoneButtonForRequests = &(tmpBool);
+//    appDelegate.hideDoneButtonForMessages = &(tmpBool);
 
 
     self.currentLocation = [CLLocation new];
@@ -270,43 +274,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 }
 
--(void)downloadActivityRequestsCount{
 
-    PFQuery *query = [Activity query];
-
-
-
-
-    [query whereKey:@"host" equalTo:[User currentUser]];
-    [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
-    [query includeKey:@"RequestsArray"];
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
-
-        // NSArray *activitiesArray = activities;
-        if (!error) {
-            //get a copy of all activities
-            // Add activities to the map.
-
-            int count = 0;
-
-            for (Activity *activity in activities) {
-
-                count = (int)(activity.RequestsArray.count + count);
-            }
-
-            if (count !=0) {
-
-            [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", count]];
-
-            }
-            
-            NSLog(@"%d", self.count);
-
-        }
-    }];
-    // totalCount = self.count;
-}
 
 //Get user's current location
 -(void)getUserCurrentLocation{
@@ -319,10 +287,10 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager startUpdatingLocation];
 
-    self.mapView.showsUserLocation = true;
+    self.mapView.showsUserLocation = YES;
 
     //initially we should set the didGetUserLocation to false;
-    self.didGetUserLocation = false;
+    self.didGetUserLocation = NO;
 
 }
 //Helper method to dismiss keyboard
@@ -404,8 +372,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     //create the label for the button
 
     UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(-73, 5, 70, 20)];
-    //    label.layer.shadowColor =[UIColor colorWithRed:34.0/255.0 green:85.0/255.0 blue:255.0/255.0 alpha:1].CGColor;
-    //    label.layer.shadowOpacity = .75;
 
     label.layer.masksToBounds = NO;
     label.text= buttonTitle;
@@ -534,15 +500,10 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     //everytime the user clicks discover we want to update the activities and retrieve any new ones.
 
-
     [self downloadActivitiesAndDisplayOnMap];
 }
 
 
--(IBAction)buttonPressed:(id)sender{
-    UIButton *button = (UIButton *)sender;
-    NSLog(@"button tapped %ld", (long)button.tag);
-}
 
 #pragma mark - Button selectors for each button
 -(void)festivalButtonTapped{
@@ -683,25 +644,13 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     if (self.currentUser != nil){
         //create an image and assign it to defualt image
 
-        [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            if (!error) {
-                UIImage *image = [UIImage imageWithData:data];
-
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.tempImage = image;
-                });
-
-            }
-
-        }];
+        [self getUsersProfileImage];
 
 
     }else if (self.currentUser == nil){
 
 
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
-        });
+        self.tempImage = [UIImage imageNamed:@"defaultImage.png"];
 
     }
 
@@ -745,26 +694,57 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 }
 
-//Helper method to download user's profile image
--(UIImage *)getUsersProfileImage{
-    UIImage *image = [UIImage new];
-    self.profileImage = [UIImage new];
+-(void)downloadActivityRequestsCount{
+
+    PFQuery *query = [Activity query];
+
+    [query whereKey:@"host" equalTo:[User currentUser]];
+    [query whereKey:@"numberOfpaticipants" notEqualTo:@0];
+    [query includeKey:@"RequestsArray"];
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+        if (!error) {
+            //get a copy of all activities
+            // Add activities to the map.
+
+            int count = 0;
+
+            for (Activity *activity in activities) {
+
+                count = (int)(activity.RequestsArray.count + count);
+            }
+
+            if (count !=0) {
+
+                [[self.tabBarController.tabBar.items objectAtIndex:2] setBadgeValue:[NSString stringWithFormat:@"%d", count]];
+                
+            }
+
+        }
+    }];
+    
+}
+
+////Helper method to download user's profile image
+-(void)getUsersProfileImage{
 
     [self.currentUser.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            UIImage *tempImage = [UIImage imageWithData:data];
+            UIImage *image = [UIImage imageWithData:data];
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.profileImage = tempImage;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+                dispatch_async(dispatch_get_main_queue(), ^(void) {
+
+                    self.tempImage = image;
+
+                });
             });
-
         }
 
     }];
-
-    image = self.profileImage;
-
-    return image;
 }
 
 //helper method to show user's profile.
@@ -966,9 +946,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
                                              [self setUpProfileImage];
 
-//                                             UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//                                             UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
-//                                             [self presentViewController:mapNavVC animated:YES completion:nil];
                                          }
                                      }];
 

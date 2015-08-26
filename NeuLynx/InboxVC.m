@@ -66,16 +66,16 @@
 
     [self downloadInboxForCurrentUser];
 
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL tmpBool = appDelegate.hideDoneButtonForMessages;
-
-    if (tmpBool == YES) {
-        tmpBool = NO;
-        appDelegate.hideDoneButtonForMessages = nil;
-        self.navigationItem.rightBarButtonItem = nil;
-        self.doneBarButton.enabled = NO;
-
-    }
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    BOOL tmpBool = *(appDelegate.hideDoneButtonForMessages);
+//
+//    if (tmpBool == YES) {
+//        tmpBool = NO;
+//        appDelegate.hideDoneButtonForMessages = nil;
+//        self.navigationItem.rightBarButtonItem = nil;
+//        self.doneBarButton.enabled = NO;
+//
+//    }
 
     //Instantiate View Controller with Iddentifier - this is necessary because there is no connection in our storyboard to our search results.
 

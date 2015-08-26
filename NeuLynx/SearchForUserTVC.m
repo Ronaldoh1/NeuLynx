@@ -87,7 +87,7 @@
 
 -(void)pullData{
 
-    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
+    //PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [User query];
   //  [query whereKey:@"currentLoccation" nearGeoPoint:geoPoint withinMiles:100];
 
