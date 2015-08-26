@@ -16,7 +16,7 @@
 
 
 @property NSString *username;
-@property User *rewardOwner;
+@property User *pointsOwner;
 @property NSNumber *points;
 
 @end

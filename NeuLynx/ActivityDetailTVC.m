@@ -13,12 +13,15 @@
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "SocialTracker.h"
+
 @interface ActivityDetailTVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeActivityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightNavBarButton;
 
 
 //Languages
@@ -45,6 +48,11 @@
 
 @property Activity  *selectedActivity;
 
+
+//Keeping track of social involvement
+@property SocialTracker *socialTracker;
+@property (weak, nonatomic) IBOutlet UIImageView *userBadge;
+
 @end
 
 @implementation ActivityDetailTVC
@@ -52,12 +60,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self performInitialSetUp];
+}
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:YES];
+
+    [self displayBadgeForUser:(User *)self.selectedActivity.host];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -270,6 +281,9 @@
 
     NSMutableArray *tempActivityArray = [NSMutableArray arrayWithArray:selectedActivity.RequestsArray];
 
+
+
+
     //check if the current user has already sent a request.
 
     if ([tempActivityArray containsObject:[User currentUser]]) {
@@ -306,7 +320,7 @@
             [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
 
-
+                    self.rightNavBarButton.enabled = NO;
 
                     // Create our Installation query
                     PFQuery *pushQuery = [PFInstallation query];
@@ -314,18 +328,14 @@
 
                     [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
                     
-                    // matches the innerQuery
-                    //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
-                    // matches the innerQuery
-                    //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
-
                     // Send push notification to query
                     PFPush *push = [[PFPush alloc] init];
                     [push setQuery:pushQuery]; // Set our Installation query
                     [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your exclusive invite. Please check your Requests to confirm.", [User currentUser].name]];
-
-
                     [push sendPushInBackground];
+
+
+
 
                     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -341,6 +351,11 @@
 
         }else{
 
+
+
+
+            //get the number of participants
+
             selectedActivity.numberOfpaticipants = @([selectedActivity.numberOfpaticipants integerValue] + 1);
 
 
@@ -353,21 +368,23 @@
             [selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
 
+                    //diable right bar button item
+
+                    self.rightNavBarButton.enabled = NO;
+
                     // Create our Installation query
                     PFQuery *pushQuery = [PFInstallation query];
                     // only return Installations that belong to a User that
 
                     [pushQuery whereKey:@"user" equalTo:selectedActivity.host];
-                    // matches the innerQuery
-                    //[pushQuery whereKey:@"user" matchesQuery: pushQuery];
-                    // matches the innerQuery
-                    //[pushQuery whereKey:@"user" matchesQuery: selectedActivity.host];
 
                     // Send push notification to query
                     PFPush *push = [[PFPush alloc] init];
                     [push setQuery:pushQuery]; // Set our Installation query
                     [push setMessage:[NSString stringWithFormat:@"%@ has requested to join your activity. Please check your Requests to review this request", [User currentUser].name]];
                     [push sendPushInBackground];
+
+
 
                     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -417,12 +434,36 @@
         shareDialog.shareContent = content;
         [shareDialog show];
 
+        //Update Social involvement
+
+        if ([User currentUser] != nil) {
+
+        self.socialTracker = [SocialTracker new];
+        self.socialTracker.points = @1;
+        self.socialTracker.pointsOwner = [User currentUser];
+        [self.socialTracker saveInBackground];
+
+        }
+
     }else if (indexPath.section == 3 && indexPath.row == 1){
         //Share Information on Twitter
 
         self.activitySL = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [self.activitySL setInitialText:[NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text]];
-        [self presentViewController:self.activitySL animated:YES completion:nil];
+        [self.activitySL setInitialText:[NSString stringWithFormat:@"Hey, I just found the following activity on @NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text]];
+        [self presentViewController:self.activitySL animated:YES completion:^{
+            //Update Social involvement
+
+
+            if ([User currentUser] != nil) {
+
+                self.socialTracker = [SocialTracker new];
+                self.socialTracker.points = @1;
+                self.socialTracker.pointsOwner = [User currentUser];
+                [self.socialTracker saveInBackground];
+                
+            }
+
+        }];
     }else if (indexPath.section == 3 && indexPath.row == 2){
         //Share Information on WhatsApp
         NSString * msg = [NSString stringWithFormat:@"Hey, I just found the following activity on NeuLynx Check it out hope you can join me! . %@ - %@. ", self.ActivityTitleLabel.text, self.activityDescriptionText.text];
@@ -430,23 +471,26 @@
         NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
             [[UIApplication sharedApplication] openURL: whatsappURL];
+
+            //Update Social involvement
+
+            if ([User currentUser] != nil) {
+
+                self.socialTracker = [SocialTracker new];
+                self.socialTracker.points = @1;
+                self.socialTracker.pointsOwner = [User currentUser];
+                [self.socialTracker saveInBackground];
+                
+            }
+
+
         } else {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
     }
     
-    
-    //    }else if (indexPath.section == 4 && indexPath.row == 0){
-    //
-    //
-    //        UIStoryboard *messageStoryboard = [UIStoryboard storyboardWithName:@"Message" bundle:nil];
-    //        UITabBarController *messageNavVC = [messageStoryboard instantiateViewControllerWithIdentifier:@"SendMessageNavVC"];
-    //        
-    //        [self presentViewController:messageNavVC animated:YES completion:nil];
-    //        
-    //    }
-    
+
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results{
@@ -477,6 +521,57 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Request Already Sent!" message:@"You have already sent a request to join this Activity!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
 
     [alertView show];
+}
+
+-(void)displayBadgeForUser:(User *)user{
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"SocialTracker"];
+
+    [query whereKey:@"pointsOwner" equalTo:user];
+
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+        if (!error) {
+            //get a copy of all activities
+            // Add activities to the map.
+            int sum = 0;
+
+            for (SocialTracker  *obj in array) {
+
+                sum = sum + [(obj.points) intValue];
+
+            }
+
+
+
+            NSLog(@"%d", sum);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                if(sum == 0){
+                    self.userBadge.image = nil;
+                }else if(sum >= 25 && sum<= 74){
+                    self.userBadge.image = [UIImage imageNamed:@"bronzeSocial.png"];
+                }else if (sum >= 75 && sum <= 119) {
+                    self.userBadge.image = [UIImage imageNamed:@"silverSocial.png"];
+
+                }else if(sum >= 120 && sum <= 149){
+                    self.userBadge.image = [UIImage imageNamed:@"goldSocial.png"];
+                    
+                }else if(sum >= 150){
+                    self.userBadge.image = [UIImage imageNamed:@"platinumSocial.png"];
+                    
+                }
+                
+                
+                
+            });
+            
+        }
+    }];
 }
 
 @end

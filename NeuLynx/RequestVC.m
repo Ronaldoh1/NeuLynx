@@ -18,9 +18,7 @@
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray* activitiestArray;
-@property (weak, nonatomic) IBOutlet UILabel *participantNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *participantProfileImage;
-
+@property SocialTracker *socialTracker;
 
 @end
 
@@ -87,13 +85,6 @@
     //Add users to inbox.
     Inbox *newContact = [Inbox new];
 
-    //increment the counter for user reward.
-
-   // SocialTracker *reward = [SocialTracker new];
-
-   /// reward = tempUser.reward;
-
-
     [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
 
@@ -103,12 +94,6 @@
             historyRecord.activityJoined = activity;
             historyRecord.user = tempUser;
             [historyRecord saveInBackground];
-
-//            // Create our Installation query
-//            PFQuery *pushQuery = [PFInstallation query];
-//            // only return Installations that belong to a User that
-//            // matches the innerQuery
-//            [pushQuery whereKey:@"user" matchesQuery: tempUser];
 
             // Create our Installation query
             PFQuery *pushQuery = [PFInstallation query];
@@ -130,12 +115,16 @@
             [newContact saveInBackground];
 
 
-            //update reward number
-//
-//            reward.activitiesJoinedCounter = [NSNumber numberWithInteger:[reward.activitiesJoinedCounter integerValue] + 1];
-//            reward.rewardOwner = tempUser;
-//
-//            [reward saveInBackground];
+            //Update Social Tracker
+
+            if ([User currentUser] != nil) {
+
+                self.socialTracker = [SocialTracker new];
+                self.socialTracker.points = @3;
+                self.socialTracker.pointsOwner = tempUser;
+                [self.socialTracker saveInBackground];
+
+            }
 
         }
     }];

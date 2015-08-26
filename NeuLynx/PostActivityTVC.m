@@ -13,6 +13,7 @@
 #import "MRProgress.h"
 #import "SelectTimeTVC.h"
 #import "SearchForUserTVC.h"
+#import "SocialTracker.h"
 
 
 @interface PostActivityTVC ()<UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
@@ -54,6 +55,9 @@
 //********Date & Times*********
 @property NSDate *startDateAndTime;
 @property NSDate *endDateAndTime;
+
+//social tracker
+@property SocialTracker *socialTracker;
 
 @end
 
@@ -188,6 +192,16 @@
 
                     if (succeeded) {
 
+
+                        if ([User currentUser] != nil) {
+
+                            self.socialTracker = [SocialTracker new];
+                            self.socialTracker.points = @5;
+                            self.socialTracker.pointsOwner = [User currentUser];
+                            [self.socialTracker saveInBackground];
+                            
+                        }
+
                         [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 
                         [MRProgressOverlayView showOverlayAddedTo:self.view title:@"Success!" mode:MRProgressOverlayViewModeCheckmark animated:YES];
@@ -259,6 +273,16 @@
                 [self.activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
                     if (succeeded) {
+
+                        if ([User currentUser] != nil) {
+
+                            self.socialTracker = [SocialTracker new];
+                            self.socialTracker.points = @5;
+                            self.socialTracker.pointsOwner = [User currentUser];
+                            [self.socialTracker saveInBackground];
+                            
+                        }
+
 
                         [MRProgressOverlayView dismissOverlayForView: self.view animated:YES];
 

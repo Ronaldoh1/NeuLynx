@@ -10,7 +10,7 @@
 
 @implementation SocialTracker
 
-@dynamic rewardOwner;
+@dynamic pointsOwner;
 @dynamic username;
 @dynamic points;
 ;

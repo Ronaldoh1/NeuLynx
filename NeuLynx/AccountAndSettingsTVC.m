@@ -37,7 +37,12 @@
     
     [self performInitialSetUp];
 }
+-(void)viewWillAppear:(BOOL)animated{
 
+
+    [self displayBadgeForUser:[User currentUser]];
+
+}
 -(void)performInitialSetUp{
 
     //get Current User
@@ -97,6 +102,8 @@
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(onDoneButtonTapped)];
     self.navigationItem.rightBarButtonItem = rightBarButton;
 
+    [self displayBadgeForUser:[User currentUser]];
+    
 }
 
 #pragma Marks - Buttons 
@@ -268,6 +275,59 @@
 
         }
 
+    }];
+}
+
+//query to get the count of the user's social activity.
+
+-(void)displayBadgeForUser:(User *)user{
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"SocialTracker"];
+
+    [query whereKey:@"pointsOwner" equalTo:[User currentUser]];
+
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+        if (!error) {
+            //get a copy of all activities
+            // Add activities to the map.
+            int sum = 0;
+
+            for (SocialTracker  *obj in array) {
+
+                sum = sum + [(obj.points) intValue];
+
+            }
+
+
+
+            NSLog(@"%d", sum);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+            if(sum == 0){
+                self.userBadge.image = nil;
+            }else if(sum >= 25 && sum<= 74){
+                self.userBadge.image = [UIImage imageNamed:@"bronzeSocial.png"];
+            }else if (sum >= 75 && sum <= 119) {
+                self.userBadge.image = [UIImage imageNamed:@"silverSocial.png"];
+
+            }else if(sum >= 120 && sum <= 149){
+                self.userBadge.image = [UIImage imageNamed:@"goldSocial.png"];
+
+            }else if(sum >= 150){
+                self.userBadge.image = [UIImage imageNamed:@"platinumSocial.png"];
+
+            }
+
+
+
+            });
+            
+        }
     }];
 }
 

@@ -287,6 +287,7 @@
                         <outlet property="profileImage" destination="ScB-5C-hwT" id="fIn-iU-TrK"/>
                         <outlet property="spanishButton" destination="hd1-AX-5Qd" id="IOO-9X-MrD"/>
                         <outlet property="travelPreferencesTextView" destination="RCw-bC-Gr8" id="2FE-4h-cJ4"/>
+                        <outlet property="userBadge" destination="OHx-gw-d4r" id="Wd3-Jn-joj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akt-x4-4DB" userLabel="First Responder" sceneMemberID="firstResponder"/>

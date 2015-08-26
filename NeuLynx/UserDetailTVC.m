@@ -45,6 +45,9 @@
 @property UIWindow *window;
 
 @property NSArray *preferencesSelectionArray;
+
+@property (weak, nonatomic) IBOutlet UIImageView *userBadge;
+
 @end
 
 @implementation UserDetailTVC
@@ -181,6 +184,9 @@
 
     }
 
+    //get user's badge
+    [self displayBadgeForUser:self.selectedUser];
+
 
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
@@ -199,6 +205,58 @@
         
     }];
 }
+
+-(void)displayBadgeForUser:(User *)user{
+
+
+    PFQuery *query = [PFQuery queryWithClassName:@"SocialTracker"];
+
+    [query whereKey:@"pointsOwner" equalTo:user];
+
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error){
+
+        // NSArray *activitiesArray = activities;
+        if (!error) {
+            //get a copy of all activities
+            // Add activities to the map.
+            int sum = 0;
+
+            for (SocialTracker  *obj in array) {
+
+                sum = sum + [(obj.points) intValue];
+
+            }
+
+
+
+            NSLog(@"%d", sum);
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                if(sum == 0){
+                    self.userBadge.image = nil;
+                }else if(sum >= 25 && sum<= 74){
+                    self.userBadge.image = [UIImage imageNamed:@"bronzeSocial.png"];
+                }else if (sum >= 75 && sum <= 119) {
+                    self.userBadge.image = [UIImage imageNamed:@"silverSocial.png"];
+
+                }else if(sum >= 120 && sum <= 149){
+                    self.userBadge.image = [UIImage imageNamed:@"goldSocial.png"];
+                    
+                }else if(sum >= 150){
+                    self.userBadge.image = [UIImage imageNamed:@"platinumSocial.png"];
+                    
+                }
+                
+                
+                
+            });
+            
+        }
+    }];
+}
+
 
 #pragma mark - UITableViewDelegate
 

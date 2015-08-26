@@ -373,16 +373,18 @@
                         <outlet property="locationLabel" destination="87v-Om-sm1" id="Kek-jj-wwq"/>
                         <outlet property="numberOfPeopleLabel" destination="sXf-6q-MCh" id="LSy-Li-hqj"/>
                         <outlet property="portugueseFlag" destination="wzv-4U-Fq3" id="B4L-VZ-evx"/>
+                        <outlet property="rightNavBarButton" destination="53m-79-dyC" id="CFC-Yp-WW5"/>
                         <outlet property="spanishFlag" destination="Y0W-nn-zXw" id="q0u-Ho-wcb"/>
                         <outlet property="timeLabel" destination="NOk-R5-aM6" id="MZV-Nt-9yk"/>
                         <outlet property="typeActivityLabel" destination="0b2-xz-W5I" id="h1K-fE-XlD"/>
+                        <outlet property="userBadge" destination="xK4-oc-Y6T" id="CeG-Xc-KAJ"/>
                         <outlet property="userNameLabel" destination="zc7-W3-czk" id="BKT-fn-fml"/>
                         <outlet property="userProfileImageView" destination="DK2-Mi-ASX" id="CXB-Wk-aU4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ad6-e4-qtD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="969"/>
+            <point key="canvasLocation" x="806" y="982"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XVu-du-nfc">
