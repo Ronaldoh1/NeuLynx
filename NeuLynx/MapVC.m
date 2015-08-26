@@ -640,7 +640,6 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 //helper method to set up profile image button
 -(void)setUpProfileImage{
 
-
     if (self.currentUser != nil){
         //create an image and assign it to defualt image
 
@@ -694,6 +693,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
 }
 
+//*Get the numbers of request for the currentUser. *//
 -(void)downloadActivityRequestsCount{
 
     PFQuery *query = [Activity query];
@@ -704,10 +704,8 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
-        // NSArray *activitiesArray = activities;
+
         if (!error) {
-            //get a copy of all activities
-            // Add activities to the map.
 
             int count = 0;
 
@@ -747,13 +745,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
     }];
 }
 
-//helper method to show user's profile.
+/*helper method to show user's profile. present the account view controller to display menus for user
+if the current user does not exist, then make him/her sign up.*/
 
 -(void)profileImageTapped:(UIBarButtonItem* )sender{
 
-
-    //present the account view controller to display menus for user
-    //if the current user does not exist, then make him/her sign up.
     if ([User currentUser] == nil) {
         [self presentActionSheetToLogInUser];
 
