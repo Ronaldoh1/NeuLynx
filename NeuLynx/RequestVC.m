@@ -18,7 +18,7 @@
 @interface RequestVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray* activitiestArray;
-@property SocialTracker *socialTracker;
+@property (nonatomic, strong) SocialTracker *socialTracker;
 
 @end
 
@@ -49,21 +49,10 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];;
     [self.navigationItem setTitleView:titleView];
 
-//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//    BOOL tmpBool = *(appDelegate.hideDoneButtonForRequests);
-//
-//    if (tmpBool == YES) {
-//
-//        tmpBool = NO;
-//        appDelegate.hideDoneButtonForRequests = nil;
-//        self.navigationItem.rightBarButtonItem = nil;
-//
-//    }
-}
-- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+    //self.navigationItem.rightBarButtonItem = nil;
 
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)onAcceptButtonTapped:(UIButton *)sender {
 
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
@@ -263,9 +252,15 @@
     return self.activitiestArray.count;
 }
 
+/*Return the title for each section if and only if the row count for each section is not 0. */
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
+    if ([tableView.dataSource tableView:tableView numberOfRowsInSection:section] == 0) {
+        return nil;
+    }else{
+
     return ((Activity *)self.activitiestArray[section]).activityTitle;
+    }
 }
 
 -(RequestCustomCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -309,4 +304,13 @@
     return cell;
 }
 
+//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//
+//    if ([tableView numberOfRowsInSection:section] == 0) {
+//        return 0.01f;
+//    }else{
+//
+//    return 4.0f;
+//    }
+//}
 @end

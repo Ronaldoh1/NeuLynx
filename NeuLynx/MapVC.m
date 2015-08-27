@@ -33,7 +33,7 @@
 @property UIButton *studentLifeActivityButton;
 
 @property UIDynamicAnimator *dynamicAnimator;
-@property BOOL isFannedOut;
+@property (assign) BOOL isFannedOut;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
@@ -137,10 +137,11 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
-        
+       [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:NO];
     }
 
 
@@ -1563,9 +1564,9 @@ if the current user does not exist, then make him/her sign up.*/
 
                                              //enable tabs once the user has been signed up (Profile/Inbox);
 
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
-
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
 
 
 
@@ -1573,9 +1574,9 @@ if the current user does not exist, then make him/her sign up.*/
                                              NSLog(@"User logged in through Facebook!");
                                              //enable inbox and profile
                                              self.navigationItem.leftBarButtonItem.enabled = YES;
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:TRUE];
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:TRUE];
-
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
+                                             [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:NO];
                                              [self setUpProfileImage];
 
                                          }

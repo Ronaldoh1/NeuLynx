@@ -10,13 +10,15 @@
 #import <Parse/Parse.h>
 #import "User.h"
 #import "Activity.h"
+
 @interface Message : PFObject<PFSubclassing>
-@property NSString *subject;
-@property User *recipient;
-@property NSString *recipientUsername;
-@property NSString *senderUsername;
-@property User *sender;
-@property NSString *messageText;
+
+@property (strong, atomic) NSString *subject;
+@property (strong, atomic) User *recipient;
+@property (strong, atomic) NSString *recipientUsername;
+@property (strong, atomic) NSString *senderUsername;
+@property (strong, atomic) User *sender;
+@property (strong, atomic) NSString *messageText;
 
 +(NSString *)parseClassName;
 

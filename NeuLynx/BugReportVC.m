@@ -12,7 +12,7 @@
 @interface BugReportVC ()<MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *problemTitle;
 @property (weak, nonatomic) IBOutlet UITextView *messageBody;
-@property CGFloat animatedDistance;
+@property (assign) CGFloat animatedDistance;
 
 @end
 
@@ -53,7 +53,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
     if([self.problemTitle.text isEqualToString:@""] || [self.messageBody.text isEqualToString:@""]){
 
-        [self displayAlert:@"Error Sending Message" andWith:@"Please include a subject title and a message"];
+        [self displayAlert:@"Error Sending Message" andWithError:@"Please include a subject title and a message"];
 
 
     }else {
@@ -73,7 +73,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             [self presentViewController:composer animated:YES completion:nil];
 
         } else {
-            NSLog(@"Can't send mail");
+
+            [self displayAlert:@"Cannot Send Email" andWithError:@"Please try again"];
         }
     }
 
@@ -89,7 +90,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
                                          otherButtonTitles:nil, nil];
     [alert show];
 }
--(void)displayAlert:(NSString *)title andWith:(NSString *)error{
+-(void)displayAlert:(NSString *)title andWithError:(NSString *)error{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
                                                    message:error
                                                   delegate:self
@@ -186,9 +187,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
-
+    
     [self.view setFrame:viewFrame];
-
+    
     [UIView commitAnimations];
 }
 

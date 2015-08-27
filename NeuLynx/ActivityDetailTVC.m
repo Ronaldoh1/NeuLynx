@@ -46,12 +46,12 @@
 //Sharing on Social Media
 @property SLComposeViewController *activitySL;
 
-@property Activity  *selectedActivity;
+@property (nonatomic, strong) Activity  *selectedActivity;
 
 
 //Keeping track of social involvement
-@property SocialTracker *socialTracker;
-@property (weak, nonatomic) IBOutlet UIImageView *userBadge;
+@property (nonatomic, strong) SocialTracker *socialTracker;
+@property (nonatomic, strong) IBOutlet UIImageView *userBadge;
 
 @end
 

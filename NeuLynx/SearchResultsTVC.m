@@ -14,8 +14,8 @@
 @interface SearchResultsTVC ()<CLLocationManagerDelegate>
 
 //CORE LOCATION
-@property CLLocationManager *locationManager;
-@property CLLocation *currentLocation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 @end
 

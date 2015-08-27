@@ -36,15 +36,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *englishButton;
 @property (weak, nonatomic) IBOutlet UIButton *frenchButton;
 
-@property NSString *selectedEntry;
+@property (strong, atomic) NSString *selectedEntry;
 
-@property BOOL genderArraySelected;
+@property (assign) BOOL genderArraySelected;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderPicker;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *orientationPicker;
 
-@property UIWindow *window;
+@property (weak, nonatomic) UIWindow *window;
 
-@property NSArray *preferencesSelectionArray;
+@property (strong, atomic) NSArray *preferencesSelectionArray;
 
 @property (weak, nonatomic) IBOutlet UIImageView *travelPreferencesCheckmark;
 @property (weak, nonatomic) IBOutlet UIImageView *personalityCheckMark;

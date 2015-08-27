@@ -32,9 +32,6 @@
 @dynamic currentLoccation;
 @dynamic exclusiveInvitesArray;
 @dynamic activitiesJoinedCounter;
-@dynamic reward;
-
-
 
 +(void)load {
     [self registerSubclass];

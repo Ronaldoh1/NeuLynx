@@ -126,13 +126,7 @@
                             <constraint firstItem="kfI-3S-Cp9" firstAttribute="top" secondItem="21I-JR-Fl8" secondAttribute="bottom" id="zjs-IH-abR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Requests" id="5Jn-A1-OoJ">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="PN2-5o-LMA">
-                            <connections>
-                                <action selector="onDoneButtonTapped:" destination="mWW-ac-Ugg" id="oCM-Pp-Moc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Requests" id="5Jn-A1-OoJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="21I-JR-Fl8" id="pSW-5k-f1m"/>

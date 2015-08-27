@@ -15,11 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *genderLabel;
-@property (weak, nonatomic) IBOutlet UILabel *orientationLabel;
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-
 @property (weak, nonatomic) IBOutlet UITextView *aboutMeTextView;
 @property (weak, nonatomic) IBOutlet UITextView *personalityTextView;
 @property (weak, nonatomic) IBOutlet UITextView *travelPreferencesTextView;
@@ -37,14 +33,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *englishButton;
 @property (weak, nonatomic) IBOutlet UIButton *frenchButton;
 
-@property NSString *selectedEntry;
+@property  (weak, nonatomic)  NSString *selectedEntry;
 
-@property BOOL genderArraySelected;
+@property (assign) BOOL genderArraySelected;
 
 
-@property UIWindow *window;
+@property  (weak, nonatomic) UIWindow *window;
 
-@property NSArray *preferencesSelectionArray;
+@property  (weak, nonatomic)  NSArray *preferencesSelectionArray;
 
 @property (weak, nonatomic) IBOutlet UIImageView *userBadge;
 
@@ -97,7 +93,7 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];
     [self.navigationItem setTitleView:titleView];
 
-   
+
     //Dim the colors of language buttons
     self.portugueseButton.alpha = 0.3;
     self.spanishButton.alpha = 0.3;
@@ -118,12 +114,10 @@
     //change the color of the basic info label.
     self.nameLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     self.genderLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
-    self.orientationLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
     self.ageLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
-
     //get basic information
-    
+
     self.nameLabel.text = self.selectedUser.name;
     self.ageLabel.text = [NSString stringWithFormat:@"%@ Years Old", self.selectedUser.age];
     self.genderLabel.text = [NSString stringWithFormat: @"%@, %@", self.selectedUser.gender, self.selectedUser.orientation];
@@ -202,7 +196,7 @@
             UIImage *image = [UIImage imageWithData:data];
             self.profileImage.image = image;
         }
-        
+
     }];
 }
 
@@ -243,7 +237,7 @@
 
                 }else if(sum >= 120 && sum <= 149){
                     self.userBadge.image = [UIImage imageNamed:@"goldSocial.png"];
-                    
+
                 }else if(sum >= 150){
                     self.userBadge.image = [UIImage imageNamed:@"platinumSocial.png"];
                     
@@ -261,7 +255,7 @@
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 

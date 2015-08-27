@@ -15,8 +15,8 @@
 @interface SocialTracker : PFObject<PFSubclassing>
 
 
-@property NSString *username;
-@property User *pointsOwner;
-@property NSNumber *points;
+@property (strong, atomic) NSString *username;
+@property (strong, atomic) User *pointsOwner;
+@property (strong, atomic) NSNumber *points;
 
 @end

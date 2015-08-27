@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 
 @interface InboxSearchResultTVC ()
-@property DialogVC *activeDialogVC;
+@property (strong, atomic) DialogVC *activeDialogVC;
 
 @end
 

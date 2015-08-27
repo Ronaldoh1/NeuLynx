@@ -11,10 +11,10 @@
 #import "User.h"
 @interface Alert : PFObject<PFSubclassing>
 
-@property User *recipient;
-@property NSString *recipientUsername;
-@property NSString *senderUsername;
-@property User *sender;
-@property NSNumber *messageIsNew; //0 = no, 1 = yes;
+@property (strong, atomic) User *recipient;
+@property (strong, atomic) NSString *recipientUsername;
+@property (strong, atomic) NSString *senderUsername;
+@property (strong, atomic) User *sender;
+@property (strong, atomic) NSNumber *messageIsNew; //0 = no, 1 = yes;
 
 @end

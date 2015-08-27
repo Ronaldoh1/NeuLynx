@@ -15,13 +15,13 @@
 
 @interface AccountAndSettingsTVC ()<CLLocationManagerDelegate>
 //User
-@property User *currentUser;
+@property (strong, atomic) User *currentUser;
 
 
 //Location
-@property CLLocationManager *locationManager;
-@property CLLocation *currentLocation;
-@property NSString *userCity;
+@property (strong, atomic) CLLocationManager *locationManager;
+@property (strong, atomic) CLLocation *currentLocation;
+@property (strong, atomic) NSString *userCity;
 
 //section 1 - profile image
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -147,30 +147,16 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0 && indexPath.section == 1) {
 
-        UIStoryboard *mailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
-        UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
-        [self presentViewController:mailNavVC animated:YES completion:nil];
-
-    }else if(indexPath.row == 1 && indexPath.section == 1){
-        UIStoryboard *requestStoryBoard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
-        UITabBarController *requestVC = [requestStoryBoard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
-        [self presentViewController:requestVC animated:YES completion:nil];
-
-    }else if(indexPath.row == 2 && indexPath.section == 1){
-        UIStoryboard *historyStoryBoard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
-        UINavigationController *historyNavVC = [historyStoryBoard instantiateViewControllerWithIdentifier:@"HistoryNavVC"];
-        [self presentViewController:historyNavVC animated:YES completion:nil];
-
-    }else if(indexPath.row == 3 && indexPath.section == 1){
-        UIStoryboard *searchActivity = [UIStoryboard storyboardWithName:@"Search" bundle:nil];
-        UINavigationController *searchNavVC = [searchActivity instantiateViewControllerWithIdentifier:@"SearchNavVC"];
-        [self presentViewController:searchNavVC animated:YES completion:nil];
-
-
-    }else if(indexPath.row == 4 && indexPath.section == 1){
         UIStoryboard *exclusiveStoryboard = [UIStoryboard storyboardWithName:@"Exclusive" bundle:nil];
         UINavigationController *exclusiveTVC = [exclusiveStoryboard instantiateViewControllerWithIdentifier:@"exclusiveTVC"];
         [self presentViewController:exclusiveTVC animated:YES completion:nil];
+
+    }else if(indexPath.row == 1 && indexPath.section == 1){
+
+
+        UIStoryboard *searchActivity = [UIStoryboard storyboardWithName:@"Search" bundle:nil];
+        UINavigationController *searchNavVC = [searchActivity instantiateViewControllerWithIdentifier:@"SearchNavVC"];
+        [self presentViewController:searchNavVC animated:YES completion:nil];
 
         
     }else if(indexPath.row == 0 && indexPath.section == 2){

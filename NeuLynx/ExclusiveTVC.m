@@ -12,12 +12,12 @@
 #import "AppDelegate.h"
 
 @interface ExclusiveTVC ()<CLLocationManagerDelegate>
-@property NSMutableArray *exclusiveInvitesArray;
+@property (strong, atomic) NSMutableArray *exclusiveInvitesArray;
 
 //CORE LOCATION
-@property CLLocationManager *locationManager;
-@property NSMutableArray *activitiesArray;
-@property CLLocation *currentLocation;
+@property (strong, atomic) CLLocationManager *locationManager;
+@property (strong, atomic) NSMutableArray *activitiesArray;
+@property (strong, atomic) CLLocation *currentLocation;
 
 @end
 

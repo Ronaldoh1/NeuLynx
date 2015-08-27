@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *genderAndOrientationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeActivityLabel;
 
 //Languages
@@ -46,7 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 
 
     [self performInitialSetUp];
@@ -77,8 +76,6 @@
     //Set up user's name label
     self.userNameLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
-    //Set up user's gender and orientation label
-    self.genderAndOrientationLabel.textColor = [UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1];
 
     //set the title of the activity
 
@@ -109,7 +106,6 @@
 
 
     self.userNameLabel.text = selectedActivity.host.name;
-    self.genderAndOrientationLabel.text = [NSString stringWithFormat:@"%@, %@", selectedActivity.host.gender, selectedActivity.host.orientation];
 
     NSArray *languageArray = selectedActivity.host.languageArray.copy;
 
@@ -225,10 +221,10 @@
 
 
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results{
-    
+
 }
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer{
-    
+
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error{

@@ -12,34 +12,34 @@
 
 @interface Activity : PFObject<PFSubclassing>
 
-@property NSString *activityTitle;
-@property NSString *activityDescription;
-@property PFGeoPoint *activityLocation;
-@property NSString *activityAddress;
-@property NSDate *startTimeAndDate;
-@property NSNumber *maxNumberOfParticipants;
-@property NSDate *endTimeAndDate;
-@property PFFile *activityImage1;
-@property PFFile *activityimage2;
-@property User *host;
-@property NSString *selectedCategory;
-@property NSNumber *numberOfpaticipants;
-@property NSMutableArray *acceptedPeopleArray;
-@property NSMutableArray *RequestsArray;
+@property (strong, atomic) NSString *activityTitle;
+@property (strong, atomic) NSString *activityDescription;
+@property (strong, atomic) PFGeoPoint *activityLocation;
+@property (strong, atomic) NSString *activityAddress;
+@property (strong, atomic) NSDate *startTimeAndDate;
+@property (strong, atomic) NSNumber *maxNumberOfParticipants;
+@property (strong, atomic) NSDate *endTimeAndDate;
+@property (strong, atomic) PFFile *activityImage1;
+@property (strong, atomic) PFFile *activityimage2;
+@property (strong, atomic) User *host;
+@property (strong, atomic) NSString *selectedCategory;
+@property (strong, atomic) NSNumber *numberOfpaticipants;
+@property (strong, atomic) NSMutableArray *acceptedPeopleArray;
+@property (strong, atomic) NSMutableArray *RequestsArray;
 
 //**0 = anyone 1 = students only**
-@property NSNumber *studentsOnly;
+@property (strong, atomic) NSNumber *studentsOnly;
 
 //**0 = public 1 = private**
-@property NSNumber *activityPrivacy;
+@property (strong, atomic) NSNumber *activityPrivacy;
 
 //**0 = No 1 = Yes**
-@property NSNumber *isLBGT;
+@property (strong, atomic) NSNumber *isLBGT;
 
-@property NSMutableArray *exclusiveInvitesArray;
+@property (strong, atomic)NSMutableArray *exclusiveInvitesArray;
 
 //**0 = No 1 = Yes**
-@property NSNumber* isNew;
+@property (strong, atomic) NSNumber* isNew;
 
 +(NSString *)parseClassName;
 

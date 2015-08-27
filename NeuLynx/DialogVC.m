@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *messageTextField;
-@property NSMutableArray *MessageArray;
+@property (strong, atomic) NSMutableArray *MessageArray;
 
 @end
 

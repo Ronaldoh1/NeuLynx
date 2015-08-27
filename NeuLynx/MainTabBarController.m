@@ -40,8 +40,7 @@
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:12.0/255.0 green:134/255.0 blue:243/255.0 alpha:1]];
 
 
-    //create the first tab - get the storybody, then use the storyboard to present the first view controller
-    //also set an image for the first tab.
+    /*create the first tab - get the storyboard , then use the storyboard to present the first view controller also set an image for the first tab.*/
     UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Map" bundle:nil];
     UITabBarController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MapNavVC"];
     [self addChildViewController:mapNavVC];
@@ -50,8 +49,7 @@
 
 
 
-    //create the second tab - get the storybody, then use the storyboard to present the first view controller
-    //also set an image for the first tab.
+     /*create the second tab - get the storyboard , then use the storyboard to present the second view controller also set an image for the first tab.*/
     UIStoryboard *mailStoryboard = [UIStoryboard storyboardWithName:@"Mail" bundle:nil];
     UITabBarController *mailNavVC = [mailStoryboard instantiateViewControllerWithIdentifier:@"mailNavVC"];
     [self addChildViewController:mailNavVC];
@@ -60,20 +58,22 @@
     mailNavVC.tabBarItem.enabled = NO;
 
 
-
-
-
-
-    //create the third tab - get the storybody, then use the storyboard to present the first view controller
-    //also set an image for the first tab.
+    /*create the third tab - get the storyboard, then use the storyboard to present the third  view controller also set an image for the first tab.*/
     UIStoryboard *requestStoryboard = [UIStoryboard storyboardWithName:@"Request" bundle:nil];
     UITabBarController *requestNavVC = [requestStoryboard instantiateViewControllerWithIdentifier:@"RequestNavVC"];
     [self addChildViewController:requestNavVC];
     requestNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"requestIcon2"] scaledToSize:CGSizeMake(35, 35)];
-    requestNavVC.tabBarItem.title = @"Request";
+    requestNavVC.tabBarItem.title = @"Requests";
     requestNavVC.tabBarItem.enabled = YES;
 
+    //create fourth tab. Get the storyboard, then use the storyboard to present the fourth view controller.
 
+    UIStoryboard *historyStoryboard = [UIStoryboard storyboardWithName:@"History" bundle:nil];
+    UITabBarController *historyNavVC = [historyStoryboard instantiateViewControllerWithIdentifier:@"HistoryNavVC"];
+    [self addChildViewController:historyNavVC];
+    historyNavVC.tabBarItem.image = [self imageWithImage:[UIImage imageNamed:@"historyIcon.png"] scaledToSize:CGSizeMake(35,35 )];
+    historyNavVC.tabBarItem.title = @"History";
+    historyNavVC.tabBarItem.enabled = YES;
 
 
 }

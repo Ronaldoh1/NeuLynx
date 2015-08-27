@@ -13,7 +13,7 @@
 @interface AboutVC ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property UIWindow *window;
+@property (weak, nonatomic)  UIWindow *window;
 @end
 
 @implementation AboutVC

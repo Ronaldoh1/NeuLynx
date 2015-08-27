@@ -16,8 +16,8 @@
 
 @property Activity *sharedActivity;
 @property ExclusiveInvite *exclusiveInvite;
-@property BOOL *hideDoneButtonForRequests;
-@property BOOL *hideDoneButtonForMessages;
+@property NSNumber *hideDoneButtonForRequests;
+@property NSNumber *hideDoneButtonForMessages;
 @property User *selectedUser;
 @property User *selectedRecepient;
 

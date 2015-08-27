@@ -15,7 +15,7 @@
 @interface SendMessageTVC ()<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *messageText;
 @property (weak, nonatomic) IBOutlet UITextField *subjectTextField;
-@property NSMutableArray *inboxArray;
+@property (strong, atomic) NSMutableArray *inboxArray;
 
 @end
 

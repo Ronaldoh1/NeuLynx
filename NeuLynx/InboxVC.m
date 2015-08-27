@@ -26,8 +26,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *inboxArray;
-@property DialogVC *activeDialogVC;
+@property (strong, atomic) NSMutableArray *inboxArray;
+@property (strong, atomic) DialogVC *activeDialogVC;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 
 

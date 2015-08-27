@@ -13,8 +13,8 @@
 
 @interface HistoryVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property NSMutableArray *acceptedHistoryArray;
-@property NSMutableArray *postedHistoryArray;
+@property (strong, atomic) NSMutableArray *acceptedHistoryArray;
+@property (strong, atomic) NSMutableArray *postedHistoryArray;
 
 
 

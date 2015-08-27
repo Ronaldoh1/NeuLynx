@@ -13,41 +13,39 @@
 @class SocialTracker;
 
 @interface User : PFUser<PFSubclassing>
-@property NSString *name;
-@property NSString *aboutMe;
-@property PFFile *profileImage;
-@property PFGeoPoint *userHomeLocation;
-@property NSString *gender;
-@property NSString *orientation;
-@property NSMutableArray *languageArray;
-@property NSString *age;
-@property NSDictionary *travelPreferences;
-@property NSString *userCurrentCity;
-@property NSString *userAdministrativeArea;
-@property NSString *userCountryCode;
-@property PFGeoPoint *currentLoccation;
+@property (strong, atomic) NSString *name;
+@property (strong, atomic) NSString *aboutMe;
+@property (strong, atomic) PFFile *profileImage;
+@property (strong, atomic) PFGeoPoint *userHomeLocation;
+@property (strong, atomic) NSString *gender;
+@property (strong, atomic) NSString *orientation;
+@property (strong, atomic) NSMutableArray *languageArray;
+@property (strong, atomic) NSString *age;
+@property (strong, atomic) NSDictionary *travelPreferences;
+@property (strong, atomic) NSString *userCurrentCity;
+@property (strong, atomic) NSString *userAdministrativeArea;
+@property (strong, atomic) NSString *userCountryCode;
+@property (strong, atomic) PFGeoPoint *currentLoccation;
 
 //List of Users who sent Messages
-@property NSMutableArray *inboxArray;
+@property (strong, atomic) NSMutableArray *inboxArray;
 
 //Preferences
-@property NSMutableArray *travelPreferencesArray;
-@property NSMutableArray *TravelPreferencesBoolArray;
+@property (strong, atomic) NSMutableArray *travelPreferencesArray;
+@property (strong, atomic) NSMutableArray *TravelPreferencesBoolArray;
 
-@property NSMutableArray *personalityArray;
-@property NSMutableArray *personalityBoolArray;
-@property BOOL isFbUser;
+@property (strong, atomic) NSMutableArray *personalityArray;
+@property (strong, atomic) NSMutableArray *personalityBoolArray;
+@property (assign) BOOL isFbUser;
 
 //User Rating
-@property NSNumber *userRating;
+@property (strong, atomic) NSNumber *userRating;
 
 //Activities Joined & Accepted
-@property NSMutableArray *pastActivities;
+@property (strong, atomic) NSMutableArray *pastActivities;
 
-@property NSMutableArray *exclusiveInvitesArray;
-@property NSNumber *activitiesJoinedCounter;
-
-@property SocialTracker *reward;
+@property (strong, atomic) NSMutableArray *exclusiveInvitesArray;
+@property (strong, atomic) NSNumber *activitiesJoinedCounter;
 
 
 @end
