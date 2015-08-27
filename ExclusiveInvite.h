@@ -13,10 +13,10 @@
 
 @interface ExclusiveInvite : PFObject<PFSubclassing>
 
-@property (strong, atomic) User *exclusiveInvitee;
-@property (strong, atomic) Activity *activity;
+@property (nonatomic, strong) User *exclusiveInvitee;
+@property (nonatomic, strong) Activity *activity;
 //**0 = No 1 = Yes**
-@property (strong, atomic) NSNumber *isDispositioned;
+@property (nonatomic, strong) NSNumber *isDispositioned;
 
 
 @end

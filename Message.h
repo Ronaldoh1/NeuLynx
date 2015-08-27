@@ -13,12 +13,12 @@
 
 @interface Message : PFObject<PFSubclassing>
 
-@property (strong, atomic) NSString *subject;
-@property (strong, atomic) User *recipient;
-@property (strong, atomic) NSString *recipientUsername;
-@property (strong, atomic) NSString *senderUsername;
-@property (strong, atomic) User *sender;
-@property (strong, atomic) NSString *messageText;
+@property (nonatomic, strong) NSString *subject;
+@property (nonatomic, strong) User *recipient;
+@property (nonatomic, strong) NSString *recipientUsername;
+@property (nonatomic, strong) NSString *senderUsername;
+@property (nonatomic, strong) User *sender;
+@property (nonatomic, strong) NSString *messageText;
 
 +(NSString *)parseClassName;
 

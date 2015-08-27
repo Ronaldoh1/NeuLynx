@@ -12,7 +12,7 @@
 
 @interface Activity : PFObject<PFSubclassing>
 
-@property (strong, atomic) NSString *activityTitle;
+@property (nonatomic, strong) NSString *activityTitle;
 @property (strong, atomic) NSString *activityDescription;
 @property (strong, atomic) PFGeoPoint *activityLocation;
 @property (strong, atomic) NSString *activityAddress;

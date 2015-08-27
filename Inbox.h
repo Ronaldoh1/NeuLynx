@@ -12,7 +12,7 @@
 
 
 @interface Inbox : PFObject<PFSubclassing>
-@property (strong, atomic) User *messageContact;
+@property (nonatomic, strong) User *messageContact;
 @property (strong, atomic) User *inboxOwner;
 @property (strong, atomic) NSString *messageContactUsername;
 @property (strong, atomic) NSString *inboxOwnerUsername;

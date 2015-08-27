@@ -13,7 +13,7 @@
 
 @interface History : PFObject<PFSubclassing>
 
-@property (strong, atomic) Activity *activityJoined;
+@property (nonatomic, strong) Activity *activityJoined;
 @property (strong, atomic) User *user;
 
 @end
