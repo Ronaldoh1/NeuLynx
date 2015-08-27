@@ -1089,13 +1089,13 @@ if the current user does not exist, then make him/her sign up.*/
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
 
 
-
     if (!self.initialLocation) {
+        [self.locationManager stopUpdatingLocation];
         self.initialLocation = userLocation.location;
         MKCoordinateRegion mapRegion;
         mapRegion.center = mapView.userLocation.coordinate;
-        mapRegion.span.latitudeDelta = 0.1;
-        mapRegion.span.longitudeDelta = 0.1;
+        mapRegion.span.latitudeDelta = 0.15;
+        mapRegion.span.longitudeDelta = 0.15;
 
 
         //save user's current location in background
@@ -1109,22 +1109,11 @@ if the current user does not exist, then make him/her sign up.*/
         [[User currentUser] saveInBackground];
 
         [mapView setRegion:mapRegion animated: NO];
+
+
     }
 
-    [self downloadActivitiesAndDisplayOnMap];
-
-}
-//helper method to zoom in
--(void)zoom:(double *)latitude :(double *)logitude
-{
-
-    MKCoordinateRegion region;
-    region.center.latitude = *latitude;
-    region.center.longitude = *logitude;
-    region.span.latitudeDelta = 0.04;
-    region.span.longitudeDelta = 0.04;
-    region = [self.mapView regionThatFits:region];
-    [self.mapView setRegion:region animated:NO];
+    //[self downloadActivitiesAndDisplayOnMap];
 
 }
 
@@ -1243,76 +1232,80 @@ if the current user does not exist, then make him/her sign up.*/
 
 
 //
-//        //add profile image to annotation call out
-//        PFQuery *activityQuery = [Activity query];
-//        [activityQuery includeKey:@"host"];
-//        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-//
-//
-//        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
-//
-//
-//            Activity *activity = pinAnnotation.activity;
-//            User *host = activity.host;
-//
-//            //check if the user exists for the activity and check if the user has a picture.
-//            if(!(host.profileImage == nil) || !(host == nil)){
-//
-//
-//                [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//
-//                    //if there is no error then display the image for the user who posted activity.
-//                    if(!error){
-//
-//                        dispatch_async(dispatch_get_main_queue(), ^{
-//
-//
-//                            UIImage *image = [UIImage imageWithData:data];
-//                            CGSize scaledSize = CGSizeMake(40, 40);
-//                            UIGraphicsBeginImageContext(scaledSize);
-//                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-//                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-//                            UIGraphicsEndImageContext();
-//                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-//                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-//                            profileImageView.layer.masksToBounds = YES;
-//                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-//                            profileImageView.clipsToBounds = YES;
-//                            profileImageView.userInteractionEnabled = YES;
-//                            annotationView.leftCalloutAccessoryView = profileImageView;
-//
-//
-//                        });
-//
-//                    }
-//
-//                } ];
-//
-//
-//            }else{
-//
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//
-//
-//                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
-//                    CGSize scaledSize = CGSizeMake(40, 40);
-//                    UIGraphicsBeginImageContext(scaledSize);
-//                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-//                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-//                    UIGraphicsEndImageContext();
-//                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-//                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-//                    profileImageView.layer.masksToBounds = YES;
-//                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-//                    profileImageView.clipsToBounds = YES;
-//                    profileImageView.userInteractionEnabled = YES;
-//                    annotationView.leftCalloutAccessoryView = profileImageView;
-//
-//                });
-//
-//            }
-//
-//        }];
+        //add profile image to annotation call out
+        PFQuery *activityQuery = [Activity query];
+        [activityQuery includeKey:@"host"];
+        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+
+
+        [activityQuery getObjectInBackgroundWithId:pinAnnotation.activity.objectId block:^(PFObject *object, NSError *error) {
+
+
+            Activity *activity = pinAnnotation.activity;
+            User *host = activity.host;
+
+            //check if the user exists for the activity and check if the user has a picture.
+            if(!(host.profileImage == nil) || !(host == nil)){
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+
+
+
+
+
+                [pinAnnotation.activity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+                    //if there is no error then display the image for the user who posted activity.
+                    if(!error){
+                        dispatch_async(dispatch_get_main_queue(), ^(void) {
+
+
+                            UIImage *image = [UIImage imageWithData:data];
+                            CGSize scaledSize = CGSizeMake(40, 40);
+                            UIGraphicsBeginImageContext(scaledSize);
+                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                            UIGraphicsEndImageContext();
+                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                            profileImageView.layer.masksToBounds = YES;
+                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                            profileImageView.clipsToBounds = YES;
+                            profileImageView.userInteractionEnabled = YES;
+                            annotationView.leftCalloutAccessoryView = profileImageView;
+
+
+                        });
+
+                    }
+
+                } ];
+
+            });
+
+            }else{
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+
+                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
+                    CGSize scaledSize = CGSizeMake(40, 40);
+                    UIGraphicsBeginImageContext(scaledSize);
+                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+                    profileImageView.layer.masksToBounds = YES;
+                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+                    profileImageView.clipsToBounds = YES;
+                    profileImageView.userInteractionEnabled = YES;
+                    annotationView.leftCalloutAccessoryView = profileImageView;
+
+                });
+
+            }
+
+        }];
 
 
         if(annotationView == nil){
@@ -1349,92 +1342,97 @@ if the current user does not exist, then make him/her sign up.*/
     }
 }
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-    for (MKAnnotationView *anAnnotationView in views) {
-        [anAnnotationView setCanShowCallout:YES];
-        [anAnnotationView addObserver:self
-                           forKeyPath:@"selected"
-                              options:NSKeyValueObservingOptionNew
-                              context:(__bridge void *)(ANNOTATION_SELECTED_DESELECTED)];
-    }
+//    for (MKAnnotationView *anAnnotationView in views) {
+//        [anAnnotationView setCanShowCallout:YES];
+//        [anAnnotationView addObserver:self
+//                           forKeyPath:@"selected"
+//                              options:NSKeyValueObservingOptionNew
+//                              context:(__bridge void *)(ANNOTATION_SELECTED_DESELECTED)];
+//    }
+
+//    MKAnnotationView *annotationView = [views objectAtIndex:0];
+//    id <MKAnnotation> mp = [annotationView annotation];
+//    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate], 250,250);
+//    [mv setRegion:region animated:YES];
 }
 
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
     // Annotation is your custom class that holds information about the annotation
-    if ([view.annotation isKindOfClass:[CustomMKAnnotation class]]) {
-        CustomMKAnnotation *annot = view.annotation;
-        // NSInteger index = [self.annotationArray indexOfObject:annot];
-
-
-        //add profile image to annotation call out
-        PFQuery *activityQuery = [Activity query];
-        [activityQuery includeKey:@"host"];
-        // activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
-        [activityQuery getObjectInBackgroundWithId:annot.activity.objectId block:^(PFObject *object, NSError *error) {
-            if(error){
-                return;
-            }
-
-            Activity *activity = (Activity *)object;
-            User *host = activity.host;
-
-            //check if the user exists for the activity and check if the user has a picture.
-            if(!(host.profileImage == nil) || !(host == nil)){
-                [host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-
-                    //if there is no error then display the image for the user who posted activity.
-                    if(!error){
-
-                        
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            UIImage *image = [UIImage imageWithData:data];
-                            CGSize scaledSize = CGSizeMake(40, 40);
-                            UIGraphicsBeginImageContext(scaledSize);
-                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                            UIGraphicsEndImageContext();
-                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                            profileImageView.layer.masksToBounds = YES;
-                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                            profileImageView.clipsToBounds = YES;
-                            profileImageView.userInteractionEnabled = YES;
-                            
-                        });
-                        
-                    }
-                    
-                    
-                }];
-                
-            }else{
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
-                    CGSize scaledSize = CGSizeMake(40, 40);
-                    UIGraphicsBeginImageContext(scaledSize);
-                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
-                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
-                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
-                    profileImageView.layer.masksToBounds = YES;
-                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
-                    profileImageView.clipsToBounds = YES;
-                    profileImageView.userInteractionEnabled = YES;
-                    //                annotationView.leftCalloutAccessoryView = profileImageView;
-                });
-            }
-            
-            
-            
-        }];
-        
-        
-        
-        
-    }
+//    if ([view.annotation isKindOfClass:[CustomMKAnnotation class]]) {
+//        CustomMKAnnotation *annot = view.annotation;
+//        // NSInteger index = [self.annotationArray indexOfObject:annot];
+//
+//
+//        //add profile image to annotation call out
+//        PFQuery *activityQuery = [Activity query];
+//        [activityQuery includeKey:@"host"];
+//  //      activityQuery.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//        [activityQuery getObjectInBackgroundWithId:annot.activity.objectId block:^(PFObject *object, NSError *error) {
+//            if(error){
+//                return;
+//            }
+//
+//            Activity *activity = (Activity *)object;
+//            User *host = activity.host;
+//
+//            //check if the user exists for the activity and check if the user has a picture.
+//            if(!(host.profileImage == nil) || !(host == nil)){
+//                [host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//
+//                    //if there is no error then display the image for the user who posted activity.
+//                    if(!error){
+//
+//                        
+//                        dispatch_async(dispatch_get_main_queue(), ^{
+//                            UIImage *image = [UIImage imageWithData:data];
+//                            CGSize scaledSize = CGSizeMake(40, 40);
+//                            UIGraphicsBeginImageContext(scaledSize);
+//                            [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+//                            UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//                            UIGraphicsEndImageContext();
+//                            UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+//                            profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+//                            profileImageView.layer.masksToBounds = YES;
+//                            profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+//                            profileImageView.clipsToBounds = YES;
+//                            profileImageView.userInteractionEnabled = YES;
+//                            
+//                        });
+//                        
+//                    }
+//                    
+//                    
+//                }];
+//                
+//            }else{
+//                
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    
+//                    UIImage *image = [UIImage imageNamed:@"defaultImage.png"];
+//                    CGSize scaledSize = CGSizeMake(40, 40);
+//                    UIGraphicsBeginImageContext(scaledSize);
+//                    [image drawInRect:CGRectMake(0, 0, scaledSize.width, scaledSize.height)];
+//                    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+//                    UIGraphicsEndImageContext();
+//                    UIImageView *profileImageView = [[UIImageView alloc]initWithImage:scaledImage];
+//                    profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2;
+//                    profileImageView.layer.masksToBounds = YES;
+//                    profileImageView.layer.borderColor = [UIColor blackColor].CGColor;
+//                    profileImageView.clipsToBounds = YES;
+//                    profileImageView.userInteractionEnabled = YES;
+//                    //                annotationView.leftCalloutAccessoryView = profileImageView;
+//                });
+//            }
+//            
+//            
+//            
+//        }];
+//        
+//        
+//        
+//        
+//    }
 }
 
 
@@ -1444,6 +1442,9 @@ if the current user does not exist, then make him/her sign up.*/
 
 
     if ([User currentUser] != nil) {
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            //your heavy code here =)
 
         UIStoryboard *detailStoryboard = [UIStoryboard storyboardWithName:@"Detail" bundle:nil];
         UIViewController *detailVC = [detailStoryboard instantiateViewControllerWithIdentifier:@"detailNavVc"];
@@ -1455,6 +1456,9 @@ if the current user does not exist, then make him/her sign up.*/
         appDelegate.sharedActivity = annotation.activity;
 
         [self presentViewController:detailVC animated:YES completion:nil];
+
+        });
+
 
     }else{
            [self presentActionSheetToLogInUser];
