@@ -49,16 +49,16 @@
     titleView.textColor = [UIColor colorWithRed:193/255.0 green:8/255.0 blue:24/255.0 alpha:1];;
     [self.navigationItem setTitleView:titleView];
 
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL tmpBool = *(appDelegate.hideDoneButtonForRequests);
-
-    if (tmpBool == YES) {
-
-        tmpBool = NO;
-        appDelegate.hideDoneButtonForRequests = nil;
-        self.navigationItem.rightBarButtonItem = nil;
-
-    }
+//    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+//    BOOL tmpBool = *(appDelegate.hideDoneButtonForRequests);
+//
+//    if (tmpBool == YES) {
+//
+//        tmpBool = NO;
+//        appDelegate.hideDoneButtonForRequests = nil;
+//        self.navigationItem.rightBarButtonItem = nil;
+//
+//    }
 }
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 
