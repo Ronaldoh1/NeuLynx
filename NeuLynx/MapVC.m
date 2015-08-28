@@ -137,7 +137,7 @@ NSString* const ANNOTATION_SELECTED_DESELECTED = @"mapAnnotationSelectedOrDesele
 
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
-       [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
+        [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
     }else{
         [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
         [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
@@ -1557,16 +1557,18 @@ if the current user does not exist, then make him/her sign up.*/
                                                  UIStoryboard *profileStoryboard = [UIStoryboard storyboardWithName:@"Profile" bundle:nil];
                                                  UINavigationController *profileNavVC = [profileStoryboard instantiateViewControllerWithIdentifier:@"profileNavVC"];
 
-                                                 [self presentViewController:profileNavVC animated:YES completion:nil];
+                                                 [self presentViewController:profileNavVC animated:YES completion:^{
+                                                     [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
+                                                     [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
+                                                     [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
+                                                 }];
 
                                              } afterDelay:3];
 
 
                                              //enable tabs once the user has been signed up (Profile/Inbox);
 
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:YES];
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:YES];
-                                             [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:YES];
+
 
 
 
@@ -1577,6 +1579,9 @@ if the current user does not exist, then make him/her sign up.*/
                                              [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:NO];
                                              [[[[self.tabBarController tabBar]items]objectAtIndex:2]setEnabled:NO];
                                              [[[[self.tabBarController tabBar]items]objectAtIndex:3]setEnabled:NO];
+                                             UIStoryboard *mapStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                             UIViewController *mapNavVC = [mapStoryboard instantiateViewControllerWithIdentifier:@"MainTabBarVC"];
+                                             [self presentViewController:mapNavVC animated:YES completion:nil];
                                              [self setUpProfileImage];
 
                                          }
