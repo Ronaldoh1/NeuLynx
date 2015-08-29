@@ -614,8 +614,6 @@
         self.activityGeoPoint.longitude = selectLocationVC.activityGeoPoint.longitude;
         self.activityAddress.text = [self getAddressFromLatLong:[NSString stringWithFormat:@"%f,%f",self.activityGeoPoint.latitude, self.activityGeoPoint.longitude]];
 
-        NSLog(@"the activity's geo point is %f %f", selectLocationVC.activityGeoPoint.latitude
-              , selectLocationVC.activityGeoPoint.longitude);
 
     }
 }

@@ -33,16 +33,12 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
-        // NSArray *activitiesArray = activities;
-        NSLog(@"%@ wattttt", activities);
-
 
         if (!error) {
             // Add activities to the map.
             dispatch_async(dispatch_get_main_queue(), ^{
 
                 for (Activity *activity in activities){
-                    NSLog(@"%@", activity);
                     [activitiesForSearchArray addObject:activity];
 
                 }

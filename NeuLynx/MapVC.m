@@ -772,7 +772,6 @@ if the current user does not exist, then make him/her sign up.*/
 
     }else{
 
-        NSLog(@"user is logged in");
         UIStoryboard *postActivityStoryboard = [UIStoryboard storyboardWithName:@"PostActivity" bundle:nil];
         UIViewController *postActivityNavVC = [postActivityStoryboard instantiateViewControllerWithIdentifier:@"postActivityNavVC"];
 
@@ -1008,7 +1007,6 @@ if the current user does not exist, then make him/her sign up.*/
     [geocoder reverseGeocodeLocation:self.currentLocation
                    completionHandler:^(NSArray *placemarks, NSError *error) {
                        if (error){
-                           NSLog(@"Geocode failed with error: %@", error);
                            return;
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];

@@ -66,7 +66,6 @@
         [self presentViewController:userDetailNavVC animated:YES completion:nil];
 
 
-        NSLog(@"%@", user);
 
     }
 

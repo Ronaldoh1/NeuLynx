@@ -158,7 +158,6 @@
         UINavigationController *searchNavVC = [searchActivity instantiateViewControllerWithIdentifier:@"SearchNavVC"];
         [self presentViewController:searchNavVC animated:YES completion:nil];
 
-        
     }else if(indexPath.row == 0 && indexPath.section == 2){
         UIStoryboard *helpStoryboard = [UIStoryboard storyboardWithName:@"Help" bundle:nil];
         UINavigationController *helpNavVC = [helpStoryboard instantiateViewControllerWithIdentifier:@"helpNavVC"];
@@ -290,7 +289,6 @@
 
 
 
-            NSLog(@"%d", sum);
 
             dispatch_async(dispatch_get_main_queue(), ^{
 

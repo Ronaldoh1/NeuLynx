@@ -167,7 +167,6 @@
             UIImage *image = [UIImage imageWithData:data];
             cell.userProfileImage.image = image;
         }else{
-            NSLog(@" %@       errorrrrrr %@", error.localizedDescription, error.description);
         }
 
 

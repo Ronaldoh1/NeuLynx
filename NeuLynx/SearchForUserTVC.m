@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *usersArray;
 @property (nonatomic, strong) UISearchController *searchController;
 
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
 //CORE LOCATION
 @property CLLocationManager *locationManager;
@@ -87,7 +88,7 @@
 
 -(void)pullData{
 
-    //PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [User query];
   //  [query whereKey:@"currentLoccation" nearGeoPoint:geoPoint withinMiles:100];
 
@@ -96,7 +97,6 @@
 
             self.usersArray = [[NSArray alloc]initWithArray:users];
 
-            NSLog(@"%lu hitttttttt", (unsigned long)self.usersArray.count);
 
             [self.tableView reloadData];
 
@@ -120,9 +120,6 @@
 
     User *user = (User *)self.usersArray[indexPath.row];
 
-    //NSLog(@"%@ userrrrr", user);
-
-    //NSLog(@"%@ activityyyyyyyyyyy", self.exclusiveActivity);
 
     ExclusiveInvite *exclusiveInvite = [ExclusiveInvite new];
 
@@ -131,16 +128,14 @@
     exclusiveInvite.isDispositioned = @0;
 
 
-//
-//    NSMutableArray *tempArray = [NSMutableArray new];
-//
-//       [tempArray addObject:self.exclusiveActivity];
-//
-//    user.exclusiveInvitesArray = tempArray.copy;
 
     [exclusiveInvite saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 
         if (succeeded) {
+
+
+
+            ((UserCustomCell *)[self.tableView cellForRowAtIndexPath:indexPath]).sendButton.enabled = NO;
 
 
 
@@ -178,24 +173,6 @@
 
 }
 
-//-(void)downloadExclusiveInvitesForUser:(User *)user{
-//
-//    PFQuery *query = [PFQuery queryWithClassName:@"ExclusiveInvite"];
-//    [query whereKey:@"exclusiveInvitee" equalTo:user];
-//
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *invitesArray, NSError *error) {
-//        if (error) {
-//            // There was an error
-//            NSLog(@"%@", error.description);
-//        } else {
-//            // objects has all the Posts the current user liked.
-//
-//            NSLog(@"%@",invitesArray);
-//
-//        }
-//    }];
-//}
-//
 
 
 #pragma mark - Table view data source
@@ -302,27 +279,6 @@
             }
         }
         self.searchResultsArray = searchResults;
-
-        // Using NSPredicate
-//        NSPredicate *pred = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name BEGINSWITH '%@'", searchStr]];
-//
-//
-//        PFQuery *query = [PFQuery queryWithClassName:@"User" predicate:pred];
-//
-//        [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error){
-//            if (!error) {
-//
-//                NSLog(@"%@ userrrrrrssss", users);
-//
-//
-//            }else{
-//
-//                  NSLog(@"%@ errorrrrrrrr", error.description);
-//
-//            }
-//
-//         }];
-
 
 
     }

@@ -140,8 +140,6 @@
 
     [user fetchIfNeededInBackground];
 
-    NSLog(@"hosttss is %@", user);
-    
 
     [user.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {

@@ -137,7 +137,6 @@
 
 
         if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
-            NSLog(@"%@ has a new message", sender.name);
 
             cell.blueDot.alpha = 1.0;
         }
@@ -168,7 +167,6 @@
         if ([sender.username isEqualToString:alert.senderUsername] && [alert.messageIsNew isEqualToNumber:@1]) {
 
             alert.messageIsNew = @0;
-            NSLog(@"Message has been read" );
             selectedAlert = alert;
         }
         
@@ -281,7 +279,6 @@
     [query includeKey:@"inboxOwner"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
-   // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
 
         if (!error) {
             for (Inbox *contact in objects) {
@@ -297,7 +294,7 @@
                 }
                 }
 
-           // NSLog(@"%@", array);
+
             self.inboxArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
             
@@ -318,7 +315,6 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
 
-       // NSLog(@"YOOOOOOOOOOOOOO, %@", objects);
 
         if (!error) {
             for (Alert *alert in objects) {
@@ -331,7 +327,6 @@
                 }
             }
 
-            // NSLog(@"%@", array);
             self.alertArray = [NSMutableArray arrayWithArray:array];
             [self.tableView reloadData];
             

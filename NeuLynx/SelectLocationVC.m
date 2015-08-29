@@ -165,8 +165,6 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    NSLog(@"Latitude: %f", view.annotation.coordinate.latitude);
-    NSLog(@"Longitude: %f", view.annotation.coordinate.longitude);
 }
 
 //Allow user to select their location.

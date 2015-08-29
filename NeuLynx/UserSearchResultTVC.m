@@ -11,6 +11,7 @@
 #import "User.h"
 @interface UserSearchResultTVC ()
 
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (nonatomic, strong) NSArray *array;
 @end
 

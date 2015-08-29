@@ -595,7 +595,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="onSendButtonTapped:" destination="bxp-1Z-gGE" eventType="touchUpInside" id="SaJ-KW-rmi"/>
+                                                <action selector="onSendButtonTapped:" destination="bxp-1Z-gGE" eventType="touchUpInside" id="mJW-BX-hIX"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -612,6 +612,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="Fmg-vj-I0c" id="aOY-xf-dFP"/>
+                                    <outlet property="sendButton" destination="LYs-ZX-3fj" id="fy8-Za-mqW"/>
                                     <outlet property="userProfileImage" destination="QYh-6x-w5U" id="vr8-PD-5zC"/>
                                 </connections>
                             </tableViewCell>
@@ -692,6 +693,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="TQw-GX-aQf" id="2eY-Ol-2XD"/>
+                                    <outlet property="sendButton" destination="rqG-Fb-JBv" id="str-yE-936"/>
                                     <outlet property="userProfileImage" destination="9Xh-3E-bX9" id="nng-9w-LLj"/>
                                 </connections>
                             </tableViewCell>
