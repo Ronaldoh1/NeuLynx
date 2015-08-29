@@ -85,6 +85,7 @@
     PFQuery *query = [Activity query];
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query whereKey:@"selectedCategory" equalTo:self.selectedCategory];
+    [query includeKey:@"host"];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
         if (!error) {
@@ -111,7 +112,7 @@
     //for every row in parse, we are getting a PFObject back. In our case, we will be getting an activity. For every activity, we will be retrieving values to populate the cell.
     Activity *tempActivity = [Activity new];
 
-    tempActivity = [self.activities objectAtIndex:indexPath.row];
+    tempActivity = (Activity *)[self.activities objectAtIndex:indexPath.row];
 
     //change the background color
     cell.backgroundColor = [UIColor clearColor];
@@ -130,7 +131,19 @@
     double distanceInMiles = distance * (0.00062137);
 
 
-    [tempActivity.host.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+
+
+    User *user = [User new];
+
+    user = (User *)tempActivity.host;
+
+    [user fetchIfNeededInBackground];
+
+    NSLog(@"hosttss is %@", user);
+    
+
+    [user.profileImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:data];
             cell.userProfileImage.image = image;

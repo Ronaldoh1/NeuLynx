@@ -18,16 +18,19 @@
 +(void)downloadActivitiesForLocation:(CLLocation *)location andCategory:(NSString *)category withCompletion:(void (^)(NSArray *))complete
 {
 
+
     NSMutableArray *activitiesForSearchArray = [NSMutableArray new];
 
 
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:location];
     PFQuery *query = [Activity query];
 
-
-
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
+    [query whereKey:@"flagCount" lessThan:@5];
     [query whereKey:@"selectedCategory" equalTo:category];
+    [query includeKey:@"host"];
+
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
         // NSArray *activitiesArray = activities;

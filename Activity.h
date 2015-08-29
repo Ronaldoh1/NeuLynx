@@ -41,6 +41,8 @@
 //**0 = No 1 = Yes**
 @property (strong, atomic) NSNumber* isNew;
 
+@property NSNumber *flagCount;
+
 +(NSString *)parseClassName;
 
 

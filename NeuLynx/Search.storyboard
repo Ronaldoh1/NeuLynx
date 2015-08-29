@@ -267,10 +267,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXS-5t-5Of">
-                                            <rect key="frame" x="109" y="34" width="191" height="90"/>
+                                            <rect key="frame" x="95" y="34" width="205" height="90"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="191" id="lCX-hn-oEt"/>
+                                                <constraint firstAttribute="width" constant="205" id="lCX-hn-oEt"/>
                                                 <constraint firstAttribute="height" constant="90" id="pxC-OV-pL2"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -278,7 +278,7 @@
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="POp-7W-8FU">
-                                            <rect key="frame" x="17" y="39" width="82" height="82"/>
+                                            <rect key="frame" x="5" y="39" width="82" height="82"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="82" id="Azb-ac-DpY"/>
                                                 <constraint firstAttribute="height" constant="82" id="ouK-WO-gyP"/>
@@ -297,13 +297,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="OXS-5t-5Of" secondAttribute="centerY" constant="4" id="10Q-y4-Khr"/>
-                                        <constraint firstAttribute="centerX" secondItem="OXS-5t-5Of" secondAttribute="centerX" constant="-61" id="Kkp-du-DkA"/>
+                                        <constraint firstAttribute="centerX" secondItem="OXS-5t-5Of" secondAttribute="centerX" constant="-54" id="Kkp-du-DkA"/>
                                         <constraint firstAttribute="centerY" secondItem="Qcx-Fb-dR4" secondAttribute="centerY" constant="-59.5" id="iI6-R7-ybE"/>
                                         <constraint firstAttribute="centerX" secondItem="Qcx-Fb-dR4" secondAttribute="centerX" constant="-100.5" id="le9-TG-mbf"/>
                                         <constraint firstAttribute="centerY" secondItem="POp-7W-8FU" secondAttribute="centerY" constant="3" id="tIx-GM-cC6"/>
                                         <constraint firstAttribute="centerY" secondItem="gUb-BS-ofu" secondAttribute="centerY" constant="60" id="tJ6-sC-BbK"/>
                                         <constraint firstAttribute="centerX" secondItem="gUb-BS-ofu" secondAttribute="centerX" constant="-49" id="xvC-GC-G0l"/>
-                                        <constraint firstAttribute="centerX" secondItem="POp-7W-8FU" secondAttribute="centerX" constant="85.5" id="zmV-Ft-eUJ"/>
+                                        <constraint firstAttribute="centerX" secondItem="POp-7W-8FU" secondAttribute="centerX" constant="97.5" id="zmV-Ft-eUJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

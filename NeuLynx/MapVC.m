@@ -792,6 +792,8 @@ if the current user does not exist, then make him/her sign up.*/
     PFQuery *query = [Activity query];
 
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
+    [query whereKey:@"flagCount" lessThan:@5];
+
     [query includeKey:@"isLGBT"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 

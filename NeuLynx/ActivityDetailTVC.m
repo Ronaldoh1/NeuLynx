@@ -208,12 +208,12 @@
     }];
 
 
-    //Display rate flags for the user.
-    RateView* rv = [RateView rateViewWithRating:3.7f];
-    rv.starFillColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:0/255.0 alpha:1];
-    rv.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 3.3, 235, 150, 30);
-
-    [self.view addSubview:rv];
+//    //Display rate flags for the user.
+//    RateView* rv = [RateView rateViewWithRating:3.7f];
+//    rv.starFillColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:0/255.0 alpha:1];
+//    rv.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 3.3, 235, 150, 30);
+//
+//    [self.view addSubview:rv];
 
 
 
@@ -488,6 +488,27 @@
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
+    }else if(indexPath.section == 4 && indexPath.row == 0){
+
+
+        [self.selectedActivity fetchInBackground];
+
+        NSNumber *tempNumber = self.selectedActivity.flagCount;
+
+
+        self.selectedActivity.flagCount = [NSNumber numberWithInteger:[tempNumber integerValue] + 1];
+
+        [self.selectedActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+
+            if (succeeded) {
+
+                [self dismissViewControllerAnimated:YES completion:^{
+                    [self displayAlertMessage:@"Flagged for Removal" andWith:@"Activity has been Flagged for removal - Thank you for helping us!"];
+                }];
+
+            }
+
+        }];
     }
     
 
@@ -509,6 +530,15 @@
 -(void)displayAlertWithTitle:(NSString *)title andWith:(NSError *)error{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
                                                    message:[NSString stringWithFormat:@"Error %@", [error description]]
+                                                  delegate:self
+                                         cancelButtonTitle:@"OK"
+                                         otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+-(void)displayAlertMessage:(NSString *)title andWith:(NSString *)message{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:title
+                                                   message:message
                                                   delegate:self
                                          cancelButtonTitle:@"OK"
                                          otherButtonTitles:nil, nil];

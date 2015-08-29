@@ -28,6 +28,7 @@
 @dynamic isLBGT;
 @dynamic exclusiveInvitesArray;
 @dynamic isNew;
+@dynamic flagCount;
 
 +(void)load {
     [self registerSubclass];

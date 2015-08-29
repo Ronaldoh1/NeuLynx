@@ -258,14 +258,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fP0-pU-zJw" id="CDx-1N-MbH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="pAA-tS-RU9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="pAA-tS-RU9">
                                                     <rect key="frame" x="8" y="24" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="135" id="WTh-6S-dKn"/>
                                                         <constraint firstAttribute="height" constant="135" id="wTW-Ce-C4W"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="2ul-6V-vrg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="2ul-6V-vrg">
                                                     <rect key="frame" x="177" y="24" width="135" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="135" id="1MX-Ut-ibJ"/>
@@ -344,6 +344,27 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Innapropriate Content? " id="4eg-Ub-7vB" userLabel="Share Activity With Friends">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Ssu-7p-aJX">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ssu-7p-aJX" id="zS4-JV-AVV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flag to Remove" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWz-gY-e7o">
+                                                    <rect key="frame" x="51" y="11" width="241" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="redflag.png" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-pf-yjK">
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="3h0-3E-G9E" id="iwZ-3o-DD1"/>
@@ -408,11 +429,11 @@
     </scenes>
     <resources>
         <image name="br.png" width="100" height="100"/>
-        <image name="defaultImage" width="1200" height="1200"/>
         <image name="defaultImage.png" width="1200" height="1200"/>
         <image name="facebookIcon.png" width="128" height="128"/>
         <image name="fr.png" width="100" height="100"/>
         <image name="goldSocial.png" width="261" height="261"/>
+        <image name="redflag.png" width="300" height="300"/>
         <image name="spa.png" width="100" height="100"/>
         <image name="twitterIcon.png" width="128" height="128"/>
         <image name="us.png" width="100" height="100"/>
