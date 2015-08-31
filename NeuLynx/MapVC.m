@@ -783,6 +783,8 @@ if the current user does not exist, then make him/her sign up.*/
 }
 
 
+
+
 //helper method to download the activities
 
 -(void)downloadActivitiesAndDisplayOnMap{
@@ -790,9 +792,14 @@ if the current user does not exist, then make him/her sign up.*/
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:self.currentLocation];
     PFQuery *query = [Activity query];
 
+
     [query whereKey:@"activityLocation" nearGeoPoint:geoPoint withinMiles:50.0];
     [query whereKey:@"flagCount" lessThan:@5];
+   // [query whereKey:@"activityDate" equalTo:tempString];
 
+   // [query whereKey:@"startTimeAndDate" greaterThan:now_gmt];
+   // [query whereKey:@"startTimeAndDate" greaterThanOrEqualTo:[NSDate date]];
+    //[query includeKey:@"activityDate"];
     [query includeKey:@"isLGBT"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *activities, NSError *error){
 
@@ -805,13 +812,42 @@ if the current user does not exist, then make him/her sign up.*/
         if (!error) {
             //get a copy of all activities
             self.allActivitiesArray = activities.copy;
+           // NSLog(@"%@", activities);
 
             // Add activities to the map.
       dispatch_async(dispatch_get_main_queue(), ^(void) {
 
             for (Activity *activity in activities){
+                NSLog(@"%@", activity.activityDate);
+
+               // NSLog(@"%f", activity.startTimeAndDate dateByAddingTimeInterval:[NSDate date]
+
+                NSDate *today = [NSDate date];
+//
+//
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//
+                [dateFormat setDateFormat:@"MM/dd/YYYY"];
+//
+//                NSDateFormatter *todayDateFormat = [[NSDateFormatter alloc] init];
+//                //[todayDateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"GMC"]];
+//                [todayDateFormat setDateFormat:@"MM/dd"];
+             
+//
+//
+//
+            NSString *todayString = [dateFormat stringFromDate:today];
+//
+//                NSString *activityDateString = [dateFormat stringFromDate:dateInLocalTimezone];
+//
+//
 
 
+               NSLog(@"%@ and %@", todayString, activity.activityDate);
+
+
+
+                if ([todayString isEqualToString:activity.activityDate]){
 
                 self.pinAnnotation = [[CustomMKAnnotation alloc]initWithTitle:activity.activityTitle Location:CLLocationCoordinate2DMake(activity.activityLocation.latitude, activity.activityLocation.longitude) andWithActivity:activity];
                 ;
@@ -838,9 +874,10 @@ if the current user does not exist, then make him/her sign up.*/
                 }
 
 
+                }
 
 
-            }
+       }
 
       });
 
@@ -854,6 +891,12 @@ if the current user does not exist, then make him/her sign up.*/
 
 }
 
+-(NSDate *) toLocalTime:(NSDate *)date{
+
+    NSTimeZone *tz = [NSTimeZone defaultTimeZone];
+    NSInteger seconds = [tz secondsFromGMTForDate:date ];
+    return [NSDate dateWithTimeInterval: seconds sinceDate: [NSDate date]];
+}
 
 
 #pragma Mark - methods to filter Services with SegmentedControl

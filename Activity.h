@@ -43,6 +43,8 @@
 
 @property NSNumber *flagCount;
 
+@property NSString *activityDate;
+
 +(NSString *)parseClassName;
 
 

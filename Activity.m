@@ -29,6 +29,7 @@
 @dynamic exclusiveInvitesArray;
 @dynamic isNew;
 @dynamic flagCount;
+@dynamic activityDate;
 
 +(void)load {
     [self registerSubclass];

@@ -153,12 +153,20 @@
             self.activity.activityLocation = self.activityGeoPoint;
             self.activity.numberOfpaticipants = @0;
             self.activity.host = [User currentUser];
+
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"MM/dd/YYYY";
+
+
+
+            self.activity.activityDate = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:self.startDateAndTime]];
             self.activity.startTimeAndDate = self.startDateAndTime;
             self.activity.endTimeAndDate = self.endDateAndTime;
             self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
             self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
             self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
             self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
+            self.activity.flagCount = @0;
 
             //saving images if the first is picked only save the first image.
             self.activity.selectedCategory = self.selectedCategory;
@@ -235,12 +243,22 @@
             self.activity.activityLocation = self.activityGeoPoint;
             self.activity.numberOfpaticipants = @0;
             self.activity.host = [User currentUser];
+
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"MM/dd/YYYY";
+
+
+            NSLog(@"hahdhhahfdshhfahs %@", [dateFormatter stringFromDate:self.startDateAndTime]);
+
+            self.activity.activityDate = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:self.startDateAndTime]];
+     
             self.activity.startTimeAndDate = self.startDateAndTime;
             self.activity.endTimeAndDate = self.endDateAndTime;
             self.activity.maxNumberOfParticipants = @([self.activityHeadCount.text integerValue]);
             self.activity.activityPrivacy = [NSNumber numberWithInteger:self.privacySelector.selectedSegmentIndex];
             self.activity.studentsOnly = [NSNumber numberWithInteger:self.whoCanJoinSelector.selectedSegmentIndex];
             self.activity.isLBGT = [NSNumber numberWithInteger:self.lgbtSelector.selectedSegmentIndex];
+              self.activity.flagCount = @0;
 
             //saving images if the first is picked only save the first image.
             self.activity.selectedCategory = self.selectedCategory;
