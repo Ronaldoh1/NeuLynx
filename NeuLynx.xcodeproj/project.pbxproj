@@ -19,6 +19,10 @@
 		F217C4631B8C824000A30FD1 /* SocialTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = F217C4621B8C824000A30FD1 /* SocialTracker.m */; };
 		F217C4A11B8EFB6000A30FD1 /* historyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A01B8EFB6000A30FD1 /* historyIcon.png */; };
 		F217C4A31B9218FA00A30FD1 /* redflag.png in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A21B9218FA00A30FD1 /* redflag.png */; };
+		F217C4A81B94FC9B00A30FD1 /* intro1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A41B94FC9B00A30FD1 /* intro1.jpg */; };
+		F217C4A91B94FC9B00A30FD1 /* intro2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A51B94FC9B00A30FD1 /* intro2.jpg */; };
+		F217C4AA1B94FC9B00A30FD1 /* intro3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A61B94FC9B00A30FD1 /* intro3.jpg */; };
+		F217C4AB1B94FC9B00A30FD1 /* intro4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F217C4A71B94FC9B00A30FD1 /* intro4.jpg */; };
 		F21EC4401B5D6E56000E535B /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43E1B5D6E56000E535B /* aqua.png */; };
 		F21EC4411B5D6E56000E535B /* grey_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F21EC43F1B5D6E56000E535B /* grey_2.png */; };
 		F226C8121B0F5AC0007A1C03 /* outdoors.png in Resources */ = {isa = PBXBuildFile; fileRef = F226C8111B0F5AC0007A1C03 /* outdoors.png */; };
@@ -245,6 +249,10 @@
 		F217C4621B8C824000A30FD1 /* SocialTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialTracker.m; sourceTree = "<group>"; };
 		F217C4A01B8EFB6000A30FD1 /* historyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = historyIcon.png; sourceTree = "<group>"; };
 		F217C4A21B9218FA00A30FD1 /* redflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redflag.png; sourceTree = "<group>"; };
+		F217C4A41B94FC9B00A30FD1 /* intro1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro1.jpg; sourceTree = "<group>"; };
+		F217C4A51B94FC9B00A30FD1 /* intro2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro2.jpg; sourceTree = "<group>"; };
+		F217C4A61B94FC9B00A30FD1 /* intro3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro3.jpg; sourceTree = "<group>"; };
+		F217C4A71B94FC9B00A30FD1 /* intro4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro4.jpg; sourceTree = "<group>"; };
 		F21EC43E1B5D6E56000E535B /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		F21EC43F1B5D6E56000E535B /* grey_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_2.png; sourceTree = "<group>"; };
 		F226C8111B0F5AC0007A1C03 /* outdoors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outdoors.png; sourceTree = "<group>"; };
@@ -582,6 +590,10 @@
 		F21EC4431B645F62000E535B /* Intro */ = {
 			isa = PBXGroup;
 			children = (
+				F217C4A41B94FC9B00A30FD1 /* intro1.jpg */,
+				F217C4A51B94FC9B00A30FD1 /* intro2.jpg */,
+				F217C4A61B94FC9B00A30FD1 /* intro3.jpg */,
+				F217C4A71B94FC9B00A30FD1 /* intro4.jpg */,
 				F2D38B011B673DA7007EBF41 /* appNameMedium.png */,
 				F2576E031B01B8DE0006C8E1 /* newNeuLynxSlogan.png */,
 				F2D38ACF1B65D46A007EBF41 /* introSplashScreen.png */,
@@ -1263,6 +1275,7 @@
 				F29A95041B71DF74004892A4 /* blackShadeSignUpBackground.png in Resources */,
 				F2292ED01B254C7C003D82D5 /* wCultural.png in Resources */,
 				F2892E011B3EAB540010D534 /* share.png in Resources */,
+				F217C4A91B94FC9B00A30FD1 /* intro2.jpg in Resources */,
 				F28518ED1AFABFAD007A45FA /* Main.storyboard in Resources */,
 				F226C81C1B0F5C07007A1C03 /* nightout.png in Resources */,
 				F21EC4401B5D6E56000E535B /* aqua.png in Resources */,
@@ -1317,6 +1330,7 @@
 				F2292ED21B254C7C003D82D5 /* wFitness.png in Resources */,
 				F2D38ACC1B64BABB007EBF41 /* mainStudentLife.png in Resources */,
 				F2D38AF11B67332E007EBF41 /* AppIcon29x29~ipad.png in Resources */,
+				F217C4A81B94FC9B00A30FD1 /* intro1.jpg in Resources */,
 				F28677761B87435400BD6B1D /* OldActivity.storyboard in Resources */,
 				F249D2FD1B52BA6E00A3BAE7 /* Message.storyboard in Resources */,
 				F2292EF81B25508E003D82D5 /* mainNightout.png in Resources */,
@@ -1333,6 +1347,7 @@
 				F2D38AFE1B67332E007EBF41 /* AppIcon76x76@2x~ipad.png in Resources */,
 				F2D38AD01B65D46A007EBF41 /* introSplashScreen.png in Resources */,
 				F2E0BD9D1B8065480004921F /* Slongan.png in Resources */,
+				F217C4AA1B94FC9B00A30FD1 /* intro3.jpg in Resources */,
 				F28519271AFADAED007A45FA /* Map.storyboard in Resources */,
 				F249D2DC1B49F57700A3BAE7 /* thumbsUp.png in Resources */,
 				F2576E121B01BA9A0006C8E1 /* mapTabButton.png in Resources */,
@@ -1386,6 +1401,7 @@
 				F2E0BDB41B8092280004921F /* uFestivalPin.png in Resources */,
 				F286777C1B87D68800BD6B1D /* UserDetail.storyboard in Resources */,
 				F28789BE1B707CB600D4F5A3 /* facebookLoginButton.png in Resources */,
+				F217C4AB1B94FC9B00A30FD1 /* intro4.jpg in Resources */,
 				F2576E221B02D5A80006C8E1 /* post.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1618,8 +1634,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1628,7 +1644,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1641,8 +1657,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ronald Hernandez (2VXA774V28)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1651,7 +1667,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869a1153-d2f9-421c-8db5-90d687c354fb";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NeuLynx/NeuLynx-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

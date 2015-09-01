@@ -12,15 +12,13 @@
 @interface MainTutorialVC () <UIPageViewControllerDataSource>
 
 @property (nonatomic,strong) UIPageViewController *PageViewController;
-@property (nonatomic,strong) NSArray *arrayPageFirstLabel;
-@property (nonatomic,strong) NSArray *arrayPageSecondLabel;
 @property (nonatomic,strong) NSArray *arrayImages;
 
 @end
 
 @implementation MainTutorialVC
 
-@synthesize PageViewController,arrayPageFirstLabel;
+@synthesize PageViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,11 +42,9 @@
 
     //Set up arrays
 
-    self.arrayPageFirstLabel = @[@"Text 1",@"Text 2",@"Text 3", @"Text 4", @"Text 5"];
 
-    self.arrayPageSecondLabel = @[@"another text 1", @"Another text 2",@"Another text 3", @"Another text 4", @"Another text 5"];
 
-    self.arrayImages = @[@"Logo", @"Logo", @"Logo", @"Logo", @"Logo"];
+    self.arrayImages = @[@"intro1.jpg", @"intro2.jpg", @"intro3.jpg", @"intro4.jpg"];
 
     // Create page view controller
     self.PageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
@@ -92,27 +88,25 @@
         return nil;
     }
     index++;
-    if (index == [self.arrayPageFirstLabel count]){
+    if (index == [self.arrayImages count]){
         return nil;
     }
     return [self viewControllerAtIndex:index];
 }
 - (PageContentVC *)viewControllerAtIndex:(NSUInteger)index{
 
-    if (([self.arrayPageFirstLabel count] == 0) || (index >= [self.arrayPageFirstLabel count])) {
+    if (([self.arrayImages count] == 0) || (index >= [self.arrayImages count])) {
         return nil;
     }
     // Create a new view controller and pass suitable data.
     PageContentVC *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
 
-    pageContentViewController.textForLabel1 = self.arrayPageFirstLabel[index];
-    pageContentViewController.textForLabel2 = self.arrayPageSecondLabel[index];
     pageContentViewController.imageFileName = self.arrayImages[index];
     pageContentViewController.pageIndex = index;
     return pageContentViewController;
 }
 -(NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController{
-    return [self.arrayPageFirstLabel count];
+    return [self.arrayImages count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController{

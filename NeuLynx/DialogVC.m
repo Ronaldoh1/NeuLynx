@@ -276,6 +276,7 @@
         } else {
             // There was a problem, check error.description
 
+            NSLog(@"%@", error.description);
         }
 
         dispatch_async(dispatch_get_main_queue(), ^{

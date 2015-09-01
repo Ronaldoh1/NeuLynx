@@ -17,11 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    self.label1.text = self.textForLabel1;
-    self.label2.text = self.textForLabel2;
-    self.label1.textColor = [UIColor blueColor];
-    self.label2.textColor = [UIColor yellowColor];
     self.imageForScreen.image = [UIImage imageNamed:self.imageFileName];
 
 
